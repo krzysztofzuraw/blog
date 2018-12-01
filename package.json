@@ -4,7 +4,8 @@
   "description": "Krzysztof Żuraw blog",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "develop": "gatsby develop",
+    "type-check": "tsc --noEmit"
   },
   "keywords": [
     "blog",
@@ -13,5 +14,18 @@
     "typescript"
   ],
   "author": "Krzysztof Żuraw",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "gatsby": "2.0.59",
+    "gatsby-plugin-typescript": "2.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "4.1.0",
+    "husky": "1.2.0",
+    "prettier": "1.15.3",
+    "tslint": "5.11.0",
+    "tslint-config-prettier": "1.17.0",
+    "typescript": "3.2.1",
+    "typescript-tslint-plugin": "0.1.2"
+  }
 }
