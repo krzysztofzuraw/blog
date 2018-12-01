@@ -1,0 +1,17 @@
+{
+  "name": "blog",
+  "version": "0.1.0",
+  "description": "Krzysztof Żuraw blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blog",
+    "gatsby.js",
+    "react",
+    "typescript"
+  ],
+  "author": "Krzysztof Żuraw",
+  "license": "MIT"
+}
