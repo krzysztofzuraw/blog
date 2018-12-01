@@ -2,10 +2,10 @@
   "name": "blog",
   "version": "0.1.0",
   "description": "Krzysztof Żuraw blog",
-  "main": "index.js",
   "scripts": {
-    "develop": "gatsby develop",
-    "type-check": "tsc --noEmit"
+    "develop": "gatsby develop --verbose",
+    "type-check": "tsc",
+    "lint": "tslint --project ."
   },
   "keywords": [
     "blog",
@@ -23,6 +23,8 @@
     "concurrently": "4.1.0",
     "husky": "1.2.0",
     "prettier": "1.15.3",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
     "tslint": "5.11.0",
     "tslint-config-prettier": "1.17.0",
     "typescript": "3.2.1",
