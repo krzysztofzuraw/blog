@@ -16,10 +16,16 @@
   "author": "Krzysztof Żuraw",
   "license": "MIT",
   "dependencies": {
+    "csstips": "0.3.0",
+    "csx": "9.0.0",
     "gatsby": "2.0.59",
-    "gatsby-plugin-typescript": "2.0.2"
+    "gatsby-plugin-typescript": "2.0.2",
+    "typestyle": "2.0.1",
+    "typography": "0.16.17"
   },
   "devDependencies": {
+    "@types/styled-components": "4.1.3",
+    "@types/typography": "0.16.0",
     "concurrently": "4.1.0",
     "husky": "1.2.0",
     "prettier": "1.15.3",
