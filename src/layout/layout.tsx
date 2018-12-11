@@ -3,7 +3,7 @@ import * as React from 'react';
 import { style } from 'typestyle';
 import Typography from 'typography';
 
-import { Header } from '../components';
+import { Content, Header } from '../components';
 
 normalize();
 setupPage('#___gatsby');
@@ -32,19 +32,15 @@ const wrapperStyle = style({
     "header"
     "content"
   `,
-  gridTemplateRows: '25% 1fr',
+  gridTemplateRows: 'auto 1fr',
   width: '100vw',
   height: '100vh',
   padding: '2.5em 1.25em',
 });
 
-const contentStyle = style({
-  gridArea: 'content',
-});
-
 export const Layout: React.FunctionComponent = ({ children }) => (
   <div className={wrapperStyle}>
     <Header />
-    <div className={contentStyle}>{children}</div>
+    <Content>{children}</Content>
   </div>
 );
