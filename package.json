@@ -24,21 +24,21 @@
     "gatsby-source-filesystem": "2.0.12",
     "gatsby-transformer-remark": "2.1.15",
     "typestyle": "2.0.1",
-    "typography": "0.16.17",
+    "typography": "0.16.18",
     "react": "16.6.3",
     "react-dom": "16.6.3"
   },
   "devDependencies": {
     "tslint": "5.11.0",
     "graphql-code-generator": "0.14.5",
-    "graphql-codegen-typescript-client": "0.14.5",
-    "graphql-codegen-typescript-common": "0.14.5",
+    "graphql-codegen-typescript-client": "0.15.0",
+    "graphql-codegen-typescript-common": "0.15.0",
     "@types/typography": "0.16.0",
     "concurrently": "4.1.0",
-    "husky": "1.2.0",
+    "husky": "1.2.1",
     "prettier": "1.15.3",
     "tslint-config-prettier": "1.17.0",
-    "typescript": "3.2.1",
-    "typescript-tslint-plugin": "0.1.2"
+    "typescript": "3.2.2",
+    "typescript-tslint-plugin": "0.2.1"
   }
 }
