@@ -1,0 +1,5 @@
+schema: http://localhost:8000/___graphql
+generates:
+  typings/graphql.d.ts:
+    - typescript-common
+    - typescript-client

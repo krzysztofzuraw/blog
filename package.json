@@ -5,7 +5,8 @@
   "scripts": {
     "develop": "gatsby develop --verbose",
     "type-check": "tsc",
-    "lint": "tslint --project ."
+    "lint": "tslint --project .",
+    "generate:graphql:types": "gql-gen"
   },
   "keywords": [
     "blog",
@@ -20,6 +21,11 @@
     "csx": "9.0.0",
     "gatsby": "2.0.59",
     "gatsby-plugin-typescript": "2.0.2",
+    "gatsby-source-filesystem": "2.0.12",
+    "gatsby-transformer-remark": "2.1.15",
+    "graphql-code-generator": "0.14.5",
+    "graphql-codegen-typescript-client": "0.14.5",
+    "graphql-codegen-typescript-common": "0.14.5",
     "typestyle": "2.0.1",
     "typography": "0.16.17"
   },

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { style } from 'typestyle';
 import Typography from 'typography';
 
-import { Content, Header } from '../components';
+import { Header } from '../components';
 
 normalize();
 setupPage('#___gatsby');
@@ -41,6 +41,6 @@ const wrapperStyle = style({
 export const Layout: React.FunctionComponent = ({ children }) => (
   <div className={wrapperStyle}>
     <Header />
-    <Content>{children}</Content>
+    {children}
   </div>
 );
