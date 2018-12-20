@@ -9,7 +9,6 @@ normalize();
 setupPage('#___gatsby');
 
 export const typography = new Typography({
-  baseFontSize: '23px',
   bodyFontFamily: [
     '-apple-system',
     'BlinkMacSystemFont',
@@ -35,7 +34,7 @@ const wrapperStyle = style({
   gridTemplateRows: 'auto 1fr',
   width: '100vw',
   height: '100vh',
-  padding: '2.5em 1.25em',
+  padding: `${typography.rhythm(2.5)} ${typography.rhythm(1.25)}`,
 });
 
 export const Layout: React.FunctionComponent = ({ children }) => (

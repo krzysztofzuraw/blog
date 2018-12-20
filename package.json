@@ -29,14 +29,13 @@
     "react-dom": "16.6.3"
   },
   "devDependencies": {
-    "tslint": "5.11.0",
+    "concurrently": "4.1.0",
     "graphql-code-generator": "0.15.0",
     "graphql-codegen-typescript-client": "0.15.0",
     "graphql-codegen-typescript-common": "0.15.0",
-    "@types/typography": "0.16.0",
-    "concurrently": "4.1.0",
     "husky": "1.2.1",
     "prettier": "1.15.3",
+    "tslint": "5.11.0",
     "tslint-config-prettier": "1.17.0",
     "typescript": "3.2.2",
     "typescript-tslint-plugin": "0.2.1"

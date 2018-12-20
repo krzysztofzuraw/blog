@@ -18,7 +18,6 @@ const itemStyle = style({
   $nest: {
     '& a': {
       textDecoration: 'none',
-      color: theme.colors.black.toHexString(),
       fontWeight: 700,
     },
     '& a:hover': {
@@ -26,7 +25,7 @@ const itemStyle = style({
     },
     '& span': {
       color: theme.colors.gray.toString(),
-      fontSize: '16px',
+      // fontSize: '16px',
     },
   },
 });

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { style } from 'typestyle';
 
+import { typography } from '../../layout';
 import { theme } from '../../theme';
 
 const headerStyle = style({
@@ -11,8 +12,7 @@ const headerStyle = style({
   flexDirection: 'column',
   $nest: {
     '& h1': {
-      margin: '0 0 24px 0',
-      color: theme.colors.black.toHexString(),
+      margin: `0 0 ${typography.rhythm(1.5)} 0`,
     },
   },
 });
@@ -23,10 +23,8 @@ const navStyle = style({
     '& a': {
       textDecoration: 'none',
       color: theme.colors.gray.toString(),
-      marginRight: '10px',
+      marginRight: typography.rhythm(0.5),
       textTransform: 'uppercase',
-      fontSize: '16px',
-      lineHeight: '1.5',
     },
     '& a:hover': {
       textDecoration: 'underline',
