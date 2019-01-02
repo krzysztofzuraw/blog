@@ -8,7 +8,6 @@ import { theme } from '../../theme';
 const listStyle = style({
   gridArea: 'content',
   display: 'flex',
-  alignItems: 'center',
   justifyContent: 'space-around',
   flexDirection: 'column',
   padding: typography.rhythm(0.5),
@@ -30,7 +29,6 @@ const itemStyle = style({
     },
     '& span': {
       color: theme.colors.gray.toString(),
-      alignSelf: 'center',
     },
   },
 });
