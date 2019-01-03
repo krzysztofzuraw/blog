@@ -5,6 +5,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-typescript',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -12,6 +13,20 @@ module.exports = {
         name: 'blog',
       },
     },
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 590,
+            },
+          },
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+        ],
+      },
+    },
   ],
 };
