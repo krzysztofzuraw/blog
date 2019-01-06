@@ -2,8 +2,8 @@ import * as React from 'react';
 import { style } from 'typestyle';
 
 import { MarkdownRemarkConnectionFrontmatterInputObject_2 } from 'typings/graphql';
-import { typography } from '../../layout';
 import { theme } from '../../theme';
+import { typography } from '../../utils';
 
 const listStyle = style({
   gridArea: 'content',

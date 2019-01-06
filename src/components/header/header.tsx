@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { style } from 'typestyle';
 
-import { typography } from '../../layout';
 import { theme } from '../../theme';
+import { typography } from '../../utils';
 
 const headerStyle = style({
   gridArea: 'header',
