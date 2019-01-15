@@ -2,7 +2,7 @@ import { normalize, setupPage } from 'csstips';
 import * as React from 'react';
 import { style } from 'typestyle';
 
-import { Header } from '../components';
+import { HeaderContainer } from '../containers';
 import { typography } from '../utils';
 
 normalize();
@@ -22,7 +22,7 @@ const wrapperStyle = style({
 
 export const Layout: React.FunctionComponent = ({ children }) => (
   <div className={wrapperStyle}>
-    <Header />
+    <HeaderContainer />
     {children}
   </div>
 );

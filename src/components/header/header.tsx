@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { style } from 'typestyle';
 
+import { SiteSiteMetadataInputObject_2 } from 'typings/graphql';
 import { theme } from '../../theme';
 import { typography } from '../../utils';
 
@@ -32,13 +33,14 @@ const navStyle = style({
   },
 });
 
-export const Header: React.FunctionComponent = () => (
+interface Props {
+  siteName?: SiteSiteMetadataInputObject_2['siteName'];
+  navLinks: JSX.Element[];
+}
+
+export const Header: React.FunctionComponent<Props> = ({ siteName, navLinks }) => (
   <header className={headerStyle}>
-    <h1>Krzysztof Żuraw</h1>
-    <nav className={navStyle}>
-      <a href="">Blog</a>
-      <a href="">About</a>
-      <a href="">Newsletter</a>
-    </nav>
+    <h1>{siteName}</h1>
+    <nav className={navStyle}>{navLinks.map(link => link)}</nav>
   </header>
 );
