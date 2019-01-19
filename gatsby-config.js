@@ -2,7 +2,7 @@
 module.exports = {
   siteMetadata: {
     siteName: 'Krzysztof Żuraw blog',
-    author: 'Kzysztof Żuraw',
+    author: 'Krzysztof Żuraw',
     description: 'Blog about TypeScript',
     siteUrl: 'https://krzysztofzuraw.com',
     social: {
@@ -15,6 +15,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

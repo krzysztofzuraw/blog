@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import { FilterMarkdownRemark } from 'typings/graphql';
 import { List } from '../components';
+import { SEOContainer } from '../containers';
 import { Layout } from '../layout';
 
 interface Props {
@@ -24,6 +25,7 @@ const IndexPage: React.FunctionComponent<Props> = ({
 }) => {
   return (
     <Layout>
+      <SEOContainer />
       <List>
         {edges.map(edge => (
           <List.Item key={edge.node.id as string} frontmatter={edge.node.frontmatter} />
