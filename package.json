@@ -1,6 +1,7 @@
 {
   "name": "blog",
   "version": "0.1.0",
+  "main": "n/a",
   "description": "Krzysztof Żuraw blog",
   "scripts": {
     "develop": "gatsby develop --verbose",
@@ -20,6 +21,7 @@
     "csstips": "0.3.0",
     "csx": "9.0.0",
     "gatsby": "2.0.91",
+    "gatsby-plugin-react-helmet": "3.0.5",
     "gatsby-plugin-sharp": "2.0.17",
     "gatsby-plugin-typescript": "2.0.3",
     "gatsby-remark-copy-linked-files": "2.0.8",
@@ -27,13 +29,15 @@
     "gatsby-remark-prismjs": "3.2.0",
     "gatsby-source-filesystem": "2.0.16",
     "gatsby-transformer-remark": "2.2.0",
-    "typestyle": "2.0.1",
-    "typography": "0.16.18",
     "prismjs": "1.15.0",
     "react": "16.7.0",
-    "react-dom": "16.7.0"
+    "react-dom": "16.7.0",
+    "react-helmet": "5.2.0",
+    "typestyle": "2.0.1",
+    "typography": "0.16.18"
   },
   "devDependencies": {
+    "@types/react-helmet": "5.0.8",
     "@types/typography": "0.16.2",
     "concurrently": "4.1.0",
     "graphql-code-generator": "0.15.2",
