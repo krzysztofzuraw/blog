@@ -48,30 +48,29 @@ export const About: React.FunctionComponent<Props> = ({ socialMedia }) => (
       <li>
         <a href="https://krzysztofzuraw.github.io/pomodoro-timer/">Pomodoro timer</a>. Pomodoro
         timer that can show if your 25 minutes was good or bad.{' '}
-        <a href="https://github.com/krzysztofzuraw/pomodoro-timer">Source code</a>.
+        <a href="https://github.com/krzysztofzuraw/pomodoro-timer">Pomodoro timer source code</a>.
       </li>
       <li>
         <a href="https://krzysztofzuraw.github.io/all-roads-lead-to/">All roads lead to</a>. Select
         a place & see that all roads lead there.{' '}
-        <a href="https://github.com/krzysztofzuraw/all-roads-lead-to">Source code</a>.
+        <a href="https://github.com/krzysztofzuraw/all-roads-lead-to">
+          All roads lead to source code
+        </a>
+        .
       </li>
       <li>
         <a href="https://poznaj-wroclaw.herokuapp.com/api/">Poznaj</a>. Discover history of Wroclaw
         using your smartphone.{' '}
-        <a href="https://github.com/KlubJagiellonski/poznaj-app-backend">Source code</a>.
+        <a href="https://github.com/KlubJagiellonski/poznaj-app-backend">Poznaj source code</a>.
       </li>
       <li>
         <a href="Podcast-app">Podcast-app</a>. Simple podcast searcher made in ReactJS.{' '}
-        <a href="https://github.com/krzysztofzuraw/podcast-app">Source code</a>.
+        <a href="https://github.com/krzysztofzuraw/podcast-app">Podcast-app source code</a>.
       </li>
       <li>
         <a href="https://photogram-kz.herokuapp.com/">Photogram</a>. Instagram for unsplash in
-        ReactJS with Redux. <a href="https://github.com/krzysztofzuraw/photogram">Source code</a>.
-      </li>
-      <li>
-        <a href="https://krzysztofzuraw.github.io/all-roads-lead-to/">All roads leads to</a>. Simple
-        app to give you directions on the map.{' '}
-        <a href="https://github.com/krzysztofzuraw/all-roads-lead-to">Source code</a>.
+        ReactJS with Redux.{' '}
+        <a href="https://github.com/krzysztofzuraw/photogram">Photogram source code</a>.
       </li>
     </ul>
     <h2>My talks</h2>
