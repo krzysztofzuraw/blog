@@ -26,6 +26,7 @@ const socialLinksQuery = graphql`
           github
           linkedin
           email
+          speakerDeck
         }
       }
     }

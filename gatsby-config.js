@@ -10,6 +10,7 @@ module.exports = {
       linkedin: 'https://pl.linkedin.com/in/krzysztofzuraw',
       github: 'https://github.com/krzysztofzuraw',
       email: 'mailto:noaaln@fastmail.com',
+      speakerDeck: 'https://speakerdeck.com/krzysztofzuraw',
     },
   },
   plugins: [

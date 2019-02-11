@@ -2,7 +2,6 @@ import * as React from 'react';
 import { style } from 'typestyle';
 
 import { SiteSiteMetadataInputObject_2 } from 'typings/graphql';
-import { theme } from '../../theme';
 import { typography } from '../../utils';
 
 const headerStyle = style({
@@ -22,13 +21,8 @@ const navStyle = style({
   display: 'flex',
   $nest: {
     '& a': {
-      textDecoration: 'none',
-      color: theme.colors.gray.toString(),
       marginRight: typography.rhythm(0.5),
       textTransform: 'uppercase',
-    },
-    '& a:hover': {
-      textDecoration: 'underline',
     },
   },
 });

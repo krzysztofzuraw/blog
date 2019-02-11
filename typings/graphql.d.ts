@@ -3,7 +3,7 @@ export type Maybe<T> = T | null;
 export interface SitePageConnectionSort {
   fields: (Maybe<SitePageConnectionSortByFieldsEnum>)[];
 
-  order?: SitePageConnectionSortOrderValues;
+  order?: (Maybe<SitePageConnectionSortOrderValues>)[];
 }
 /** Filter connection on its fields */
 export interface FilterSitePage {
@@ -133,11 +133,11 @@ export interface SitePageConnectionPluginCreatorInputObject {
 
   browserAPIs?: Maybe<SitePageConnectionPluginCreatorBrowserApIsQueryList>;
 
+  ssrAPIs?: Maybe<SitePageConnectionPluginCreatorSsrApIsQueryList>;
+
   pluginFilepath?: Maybe<SitePageConnectionPluginCreatorPluginFilepathQueryString>;
 
   packageJson?: Maybe<SitePageConnectionPluginCreatorPackageJsonInputObject>;
-
-  parent?: Maybe<SitePageConnectionPluginCreatorParentQueryString>;
 
   internal?: Maybe<SitePageConnectionPluginCreatorInternalInputObject>;
 }
@@ -207,23 +207,17 @@ export interface SitePageConnectionPluginCreatorPluginOptionsInputObject {
 
   maxWidth?: Maybe<SitePageConnectionPluginCreatorPluginOptionsMaxWidthQueryInteger>;
 
-  wrapperStyle?: Maybe<SitePageConnectionPluginCreatorPluginOptionsWrapperStyleQueryString>;
+  short_name?: Maybe<SitePageConnectionPluginCreatorPluginOptionsShortNameQueryString>;
 
-  backgroundColor?: Maybe<SitePageConnectionPluginCreatorPluginOptionsBackgroundColorQueryString>;
+  start_url?: Maybe<SitePageConnectionPluginCreatorPluginOptionsStartUrlQueryString>;
 
-  linkImagesToOriginal?: Maybe<
-    SitePageConnectionPluginCreatorPluginOptionsLinkImagesToOriginalQueryBoolean
-  >;
+  background_color?: Maybe<SitePageConnectionPluginCreatorPluginOptionsBackgroundColorQueryString>;
 
-  showCaptions?: Maybe<SitePageConnectionPluginCreatorPluginOptionsShowCaptionsQueryBoolean>;
+  theme_color?: Maybe<SitePageConnectionPluginCreatorPluginOptionsThemeColorQueryString>;
 
-  pathPrefix?: Maybe<SitePageConnectionPluginCreatorPluginOptionsPathPrefixQueryString>;
+  display?: Maybe<SitePageConnectionPluginCreatorPluginOptionsDisplayQueryString>;
 
-  withWebp?: Maybe<SitePageConnectionPluginCreatorPluginOptionsWithWebpQueryBoolean>;
-
-  ignoreFileExtensions?: Maybe<
-    SitePageConnectionPluginCreatorPluginOptionsIgnoreFileExtensionsQueryList
-  >;
+  icon?: Maybe<SitePageConnectionPluginCreatorPluginOptionsIconQueryString>;
 
   pathCheck?: Maybe<SitePageConnectionPluginCreatorPluginOptionsPathCheckQueryBoolean>;
 }
@@ -312,34 +306,6 @@ export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOption
   maxWidth?: Maybe<
     SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger
   >;
-
-  wrapperStyle?: Maybe<
-    SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsWrapperStyleQueryString
-  >;
-
-  backgroundColor?: Maybe<
-    SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsBackgroundColorQueryString
-  >;
-
-  linkImagesToOriginal?: Maybe<
-    SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsLinkImagesToOriginalQueryBoolean
-  >;
-
-  showCaptions?: Maybe<
-    SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsShowCaptionsQueryBoolean
-  >;
-
-  pathPrefix?: Maybe<
-    SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsPathPrefixQueryString
-  >;
-
-  withWebp?: Maybe<
-    SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsWithWebpQueryBoolean
-  >;
-
-  ignoreFileExtensions?: Maybe<
-    SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsIgnoreFileExtensionsQueryList
-  >;
 }
 
 export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger {
@@ -358,92 +324,6 @@ export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOption
   in?: Maybe<(Maybe<number>)[]>;
 
   nin?: Maybe<(Maybe<number>)[]>;
-}
-
-export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsWrapperStyleQueryString {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsBackgroundColorQueryString {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsLinkImagesToOriginalQueryBoolean {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsShowCaptionsQueryBoolean {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsPathPrefixQueryString {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsWithWebpQueryBoolean {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsIgnoreFileExtensionsQueryList {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
 }
 
 export interface SitePageConnectionPluginCreatorPluginOptionsPluginsBrowserApIsQueryList {
@@ -520,7 +400,21 @@ export interface SitePageConnectionPluginCreatorPluginOptionsMaxWidthQueryIntege
   nin?: Maybe<(Maybe<number>)[]>;
 }
 
-export interface SitePageConnectionPluginCreatorPluginOptionsWrapperStyleQueryString {
+export interface SitePageConnectionPluginCreatorPluginOptionsShortNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsStartUrlQueryString {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -548,27 +442,7 @@ export interface SitePageConnectionPluginCreatorPluginOptionsBackgroundColorQuer
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface SitePageConnectionPluginCreatorPluginOptionsLinkImagesToOriginalQueryBoolean {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePageConnectionPluginCreatorPluginOptionsShowCaptionsQueryBoolean {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePageConnectionPluginCreatorPluginOptionsPathPrefixQueryString {
+export interface SitePageConnectionPluginCreatorPluginOptionsThemeColorQueryString {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -582,17 +456,21 @@ export interface SitePageConnectionPluginCreatorPluginOptionsPathPrefixQueryStri
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface SitePageConnectionPluginCreatorPluginOptionsWithWebpQueryBoolean {
-  eq?: Maybe<boolean>;
+export interface SitePageConnectionPluginCreatorPluginOptionsDisplayQueryString {
+  eq?: Maybe<string>;
 
-  ne?: Maybe<boolean>;
+  ne?: Maybe<string>;
 
-  in?: Maybe<(Maybe<boolean>)[]>;
+  regex?: Maybe<string>;
 
-  nin?: Maybe<(Maybe<boolean>)[]>;
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface SitePageConnectionPluginCreatorPluginOptionsIgnoreFileExtensionsQueryList {
+export interface SitePageConnectionPluginCreatorPluginOptionsIconQueryString {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -631,6 +509,20 @@ export interface SitePageConnectionPluginCreatorNodeApIsQueryList {
 }
 
 export interface SitePageConnectionPluginCreatorBrowserApIsQueryList {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorSsrApIsQueryList {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -876,20 +768,6 @@ export interface SitePageConnectionPluginCreatorPackageJsonKeywordsQueryList {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface SitePageConnectionPluginCreatorParentQueryString {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
 export interface SitePageConnectionPluginCreatorInternalInputObject {
   contentDigest?: Maybe<SitePageConnectionPluginCreatorInternalContentDigestQueryString>;
 
@@ -1051,7 +929,7 @@ export interface SitePageConnectionInternalOwnerQueryString_2 {
 export interface SitePluginConnectionSort {
   fields: (Maybe<SitePluginConnectionSortByFieldsEnum>)[];
 
-  order?: SitePluginConnectionSortOrderValues;
+  order?: (Maybe<SitePluginConnectionSortOrderValues>)[];
 }
 /** Filter connection on its fields */
 export interface FilterSitePlugin {
@@ -1068,6 +946,8 @@ export interface FilterSitePlugin {
   nodeAPIs?: Maybe<SitePluginConnectionNodeApIsQueryList_2>;
 
   browserAPIs?: Maybe<SitePluginConnectionBrowserApIsQueryList_2>;
+
+  ssrAPIs?: Maybe<SitePluginConnectionSsrApIsQueryList_2>;
 
   pluginFilepath?: Maybe<SitePluginConnectionPluginFilepathQueryString_2>;
 
@@ -1141,19 +1021,17 @@ export interface SitePluginConnectionPluginOptionsInputObject_2 {
 
   maxWidth?: Maybe<SitePluginConnectionPluginOptionsMaxWidthQueryInteger_2>;
 
-  wrapperStyle?: Maybe<SitePluginConnectionPluginOptionsWrapperStyleQueryString_2>;
+  short_name?: Maybe<SitePluginConnectionPluginOptionsShortNameQueryString_2>;
 
-  backgroundColor?: Maybe<SitePluginConnectionPluginOptionsBackgroundColorQueryString_2>;
+  start_url?: Maybe<SitePluginConnectionPluginOptionsStartUrlQueryString_2>;
 
-  linkImagesToOriginal?: Maybe<SitePluginConnectionPluginOptionsLinkImagesToOriginalQueryBoolean_2>;
+  background_color?: Maybe<SitePluginConnectionPluginOptionsBackgroundColorQueryString_2>;
 
-  showCaptions?: Maybe<SitePluginConnectionPluginOptionsShowCaptionsQueryBoolean_2>;
+  theme_color?: Maybe<SitePluginConnectionPluginOptionsThemeColorQueryString_2>;
 
-  pathPrefix?: Maybe<SitePluginConnectionPluginOptionsPathPrefixQueryString_2>;
+  display?: Maybe<SitePluginConnectionPluginOptionsDisplayQueryString_2>;
 
-  withWebp?: Maybe<SitePluginConnectionPluginOptionsWithWebpQueryBoolean_2>;
-
-  ignoreFileExtensions?: Maybe<SitePluginConnectionPluginOptionsIgnoreFileExtensionsQueryList_2>;
+  icon?: Maybe<SitePluginConnectionPluginOptionsIconQueryString_2>;
 
   pathCheck?: Maybe<SitePluginConnectionPluginOptionsPathCheckQueryBoolean_2>;
 }
@@ -1236,30 +1114,6 @@ export interface SitePluginConnectionPluginOptionsPluginsVersionQueryString_2 {
 
 export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsInputObject_2 {
   maxWidth?: Maybe<SitePluginConnectionPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2>;
-
-  wrapperStyle?: Maybe<
-    SitePluginConnectionPluginOptionsPluginsPluginOptionsWrapperStyleQueryString_2
-  >;
-
-  backgroundColor?: Maybe<
-    SitePluginConnectionPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2
-  >;
-
-  linkImagesToOriginal?: Maybe<
-    SitePluginConnectionPluginOptionsPluginsPluginOptionsLinkImagesToOriginalQueryBoolean_2
-  >;
-
-  showCaptions?: Maybe<
-    SitePluginConnectionPluginOptionsPluginsPluginOptionsShowCaptionsQueryBoolean_2
-  >;
-
-  pathPrefix?: Maybe<SitePluginConnectionPluginOptionsPluginsPluginOptionsPathPrefixQueryString_2>;
-
-  withWebp?: Maybe<SitePluginConnectionPluginOptionsPluginsPluginOptionsWithWebpQueryBoolean_2>;
-
-  ignoreFileExtensions?: Maybe<
-    SitePluginConnectionPluginOptionsPluginsPluginOptionsIgnoreFileExtensionsQueryList_2
-  >;
 }
 
 export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2 {
@@ -1278,92 +1132,6 @@ export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsMaxWidthQu
   in?: Maybe<(Maybe<number>)[]>;
 
   nin?: Maybe<(Maybe<number>)[]>;
-}
-
-export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsWrapperStyleQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsLinkImagesToOriginalQueryBoolean_2 {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsShowCaptionsQueryBoolean_2 {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsPathPrefixQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsWithWebpQueryBoolean_2 {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsIgnoreFileExtensionsQueryList_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
 }
 
 export interface SitePluginConnectionPluginOptionsPluginsBrowserApIsQueryList_2 {
@@ -1440,7 +1208,21 @@ export interface SitePluginConnectionPluginOptionsMaxWidthQueryInteger_2 {
   nin?: Maybe<(Maybe<number>)[]>;
 }
 
-export interface SitePluginConnectionPluginOptionsWrapperStyleQueryString_2 {
+export interface SitePluginConnectionPluginOptionsShortNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsStartUrlQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -1468,27 +1250,7 @@ export interface SitePluginConnectionPluginOptionsBackgroundColorQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface SitePluginConnectionPluginOptionsLinkImagesToOriginalQueryBoolean_2 {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePluginConnectionPluginOptionsShowCaptionsQueryBoolean_2 {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePluginConnectionPluginOptionsPathPrefixQueryString_2 {
+export interface SitePluginConnectionPluginOptionsThemeColorQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -1502,17 +1264,21 @@ export interface SitePluginConnectionPluginOptionsPathPrefixQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface SitePluginConnectionPluginOptionsWithWebpQueryBoolean_2 {
-  eq?: Maybe<boolean>;
+export interface SitePluginConnectionPluginOptionsDisplayQueryString_2 {
+  eq?: Maybe<string>;
 
-  ne?: Maybe<boolean>;
+  ne?: Maybe<string>;
 
-  in?: Maybe<(Maybe<boolean>)[]>;
+  regex?: Maybe<string>;
 
-  nin?: Maybe<(Maybe<boolean>)[]>;
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface SitePluginConnectionPluginOptionsIgnoreFileExtensionsQueryList_2 {
+export interface SitePluginConnectionPluginOptionsIconQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -1551,6 +1317,20 @@ export interface SitePluginConnectionNodeApIsQueryList_2 {
 }
 
 export interface SitePluginConnectionBrowserApIsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionSsrApIsQueryList_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -1849,7 +1629,7 @@ export interface SitePluginConnectionInternalOwnerQueryString_2 {
 export interface DirectoryConnectionSort {
   fields: (Maybe<DirectoryConnectionSortByFieldsEnum>)[];
 
-  order?: DirectoryConnectionSortOrderValues;
+  order?: (Maybe<DirectoryConnectionSortOrderValues>)[];
 }
 /** Filter connection on its fields */
 export interface FilterDirectory {
@@ -2525,7 +2305,7 @@ export interface DirectoryConnectionBirthtimeQueryString_2 {
 export interface FileConnectionSort {
   fields: (Maybe<FileConnectionSortByFieldsEnum>)[];
 
-  order?: FileConnectionSortOrderValues;
+  order?: (Maybe<FileConnectionSortOrderValues>)[];
 }
 /** Filter connection on its fields */
 export interface FilterFile {
@@ -3233,7 +3013,7 @@ export interface PublicUrlQueryString_4 {
 export interface MarkdownRemarkConnectionSort {
   fields: (Maybe<MarkdownRemarkConnectionSortByFieldsEnum>)[];
 
-  order?: MarkdownRemarkConnectionSortOrderValues;
+  order?: (Maybe<MarkdownRemarkConnectionSortOrderValues>)[];
 }
 /** Filter connection on its fields */
 export interface FilterMarkdownRemark {
@@ -3351,11 +3131,11 @@ export interface MarkdownRemarkConnectionFrontmatterInputObject_2 {
 
   readPrev?: Maybe<MarkdownRemarkConnectionFrontmatterReadPrevQueryString_2>;
 
-  _PARENT?: Maybe<MarkdownRemarkConnectionFrontmatterParentQueryString_2>;
-
   readNext?: Maybe<MarkdownRemarkConnectionFrontmatterReadNextQueryString_2>;
 
   prev?: Maybe<MarkdownRemarkConnectionFrontmatterPrevQueryString_2>;
+
+  category?: Maybe<MarkdownRemarkConnectionFrontmatterCategoryQueryString_2>;
 }
 
 export interface MarkdownRemarkConnectionFrontmatterTitleQueryString_2 {
@@ -3428,20 +3208,6 @@ export interface MarkdownRemarkConnectionFrontmatterReadPrevQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface MarkdownRemarkConnectionFrontmatterParentQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
 export interface MarkdownRemarkConnectionFrontmatterReadNextQueryString_2 {
   eq?: Maybe<string>;
 
@@ -3457,6 +3223,20 @@ export interface MarkdownRemarkConnectionFrontmatterReadNextQueryString_2 {
 }
 
 export interface MarkdownRemarkConnectionFrontmatterPrevQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface MarkdownRemarkConnectionFrontmatterCategoryQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -3765,11 +3545,11 @@ export interface SitePagePluginCreatorInputObject {
 
   browserAPIs?: Maybe<SitePagePluginCreatorBrowserApIsQueryList>;
 
+  ssrAPIs?: Maybe<SitePagePluginCreatorSsrApIsQueryList>;
+
   pluginFilepath?: Maybe<SitePagePluginCreatorPluginFilepathQueryString>;
 
   packageJson?: Maybe<SitePagePluginCreatorPackageJsonInputObject>;
-
-  parent?: Maybe<SitePagePluginCreatorParentQueryString>;
 
   internal?: Maybe<SitePagePluginCreatorInternalInputObject>;
 }
@@ -3839,19 +3619,17 @@ export interface SitePagePluginCreatorPluginOptionsInputObject {
 
   maxWidth?: Maybe<SitePagePluginCreatorPluginOptionsMaxWidthQueryInteger>;
 
-  wrapperStyle?: Maybe<SitePagePluginCreatorPluginOptionsWrapperStyleQueryString>;
+  short_name?: Maybe<SitePagePluginCreatorPluginOptionsShortNameQueryString>;
 
-  backgroundColor?: Maybe<SitePagePluginCreatorPluginOptionsBackgroundColorQueryString>;
+  start_url?: Maybe<SitePagePluginCreatorPluginOptionsStartUrlQueryString>;
 
-  linkImagesToOriginal?: Maybe<SitePagePluginCreatorPluginOptionsLinkImagesToOriginalQueryBoolean>;
+  background_color?: Maybe<SitePagePluginCreatorPluginOptionsBackgroundColorQueryString>;
 
-  showCaptions?: Maybe<SitePagePluginCreatorPluginOptionsShowCaptionsQueryBoolean>;
+  theme_color?: Maybe<SitePagePluginCreatorPluginOptionsThemeColorQueryString>;
 
-  pathPrefix?: Maybe<SitePagePluginCreatorPluginOptionsPathPrefixQueryString>;
+  display?: Maybe<SitePagePluginCreatorPluginOptionsDisplayQueryString>;
 
-  withWebp?: Maybe<SitePagePluginCreatorPluginOptionsWithWebpQueryBoolean>;
-
-  ignoreFileExtensions?: Maybe<SitePagePluginCreatorPluginOptionsIgnoreFileExtensionsQueryList>;
+  icon?: Maybe<SitePagePluginCreatorPluginOptionsIconQueryString>;
 
   pathCheck?: Maybe<SitePagePluginCreatorPluginOptionsPathCheckQueryBoolean>;
 }
@@ -3934,30 +3712,6 @@ export interface SitePagePluginCreatorPluginOptionsPluginsVersionQueryString {
 
 export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsInputObject {
   maxWidth?: Maybe<SitePagePluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger>;
-
-  wrapperStyle?: Maybe<
-    SitePagePluginCreatorPluginOptionsPluginsPluginOptionsWrapperStyleQueryString
-  >;
-
-  backgroundColor?: Maybe<
-    SitePagePluginCreatorPluginOptionsPluginsPluginOptionsBackgroundColorQueryString
-  >;
-
-  linkImagesToOriginal?: Maybe<
-    SitePagePluginCreatorPluginOptionsPluginsPluginOptionsLinkImagesToOriginalQueryBoolean
-  >;
-
-  showCaptions?: Maybe<
-    SitePagePluginCreatorPluginOptionsPluginsPluginOptionsShowCaptionsQueryBoolean
-  >;
-
-  pathPrefix?: Maybe<SitePagePluginCreatorPluginOptionsPluginsPluginOptionsPathPrefixQueryString>;
-
-  withWebp?: Maybe<SitePagePluginCreatorPluginOptionsPluginsPluginOptionsWithWebpQueryBoolean>;
-
-  ignoreFileExtensions?: Maybe<
-    SitePagePluginCreatorPluginOptionsPluginsPluginOptionsIgnoreFileExtensionsQueryList
-  >;
 }
 
 export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger {
@@ -3976,92 +3730,6 @@ export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQ
   in?: Maybe<(Maybe<number>)[]>;
 
   nin?: Maybe<(Maybe<number>)[]>;
-}
-
-export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsWrapperStyleQueryString {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsBackgroundColorQueryString {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsLinkImagesToOriginalQueryBoolean {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsShowCaptionsQueryBoolean {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsPathPrefixQueryString {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsWithWebpQueryBoolean {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsIgnoreFileExtensionsQueryList {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
 }
 
 export interface SitePagePluginCreatorPluginOptionsPluginsBrowserApIsQueryList {
@@ -4138,7 +3806,21 @@ export interface SitePagePluginCreatorPluginOptionsMaxWidthQueryInteger {
   nin?: Maybe<(Maybe<number>)[]>;
 }
 
-export interface SitePagePluginCreatorPluginOptionsWrapperStyleQueryString {
+export interface SitePagePluginCreatorPluginOptionsShortNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsStartUrlQueryString {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -4166,27 +3848,7 @@ export interface SitePagePluginCreatorPluginOptionsBackgroundColorQueryString {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface SitePagePluginCreatorPluginOptionsLinkImagesToOriginalQueryBoolean {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePagePluginCreatorPluginOptionsShowCaptionsQueryBoolean {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePagePluginCreatorPluginOptionsPathPrefixQueryString {
+export interface SitePagePluginCreatorPluginOptionsThemeColorQueryString {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -4200,17 +3862,21 @@ export interface SitePagePluginCreatorPluginOptionsPathPrefixQueryString {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface SitePagePluginCreatorPluginOptionsWithWebpQueryBoolean {
-  eq?: Maybe<boolean>;
+export interface SitePagePluginCreatorPluginOptionsDisplayQueryString {
+  eq?: Maybe<string>;
 
-  ne?: Maybe<boolean>;
+  ne?: Maybe<string>;
 
-  in?: Maybe<(Maybe<boolean>)[]>;
+  regex?: Maybe<string>;
 
-  nin?: Maybe<(Maybe<boolean>)[]>;
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface SitePagePluginCreatorPluginOptionsIgnoreFileExtensionsQueryList {
+export interface SitePagePluginCreatorPluginOptionsIconQueryString {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -4249,6 +3915,20 @@ export interface SitePagePluginCreatorNodeApIsQueryList {
 }
 
 export interface SitePagePluginCreatorBrowserApIsQueryList {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorSsrApIsQueryList {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -4494,20 +4174,6 @@ export interface SitePagePluginCreatorPackageJsonKeywordsQueryList {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface SitePagePluginCreatorParentQueryString {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
 export interface SitePagePluginCreatorInternalInputObject {
   contentDigest?: Maybe<SitePagePluginCreatorInternalContentDigestQueryString>;
 
@@ -4731,19 +4397,17 @@ export interface SitePluginPluginOptionsInputObject_2 {
 
   maxWidth?: Maybe<SitePluginPluginOptionsMaxWidthQueryInteger_2>;
 
-  wrapperStyle?: Maybe<SitePluginPluginOptionsWrapperStyleQueryString_2>;
+  short_name?: Maybe<SitePluginPluginOptionsShortNameQueryString_2>;
 
-  backgroundColor?: Maybe<SitePluginPluginOptionsBackgroundColorQueryString_2>;
+  start_url?: Maybe<SitePluginPluginOptionsStartUrlQueryString_2>;
 
-  linkImagesToOriginal?: Maybe<SitePluginPluginOptionsLinkImagesToOriginalQueryBoolean_2>;
+  background_color?: Maybe<SitePluginPluginOptionsBackgroundColorQueryString_2>;
 
-  showCaptions?: Maybe<SitePluginPluginOptionsShowCaptionsQueryBoolean_2>;
+  theme_color?: Maybe<SitePluginPluginOptionsThemeColorQueryString_2>;
 
-  pathPrefix?: Maybe<SitePluginPluginOptionsPathPrefixQueryString_2>;
+  display?: Maybe<SitePluginPluginOptionsDisplayQueryString_2>;
 
-  withWebp?: Maybe<SitePluginPluginOptionsWithWebpQueryBoolean_2>;
-
-  ignoreFileExtensions?: Maybe<SitePluginPluginOptionsIgnoreFileExtensionsQueryList_2>;
+  icon?: Maybe<SitePluginPluginOptionsIconQueryString_2>;
 
   pathCheck?: Maybe<SitePluginPluginOptionsPathCheckQueryBoolean_2>;
 }
@@ -4826,24 +4490,6 @@ export interface SitePluginPluginOptionsPluginsVersionQueryString_2 {
 
 export interface SitePluginPluginOptionsPluginsPluginOptionsInputObject_2 {
   maxWidth?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2>;
-
-  wrapperStyle?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsWrapperStyleQueryString_2>;
-
-  backgroundColor?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2>;
-
-  linkImagesToOriginal?: Maybe<
-    SitePluginPluginOptionsPluginsPluginOptionsLinkImagesToOriginalQueryBoolean_2
-  >;
-
-  showCaptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsShowCaptionsQueryBoolean_2>;
-
-  pathPrefix?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsPathPrefixQueryString_2>;
-
-  withWebp?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsWithWebpQueryBoolean_2>;
-
-  ignoreFileExtensions?: Maybe<
-    SitePluginPluginOptionsPluginsPluginOptionsIgnoreFileExtensionsQueryList_2
-  >;
 }
 
 export interface SitePluginPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2 {
@@ -4862,92 +4508,6 @@ export interface SitePluginPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger
   in?: Maybe<(Maybe<number>)[]>;
 
   nin?: Maybe<(Maybe<number>)[]>;
-}
-
-export interface SitePluginPluginOptionsPluginsPluginOptionsWrapperStyleQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface SitePluginPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface SitePluginPluginOptionsPluginsPluginOptionsLinkImagesToOriginalQueryBoolean_2 {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePluginPluginOptionsPluginsPluginOptionsShowCaptionsQueryBoolean_2 {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePluginPluginOptionsPluginsPluginOptionsPathPrefixQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface SitePluginPluginOptionsPluginsPluginOptionsWithWebpQueryBoolean_2 {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePluginPluginOptionsPluginsPluginOptionsIgnoreFileExtensionsQueryList_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
 }
 
 export interface SitePluginPluginOptionsPluginsBrowserApIsQueryList_2 {
@@ -5024,7 +4584,21 @@ export interface SitePluginPluginOptionsMaxWidthQueryInteger_2 {
   nin?: Maybe<(Maybe<number>)[]>;
 }
 
-export interface SitePluginPluginOptionsWrapperStyleQueryString_2 {
+export interface SitePluginPluginOptionsShortNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsStartUrlQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -5052,27 +4626,7 @@ export interface SitePluginPluginOptionsBackgroundColorQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface SitePluginPluginOptionsLinkImagesToOriginalQueryBoolean_2 {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePluginPluginOptionsShowCaptionsQueryBoolean_2 {
-  eq?: Maybe<boolean>;
-
-  ne?: Maybe<boolean>;
-
-  in?: Maybe<(Maybe<boolean>)[]>;
-
-  nin?: Maybe<(Maybe<boolean>)[]>;
-}
-
-export interface SitePluginPluginOptionsPathPrefixQueryString_2 {
+export interface SitePluginPluginOptionsThemeColorQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -5086,17 +4640,21 @@ export interface SitePluginPluginOptionsPathPrefixQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface SitePluginPluginOptionsWithWebpQueryBoolean_2 {
-  eq?: Maybe<boolean>;
+export interface SitePluginPluginOptionsDisplayQueryString_2 {
+  eq?: Maybe<string>;
 
-  ne?: Maybe<boolean>;
+  ne?: Maybe<string>;
 
-  in?: Maybe<(Maybe<boolean>)[]>;
+  regex?: Maybe<string>;
 
-  nin?: Maybe<(Maybe<boolean>)[]>;
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface SitePluginPluginOptionsIgnoreFileExtensionsQueryList_2 {
+export interface SitePluginPluginOptionsIconQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -5135,6 +4693,20 @@ export interface SitePluginNodeApIsQueryList_2 {
 }
 
 export interface SitePluginBrowserApIsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginSsrApIsQueryList_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -5506,6 +5078,8 @@ export interface SiteSiteMetadataSocialInputObject_2 {
   github?: Maybe<SiteSiteMetadataSocialGithubQueryString_2>;
 
   email?: Maybe<SiteSiteMetadataSocialEmailQueryString_2>;
+
+  speakerDeck?: Maybe<SiteSiteMetadataSocialSpeakerDeckQueryString_2>;
 }
 
 export interface SiteSiteMetadataSocialTwitterQueryString_2 {
@@ -5551,6 +5125,20 @@ export interface SiteSiteMetadataSocialGithubQueryString_2 {
 }
 
 export interface SiteSiteMetadataSocialEmailQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SiteSiteMetadataSocialSpeakerDeckQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -7011,11 +6599,11 @@ export interface MarkdownRemarkFrontmatterInputObject_2 {
 
   readPrev?: Maybe<MarkdownRemarkFrontmatterReadPrevQueryString_2>;
 
-  _PARENT?: Maybe<MarkdownRemarkFrontmatterParentQueryString_2>;
-
   readNext?: Maybe<MarkdownRemarkFrontmatterReadNextQueryString_2>;
 
   prev?: Maybe<MarkdownRemarkFrontmatterPrevQueryString_2>;
+
+  category?: Maybe<MarkdownRemarkFrontmatterCategoryQueryString_2>;
 }
 
 export interface MarkdownRemarkFrontmatterTitleQueryString_2 {
@@ -7088,20 +6676,6 @@ export interface MarkdownRemarkFrontmatterReadPrevQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface MarkdownRemarkFrontmatterParentQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
 export interface MarkdownRemarkFrontmatterReadNextQueryString_2 {
   eq?: Maybe<string>;
 
@@ -7117,6 +6691,20 @@ export interface MarkdownRemarkFrontmatterReadNextQueryString_2 {
 }
 
 export interface MarkdownRemarkFrontmatterPrevQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface MarkdownRemarkFrontmatterCategoryQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -7333,7 +6921,6 @@ export enum SitePageConnectionSortByFieldsEnum {
   PluginCreatorId = 'pluginCreatorId',
   ComponentPath = 'componentPath',
   Id = 'id',
-  Parent = 'parent',
   InternalType = 'internal___type',
   InternalContentDigest = 'internal___contentDigest',
   InternalDescription = 'internal___description',
@@ -7356,7 +6943,6 @@ export enum SitePageDistinctEnum {
   PluginCreatorId = 'pluginCreatorId',
   ComponentPath = 'componentPath',
   Id = 'id',
-  Parent = 'parent',
   InternalType = 'internal___type',
   InternalContentDigest = 'internal___contentDigest',
   InternalDescription = 'internal___description',
@@ -7374,7 +6960,6 @@ export enum SitePageGroupEnum {
   PluginCreatorId = 'pluginCreatorId',
   ComponentPath = 'componentPath',
   Id = 'id',
-  Parent = 'parent',
   InternalType = 'internal___type',
   InternalContentDigest = 'internal___contentDigest',
   InternalDescription = 'internal___description',
@@ -7390,16 +6975,16 @@ export enum SitePluginConnectionSortByFieldsEnum {
   PluginOptionsPath = 'pluginOptions___path',
   PluginOptionsName = 'pluginOptions___name',
   PluginOptionsMaxWidth = 'pluginOptions___maxWidth',
-  PluginOptionsWrapperStyle = 'pluginOptions___wrapperStyle',
-  PluginOptionsBackgroundColor = 'pluginOptions___backgroundColor',
-  PluginOptionsLinkImagesToOriginal = 'pluginOptions___linkImagesToOriginal',
-  PluginOptionsShowCaptions = 'pluginOptions___showCaptions',
-  PluginOptionsPathPrefix = 'pluginOptions___pathPrefix',
-  PluginOptionsWithWebp = 'pluginOptions___withWebp',
-  PluginOptionsIgnoreFileExtensions = 'pluginOptions___ignoreFileExtensions',
+  PluginOptionsShortName = 'pluginOptions___short_name',
+  PluginOptionsStartUrl = 'pluginOptions___start_url',
+  PluginOptionsBackgroundColor = 'pluginOptions___background_color',
+  PluginOptionsThemeColor = 'pluginOptions___theme_color',
+  PluginOptionsDisplay = 'pluginOptions___display',
+  PluginOptionsIcon = 'pluginOptions___icon',
   PluginOptionsPathCheck = 'pluginOptions___pathCheck',
   NodeApIs = 'nodeAPIs',
   BrowserApIs = 'browserAPIs',
+  SsrApIs = 'ssrAPIs',
   PluginFilepath = 'pluginFilepath',
   PackageJsonName = 'packageJson___name',
   PackageJsonDescription = 'packageJson___description',
@@ -7411,7 +6996,6 @@ export enum SitePluginConnectionSortByFieldsEnum {
   PackageJsonDevDependencies = 'packageJson___devDependencies',
   PackageJsonPeerDependencies = 'packageJson___peerDependencies',
   PackageJsonKeywords = 'packageJson___keywords',
-  Parent = 'parent',
   InternalContentDigest = 'internal___contentDigest',
   InternalType = 'internal___type',
   InternalOwner = 'internal___owner',
@@ -7431,16 +7015,16 @@ export enum SitePluginDistinctEnum {
   PluginOptionsPath = 'pluginOptions___path',
   PluginOptionsName = 'pluginOptions___name',
   PluginOptionsMaxWidth = 'pluginOptions___maxWidth',
-  PluginOptionsWrapperStyle = 'pluginOptions___wrapperStyle',
-  PluginOptionsBackgroundColor = 'pluginOptions___backgroundColor',
-  PluginOptionsLinkImagesToOriginal = 'pluginOptions___linkImagesToOriginal',
-  PluginOptionsShowCaptions = 'pluginOptions___showCaptions',
-  PluginOptionsPathPrefix = 'pluginOptions___pathPrefix',
-  PluginOptionsWithWebp = 'pluginOptions___withWebp',
-  PluginOptionsIgnoreFileExtensions = 'pluginOptions___ignoreFileExtensions',
+  PluginOptionsShortName = 'pluginOptions___short_name',
+  PluginOptionsStartUrl = 'pluginOptions___start_url',
+  PluginOptionsBackgroundColor = 'pluginOptions___background_color',
+  PluginOptionsThemeColor = 'pluginOptions___theme_color',
+  PluginOptionsDisplay = 'pluginOptions___display',
+  PluginOptionsIcon = 'pluginOptions___icon',
   PluginOptionsPathCheck = 'pluginOptions___pathCheck',
   NodeApIs = 'nodeAPIs',
   BrowserApIs = 'browserAPIs',
+  SsrApIs = 'ssrAPIs',
   PluginFilepath = 'pluginFilepath',
   PackageJsonName = 'packageJson___name',
   PackageJsonDescription = 'packageJson___description',
@@ -7452,7 +7036,6 @@ export enum SitePluginDistinctEnum {
   PackageJsonDevDependencies = 'packageJson___devDependencies',
   PackageJsonPeerDependencies = 'packageJson___peerDependencies',
   PackageJsonKeywords = 'packageJson___keywords',
-  Parent = 'parent',
   InternalContentDigest = 'internal___contentDigest',
   InternalType = 'internal___type',
   InternalOwner = 'internal___owner',
@@ -7467,16 +7050,16 @@ export enum SitePluginGroupEnum {
   PluginOptionsPath = 'pluginOptions___path',
   PluginOptionsName = 'pluginOptions___name',
   PluginOptionsMaxWidth = 'pluginOptions___maxWidth',
-  PluginOptionsWrapperStyle = 'pluginOptions___wrapperStyle',
-  PluginOptionsBackgroundColor = 'pluginOptions___backgroundColor',
-  PluginOptionsLinkImagesToOriginal = 'pluginOptions___linkImagesToOriginal',
-  PluginOptionsShowCaptions = 'pluginOptions___showCaptions',
-  PluginOptionsPathPrefix = 'pluginOptions___pathPrefix',
-  PluginOptionsWithWebp = 'pluginOptions___withWebp',
-  PluginOptionsIgnoreFileExtensions = 'pluginOptions___ignoreFileExtensions',
+  PluginOptionsShortName = 'pluginOptions___short_name',
+  PluginOptionsStartUrl = 'pluginOptions___start_url',
+  PluginOptionsBackgroundColor = 'pluginOptions___background_color',
+  PluginOptionsThemeColor = 'pluginOptions___theme_color',
+  PluginOptionsDisplay = 'pluginOptions___display',
+  PluginOptionsIcon = 'pluginOptions___icon',
   PluginOptionsPathCheck = 'pluginOptions___pathCheck',
   NodeApIs = 'nodeAPIs',
   BrowserApIs = 'browserAPIs',
+  SsrApIs = 'ssrAPIs',
   PluginFilepath = 'pluginFilepath',
   PackageJsonName = 'packageJson___name',
   PackageJsonDescription = 'packageJson___description',
@@ -7488,7 +7071,6 @@ export enum SitePluginGroupEnum {
   PackageJsonDevDependencies = 'packageJson___devDependencies',
   PackageJsonPeerDependencies = 'packageJson___peerDependencies',
   PackageJsonKeywords = 'packageJson___keywords',
-  Parent = 'parent',
   InternalContentDigest = 'internal___contentDigest',
   InternalType = 'internal___type',
   InternalOwner = 'internal___owner',
@@ -7496,7 +7078,6 @@ export enum SitePluginGroupEnum {
 
 export enum DirectoryConnectionSortByFieldsEnum {
   Id = 'id',
-  Parent = 'parent',
   InternalContentDigest = 'internal___contentDigest',
   InternalType = 'internal___type',
   InternalDescription = 'internal___description',
@@ -7543,7 +7124,6 @@ export enum DirectoryConnectionSortOrderValues {
 
 export enum DirectoryDistinctEnum {
   Id = 'id',
-  Parent = 'parent',
   InternalContentDigest = 'internal___contentDigest',
   InternalType = 'internal___type',
   InternalDescription = 'internal___description',
@@ -7585,7 +7165,6 @@ export enum DirectoryDistinctEnum {
 
 export enum DirectoryGroupEnum {
   Id = 'id',
-  Parent = 'parent',
   InternalContentDigest = 'internal___contentDigest',
   InternalType = 'internal___type',
   InternalDescription = 'internal___description',
@@ -7628,7 +7207,6 @@ export enum DirectoryGroupEnum {
 export enum FileConnectionSortByFieldsEnum {
   Id = 'id',
   Children = 'children',
-  Parent = 'parent',
   InternalContentDigest = 'internal___contentDigest',
   InternalType = 'internal___type',
   InternalMediaType = 'internal___mediaType',
@@ -7692,7 +7270,6 @@ export enum HeadingLevels {
 export enum FileDistinctEnum {
   Id = 'id',
   Children = 'children',
-  Parent = 'parent',
   InternalContentDigest = 'internal___contentDigest',
   InternalType = 'internal___type',
   InternalMediaType = 'internal___mediaType',
@@ -7736,7 +7313,6 @@ export enum FileDistinctEnum {
 export enum FileGroupEnum {
   Id = 'id',
   Children = 'children',
-  Parent = 'parent',
   InternalContentDigest = 'internal___contentDigest',
   InternalType = 'internal___type',
   InternalMediaType = 'internal___mediaType',
@@ -7789,9 +7365,9 @@ export enum MarkdownRemarkConnectionSortByFieldsEnum {
   FrontmatterSlug = 'frontmatter___slug',
   FrontmatterTags = 'frontmatter___tags',
   FrontmatterReadPrev = 'frontmatter___readPrev',
-  FrontmatterParent = 'frontmatter____PARENT',
   FrontmatterReadNext = 'frontmatter___readNext',
   FrontmatterPrev = 'frontmatter___prev',
+  FrontmatterCategory = 'frontmatter___category',
   RawMarkdownBody = 'rawMarkdownBody',
   FileAbsolutePath = 'fileAbsolutePath',
   Html = 'html',
@@ -7821,9 +7397,9 @@ export enum MarkdownRemarkDistinctEnum {
   FrontmatterSlug = 'frontmatter___slug',
   FrontmatterTags = 'frontmatter___tags',
   FrontmatterReadPrev = 'frontmatter___readPrev',
-  FrontmatterParent = 'frontmatter____PARENT',
   FrontmatterReadNext = 'frontmatter___readNext',
   FrontmatterPrev = 'frontmatter___prev',
+  FrontmatterCategory = 'frontmatter___category',
   RawMarkdownBody = 'rawMarkdownBody',
   FileAbsolutePath = 'fileAbsolutePath',
 }
@@ -7840,9 +7416,9 @@ export enum MarkdownRemarkGroupEnum {
   FrontmatterSlug = 'frontmatter___slug',
   FrontmatterTags = 'frontmatter___tags',
   FrontmatterReadPrev = 'frontmatter___readPrev',
-  FrontmatterParent = 'frontmatter____PARENT',
   FrontmatterReadNext = 'frontmatter___readNext',
   FrontmatterPrev = 'frontmatter___prev',
+  FrontmatterCategory = 'frontmatter___category',
   RawMarkdownBody = 'rawMarkdownBody',
   FileAbsolutePath = 'fileAbsolutePath',
 }
