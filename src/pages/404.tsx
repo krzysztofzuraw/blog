@@ -4,7 +4,6 @@ import { style } from 'typestyle';
 
 import { SEOContainer } from '../containers';
 import { Layout } from '../layout';
-import { theme } from '../theme';
 import { typography } from '../utils';
 
 const wrapperStyle = style({
@@ -14,12 +13,7 @@ const wrapperStyle = style({
   alignItems: 'center',
   $nest: {
     '& a': {
-      textDecoration: 'none',
-      color: theme.colors.gray.toString(),
       marginRight: typography.rhythm(0.5),
-    },
-    '& a:hover': {
-      textDecoration: 'underline',
     },
   },
 });

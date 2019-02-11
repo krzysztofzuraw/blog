@@ -7,7 +7,7 @@
     "develop": "gatsby develop --verbose",
     "type-check": "tsc",
     "lint": "tslint --project .",
-    "generate:graphql:types": "gql-gen"
+    "generate:graphql:types": "gql-gen --overwrite"
   },
   "keywords": [
     "blog",

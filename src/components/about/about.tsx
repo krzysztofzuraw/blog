@@ -1,21 +1,12 @@
 import * as React from 'react';
 import { style } from 'typestyle';
 
+import { Link } from 'gatsby';
 import { SiteSiteMetadataSocialInputObject_2 } from 'typings/graphql';
-import { theme } from '../../theme';
 import { typography } from '../../utils';
 
 const wrapperStyle = style({
   lineHeight: typography.rhythm(1.5),
-  $nest: {
-    '& a': {
-      textDecoration: 'none',
-      color: theme.colors.gray.toString(),
-    },
-    '& a:hover': {
-      textDecoration: 'underline',
-    },
-  },
 });
 
 interface Props {
@@ -27,16 +18,8 @@ export const About: React.FunctionComponent<Props> = ({ socialMedia }) => (
     <h1>Hello!</h1>
     <div>
       <p>
-        My name is <strong>Krzysztof Żuraw</strong>. I'm currently living in Wrocław, Poland where I
-        work as FrontEnd developer at <a href="https://www.ingrid.com/">Ingird</a>. I used to work
-        with Python but nowadays I code using TypeScript. Besides that I really enjoy playing with
-        React, Redux, RxJS. I'm try to learn more CSS and functional programming.
-      </p>
-      <p>
-        If I'm not coding I one of people who organize{' '}
-        <a href="https://www.meetup.com/WrocTypeScript/">Wrocław TypeScript meetup</a>. I'm really
-        into discovering awesome restaurants, enjoying good specialty coffee and doing some street
-        workout. I used to be member of Wrocław Speakers - Toastmasters group.
+        My name is <strong>Krzysztof Żuraw</strong>. To see what I'm doing now go to{' '}
+        <Link to="/now">now page.</Link>
       </p>
     </div>
     <h2>My projects</h2>
@@ -75,6 +58,11 @@ export const About: React.FunctionComponent<Props> = ({ socialMedia }) => (
     </ul>
     <h2>My talks</h2>
     <ul>
+      <li>
+        <a href="https://speakerdeck.com/krzysztofzuraw/typescript-myths-debunked">TypeScript Myths Debunked</a>.
+        Talk about various myths connected with TypeScript. The first talk at the first meeting of Wrocław TypeScript
+        meetup.
+      </li>
       <li>
         <a href="https://www.youtube.com/watch?v=nFIoHcNQo84">TypeRefactoring</a>. Lightning talk
         from Nordic.js 2018 about refactoring codebase written in TypeScript.
@@ -115,6 +103,9 @@ export const About: React.FunctionComponent<Props> = ({ socialMedia }) => (
           </li>
           <li>
             <a href={socialMedia.linkedin as string}>LinkedIn</a>
+          </li>
+          <li>
+            <a href={socialMedia.speakerDeck as string}>Speaker Deck</a>
           </li>
         </ul>
       </>

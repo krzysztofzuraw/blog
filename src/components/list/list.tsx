@@ -19,13 +19,9 @@ const itemStyle = style({
   margin: `${typography.rhythm(0.5)} 0 ${typography.rhythm(0.5)} 0`,
   $nest: {
     '& a': {
-      textDecoration: 'none',
       fontWeight: 700,
       color: 'unset',
       fontSize: typography.rhythm(0.8),
-    },
-    '& a:hover': {
-      textDecoration: 'underline',
     },
     '& span': {
       color: theme.colors.gray.toString(),

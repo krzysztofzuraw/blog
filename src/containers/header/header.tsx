@@ -18,7 +18,10 @@ export const HeaderContainer: React.FunctionComponent = () => {
     <Link to="/about" key="nav_2">
       About
     </Link>,
-    <Link to="/newsletter" key="nav_3">
+    <Link to="/now" key="nav_3">
+      Now
+    </Link>,
+    <Link to="/newsletter" key="nav_4">
       Newsletter
     </Link>,
   ];

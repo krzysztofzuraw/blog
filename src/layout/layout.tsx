@@ -1,12 +1,17 @@
 import { normalize, setupPage } from 'csstips';
 import * as React from 'react';
-import { style } from 'typestyle';
+import { cssRule, style } from 'typestyle';
 
 import { HeaderContainer } from '../containers';
+import { theme } from '../theme';
 import { typography } from '../utils';
 
 normalize();
 setupPage('#___gatsby');
+cssRule('a', { textDecoration: 'none', color: theme.colors.gray.toString() });
+cssRule('a:hover', {
+  textDecoration: 'underline',
+});
 
 const wrapperStyle = style({
   display: 'grid',
