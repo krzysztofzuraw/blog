@@ -21,7 +21,9 @@ const BlogPostTemplate: React.FunctionComponent<Props> = ({ data: { markdownRema
         description={markdownRemark.excerpt as string}
       />
     )}
-    <BlogPost markdownRemark={markdownRemark} />
+    <div>
+      <BlogPost markdownRemark={markdownRemark} />
+    </div>
   </Layout>
 );
 
