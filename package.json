@@ -37,7 +37,7 @@
     "react-dom": "16.8.3",
     "react-helmet": "5.2.0",
     "typestyle": "2.0.1",
-    "typography": "0.16.18"
+    "typography": "0.16.19"
   },
   "devDependencies": {
     "@types/react-helmet": "5.0.8",
