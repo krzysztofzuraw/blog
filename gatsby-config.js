@@ -40,6 +40,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-136382109-1',
+      },
+    },
     'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-manifest',
