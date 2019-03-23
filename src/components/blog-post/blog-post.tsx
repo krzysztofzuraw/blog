@@ -1,11 +1,15 @@
 import * as React from 'react';
-import { style } from 'typestyle';
+import { media, style } from 'typestyle';
 
 import { FilterMarkdownRemark } from 'typings/graphql';
+import { typography } from '../../utils';
 
-const contentStyle = style({
-  overflow: 'auto',
-});
+const contentStyle = style(
+  media({ maxWidth: 320 }, { maxWidth: typography.rhythm(12) }),
+  media({ minWidth: 321, maxWidth: 400 }, { maxWidth: typography.rhythm(14) }),
+  media({ minWidth: 401, maxWidth: 500 }, { maxWidth: typography.rhythm(16) }),
+  media({ minWidth: 501, maxWidth: 900 }, { maxWidth: typography.rhythm(30) })
+);
 
 interface Props {
   markdownRemark: FilterMarkdownRemark;
