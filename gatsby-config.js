@@ -16,6 +16,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
