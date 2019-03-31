@@ -35,7 +35,7 @@
     "gatsby-remark-smartypants": "2.0.9",
     "gatsby-source-filesystem": "2.0.28",
     "gatsby-transformer-remark": "2.3.8",
-    "prismjs": "1.15.0",
+    "prismjs": "1.16.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-helmet": "5.2.0",
@@ -55,7 +55,7 @@
     "tslint": "5.14.0",
     "tslint-config-prettier": "1.18.0",
     "tslint-react-a11y": "1.0.0",
-    "typescript": "3.3.4000",
+    "typescript": "3.4.1",
     "typescript-tslint-plugin": "0.3.1"
   }
 }
