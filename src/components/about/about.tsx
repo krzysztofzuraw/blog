@@ -24,20 +24,21 @@ export const About: React.FunctionComponent<Props> = ({ socialMedia }) => (
     </div>
     <h2>Timeline</h2>
     <ul>
-      <li>1991: born in Nowa Sarzyna</li>
-      <li>2010: go to university in Kraków to study land surveying</li>
-      <li>2015: start coding on my own and change carriers to software development</li>
-      <li>2015 March: start attending <a href="http://pythingy.github.io/">PyThingy</a>meetings</li>
-      <li>2015 May: get the intern job at <a href="https://getprintbox.com/">Printbox</a></li>
-      <li>2015 July: move to Wrocław to work for Dolby Laboratories</li>
-      <li>2016 January: switch jobs to <a href="https://stxnext.com/">STXNext</a></li>
-      <li>2016 January: join Toastmasters International</li>
-      <li>2016 November: be a mentor on Django Grils Kraków</li>
-      <li>2017 September: be a mentor on Code Geeks Carrots</li>
-      <li>2017 June: be a mentor (again) on Django Grils Kraków</li>
-      <li>2017 September: be a mentor on Django Girls Wrocław</li>
-      <li>2018 March: switch jobs to <a href="https://www.ingrid.com/">Ingrid</a></li>
+      <li>2019 January: started co-organizing Wrocław TypeScript meetup</li>
       <li>2018 November: be a meta mentor on Django Girls Wrocław</li>
+      <li>2018 March: switch jobs to <a href="https://www.ingrid.com/">Ingrid</a></li>
+      <li>2017 September: be a mentor on Django Girls Wrocław</li>
+      <li>2017 June: be a mentor (again) on Django Grils Kraków</li>
+      <li>2017 September: be a mentor on Code Geeks Carrots</li>
+      <li>2016 November: be a mentor on Django Grils Kraków</li>
+      <li>2016 January: join Toastmasters International</li>
+      <li>2016 January: switch jobs to <a href="https://stxnext.com/">STXNext</a></li>
+      <li>2015 July: move to Wrocław to work for Dolby Laboratories</li>
+      <li>2015 May: get the intern job at <a href="https://getprintbox.com/">Printbox</a></li>
+      <li>2015 March: start attending <a href="http://pythingy.github.io/">PyThingy</a>meetings</li>
+      <li>2015: start coding on my own and change carriers to software development</li>
+      <li>2010: go to university in Kraków to study land surveying</li>
+      <li>1991: born in Nowa Sarzyna</li>
     </ul>
     <h2>My projects</h2>
     <ul>

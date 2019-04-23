@@ -17,7 +17,7 @@ const NowPage: React.FunctionComponent = () => (
         </li>
         <li>Living in Wrocław - Poland</li>
         <li>
-          Working as a FrontEnd developer at <a href="https://www.ingrid.com/">Ingird</a>
+          Working as a FrontEnd developer at <a href="https://www.ingrid.com/">Ingrid</a>
         </li>
       </ul>
       <div>Updated 11.02.2019</div>
