@@ -10,7 +10,7 @@ const NowPage: React.FunctionComponent = () => (
       <h1>What I am up to now</h1>
       <ul>
         <li>Writing blog & learning more about TypeScript + React</li>
-        <li>Digital minimalism</li>
+        <li>Quantified self (started tracking)</li>
         <li>Working out (x3 times per week) and eating clean</li>
         <li>
           Organizing <a href="https://www.meetup.com/WrocTypeScript/">Wrocław TypeScript meetup</a>
@@ -19,8 +19,9 @@ const NowPage: React.FunctionComponent = () => (
         <li>
           Working as a FrontEnd developer at <a href="https://www.ingrid.com/">Ingrid</a>
         </li>
+        <li>Caligraphy - gothic (started learning)</li>
       </ul>
-      <div>Updated 11.02.2019</div>
+      <div>Updated 04.05.2019</div>
     </div>
   </Layout>
 );

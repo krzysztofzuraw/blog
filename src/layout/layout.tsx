@@ -1,6 +1,6 @@
 import { normalize, setupPage } from 'csstips';
 import * as React from 'react';
-import { cssRule, style } from 'typestyle';
+import { cssRule } from 'typestyle';
 
 import { HeaderContainer } from '../containers';
 import { theme } from '../theme';
@@ -12,21 +12,16 @@ cssRule('a', { textDecoration: 'none', color: theme.colors.gray.toString() });
 cssRule('a:hover', {
   textDecoration: 'underline',
 });
-
-const wrapperStyle = style({
-  display: 'grid',
-  gridTemplateAreas: `
-    "header"
-    "content"
-  `,
-  gridTemplateRows: 'auto 1fr',
-  minWidth: '100vw',
-  minHeight: '100vh',
-  padding: `${typography.rhythm(2.5)} ${typography.rhythm(1.25)}`,
+cssRule('body', {
+  margin: '0 auto',
+  maxWidth: `${typography.rhythm(35)}`,
+  lineHeight: '1.5',
+  padding: `${typography.rhythm(2.75)} ${typography.rhythm(0.75)}`,
+  color: '#555',
 });
 
 export const Layout: React.FunctionComponent = ({ children }) => (
-  <div className={wrapperStyle}>
+  <div>
     <HeaderContainer />
     {children}
   </div>
