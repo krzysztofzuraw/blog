@@ -49,13 +49,13 @@
     "graphql-code-generator": "0.18.2",
     "graphql-codegen-typescript-client": "0.18.2",
     "graphql-codegen-typescript-common": "0.18.2",
-    "husky": "2.4.0",
+    "husky": "2.4.1",
     "prettier": "1.18.2",
     "rimraf": "2.6.3",
     "tslint": "5.17.0",
     "tslint-config-prettier": "1.18.0",
     "tslint-react-a11y": "1.0.0",
-    "typescript": "3.5.1",
-    "typescript-tslint-plugin": "0.4.0"
+    "typescript": "3.5.2",
+    "typescript-tslint-plugin": "0.5.0"
   }
 }
