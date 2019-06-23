@@ -1,7 +1,6 @@
 'use strict';
 
 const path = require('path');
-const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -30,6 +29,9 @@ exports.createPages = ({ graphql, actions }) => {
     const posts = result.data.allMarkdownRemark.edges;
 
     posts.forEach((post, index) => {
+      const previous = index === posts.length - 1 ? null : posts[index + 1].node;
+      const next = index === 0 ? null : posts[index - 1].node;
+
       const {
         node: {
           frontmatter: { slug },
@@ -40,6 +42,8 @@ exports.createPages = ({ graphql, actions }) => {
         component: blogPost,
         context: {
           slug: slug,
+          previous,
+          next,
         },
       });
     });

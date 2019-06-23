@@ -1,1 +1,0 @@
-export { AboutContainer } from './about';

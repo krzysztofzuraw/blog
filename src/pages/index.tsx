@@ -1,48 +1,81 @@
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 
-import { FilterMarkdownRemark } from 'typings/graphql';
-import { List } from '../components';
-import { SEOContainer } from '../containers';
-import { Layout } from '../layout';
+import { MarkdownRemarkFilterInput, SiteFilterInput } from 'typings/graphql';
+import Bio from '../components/bio';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import { rhythm } from '../utils/typography';
 
 interface Props {
   data: {
     allMarkdownRemark: {
       edges: [
         {
-          node: FilterMarkdownRemark;
+          node: MarkdownRemarkFilterInput;
         }
       ];
     };
+    site: SiteFilterInput;
   };
+  location: Location;
 }
 
-const IndexPage: React.FunctionComponent<Props> = ({
-  data: {
-    allMarkdownRemark: { edges },
-  },
-}) => {
-  return (
-    <Layout>
-      <SEOContainer />
-      <List>
-        {edges.map(edge => (
-          <List.Item key={edge.node.id as string} frontmatter={edge.node.frontmatter} />
-        ))}
-      </List>
-    </Layout>
-  );
-};
+class BlogIndex extends React.Component<Props> {
+  render() {
+    const { data } = this.props;
+    const siteTitle = data.site.siteMetadata!.siteName;
+    const posts = data.allMarkdownRemark.edges;
 
-export default IndexPage;
+    return (
+      <Layout location={this.props.location} title={siteTitle as string}>
+        <SEO title="All posts" />
+        <Bio />
+        {posts.map(({ node }) => {
+          if (node.frontmatter) {
+            const title = node.frontmatter.title;
+            return (
+              <div key={node.frontmatter.slug as string}>
+                <h3
+                  style={{
+                    marginBottom: rhythm(1 / 4),
+                  }}
+                >
+                  <Link style={{ boxShadow: `none` }} to={node.frontmatter.slug as string}>
+                    {title}
+                  </Link>
+                </h3>
+                <small>{node.frontmatter.date}</small>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.excerpt as string,
+                  }}
+                />
+              </div>
+            );
+          } else {
+            return null;
+          }
+        })}
+      </Layout>
+    );
+  }
+}
+
+export default BlogIndex;
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query {
+    site {
+      siteMetadata {
+        siteName
+      }
+    }
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           id
+          excerpt
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")

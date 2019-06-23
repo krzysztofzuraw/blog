@@ -15,6 +15,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-typescript',
+    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-react-helmet',
@@ -23,6 +24,13 @@ module.exports = {
       options: {
         path: `${__dirname}/blog`,
         name: 'blog',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/assets`,
+        name: `assets`,
       },
     },
     {
