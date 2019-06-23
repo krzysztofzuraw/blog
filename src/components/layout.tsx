@@ -55,7 +55,7 @@ class Layout extends React.Component<Props> {
       );
     }
     return (
-      <div style={{ backgroundColor: '#f7fafc', width: '100vw', height: '100vh' }}>
+      <>
         <div style={{ height: '6px', backgroundColor: '#63B3ED' }}></div>
         <div
           style={{
@@ -73,7 +73,7 @@ class Layout extends React.Component<Props> {
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer>
         </div>
-      </div>
+      </>
     );
   }
 }
