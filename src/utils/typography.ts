@@ -17,10 +17,7 @@ Alton.headerFontFamily = ['Open Sans', 'sans-serif'];
 
 const typography = new Typography(Alton);
 
-// Hot reload typography in development.
-if (process.env.NODE_ENV !== `production`) {
-  typography.injectStyles();
-}
+typography.injectStyles();
 
 export default typography;
 export const rhythm = typography.rhythm;
