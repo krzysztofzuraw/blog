@@ -21,7 +21,7 @@
   "dependencies": {
     "csstips": "0.3.0",
     "csx": "9.1.0",
-    "gatsby": "2.9.4",
+    "gatsby": "2.10.0",
     "gatsby-image": "2.2.1",
     "gatsby-plugin-google-analytics": "2.0.21",
     "gatsby-plugin-manifest": "2.1.1",
