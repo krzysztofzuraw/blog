@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import { rhythm } from '../utils/typography';
 
-const Bio = () => {
+const Bio: React.FunctionComponent = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/pic.png/" }) {

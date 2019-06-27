@@ -8,6 +8,7 @@ import {
 } from 'typings/graphql';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
+import Newsletter from '../components/newsletter';
 import SEO from '../components/seo';
 import '../styles/index.css';
 import { rhythm, scale } from '../utils/typography';
@@ -43,6 +44,12 @@ class BlogPostTemplate extends React.Component<Props> {
             {post.frontmatter.date}
           </p>
           <div dangerouslySetInnerHTML={{ __html: post.html! as string }} />
+          <hr
+            style={{
+              marginBottom: rhythm(1),
+            }}
+          />
+          <Newsletter />
           <hr
             style={{
               marginBottom: rhythm(1),
