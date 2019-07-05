@@ -15,7 +15,7 @@ const AboutPage: React.FunctionComponent<Props> = ({ location }) => (
       <h1>Hello!</h1>
       <p>
         My name is <strong>Krzysztof Żuraw</strong>. I'm currently working at{' '}
-        <a href="https://www.ingrid.com">Ingrid</a> as a Frontend Team Leader.
+        <a href="https://www.ingrid.com">Ingrid</a> as a Frontend Developer and a team leader.
       </p>
       <p>
         Right now I'm doing frontend work with TypeScript, React, Redux and RxJS. Previously I was

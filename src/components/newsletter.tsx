@@ -12,7 +12,7 @@ const Newsletter: React.FunctionComponent = () => (
       flexDirection: 'column',
     }}
   >
-    <p>Want to get ☝️ via email?</p>
+    <p>Want to get blog posts via email?</p>
     <label
       htmlFor="bd-email"
       style={{ color: '#7e8a9a', fontSize: 'medium', marginBottom: '0.25em' }}
