@@ -5,7 +5,7 @@ import { rhythm, scale } from '../utils/typography';
 
 interface Props {
   location: Location;
-  title: string;
+  title?: string | null;
 }
 
 class Layout extends React.Component<Props> {

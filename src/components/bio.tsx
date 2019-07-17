@@ -5,7 +5,7 @@ import * as React from 'react';
 import { rhythm } from '../utils/typography';
 
 const Bio: React.FunctionComponent = () => {
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<any>(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/pic.png/" }) {
         childImageSharp {
@@ -22,7 +22,7 @@ const Bio: React.FunctionComponent = () => {
     }
   `);
 
-  const { author } = data.site.siteMetadata;
+  const { author } = data.site!.siteMetadata;
   return (
     <div
       style={{
@@ -31,7 +31,7 @@ const Bio: React.FunctionComponent = () => {
       }}
     >
       <Image
-        fixed={data.avatar.childImageSharp.fixed}
+        fixed={data.avatar!.childImageSharp!.fixed}
         alt={author}
         style={{
           marginRight: rhythm(1 / 2),

@@ -7,7 +7,7 @@
     "develop": "gatsby develop --verbose",
     "type-check": "tsc",
     "lint": "tslint --project .",
-    "generate:graphql:types": "gql-gen --overwrite",
+    "generate": "graphql-codegen --overwrite",
     "reinstall": "rimraf node_modules && npm install"
   },
   "keywords": [
@@ -47,12 +47,13 @@
     "typography-theme-alton": "0.16.19"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.4.0",
+    "@graphql-codegen/typescript": "^1.4.0",
+    "@graphql-codegen/typescript-operations": "^1.4.0",
     "@types/react-helmet": "5.0.8",
     "@types/typography": "0.16.2",
     "concurrently": "4.1.1",
-    "graphql-code-generator": "0.18.2",
-    "graphql-codegen-typescript-client": "0.18.2",
-    "graphql-codegen-typescript-common": "0.18.2",
+    "graphql": "^14.4.2",
     "husky": "2.4.1",
     "prettier": "1.18.2",
     "rimraf": "2.6.3",
