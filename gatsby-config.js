@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     siteName: 'Krzysztof Żuraw blog',
     author: 'Krzysztof Żuraw',
-    description: 'Blog about TypeScript',
+    description: 'Krzysztof Żuraw personal blog: TypeScript, JavaScript & FE development.',
     siteUrl: 'https://krzysztofzuraw.com',
     social: {
       twitter: 'https://twitter.com/krzysztof_zuraw',
