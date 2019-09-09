@@ -46,7 +46,8 @@ const Bio: React.FunctionComponent = () => {
       <p>
         Written by <strong>{author}</strong> who lives and works in Wrocław.
         {` `}
-        <Link to="/about">About page.</Link>
+        You can find more on <Link to="/about">about</Link> page and subscribe to{' '}
+        <Link to="/feeds/all.rss.xml">rss</Link> feed.
       </p>
     </div>
   );
