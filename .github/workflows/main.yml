@@ -18,7 +18,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install, lint, and type-check
         run: |
-          npm install
+          npm ci
           npm run lint
           npm run type-check
         env:
