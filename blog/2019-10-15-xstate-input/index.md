@@ -26,5 +26,63 @@ Imagine that you work on new inputs for company website. Designers handle you do
 In picture above there are a few states that input can have and what are transitions between them.
 
 You start implementing designs but you quickly realize that something is wrong: you started seeing
-a lot of similar flags in your code: `isFocused && !isHover && !hasValue`. On current level of complicity
-it is nothing wrong them.
+a lot of similar flags in your code: `isFocused && !isHover && !hasValue`. There is nothing wrong with
+those feature flag except one thing - you can easily mix up different states and end up with input
+state that should not be possible.
+
+How you can to better?
+
+What if you can use different approach and have only one single of truth with ability to prevent
+impossible states?
+
+Let me introduce you to [Xstate](https://xstate.js.org/). As you may noticed we gonna use statecharts
+to represent input logic. Let's draw one:
+
+![statecharts](./statecharts.jpg)
+
+We gonna have two parallel state machines:
+
+- First one for changing the border of input
+- Second one for displaying or hiding input label
+
+Let's start with the first one: changing the border. To use xstate you need to first initalize state
+machine:
+
+```tsx{numberLines: true}
+import { Machine, assign } from 'xstate';
+
+const inputMachine = Machine({
+  initial: 'enabled',
+  context: {
+    border: '1px solid #e6e6e6',
+  },
+  states: {
+    // highlight-line
+    enabled: {
+      on: {
+        ENTER: {
+          target: 'hover',
+          actions: assign({
+            border: () => '1px solid #cccccc',
+          }),
+        },
+      },
+      entry: assign({ border: () => '1px solid #e6e6e6' }),
+    },
+    hover: {
+      on: {
+        ENTER: {
+          target: 'focused',
+          actions: assign({ border: () => '3px solid #56dcd1' }),
+        },
+        EXIT: 'enabled',
+      },
+    },
+    focused: {
+      on: {
+        EXIT: 'enabled',
+      },
+    },
+  },
+});
+```
