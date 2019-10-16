@@ -53,6 +53,7 @@
     "@types/react-helmet": "5.0.12",
     "@types/typography": "0.16.3",
     "concurrently": "5.0.0",
+    "gatsby-plugin-just-comments": "^0.2.3",
     "graphql": "14.5.8",
     "husky": "3.0.9",
     "prettier": "1.18.2",
