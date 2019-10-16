@@ -23,3 +23,14 @@ jobs:
           npm run type-check
         env:
           CI: true
+
+  auto-merge:
+    name: Auto merge Dependabot updates
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    steps:
+      - name: auto-merge
+        uses: ridedott/dependabot-auto-merge-action@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
