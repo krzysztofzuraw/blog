@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import { BlogPostBySlugQuery, SitePageContextFilterInput } from 'typings/graphql';
 import Bio from '../components/bio';
+import { Comments } from '../components/comments';
 import Footer from '../components/footer';
 import Layout from '../components/layout';
 import Newsletter from '../components/newsletter';
@@ -39,17 +40,18 @@ class BlogPostTemplate extends React.Component<Props> {
             {post.frontmatter.date}
           </p>
           <div dangerouslySetInnerHTML={{ __html: post.html || '' }} />
-          <Footer
-            discussUrl={`https://mobile.twitter.com/search?q=${encodeURI(
-              `${siteURL}${post.frontmatter.slug}`
-            )}`}
-          />
           <hr
             style={{
               marginBottom: rhythm(1),
             }}
           />
           <Newsletter />
+          <hr
+            style={{
+              marginBottom: rhythm(1),
+            }}
+          />
+          <Comments />
           <hr
             style={{
               marginBottom: rhythm(1),
