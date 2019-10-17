@@ -46,9 +46,71 @@ We gonna have two parallel state machines:
 - Second one for displaying or hiding input label
 
 Let's start with the first one: changing the border. To use xstate you need to first initalize state
-machine:
+machine. I will do it with input states:
 
-```tsx{numberLines: true}
+```tsx
+import { Machine } from 'xstate';
+
+const inputMachine = Machine({
+  initial: 'enabled',
+  states: {
+    enabled: {},
+    hover: {},
+    focused: {},
+  },
+});
+```
+
+So far so good. Let's then add what are possible transitions between states:
+
+```tsx
+import { Machine } from 'xstate';
+
+const inputMachine = Machine({
+  initial: 'enabled',
+  states: {
+    enabled: {
+      on: {
+        ENTER: 'hover',
+      },
+    },
+    hover: {
+      on: {
+        ENTER: 'focused',
+        EXIT: 'enabled',
+      },
+    },
+    focused: {
+      on: {
+        EXIT: 'enabled',
+      },
+    },
+  },
+});
+```
+
+I've added here possible transitions:
+
+- enabled => hover
+- hover => focused
+- hover => enabled
+- focused => enabled
+
+You can change the names of transitions (`ENTER` or `EXIT`) to your likeing - it's important
+to be consistent because you gonna use them later.
+
+Xstate comes with [visualizer](https://xstate.js.org/viz) so you can generate statemachine diagram
+by yourself:
+
+![diagram](./xstate_basic.png)
+
+You can also use this [link](https://xstate.js.org/viz/?gist=008d1fa65626a14e0fae318f3dc5fc9a).
+
+We have transitions ready - now it the question what is changing during those transitions? It this
+case are border of input. I could add logic behind calculating border to `render` of my component
+but I prefer to keep it inside state machine. For that I need [context](https://xstate.js.org/docs/guides/context.html#initial-context):
+
+```tsx
 import { Machine, assign } from 'xstate';
 
 const inputMachine = Machine({
@@ -57,7 +119,6 @@ const inputMachine = Machine({
     border: '1px solid #e6e6e6',
   },
   states: {
-    // highlight-line
     enabled: {
       on: {
         ENTER: {
