@@ -3,12 +3,13 @@ import * as React from 'react';
 
 import { BlogPostBySlugQuery, SitePageContextFilterInput } from 'typings/graphql';
 import Bio from '../components/bio';
-import Footer from '../components/footer';
+import { Comments } from '../components/comments';
 import Layout from '../components/layout';
 import Newsletter from '../components/newsletter';
 import SEO from '../components/seo';
-import '../styles/index.css';
 import { rhythm, scale } from '../utils/typography';
+
+import '../styles/index.css';
 
 interface Props {
   data: BlogPostBySlugQuery;
@@ -20,7 +21,6 @@ class BlogPostTemplate extends React.Component<Props> {
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site!.siteMetadata!.siteName;
-    const siteURL = this.props.data.site!.siteMetadata!.siteUrl;
     const { previous, next } = this.props.pageContext;
 
     if (post && post.frontmatter) {
@@ -39,17 +39,18 @@ class BlogPostTemplate extends React.Component<Props> {
             {post.frontmatter.date}
           </p>
           <div dangerouslySetInnerHTML={{ __html: post.html || '' }} />
-          <Footer
-            discussUrl={`https://mobile.twitter.com/search?q=${encodeURI(
-              `${siteURL}${post.frontmatter.slug}`
-            )}`}
-          />
           <hr
             style={{
               marginBottom: rhythm(1),
             }}
           />
           <Newsletter />
+          <hr
+            style={{
+              marginBottom: rhythm(1),
+            }}
+          />
+          <Comments />
           <hr
             style={{
               marginBottom: rhythm(1),
