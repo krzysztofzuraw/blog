@@ -45,7 +45,7 @@ We gonna have two parallel state machines:
 - First one for changing the border of input
 - Second one for displaying or hiding input label
 
-Let's start with the first one: changing the border. To use xstate you need to first initalize state
+Let's start with the first one: changing the border. To use xstate you need to first initialize state
 machine. I will do it with input states:
 
 ```tsx
@@ -147,3 +147,40 @@ const inputMachine = Machine({
   },
 });
 ```
+
+Inside `context` object I put my initial border value. To change it I use my previously defined transitions. In Xstate there is a way to trigger actions when state machine transitioning from one state to the other. This is a `actions` property on `ENTER` object. For example: on transitioning from `enabled` to `hover` I [assign](https://xstate.js.org/docs/guides/context.html#assign-action) border to new value. In definition of `enabled` state there is also `entry` property - this is a neat way of reseting border to it's initial value when state machine is entering `enabled` state.
+
+This is how it looks like in [visualizer](https://xstate.js.org/viz/?gist=dec8d4bef401557829457f44ffb929b3):
+
+![assign-machine](./assign-machine.png)
+
+I have `inputMachine` ready but I need one more piece of functionality.
+Ability to show and hide label based on input having value. I decided
+that it will different state machine:
+
+```tsx
+const labelMachine = Machine({
+  initial: 'blank',
+  context: {
+    opacity: 0,
+  },
+  states: {
+    blank: {
+      on: {
+        ENTER: { target: 'value', actions: assign({ opacity: () => 1 }) },
+      },
+      entry: assign({ opacity: () => 0 }),
+    },
+    value: {
+      on: {
+        EXIT: 'blank',
+      },
+    },
+  },
+});
+```
+
+Logic here is the same as in previous example but I'm changing `opacity`
+on state transitions. [Diagram](https://xstate.js.org/viz/?gist=e689e1c045769d47137a8338639e715a) also looks the same:
+
+![label-machine](./label-machine.png)
