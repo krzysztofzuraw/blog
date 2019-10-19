@@ -4,12 +4,12 @@ import * as React from 'react';
 import { BlogPostBySlugQuery, SitePageContextFilterInput } from 'typings/graphql';
 import Bio from '../components/bio';
 import { Comments } from '../components/comments';
-import Footer from '../components/footer';
 import Layout from '../components/layout';
 import Newsletter from '../components/newsletter';
 import SEO from '../components/seo';
-import '../styles/index.css';
 import { rhythm, scale } from '../utils/typography';
+
+import '../styles/index.css';
 
 interface Props {
   data: BlogPostBySlugQuery;
@@ -21,7 +21,6 @@ class BlogPostTemplate extends React.Component<Props> {
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site!.siteMetadata!.siteName;
-    const siteURL = this.props.data.site!.siteMetadata!.siteUrl;
     const { previous, next } = this.props.pageContext;
 
     if (post && post.frontmatter) {

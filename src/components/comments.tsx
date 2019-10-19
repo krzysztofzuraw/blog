@@ -1,8 +1,7 @@
 import JustComments from 'gatsby-plugin-just-comments';
 import * as React from 'react';
-import { rhythm } from 'src/utils/typography';
+import { rhythm } from '../utils/typography';
 
-// https://just-comments.com/blog/2019-07-30-adding-comments-to-gatsby-js.html
 export const Comments: React.FunctionComponent = () => {
   const [showComments, changeShowComments] = React.useState(false);
   if (showComments) {
@@ -11,11 +10,10 @@ export const Comments: React.FunctionComponent = () => {
   return (
     <div
       style={{
-        // minHeight: '680px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: rhythm(1),
+        marginBottom: rhythm(1),
       }}
     >
       <button
@@ -25,7 +23,6 @@ export const Comments: React.FunctionComponent = () => {
           color: '#fff',
           padding: '0.75em 1em',
           fontSize: '16px',
-          // alignSelf: 'flex-start',
         }}
         onClick={() => changeShowComments(true)}
       >

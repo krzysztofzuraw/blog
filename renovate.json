@@ -1,6 +1,0 @@
-{
-  "extends": ["config:base"],
-  "reviewers": ["@krzysztofzuraw"],
-  "schedule": ["every weekend"],
-  "groupName": "all"
-}
