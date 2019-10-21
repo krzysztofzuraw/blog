@@ -36,6 +36,7 @@ class Layout extends React.Component<Props> {
       );
     } else {
       header = (
+        // tslint:disable-next-line: react-a11y-accessible-headings
         <h3
           style={{
             marginTop: 0,
