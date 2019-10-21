@@ -21,6 +21,7 @@ const Newsletter: React.FunctionComponent = () => (
     </label>
     <input
       type="email"
+      placeholder="email"
       name="email"
       id="bd-email"
       style={{
