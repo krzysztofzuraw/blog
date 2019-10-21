@@ -184,3 +184,68 @@ Logic here is the same as in previous example but I'm changing `opacity`
 on state transitions. [Diagram](https://xstate.js.org/viz/?gist=e689e1c045769d47137a8338639e715a) also looks the same:
 
 ![label-machine](./label-machine.png)
+
+I have machines ready - now it is the time to use them in react component:
+
+```tsx
+import { useMachine } from "@xstate/react";
+
+function App() {
+  const [value, setValue] = React.useState("");
+  const [currentInputState, transitionInputState] = useMachine(inputMachine);
+  const [currentLabelState, transitionLabelState] = useMachine(labelMachine);
+
+  return (
+    <>
+      <div>
+        <label
+          htmlFor="name"
+          style={{
+            // rest of styles here
+            opacity: currentLabelState.context.opacity // take current value from context
+          }}
+        >
+          Name:
+        </label>
+        <input
+          style={{
+            // rest of styles here
+            border: currentInputState.context.border // take current value from context
+          }}
+          id="name"
+          value={value}
+          onChange={event => {
+            transitionLabelState("ENTER");
+            setValue(event.target.value);
+          }}
+          onMouseEnter={() => transitionInputState("ENTER")}
+          onMouseLeave={() => {
+            if (!currentInputState.matches("focused"))
+              transitionInputState("EXIT");
+          }}
+          onClick={() => {
+            transitionInputState("ENTER");
+            transitionLabelState("ENTER");
+          }}
+          onBlur={() => {
+            transitionInputState("EXIT");
+            if (!value) transitionLabelState("EXIT");
+          }}
+        />
+      </div>
+  );
+}
+```
+
+To get access to state of machine and transition it to different states you need `useMachine` hook.
+It takes machine itself as an argument. Transitioning are done via `transitionInputState` & `transitionLabelState`
+which take events name (it this case `ENTER` & `EXIT`). The rest of logic is to handle different
+html events on input and transition` them to different states.
+
+# Summary
+
+In this blog post I showed how to implement logic around changing input border and labels with [Xstate](https://xstate.js.org/).
+You can find code (with TypeScript types) on this [codesandbox](https://codesandbox.io/s/xstate-input-2df4o).
+
+What are your take on state machines? Do you like this short introduction to xstate with react?
+Let's write in comments.
