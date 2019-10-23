@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import * as React from 'react';
 
 import Layout from '../components/layout';
@@ -9,7 +10,7 @@ interface Props {
 }
 
 const AboutPage: React.FunctionComponent<Props> = ({ location }) => (
-  <Layout location={location} title="About Page">
+  <Layout location={location} title="About">
     <SEO title="About" />
     <div>
       <h1>Hello!</h1>
@@ -29,6 +30,10 @@ const AboutPage: React.FunctionComponent<Props> = ({ location }) => (
         I also like giving back to community so I was a few times mentor on Django Grils (Wrocław &
         Kraków). I teach Python at Code Geeks Carrots Wrocław. I'm coorganizer of Wrocław TypeScript
         meetup.
+      </p>
+      <p>
+        If you are interested in knowing what im currently learning I have learning in public{' '}
+        <Link to="/learn-in-public">page</Link>.
       </p>
       <p>
         You can find my code at <a href="https://github.com/krzysztofzuraw">GitHub</a>. My talks at{' '}
