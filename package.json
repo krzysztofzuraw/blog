@@ -50,7 +50,7 @@
     "@graphql-codegen/cli": "1.8.1",
     "@graphql-codegen/typescript": "1.8.1",
     "@graphql-codegen/typescript-operations": "1.8.1",
-    "@types/react-helmet": "5.0.12",
+    "@types/react-helmet": "5.0.13",
     "@types/typography": "0.16.3",
     "concurrently": "5.0.0",
     "gatsby-plugin-just-comments": "^0.2.3",
