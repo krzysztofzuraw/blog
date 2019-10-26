@@ -9,45 +9,45 @@ tags:
 ---
 
 In this blog post, I want to present how you can use [XState](https://xstate.js.org/) to make
-styling inputs in React easier to maintain.
+styling inputs in React which are easier to maintain.
 
-You can find code on [codesandbox](https://codesandbox.io/s/xstate-input-2df4o).
+You can find the code on [codesandbox](https://codesandbox.io/s/xstate-input-2df4o).
 
 Before you start reading this tutorial I recommend to read about state machines on
 [statecharts.github.io](https://statecharts.github.io/).
-Also, Geddski [blog post](https://gedd.ski/post/state-machines-in-react/) is a good place to start too.
+Also, Geddski [blog post](https://gedd.ski/post/state-machines-in-react/) is a good place to start.
 
 ## Problem
 
-Imagine that you work on new inputs for the company website. Designers handle you document with how the
+Imagine that you work on new inputs for the company website. Designers handle you an instruction how the
 input should look like:
 
 ![design](./design.png)
 
-In the picture above there are a few states that input can have and what are transitions between them.
+In the picture above there are possible states of that input.
 
 You start implementing designs but you quickly realize that something is wrong: you started seeing
 a lot of similar flags in your code: `isFocused && !isHover && !hasValue`.
 
 There is nothing wrong with those feature flag except one thing - you can easily mix up different
-states and end up with an input state that should not be possible.
+states and end up with an impossible input state.
 
-How you can do better?
+How can you do better?
 
 ## Solution
 
-What if you can use a different approach and have only one single source of truth with the
-ability to prevent impossible states?
+What if you can use a different approach and have only one source of truth with the
+ability to prevent impossible states from happening?
 
-Let me introduce you to [Xstate](https://xstate.js.org/). As you may notice we gonna use statecharts
-to represent input logic. Let's draw one:
+Let me introduce you to [Xstate](https://xstate.js.org/). As you may notice we are going to use
+statecharts to represent input logic. Let's draw one:
 
 ![statecharts](./statecharts.jpg)
 
 We gonna have two parallel state machines:
 
-- First one for changing the border of the input
-- The second one for displaying or hiding the input label
+- First one for changing the border of the input.
+- The second one for displaying or hiding the input label.
 
 ### Input state machine
 
@@ -69,7 +69,7 @@ const inputMachine = Machine({
 });
 ```
 
-Let's add what are possible transitions between states:
+Let's add possible transitions between states:
 
 ```tsx
 import { Machine } from 'xstate';
@@ -97,15 +97,15 @@ const inputMachine = Machine({
 });
 ```
 
-I've added here possible transitions:
+I've added there possible transitions:
 
 - enabled => hover
 - hover => focused
 - hover => enabled
 - focused => enabled
 
-You can change the names of transitions (`ENTER` or `EXIT`) to your likening - it's important
-to be consistent because you gonna use them later.
+You can change the names of transitions (`ENTER` or `EXIT`) - it's important
+to be consistent because you are going to use them later.
 
 Xstate comes with [visualizer](https://xstate.js.org/viz) so you can generate state machine diagram
 by yourself:
@@ -116,7 +116,7 @@ You can also use this [link](https://xstate.js.org/viz/?gist=008d1fa65626a14e0fa
 
 #### Xstate context
 
-We have transitions ready - now it the question of what is changing during those transitions?
+We have transitions ready - now the question of what is changing during those transitions?
 
 In this case, is the **border** of input.
 
@@ -161,7 +161,7 @@ const inputMachine = Machine({
 });
 ```
 
-Inside the `context` object, I put my initial border value. To change it I use my previously defined transitions.
+Inside the `context` object, I put my initial border value. To change it, I used my previously defined transitions.
 
 In Xstate there is a way to trigger actions when state machine transitioning from one state to the other.
 This is an `actions` property on the `ENTER` object.
@@ -174,10 +174,10 @@ This is how it looks like in [visualizer](https://xstate.js.org/viz/?gist=dec8d4
 
 ### Label state machine
 
-I have `inputMachine` ready but I need one more piece of functionality.
-Ability to show and hide label based on input having value.
+I have `inputMachine` ready but I need one more piece of functionality - the ability to show and hide
+label based on input having value.
 
-I decided that it will different state machine:
+I decided that it will be different state machine:
 
 ```tsx
 const labelMachine = Machine({
@@ -201,14 +201,14 @@ const labelMachine = Machine({
 });
 ```
 
-The logic here is the same as in the previous example but I'm changing `opacity`
+The logic here is the same as in the previous example but I have changed `opacity`
 on state transitions. [Diagram](https://xstate.js.org/viz/?gist=e689e1c045769d47137a8338639e715a) also looks the same:
 
 ![label-machine](./label-machine.png)
 
-#### Xstate + react
+#### Xstate + React
 
-I have machines ready - now it is the time to use them in react component:
+I have machines ready - now it is the time to use them in React component:
 
 ```tsx
 import { useMachine } from "@xstate/react";
@@ -260,12 +260,12 @@ function App() {
 }
 ```
 
-To get access to the state of machine and transition it to different states you need `useMachine` hook.
+To get access to the state of machine and transition it to different states you need to use `useMachine` hook.
 It takes machine itself as an argument.
 
-Transitioning are done via `transitionInputState` & `transitionLabelState` which take events name (it this case `ENTER` & `EXIT`).
+To trigger transition I've used `transitionInputState` & `transitionLabelState` which take events name (it this case `ENTER` & `EXIT`).
 
-The rest of logic is to handle different html events on input and transition` them to different states.
+The rest of logic is to handle different HTML events on input and transition` them to different states.
 
 ## Summary & TL;DR
 
@@ -274,5 +274,5 @@ In this blog post, I showed how to implement logic around changing input borders
 You can find code (with TypeScript types) on this [codesandbox](https://codesandbox.io/s/xstate-input-2df4o).
 
 What is your take on state machines?
-Do you like this short introduction to xstate with react?
+Do you like this short introduction to xstate with React?
 Let's write in comments.
