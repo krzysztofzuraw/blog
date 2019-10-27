@@ -1,6 +1,6 @@
 ---
 title: Using Xstate with inputs in React
-date: '2019-10-15T09:12:03.284Z'
+date: '2019-10-27T09:12:03.284Z'
 slug: '/blog/2019/xstate-inputs-react'
 tags:
   - xstate
