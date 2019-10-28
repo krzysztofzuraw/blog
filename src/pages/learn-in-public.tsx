@@ -35,9 +35,19 @@ const LearnInPublicPage: React.FC<Props> = ({ location }) => (
             <li>have impact on one person (0/1)</li>
           </ul>
           <p>Time spent progress: </p>
+          <ul>
+            <li>21.10.2019 - 27.10.2019 - 5h</li>
+          </ul>
         </li>
         <li>
-          <p>Act and react</p>
+          <p>Act and react:</p>
+          <ul>
+            <li>
+              <a href="https://krzysztofzuraw.com/blog/2019/xstate-inputs-react">
+                Blog: xstate + react
+              </a>
+            </li>
+          </ul>
         </li>
         <li>
           <p>Impact</p>
