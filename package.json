@@ -21,7 +21,7 @@
   "dependencies": {
     "csstips": "1.2.0",
     "csx": "10.0.0",
-    "gatsby": "2.17.2",
+    "gatsby": "2.17.4",
     "gatsby-image": "2.2.29",
     "gatsby-plugin-feed": "2.3.19",
     "gatsby-plugin-manifest": "2.2.23",
