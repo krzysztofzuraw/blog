@@ -21,6 +21,7 @@ class BlogPostTemplate extends React.Component<Props> {
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site!.siteMetadata!.siteName;
+    const siteUrl = this.props.data.site!.siteMetadata!.siteUrl;
     const { previous, next } = this.props.pageContext;
 
     if (post && post.frontmatter) {
@@ -50,7 +51,11 @@ class BlogPostTemplate extends React.Component<Props> {
               marginBottom: rhythm(1),
             }}
           />
-          <Comments />
+          <Comments
+            url={`${siteUrl}/${post.frontmatter.slug}`}
+            identifier={post.id}
+            title={post.frontmatter.title || ''}
+          />
           <hr
             style={{
               marginBottom: rhythm(1),
@@ -104,6 +109,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       excerpt
+      id
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
