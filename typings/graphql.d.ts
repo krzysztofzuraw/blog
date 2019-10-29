@@ -6,7 +6,7 @@ export type Scalars = {
   Boolean: boolean,
   Int: number,
   Float: number,
-  /** 
+  /**
  * A date string, such as 2007-12-03, compliant with the ISO 8601 standard for
    * representation of dates and times using the Gregorian calendar.
  **/
@@ -2378,7 +2378,6 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsMaxWidth = 'pluginCreator___pluginOptions___maxWidth',
   PluginCreatorPluginOptionsPathPrefix = 'pluginCreator___pluginOptions___pathPrefix',
   PluginCreatorPluginOptionsWrapperStyle = 'pluginCreator___pluginOptions___wrapperStyle',
-  PluginCreatorPluginOptionsBackgroundColor = 'pluginCreator___pluginOptions___backgroundColor',
   PluginCreatorPluginOptionsLinkImagesToOriginal = 'pluginCreator___pluginOptions___linkImagesToOriginal',
   PluginCreatorPluginOptionsShowCaptions = 'pluginCreator___pluginOptions___showCaptions',
   PluginCreatorPluginOptionsMarkdownCaptions = 'pluginCreator___pluginOptions___markdownCaptions',
@@ -2389,7 +2388,6 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsIgnoreFileExtensions = 'pluginCreator___pluginOptions___ignoreFileExtensions',
   PluginCreatorPluginOptionsShortName = 'pluginCreator___pluginOptions___short_name',
   PluginCreatorPluginOptionsStartUrl = 'pluginCreator___pluginOptions___start_url',
-  PluginCreatorPluginOptionsBackgroundColor = 'pluginCreator___pluginOptions___background_color',
   PluginCreatorPluginOptionsThemeColor = 'pluginCreator___pluginOptions___theme_color',
   PluginCreatorPluginOptionsDisplay = 'pluginCreator___pluginOptions___display',
   PluginCreatorPluginOptionsIcon = 'pluginCreator___pluginOptions___icon',
@@ -2419,7 +2417,6 @@ export enum SitePageFieldsEnum {
   PluginCreatorPackageJsonPeerDependenciesName = 'pluginCreator___packageJson___peerDependencies___name',
   PluginCreatorPackageJsonPeerDependenciesVersion = 'pluginCreator___packageJson___peerDependencies___version',
   PluginCreatorPackageJsonKeywords = 'pluginCreator___packageJson___keywords',
-  PluginCreatorId = 'pluginCreatorId',
   ComponentPath = 'componentPath'
 }
 
@@ -2626,7 +2623,6 @@ export enum SitePluginFieldsEnum {
   PluginOptionsIgnoreFileExtensions = 'pluginOptions___ignoreFileExtensions',
   PluginOptionsShortName = 'pluginOptions___short_name',
   PluginOptionsStartUrl = 'pluginOptions___start_url',
-  PluginOptionsBackgroundColor = 'pluginOptions___background_color',
   PluginOptionsThemeColor = 'pluginOptions___theme_color',
   PluginOptionsDisplay = 'pluginOptions___display',
   PluginOptionsIcon = 'pluginOptions___icon',
