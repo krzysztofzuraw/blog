@@ -5,7 +5,6 @@ import { MarkdownRemarkFilterInput, SiteFilterInput } from 'typings/graphql';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import '../styles/index.css';
 import { rhythm } from '../utils/typography';
 
 interface Props {

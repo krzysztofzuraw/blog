@@ -4,7 +4,6 @@ import * as React from 'react';
 import { SiteFilterInput } from 'typings/graphql';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import '../styles/index.css';
 
 interface Props {
   data: {

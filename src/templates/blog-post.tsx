@@ -9,8 +9,6 @@ import Newsletter from '../components/newsletter';
 import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
 
-import '../styles/index.css';
-
 interface Props {
   data: BlogPostBySlugQuery;
   pageContext: SitePageContextFilterInput;

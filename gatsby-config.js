@@ -1,4 +1,11 @@
 'use strict';
+const postCssPresetEnv = require(`postcss-preset-env`);
+const postCSSNested = require('postcss-nested');
+const postCSSUrl = require('postcss-url');
+const postCSSImports = require('postcss-import');
+const cssnano = require('cssnano');
+const postCSSMixins = require('postcss-mixins');
+
 module.exports = {
   siteMetadata: {
     siteName: 'Krzysztof Żuraw blog',
@@ -43,7 +50,16 @@ module.exports = {
               maxWidth: 590,
             },
           },
-          'gatsby-remark-prismjs',
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
+          },
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
         ],
@@ -120,6 +136,25 @@ module.exports = {
         trackingId: 'UA-152876256-1',
         respectDNT: true,
         anonymize: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          postCSSUrl(),
+          postCSSImports(),
+          postCSSMixins(),
+          postCSSNested(),
+          postCssPresetEnv({
+            importFrom: 'src/styles/variables.css',
+            stage: 1,
+            preserve: false,
+          }),
+          cssnano({
+            preset: 'default',
+          }),
+        ],
       },
     },
   ],
