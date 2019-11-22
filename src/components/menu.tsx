@@ -7,16 +7,19 @@ import style from '../styles/menu.module.css';
 
 const menuIcon = `M4 34H40V30H4V34ZM4 24H40V20H4V24ZM4 10V14H40V10H4Z`;
 
-const MainMenu: React.FunctionComponent = () => {
-  return [
-    { path: '/about', title: 'About' },
-    { path: '/projects', title: 'Projects' },
-  ].map((menuItem, index) => (
+const menuEntries = [
+  { path: '/about', title: 'About', isExternal: false },
+  { path: '/projects', title: 'Projects', isExternal: false },
+  { path: 'https://buttondown.email/krzysztof_zuraw', title: 'Newsletter', isExternal: true },
+  { path: '/feeds/all.rss.xml', title: 'RSS', isExternal: false },
+];
+
+const MainMenu: React.FunctionComponent = () =>
+  menuEntries.map((menuItem, index) => (
     <li key={index}>
       <Link to={menuItem.path}>{menuItem.title}</Link>
     </li>
   ));
-};
 
 const SubMenu: React.FunctionComponent<{ onToggleSubMenu: any }> = ({ onToggleSubMenu }) => {
   const items = [{ path: '/newsletter', title: 'newsletter' }].map((menuItem, index) => (
@@ -73,8 +76,7 @@ export const Menu: React.FunctionComponent = () => {
               type="button"
               aria-label="Menu"
             >
-              {'Show more'} {' '}
-              <span className={style.menuArrow}>></span>
+              {'Show more'} <span className={style.menuArrow}>></span>
             </button>
             {isSubMenuVisible ? (
               <ul className={style.subMenu}>

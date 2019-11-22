@@ -21,7 +21,6 @@ export const Header: React.FunctionComponent = () => {
               <span className={style.cursor} />
             </div>
           </Link>
-
           <span className={style.right}>
             <Menu />
           </span>
