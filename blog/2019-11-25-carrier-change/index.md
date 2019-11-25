@@ -3,9 +3,9 @@ title: Carrier change - developer + designer
 date: '2019-11-25T09:12:03.284Z'
 slug: '/blog/2019/carrier-change-developer-designer’
 tags:
-	- developer
-	- designer
-	- carrier_change
+  - developer
+  - designer
+  - carrier_change
 ---
 
 In this blog post, I will write a little bit more about my career plans. It won't be a tutorial or technical blog post per se.
