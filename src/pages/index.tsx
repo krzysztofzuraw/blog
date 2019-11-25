@@ -1,12 +1,10 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import * as React from 'react';
 
 import { MarkdownRemarkFilterInput, SiteFilterInput } from 'typings/graphql';
-import Bio from '../components/bio';
 import Layout from '../components/layout';
 import Post from '../components/post';
 import SEO from '../components/seo';
-import { rhythm } from '../utils/typography';
 
 interface Props {
   data: {
@@ -25,14 +23,13 @@ interface Props {
 class BlogIndex extends React.Component<Props> {
   render() {
     const { data } = this.props;
-    const siteTitle = data.site.siteMetadata!.siteName;
     const posts = data.allMarkdownRemark.edges;
 
     return (
-      <Layout location={this.props.location} title={siteTitle as string}>
+      <Layout>
         <SEO title="Main" />
         {posts.map(({ node }) => (
-          <Post frontmatter={node.frontmatter} excerpt={node.excerpt} />
+          <Post frontmatter={node.frontmatter} excerpt={node.excerpt} key={node.id as string} />
         ))}
       </Layout>
     );
@@ -42,12 +39,7 @@ class BlogIndex extends React.Component<Props> {
 export default BlogIndex;
 
 export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        siteName
-      }
-    }
+  query IndexPageQuery {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {

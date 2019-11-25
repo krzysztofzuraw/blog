@@ -4,12 +4,8 @@ import * as React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-interface Props {
-  location: Location;
-}
-
-const AboutPage: React.FunctionComponent<Props> = ({ location }) => (
-  <Layout location={location} title="About">
+const AboutPage: React.FunctionComponent = () => (
+  <Layout>
     <SEO title="About" />
     <div>
       <h1>Hello!</h1>

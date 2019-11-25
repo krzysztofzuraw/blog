@@ -29,12 +29,6 @@ const Post: React.FunctionComponent<Props> = ({ frontmatter, excerpt, html }) =>
           ) : (
             <>
               <div dangerouslySetInnerHTML={{ __html: html }} />
-              {/* <Navigation
-              previousPath={previousPath}
-              previousLabel={previousLabel}
-              nextPath={nextPath}
-              nextLabel={nextLabel}
-            /> */}
             </>
           )}
         </div>
