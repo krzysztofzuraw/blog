@@ -1,34 +1,40 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
 
+import { MarkdownRemarkFrontmatter } from 'typings/graphql';
+
 import style from '../styles/post.module.css';
 
-type Props = {
-  frontmatter: any;
-  excerpt?: any;
-  html?: any;
+type ExcerptProps = {
+  frontmatter: MarkdownRemarkFrontmatter | null;
+  excerpt: string | null | undefined;
 };
 
-const Post: React.FunctionComponent<Props> = ({ frontmatter, excerpt, html }) => {
-  if (frontmatter) {
-    const { slug, title, date } = frontmatter;
+type HTMLProps = {
+  frontmatter: MarkdownRemarkFrontmatter | null;
+  html: string | null | undefined;
+};
+
+function Post(props: ExcerptProps | HTMLProps) {
+  if (props.frontmatter) {
+    const { slug, title, date } = props.frontmatter;
     return (
-      <div className={style.post} key={frontmatter.slug}>
+      <div className={style.post} key={slug!}>
         <div className={style.postContent}>
           <h1 className={style.title}>
-            <Link to={slug}>{title}</Link>
+            <Link to={slug!}>{title}</Link>
           </h1>
           <div className={style.meta}>{date}</div>
-          {excerpt ? (
+          {'excerpt' in props ? (
             <>
-              <p>{excerpt}</p>
-              <Link to={slug} className={style.readMore}>
+              <p>{props.excerpt}</p>
+              <Link to={slug!} className={style.readMore}>
                 Read more →
               </Link>
             </>
           ) : (
             <>
-              <div dangerouslySetInnerHTML={{ __html: html }} />
+              <div dangerouslySetInnerHTML={{ __html: props.html! }} />
             </>
           )}
         </div>
@@ -36,6 +42,6 @@ const Post: React.FunctionComponent<Props> = ({ frontmatter, excerpt, html }) =>
     );
   }
   return null;
-};
+}
 
 export default Post;

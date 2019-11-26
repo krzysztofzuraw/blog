@@ -1,22 +1,13 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
 
-import { MarkdownRemarkFilterInput, SiteFilterInput } from 'typings/graphql';
+import { IndexPageQuery } from 'typings/graphql';
 import Layout from '../components/layout';
 import Post from '../components/post';
 import SEO from '../components/seo';
 
 interface Props {
-  data: {
-    allMarkdownRemark: {
-      edges: [
-        {
-          node: MarkdownRemarkFilterInput;
-        }
-      ];
-    };
-    site: SiteFilterInput;
-  };
+  data: IndexPageQuery;
   location: Location;
 }
 
@@ -39,7 +30,7 @@ class BlogIndex extends React.Component<Props> {
 export default BlogIndex;
 
 export const pageQuery = graphql`
-  query IndexPageQuery {
+  query IndexPage {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
