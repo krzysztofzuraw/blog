@@ -1,12 +1,15 @@
 import * as React from 'react';
 
+import Link from './link';
+
 const Footer: React.FunctionComponent = () => (
   <footer>
     <span className="footerCopyrights">
-      © 2019 Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
+      © 2019 Built with <Link to="https://www.gatsbyjs.org">Gatsby</Link>
     </span>
     <span className="footerCopyrights">
-      Starter created by <a href="https://radoslawkoziel.pl">panr</a>
+      Theme based on <Link to="https://gatsby-hello-friend.now.sh/">gatsby hello friend </Link>by{' '}
+      <Link to="https://radoslawkoziel.pl">panr</Link>
     </span>
   </footer>
 );

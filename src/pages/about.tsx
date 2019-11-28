@@ -1,7 +1,7 @@
-import { Link } from 'gatsby';
 import * as React from 'react';
 
 import Layout from '../components/layout';
+import Link from '../components/link';
 import SEO from '../components/seo';
 
 const AboutPage: React.FunctionComponent = () => (
@@ -10,7 +10,7 @@ const AboutPage: React.FunctionComponent = () => (
     <div style={{ textAlign: 'left' }}>
       <p>
         My name is <strong>Krzysztof Żuraw</strong>. I'm currently working at{' '}
-        <a href="https://www.ingrid.com">Ingrid</a> as a frontend developer and a team leader.
+        <Link to="https://www.ingrid.com">Ingrid</Link> as a frontend developer and a team leader.
       </p>
       <p>
         Right now I'm doing carrier change from frontend developer to frontend developer + designer.
@@ -23,35 +23,33 @@ const AboutPage: React.FunctionComponent = () => (
       </p>
       <p>
         I also like giving back to community so I was a few times mentor on Django Girls (
-        <a href="https://djangogirls.org/wroclaw/">Wrocław</a> & Kraków). I teach Python at Code
+        <Link to="https://djangogirls.org/wroclaw/">Wrocław</Link> & Kraków). I teach Python at Code
         Geeks Carrots Wrocław. I'm coorganizer of{' '}
-        <a href="https://www.meetup.com/WrocTypeScript">Wrocław TypeScript meetup</a>.
+        <Link to="https://www.meetup.com/WrocTypeScript">Wrocław TypeScript meetup</Link>.
       </p>
       <div>
-        <p>My profiles on the internet:</p>
-        <p>GitHub</p>
-        <p>Speakers Deck</p>
-        <p>LinkedIn</p>
-        <p>Mail</p>
-        <p>Twitter</p>
-        <p>Instagram</p>
-        <p>Makerlog</p>
-        You can find my code at <a href="https://github.com/krzysztofzuraw">GitHub</a>. My talks at{' '}
-        <a href="https://speakerdeck.com/krzysztofzuraw">Speakers Deck</a>. I have{' '}
-        <a href="https://pl.linkedin.com/in/krzysztofzuraw">LinkedIn</a> profile too. If you want
-        you can <a href="mailto:blog@kzuraw.com">write to me</a> or follow at{' '}
-        <a href="https://twitter.com/krzysztof_zuraw">Twitter</a>.
-      </div>
-      <div>
-        <p>Makerlog profile</p>
-        <iframe
-          title="Makerlog Embed"
-          height="200"
-          style={{ width: '100%' }}
-          scrolling="no"
-          frameBorder="0"
-          src="https://api.getmakerlog.com/users/4113/stats_embed"
-        ></iframe>
+        <p>My profiles on the internet</p>
+        <p>
+          <Link to="https://github.com/krzysztofzuraw">GitHub</Link>
+        </p>
+        <p>
+          <Link to="https://speakerdeck.com/krzysztofzuraw">Speakers Deck</Link>
+        </p>
+        <p>
+          <Link to="https://pl.linkedin.com/in/krzysztofzuraw">LinkedIn</Link>
+        </p>
+        <p>
+          <Link to="mailto:blog@kzuraw.com">Mail</Link>
+        </p>
+        <p>
+          <Link to="https://twitter.com/krzysztof_zuraw">Twitter</Link>
+        </p>
+        <p>
+          <Link to="https://www.instagram.com/krzysztofzuraw/">Instagram</Link>
+        </p>
+        <p>
+          <Link to="https://getmakerlog.com/@krzysztof_zuraw">Makerlog</Link>
+        </p>
       </div>
     </div>
   </Layout>
