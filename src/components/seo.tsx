@@ -8,7 +8,7 @@ function SEO({
   title,
 }: {
   description?: string | null;
-  lang?: string;
+  lang: string;
   title: string;
 }) {
   const { site } = useStaticQuery(
