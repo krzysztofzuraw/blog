@@ -43,7 +43,7 @@
     "react-dom": "16.12.0",
     "react-helmet": "5.2.1",
     "sharp": "0.23.4",
-    "gatsby-remark-smartypants": "2.1.17"
+    "gatsby-remark-smartypants": "2.1.19"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "1.9.1",
