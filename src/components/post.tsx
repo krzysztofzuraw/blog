@@ -21,7 +21,7 @@ function Post(props: ExcerptProps | HTMLProps) {
     return (
       <div className={style.post} key={slug!}>
         <div className={style.postContent}>
-          <h1 className={style.title}>
+          <h1 className={`${style.title} post-link`}>
             <Link to={slug!}>{title}</Link>
           </h1>
           <div className={style.meta}>{date}</div>
