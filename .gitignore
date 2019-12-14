@@ -2,3 +2,5 @@ node_modules/
 .cache
 public/
 .vscode/
+cypress/videos
+cypress/screenshots

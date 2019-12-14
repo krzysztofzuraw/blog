@@ -8,7 +8,10 @@
     "type-check": "tsc",
     "lint": "tslint --project .",
     "generate": "graphql-codegen --overwrite",
-    "reinstall": "rimraf node_modules && npm install"
+    "reinstall": "rimraf node_modules && npm install",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cypress:run"
   },
   "keywords": [
     "blog",
@@ -53,6 +56,7 @@
     "@types/typography": "0.16.3",
     "concurrently": "5.0.1",
     "cssnano": "4.1.10",
+    "cypress": "3.7.0",
     "graphql": "14.5.8",
     "husky": "3.1.0",
     "postcss-import": "12.0.1",
@@ -63,6 +67,7 @@
     "postcss-url": "8.0.0",
     "prettier": "1.19.1",
     "rimraf": "3.0.0",
+    "start-server-and-test": "1.10.6",
     "tslint": "5.20.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-react-a11y": "1.1.0",
