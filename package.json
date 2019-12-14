@@ -10,7 +10,8 @@
     "generate": "graphql-codegen --overwrite",
     "reinstall": "rimraf node_modules && npm install",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cypress:run"
   },
   "keywords": [
     "blog",

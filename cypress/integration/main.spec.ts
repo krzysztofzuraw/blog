@@ -1,7 +1,6 @@
 it('should render the first page', () => {
   cy.visit('/');
   cy.contains('Krzysztof Żuraw');
-  cy.screenshot('site', { capture: 'runner' });
 });
 
 it('should render the first blog post', () => {
@@ -9,5 +8,9 @@ it('should render the first blog post', () => {
   cy.get('.post-link > a')
     .first()
     .click();
-  cy.screenshot('site', { capture: 'runner' });
+});
+
+it('should go to about page', () => {
+  cy.visit('/');
+  cy.contains('Krzysztof Żuraw');
 });
