@@ -23,7 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "csstips": "1.2.0",
-    "csx": "10.0.0",
+    "csx": "10.0.1",
     "disqus-react": "1.0.7",
     "gatsby": "2.18.21",
     "gatsby-image": "2.2.38",
