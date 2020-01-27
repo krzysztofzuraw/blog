@@ -57,7 +57,7 @@
     "concurrently": "5.0.2",
     "cssnano": "4.1.10",
     "cypress": "3.8.3",
-    "graphql": "14.5.8",
+    "graphql": "14.6.0",
     "husky": "4.2.1",
     "postcss-import": "12.0.1",
     "postcss-loader": "3.0.0",
