@@ -54,7 +54,7 @@
     "@graphql-codegen/typescript-operations": "1.11.2",
     "@types/react-helmet": "5.0.15",
     "@types/typography": "0.16.3",
-    "concurrently": "5.0.2",
+    "concurrently": "5.1.0",
     "cssnano": "4.1.10",
     "cypress": "3.8.3",
     "graphql": "14.6.0",
