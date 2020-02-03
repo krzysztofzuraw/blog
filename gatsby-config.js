@@ -41,6 +41,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/microblog`,
+        name: `microblog`,
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
@@ -65,6 +72,7 @@ module.exports = {
         ],
       },
     },
+    'gatsby-source-instance-name-for-remark',
     'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-manifest',
