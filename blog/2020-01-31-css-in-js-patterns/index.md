@@ -106,8 +106,56 @@ Benefit of this pattern is that you have one `styled` component that holds truth
 
 - CSS Prop
 
+The last pattern is taking advantage of having `css` prop aviable on any of HTML tag. If we look
+a the example:
+
+```tsx
+<div>
+  <h1>Header</h1>
+  <p>Description</p>
+</div>
+```
+
+Using `css` prop we will have:
+
+```tsx
+<div
+  css={
+    color: componentProps.useWhite ? 'white' : 'red',
+  }
+>
+  <h1 css={theme => ({ color: theme.black })}>Header</h1>
+  <p css={descStyles}>Description</p>
+</div>
+```
+
+Benefit of it is that there is no need to add `shouldForwardProp` - you can take all data directly
+from context of component. As you can see in above example the first argument to `css` is a `theme`
+object that can contains [emotion-theming]() values.
+
+If you are using TypeScript you will need to type `theme` via `css={(theme: Theme) => ({})}` instead
+of having typed `styled` if you are using this [guide]().
+
+I'm not yet used this pattern in production code but I see some drawback from beginning - what if you
+start using `css` prop too much? Then you will end up with a long HTML tags that have both logic of
+rendering and styling. One of solution for that problem is to extract styles to it's own variable as
+is done with `p` tag in example above.
+
 # Conclusion
 
 ## Summary and why
+
+You can check all those examples in more complicated scenarios and using [emotion]() here: https://codesandbox.io/s/css-in-js-patterns-zz7ns.
+
+In this blog post I wanted to present 3 CSS-in-JS patterns:
+
+- styled prop. This is the easiest one to use but has a problem with having a lot of boilerplate to
+  write and then code to maintain.
+
+- styled classes. This is somewhat in the middle between styled & css prop. You create main wrapper
+  with `styled` and then inside its definition use CSS selectors to style tags inside. It has smaller
+  boilerplate but question is still here - how should you structure your code?
+
+- css prop
 
 ## TL;DR
