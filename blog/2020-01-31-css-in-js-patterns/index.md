@@ -5,27 +5,17 @@ slug: '/blog/2020/css-in-js-patterns'
 tags:
   - css-in-js
   - patterns
+  - css
+  - javascript
 ---
-
-# Opening
-
-## Why
 
 I have read a lot of articles about CSS in JS. Yet majority of them are just some introductory articles
 why having CSS in JS is a nice thing. So I decided to write my own blog post with CSS-in-JS patterns
 that I either heard, used or currently using while working with CSS in JavaScript.
 
-## For whom
+This blog post is for those who knows basic of CSS-in-JS: `styled` component or what is CSS `prop`. I'll be using only one library here - [emotion](https://github.com/emotion-js/emotion).
 
-This blog post is for those who knows what is CSS-in-JS. Patterns listed here supports theming.
-And can create `styled` component or use CSS `prop`.
-I'll be using only one library here - [emotion.js]().
-
-# Body
-
-## Present patterns
-
-- Styled Prop
+# Styled Component
 
 The first pattern is the most basic - you take your `div`, `a` and other HTML tags and wrap them
 using `styled` function. If you have following structure:
@@ -56,7 +46,7 @@ up having a lot a duplication. This is our problem right now as we need to maint
 to component that have all CSS-in-JS definitions. It is easy to read but if you need to change some
 padding or color you need to dive deep into `style.tsx` file and search for your particular component.
 
-- Styled Classes
+# Styled Component with CSS classes
 
 Here you have still `styled` component - but it is used only on the top level component. The rest
 is using either `classNames` or CSS selectors. Going back to previous example:
@@ -99,12 +89,11 @@ const Card = styled('div', props => ({
 ```
 
 Which not only have a problem with mental congnition about why `Card` should have `useWhite` prop and
-why the heck it is needed here? Also you need to use [shouldForwardProp]() as React will start shouting
-at you for passing down the `useWhite` custom prop to HTML element.
+why the heck it is needed here? Also you need to use [shouldForwardProp](https://emotion.sh/docs/styled#customizing-prop-forwarding) as React will start shouting at you for passing down the `useWhite` custom prop to HTML element.
 
 Benefit of this pattern is that you have one `styled` component that holds truth about your CSS.
 
-- CSS Prop
+# CSS Prop
 
 The last pattern is taking advantage of having `css` prop aviable on any of HTML tag. If we look
 a the example:
@@ -143,9 +132,7 @@ is done with `p` tag in example above.
 
 # Conclusion
 
-## Summary and why
-
-You can check all those examples in more complicated scenarios and using [emotion]() here: https://codesandbox.io/s/css-in-js-patterns-zz7ns.
+You can check all those examples in more complicated scenarios and using emotion here: https://codesandbox.io/s/css-in-js-patterns-zz7ns.
 
 In this blog post I wanted to present 3 CSS-in-JS patterns:
 
@@ -156,6 +143,5 @@ In this blog post I wanted to present 3 CSS-in-JS patterns:
   with `styled` and then inside its definition use CSS selectors to style tags inside. It has smaller
   boilerplate but question is still here - how should you structure your code?
 
-- css prop
-
-## TL;DR
+- css prop. This is patern I haven't used yet. It seems like a nice way of writing CSS-in-JS but
+  I have to try it first.
