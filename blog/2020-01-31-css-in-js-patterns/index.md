@@ -10,7 +10,7 @@ tags:
 ---
 
 I have read a lot of articles about CSS in JS. Yet majority of them are just some introductory articles
-why having CSS in JS is a nice thing. So I decided to write my own blog post with CSS-in-JS patterns
+or why having CSS in JS is a nice thing. So I decided to write my own blog post with CSS-in-JS patterns
 that I either heard, used or currently using while working with CSS in JavaScript.
 
 This blog post is for those who knows basic of CSS-in-JS: `styled` component or what is CSS `prop`. I'll be using only one library here - [emotion](https://github.com/emotion-js/emotion).
@@ -40,9 +40,11 @@ const Header = styled('h1');
 const Description = styled('p');
 ```
 
-At work we have whole application written using `styled` components and in the beginning it seems
+At my job in [Ingrid](https://www.ingrid.com/) we have whole application written using `styled` components and in the beginning it seems
 like really nice pattern, yet if you don't rethink how you want reuse your components you will end
-up having a lot a duplication. This is our problem right now as we need to maintain whole file next
+up having a lot a duplication.
+
+This is our problem right now as we need to maintain whole file next
 to component that have all CSS-in-JS definitions. It is easy to read but if you need to change some
 padding or color you need to dive deep into `style.tsx` file and search for your particular component.
 
@@ -132,7 +134,15 @@ is done with `p` tag in example above.
 
 # Conclusion
 
-You can check all those examples in more complicated scenarios and using emotion here: https://codesandbox.io/s/css-in-js-patterns-zz7ns.
+You can check all those examples in more complicated scenarios and using emotion below in codesandbox:
+
+<iframe
+     src="https://codesandbox.io/embed/css-in-js-patterns-zz7ns?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="css in js patterns"
+     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+   ></iframe>
 
 In this blog post I wanted to present 3 CSS-in-JS patterns:
 
