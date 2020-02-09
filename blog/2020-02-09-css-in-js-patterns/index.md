@@ -1,6 +1,6 @@
 ---
 title: CSS in JS patterns
-date: '2020-01-31T16:49:03.284Z'
+date: '2020-02-09T16:49:03.284Z'
 slug: '/blog/2020/css-in-js-patterns'
 tags:
   - css-in-js
@@ -11,9 +11,9 @@ tags:
 
 I have read a lot of articles about CSS in JS. Yet majority of them are just some introductory articles
 or why having CSS in JS is a nice thing. So I decided to write my own blog post with CSS-in-JS patterns
-that I either heard, used or currently using while working with CSS in JavaScript.
+that I either heard, used or am currently using while working with CSS in JavaScript.
 
-This blog post is for those who knows basic of CSS-in-JS: `styled` component or what is CSS `prop`. I'll be using only one library here - [emotion](https://github.com/emotion-js/emotion).
+This blog post is for those who known basic of CSS-in-JS: `styled` component or what is CSS `prop`. I'll be using only one library here - [emotion](https://github.com/emotion-js/emotion).
 
 # Styled Component
 
@@ -41,8 +41,8 @@ const Description = styled('p');
 ```
 
 At my job in [Ingrid](https://www.ingrid.com/) we have whole application written using `styled` components and in the beginning it seems
-like really nice pattern, yet if you don't rethink how you want reuse your components you will end
-up having a lot a duplication.
+like really nice pattern, yet if you don't rethink how you want to reuse your components you will end
+up having a lot a duplications.
 
 This is our problem right now as we need to maintain whole file next
 to component that have all CSS-in-JS definitions. It is easy to read but if you need to change some
@@ -50,7 +50,7 @@ padding or color you need to dive deep into `style.tsx` file and search for your
 
 # Styled Component with CSS classes
 
-Here you have still `styled` component - but it is used only on the top level component. The rest
+Here you have `styled` function - but it is used only on the top level component. The rest
 is using either `classNames` or CSS selectors. Going back to previous example:
 
 ```tsx
@@ -79,7 +79,7 @@ const Card = styled('div', () => ({
 ```
 
 This is our current solution for having CSS-in-JS. It is not perfect - as sometimes we need to have
-header of different color based on some prop. Then we add new prop into `Card`, and pass it down for
+header of different color based on some prop. Then we add a new prop into `Card`, and pass it down for
 calculation:
 
 ```tsx
@@ -127,14 +127,14 @@ object that can contains [emotion-theming]() values.
 If you are using TypeScript you will need to type `theme` via `css={(theme: Theme) => ({})}` instead
 of having typed `styled` if you are using this [guide]().
 
-I'm not yet used this pattern in production code but I see some drawback from beginning - what if you
+I haven't used this pattern in production code but I see some drawback from beginning - what if you
 start using `css` prop too much? Then you will end up with a long HTML tags that have both logic of
-rendering and styling. One of solution for that problem is to extract styles to it's own variable as
+rendering and styling. One of solution for that problem is to extract styles to its own variable as
 is done with `p` tag in example above.
 
 # Conclusion
 
-You can check all those examples in more complicated scenarios and using emotion below in codesandbox:
+You can check all of those examples in more complicated scenarios below in codesandbox:
 
 <iframe
      src="https://codesandbox.io/embed/css-in-js-patterns-zz7ns?fontsize=14&hidenavigation=1&theme=dark"
@@ -147,7 +147,7 @@ You can check all those examples in more complicated scenarios and using emotion
 In this blog post I wanted to present 3 CSS-in-JS patterns:
 
 - styled prop. This is the easiest one to use but has a problem with having a lot of boilerplate to
-  write and then code to maintain.
+  write and maintain the code.
 
 - styled classes. This is somewhat in the middle between styled & css prop. You create main wrapper
   with `styled` and then inside its definition use CSS selectors to style tags inside. It has smaller
