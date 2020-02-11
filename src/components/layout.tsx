@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import '../styles/layout.css';
 
+import { CookiesBanner } from './cookies';
 import Footer from './footer';
 import { Header } from './header';
 
@@ -11,6 +12,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
       <Header />
       <div className="content">{children}</div>
       <Footer />
+      <CookiesBanner />
     </div>
   );
 };
