@@ -1,3 +1,4 @@
+import { DiscussionEmbed } from 'disqus-react';
 import { Link } from 'gatsby';
 import * as React from 'react';
 
@@ -35,6 +36,14 @@ function Post(props: ExcerptProps | HTMLProps) {
           ) : (
             <>
               <div dangerouslySetInnerHTML={{ __html: props.html! }} />
+              <DiscussionEmbed
+                shortname="krzysztof-zuraw-page"
+                config={{
+                  identifier: slug ? slug : '',
+                  title: title ? title : '',
+                  url: `https://krzysztofzuraw.com/${slug}`,
+                }}
+              />
             </>
           )}
         </div>
