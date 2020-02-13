@@ -1,10 +1,11 @@
-import { DiscussionEmbed } from 'disqus-react';
 import { Link } from 'gatsby';
 import * as React from 'react';
 
 import { MarkdownRemarkFrontmatter } from 'typings/graphql';
 
 import style from '../styles/post.module.css';
+import { Comments } from './comments';
+import { Newsletter } from './newsletter';
 
 type ExcerptProps = {
   frontmatter: MarkdownRemarkFrontmatter | null;
@@ -36,14 +37,8 @@ function Post(props: ExcerptProps | HTMLProps) {
           ) : (
             <>
               <div dangerouslySetInnerHTML={{ __html: props.html! }} />
-              <DiscussionEmbed
-                shortname="krzysztof-zuraw-page"
-                config={{
-                  identifier: slug ? slug : '',
-                  title: title ? title : '',
-                  url: `https://krzysztofzuraw.com/${slug}`,
-                }}
-              />
+              <Newsletter />
+              <Comments title={title!} slug={slug!} />
             </>
           )}
         </div>
