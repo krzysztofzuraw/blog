@@ -10,15 +10,15 @@ module.exports = {
   siteMetadata: {
     siteName: 'Krzysztof Żuraw blog',
     author: 'Krzysztof Żuraw',
-    description: 'Krzysztof Żuraw personal blog: TypeScript, JavaScript & FE development.',
+    description: 'Krzysztof Żuraw personal blog.',
     siteUrl: 'https://krzysztofzuraw.com',
     social: {
       twitter: 'https://twitter.com/krzysztof_zuraw',
       linkedin: 'https://pl.linkedin.com/in/krzysztofzuraw',
       github: 'https://github.com/krzysztofzuraw',
-      email: 'mailto:noaaln@fastmail.com',
-      speakerDeck: 'https://speakerdeck.com/krzysztofzuraw',
+      email: 'mailto:blog@kzuraw.com',
     },
+    disqusShortname: 'krzysztof-zuraw-page',
   },
   plugins: [
     'gatsby-plugin-typescript',
