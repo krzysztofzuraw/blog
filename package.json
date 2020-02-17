@@ -1,13 +1,13 @@
 {
-  "name": "blog",
+  "name": "kzuraw-personal-site",
   "version": "1.0.0",
   "main": "n/a",
-  "description": "Krzysztof Żuraw blog",
+  "description": "Krzysztof Żuraw personal site",
   "scripts": {
-    "develop": "gatsby develop --verbose",
-    "type-check": "tsc",
+    "dev": "gatsby develop --verbose",
+    "tsc": "tsc",
     "lint": "tslint --project .",
-    "generate": "graphql-codegen --overwrite",
+    "gen": "graphql-codegen --overwrite",
     "reinstall": "rimraf node_modules && npm install",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
