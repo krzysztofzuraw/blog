@@ -1,10 +1,4 @@
 'use strict';
-const postCssPresetEnv = require(`postcss-preset-env`);
-const postCSSNested = require('postcss-nested');
-const postCSSUrl = require('postcss-url');
-const postCSSImports = require('postcss-import');
-const cssnano = require('cssnano');
-const postCSSMixins = require('postcss-mixins');
 
 module.exports = {
   siteMetadata: {
@@ -128,33 +122,6 @@ module.exports = {
             match: '^/blog/',
           },
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        postCssPlugins: [
-          postCSSUrl(),
-          postCSSImports(),
-          postCSSMixins(),
-          postCSSNested(),
-          postCssPresetEnv({
-            importFrom: 'src/styles/variables.css',
-            stage: 1,
-            preserve: false,
-          }),
-          cssnano({
-            preset: 'default',
-          }),
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-158228599-1',
-        anonymize: true,
-        respectDNT: true,
       },
     },
   ],
