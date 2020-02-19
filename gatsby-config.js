@@ -2,17 +2,17 @@
 
 module.exports = {
   siteMetadata: {
-    siteName: 'Krzysztof Żuraw blog',
+    siteName: 'Krzysztof Żuraw personal site',
     author: 'Krzysztof Żuraw',
-    description: 'Krzysztof Żuraw personal blog.',
+    description: 'Krzysztof Żuraw personal site',
     siteUrl: 'https://krzysztofzuraw.com',
     social: {
-      twitter: 'https://twitter.com/krzysztof_zuraw',
       linkedin: 'https://pl.linkedin.com/in/krzysztofzuraw',
       github: 'https://github.com/krzysztofzuraw',
       email: 'mailto:blog@kzuraw.com',
+      pinboard: 'https://pinboard.in/u:KZuraw',
+      newsletter: 'https://buttondown.email/krzysztof_zuraw',
     },
-    disqusShortname: 'krzysztof-zuraw-page',
   },
   plugins: [
     'gatsby-plugin-typescript',

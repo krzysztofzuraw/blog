@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0 auto;
   max-width: 50em;
@@ -7,9 +11,11 @@ body {
   color: #555;
 }
 
-h1,
-h2,
-strong {
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content strong {
   color: #333;
 }
 
@@ -30,10 +36,6 @@ nav li {
   justify-content: center;
 }
 
-nav h2 {
-  color: #4299e1;
-}
-
 nav h1 {
   display: flex;
   justify-content: center;
@@ -42,11 +44,10 @@ nav h1 {
 footer {
   display: flex;
   justify-content: center;
-  margin-top: auto;
+  margin-top: 20px;
 }
 
 .wrapper {
-  height: 100vh;
   display: flex;
   flex-direction: column;
 }
