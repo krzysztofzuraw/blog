@@ -41,7 +41,9 @@ export const Layout: React.FunctionComponent = ({ children }) => {
   return (
     <div className="wrapper">
       <nav>
-        <h1>Krzysztof Żuraw personal site 🏗️</h1>
+        <h1 title="Żuraw in english is crane hence crane emoji">
+          Krzysztof Żuraw personal site 🏗️
+        </h1>
         <ul>
           <li>
             <Link to="/">

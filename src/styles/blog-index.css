@@ -1,0 +1,9 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.blog-meta {
+  display: flex;
+  justify-content: space-between;
+}
