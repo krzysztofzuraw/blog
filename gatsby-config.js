@@ -1,24 +1,18 @@
 'use strict';
-const postCssPresetEnv = require(`postcss-preset-env`);
-const postCSSNested = require('postcss-nested');
-const postCSSUrl = require('postcss-url');
-const postCSSImports = require('postcss-import');
-const cssnano = require('cssnano');
-const postCSSMixins = require('postcss-mixins');
 
 module.exports = {
   siteMetadata: {
-    siteName: 'Krzysztof Żuraw blog',
+    siteName: 'Krzysztof Żuraw',
     author: 'Krzysztof Żuraw',
-    description: 'Krzysztof Żuraw personal blog.',
+    description: 'Krzysztof Żuraw personal site & blog',
     siteUrl: 'https://krzysztofzuraw.com',
     social: {
-      twitter: 'https://twitter.com/krzysztof_zuraw',
       linkedin: 'https://pl.linkedin.com/in/krzysztofzuraw',
       github: 'https://github.com/krzysztofzuraw',
       email: 'mailto:blog@kzuraw.com',
+      pinboard: 'https://pinboard.in/u:KZuraw',
+      newsletter: 'https://buttondown.email/krzysztof_zuraw',
     },
-    disqusShortname: 'krzysztof-zuraw-page',
   },
   plugins: [
     'gatsby-plugin-typescript',
@@ -128,33 +122,6 @@ module.exports = {
             match: '^/blog/',
           },
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        postCssPlugins: [
-          postCSSUrl(),
-          postCSSImports(),
-          postCSSMixins(),
-          postCSSNested(),
-          postCssPresetEnv({
-            importFrom: 'src/styles/variables.css',
-            stage: 1,
-            preserve: false,
-          }),
-          cssnano({
-            preset: 'default',
-          }),
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-158228599-1',
-        anonymize: true,
-        respectDNT: true,
       },
     },
   ],

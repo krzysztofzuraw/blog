@@ -7,7 +7,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/76679400-2108-484e-b2a4-dccd71984e48/deploy-status)](https://app.netlify.com/sites/flamboyant-stallman-9dcf8d/deploys)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=krzysztofzuraw/blog)](https://dependabot.com)
 
-
 This repository contains code & blog post for my [personal page](https://krzysztofzuraw.com).
 
 Source files are under `src`. Blog posts are inside `blog`. To build my personal site I've used
@@ -24,17 +23,17 @@ npm run install
 Run development server:
 
 ```shell
-npm run develop
+npm run dev
 ```
 
 To generate graphQL schema make sure that your dev server is running and use:
 
 ```shell
-npm run generate:graphql:types
+npm run gen
 ```
 
 To check types use:
 
 ```shell
-npm run type-check
+npm run tsc
 ```

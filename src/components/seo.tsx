@@ -2,18 +2,12 @@ import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
-function SEO({
-  description,
-  lang,
-  title,
-}: {
-  description?: string | null;
-  lang: string;
-  title: string;
-}) {
-  const { site } = useStaticQuery(
+import { SeoQuery } from 'typings/graphql';
+
+export const SEO: React.FunctionComponent<{ title: string }> = ({ title }) => {
+  const { site } = useStaticQuery<SeoQuery>(
     graphql`
-      query {
+      query SEO {
         site {
           siteMetadata {
             siteName
@@ -24,58 +18,47 @@ function SEO({
       }
     `
   );
-
-  const metaDescription = description || site.siteMetadata.description;
-
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: 'en',
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.siteName}`}
+      titleTemplate={`%s | ${site!.siteMetadata.siteName}`}
       meta={[
         {
-          name: `description`,
-          content: metaDescription,
+          name: 'description',
+          content: site!.siteMetadata.description,
         },
         {
-          property: `og:title`,
+          property: 'og:title',
           content: title,
         },
         {
-          property: `og:description`,
-          content: metaDescription,
+          property: 'og:description',
+          content: site!.siteMetadata.description,
         },
         {
-          property: `og:type`,
-          content: `website`,
+          property: 'og:type',
+          content: 'website',
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          name: 'twitter:card',
+          content: 'summary',
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          name: 'twitter:creator',
+          content: site!.siteMetadata.author,
         },
         {
-          name: `twitter:title`,
+          name: 'twitter:title',
           content: title,
         },
         {
-          name: `twitter:description`,
-          content: metaDescription,
+          name: 'twitter:description',
+          content: site!.siteMetadata.description,
         },
       ]}
     />
   );
-}
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
 };
-
-export default SEO;
