@@ -17,7 +17,7 @@ const NowPage: React.FunctionComponent = () => {
       <p>
         Appling&nbsp;
         <Link to="https://www.calnewport.com/books/digital-minimalism/">Digital minimalism</Link>.
-        Started reading paper magazines. Playing with Chemex & Areopress. Started running again.
+        Started reading paper magazines. Playing with Chemex & Aeropress. Started running again.
       </p>
       <p>Updated at 2020-02-22</p>
     </Layout>

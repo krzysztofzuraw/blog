@@ -1,16 +1,16 @@
-it('should render the first page', () => {
+it('should render the home page', () => {
   cy.visit('/');
-  cy.contains('Krzysztof Żuraw');
+  cy.contains('Krzysztof Żuraw personal site');
 });
 
 it('should render the first blog post', () => {
-  cy.visit('/');
-  cy.get('.post-link > a')
+  cy.visit('/blog');
+  cy.get('.blog-post-list a')
     .first()
     .click();
 });
 
-it('should go to about page', () => {
-  cy.visit('/');
-  cy.contains('Krzysztof Żuraw');
+it('should go to now page', () => {
+  cy.visit('/now');
+  cy.contains('Krzysztof Żuraw personal site');
 });
