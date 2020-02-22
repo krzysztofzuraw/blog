@@ -29,6 +29,11 @@ a {
   text-decoration: none;
 }
 
+a[href^="http://"]:not([href*="krzysztofzuraw.com"]):after,
+a[href^="https://"]:not([href*="krzysztofzuraw.com"]):after {
+  content: ' ↗️';
+}
+
 nav ul {
   display: flex;
   list-style: none;
