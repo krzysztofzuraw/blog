@@ -2,13 +2,30 @@
   box-sizing: border-box;
 }
 
+:root {
+  --textColor: #555;
+  --headerColor: #333;
+  --backgroundColor: #fff;
+  --linkColor: #4299e1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --textColor: #f8f8f2;
+    --headerColor: #bd93f9;
+    --backgroundColor: #282a36;
+    --linkColor: #8be9fd;
+  }
+}
+
 body {
   margin: 0 auto;
   max-width: 50em;
   line-height: 1.5;
   padding: 4em 1em;
   font-family: Arial, Helvetica, sans-serif;
-  color: #555;
+  color: var(--textColor);
+  background-color: var(--backgroundColor);
 }
 
 .content h1,
@@ -16,7 +33,7 @@ body {
 .content h3,
 .content h4,
 .content strong {
-  color: #333;
+  color: var(--headerColor);
 }
 
 img {
@@ -25,13 +42,17 @@ img {
 }
 
 a {
-  color: #4299e1;
+  color: var(--linkColor);
   text-decoration: none;
 }
 
 a[href^="http://"]:not([href*="krzysztofzuraw.com"]):after,
 a[href^="https://"]:not([href*="krzysztofzuraw.com"]):after {
   content: ' ↗️';
+}
+
+pre {
+  border: 1px solid #44475a;
 }
 
 nav ul {

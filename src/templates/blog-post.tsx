@@ -32,6 +32,15 @@ const BlogPostPage: React.FunctionComponent<Props> = ({
       </div>
       <hr></hr>
       <div dangerouslySetInnerHTML={{ __html: html }} />
+      <iframe
+        scrolling="no"
+        style={{
+          width: '100%',
+          height: '220px',
+        }}
+        title="newsletter iframe"
+        src="https://buttondown.email/krzysztof_zuraw?as_embed=true"
+      ></iframe>
     </Layout>
   );
 };

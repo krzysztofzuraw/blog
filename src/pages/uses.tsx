@@ -19,7 +19,15 @@ const UsesPage: React.FunctionComponent = () => {
         <li>
           <Link to="https://www.alfredapp.com/">Alfred launcher</Link>
         </li>
-        <li>Apple reminders & notes</li>
+        <li>
+          <Link to="https://bear.app/">Bear</Link>
+        </li>
+        <li>
+          <Link to="https://mindnode.com/">Mind node</Link>
+        </li>
+        <li>
+          <Link to="https://culturedcode.com/things/">Things</Link>
+        </li>
         <li>
           <Link to="https://getcleanshot.com/">Cleanshot</Link>
         </li>
