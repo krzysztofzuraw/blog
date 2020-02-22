@@ -34,7 +34,8 @@ const BlogIndexPage: React.FunctionComponent<Props> = ({
     <Layout>
       <SEO title="Blog" />
       <p className="rss">
-        📰&nbsp;If you are looking for RSS feed with all articles it is 👉🏻 <Link>here</Link>.
+        📰&nbsp;If you are looking for RSS feed with all articles it is 👉🏻&nbsp;
+        <Link to="/feeds/all.rss.xml">here</Link>.
       </p>
       <ul className="blog-post-list">
         {edges.map(({ node }) => (
