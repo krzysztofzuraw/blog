@@ -19,6 +19,11 @@ body {
   color: #333;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 a {
   color: #4299e1;
   text-decoration: none;

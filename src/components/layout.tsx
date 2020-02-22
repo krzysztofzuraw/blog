@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import { Link } from '.';
 import '../styles/layout.css';
+import '../styles/prism.css';
 
 type LayoutQuery = {
   site: {
