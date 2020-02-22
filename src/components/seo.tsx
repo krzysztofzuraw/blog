@@ -2,8 +2,10 @@ import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
+import { SeoQuery } from 'typings/graphql';
+
 export const SEO: React.FunctionComponent<{ title: string }> = ({ title }) => {
-  const { site } = useStaticQuery(
+  const { site } = useStaticQuery<SeoQuery>(
     graphql`
       query SEO {
         site {
@@ -22,11 +24,11 @@ export const SEO: React.FunctionComponent<{ title: string }> = ({ title }) => {
         lang: 'en',
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.siteName}`}
+      titleTemplate={`%s | ${site!.siteMetadata.siteName}`}
       meta={[
         {
           name: 'description',
-          content: site.siteMetadata.description,
+          content: site!.siteMetadata.description,
         },
         {
           property: 'og:title',
@@ -34,7 +36,7 @@ export const SEO: React.FunctionComponent<{ title: string }> = ({ title }) => {
         },
         {
           property: 'og:description',
-          content: site.siteMetadata.description,
+          content: site!.siteMetadata.description,
         },
         {
           property: 'og:type',
@@ -46,7 +48,7 @@ export const SEO: React.FunctionComponent<{ title: string }> = ({ title }) => {
         },
         {
           name: 'twitter:creator',
-          content: site.siteMetadata.author,
+          content: site!.siteMetadata.author,
         },
         {
           name: 'twitter:title',
@@ -54,7 +56,7 @@ export const SEO: React.FunctionComponent<{ title: string }> = ({ title }) => {
         },
         {
           name: 'twitter:description',
-          content: site.siteMetadata.description,
+          content: site!.siteMetadata.description,
         },
       ]}
     />

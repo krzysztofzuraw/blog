@@ -1,30 +1,13 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 
+import { LayoutQuery } from 'typings/graphql';
 import { Link } from '.';
 import '../styles/layout.css';
 import '../styles/prism.css';
 
-type LayoutQuery = {
-  site: {
-    siteMetadata: {
-      author: string;
-      social: {
-        email: string;
-      };
-    };
-  };
-};
-
 export const Layout: React.FunctionComponent = ({ children }) => {
-  const {
-    site: {
-      siteMetadata: {
-        author,
-        social: { email },
-      },
-    },
-  } = useStaticQuery<LayoutQuery>(
+  const { site } = useStaticQuery<LayoutQuery>(
     graphql`
       query Layout {
         site {
@@ -67,7 +50,8 @@ export const Layout: React.FunctionComponent = ({ children }) => {
       <footer>
         <div>
           © 2016-{new Date().getFullYear()}&nbsp;
-          <Link to={email}>{author}</Link>. Built with Gatsby.
+          <Link to={site!.siteMetadata.social.email}>{site!.siteMetadata.author}</Link>. Built with
+          Gatsby.
         </div>
       </footer>
     </div>

@@ -49,3 +49,44 @@ exports.createPages = ({ graphql, actions }) => {
     });
   });
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+  type MarkdownRemark implements Node {
+    frontmatter: Frontmatter!
+  }
+  type Frontmatter {
+    tags: [String!]!
+    title: String!
+    slug: String!
+    date(
+      difference: String
+      formatString: String
+      fromNow: Boolean
+      locale: String
+    ): Date!
+  }
+
+  type Site implements Node {
+    siteMetadata: SiteSiteMetadata!
+  }
+
+  type SiteSiteMetadata {
+    siteName: String!
+    author: String!
+    description: String!
+    siteUrl: String!
+    social: SiteSiteMetadataSocial!
+  }
+
+  type SiteSiteMetadataSocial {
+    linkedin: String!
+    github: String!
+    email: String!
+    pinboard: String!
+    newsletter: String!
+  }
+  `;
+  createTypes(typeDefs);
+};

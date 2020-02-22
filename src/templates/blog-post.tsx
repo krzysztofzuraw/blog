@@ -1,37 +1,24 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
 
+import { BlogPostBySlugQuery } from 'typings/graphql';
 import { Layout, SEO } from '../components';
 
 type Props = {
-  data: {
-    markdownRemark: {
-      html: string;
-      frontmatter: {
-        title: string;
-        date: string;
-        slug: string;
-        tags: string[];
-      };
-    };
-  };
+  data: BlogPostBySlugQuery;
 };
 
-const BlogPostPage: React.FunctionComponent<Props> = ({
-  data: {
-    markdownRemark: { html, frontmatter },
-  },
-}) => {
+const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark } }) => {
   return (
     <Layout>
-      <SEO title={frontmatter.title} />
-      <h1>{frontmatter.title}</h1>
+      <SEO title={markdownRemark!.frontmatter.title} />
+      <h1>{markdownRemark!.frontmatter.title}</h1>
       <div className="blog-meta">
-        <div>{frontmatter.date}</div>
-        <div>{frontmatter.tags.map(tag => `#${tag}`).join(', ')}</div>
+        <div>{markdownRemark!.frontmatter.date}</div>
+        <div>{markdownRemark!.frontmatter.tags.map(tag => `#${tag}`).join(', ')}</div>
       </div>
       <hr></hr>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <div dangerouslySetInnerHTML={{ __html: markdownRemark!.html! }} />
       <iframe
         scrolling="no"
         style={{
