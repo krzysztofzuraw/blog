@@ -2,9 +2,9 @@
 
 module.exports = {
   siteMetadata: {
-    siteName: 'Krzysztof Żuraw personal site',
+    siteName: 'Krzysztof Żuraw',
     author: 'Krzysztof Żuraw',
-    description: 'Krzysztof Żuraw personal site',
+    description: 'Krzysztof Żuraw personal site & blog',
     siteUrl: 'https://krzysztofzuraw.com',
     social: {
       linkedin: 'https://pl.linkedin.com/in/krzysztofzuraw',

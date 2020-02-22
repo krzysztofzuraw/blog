@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
 
-import { Layout } from '../components';
+import { Layout, SEO } from '../components';
 
 type Props = {
   data: {
@@ -24,6 +24,7 @@ const BlogPostPage: React.FunctionComponent<Props> = ({
 }) => {
   return (
     <Layout>
+      <SEO title={frontmatter.title} />
       <h1>{frontmatter.title}</h1>
       <div className="blog-meta">
         <div>{frontmatter.date}</div>

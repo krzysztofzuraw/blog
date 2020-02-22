@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { graphql } from 'gatsby';
-import { Layout, Link } from '../components';
+import { Layout, Link, SEO } from '../components';
 
 type Props = {
   data: {
@@ -28,6 +28,7 @@ const IndexPage: React.FunctionComponent<Props> = ({
 }) => {
   return (
     <Layout>
+      <SEO title="Home" />
       <h3>Hello 👋🏻</h3>
       <p>
         Welcome to my personal site. I'm self-taught frontend developer. I enjoy working with

@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
 
-import { Layout, Link } from '../components';
+import { Layout, Link, SEO } from '../components';
 import '../styles/blog-index.css';
 
 type Props = {
@@ -32,10 +32,11 @@ const BlogIndexPage: React.FunctionComponent<Props> = ({
 }) => {
   return (
     <Layout>
+      <SEO title="Blog" />
       <p className="rss">
         📰&nbsp;If you are looking for RSS feed with all articles it is 👉🏻 <Link>here</Link>.
       </p>
-      <ul class="blog-post-list">
+      <ul className="blog-post-list">
         {edges.map(({ node }) => (
           <li key={node.id}>
             <h3>{node.frontmatter.title}</h3>

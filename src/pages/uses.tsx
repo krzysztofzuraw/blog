@@ -1,10 +1,11 @@
 import * as React from 'react';
 
-import { Layout, Link } from '../components';
+import { Layout, Link, SEO } from '../components';
 
 const UsesPage: React.FunctionComponent = () => {
   return (
     <Layout>
+      <SEO title="Uses" />
       <h2>Software (MacOS)</h2>
       <p>
         I have <Link to="https://github.com/krzysztofzuraw/dotfiles">dotfiles</Link> repo with my

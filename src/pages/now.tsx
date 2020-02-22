@@ -1,10 +1,11 @@
 import * as React from 'react';
 
-import { Layout, Link } from '../components';
+import { Layout, Link, SEO } from '../components';
 
 const NowPage: React.FunctionComponent = () => {
   return (
     <Layout>
+      <SEO title="Now" />
       <h2>Coding</h2>
       <p>
         I'm working at <Link to="https://www.ingird.com">Ingrid</Link> as a frontend team leader.
