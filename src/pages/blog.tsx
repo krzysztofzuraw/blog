@@ -4,6 +4,7 @@ import * as React from 'react';
 import { BlogPageQuery } from 'typings/graphql';
 import { Layout, Link, SEO } from '../components';
 import '../styles/blog-index.css';
+import { parseDate } from '../utils';
 
 type Props = {
   data: BlogPageQuery;
@@ -28,7 +29,7 @@ const BlogIndexPage: React.FunctionComponent<Props> = ({
             <p dangerouslySetInnerHTML={{ __html: node.excerpt! }} />
             <p className="blog-meta">
               <div>{node.frontmatter.tags.map(tag => `#${tag}`).join(', ')}</div>
-              <div>{node.frontmatter.date}</div>
+              <div>{parseDate(node.frontmatter.date)}</div>
             </p>
             <Link to={node.frontmatter.slug}>Read more ▶️</Link>
           </li>
