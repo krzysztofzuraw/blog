@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import { BlogPostBySlugQuery } from 'typings/graphql';
 import { Layout, SEO } from '../components';
+import { parseDate } from '../utils';
 
 type Props = {
   data: BlogPostBySlugQuery;
@@ -14,7 +15,7 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark }
       <SEO title={markdownRemark!.frontmatter.title} />
       <h1>{markdownRemark!.frontmatter.title}</h1>
       <div className="blog-meta">
-        <div>{markdownRemark!.frontmatter.date}</div>
+        <div>{parseDate(markdownRemark!.frontmatter.date)}</div>
         <div>{markdownRemark!.frontmatter.tags.map(tag => `#${tag}`).join(', ')}</div>
       </div>
       <hr></hr>
