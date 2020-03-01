@@ -23,7 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "gatsby": "2.19.23",
-    "gatsby-image": "2.2.39",
+    "gatsby-image": "2.2.41",
     "gatsby-plugin-feed": "2.3.27",
     "gatsby-plugin-manifest": "2.2.42",
     "gatsby-plugin-offline": "3.0.33",
