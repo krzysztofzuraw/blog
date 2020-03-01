@@ -47,7 +47,7 @@
   "devDependencies": {
     "@graphql-codegen/cli": "1.12.2",
     "@graphql-codegen/typescript": "1.12.2",
-    "@graphql-codegen/typescript-operations": "1.12.1",
+    "@graphql-codegen/typescript-operations": "1.12.2",
     "@types/react-helmet": "5.0.15",
     "@types/typography": "0.16.3",
     "concurrently": "5.1.0",
