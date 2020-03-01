@@ -45,7 +45,7 @@
     "sharp": "0.24.1"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.12.1",
+    "@graphql-codegen/cli": "1.12.2",
     "@graphql-codegen/typescript": "1.12.2",
     "@graphql-codegen/typescript-operations": "1.12.1",
     "@types/react-helmet": "5.0.15",
