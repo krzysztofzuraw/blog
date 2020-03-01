@@ -22,7 +22,7 @@
   "author": "Krzysztof Żuraw",
   "license": "MIT",
   "dependencies": {
-    "gatsby": "2.19.10",
+    "gatsby": "2.19.23",
     "gatsby-image": "2.2.39",
     "gatsby-plugin-feed": "2.3.26",
     "gatsby-plugin-manifest": "2.2.40",
