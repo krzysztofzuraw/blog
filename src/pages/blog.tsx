@@ -28,8 +28,8 @@ const BlogIndexPage: React.FunctionComponent<Props> = ({
             <h3>{node.frontmatter.title}</h3>
             <p dangerouslySetInnerHTML={{ __html: node.excerpt! }} />
             <p className="blog-meta">
-              <div>{node.frontmatter.tags.map(tag => `#${tag}`).join(', ')}</div>
-              <div>{parseDate(node.frontmatter.date)}</div>
+              <span>{node.frontmatter.tags.map(tag => `#${tag}`).join(', ')}</span>
+              <span>{parseDate(node.frontmatter.date)}</span>
             </p>
             <Link to={node.frontmatter.slug}>Read more ▶️</Link>
           </li>
