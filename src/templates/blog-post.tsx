@@ -21,12 +21,33 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark }
       </div>
       <hr></hr>
       <div dangerouslySetInnerHTML={{ __html: markdownRemark!.html! }} />
-      <iframe
+      <form
+        action="https://buttondown.email/api/emails/embed-subscribe/krzysztof_zuraw"
+        method="post"
+        target="popupwindow"
+        onSubmit={() =>
+          window && window.open('https://buttondown.email/krzysztof_zuraw', 'popupwindow')
+        }
         className="newsletter"
-        scrolling="no"
-        title="newsletter iframe"
-        src="https://buttondown.email/krzysztof_zuraw?as_embed=true"
-      ></iframe>
+      >
+        <label htmlFor="bd-email">Enter your email to subscribe to monthly newsletter</label>
+        <div>
+          <input
+            className="email"
+            type="email"
+            name="email"
+            id="bd-email"
+            placeholder="Your email address"
+          />
+          <input type="hidden" value="1" name="embed"></input>
+          <input className="button" type="submit" value="Subscribe"></input>
+        </div>
+        <p>
+          <a href="https://buttondown.email" target="_blank">
+            Powered by Buttondown
+          </a>
+        </p>
+      </form>
       <div className="comments">
         <form name="shouldIEnableComments" data-netlify="true" method="POST">
           <input type="hidden" name="form-name" value="shouldIEnableComments" />
@@ -53,7 +74,9 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark }
             />
             <label htmlFor="commentsNo">No</label>
           </div>
-          <button type="submit">Submit</button>
+          <button className="button" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </Layout>
