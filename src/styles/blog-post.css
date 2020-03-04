@@ -2,6 +2,40 @@
   width: 100%;
   height: 220px;
   border: 1px solid var(--textColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1em;
+}
+
+.newsletter label,
+.newsletter p {
+  align-self: center;
+}
+
+.newsletter div {
+  display: flex;
+  flex-direction: column;
+}
+
+.email {
+  padding: 0.5em 0.5em;
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 1.5em;
+  border: 1px solid var(--textColor);
+  flex: 1 1 auto;
+  margin-bottom: 1em;
+  border-radius: 4px;
+}
+
+.button {
+  flex: 1 1 auto;
+  align-self: center;
+  font-family: inherit;
+  padding: 0.5em 1em;
+  border: 1px solid var(--textColor);
+  border-radius: 4px;
 }
 
 .comments {
