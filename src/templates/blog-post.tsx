@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import { BlogPostBySlugQuery } from 'typings/graphql';
 import { Layout, SEO } from '../components';
+import '../styles/blog-post.css';
 import { parseDate } from '../utils';
 
 type Props = {
@@ -21,14 +22,40 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark }
       <hr></hr>
       <div dangerouslySetInnerHTML={{ __html: markdownRemark!.html! }} />
       <iframe
+        className="newsletter"
         scrolling="no"
-        style={{
-          width: '100%',
-          height: '220px',
-        }}
         title="newsletter iframe"
         src="https://buttondown.email/krzysztof_zuraw?as_embed=true"
       ></iframe>
+      <div className="comments">
+        <form name="shouldIEnableComments" data-netlify="true">
+          <input type="hidden" name="form-name" value="shouldIEnableComments" />
+          <p>
+            I'm thinking about adding comments. Would you like to leave a comment for this post?
+          </p>
+          <div>
+            <input
+              type="radio"
+              id="commentsYes"
+              name="commentsYes"
+              value={'true'}
+              aria-checked={false}
+            />
+            <label htmlFor="commentsYes">Yes</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="commentsNo"
+              name="commentsNo"
+              value={'false'}
+              aria-checked={false}
+            />
+            <label htmlFor="commentsNo">No</label>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </Layout>
   );
 };
