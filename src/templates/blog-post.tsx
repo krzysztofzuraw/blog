@@ -28,7 +28,8 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark }
         src="https://buttondown.email/krzysztof_zuraw?as_embed=true"
       ></iframe>
       <div className="comments">
-        <form>
+        <form name="shouldIEnableComments" data-netlify="true">
+          <input type="hidden" name="form-name" value="shouldIEnableComments" />
           <p>
             I'm thinking about adding comments. Would you like to leave a comment for this post?
           </p>

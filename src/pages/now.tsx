@@ -8,7 +8,7 @@ const NowPage: React.FunctionComponent = () => {
       <SEO title="Now" />
       <h2>Coding</h2>
       <p>
-        I'm working at <Link to="https://www.ingird.com">Ingrid</Link> as a frontend team leader.
+        I'm working at <Link to="https://www.ingrid.com">Ingrid</Link> as a frontend team leader.
         Focusing on honing my CSS & HTML skills. Coorganizing&nbsp;
         <Link to="https://www.meetup.com/pl-PL/WrocTypeScript/">Wrocław TypeScript</Link> &&nbsp;
         <Link to="https://www.meetup.com/CSSclassesWroclaw/">CSSClasses</Link>.
