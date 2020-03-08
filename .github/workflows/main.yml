@@ -1,4 +1,4 @@
-name: lint & type check
+name: lint / test
 
 on: [pull_request]
 
@@ -16,12 +16,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install, lint, and tsc
-        run: |
-          npm ci
-          npm run lint
-          npm run tsc
-          npm run test:e2e:ci
+        
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run tsc
+      - run: npm run test:e2e:ci 
         env:
           CI: true
 
