@@ -1,4 +1,4 @@
-name: lint & type check
+name: Lint/Test
 
 on: [pull_request]
 
