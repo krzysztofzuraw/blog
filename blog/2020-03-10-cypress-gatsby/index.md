@@ -44,6 +44,10 @@ If you then run `npm run cypress:open` and wait a little bit when cypress is ver
 (if you are on OSX) after a while, you should see a cypress dashboard with a welcoming message.
 You can close it.
 
+![](./dashboard.png)
+
+_Dashboard with e2e test._
+
 When you look into your files you may see that there is a new folder called `cypress` created. This
 is the place where you gonna store your e2e tests.
 For now, I recommend keeping `cypress/integration/main.spec.ts/js`.
@@ -76,6 +80,10 @@ development server is on, switch to the other terminal tab and execute `npm run 
 Your tests should start - if they fail you can see screenshots & videos inside: `cypress/videos`
 and `cypress/screenshots`. I recommend adding those paths to gitignore.
 
+![](./output.png)
+
+_Headless e2e test run output_
+
 You may spot `test:e2e:ci` inside `package.json` scripts. It is used to run cypres on my PRs using
 github actions:
 
@@ -96,6 +104,22 @@ jobs:
         CI: true
 ```
 
+There is also already made [github-action](https://github.com/cypress-io/github-action). To use it
+you have to add following entry in your workflow file (under `jobs` section):
+
+```yml
+cypress-run:
+  runs-on: ubuntu-16.04
+  steps:
+    - uses: actions/checkout@v1
+    - uses: cypress-io/github-action@v1
+      with:
+        start: npm run dev
+        wait-on: 'http://localhost:8000'
+        browser: chrome
+        headless: true
+```
+
 A full example of config is [here](https://github.com/krzysztofzuraw/blog/blob/master/.github/workflows/main.yml#L13-L26).
 
 That's all. I don't have many e2e tests - I'm using them as a way to check if dependency updates made
@@ -107,3 +131,7 @@ break rendering of my blog.
 In this blog post, I presented a way to use [Cypress.io](https://www.cypress.io/) to test
 [Gatsby.js](https://github.com/gatsbyjs/gatsby) blog. You can find how it works in action inside
 my blog [repository](https://github.com/krzysztofzuraw/blog).
+
+### Update 2020-03-11
+
+- Thanks to [Gleb Bahmutov](https://twitter.com/bahmutov) suggestion I added new screenshots & cypress github action
