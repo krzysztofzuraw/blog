@@ -1,4 +1,4 @@
-name: Auto merge Dependabot updates
+name: dependabot auto merge
 
 on:
   check_suite:
