@@ -1,9 +1,9 @@
-name: lint / test
+name: lint & test
 
 on: [pull_request]
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
 
     strategy:
@@ -12,23 +12,33 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-        
+
       - run: npm ci
       - run: npm run lint
       - run: npm run tsc
-      - run: npm run test:e2e:ci 
         env:
           CI: true
+  cypress-run:
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@v1
+      - uses: cypress-io/github-action@v1
+        with:
+          start: npm run dev
+          wait-on: "http://localhost:8000"
+          browser: chrome
+          headless: true
 
   auto-merge:
     name: Auto merge Dependabot updates
     runs-on: ubuntu-latest
     needs:
-      - build
+      - lint
+      - cypress-run
     steps:
       - name: auto-merge
         uses: ridedott/dependabot-auto-merge-action@master
