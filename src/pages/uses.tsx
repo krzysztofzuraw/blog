@@ -17,16 +17,13 @@ const UsesPage: React.FunctionComponent = () => {
           <Link to="https://dank.sh/">Dank Mono</Link> font
         </li>
         <li>
+          <Link to="https://hledger.org/">Hledger (plain text accounting & budgeting)</Link>
+        </li>
+        <li>
+          <Link to="http://www.lightandmatter.com/when/when.html">When (plain text calendar)</Link>
+        </li>
+        <li>
           <Link to="https://www.alfredapp.com/">Alfred launcher</Link>
-        </li>
-        <li>
-          <Link to="https://bear.app/">Bear</Link>
-        </li>
-        <li>
-          <Link to="https://mindnode.com/">Mind node</Link>
-        </li>
-        <li>
-          <Link to="https://culturedcode.com/things/">Things</Link>
         </li>
         <li>
           <Link to="https://getcleanshot.com/">Cleanshot</Link>
@@ -40,7 +37,7 @@ const UsesPage: React.FunctionComponent = () => {
           </Link>
         </li>
         <li>
-          <Link to="https://heyfocus.com/">Focus</Link>
+          <Link to="https://selfcontrolapp.com/">Self control</Link>
         </li>
         <li>
           <Link to="https://github.com/pqrs-org/Karabiner-Elements">Karabiner elements</Link>
@@ -50,8 +47,8 @@ const UsesPage: React.FunctionComponent = () => {
           <Link to="https://matthewpalmer.net/rocket/">Rocket</Link>
         </li>
         <li>
-          <Link to="https://apps.apple.com/us/app/tadam-stay-focused-at-work/id531349534?mt=12">
-            Tadam
+          <Link to="https://github.com/vitorgalvao/alfred-workflows/tree/master/SandwichTimer">
+            SandwichTimer for alfred
           </Link>
         </li>
         <li>
@@ -83,6 +80,9 @@ const UsesPage: React.FunctionComponent = () => {
           <Link to="https://aeropress.com/">Areopress</Link>
         </li>
         <li>
+          <Link to="https://www.hario.jp/sp_v60series.html">Hairo V60</Link>
+        </li>
+        <li>
           <Link to="https://baratza.com/grinder/encore/">Baratza encore</Link>
         </li>
         <li>
@@ -91,7 +91,7 @@ const UsesPage: React.FunctionComponent = () => {
           </Link>
         </li>
       </ul>
-      <p>Updated at 2020-02-22</p>
+      <p>Updated at 2020-03-21</p>
     </Layout>
   );
 };

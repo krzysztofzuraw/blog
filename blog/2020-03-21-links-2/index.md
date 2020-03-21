@@ -1,0 +1,26 @@
+---
+title: Interesting links that I found - vol. 2
+date: '2020-03-21T16:55:03.284Z'
+slug: '/blog/2020/links-2'
+tags:
+  - links
+  - articles
+---
+
+This is the second post of my series about things that i found on the internet this week.
+
+# Coding
+
+- [Baymard Institute](https://baymard.com/) - a lot of great knowledge about UX/UI based on research.
+  I just started reading and I'm finding more and more useful info there.
+- [CSS Grid course](cssgrid.io/) by Wes Bos. Awesome content. I have a blog post about it coming but
+  what I really like is how Wes is giving me incentive to do some more work with CSS grid.
+
+# Other
+
+- [Text file time blocking](https://www.calnewport.com/blog/2020/03/16/text-file-time-blocking/) - nice
+  write up about time blocking in text file. After this post I decided to try it - so far (2 days) it
+  is nice. Let's see how it gonna fly.
+
+- [Plain text project](https://plaintextproject.online/) - as we are on plain text field. Really nice
+  blog about all things plain text.
