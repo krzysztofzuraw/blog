@@ -55,7 +55,7 @@
     "cypress": "4.1.0",
     "graphql": "14.6.0",
     "husky": "4.2.3",
-    "prettier": "1.19.1",
+    "prettier": "2.0.2",
     "rimraf": "3.0.1",
     "start-server-and-test": "1.10.8",
     "tslint": "5.20.1",
