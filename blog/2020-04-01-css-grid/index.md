@@ -1,5 +1,5 @@
 ---
-title: CSS Grid.io course review
+title: cssgrid.io course review
 date: '2020-04-01T09:39:03.284Z'
 slug: '/blog/2020/css-grid-io-course'
 tags:
