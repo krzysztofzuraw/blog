@@ -29,8 +29,8 @@ But this is not the end! We have a new event coming.
 It is planned on April 29th (Wed) at 18:30 CEST.
 You can see what it will be in your [timezone](https://www.timeanddate.com/worldclock/converter.html?iso=20200429T163000&p1=664).
 
-We planned two talks: `Code analysis and visual code representation` by [Mateusz Strąg](twitter.com/MateuszStrag)
-and `Pimp your codebase & scale it!` by [Mateusz Ziarko](inkedin.com/in/mateuszziarko).
+We planned two talks: `Code analysis and visual code representation` by [Mateusz Strąg](https://twitter.com/MateuszStrag)
+and `Pimp your codebase & scale it!` by [Mateusz Ziarko](https://linkedin.com/in/mateuszziarko).
 You can RSVP on [meetup](https://www.meetup.com/WrocTypeScript/events/267280145/)
 or ask youtube to remind you [here](https://www.youtube.com/watch?v=4aZ8WMyJiWU&feature=youtu.be).
 
