@@ -1,3 +1,4 @@
+import { DiscussionEmbed } from 'disqus-react';
 import { graphql } from 'gatsby';
 import * as React from 'react';
 
@@ -10,14 +11,17 @@ type Props = {
   data: BlogPostBySlugQuery;
 };
 
-const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark } }) => {
+const BlogPostPage: React.FunctionComponent<Props> = ({
+  data: { markdownRemark, site },
+  location,
+}) => {
   return (
     <Layout>
       <SEO title={`${markdownRemark!.frontmatter.title} | Krzysztof Żuraw`} />
       <h1>{markdownRemark!.frontmatter.title}</h1>
       <div className="blog-meta">
         <div>{parseDate(markdownRemark!.frontmatter.date)}</div>
-        <div>{markdownRemark!.frontmatter.tags.map(tag => `#${tag}`).join(', ')}</div>
+        <div>{markdownRemark!.frontmatter.tags.map((tag) => `#${tag}`).join(', ')}</div>
       </div>
       <hr></hr>
       <div dangerouslySetInnerHTML={{ __html: markdownRemark!.html! }} />
@@ -49,35 +53,14 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark }
         </p>
       </form>
       <div className="comments">
-        <form name="shouldIEnableComments" data-netlify="true" method="POST">
-          <input type="hidden" name="form-name" value="shouldIEnableComments" />
-          <p>
-            I'm thinking about adding comments. Would you like to leave a comment for this post?
-          </p>
-          <div>
-            <input
-              type="radio"
-              id="commentsYes"
-              name="commentsYes"
-              value={'true'}
-              aria-checked={false}
-            />
-            <label htmlFor="commentsYes">Yes</label>
-          </div>
-          <div>
-            <input
-              type="radio"
-              id="commentsNo"
-              name="commentsNo"
-              value={'false'}
-              aria-checked={false}
-            />
-            <label htmlFor="commentsNo">No</label>
-          </div>
-          <button className="button" type="submit">
-            Submit
-          </button>
-        </form>
+        <DiscussionEmbed
+          shortname={site?.siteMetadata.disqusName ?? ''}
+          config={{
+            url: `${site?.siteMetadata.siteUrl}${markdownRemark?.frontmatter.slug}`,
+            identifier: markdownRemark?.frontmatter.slug ?? '',
+            title: markdownRemark?.frontmatter.title ?? '',
+          }}
+        />
       </div>
     </Layout>
   );
@@ -94,6 +77,12 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         tags
         slug
+      }
+    }
+    site {
+      siteMetadata {
+        disqusName
+        siteUrl
       }
     }
   }

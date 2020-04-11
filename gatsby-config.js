@@ -16,6 +16,7 @@ module.exports = {
       keybase: 'https://keybase.io/krzysztofzuraw/',
       instagram: 'https://www.instagram.com/krzysztofzuraw/',
     },
+    disqusName: 'krzysztof-zuraw-page',
   },
   plugins: [
     'gatsby-plugin-typescript',
@@ -98,7 +99,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
