@@ -21,7 +21,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `
-  ).then(result => {
+  ).then((result) => {
     if (result.errors) {
       throw result.errors;
     }
@@ -78,14 +78,18 @@ exports.createSchemaCustomization = ({ actions }) => {
     description: String!
     siteUrl: String!
     social: SiteSiteMetadataSocial!
+    keywords: String!
+    disqusName: String!
   }
 
   type SiteSiteMetadataSocial {
     linkedin: String!
     github: String!
     email: String!
-    pinboard: String!
     newsletter: String!
+    instagram: String!
+    twitter: String!
+    keybase: String!
   }
   `;
   createTypes(typeDefs);

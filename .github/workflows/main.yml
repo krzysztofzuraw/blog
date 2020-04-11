@@ -1,4 +1,4 @@
-name: lint & test
+name: checks
 
 on: [pull_request]
 
@@ -22,6 +22,7 @@ jobs:
       - run: npm run tsc
         env:
           CI: true
+
   cypress-run:
     runs-on: ubuntu-16.04
     steps:
@@ -29,18 +30,6 @@ jobs:
       - uses: cypress-io/github-action@v1
         with:
           start: npm run dev
-          wait-on: "http://localhost:8000"
+          wait-on: 'http://localhost:8000'
           browser: chrome
           headless: true
-
-  auto-merge:
-    name: Auto merge Dependabot updates
-    runs-on: ubuntu-latest
-    needs:
-      - lint
-      - cypress-run
-    steps:
-      - name: auto-merge
-        uses: ridedott/dependabot-auto-merge-action@master
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -82,3 +82,13 @@ footer {
   display: flex;
   flex-direction: column;
 }
+
+.menu-item {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.main-description {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}

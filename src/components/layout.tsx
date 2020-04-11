@@ -24,25 +24,20 @@ export const Layout: React.FunctionComponent = ({ children }) => {
 
   return (
     <div className="wrapper">
-      <nav>
-        <h1 title="Żuraw in english is crane hence crane emoji">
-          Krzysztof Żuraw personal site 🏗️
-        </h1>
+      <nav className="menu">
+        <h1 title="Krzysztof Żuraw">Krzysztof Żuraw 🏗️</h1>
         <ul>
-          <li>
-            <Link to="/">
-              <h2>Home 🏠</h2>
-            </Link>
+          <li className="menu-item">
+            <Link to="/">Home 🏠</Link>
           </li>
-          <li>
-            <Link to="/blog">
-              <h2>Blog ✍️</h2>
-            </Link>
+          <li className="menu-item">
+            <Link to="/blog">Blog ✍️</Link>
           </li>
-          <li>
-            <Link to="/now">
-              <h2>Now 📆</h2>
-            </Link>
+          <li className="menu-item">
+            <Link to="/now">Now 📆</Link>
+          </li>
+          <li className="menu-item">
+            <Link to="/uses">Uses 💻</Link>
           </li>
         </ul>
       </nav>

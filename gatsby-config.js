@@ -4,21 +4,30 @@ module.exports = {
   siteMetadata: {
     siteName: 'Krzysztof Żuraw',
     author: 'Krzysztof Żuraw',
-    description: 'Krzysztof Żuraw personal site & blog',
+    description: 'Frontend Developer & Coffee Lover',
     siteUrl: 'https://krzysztofzuraw.com',
+    keywords: 'JavaScript, TypeScript, RxJS, React, Redux',
     social: {
       linkedin: 'https://pl.linkedin.com/in/krzysztofzuraw',
       github: 'https://github.com/krzysztofzuraw',
       email: 'mailto:blog@kzuraw.com',
-      pinboard: 'https://pinboard.in/u:KZuraw',
       newsletter: 'https://buttondown.email/krzysztof_zuraw',
+      twitter: 'https://twitter.com/krzysztof_zuraw',
+      keybase: 'https://keybase.io/krzysztofzuraw/',
+      instagram: 'https://www.instagram.com/krzysztofzuraw/',
     },
+    disqusName: 'krzysztof-zuraw-page',
   },
   plugins: [
     'gatsby-plugin-typescript',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        sitemapSize: 5000,
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
@@ -60,18 +69,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'Krzysztof Żuraw blog',
-        short_name: `Krzysztof Żuraw`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#33333399`,
-        display: `minimal-ui`,
-        icon: `assets/logo.png`,
-      },
-    },
+
     {
       resolve: 'gatsby-plugin-feed',
       options: {
@@ -90,7 +88,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,

@@ -4,15 +4,18 @@ import { Helmet } from 'react-helmet';
 
 import { SeoQuery } from 'typings/graphql';
 
-export const SEO: React.FunctionComponent<{ title: string }> = ({ title }) => {
+export const SEO: React.FunctionComponent<{ title: string; description: string }> = ({
+  title,
+  description,
+}) => {
   const { site } = useStaticQuery<SeoQuery>(
     graphql`
       query SEO {
         site {
           siteMetadata {
             siteName
-            description
             author
+            keywords
           }
         }
       }
@@ -24,19 +27,50 @@ export const SEO: React.FunctionComponent<{ title: string }> = ({ title }) => {
         lang: 'en',
       }}
       title={title}
-      titleTemplate={`%s | ${site!.siteMetadata.siteName}`}
+      link={[
+        {
+          rel: 'icon',
+          href:
+            'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏗️</text></svg>',
+        },
+      ]}
       meta={[
         {
           name: 'description',
-          content: site!.siteMetadata.description,
+          content: description,
+        },
+
+        {
+          name: 'keywords',
+          content: site!.siteMetadata.keywords,
         },
         {
           property: 'og:title',
           content: title,
         },
         {
+          property: 'og:type',
+          content: 'article',
+        },
+        {
+          property: 'og:image',
+          content: `https://og-image-peach.now.sh/${encodeURIComponent(title)}`,
+        },
+        {
+          property: 'og-locale',
+          content: 'en_US',
+        },
+        {
+          property: 'og:image:width',
+          content: '640px',
+        },
+        {
+          property: 'og:image:height',
+          content: '640px',
+        },
+        {
           property: 'og:description',
-          content: site!.siteMetadata.description,
+          content: description,
         },
         {
           property: 'og:type',
@@ -48,7 +82,15 @@ export const SEO: React.FunctionComponent<{ title: string }> = ({ title }) => {
         },
         {
           name: 'twitter:creator',
-          content: site!.siteMetadata.author,
+          content: '@krzysztof_zuraw',
+        },
+        {
+          name: 'twitter:site',
+          content: '@krzysztof_zuraw',
+        },
+        {
+          name: 'twitter:image',
+          content: `https://og-image-peach.now.sh/${encodeURIComponent(title)}`,
         },
         {
           name: 'twitter:title',
@@ -56,7 +98,7 @@ export const SEO: React.FunctionComponent<{ title: string }> = ({ title }) => {
         },
         {
           name: 'twitter:description',
-          content: site!.siteMetadata.description,
+          content: description,
         },
       ]}
     />

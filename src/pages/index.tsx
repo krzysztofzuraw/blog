@@ -11,16 +11,30 @@ type Props = {
 const IndexPage: React.FunctionComponent<Props> = ({ data: { site } }) => {
   return (
     <Layout>
-      <SEO title="Home" />
-      <h3>Hello 👋🏻</h3>
-      <p>
+      <SEO title="Krzysztof Żuraw | Frontend Developer & Coffee Lover" description="Main page" />
+      <div className="main-description">
         Welcome to my personal site. I'm self-taught frontend developer. I enjoy working with
         TypeScript, React, Redux and RxJs. Previously I was coding in Python (mainly Django
-        framework). You can find my projects on&nbsp;
-        <Link to={site!.siteMetadata.social.github}>github</Link> and tools on&nbsp;
-        <Link to="/uses">uses</Link> page. I have LinkedIn&nbsp;
-        <Link to={site!.siteMetadata.social.linkedin}>too</Link>.
-      </p>
+        framework). &nbsp;
+        <div>You can find me in these places:</div>
+        <ul>
+          <li>
+            <Link to={site!.siteMetadata.social.github}>GitHub</Link>
+          </li>
+          <li>
+            <Link to={site!.siteMetadata.social.twitter}>Twitter</Link>
+          </li>
+          <li>
+            <Link to={site!.siteMetadata.social.instagram}>Instagram</Link>
+          </li>
+          <li>
+            <Link to={site!.siteMetadata.social.linkedin}>LinkedIn</Link>
+          </li>
+          <li>
+            <Link to={site!.siteMetadata.social.keybase}>Keybase</Link>
+          </li>
+        </ul>
+      </div>
       <p>
         If I'm not coding I like to brew some good coffee with Chemex or Aeropress. You can also
         find me in various food spots (tasty ones) around Wrocław. I also like giving back to
@@ -35,10 +49,7 @@ const IndexPage: React.FunctionComponent<Props> = ({ data: { site } }) => {
         & help with preparing some event do not hesitate to contact me (email is on the footer).
       </p>
       <p>
-        I have monthly <Link to={site!.siteMetadata.social.newsletter}>newsletter</Link>. Last but
-        not least, I have a&nbsp;
-        <Link to={site!.siteMetadata.social.pinboard}>pinboard</Link> account where I keep
-        interesting links.
+        I have monthly <Link to={site!.siteMetadata.social.newsletter}>newsletter</Link>.
       </p>
     </Layout>
   );
@@ -54,8 +65,10 @@ export const pageQuery = graphql`
           email
           linkedin
           github
-          pinboard
           newsletter
+          twitter
+          keybase
+          instagram
         }
       }
     }
