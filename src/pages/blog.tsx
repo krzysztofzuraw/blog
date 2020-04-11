@@ -17,7 +17,7 @@ const BlogIndexPage: React.FunctionComponent<Props> = ({
 }) => {
   return (
     <Layout>
-      <SEO title="Blog | Krzysztof Żuraw" description="Blog index page" />
+      <SEO title="Blog | Krzysztof Żuraw" description="Blog index page" slug={'/blog'} />
       <p className="rss">
         📰&nbsp;If you are looking for RSS feed with all articles it is 👉🏻&nbsp;
         <Link to="/feeds/all.rss.xml">here</Link>.

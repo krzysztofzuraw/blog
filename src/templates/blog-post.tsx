@@ -17,6 +17,7 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark, 
       <SEO
         title={`${markdownRemark!.frontmatter.title} | Krzysztof Żuraw`}
         description={markdownRemark?.excerpt ?? ''}
+        slug={markdownRemark?.frontmatter.slug ?? ''}
       />
       <h1>{markdownRemark!.frontmatter.title}</h1>
       <div className="blog-meta">
