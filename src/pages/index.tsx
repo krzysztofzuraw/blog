@@ -11,7 +11,11 @@ type Props = {
 const IndexPage: React.FunctionComponent<Props> = ({ data: { site } }) => {
   return (
     <Layout>
-      <SEO title="Krzysztof Żuraw | Frontend Developer & Coffee Lover" description="Main page" />
+      <SEO
+        title="Krzysztof Żuraw | Frontend Developer & Coffee Lover"
+        description="Main page"
+        slug={''}
+      />
       <div className="main-description">
         Welcome to my personal site. I'm self-taught frontend developer. I enjoy working with
         TypeScript, React, Redux and RxJs. Previously I was coding in Python (mainly Django

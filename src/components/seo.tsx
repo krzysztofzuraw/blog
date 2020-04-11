@@ -4,10 +4,11 @@ import { Helmet } from 'react-helmet';
 
 import { SeoQuery } from 'typings/graphql';
 
-export const SEO: React.FunctionComponent<{ title: string; description: string }> = ({
-  title,
-  description,
-}) => {
+export const SEO: React.FunctionComponent<{
+  title: string;
+  description: string;
+  slug: string;
+}> = ({ title, description, slug }) => {
   const { site } = useStaticQuery<SeoQuery>(
     graphql`
       query SEO {
@@ -15,6 +16,7 @@ export const SEO: React.FunctionComponent<{ title: string; description: string }
           siteMetadata {
             siteName
             author
+            siteUrl
             keywords
           }
         }
@@ -67,6 +69,10 @@ export const SEO: React.FunctionComponent<{ title: string; description: string }
         {
           property: 'og:image:height',
           content: '640px',
+        },
+        {
+          property: 'og:url',
+          content: `${site?.siteMetadata.siteUrl}${slug}`,
         },
         {
           property: 'og:description',

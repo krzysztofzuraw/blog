@@ -3280,7 +3280,7 @@ export type SeoQuery = (
     { __typename?: 'Site' }
     & { siteMetadata: (
       { __typename?: 'SiteSiteMetadata' }
-      & Pick<SiteSiteMetadata, 'siteName' | 'author' | 'keywords'>
+      & Pick<SiteSiteMetadata, 'siteName' | 'author' | 'siteUrl' | 'keywords'>
     ) }
   )> }
 );
