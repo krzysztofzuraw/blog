@@ -5,7 +5,7 @@ import { Layout, Link, SEO } from '../components';
 const UsesPage: React.FunctionComponent = () => {
   return (
     <Layout>
-      <SEO title="Uses | Krzysztof Żuraw" />
+      <SEO title="Uses | Krzysztof Żuraw" description="What I use" />
       <h2>Software (MacOS)</h2>
       <ul>
         <li>

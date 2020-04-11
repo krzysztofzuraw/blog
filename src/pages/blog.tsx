@@ -17,7 +17,7 @@ const BlogIndexPage: React.FunctionComponent<Props> = ({
 }) => {
   return (
     <Layout>
-      <SEO title="Blog | Krzysztof Żuraw" />
+      <SEO title="Blog | Krzysztof Żuraw" description="Blog index page" />
       <p className="rss">
         📰&nbsp;If you are looking for RSS feed with all articles it is 👉🏻&nbsp;
         <Link to="/feeds/all.rss.xml">here</Link>.
@@ -28,7 +28,7 @@ const BlogIndexPage: React.FunctionComponent<Props> = ({
             <h3>{node.frontmatter.title}</h3>
             <p dangerouslySetInnerHTML={{ __html: node.excerpt! }} />
             <p className="blog-meta">
-              <span>{node.frontmatter.tags.map(tag => `#${tag}`).join(', ')}</span>
+              <span>{node.frontmatter.tags.map((tag) => `#${tag}`).join(', ')}</span>
               <span>{parseDate(node.frontmatter.date)}</span>
             </p>
             <Link to={node.frontmatter.slug}>Read more ▶️</Link>

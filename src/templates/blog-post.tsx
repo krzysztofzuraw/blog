@@ -11,13 +11,13 @@ type Props = {
   data: BlogPostBySlugQuery;
 };
 
-const BlogPostPage: React.FunctionComponent<Props> = ({
-  data: { markdownRemark, site },
-  location,
-}) => {
+const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark, site } }) => {
   return (
     <Layout>
-      <SEO title={`${markdownRemark!.frontmatter.title} | Krzysztof Żuraw`} />
+      <SEO
+        title={`${markdownRemark!.frontmatter.title} | Krzysztof Żuraw`}
+        description={markdownRemark?.excerpt ?? ''}
+      />
       <h1>{markdownRemark!.frontmatter.title}</h1>
       <div className="blog-meta">
         <div>{parseDate(markdownRemark!.frontmatter.date)}</div>
@@ -72,6 +72,7 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
+      excerpt
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

@@ -69,18 +69,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'Krzysztof Żuraw blog',
-        short_name: `Krzysztof Żuraw`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#33333399`,
-        display: `minimal-ui`,
-        icon: `assets/logo.png`,
-      },
-    },
+
     {
       resolve: 'gatsby-plugin-feed',
       options: {

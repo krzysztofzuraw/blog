@@ -2567,12 +2567,6 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsShowLineNumbers = 'pluginCreator___pluginOptions___showLineNumbers',
   PluginCreatorPluginOptionsNoInlineHighlight = 'pluginCreator___pluginOptions___noInlineHighlight',
   PluginCreatorPluginOptionsIgnoreFileExtensions = 'pluginCreator___pluginOptions___ignoreFileExtensions',
-  PluginCreatorPluginOptionsShortName = 'pluginCreator___pluginOptions___short_name',
-  PluginCreatorPluginOptionsStartUrl = 'pluginCreator___pluginOptions___start_url',
-  PluginCreatorPluginOptionsBackgroundColor = 'pluginCreator___pluginOptions___background_color',
-  PluginCreatorPluginOptionsThemeColor = 'pluginCreator___pluginOptions___theme_color',
-  PluginCreatorPluginOptionsDisplay = 'pluginCreator___pluginOptions___display',
-  PluginCreatorPluginOptionsIcon = 'pluginCreator___pluginOptions___icon',
   PluginCreatorPluginOptionsQuery = 'pluginCreator___pluginOptions___query',
   PluginCreatorPluginOptionsFeeds = 'pluginCreator___pluginOptions___feeds',
   PluginCreatorPluginOptionsFeedsQuery = 'pluginCreator___pluginOptions___feeds___query',
@@ -2813,12 +2807,6 @@ export enum SitePluginFieldsEnum {
   PluginOptionsShowLineNumbers = 'pluginOptions___showLineNumbers',
   PluginOptionsNoInlineHighlight = 'pluginOptions___noInlineHighlight',
   PluginOptionsIgnoreFileExtensions = 'pluginOptions___ignoreFileExtensions',
-  PluginOptionsShortName = 'pluginOptions___short_name',
-  PluginOptionsStartUrl = 'pluginOptions___start_url',
-  PluginOptionsBackgroundColor = 'pluginOptions___background_color',
-  PluginOptionsThemeColor = 'pluginOptions___theme_color',
-  PluginOptionsDisplay = 'pluginOptions___display',
-  PluginOptionsIcon = 'pluginOptions___icon',
   PluginOptionsQuery = 'pluginOptions___query',
   PluginOptionsFeeds = 'pluginOptions___feeds',
   PluginOptionsFeedsQuery = 'pluginOptions___feeds___query',
@@ -2965,12 +2953,6 @@ export type SitePluginPluginOptions = {
   showLineNumbers?: Maybe<Scalars['Boolean']>,
   noInlineHighlight?: Maybe<Scalars['Boolean']>,
   ignoreFileExtensions?: Maybe<Array<Maybe<Scalars['String']>>>,
-  short_name?: Maybe<Scalars['String']>,
-  start_url?: Maybe<Scalars['String']>,
-  background_color?: Maybe<Scalars['String']>,
-  theme_color?: Maybe<Scalars['String']>,
-  display?: Maybe<Scalars['String']>,
-  icon?: Maybe<Scalars['String']>,
   query?: Maybe<Scalars['String']>,
   feeds?: Maybe<Array<Maybe<SitePluginPluginOptionsFeeds>>>,
   pathCheck?: Maybe<Scalars['Boolean']>,
@@ -3016,12 +2998,6 @@ export type SitePluginPluginOptionsFilterInput = {
   showLineNumbers?: Maybe<BooleanQueryOperatorInput>,
   noInlineHighlight?: Maybe<BooleanQueryOperatorInput>,
   ignoreFileExtensions?: Maybe<StringQueryOperatorInput>,
-  short_name?: Maybe<StringQueryOperatorInput>,
-  start_url?: Maybe<StringQueryOperatorInput>,
-  background_color?: Maybe<StringQueryOperatorInput>,
-  theme_color?: Maybe<StringQueryOperatorInput>,
-  display?: Maybe<StringQueryOperatorInput>,
-  icon?: Maybe<StringQueryOperatorInput>,
   query?: Maybe<StringQueryOperatorInput>,
   feeds?: Maybe<SitePluginPluginOptionsFeedsFilterListInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
@@ -3304,7 +3280,7 @@ export type SeoQuery = (
     { __typename?: 'Site' }
     & { siteMetadata: (
       { __typename?: 'SiteSiteMetadata' }
-      & Pick<SiteSiteMetadata, 'siteName' | 'description' | 'author' | 'keywords'>
+      & Pick<SiteSiteMetadata, 'siteName' | 'author' | 'keywords'>
     ) }
   )> }
 );
@@ -3356,7 +3332,7 @@ export type BlogPostBySlugQuery = (
   { __typename?: 'Query' }
   & { markdownRemark: Maybe<(
     { __typename?: 'MarkdownRemark' }
-    & Pick<MarkdownRemark, 'html'>
+    & Pick<MarkdownRemark, 'html' | 'excerpt'>
     & { frontmatter: (
       { __typename?: 'Frontmatter' }
       & Pick<Frontmatter, 'title' | 'date' | 'tags' | 'slug'>
