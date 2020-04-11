@@ -5,7 +5,7 @@ import { Layout, Link, SEO } from '../components';
 const NowPage: React.FunctionComponent = () => {
   return (
     <Layout>
-      <SEO title="Now" />
+      <SEO title="Now | Krzysztof Żuraw" />
       <h2>Coding</h2>
       <p>
         I'm working from home due to corona at <Link to="https://www.ingrid.com">Ingrid</Link> as a

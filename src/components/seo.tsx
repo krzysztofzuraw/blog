@@ -13,6 +13,7 @@ export const SEO: React.FunctionComponent<{ title: string }> = ({ title }) => {
             siteName
             description
             author
+            keywords
           }
         }
       }
@@ -24,11 +25,15 @@ export const SEO: React.FunctionComponent<{ title: string }> = ({ title }) => {
         lang: 'en',
       }}
       title={title}
-      titleTemplate={`%s | ${site!.siteMetadata.siteName}`}
+      // titleTemplate={`%s | ${site!.siteMetadata.siteName}`}
       meta={[
         {
           name: 'description',
           content: site!.siteMetadata.description,
+        },
+        {
+          name: 'keywords',
+          content: site!.siteMetadata.keywords,
         },
         {
           property: 'og:title',

@@ -78,14 +78,17 @@ exports.createSchemaCustomization = ({ actions }) => {
     description: String!
     siteUrl: String!
     social: SiteSiteMetadataSocial!
+    keywords: String!
   }
 
   type SiteSiteMetadataSocial {
     linkedin: String!
     github: String!
     email: String!
-    pinboard: String!
     newsletter: String!
+    instagram: String!
+    twitter: String!
+    keybase: String!
   }
   `;
   createTypes(typeDefs);

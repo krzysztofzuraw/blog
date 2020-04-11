@@ -13,7 +13,7 @@ type Props = {
 const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark } }) => {
   return (
     <Layout>
-      <SEO title={markdownRemark!.frontmatter.title} />
+      <SEO title={`${markdownRemark!.frontmatter.title} | Krzysztof Żuraw`} />
       <h1>{markdownRemark!.frontmatter.title}</h1>
       <div className="blog-meta">
         <div>{parseDate(markdownRemark!.frontmatter.date)}</div>

@@ -4,14 +4,17 @@ module.exports = {
   siteMetadata: {
     siteName: 'Krzysztof Żuraw',
     author: 'Krzysztof Żuraw',
-    description: 'Krzysztof Żuraw personal site & blog',
+    description: 'Frontend Developer & Coffee Lover',
     siteUrl: 'https://krzysztofzuraw.com',
+    keywords: 'JavaScript, TypeScript, RxJS, React, Redux',
     social: {
       linkedin: 'https://pl.linkedin.com/in/krzysztofzuraw',
       github: 'https://github.com/krzysztofzuraw',
       email: 'mailto:blog@kzuraw.com',
-      pinboard: 'https://pinboard.in/u:KZuraw',
       newsletter: 'https://buttondown.email/krzysztof_zuraw',
+      twitter: 'https://twitter.com/krzysztof_zuraw',
+      keybase: 'https://keybase.io/krzysztofzuraw/',
+      instagram: 'https://www.instagram.com/krzysztofzuraw/',
     },
   },
   plugins: [
