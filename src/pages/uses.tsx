@@ -7,20 +7,10 @@ const UsesPage: React.FunctionComponent = () => {
     <Layout>
       <SEO title="Uses" />
       <h2>Software (MacOS)</h2>
-      <p>
-        I have <Link to="https://github.com/krzysztofzuraw/dotfiles">dotfiles</Link> repo with my
-        common configuration.
-      </p>
       <ul>
         <li>
           VSCode with <Link to="https://draculatheme.com/pro">Dracula pro</Link> theme &&nbsp;
           <Link to="https://dank.sh/">Dank Mono</Link> font
-        </li>
-        <li>
-          <Link to="https://hledger.org/">Hledger (plain text accounting & budgeting)</Link>
-        </li>
-        <li>
-          <Link to="http://www.lightandmatter.com/when/when.html">When (plain text calendar)</Link>
         </li>
         <li>
           <Link to="https://www.alfredapp.com/">Alfred launcher</Link>
@@ -29,27 +19,41 @@ const UsesPage: React.FunctionComponent = () => {
           <Link to="https://getcleanshot.com/">Cleanshot</Link>
         </li>
         <li>
+          <Link to="https://dayoneapp.com/">Day One</Link>
+        </li>
+        <li>
           <Link to="https://kapeli.com/dash">Dash</Link>
         </li>
         <li>
-          <Link to="https://www.mozilla.org/en-US/firefox/developer/">
-            Firefox Developer Edition
-          </Link>
+          <Link to="https://heyfocus.com/">Focus</Link>
         </li>
-        <li>
-          <Link to="https://selfcontrolapp.com/">Self control</Link>
-        </li>
+        <li>Chrome</li>
         <li>
           <Link to="https://github.com/pqrs-org/Karabiner-Elements">Karabiner elements</Link>
+        </li>
+        <li>
+          <Link to="https://mindnode.com/">MindNode</Link>
+        </li>
+        <li>
+          <Link to="https://nordvpn.com/">NordVPN</Link>
+        </li>
+        <li>
+          <Link to="https://www.notion.so/">Notion</Link>
         </li>
         <li>Spotify</li>
         <li>
           <Link to="https://matthewpalmer.net/rocket/">Rocket</Link>
         </li>
         <li>
-          <Link to="https://github.com/vitorgalvao/alfred-workflows/tree/master/SandwichTimer">
-            SandwichTimer for alfred
+          <Link to="https://apps.apple.com/us/app/tadam-stay-focused-at-work/id531349534?mt=12">
+            Tadam
           </Link>
+        </li>
+        <li>
+          <Link to="https://culturedcode.com/things/">Things</Link>
+        </li>
+        <li>
+          <Link to="https://timingapp.com/">Timing</Link>
         </li>
         <li>
           <Link to="https://apps.apple.com/us/app/toothfairy/id1191449274?mt=12">Tooth Fairy</Link>
@@ -91,7 +95,7 @@ const UsesPage: React.FunctionComponent = () => {
           </Link>
         </li>
       </ul>
-      <p>Updated at 2020-03-21</p>
+      <p>Updated at 2020-04-11</p>
     </Layout>
   );
 };
