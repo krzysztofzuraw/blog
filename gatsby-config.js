@@ -28,6 +28,14 @@ module.exports = {
         sitemapSize: 5000,
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-163423512-1',
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
