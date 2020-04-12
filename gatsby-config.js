@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     siteName: 'Krzysztof Żuraw',
     author: 'Krzysztof Żuraw',
-    description: 'Frontend Developer & Coffee Lover',
+    description: 'Frontend Developer | Learning Design | Coffee',
     siteUrl: 'https://krzysztofzuraw.com',
     keywords: 'JavaScript, TypeScript, RxJS, React, Redux',
     social: {
@@ -100,7 +100,7 @@ module.exports = {
             },
             query: `
             {
-              allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+              allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, limit:10) {
                 edges {
                   node {
                     excerpt
