@@ -12,7 +12,7 @@ const IndexPage: React.FunctionComponent<Props> = ({ data: { site } }) => {
   return (
     <Layout>
       <SEO
-        title="Krzysztof Żuraw | Frontend Developer & Coffee Lover"
+        title={`Krzysztof Żuraw | ${site?.siteMetadata.description}`}
         description="Main page"
         slug={''}
       />
@@ -23,19 +23,19 @@ const IndexPage: React.FunctionComponent<Props> = ({ data: { site } }) => {
         <div>You can find me in these places:</div>
         <ul>
           <li>
-            <Link to={site!.siteMetadata.social.github}>GitHub</Link>
+            <Link to={site?.siteMetadata.social.github ?? ''}>GitHub</Link>
           </li>
           <li>
-            <Link to={site!.siteMetadata.social.twitter}>Twitter</Link>
+            <Link to={site?.siteMetadata.social.twitter ?? ''}>Twitter</Link>
           </li>
           <li>
-            <Link to={site!.siteMetadata.social.instagram}>Instagram</Link>
+            <Link to={site?.siteMetadata.social.instagram ?? ''}>Instagram</Link>
           </li>
           <li>
-            <Link to={site!.siteMetadata.social.linkedin}>LinkedIn</Link>
+            <Link to={site?.siteMetadata.social.linkedin ?? ''}>LinkedIn</Link>
           </li>
           <li>
-            <Link to={site!.siteMetadata.social.keybase}>Keybase</Link>
+            <Link to={site?.siteMetadata.social.keybase ?? ''}>Keybase</Link>
           </li>
         </ul>
       </div>
@@ -53,7 +53,7 @@ const IndexPage: React.FunctionComponent<Props> = ({ data: { site } }) => {
         & help with preparing some event do not hesitate to contact me (email is on the footer).
       </p>
       <p>
-        I have monthly <Link to={site!.siteMetadata.social.newsletter}>newsletter</Link>.
+        I have monthly <Link to={site?.siteMetadata.social.newsletter ?? ''}>newsletter</Link>.
       </p>
     </Layout>
   );
@@ -65,6 +65,7 @@ export const pageQuery = graphql`
   query IndexPage {
     site {
       siteMetadata {
+        description
         social {
           email
           linkedin
