@@ -12,7 +12,9 @@ const IndexPage: React.FunctionComponent<Props> = ({ data: { site } }) => {
   return (
     <Layout>
       <SEO
-        title={`Krzysztof Żuraw | ${site?.siteMetadata.description}`}
+        title={`Krzysztof Żuraw | ${
+          site?.siteMetadata.description ?? 'Frontend Developer | Learning Design | Coffee'
+        }`}
         description="Main page"
         slug={''}
       />
