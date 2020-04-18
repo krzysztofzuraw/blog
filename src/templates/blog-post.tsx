@@ -1,4 +1,3 @@
-import { DiscussionEmbed } from 'disqus-react';
 import { graphql } from 'gatsby';
 import * as React from 'react';
 
@@ -11,7 +10,7 @@ type Props = {
   data: BlogPostBySlugQuery;
 };
 
-const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark, site } }) => {
+const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark } }) => {
   return (
     <Layout>
       <SEO
@@ -53,16 +52,6 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark, 
           </a>
         </p>
       </form>
-      <div className="comments">
-        <DiscussionEmbed
-          shortname={site?.siteMetadata.disqusName ?? ''}
-          config={{
-            url: `${site?.siteMetadata.siteUrl}${markdownRemark?.frontmatter.slug}`,
-            identifier: markdownRemark?.frontmatter.slug ?? '',
-            title: markdownRemark?.frontmatter.title ?? '',
-          }}
-        />
-      </div>
     </Layout>
   );
 };
@@ -79,12 +68,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         tags
         slug
-      }
-    }
-    site {
-      siteMetadata {
-        disqusName
-        siteUrl
       }
     }
   }
