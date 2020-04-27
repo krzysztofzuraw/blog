@@ -21,7 +21,7 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark, 
       <article className="h-entry">
         <h1 className="p-name">{markdownRemark!.frontmatter.title}</h1>
         <div className="blog-meta">
-          <div className="dt-published">{parseDate(markdownRemark!.frontmatter.date)}</div>
+          <div>{parseDate(markdownRemark!.frontmatter.date)}</div>
           <div>{markdownRemark!.frontmatter.tags.map((tag) => `#${tag}`).join(', ')}</div>
         </div>
         <hr></hr>
@@ -33,6 +33,9 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark, 
         <Link to="https://krzysztofzuraw.com" className="p-author h-card hidden">
           Krzysztof Żuraw
         </Link>
+        <time className="dt-published hidden" dateTime={markdownRemark!.frontmatter.date}>
+          {new Date(markdownRemark!.frontmatter.date).toISOString().replace('Z', '') + '+01:00'}
+        </time>
       </article>
       <form
         action="https://buttondown.email/api/emails/embed-subscribe/krzysztof_zuraw"
