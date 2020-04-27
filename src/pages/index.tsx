@@ -23,7 +23,7 @@ const IndexPage: React.FunctionComponent<Props> = ({ data: { site } }) => {
         TypeScript, React, Redux and RxJs. Previously I was coding in Python (mainly Django
         framework). &nbsp;
         <div>You can find me in these places:</div>
-        <ul>
+        <ul className="h-card">
           <li>
             <Link to={site?.siteMetadata.social.github ?? ''} rel="me">
               GitHub
