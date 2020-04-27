@@ -23,21 +23,31 @@ const IndexPage: React.FunctionComponent<Props> = ({ data: { site } }) => {
         TypeScript, React, Redux and RxJs. Previously I was coding in Python (mainly Django
         framework). &nbsp;
         <div>You can find me in these places:</div>
-        <ul>
+        <ul className="h-card">
           <li>
-            <Link to={site?.siteMetadata.social.github ?? ''}>GitHub</Link>
+            <Link to={site?.siteMetadata.social.github ?? ''} rel="me">
+              GitHub
+            </Link>
           </li>
           <li>
-            <Link to={site?.siteMetadata.social.twitter ?? ''}>Twitter</Link>
+            <Link to={site?.siteMetadata.social.twitter ?? ''} rel="me">
+              Twitter
+            </Link>
           </li>
           <li>
-            <Link to={site?.siteMetadata.social.instagram ?? ''}>Instagram</Link>
+            <Link to={site?.siteMetadata.social.instagram ?? ''} rel="me">
+              Instagram
+            </Link>
           </li>
           <li>
-            <Link to={site?.siteMetadata.social.linkedin ?? ''}>LinkedIn</Link>
+            <Link to={site?.siteMetadata.social.linkedin ?? ''} rel="me">
+              LinkedIn
+            </Link>
           </li>
           <li>
-            <Link to={site?.siteMetadata.social.keybase ?? ''}>Keybase</Link>
+            <Link to={site?.siteMetadata.social.keybase ?? ''} rel="me">
+              Keybase
+            </Link>
           </li>
         </ul>
       </div>
