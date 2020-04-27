@@ -3347,5 +3347,11 @@ export type BlogPostBySlugQuery = (
       { __typename?: 'Frontmatter' }
       & Pick<Frontmatter, 'title' | 'date' | 'tags' | 'slug'>
     ) }
+  )>, site: Maybe<(
+    { __typename?: 'Site' }
+    & { siteMetadata: (
+      { __typename?: 'SiteSiteMetadata' }
+      & Pick<SiteSiteMetadata, 'siteUrl'>
+    ) }
   )> }
 );
