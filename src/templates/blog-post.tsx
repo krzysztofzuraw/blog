@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import * as React from 'react';
 
 import { BlogPostBySlugQuery } from 'typings/graphql';
-import { Layout, SEO } from '../components';
+import { Layout, Link, SEO } from '../components';
 import '../styles/blog-post.css';
 import { parseDate } from '../utils';
 
@@ -10,7 +10,7 @@ type Props = {
   data: BlogPostBySlugQuery;
 };
 
-const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark } }) => {
+const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark, site } }) => {
   return (
     <Layout>
       <SEO
@@ -18,13 +18,22 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark }
         description={markdownRemark?.excerpt ?? ''}
         slug={markdownRemark?.frontmatter.slug ?? ''}
       />
-      <h1>{markdownRemark!.frontmatter.title}</h1>
-      <div className="blog-meta">
-        <div>{parseDate(markdownRemark!.frontmatter.date)}</div>
-        <div>{markdownRemark!.frontmatter.tags.map((tag) => `#${tag}`).join(', ')}</div>
-      </div>
-      <hr></hr>
-      <div dangerouslySetInnerHTML={{ __html: markdownRemark!.html! }} />
+      <article className="h-entry">
+        <h1 className="p-name">{markdownRemark!.frontmatter.title}</h1>
+        <div className="blog-meta">
+          <div className="dt-published">{parseDate(markdownRemark!.frontmatter.date)}</div>
+          <div>{markdownRemark!.frontmatter.tags.map((tag) => `#${tag}`).join(', ')}</div>
+        </div>
+        <hr></hr>
+        <div className="e-content" dangerouslySetInnerHTML={{ __html: markdownRemark!.html! }} />
+        <Link
+          to={`${site?.siteMetadata.siteUrl}${markdownRemark?.frontmatter.slug}`}
+          className="u-url hidden"
+        />
+        <Link to="https://krzysztofzuraw.com" className="p-author h-card hidden">
+          Krzysztof Żuraw
+        </Link>
+      </article>
       <form
         action="https://buttondown.email/api/emails/embed-subscribe/krzysztof_zuraw"
         method="post"
@@ -68,6 +77,11 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         tags
         slug
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }
