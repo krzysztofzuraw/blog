@@ -47,7 +47,8 @@ a {
 }
 
 a[href^="http://"]:not([href*="krzysztofzuraw.com"]):after,
-a[href^="https://"]:not([href*="krzysztofzuraw.com"]):after {
+a[href^="https://"]:not([href*="krzysztofzuraw.com"]):after
+{
   content: ' ↗️';
 }
 
@@ -91,4 +92,8 @@ footer {
 .main-description {
   margin-top: 1em;
   margin-bottom: 1em;
+}
+
+.main-description .hidden {
+  display: none;
 }
