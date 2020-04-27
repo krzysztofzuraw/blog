@@ -28,8 +28,11 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark, 
         <div className="e-content" dangerouslySetInnerHTML={{ __html: markdownRemark!.html! }} />
         <Link
           to={`${site?.siteMetadata.siteUrl}${markdownRemark?.frontmatter.slug}`}
-          className="u-url"
+          className="u-url hidden"
         />
+        <Link to="https://krzysztofzuraw.com" className="p-author h-card hidden">
+          Krzysztof Żuraw
+        </Link>
       </article>
       <form
         action="https://buttondown.email/api/emails/embed-subscribe/krzysztof_zuraw"
