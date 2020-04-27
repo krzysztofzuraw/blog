@@ -1,14 +1,14 @@
-import * as React from 'react';
-
 import { graphql } from 'gatsby';
+import Image, { FixedObject } from 'gatsby-image';
+import * as React from 'react';
 import { IndexPageQuery } from 'typings/graphql';
-import { Layout, Link, SEO } from '../components';
 
+import { Layout, Link, SEO } from '../components';
 type Props = {
   data: IndexPageQuery;
 };
 
-const IndexPage: React.FunctionComponent<Props> = ({ data: { site } }) => {
+const IndexPage: React.FunctionComponent<Props> = ({ data: { site, avatar } }) => {
   return (
     <Layout>
       <SEO
@@ -24,28 +24,38 @@ const IndexPage: React.FunctionComponent<Props> = ({ data: { site } }) => {
         framework). &nbsp;
         <div>You can find me in these places:</div>
         <ul className="h-card">
+          <li className="hidden">
+            <Link to="https://krzysztofzuraw.com" className="u-url" rel="me" />
+          </li>
+          <li className="hidden">
+            <Image
+              fixed={avatar?.childImageSharp?.fixed as FixedObject}
+              alt="Krzysztof Żuraw"
+              className="u-photo"
+            />
+          </li>
           <li>
-            <Link to={site?.siteMetadata.social.github ?? ''} rel="me">
+            <Link to={site?.siteMetadata.social.github ?? ''} rel="me" className="u-url">
               GitHub
             </Link>
           </li>
           <li>
-            <Link to={site?.siteMetadata.social.twitter ?? ''} rel="me">
+            <Link to={site?.siteMetadata.social.twitter ?? ''} rel="me" className="u-url">
               Twitter
             </Link>
           </li>
           <li>
-            <Link to={site?.siteMetadata.social.instagram ?? ''} rel="me">
+            <Link to={site?.siteMetadata.social.instagram ?? ''} rel="me" className="u-url">
               Instagram
             </Link>
           </li>
           <li>
-            <Link to={site?.siteMetadata.social.linkedin ?? ''} rel="me">
+            <Link to={site?.siteMetadata.social.linkedin ?? ''} rel="me" className="u-url">
               LinkedIn
             </Link>
           </li>
           <li>
-            <Link to={site?.siteMetadata.social.keybase ?? ''} rel="me">
+            <Link to={site?.siteMetadata.social.keybase ?? ''} rel="me" className="u-url">
               Keybase
             </Link>
           </li>
@@ -86,6 +96,13 @@ export const pageQuery = graphql`
           twitter
           keybase
           instagram
+        }
+      }
+    }
+    avatar: file(absolutePath: { regex: "/pic.png/" }) {
+      childImageSharp {
+        fixed(width: 50, height: 50) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
