@@ -82,6 +82,24 @@ export const pageQuery = graphql`
         slug
       }
     }
+    webMentionEntry(wmTarget: { regex: $slug }) {
+      wmTarget
+      wmSource
+      wmProperty
+      wmId
+      type
+      url
+      likeOf
+      author {
+        url
+        type
+        photo
+        name
+      }
+      content {
+        text
+      }
+    }
     site {
       siteMetadata {
         siteUrl

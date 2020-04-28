@@ -36,7 +36,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-webmention`,
+      resolve: 'gatsby-plugin-webmention',
       options: {
         username: 'krzysztofzuraw.com',
         identity: {
@@ -45,7 +45,7 @@ module.exports = {
         },
         mentions: true,
         pingbacks: true,
-        domain: 'www.krzysztofzuraw.com',
+        domain: 'krzysztofzuraw.com',
         token: 'sSJqtOQKjGYhTedoMMk-Ow',
       },
     },
