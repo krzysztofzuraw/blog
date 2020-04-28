@@ -25,7 +25,7 @@ export const Layout: React.FunctionComponent = ({ children }) => {
   return (
     <div className="wrapper">
       <nav className="menu">
-        <h1 title="Krzysztof Żuraw">Krzysztof Żuraw 🏗️</h1>
+        <h1 title="Krzysztof Żuraw">🏗️ Krzysztof Żuraw 🦄</h1>
         <ul>
           <li className="menu-item">
             <Link to="/">Home 🏠</Link>
