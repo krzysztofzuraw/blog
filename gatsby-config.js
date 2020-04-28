@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     siteName: 'Krzysztof Żuraw',
     author: 'Krzysztof Żuraw',
-    description: 'Frontend Developer | Learning Design | Coffee',
+    description: 'Frontend | Design: Learning | Coffee',
     siteUrl: 'https://krzysztofzuraw.com',
     keywords: 'JavaScript, TypeScript, RxJS, React, Redux',
     social: {

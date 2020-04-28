@@ -13,15 +13,14 @@ const IndexPage: React.FunctionComponent<Props> = ({ data: { site, avatar } }) =
     <Layout>
       <SEO
         title={`Krzysztof Żuraw | ${
-          site?.siteMetadata.description ?? 'Frontend Developer | Learning Design | Coffee'
+          site?.siteMetadata.description ?? 'Frontend | Design: Learning | Coffee'
         }`}
         description="Main page"
         slug={''}
       />
       <div className="main-description">
-        Welcome to my personal site. I'm self-taught frontend developer. I enjoy working with
-        TypeScript, React, Redux and RxJs. Previously I was coding in Python (mainly Django
-        framework). &nbsp;
+        Welcome to my personal site 👋🏻. I'm self-taught frontend developer who is currently learning
+        design. I enjoy working with TypeScript + React.
         <div>You can find me in these places:</div>
         <ul className="h-card">
           <li className="hidden">

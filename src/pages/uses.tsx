@@ -13,50 +13,28 @@ const UsesPage: React.FunctionComponent = () => {
           <Link to="https://dank.sh/">Dank Mono</Link> font
         </li>
         <li>
+          Plain text in vcode for time blocking similar to what Jeff Huang
+          <Link to="https://jeffhuang.com/productivity_text_file/"> is using</Link>
+        </li>
+        <li>
+          <Link to="http://www.lightandmatter.com/when/when.html">When - plain text calendar</Link>
+        </li>
+        <li>
           <Link to="https://www.alfredapp.com/">Alfred launcher</Link>
         </li>
         <li>
           <Link to="https://getcleanshot.com/">Cleanshot</Link>
         </li>
         <li>
-          <Link to="https://dayoneapp.com/">Day One</Link>
-        </li>
-        <li>
-          <Link to="https://kapeli.com/dash">Dash</Link>
-        </li>
-        <li>
           <Link to="https://heyfocus.com/">Focus</Link>
         </li>
-        <li>Chrome</li>
+        <li>Firefox Developer Edition</li>
         <li>
           <Link to="https://github.com/pqrs-org/Karabiner-Elements">Karabiner elements</Link>
-        </li>
-        <li>
-          <Link to="https://mindnode.com/">MindNode</Link>
-        </li>
-        <li>
-          <Link to="https://nordvpn.com/">NordVPN</Link>
-        </li>
-        <li>
-          <Link to="https://www.notion.so/">Notion</Link>
         </li>
         <li>Spotify</li>
         <li>
           <Link to="https://matthewpalmer.net/rocket/">Rocket</Link>
-        </li>
-        <li>
-          <Link to="https://apps.apple.com/us/app/tadam-stay-focused-at-work/id531349534?mt=12">
-            Tadam
-          </Link>
-        </li>
-        <li>
-          <Link to="https://culturedcode.com/things/">Things</Link>
-        </li>
-        <li>
-          <Link to="https://timingapp.com/">Timing</Link>
-        </li>
-        <li>
-          <Link to="https://apps.apple.com/us/app/toothfairy/id1191449274?mt=12">Tooth Fairy</Link>
         </li>
       </ul>
       <h2>Hardware</h2>
@@ -95,7 +73,7 @@ const UsesPage: React.FunctionComponent = () => {
           </Link>
         </li>
       </ul>
-      <p>Updated at 2020-04-11</p>
+      <p>Updated at 2020-04-28</p>
     </Layout>
   );
 };

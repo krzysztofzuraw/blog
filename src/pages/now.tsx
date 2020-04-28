@@ -9,8 +9,12 @@ const NowPage: React.FunctionComponent = () => {
       <h2>Coding</h2>
       <p>
         I'm working from home due to corona at <Link to="https://www.ingrid.com">Ingrid</Link> as a
-        frontend team leader. Focusing on honing my CSS & HTML skills. Coorganizing&nbsp;
+        frontend team leader. Focusing on honing my CSS & HTML skills + learning how to design.
+        Coorganizing&nbsp;
         <Link to="https://www.meetup.com/pl-PL/WrocTypeScript/">Wrocław TypeScript</Link>
+      </p>
+      <p>
+        Trying to be more <Link to="https://indieweb.org">indie</Link> by setting up webmentions.
       </p>
       <h2>Free time</h2>
       <p>
@@ -21,7 +25,7 @@ const NowPage: React.FunctionComponent = () => {
         . Moved to plain text. As I'm working from home - brewing coffee at Chemex or Hairo V60 (to
         try the best method). Doing <Link to="https://gmb.io/e/">GMB elements course</Link>.
       </p>
-      <p>Updated at 2020-03-21</p>
+      <p>Updated at 2020-04-28</p>
     </Layout>
   );
 };
