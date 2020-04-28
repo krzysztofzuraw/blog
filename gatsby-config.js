@@ -36,6 +36,20 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-webmention`,
+      options: {
+        username: 'krzysztofzuraw.com',
+        identity: {
+          github: 'krzysztofzuraw',
+          twitter: 'krzysztof_zuraw',
+        },
+        mentions: true,
+        pingbacks: true,
+        domain: 'www.krzysztofzuraw.com',
+        token: 'sSJqtOQKjGYhTedoMMk-Ow',
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/assets`,
