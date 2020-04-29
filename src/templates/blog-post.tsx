@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import * as React from 'react';
 
 import { BlogPostBySlugQuery } from 'typings/graphql';
-import { Layout, Link, SEO } from '../components';
+import { Layout, Link, SEO, WebMentions } from '../components';
 import '../styles/blog-post.css';
 import { parseDate } from '../utils';
 
@@ -64,6 +64,7 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark, 
           </a>
         </p>
       </form>
+      <WebMentions />
     </Layout>
   );
 };
@@ -71,7 +72,7 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark, 
 export default BlogPostPage;
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query BlogPostBySlug($slug: String!, $permalink: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       excerpt
@@ -82,23 +83,8 @@ export const pageQuery = graphql`
         slug
       }
     }
-    webMentionEntry(wmTarget: { regex: $slug }) {
-      wmTarget
-      wmSource
-      wmProperty
-      wmId
-      type
-      url
-      likeOf
-      author {
-        url
-        type
-        photo
-        name
-      }
-      content {
-        text
-      }
+    webMentionEntry(wmTarget: { eq: $permalink }) {
+      ...WebMentionInformation
     }
     site {
       siteMetadata {
