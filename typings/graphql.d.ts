@@ -2380,10 +2380,12 @@ export type SitePageConnectionGroupArgs = {
 export type SitePageContext = {
    __typename?: 'SitePageContext',
   slug?: Maybe<Scalars['String']>,
+  permalink?: Maybe<Scalars['String']>,
 };
 
 export type SitePageContextFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>,
+  permalink?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePageEdge = {
@@ -2487,6 +2489,7 @@ export enum SitePageFieldsEnum {
   InternalType = 'internal___type',
   IsCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
   ContextSlug = 'context___slug',
+  ContextPermalink = 'context___permalink',
   PluginCreatorId = 'pluginCreator___id',
   PluginCreatorParentId = 'pluginCreator___parent___id',
   PluginCreatorParentParentId = 'pluginCreator___parent___parent___id',
@@ -3602,8 +3605,24 @@ export type IndexPageQuery = (
   )> }
 );
 
+export type WebMentionInformationFragment = (
+  { __typename?: 'WebMentionEntryEdge' }
+  & { node: (
+    { __typename?: 'WebMentionEntry' }
+    & Pick<WebMentionEntry, 'wmTarget' | 'wmSource' | 'wmProperty' | 'wmId' | 'type' | 'url' | 'likeOf'>
+    & { author: Maybe<(
+      { __typename?: 'WebMentionAuthor' }
+      & Pick<WebMentionAuthor, 'url' | 'type' | 'photo' | 'name'>
+    )>, content: Maybe<(
+      { __typename?: 'WebMentionContent' }
+      & Pick<WebMentionContent, 'text'>
+    )> }
+  ) }
+);
+
 export type BlogPostBySlugQueryVariables = {
-  slug: Scalars['String']
+  slug: Scalars['String'],
+  permalink: Scalars['String']
 };
 
 
@@ -3616,17 +3635,13 @@ export type BlogPostBySlugQuery = (
       { __typename?: 'Frontmatter' }
       & Pick<Frontmatter, 'title' | 'date' | 'tags' | 'slug'>
     ) }
-  )>, webMentionEntry: Maybe<(
-    { __typename?: 'WebMentionEntry' }
-    & Pick<WebMentionEntry, 'wmTarget' | 'wmSource' | 'wmProperty' | 'wmId' | 'type' | 'url' | 'likeOf'>
-    & { author: Maybe<(
-      { __typename?: 'WebMentionAuthor' }
-      & Pick<WebMentionAuthor, 'url' | 'type' | 'photo' | 'name'>
-    )>, content: Maybe<(
-      { __typename?: 'WebMentionContent' }
-      & Pick<WebMentionContent, 'text'>
+  )>, allWebMentionEntry: (
+    { __typename?: 'WebMentionEntryConnection' }
+    & { edges: Array<(
+      { __typename?: 'WebMentionEntryEdge' }
+      & WebMentionInformationFragment
     )> }
-  )>, site: Maybe<(
+  ), site: Maybe<(
     { __typename?: 'Site' }
     & { siteMetadata: (
       { __typename?: 'SiteSiteMetadata' }

@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import * as React from 'react';
 
 import { BlogPostBySlugQuery } from 'typings/graphql';
-import { Layout, Link, SEO, WebMentions } from '../components';
+import { Layout, Link, SEO } from '../components';
 import '../styles/blog-post.css';
 import { parseDate } from '../utils';
 
@@ -10,7 +10,9 @@ type Props = {
   data: BlogPostBySlugQuery;
 };
 
-const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark, site } }) => {
+const BlogPostPage: React.FunctionComponent<Props> = ({
+  data: { markdownRemark, site, allWebMentionEntry },
+}) => {
   return (
     <Layout>
       <SEO
@@ -64,10 +66,49 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark, 
           </a>
         </p>
       </form>
-      <WebMentions />
+      <WebMentions data={allWebMentionEntry} />
     </Layout>
   );
 };
+
+export const WebMentions: React.FunctionComponent<{
+  data: BlogPostBySlugQuery['allWebMentionEntry'];
+}> = ({ data: { edges } }) => {
+  const likesAndReposts = edges.filter(
+    ({ node }) => node.wmProperty === 'like-of' || node.wmProperty === 'repost-of'
+  );
+  const mentionsAndReplies = edges.filter(({ node }) => node.wmProperty === 'mention-of');
+  return (
+    <div>
+      <h1>Webmentions</h1>
+      <div>❤️ {likesAndReposts.length}</div>
+      <div>💬 {mentionsAndReplies.length}</div>
+    </div>
+  );
+};
+
+export const query = graphql`
+  fragment WebMentionInformation on WebMentionEntryEdge {
+    node {
+      wmTarget
+      wmSource
+      wmProperty
+      wmId
+      type
+      url
+      likeOf
+      author {
+        url
+        type
+        photo
+        name
+      }
+      content {
+        text
+      }
+    }
+  }
+`;
 
 export default BlogPostPage;
 
@@ -83,8 +124,10 @@ export const pageQuery = graphql`
         slug
       }
     }
-    webMentionEntry(wmTarget: { eq: $permalink }) {
-      ...WebMentionInformation
+    allWebMentionEntry(filter: { wmTarget: { eq: $permalink } }) {
+      edges {
+        ...WebMentionInformation
+      }
     }
     site {
       siteMetadata {
