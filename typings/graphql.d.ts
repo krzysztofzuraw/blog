@@ -3615,7 +3615,7 @@ export type WebMentionInformationFragment = (
       & Pick<WebMentionAuthor, 'url' | 'type' | 'photo' | 'name'>
     )>, content: Maybe<(
       { __typename?: 'WebMentionContent' }
-      & Pick<WebMentionContent, 'text'>
+      & Pick<WebMentionContent, 'html'>
     )> }
   ) }
 );

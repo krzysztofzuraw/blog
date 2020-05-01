@@ -79,10 +79,28 @@ export const WebMentions: React.FunctionComponent<{
   );
   const mentionsAndReplies = edges.filter(({ node }) => node.wmProperty === 'mention-of');
   return (
-    <div>
+    <div className="webmentions">
       <h1>Webmentions</h1>
-      <div>❤️ {likesAndReposts.length}</div>
-      <div>💬 {mentionsAndReplies.length}</div>
+      <div>
+        ❤️ {likesAndReposts.length} &nbsp;💬 {mentionsAndReplies.length}
+      </div>
+      <ul>
+        {mentionsAndReplies.map((entry) => (
+          <li key={entry.node.wmId ?? ''}>
+            <div className="webmention">
+              <Link to={entry.node.author?.url ?? ''}>
+                <img
+                  className="avatar"
+                  src={entry.node.author?.photo ?? ''}
+                  alt="user avatar"
+                  title={entry.node.author?.name ?? ''}
+                />
+              </Link>
+              <div dangerouslySetInnerHTML={{ __html: entry.node.content?.html ?? '' }}></div>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
@@ -104,7 +122,7 @@ export const query = graphql`
         name
       }
       content {
-        text
+        html
       }
     }
   }
