@@ -55,7 +55,7 @@
     "cssnano": "4.1.10",
     "cypress": "4.5.0",
     "graphql": "14.6.0",
-    "husky": "4.2.3",
+    "husky": "4.2.5",
     "prettier": "2.0.2",
     "rimraf": "3.0.1",
     "start-server-and-test": "1.10.11",
