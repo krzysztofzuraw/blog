@@ -19,6 +19,11 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        site {
+          siteMetadata {
+            siteUrl
+          }
+        }
       }
     `
   ).then((result) => {
@@ -27,11 +32,9 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     const posts = result.data.allMarkdownRemark.edges;
+    const siteUrl = result.data.site.siteMetadata.siteUrl;
 
-    posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-      const next = index === 0 ? null : posts[index - 1].node;
-
+    posts.forEach((post) => {
       const {
         node: {
           frontmatter: { slug },
@@ -42,8 +45,7 @@ exports.createPages = ({ graphql, actions }) => {
         component: blogPost,
         context: {
           slug: slug,
-          previous,
-          next,
+          permalink: `${siteUrl}${slug}/`,
         },
       });
     });

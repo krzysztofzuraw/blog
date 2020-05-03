@@ -6,6 +6,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   padding: 1em;
+  border-radius: 4px;
 }
 
 .newsletter label,
@@ -38,24 +39,41 @@
   border-radius: 4px;
 }
 
-.comments {
-  width: 100%;
-  min-height: 448px;
-  margin-top: 1em;
-  padding: 1em;
+.webmentions {
   border: 1px solid var(--textColor);
+  padding: 1em;
+  margin-top: 1em;
+  border-radius: 4px;
 }
 
-.comments form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.webmentions > h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.webmentions > ul {
+  margin: 0;
+  padding: 0;
+}
+
+.webmentions li {
+  list-style-type: none;
+  margin-top: 1em;
+}
+
+.webmention {
+  display: grid;
+  grid-template-columns: 60px 1fr;
   align-items: center;
 }
 
-.comments div:not(:last-child) {
-  margin-bottom: 0.25em;
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
+.webmentions img {
+  size: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.webmentions a:after {
+  content: unset !important;
 }

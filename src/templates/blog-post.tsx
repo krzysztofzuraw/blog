@@ -10,7 +10,9 @@ type Props = {
   data: BlogPostBySlugQuery;
 };
 
-const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark, site } }) => {
+const BlogPostPage: React.FunctionComponent<Props> = ({
+  data: { markdownRemark, site, allWebMentionEntry },
+}) => {
   return (
     <Layout>
       <SEO
@@ -64,14 +66,72 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark, 
           </a>
         </p>
       </form>
+      <WebMentions data={allWebMentionEntry} />
     </Layout>
   );
 };
 
+export const WebMentions: React.FunctionComponent<{
+  data: BlogPostBySlugQuery['allWebMentionEntry'];
+}> = ({ data: { edges } }) => {
+  const likesAndReposts = edges.filter(
+    ({ node }) => node.wmProperty === 'like-of' || node.wmProperty === 'repost-of'
+  );
+  const mentionsAndReplies = edges.filter(({ node }) => node.wmProperty === 'mention-of');
+  return (
+    <div className="webmentions">
+      <h1>Webmentions</h1>
+      <div>
+        ❤️ {likesAndReposts.length} &nbsp;💬 {mentionsAndReplies.length}
+      </div>
+      <ul>
+        {mentionsAndReplies.map((entry) => (
+          <li key={entry.node.wmId ?? ''}>
+            <div className="webmention">
+              <Link to={entry.node.author?.url ?? ''}>
+                <img
+                  className="avatar"
+                  src={entry.node.author?.photo ?? ''}
+                  alt="user avatar"
+                  title={entry.node.author?.name ?? ''}
+                />
+              </Link>
+              <div dangerouslySetInnerHTML={{ __html: entry.node.content?.html ?? '' }}></div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export const query = graphql`
+  fragment WebMentionInformation on WebMentionEntryEdge {
+    node {
+      wmTarget
+      wmSource
+      wmProperty
+      wmId
+      type
+      url
+      likeOf
+      author {
+        url
+        type
+        photo
+        name
+      }
+      content {
+        html
+      }
+    }
+  }
+`;
+
 export default BlogPostPage;
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query BlogPostBySlug($slug: String!, $permalink: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       excerpt
@@ -80,6 +140,11 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         tags
         slug
+      }
+    }
+    allWebMentionEntry(filter: { wmTarget: { eq: $permalink } }) {
+      edges {
+        ...WebMentionInformation
       }
     }
     site {

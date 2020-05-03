@@ -686,8 +686,8 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFrontmatterDate = 'childMarkdownRemark___frontmatter___date',
   ChildMarkdownRemarkFrontmatterReadNext = 'childMarkdownRemark___frontmatter___readNext',
   ChildMarkdownRemarkFrontmatterReadPrev = 'childMarkdownRemark___frontmatter___readPrev',
-  ChildMarkdownRemarkFrontmatterPrev = 'childMarkdownRemark___frontmatter___prev',
   ChildMarkdownRemarkFrontmatterCategory = 'childMarkdownRemark___frontmatter___category',
+  ChildMarkdownRemarkFrontmatterPrev = 'childMarkdownRemark___frontmatter___prev',
   ChildMarkdownRemarkExcerpt = 'childMarkdownRemark___excerpt',
   ChildMarkdownRemarkRawMarkdownBody = 'childMarkdownRemark___rawMarkdownBody',
   ChildMarkdownRemarkFileAbsolutePath = 'childMarkdownRemark___fileAbsolutePath',
@@ -818,8 +818,8 @@ export type Frontmatter = {
   date: Scalars['Date'],
   readNext?: Maybe<Scalars['String']>,
   readPrev?: Maybe<Scalars['String']>,
-  prev?: Maybe<Scalars['String']>,
   category?: Maybe<Scalars['String']>,
+  prev?: Maybe<Scalars['String']>,
 };
 
 
@@ -837,8 +837,8 @@ export type FrontmatterFilterInput = {
   date?: Maybe<DateQueryOperatorInput>,
   readNext?: Maybe<StringQueryOperatorInput>,
   readPrev?: Maybe<StringQueryOperatorInput>,
-  prev?: Maybe<StringQueryOperatorInput>,
   category?: Maybe<StringQueryOperatorInput>,
+  prev?: Maybe<StringQueryOperatorInput>,
 };
 
 export enum ImageCropFocus {
@@ -1504,8 +1504,8 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterDate = 'frontmatter___date',
   FrontmatterReadNext = 'frontmatter___readNext',
   FrontmatterReadPrev = 'frontmatter___readPrev',
-  FrontmatterPrev = 'frontmatter___prev',
   FrontmatterCategory = 'frontmatter___category',
+  FrontmatterPrev = 'frontmatter___prev',
   Excerpt = 'excerpt',
   RawMarkdownBody = 'rawMarkdownBody',
   FileAbsolutePath = 'fileAbsolutePath',
@@ -1716,6 +1716,8 @@ export type Query = {
   allImageSharp: ImageSharpConnection,
   markdownRemark?: Maybe<MarkdownRemark>,
   allMarkdownRemark: MarkdownRemarkConnection,
+  webMentionEntry?: Maybe<WebMentionEntry>,
+  allWebMentionEntry: WebMentionEntryConnection,
   siteBuildMetadata?: Maybe<SiteBuildMetadata>,
   allSiteBuildMetadata: SiteBuildMetadataConnection,
   sitePlugin?: Maybe<SitePlugin>,
@@ -1916,6 +1918,39 @@ export type QueryMarkdownRemarkArgs = {
 export type QueryAllMarkdownRemarkArgs = {
   filter?: Maybe<MarkdownRemarkFilterInput>,
   sort?: Maybe<MarkdownRemarkSortInput>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>
+};
+
+
+export type QueryWebMentionEntryArgs = {
+  type?: Maybe<StringQueryOperatorInput>,
+  author?: Maybe<WebMentionAuthorFilterInput>,
+  content?: Maybe<WebMentionContentFilterInput>,
+  url?: Maybe<StringQueryOperatorInput>,
+  published?: Maybe<DateQueryOperatorInput>,
+  wmReceived?: Maybe<DateQueryOperatorInput>,
+  wmId?: Maybe<IntQueryOperatorInput>,
+  wmPrivate?: Maybe<BooleanQueryOperatorInput>,
+  wmTarget?: Maybe<StringQueryOperatorInput>,
+  wmSource?: Maybe<StringQueryOperatorInput>,
+  wmProperty?: Maybe<StringQueryOperatorInput>,
+  likeOf?: Maybe<StringQueryOperatorInput>,
+  mentionOf?: Maybe<StringQueryOperatorInput>,
+  inReplyTo?: Maybe<StringQueryOperatorInput>,
+  repostOf?: Maybe<StringQueryOperatorInput>,
+  bookmarkOf?: Maybe<StringQueryOperatorInput>,
+  rsvp?: Maybe<StringQueryOperatorInput>,
+  id?: Maybe<StringQueryOperatorInput>,
+  parent?: Maybe<NodeFilterInput>,
+  children?: Maybe<NodeFilterListInput>,
+  internal?: Maybe<InternalFilterInput>
+};
+
+
+export type QueryAllWebMentionEntryArgs = {
+  filter?: Maybe<WebMentionEntryFilterInput>,
+  sort?: Maybe<WebMentionEntrySortInput>,
   skip?: Maybe<Scalars['Int']>,
   limit?: Maybe<Scalars['Int']>
 };
@@ -2345,54 +2380,12 @@ export type SitePageConnectionGroupArgs = {
 export type SitePageContext = {
    __typename?: 'SitePageContext',
   slug?: Maybe<Scalars['String']>,
-  previous?: Maybe<SitePageContextPrevious>,
-  next?: Maybe<SitePageContextNext>,
+  permalink?: Maybe<Scalars['String']>,
 };
 
 export type SitePageContextFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>,
-  previous?: Maybe<SitePageContextPreviousFilterInput>,
-  next?: Maybe<SitePageContextNextFilterInput>,
-};
-
-export type SitePageContextNext = {
-   __typename?: 'SitePageContextNext',
-  frontmatter?: Maybe<SitePageContextNextFrontmatter>,
-};
-
-export type SitePageContextNextFilterInput = {
-  frontmatter?: Maybe<SitePageContextNextFrontmatterFilterInput>,
-};
-
-export type SitePageContextNextFrontmatter = {
-   __typename?: 'SitePageContextNextFrontmatter',
-  title?: Maybe<Scalars['String']>,
-  slug?: Maybe<Scalars['String']>,
-};
-
-export type SitePageContextNextFrontmatterFilterInput = {
-  title?: Maybe<StringQueryOperatorInput>,
-  slug?: Maybe<StringQueryOperatorInput>,
-};
-
-export type SitePageContextPrevious = {
-   __typename?: 'SitePageContextPrevious',
-  frontmatter?: Maybe<SitePageContextPreviousFrontmatter>,
-};
-
-export type SitePageContextPreviousFilterInput = {
-  frontmatter?: Maybe<SitePageContextPreviousFrontmatterFilterInput>,
-};
-
-export type SitePageContextPreviousFrontmatter = {
-   __typename?: 'SitePageContextPreviousFrontmatter',
-  title?: Maybe<Scalars['String']>,
-  slug?: Maybe<Scalars['String']>,
-};
-
-export type SitePageContextPreviousFrontmatterFilterInput = {
-  title?: Maybe<StringQueryOperatorInput>,
-  slug?: Maybe<StringQueryOperatorInput>,
+  permalink?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePageEdge = {
@@ -2496,10 +2489,7 @@ export enum SitePageFieldsEnum {
   InternalType = 'internal___type',
   IsCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
   ContextSlug = 'context___slug',
-  ContextPreviousFrontmatterTitle = 'context___previous___frontmatter___title',
-  ContextPreviousFrontmatterSlug = 'context___previous___frontmatter___slug',
-  ContextNextFrontmatterTitle = 'context___next___frontmatter___title',
-  ContextNextFrontmatterSlug = 'context___next___frontmatter___slug',
+  ContextPermalink = 'context___permalink',
   PluginCreatorId = 'pluginCreator___id',
   PluginCreatorParentId = 'pluginCreator___parent___id',
   PluginCreatorParentParentId = 'pluginCreator___parent___parent___id',
@@ -2551,6 +2541,13 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsSitemapSize = 'pluginCreator___pluginOptions___sitemapSize',
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
   PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
+  PluginCreatorPluginOptionsUsername = 'pluginCreator___pluginOptions___username',
+  PluginCreatorPluginOptionsIdentityGithub = 'pluginCreator___pluginOptions___identity___github',
+  PluginCreatorPluginOptionsIdentityTwitter = 'pluginCreator___pluginOptions___identity___twitter',
+  PluginCreatorPluginOptionsMentions = 'pluginCreator___pluginOptions___mentions',
+  PluginCreatorPluginOptionsPingbacks = 'pluginCreator___pluginOptions___pingbacks',
+  PluginCreatorPluginOptionsDomain = 'pluginCreator___pluginOptions___domain',
+  PluginCreatorPluginOptionsToken = 'pluginCreator___pluginOptions___token',
   PluginCreatorPluginOptionsMaxWidth = 'pluginCreator___pluginOptions___maxWidth',
   PluginCreatorPluginOptionsPathPrefix = 'pluginCreator___pluginOptions___pathPrefix',
   PluginCreatorPluginOptionsWrapperStyle = 'pluginCreator___pluginOptions___wrapperStyle',
@@ -2791,6 +2788,13 @@ export enum SitePluginFieldsEnum {
   PluginOptionsSitemapSize = 'pluginOptions___sitemapSize',
   PluginOptionsPath = 'pluginOptions___path',
   PluginOptionsName = 'pluginOptions___name',
+  PluginOptionsUsername = 'pluginOptions___username',
+  PluginOptionsIdentityGithub = 'pluginOptions___identity___github',
+  PluginOptionsIdentityTwitter = 'pluginOptions___identity___twitter',
+  PluginOptionsMentions = 'pluginOptions___mentions',
+  PluginOptionsPingbacks = 'pluginOptions___pingbacks',
+  PluginOptionsDomain = 'pluginOptions___domain',
+  PluginOptionsToken = 'pluginOptions___token',
   PluginOptionsMaxWidth = 'pluginOptions___maxWidth',
   PluginOptionsPathPrefix = 'pluginOptions___pathPrefix',
   PluginOptionsWrapperStyle = 'pluginOptions___wrapperStyle',
@@ -2937,6 +2941,12 @@ export type SitePluginPluginOptions = {
   sitemapSize?: Maybe<Scalars['Int']>,
   path?: Maybe<Scalars['String']>,
   name?: Maybe<Scalars['String']>,
+  username?: Maybe<Scalars['String']>,
+  identity?: Maybe<SitePluginPluginOptionsIdentity>,
+  mentions?: Maybe<Scalars['Boolean']>,
+  pingbacks?: Maybe<Scalars['Boolean']>,
+  domain?: Maybe<Scalars['String']>,
+  token?: Maybe<Scalars['String']>,
   maxWidth?: Maybe<Scalars['Int']>,
   pathPrefix?: Maybe<Scalars['String']>,
   wrapperStyle?: Maybe<Scalars['String']>,
@@ -2982,6 +2992,12 @@ export type SitePluginPluginOptionsFilterInput = {
   sitemapSize?: Maybe<IntQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
   name?: Maybe<StringQueryOperatorInput>,
+  username?: Maybe<StringQueryOperatorInput>,
+  identity?: Maybe<SitePluginPluginOptionsIdentityFilterInput>,
+  mentions?: Maybe<BooleanQueryOperatorInput>,
+  pingbacks?: Maybe<BooleanQueryOperatorInput>,
+  domain?: Maybe<StringQueryOperatorInput>,
+  token?: Maybe<StringQueryOperatorInput>,
   maxWidth?: Maybe<IntQueryOperatorInput>,
   pathPrefix?: Maybe<StringQueryOperatorInput>,
   wrapperStyle?: Maybe<StringQueryOperatorInput>,
@@ -3001,6 +3017,17 @@ export type SitePluginPluginOptionsFilterInput = {
   query?: Maybe<StringQueryOperatorInput>,
   feeds?: Maybe<SitePluginPluginOptionsFeedsFilterListInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsIdentity = {
+   __typename?: 'SitePluginPluginOptionsIdentity',
+  github?: Maybe<Scalars['String']>,
+  twitter?: Maybe<Scalars['String']>,
+};
+
+export type SitePluginPluginOptionsIdentityFilterInput = {
+  github?: Maybe<StringQueryOperatorInput>,
+  twitter?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsPlugins = {
@@ -3131,6 +3158,251 @@ export type StringQueryOperatorInput = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>,
   regex?: Maybe<Scalars['String']>,
   glob?: Maybe<Scalars['String']>,
+};
+
+export type WebMentionAuthor = {
+   __typename?: 'WebMentionAuthor',
+  type?: Maybe<Scalars['String']>,
+  name?: Maybe<Scalars['String']>,
+  url?: Maybe<Scalars['String']>,
+  photo?: Maybe<Scalars['String']>,
+};
+
+export type WebMentionAuthorFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>,
+  name?: Maybe<StringQueryOperatorInput>,
+  url?: Maybe<StringQueryOperatorInput>,
+  photo?: Maybe<StringQueryOperatorInput>,
+};
+
+export type WebMentionContent = {
+   __typename?: 'WebMentionContent',
+  text?: Maybe<Scalars['String']>,
+  html?: Maybe<Scalars['String']>,
+};
+
+export type WebMentionContentFilterInput = {
+  text?: Maybe<StringQueryOperatorInput>,
+  html?: Maybe<StringQueryOperatorInput>,
+};
+
+export type WebMentionEntry = Node & {
+   __typename?: 'WebMentionEntry',
+  type?: Maybe<Scalars['String']>,
+  author?: Maybe<WebMentionAuthor>,
+  content?: Maybe<WebMentionContent>,
+  url?: Maybe<Scalars['String']>,
+  published?: Maybe<Scalars['Date']>,
+  wmReceived?: Maybe<Scalars['Date']>,
+  wmId?: Maybe<Scalars['Int']>,
+  wmPrivate?: Maybe<Scalars['Boolean']>,
+  wmTarget?: Maybe<Scalars['String']>,
+  wmSource?: Maybe<Scalars['String']>,
+  wmProperty?: Maybe<Scalars['String']>,
+  likeOf?: Maybe<Scalars['String']>,
+  mentionOf?: Maybe<Scalars['String']>,
+  inReplyTo?: Maybe<Scalars['String']>,
+  repostOf?: Maybe<Scalars['String']>,
+  bookmarkOf?: Maybe<Scalars['String']>,
+  rsvp?: Maybe<Scalars['String']>,
+  id: Scalars['ID'],
+  parent?: Maybe<Node>,
+  children: Array<Node>,
+  internal: Internal,
+};
+
+
+export type WebMentionEntryPublishedArgs = {
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
+};
+
+
+export type WebMentionEntryWmReceivedArgs = {
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
+};
+
+export type WebMentionEntryConnection = {
+   __typename?: 'WebMentionEntryConnection',
+  totalCount: Scalars['Int'],
+  edges: Array<WebMentionEntryEdge>,
+  nodes: Array<WebMentionEntry>,
+  pageInfo: PageInfo,
+  distinct: Array<Scalars['String']>,
+  group: Array<WebMentionEntryGroupConnection>,
+};
+
+
+export type WebMentionEntryConnectionDistinctArgs = {
+  field: WebMentionEntryFieldsEnum
+};
+
+
+export type WebMentionEntryConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>,
+  field: WebMentionEntryFieldsEnum
+};
+
+export type WebMentionEntryEdge = {
+   __typename?: 'WebMentionEntryEdge',
+  next?: Maybe<WebMentionEntry>,
+  node: WebMentionEntry,
+  previous?: Maybe<WebMentionEntry>,
+};
+
+export enum WebMentionEntryFieldsEnum {
+  Type = 'type',
+  AuthorType = 'author___type',
+  AuthorName = 'author___name',
+  AuthorUrl = 'author___url',
+  AuthorPhoto = 'author___photo',
+  ContentText = 'content___text',
+  ContentHtml = 'content___html',
+  Url = 'url',
+  Published = 'published',
+  WmReceived = 'wmReceived',
+  WmId = 'wmId',
+  WmPrivate = 'wmPrivate',
+  WmTarget = 'wmTarget',
+  WmSource = 'wmSource',
+  WmProperty = 'wmProperty',
+  LikeOf = 'likeOf',
+  MentionOf = 'mentionOf',
+  InReplyTo = 'inReplyTo',
+  RepostOf = 'repostOf',
+  BookmarkOf = 'bookmarkOf',
+  Rsvp = 'rsvp',
+  Id = 'id',
+  ParentId = 'parent___id',
+  ParentParentId = 'parent___parent___id',
+  ParentParentParentId = 'parent___parent___parent___id',
+  ParentParentParentChildren = 'parent___parent___parent___children',
+  ParentParentChildren = 'parent___parent___children',
+  ParentParentChildrenId = 'parent___parent___children___id',
+  ParentParentChildrenChildren = 'parent___parent___children___children',
+  ParentParentInternalContent = 'parent___parent___internal___content',
+  ParentParentInternalContentDigest = 'parent___parent___internal___contentDigest',
+  ParentParentInternalDescription = 'parent___parent___internal___description',
+  ParentParentInternalFieldOwners = 'parent___parent___internal___fieldOwners',
+  ParentParentInternalIgnoreType = 'parent___parent___internal___ignoreType',
+  ParentParentInternalMediaType = 'parent___parent___internal___mediaType',
+  ParentParentInternalOwner = 'parent___parent___internal___owner',
+  ParentParentInternalType = 'parent___parent___internal___type',
+  ParentChildren = 'parent___children',
+  ParentChildrenId = 'parent___children___id',
+  ParentChildrenParentId = 'parent___children___parent___id',
+  ParentChildrenParentChildren = 'parent___children___parent___children',
+  ParentChildrenChildren = 'parent___children___children',
+  ParentChildrenChildrenId = 'parent___children___children___id',
+  ParentChildrenChildrenChildren = 'parent___children___children___children',
+  ParentChildrenInternalContent = 'parent___children___internal___content',
+  ParentChildrenInternalContentDigest = 'parent___children___internal___contentDigest',
+  ParentChildrenInternalDescription = 'parent___children___internal___description',
+  ParentChildrenInternalFieldOwners = 'parent___children___internal___fieldOwners',
+  ParentChildrenInternalIgnoreType = 'parent___children___internal___ignoreType',
+  ParentChildrenInternalMediaType = 'parent___children___internal___mediaType',
+  ParentChildrenInternalOwner = 'parent___children___internal___owner',
+  ParentChildrenInternalType = 'parent___children___internal___type',
+  ParentInternalContent = 'parent___internal___content',
+  ParentInternalContentDigest = 'parent___internal___contentDigest',
+  ParentInternalDescription = 'parent___internal___description',
+  ParentInternalFieldOwners = 'parent___internal___fieldOwners',
+  ParentInternalIgnoreType = 'parent___internal___ignoreType',
+  ParentInternalMediaType = 'parent___internal___mediaType',
+  ParentInternalOwner = 'parent___internal___owner',
+  ParentInternalType = 'parent___internal___type',
+  Children = 'children',
+  ChildrenId = 'children___id',
+  ChildrenParentId = 'children___parent___id',
+  ChildrenParentParentId = 'children___parent___parent___id',
+  ChildrenParentParentChildren = 'children___parent___parent___children',
+  ChildrenParentChildren = 'children___parent___children',
+  ChildrenParentChildrenId = 'children___parent___children___id',
+  ChildrenParentChildrenChildren = 'children___parent___children___children',
+  ChildrenParentInternalContent = 'children___parent___internal___content',
+  ChildrenParentInternalContentDigest = 'children___parent___internal___contentDigest',
+  ChildrenParentInternalDescription = 'children___parent___internal___description',
+  ChildrenParentInternalFieldOwners = 'children___parent___internal___fieldOwners',
+  ChildrenParentInternalIgnoreType = 'children___parent___internal___ignoreType',
+  ChildrenParentInternalMediaType = 'children___parent___internal___mediaType',
+  ChildrenParentInternalOwner = 'children___parent___internal___owner',
+  ChildrenParentInternalType = 'children___parent___internal___type',
+  ChildrenChildren = 'children___children',
+  ChildrenChildrenId = 'children___children___id',
+  ChildrenChildrenParentId = 'children___children___parent___id',
+  ChildrenChildrenParentChildren = 'children___children___parent___children',
+  ChildrenChildrenChildren = 'children___children___children',
+  ChildrenChildrenChildrenId = 'children___children___children___id',
+  ChildrenChildrenChildrenChildren = 'children___children___children___children',
+  ChildrenChildrenInternalContent = 'children___children___internal___content',
+  ChildrenChildrenInternalContentDigest = 'children___children___internal___contentDigest',
+  ChildrenChildrenInternalDescription = 'children___children___internal___description',
+  ChildrenChildrenInternalFieldOwners = 'children___children___internal___fieldOwners',
+  ChildrenChildrenInternalIgnoreType = 'children___children___internal___ignoreType',
+  ChildrenChildrenInternalMediaType = 'children___children___internal___mediaType',
+  ChildrenChildrenInternalOwner = 'children___children___internal___owner',
+  ChildrenChildrenInternalType = 'children___children___internal___type',
+  ChildrenInternalContent = 'children___internal___content',
+  ChildrenInternalContentDigest = 'children___internal___contentDigest',
+  ChildrenInternalDescription = 'children___internal___description',
+  ChildrenInternalFieldOwners = 'children___internal___fieldOwners',
+  ChildrenInternalIgnoreType = 'children___internal___ignoreType',
+  ChildrenInternalMediaType = 'children___internal___mediaType',
+  ChildrenInternalOwner = 'children___internal___owner',
+  ChildrenInternalType = 'children___internal___type',
+  InternalContent = 'internal___content',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalDescription = 'internal___description',
+  InternalFieldOwners = 'internal___fieldOwners',
+  InternalIgnoreType = 'internal___ignoreType',
+  InternalMediaType = 'internal___mediaType',
+  InternalOwner = 'internal___owner',
+  InternalType = 'internal___type'
+}
+
+export type WebMentionEntryFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>,
+  author?: Maybe<WebMentionAuthorFilterInput>,
+  content?: Maybe<WebMentionContentFilterInput>,
+  url?: Maybe<StringQueryOperatorInput>,
+  published?: Maybe<DateQueryOperatorInput>,
+  wmReceived?: Maybe<DateQueryOperatorInput>,
+  wmId?: Maybe<IntQueryOperatorInput>,
+  wmPrivate?: Maybe<BooleanQueryOperatorInput>,
+  wmTarget?: Maybe<StringQueryOperatorInput>,
+  wmSource?: Maybe<StringQueryOperatorInput>,
+  wmProperty?: Maybe<StringQueryOperatorInput>,
+  likeOf?: Maybe<StringQueryOperatorInput>,
+  mentionOf?: Maybe<StringQueryOperatorInput>,
+  inReplyTo?: Maybe<StringQueryOperatorInput>,
+  repostOf?: Maybe<StringQueryOperatorInput>,
+  bookmarkOf?: Maybe<StringQueryOperatorInput>,
+  rsvp?: Maybe<StringQueryOperatorInput>,
+  id?: Maybe<StringQueryOperatorInput>,
+  parent?: Maybe<NodeFilterInput>,
+  children?: Maybe<NodeFilterListInput>,
+  internal?: Maybe<InternalFilterInput>,
+};
+
+export type WebMentionEntryGroupConnection = {
+   __typename?: 'WebMentionEntryGroupConnection',
+  totalCount: Scalars['Int'],
+  edges: Array<WebMentionEntryEdge>,
+  nodes: Array<WebMentionEntry>,
+  pageInfo: PageInfo,
+  field: Scalars['String'],
+  fieldValue?: Maybe<Scalars['String']>,
+};
+
+export type WebMentionEntrySortInput = {
+  fields?: Maybe<Array<Maybe<WebMentionEntryFieldsEnum>>>,
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>,
 };
 
 export type GatsbyImageSharpFixedFragment = (
@@ -3333,8 +3605,24 @@ export type IndexPageQuery = (
   )> }
 );
 
+export type WebMentionInformationFragment = (
+  { __typename?: 'WebMentionEntryEdge' }
+  & { node: (
+    { __typename?: 'WebMentionEntry' }
+    & Pick<WebMentionEntry, 'wmTarget' | 'wmSource' | 'wmProperty' | 'wmId' | 'type' | 'url' | 'likeOf'>
+    & { author: Maybe<(
+      { __typename?: 'WebMentionAuthor' }
+      & Pick<WebMentionAuthor, 'url' | 'type' | 'photo' | 'name'>
+    )>, content: Maybe<(
+      { __typename?: 'WebMentionContent' }
+      & Pick<WebMentionContent, 'html'>
+    )> }
+  ) }
+);
+
 export type BlogPostBySlugQueryVariables = {
-  slug: Scalars['String']
+  slug: Scalars['String'],
+  permalink: Scalars['String']
 };
 
 
@@ -3347,7 +3635,13 @@ export type BlogPostBySlugQuery = (
       { __typename?: 'Frontmatter' }
       & Pick<Frontmatter, 'title' | 'date' | 'tags' | 'slug'>
     ) }
-  )>, site: Maybe<(
+  )>, allWebMentionEntry: (
+    { __typename?: 'WebMentionEntryConnection' }
+    & { edges: Array<(
+      { __typename?: 'WebMentionEntryEdge' }
+      & WebMentionInformationFragment
+    )> }
+  ), site: Maybe<(
     { __typename?: 'Site' }
     & { siteMetadata: (
       { __typename?: 'SiteSiteMetadata' }
