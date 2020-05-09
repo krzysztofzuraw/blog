@@ -12,10 +12,14 @@ const UsesPage: React.FunctionComponent = () => {
           VSCode with <Link to="https://draculatheme.com/pro">Dracula pro</Link> theme &&nbsp;
           <Link to="https://dank.sh/">Dank Mono</Link> font
         </li>
+        <li>Plain text in vcode</li>
         <li>
-          Plain text in vcode for time blocking similar to what Jeff Huang
-          <Link to="https://jeffhuang.com/productivity_text_file/"> is using</Link>
+          Time blocking on pen and paper via{' '}
+          <Link to="https://www.calnewport.com/blog/2013/12/21/deep-habits-the-importance-of-planning-every-minute-of-your-work-day/">
+            Carl Newport
+          </Link>
         </li>
+        <li>Journaling and dev notebook using pen & paper</li>
         <li>
           <Link to="http://www.lightandmatter.com/when/when.html">When - plain text calendar</Link>
         </li>
@@ -73,7 +77,7 @@ const UsesPage: React.FunctionComponent = () => {
           </Link>
         </li>
       </ul>
-      <p>Updated at 2020-04-28</p>
+      <p>Updated at 2020-05-09</p>
     </Layout>
   );
 };

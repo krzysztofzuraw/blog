@@ -14,7 +14,8 @@ const NowPage: React.FunctionComponent = () => {
         <Link to="https://www.meetup.com/pl-PL/WrocTypeScript/">Wrocław TypeScript</Link>
       </p>
       <p>
-        Trying to be more <Link to="https://indieweb.org">indie</Link> by setting up webmentions.
+        Started instagram about web dev at{' '}
+        <Link to="https://www.instagram.com/krzysztof.zuraw.dev/">krzysztof.zuraw.dev</Link>
       </p>
       <h2>Free time</h2>
       <p>
@@ -25,7 +26,7 @@ const NowPage: React.FunctionComponent = () => {
         . Moved to plain text. As I'm working from home - brewing coffee at Chemex or Hairo V60 (to
         try the best method). Doing <Link to="https://gmb.io/e/">GMB elements course</Link>.
       </p>
-      <p>Updated at 2020-04-28</p>
+      <p>Updated at 2020-05-09</p>
     </Layout>
   );
 };

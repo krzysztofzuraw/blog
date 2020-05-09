@@ -14,7 +14,7 @@ module.exports = {
       newsletter: 'https://buttondown.email/krzysztof_zuraw',
       twitter: 'https://twitter.com/krzysztof_zuraw',
       keybase: 'https://keybase.io/krzysztofzuraw/',
-      instagram: 'https://www.instagram.com/krzysztofzuraw/',
+      instagram: 'https://www.instagram.com/krzysztof.zuraw.dev/',
     },
   },
   plugins: [
