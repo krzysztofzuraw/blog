@@ -81,15 +81,6 @@ module.exports = {
           'gatsby-remark-smartypants',
           'gatsby-remark-external-links',
           'gatsby-remark-embedder',
-          {
-            resolve: 'gatsby-remark-twitter-cards',
-            options: {
-              title: 'krzysztofzuraw.com 🏗️',
-              author: 'Krzysztof Zuraw',
-              background: '#fff',
-              fontColor: '#333',
-            },
-          },
         ],
       },
     },
