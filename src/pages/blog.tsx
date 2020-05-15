@@ -3,7 +3,6 @@ import * as React from 'react';
 
 import { BlogPageQuery } from 'typings/graphql';
 import { Layout, Link, SEO } from '../components';
-import '../styles/blog-index.css';
 import { parseDate } from '../utils';
 
 type Props = {
@@ -18,20 +17,16 @@ const BlogIndexPage: React.FunctionComponent<Props> = ({
   return (
     <Layout>
       <SEO title="Blog | Krzysztof Żuraw" description="Blog index page" slug={'/blog'} />
-      <p className="rss">
-        📰&nbsp;If you are looking for RSS feed with all articles it is 👉🏻&nbsp;
-        <Link to="/feeds/all.rss.xml">here</Link>.
-      </p>
       <ul className="blog-post-list">
         {edges.map(({ node }) => (
           <li key={node.id}>
-            <h3>{node.frontmatter.title}</h3>
-            <p dangerouslySetInnerHTML={{ __html: node.excerpt! }} />
-            <p className="blog-meta">
-              <span>{node.frontmatter.tags.map((tag) => `#${tag}`).join(', ')}</span>
+            <h3>
+              <Link to={node.frontmatter.slug}>{node.frontmatter.title}</Link>
+            </h3>
+            <p>
               <span>{parseDate(node.frontmatter.date)}</span>
+              <span>{node.frontmatter.tags.map((tag) => `#${tag}`).join(', ')}</span>
             </p>
-            <Link to={node.frontmatter.slug}>Read more ▶️</Link>
           </li>
         ))}
       </ul>
