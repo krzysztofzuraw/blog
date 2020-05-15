@@ -8,12 +8,9 @@ module.exports = {
     siteUrl: 'https://krzysztofzuraw.com',
     keywords: 'JavaScript, TypeScript, RxJS, React, Redux',
     social: {
-      linkedin: 'https://pl.linkedin.com/in/krzysztofzuraw',
       github: 'https://github.com/krzysztofzuraw',
       email: 'mailto:blog@kzuraw.com',
-      newsletter: 'https://buttondown.email/krzysztof_zuraw',
       twitter: 'https://twitter.com/krzysztof_zuraw',
-      keybase: 'https://keybase.io/krzysztofzuraw/',
       instagram: 'https://www.instagram.com/krzysztof.zuraw.dev/',
     },
   },
@@ -21,6 +18,8 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sass',
+    'gatsby-plugin-twitter',
+    'gatsby-plugin-instagram-embed',
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-sitemap',
@@ -67,6 +66,7 @@ module.exports = {
               maxWidth: 590,
             },
           },
+          'gatsby-remark-autolink-headers',
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -79,6 +79,17 @@ module.exports = {
           },
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
+          'gatsby-remark-external-links',
+          'gatsby-remark-embedder',
+          {
+            resolve: 'gatsby-remark-twitter-cards',
+            options: {
+              title: 'krzysztofzuraw.com 🏗️',
+              author: 'Krzysztof Zuraw',
+              background: '#fff',
+              fontColor: '#333',
+            },
+          },
         ],
       },
     },

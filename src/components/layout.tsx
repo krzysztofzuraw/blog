@@ -10,7 +10,7 @@ export const Layout: React.FunctionComponent = ({ children }) => {
   return (
     <div className="layout">
       <Nav />
-      <article>{children}</article>
+      <article className="h-entry">{children}</article>
       <Footer />
     </div>
   );

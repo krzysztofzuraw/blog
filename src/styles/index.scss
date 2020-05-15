@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400');
+@import '~@openfonts/ibm-plex-mono_all/index.css';
 
 $breakpoint-mobile: 30em;
 
@@ -13,7 +13,8 @@ html {
 
 body {
   background-color: white;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier,
+    monospace;
   font-weight: 400;
   line-height: 1.65;
   color: #333;
@@ -99,7 +100,7 @@ footer {
   grid-template-columns: 1fr auto;
   align-items: center;
   @media (max-width: $breakpoint-mobile) {
-    gridtemplatecolumns: 1fr;
+    grid-template-columns: 1fr;
   }
   grid-gap: 0.5rem;
 
@@ -137,11 +138,45 @@ footer {
     grid-gap: 0.5rem;
     grid-auto-flow: column;
     @media (max-width: $breakpoint-mobile) {
-      gridautoflow: row;
+      grid-auto-flow: row;
     }
 
     input {
       font: inherit;
     }
   }
+}
+
+.hidden {
+  display: none;
+}
+
+.webmentions {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 1.5rem;
+  }
+  span {
+    cursor: default;
+  }
+  .webmention {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 1rem;
+    img {
+      width: 40px;
+      border-radius: 50%;
+    }
+    .avatar {
+      display: grid;
+      place-items: center;
+    }
+  }
+}
+
+blockquote {
+  font-style: italic;
 }

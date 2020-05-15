@@ -686,8 +686,8 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFrontmatterDate = 'childMarkdownRemark___frontmatter___date',
   ChildMarkdownRemarkFrontmatterReadNext = 'childMarkdownRemark___frontmatter___readNext',
   ChildMarkdownRemarkFrontmatterReadPrev = 'childMarkdownRemark___frontmatter___readPrev',
-  ChildMarkdownRemarkFrontmatterCategory = 'childMarkdownRemark___frontmatter___category',
   ChildMarkdownRemarkFrontmatterPrev = 'childMarkdownRemark___frontmatter___prev',
+  ChildMarkdownRemarkFrontmatterCategory = 'childMarkdownRemark___frontmatter___category',
   ChildMarkdownRemarkExcerpt = 'childMarkdownRemark___excerpt',
   ChildMarkdownRemarkRawMarkdownBody = 'childMarkdownRemark___rawMarkdownBody',
   ChildMarkdownRemarkFileAbsolutePath = 'childMarkdownRemark___fileAbsolutePath',
@@ -818,8 +818,8 @@ export type Frontmatter = {
   date: Scalars['Date'],
   readNext?: Maybe<Scalars['String']>,
   readPrev?: Maybe<Scalars['String']>,
-  category?: Maybe<Scalars['String']>,
   prev?: Maybe<Scalars['String']>,
+  category?: Maybe<Scalars['String']>,
 };
 
 
@@ -837,8 +837,8 @@ export type FrontmatterFilterInput = {
   date?: Maybe<DateQueryOperatorInput>,
   readNext?: Maybe<StringQueryOperatorInput>,
   readPrev?: Maybe<StringQueryOperatorInput>,
-  category?: Maybe<StringQueryOperatorInput>,
   prev?: Maybe<StringQueryOperatorInput>,
+  category?: Maybe<StringQueryOperatorInput>,
 };
 
 export enum ImageCropFocus {
@@ -858,7 +858,9 @@ export enum ImageCropFocus {
 export enum ImageFit {
   Cover = 'COVER',
   Contain = 'CONTAIN',
-  Fill = 'FILL'
+  Fill = 'FILL',
+  Inside = 'INSIDE',
+  Outside = 'OUTSIDE'
 }
 
 export enum ImageFormat {
@@ -1504,8 +1506,8 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterDate = 'frontmatter___date',
   FrontmatterReadNext = 'frontmatter___readNext',
   FrontmatterReadPrev = 'frontmatter___readPrev',
-  FrontmatterCategory = 'frontmatter___category',
   FrontmatterPrev = 'frontmatter___prev',
+  FrontmatterCategory = 'frontmatter___category',
   Excerpt = 'excerpt',
   RawMarkdownBody = 'rawMarkdownBody',
   FileAbsolutePath = 'fileAbsolutePath',
@@ -1941,6 +1943,7 @@ export type QueryWebMentionEntryArgs = {
   repostOf?: Maybe<StringQueryOperatorInput>,
   bookmarkOf?: Maybe<StringQueryOperatorInput>,
   rsvp?: Maybe<StringQueryOperatorInput>,
+  photo?: Maybe<StringQueryOperatorInput>,
   id?: Maybe<StringQueryOperatorInput>,
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
@@ -3205,6 +3208,7 @@ export type WebMentionEntry = Node & {
   repostOf?: Maybe<Scalars['String']>,
   bookmarkOf?: Maybe<Scalars['String']>,
   rsvp?: Maybe<Scalars['String']>,
+  photo?: Maybe<Array<Maybe<Scalars['String']>>>,
   id: Scalars['ID'],
   parent?: Maybe<Node>,
   children: Array<Node>,
@@ -3278,6 +3282,7 @@ export enum WebMentionEntryFieldsEnum {
   RepostOf = 'repostOf',
   BookmarkOf = 'bookmarkOf',
   Rsvp = 'rsvp',
+  Photo = 'photo',
   Id = 'id',
   ParentId = 'parent___id',
   ParentParentId = 'parent___parent___id',
@@ -3384,6 +3389,7 @@ export type WebMentionEntryFilterInput = {
   repostOf?: Maybe<StringQueryOperatorInput>,
   bookmarkOf?: Maybe<StringQueryOperatorInput>,
   rsvp?: Maybe<StringQueryOperatorInput>,
+  photo?: Maybe<StringQueryOperatorInput>,
   id?: Maybe<StringQueryOperatorInput>,
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
@@ -3530,14 +3536,14 @@ export type LayoutQueryVariables = {};
 
 export type LayoutQuery = (
   { __typename?: 'Query' }
-  & { site: Maybe<(
+  & { site?: Maybe<(
     { __typename?: 'Site' }
     & { siteMetadata: (
       { __typename?: 'SiteSiteMetadata' }
       & Pick<SiteSiteMetadata, 'author'>
       & { social: (
         { __typename?: 'SiteSiteMetadataSocial' }
-        & Pick<SiteSiteMetadataSocial, 'email'>
+        & Pick<SiteSiteMetadataSocial, 'email' | 'github' | 'twitter' | 'instagram'>
       ) }
     ) }
   )> }
@@ -3548,13 +3554,28 @@ export type SeoQueryVariables = {};
 
 export type SeoQuery = (
   { __typename?: 'Query' }
-  & { site: Maybe<(
+  & { site?: Maybe<(
     { __typename?: 'Site' }
     & { siteMetadata: (
       { __typename?: 'SiteSiteMetadata' }
       & Pick<SiteSiteMetadata, 'siteName' | 'author' | 'siteUrl' | 'keywords'>
     ) }
   )> }
+);
+
+export type WebMentionInformationFragment = (
+  { __typename?: 'WebMentionEntryEdge' }
+  & { node: (
+    { __typename?: 'WebMentionEntry' }
+    & Pick<WebMentionEntry, 'wmTarget' | 'wmSource' | 'wmProperty' | 'wmId' | 'type' | 'url' | 'likeOf'>
+    & { author?: Maybe<(
+      { __typename?: 'WebMentionAuthor' }
+      & Pick<WebMentionAuthor, 'url' | 'type' | 'photo' | 'name'>
+    )>, content?: Maybe<(
+      { __typename?: 'WebMentionContent' }
+      & Pick<WebMentionContent, 'html'>
+    )> }
+  ) }
 );
 
 export type BlogPageQueryVariables = {};
@@ -3583,52 +3604,24 @@ export type IndexPageQueryVariables = {};
 
 export type IndexPageQuery = (
   { __typename?: 'Query' }
-  & { site: Maybe<(
+  & { site?: Maybe<(
     { __typename?: 'Site' }
     & { siteMetadata: (
       { __typename?: 'SiteSiteMetadata' }
       & Pick<SiteSiteMetadata, 'description'>
-      & { social: (
-        { __typename?: 'SiteSiteMetadataSocial' }
-        & Pick<SiteSiteMetadataSocial, 'email' | 'linkedin' | 'github' | 'newsletter' | 'twitter' | 'keybase' | 'instagram'>
-      ) }
     ) }
-  )>, avatar: Maybe<(
-    { __typename?: 'File' }
-    & { childImageSharp: Maybe<(
-      { __typename?: 'ImageSharp' }
-      & { fixed: Maybe<(
-        { __typename?: 'ImageSharpFixed' }
-        & GatsbyImageSharpFixedFragment
-      )> }
-    )> }
   )> }
 );
 
-export type WebMentionInformationFragment = (
-  { __typename?: 'WebMentionEntryEdge' }
-  & { node: (
-    { __typename?: 'WebMentionEntry' }
-    & Pick<WebMentionEntry, 'wmTarget' | 'wmSource' | 'wmProperty' | 'wmId' | 'type' | 'url' | 'likeOf'>
-    & { author: Maybe<(
-      { __typename?: 'WebMentionAuthor' }
-      & Pick<WebMentionAuthor, 'url' | 'type' | 'photo' | 'name'>
-    )>, content: Maybe<(
-      { __typename?: 'WebMentionContent' }
-      & Pick<WebMentionContent, 'html'>
-    )> }
-  ) }
-);
-
 export type BlogPostBySlugQueryVariables = {
-  slug: Scalars['String'],
-  permalink: Scalars['String']
+  slug: Scalars['String'];
+  permalink: Scalars['String'];
 };
 
 
 export type BlogPostBySlugQuery = (
   { __typename?: 'Query' }
-  & { markdownRemark: Maybe<(
+  & { markdownRemark?: Maybe<(
     { __typename?: 'MarkdownRemark' }
     & Pick<MarkdownRemark, 'html' | 'excerpt'>
     & { frontmatter: (
@@ -3641,7 +3634,7 @@ export type BlogPostBySlugQuery = (
       { __typename?: 'WebMentionEntryEdge' }
       & WebMentionInformationFragment
     )> }
-  ), site: Maybe<(
+  ), site?: Maybe<(
     { __typename?: 'Site' }
     & { siteMetadata: (
       { __typename?: 'SiteSiteMetadata' }

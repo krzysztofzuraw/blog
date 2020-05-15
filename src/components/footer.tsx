@@ -13,6 +13,9 @@ export const Footer: React.FunctionComponent = () => {
             author
             social {
               email
+              github
+              twitter
+              instagram
             }
           }
         }
@@ -28,11 +31,18 @@ export const Footer: React.FunctionComponent = () => {
           Gatsby.
         </span>
       </div>
-      <div className="links">
-        <Link to="/">RSS</Link>
-        <Link to="/blog">Github</Link>
-        <Link to="/now">Twitter</Link>
-        <Link to="/uses">Instagram</Link>
+      <div className="links h-card">
+        <Link to="https://krzysztofzuraw.com" className="u-url hidden" rel="me" />
+        <Link to="/feeds/all.rss.xml">RSS</Link>
+        <Link to={site?.siteMetadata.social.github ?? ''} rel="me" className="u-url">
+          Github
+        </Link>
+        <Link to={site?.siteMetadata.social.twitter ?? ''} rel="me" className="u-url">
+          Twitter
+        </Link>
+        <Link to={site?.siteMetadata.social.instagram ?? ''} rel="me" className="u-url">
+          Instagram
+        </Link>
       </div>
     </footer>
   );
