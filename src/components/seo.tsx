@@ -56,7 +56,7 @@ export const SEO: React.FunctionComponent<{
         },
         {
           property: 'og:image',
-          content: `https://og-image-peach.now.sh/${encodeURIComponent(title)}`,
+          content: `${site?.siteMetadata.siteUrl}${slug}twitter-card.jpg`,
         },
         {
           property: 'og-locale',
@@ -96,7 +96,7 @@ export const SEO: React.FunctionComponent<{
         },
         {
           name: 'twitter:image',
-          content: `https://og-image-peach.now.sh/${encodeURIComponent(title)}`,
+          content: `${site?.siteMetadata.siteUrl}${slug}twitter-card.jpg`,
         },
         {
           name: 'twitter:title',

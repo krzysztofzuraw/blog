@@ -2,8 +2,7 @@ import { graphql } from 'gatsby';
 import * as React from 'react';
 
 import { BlogPostBySlugQuery } from 'typings/graphql';
-import { Layout, Link, SEO } from '../components';
-import '../styles/blog-post.css';
+import { Layout, Link, Newsletter, SEO, WebMentions } from '../components';
 import { parseDate } from '../utils';
 
 type Props = {
@@ -20,14 +19,14 @@ const BlogPostPage: React.FunctionComponent<Props> = ({
         description={markdownRemark?.excerpt ?? ''}
         slug={markdownRemark?.frontmatter.slug ?? ''}
       />
-      <article className="h-entry">
-        <h1 className="p-name">{markdownRemark!.frontmatter.title}</h1>
-        <div className="blog-meta">
+      <div className="blog-post">
+        <h2 className="p-name">{markdownRemark!.frontmatter.title}</h2>
+        <div>
           <div>{parseDate(markdownRemark!.frontmatter.date)}</div>
           <div>{markdownRemark!.frontmatter.tags.map((tag) => `#${tag}`).join(', ')}</div>
         </div>
-        <hr></hr>
-        <div className="e-content" dangerouslySetInnerHTML={{ __html: markdownRemark!.html! }} />
+        <hr />
+        <div dangerouslySetInnerHTML={{ __html: markdownRemark!.html! }} className="e-content" />
         <Link
           to={`${site?.siteMetadata.siteUrl}${markdownRemark?.frontmatter.slug}`}
           className="u-url hidden"
@@ -38,95 +37,13 @@ const BlogPostPage: React.FunctionComponent<Props> = ({
         <time className="dt-published hidden" dateTime={markdownRemark!.frontmatter.date}>
           {new Date(markdownRemark!.frontmatter.date).toISOString().replace('Z', '') + '+01:00'}
         </time>
-      </article>
-      <form
-        action="https://buttondown.email/api/emails/embed-subscribe/krzysztof_zuraw"
-        method="post"
-        target="popupwindow"
-        onSubmit={() =>
-          window && window.open('https://buttondown.email/krzysztof_zuraw', 'popupwindow')
-        }
-        className="newsletter"
-      >
-        <label htmlFor="bd-email">Enter your email to subscribe to monthly newsletter</label>
-        <div>
-          <input
-            className="email"
-            type="email"
-            name="email"
-            id="bd-email"
-            placeholder="Your email address"
-          />
-          <input type="hidden" value="1" name="embed"></input>
-          <input className="button" type="submit" value="Subscribe"></input>
-        </div>
-        <p>
-          <a href="https://buttondown.email" target="_blank">
-            Powered by Buttondown
-          </a>
-        </p>
-      </form>
+        <hr />
+      </div>
+      <Newsletter />
       <WebMentions data={allWebMentionEntry} />
     </Layout>
   );
 };
-
-export const WebMentions: React.FunctionComponent<{
-  data: BlogPostBySlugQuery['allWebMentionEntry'];
-}> = ({ data: { edges } }) => {
-  const likesAndReposts = edges.filter(
-    ({ node }) => node.wmProperty === 'like-of' || node.wmProperty === 'repost-of'
-  );
-  const mentionsAndReplies = edges.filter(({ node }) => node.wmProperty === 'mention-of');
-  return (
-    <div className="webmentions">
-      <h1>Webmentions</h1>
-      <div>
-        ❤️ {likesAndReposts.length} &nbsp;💬 {mentionsAndReplies.length}
-      </div>
-      <ul>
-        {mentionsAndReplies.map((entry) => (
-          <li key={entry.node.wmId ?? ''}>
-            <div className="webmention">
-              <Link to={entry.node.author?.url ?? ''}>
-                <img
-                  className="avatar"
-                  src={entry.node.author?.photo ?? ''}
-                  alt="user avatar"
-                  title={entry.node.author?.name ?? ''}
-                />
-              </Link>
-              <div dangerouslySetInnerHTML={{ __html: entry.node.content?.html ?? '' }}></div>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-export const query = graphql`
-  fragment WebMentionInformation on WebMentionEntryEdge {
-    node {
-      wmTarget
-      wmSource
-      wmProperty
-      wmId
-      type
-      url
-      likeOf
-      author {
-        url
-        type
-        photo
-        name
-      }
-      content {
-        html
-      }
-    }
-  }
-`;
 
 export default BlogPostPage;
 

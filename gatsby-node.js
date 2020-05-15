@@ -44,8 +44,8 @@ exports.createPages = ({ graphql, actions }) => {
         path: slug,
         component: blogPost,
         context: {
-          slug: slug,
-          permalink: `${siteUrl}${slug}/`,
+          slug,
+          permalink: slug.endsWith('.html') ? `${siteUrl}${slug}` : `${siteUrl}${slug}/`,
         },
       });
     });
