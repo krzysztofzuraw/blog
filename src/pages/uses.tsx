@@ -12,16 +12,14 @@ const UsesPage: React.FunctionComponent = () => {
           VSCode with <Link to="https://draculatheme.com/pro">Dracula pro</Link> theme &&nbsp;
           <Link to="https://dank.sh/">Dank Mono</Link> font
         </li>
-        <li>Plain text in vcode</li>
         <li>
-          Time blocking on pen and paper via{' '}
-          <Link to="https://www.calnewport.com/blog/2013/12/21/deep-habits-the-importance-of-planning-every-minute-of-your-work-day/">
-            Carl Newport
-          </Link>
+          <Link to="https://culturedcode.com/things/">Things</Link>
         </li>
-        <li>Journaling and dev notebook using pen & paper</li>
         <li>
-          <Link to="http://www.lightandmatter.com/when/when.html">When - plain text calendar</Link>
+          <Link to="https://getdrafts.com/">Drafts</Link>
+        </li>
+        <li>
+          <Link to="https://support.apple.com/guide/calendar/welcome/mac">Calendar</Link>
         </li>
         <li>
           <Link to="https://www.alfredapp.com/">Alfred launcher</Link>
@@ -77,7 +75,7 @@ const UsesPage: React.FunctionComponent = () => {
           </Link>
         </li>
       </ul>
-      <p>Updated at 2020-05-09</p>
+      <p>Last updated 2020-05-16</p>
     </Layout>
   );
 };
