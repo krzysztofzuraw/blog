@@ -17,8 +17,14 @@ export const WebMentions: React.FunctionComponent<{
     <div className="webmentions">
       <h4>Webmentions</h4>
       <div>
-        <span title="likes and reposts">❤️</span> {likesAndReposts.length} &nbsp;
-        <span title="comments">💬</span>&nbsp;
+        <span title="likes and reposts" role="img" aria-label="emoji">
+          💙&nbsp;
+        </span>
+        {likesAndReposts.length} &nbsp;
+        <span title="comments" role="img" aria-label="emoji">
+          💬
+        </span>
+        &nbsp;
         {mentionsAndReplies.length}
       </div>
       <ul>
