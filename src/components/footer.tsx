@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
+
 import { LayoutQuery } from 'typings/graphql';
 
 import { Link } from '.';
@@ -14,8 +15,8 @@ export const Footer: React.FunctionComponent = () => {
             social {
               email
               github
+              keybase
               twitter
-              instagram
             }
           }
         }
@@ -37,12 +38,10 @@ export const Footer: React.FunctionComponent = () => {
         <Link to={site?.siteMetadata.social.github ?? ''} rel="me" className="u-url">
           Github
         </Link>
-        <Link to={site?.siteMetadata.social.twitter ?? ''} rel="me" className="u-url">
+        <Link to={site?.siteMetadata.social.twitter ?? ''} rel="me" className="u-url hidden">
           Twitter
         </Link>
-        <Link to={site?.siteMetadata.social.instagram ?? ''} rel="me" className="u-url">
-          Instagram
-        </Link>
+        <Link to={site?.siteMetadata.social.keybase ?? ''}>Keybase</Link>
       </div>
     </footer>
   );

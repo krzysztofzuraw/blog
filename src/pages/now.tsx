@@ -13,10 +13,6 @@ const NowPage: React.FunctionComponent = () => {
         Co-organizing&nbsp;
         <Link to="https://www.meetup.com/pl-PL/WrocTypeScript/">Wrocław TypeScript</Link>
       </p>
-      <p>
-        Started instagram about web dev at{' '}
-        <Link to="https://www.instagram.com/krzysztof.zuraw.dev/">krzysztof.zuraw.dev</Link>
-      </p>
       <h2>Free time</h2>
       <p>
         Moved to plain text with help of Things & Calendar. As I'm working from home - brewing
