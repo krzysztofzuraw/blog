@@ -32,7 +32,7 @@
     "gatsby-plugin-react-helmet": "3.3.0",
     "gatsby-plugin-sass": "2.3.1",
     "gatsby-plugin-sharp": "2.6.0",
-    "gatsby-plugin-sitemap": "2.2.26",
+    "gatsby-plugin-sitemap": "2.4.3",
     "gatsby-plugin-twitter": "2.3.1",
     "gatsby-plugin-typescript": "2.4.0",
     "gatsby-plugin-webmention": "0.2.0",
