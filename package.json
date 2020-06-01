@@ -59,7 +59,7 @@
     "@graphql-codegen/typescript-operations": "1.13.4",
     "@types/react-helmet": "5.0.15",
     "@types/typography": "0.16.3",
-    "concurrently": "5.1.0",
+    "concurrently": "5.2.0",
     "cypress": "4.5.0",
     "graphql": "14.6.0",
     "husky": "4.2.5",
