@@ -10,19 +10,15 @@ const UsesPage: React.FunctionComponent = () => {
       <ul>
         <li>
           VSCode with <Link to="https://draculatheme.com/pro">Dracula pro</Link> theme &&nbsp;
-          <Link to="https://dank.sh/">Dank Mono</Link> font
+          <Link to="https://www.monolisa.dev/">MonoLisa</Link> font
         </li>
-        <li>Plain text in vcode</li>
         <li>
-          Time blocking on pen and paper via{' '}
-          <Link to="https://www.calnewport.com/blog/2013/12/21/deep-habits-the-importance-of-planning-every-minute-of-your-work-day/">
-            Carl Newport
-          </Link>
+          <Link to="https://culturedcode.com/things/">Things</Link>
         </li>
-        <li>Journaling and dev notebook using pen & paper</li>
         <li>
-          <Link to="http://www.lightandmatter.com/when/when.html">When - plain text calendar</Link>
+          <Link to="https://ia.net/writer">iA Writer</Link>
         </li>
+        <li>Apple calendar</li>
         <li>
           <Link to="https://www.alfredapp.com/">Alfred launcher</Link>
         </li>
@@ -30,7 +26,9 @@ const UsesPage: React.FunctionComponent = () => {
           <Link to="https://getcleanshot.com/">Cleanshot</Link>
         </li>
         <li>
-          <Link to="https://heyfocus.com/">Focus</Link>
+          <Link to="https://apps.apple.com/pl/app/tadam-stay-focused-at-work/id531349534?mt=12">
+            Tadam
+          </Link>
         </li>
         <li>Firefox Developer Edition</li>
         <li>
@@ -77,7 +75,7 @@ const UsesPage: React.FunctionComponent = () => {
           </Link>
         </li>
       </ul>
-      <p>Last updated 2020-05-20</p>
+      <p>Last updated 2020-06-06</p>
     </Layout>
   );
 };

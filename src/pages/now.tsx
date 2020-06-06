@@ -17,9 +17,9 @@ const NowPage: React.FunctionComponent = () => {
       <p>
         Moved to plain text with help of Things & Calendar. As I'm working from home - brewing
         coffee at Chemex or Hairo V60 (to try the best method). Doing{' '}
-        <Link to="https://gmb.io/e/">GMB elements course</Link>.
+        <Link to="https://gmb.io/is/">GMB integral strength</Link>.
       </p>
-      <p>Last updated - 2020-05-16</p>
+      <p>Last updated - 2020-06-06</p>
     </Layout>
   );
 };
