@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import * as React from 'react';
 
 import { BlogPostBySlugQuery } from 'typings/graphql';
-import { Layout, Link, Newsletter, SEO, WebMentions } from '../components';
+import { Comments, Layout, Link, Newsletter, SEO, WebMentions } from '../components';
 import { parseDate } from '../utils';
 
 type Props = {
@@ -41,6 +41,7 @@ const BlogPostPage: React.FunctionComponent<Props> = ({
       </div>
       <Newsletter />
       <WebMentions data={allWebMentionEntry} />
+      <Comments />
     </Layout>
   );
 };
