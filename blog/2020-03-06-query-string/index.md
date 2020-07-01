@@ -1,5 +1,5 @@
 ---
-title: Today I Learned - query string library have stringifyUrl
+title: Query string library have stringifyUrl
 date: '2020-03-06T17:38:03.284Z'
 slug: '/blog/2020/stringify-url'
 tags:

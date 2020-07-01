@@ -10,8 +10,7 @@ module.exports = {
     social: {
       github: 'https://github.com/krzysztofzuraw',
       email: 'mailto:blog@kzuraw.com',
-      twitter: 'https://twitter.com/krzysztof_zuraw',
-      instagram: 'https://www.instagram.com/krzysztof.zuraw.dev/',
+      keybase: 'https://keybase.io/krzysztofzuraw',
     },
   },
   plugins: [

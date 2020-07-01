@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import { Layout, Link, SEO } from '../components';
 
 const UsesPage: React.FunctionComponent = () => {
@@ -8,17 +7,8 @@ const UsesPage: React.FunctionComponent = () => {
       <SEO title="Uses | Krzysztof Żuraw" description="What I use" slug="/uses" />
       <h2>Software (MacOS)</h2>
       <ul>
-        <li>
-          VSCode with <Link to="https://draculatheme.com/pro">Dracula pro</Link> theme &&nbsp;
-          <Link to="https://www.monolisa.dev/">MonoLisa</Link> font
-        </li>
-        <li>
-          <Link to="https://culturedcode.com/things/">Things</Link>
-        </li>
-        <li>
-          <Link to="https://ia.net/writer">iA Writer</Link>
-        </li>
-        <li>Apple calendar</li>
+        <li>VSCode</li>
+        <li>Plain text for writing/todos & calendar</li>
         <li>
           <Link to="https://www.alfredapp.com/">Alfred launcher</Link>
         </li>
@@ -75,7 +65,7 @@ const UsesPage: React.FunctionComponent = () => {
           </Link>
         </li>
       </ul>
-      <p>Last updated 2020-06-06</p>
+      <p>Last updated 2020-07-01</p>
     </Layout>
   );
 };

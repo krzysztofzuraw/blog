@@ -1,5 +1,5 @@
 ---
-title: TIL - IE11 text overflow in flex container
+title: IE11 text overflow in flex container
 date: '2019-10-12T09:12:03.284Z'
 slug: '/til/2019/ie11-text-overflow'
 tags:

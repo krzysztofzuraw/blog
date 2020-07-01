@@ -7,7 +7,6 @@ tags:
   - schema
   - typescript
   - codegen
-  - til
 ---
 
 Recently I was doing redesign of my blog. As you may know, I used
