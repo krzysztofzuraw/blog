@@ -152,39 +152,6 @@ footer {
   }
 }
 
-.hidden {
-  display: none;
-}
-
-.webmentions {
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  li {
-    margin-bottom: 1.5rem;
-  }
-  span {
-    cursor: default;
-  }
-  .webmention {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: 1rem;
-
-    img {
-      border-radius: 50%;
-      width: 40px;
-      height: unset;
-    }
-
-    .avatar {
-      display: grid;
-      place-items: center;
-    }
-  }
-}
-
 blockquote {
   font-style: italic;
 }

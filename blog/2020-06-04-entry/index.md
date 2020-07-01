@@ -1,5 +1,5 @@
 ---
-title: TIL - ramda clamp
+title: Ramda clamp
 date: '2020-06-04T19:31:03.284Z'
 slug: '/blog/2020/ramda-clamp'
 tags:

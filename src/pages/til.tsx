@@ -1,21 +1,21 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
-import { BlogPageQuery } from 'typings/graphql';
-import { Layout, Link, SEO } from '../components';
+import { TilPageQuery } from 'typings/graphql';
+import { Layout, Link } from '../components';
 import { parseDate } from '../utils';
 
 type Props = {
-  data: BlogPageQuery;
+  data: TilPageQuery;
 };
 
-const BlogIndexPage: React.FunctionComponent<Props> = ({
+const TodayILearnedPage: React.FunctionComponent<Props> = ({
   data: {
     allMarkdownRemark: { edges },
   },
 }) => {
   return (
     <Layout>
-      <SEO title="Blog | Krzysztof Żuraw" description="Blog index page" slug="/blog" />
+      <p>Welcome to today I learned (TIL) page. You can find here small tips & tricks I learned.</p>
       <ul className="blog-post-list">
         {edges.map(({ node }) => (
           <li key={node.id}>
@@ -24,7 +24,12 @@ const BlogIndexPage: React.FunctionComponent<Props> = ({
             </h4>
             <p>
               <span>{parseDate(node.frontmatter.date)}</span>
-              <span>{node.frontmatter.tags.map((tag) => `#${tag}`).join(', ')}</span>
+              <span>
+                {node.frontmatter.tags
+                  .filter((tag) => tag !== 'til')
+                  .map((tag) => `#${tag}`)
+                  .join(', ')}
+              </span>
             </p>
           </li>
         ))}
@@ -33,18 +38,17 @@ const BlogIndexPage: React.FunctionComponent<Props> = ({
   );
 };
 
-export default BlogIndexPage;
+export default TodayILearnedPage;
 
 export const pageQuery = graphql`
-  query BlogPage {
+  query TILPage {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { tags: { ne: "til" } } }
+      filter: { frontmatter: { tags: { in: "til" } } }
     ) {
       edges {
         node {
           id
-          excerpt
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")

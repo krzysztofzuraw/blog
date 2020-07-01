@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import { Link } from '.';
 
 export const Nav: React.FunctionComponent = () => (
@@ -11,6 +10,9 @@ export const Nav: React.FunctionComponent = () => (
       </li>
       <li>
         <Link to="/blog">Blog</Link>
+      </li>
+      <li>
+        <Link to="/til">TIL</Link>
       </li>
       <li>
         <Link to="/now">Now</Link>
