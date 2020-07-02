@@ -31,5 +31,4 @@ jobs:
         with:
           start: npm run dev
           wait-on: 'http://localhost:8000'
-          browser: chrome
           headless: true
