@@ -22,13 +22,3 @@ jobs:
       - run: npm run tsc
         env:
           CI: true
-
-  cypress-run:
-    runs-on: ubuntu-16.04
-    steps:
-      - uses: actions/checkout@v1
-      - uses: cypress-io/github-action@v1
-        with:
-          start: npm run dev
-          wait-on: 'http://localhost:8000'
-          headless: true

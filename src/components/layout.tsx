@@ -1,6 +1,5 @@
 import * as React from 'react';
 import '../styles/index.scss';
-import '../styles/prism.scss';
 import { Footer } from './footer';
 import { Nav } from './nav';
 

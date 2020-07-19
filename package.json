@@ -8,10 +8,7 @@
     "tsc": "tsc",
     "lint": "tslint --project .",
     "gen": "graphql-codegen --overwrite",
-    "reinstall": "rimraf node_modules && npm install",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "test:e2e:ci": "start-server-and-test dev http://localhost:8000 cypress:run"
+    "reinstall": "rimraf node_modules && npm install"
   },
   "keywords": [
     "blog",
@@ -46,7 +43,6 @@
     "gatsby-source-filesystem": "2.1.48",
     "gatsby-transformer-remark": "2.7.1",
     "gatsby-transformer-sharp": "2.5.0",
-    "hyvor-talk-react": "1.0.1",
     "node-sass": "4.14.1",
     "prismjs": "1.19.0",
     "react": "16.13.1",
@@ -55,18 +51,16 @@
     "sharp": "0.25.2"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.12.2",
-    "@graphql-codegen/typescript": "1.12.2",
-    "@graphql-codegen/typescript-operations": "1.13.4",
+    "@graphql-codegen/cli": "1.17.0",
+    "@graphql-codegen/typescript": "1.17.0",
+    "@graphql-codegen/typescript-operations": "1.17.0",
     "@types/react-helmet": "5.0.15",
     "@types/typography": "0.16.3",
     "concurrently": "5.1.0",
-    "cypress": "4.5.0",
     "graphql": "14.6.0",
     "husky": "4.2.5",
     "prettier": "2.0.2",
     "rimraf": "3.0.1",
-    "start-server-and-test": "1.10.11",
     "tslint": "5.20.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-react-a11y": "1.1.0",

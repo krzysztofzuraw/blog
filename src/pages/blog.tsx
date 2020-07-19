@@ -37,10 +37,7 @@ export default BlogIndexPage;
 
 export const pageQuery = graphql`
   query BlogPage {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { tags: { ne: "til" } } }
-    ) {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           id

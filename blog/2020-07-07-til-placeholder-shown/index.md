@@ -1,7 +1,7 @@
 ---
 title: Placeholder shown CSS selector
 date: '2020-07-07T18:49:46Z'
-slug: '/til/2020/placeholder-shown'
+slug: '/blog/2020/placeholder-shown'
 tags:
   - til
   - css

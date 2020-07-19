@@ -12,9 +12,6 @@ export const Nav: React.FunctionComponent = () => (
         <Link to="/blog">Blog</Link>
       </li>
       <li>
-        <Link to="/til">TIL</Link>
-      </li>
-      <li>
         <Link to="/now">Now</Link>
       </li>
       <li>
