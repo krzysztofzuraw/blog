@@ -17,7 +17,7 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark }
         slug={markdownRemark?.frontmatter.slug ?? ''}
       />
       <div className="blog-post">
-        <h2>{markdownRemark!.frontmatter.title}</h2>
+        <h1>{markdownRemark!.frontmatter.title}</h1>
         <div>
           <div>{parseDate(markdownRemark!.frontmatter.date)}</div>
           <div>{markdownRemark!.frontmatter.tags.map((tag) => `#${tag}`).join(', ')}</div>
