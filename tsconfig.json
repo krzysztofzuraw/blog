@@ -21,8 +21,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
 
-    "plugins": [{ "name": "typescript-tslint-plugin" }],
     "skipLibCheck": true
   },
-  "include": ["src/**/*", "typings/*"]
+  "include": ["src/**/*"]
 }

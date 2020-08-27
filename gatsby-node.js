@@ -9,10 +9,7 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          filter: { frontmatter: { tags: { ne: "microblog" } } }
-        ) {
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
           edges {
             node {
               frontmatter {
@@ -53,49 +50,4 @@ exports.createPages = ({ graphql, actions }) => {
       });
     });
   });
-};
-
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions;
-  const typeDefs = `
-  type MarkdownRemark implements Node {
-    frontmatter: Frontmatter!
-  }
-  type Frontmatter {
-    tags: [String!]!
-    title: String!
-    slug: String!
-    date(
-      difference: String
-      formatString: String
-      fromNow: Boolean
-      locale: String
-    ): Date!
-  }
-
-  type Site implements Node {
-    siteMetadata: SiteSiteMetadata!
-  }
-
-  type SiteSiteMetadata {
-    siteName: String!
-    author: String!
-    description: String!
-    siteUrl: String!
-    social: SiteSiteMetadataSocial!
-    keywords: String!
-    disqusName: String!
-  }
-
-  type SiteSiteMetadataSocial {
-    linkedin: String!
-    github: String!
-    email: String!
-    newsletter: String!
-    instagram: String!
-    twitter: String!
-    keybase: String!
-  }
-  `;
-  createTypes(typeDefs);
 };

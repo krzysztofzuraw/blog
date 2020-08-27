@@ -1,34 +1,13 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
 import { BlogPostBySlugQuery } from 'typings/graphql';
-import { Layout, Newsletter, SEO } from '../components';
-import { parseDate } from '../utils';
 
 type Props = {
   data: BlogPostBySlugQuery;
 };
 
-const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark } }) => {
-  return (
-    <Layout>
-      <SEO
-        title={`${markdownRemark!.frontmatter.title} | Krzysztof Żuraw`}
-        description={markdownRemark?.excerpt ?? ''}
-        slug={markdownRemark?.frontmatter.slug ?? ''}
-      />
-      <div className="blog-post">
-        <h1>{markdownRemark!.frontmatter.title}</h1>
-        <div>
-          <div>{parseDate(markdownRemark!.frontmatter.date)}</div>
-          <div>{markdownRemark!.frontmatter.tags.map((tag) => `#${tag}`).join(', ')}</div>
-        </div>
-        <hr />
-        <div dangerouslySetInnerHTML={{ __html: markdownRemark!.html! }} />
-        <hr />
-      </div>
-      <Newsletter />
-    </Layout>
-  );
+const BlogPostPage: React.FunctionComponent<Props> = () => {
+  return null;
 };
 
 export default BlogPostPage;

@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     siteName: 'Krzysztof Żuraw',
     author: 'Krzysztof Żuraw',
-    description: 'Frontend | Design: Learning | Coffee',
+    description: 'Frontend | Design | Coffee',
     siteUrl: 'https://krzysztofzuraw.com',
     keywords: 'JavaScript, TypeScript, RxJS, React, Redux',
     social: {
@@ -16,9 +16,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-typescript',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-sass',
-    'gatsby-plugin-twitter',
-    'gatsby-plugin-instagram-embed',
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-sitemap',
@@ -35,27 +32,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-webmention',
-      options: {
-        username: 'krzysztofzuraw.com',
-        identity: {
-          github: 'krzysztofzuraw',
-          twitter: 'krzysztof_zuraw',
-        },
-        mentions: true,
-        pingbacks: true,
-        domain: 'krzysztofzuraw.com',
-        token: 'sSJqtOQKjGYhTedoMMk-Ow',
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/assets`,
-        name: `assets`,
-      },
-    },
-    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
@@ -65,7 +41,6 @@ module.exports = {
               maxWidth: 590,
             },
           },
-          'gatsby-remark-autolink-headers',
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -79,12 +54,10 @@ module.exports = {
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
           'gatsby-remark-external-links',
-          'gatsby-remark-embedder',
         ],
       },
     },
     'gatsby-plugin-offline',
-
     {
       resolve: 'gatsby-plugin-feed',
       options: {
