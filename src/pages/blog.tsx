@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from 'react';
-import { Layout, Stack, Link } from '../components';
 import { graphql } from 'gatsby';
+import React, { FunctionComponent } from 'react';
+import { Layout, Link, Stack } from '../components';
 
 type Props = {
   data: any;
@@ -42,7 +42,7 @@ const BlogListPage: FunctionComponent<Props> = ({
                   })}
                 >
                   {node.frontmatter.tags.map((tag: any) => (
-                    <li>#{tag}</li>
+                    <li key={tag}>#{tag}</li>
                   ))}
                 </ul>
               </div>

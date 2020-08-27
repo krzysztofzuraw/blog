@@ -1,9 +1,9 @@
-import { Theme } from '../theme';
 import styled from '@emotion/styled';
+import { Theme } from '../theme';
 
 type Props = {
   space?: keyof Theme['spacing'];
-  as?: 'ul' | 'li';
+  as?: 'ul' | 'li' | 'article';
 };
 
 export const Stack = styled.div<Props, Theme>(({ theme, space = 's+1' }) => ({

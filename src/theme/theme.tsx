@@ -1,7 +1,7 @@
+import { css, Global } from '@emotion/core';
+import emotionReset from 'emotion-reset';
 import { ThemeProvider } from 'emotion-theming';
 import React, { FunctionComponent } from 'react';
-import emotionReset from 'emotion-reset';
-import { Global, css } from '@emotion/core';
 
 export type Theme = {
   colors: {
@@ -62,6 +62,8 @@ export const BlogTheme: FunctionComponent = ({ children }) => (
         header,
         nav,
         main,
+        pre,
+        code,
         footer {
           max-width: none;
         }
@@ -93,6 +95,20 @@ export const BlogTheme: FunctionComponent = ({ children }) => (
 
         p {
           font-size: ${theme.spacing['s0']};
+        }
+
+        pre,
+        code {
+          font-size: ${theme.spacing['code']} !important;
+          font-family: SF Mono, Menlo, Monaco, 'Courier New', monospace !important;
+        }
+
+        .gatsby-highlight {
+          max-width: calc(100vw - ${theme.spacing['s+1']});
+        }
+
+        img {
+          width: 100%;
         }
       `}
     />

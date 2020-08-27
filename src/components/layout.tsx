@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { BlogTheme } from '../theme';
 import { Link } from '.';
+import { BlogTheme } from '../theme';
 
 type Props = {
   location: 'home' | 'about' | 'blog';
@@ -64,7 +64,13 @@ export const Layout: FunctionComponent<Props> = ({ children, location }) => (
         </ul>
       </header>
       <main
-        css={{ marginTop: 'auto', marginBottom: 'auto', marginLeft: 'auto', marginRight: 'auto' }}
+        css={(theme) => ({
+          marginTop: 'auto',
+          marginBottom: 'auto',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          maxWidth: theme.measure,
+        })}
       >
         {children}
       </main>
