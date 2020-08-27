@@ -45,40 +45,9 @@ export const BlogTheme: FunctionComponent = ({ children }) => (
       styles={css`
         ${emotionReset}
 
-        @font-face {
-          font-family: 'iA Writer Quattro S';
-          font-style: normal;
-          font-weight: 400;
-          src: local(iA Writer Quattro S),
-            url('../../fonts/iAWriterQuattroS-Regular.woff2') format('woff2');
-        }
-
-        @font-face {
-          font-family: 'iA Writer Quattro S';
-          font-style: italic;
-          font-weight: 400;
-          src: local(iA Writer Quattro S),
-            url('../../fonts/iAWriterQuattroS-Italic.woff2') format('woff2');
-        }
-
-        @font-face {
-          font-family: 'iA Writer Quattro S';
-          font-style: normal;
-          font-weight: 600;
-          src: local(iA Writer Quattro S),
-            url('../../fonts/iAWriterQuattroS-Bold.woff2') format('woff2');
-        }
-
-        @font-face {
-          font-family: 'iA Writer Quattro S';
-          font-style: italic;
-          font-weight: 600;
-          src: local(iA Writer Quattro S),
-            url('../../fonts/iAWriterQuattroS-BoldItalic.woff2') format('woff2');
-        }
-
         html {
-          font-family: 'iA Writer Quattro S', sans-serif;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+            Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
           font-size: 100%;
         }
 
@@ -123,7 +92,7 @@ export const BlogTheme: FunctionComponent = ({ children }) => (
         }
 
         p {
-          font-size: ${theme.spacing.s0};
+          font-size: ${theme.spacing['s0']};
         }
       `}
     />
