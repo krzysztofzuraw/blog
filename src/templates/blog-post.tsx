@@ -1,9 +1,8 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
-import { BlogPostBySlugQuery } from 'typings/graphql';
 
 type Props = {
-  data: BlogPostBySlugQuery;
+  data: any;
 };
 
 const BlogPostPage: React.FunctionComponent<Props> = () => {

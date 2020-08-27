@@ -19,6 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "@emotion/core": "10.0.35",
+    "@emotion/styled": "10.0.27",
     "emotion-reset": "2.0.7",
     "emotion-theming": "10.0.27",
     "gatsby": "2.24.37",

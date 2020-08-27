@@ -48,9 +48,7 @@ export const Layout: FunctionComponent<Props> = ({ children, location }) => (
           })}
         >
           <li>{location !== 'about' ? <Link to="/about">About</Link> : <>About</>}</li>
-          <li>
-            <a href="">Blog</a>
-          </li>
+          <li>{location !== 'blog' ? <Link to="/blog">Blog</Link> : <>Blog</>}</li>
           <li>
             <a href="">RSS</a>
           </li>

@@ -9,11 +9,13 @@ export type Theme = {
     black: string;
   };
   spacing: {
+    's-1': string;
     code: string;
     s0: string;
-    s1: string;
-    s2: string;
-    s3: string;
+    's+1': string;
+    's+2': string;
+    's+3': string;
+    's+4': string;
   };
   ratio: number;
   measure: string;
@@ -25,11 +27,13 @@ const theme: Theme = {
     black: '#333',
   },
   spacing: {
+    's-1': '0.667rem',
     code: '0.875rem',
     s0: '1rem',
-    s1: '1.5rem',
-    s2: '2.25rem',
-    s3: '3.375rem',
+    's+1': '1.5rem',
+    's+2': '2.25rem',
+    's+3': '3.375rem',
+    's+4': '5.063rem',
   },
   ratio: 1.5,
   measure: '60ch',
@@ -100,17 +104,18 @@ export const BlogTheme: FunctionComponent = ({ children }) => (
         }
 
         h1 {
-          font-size: ${theme.spacing.s3};
+          font-size: ${theme.spacing['s+3']};
           font-weight: 600;
         }
 
         h2 {
-          font-size: ${theme.spacing.s2};
+          font-size: ${theme.spacing['s+2']};
           font-weight: 600;
         }
 
         h3 {
-          font-size: ${theme.spacing.s1};
+          font-size: ${theme.spacing['s+1']};
+          font-weight: 600;
         }
 
         a {
