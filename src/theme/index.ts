@@ -1,1 +1,1 @@
-export { BlogTheme } from './theme';
+export { BlogTheme, Theme } from './theme';
