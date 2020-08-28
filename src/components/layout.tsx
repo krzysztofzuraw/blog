@@ -37,7 +37,9 @@ export const Layout: FunctionComponent<Props> = ({ children, location }) => (
         })}
       >
         <div>
-          {location !== 'home' ? <Link to="/">Krzysztof Żuraw</Link> : <>Krzysztof Żuraw</>}
+          <Link to="/" css={{ textDecoration: location === 'home' ? 'none' : 'inital' }}>
+            Krzysztof Żuraw
+          </Link>
         </div>
         <ul
           css={(theme) => ({
@@ -47,8 +49,16 @@ export const Layout: FunctionComponent<Props> = ({ children, location }) => (
             gap: theme.spacing.s0,
           })}
         >
-          <li>{location !== 'about' ? <Link to="/about">About</Link> : <>About</>}</li>
-          <li>{location !== 'blog' ? <Link to="/blog">Blog</Link> : <>Blog</>}</li>
+          <li>
+            <Link to="/about" css={{ textDecoration: location === 'about' ? 'none' : 'inital' }}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/blog" css={{ textDecoration: location === 'blog' ? 'none' : 'inital' }}>
+              Blog
+            </Link>
+          </li>
           <li>
             <a href="">RSS</a>
           </li>
