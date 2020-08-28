@@ -1,19 +1,18 @@
 ---
 title: Microservices in Flask
 date: '2016-10-09T09:00Z'
-slug: '/blog/2016/microservices-in-flask.blog'
-tags: 
-    - flask
-    - python
-    - microservices
+slug: '/blog/2016/microservices-in-flask'
+tags:
+  - flask
+  - python
+  - microservices
 ---
 
 **I recently gave a talk about microservices in Flask on**
 [Wrocpy](http://www.meetup.com/wrocpy/). **This blog post is a
 translation of that talk into English.**
 
-Monolithic application
-======================
+## Monolithic application
 
 Microservices talk usually starts with a monolithic application. In my
 case, it is the same. I work on a project where I have a big monolithic
@@ -55,16 +54,14 @@ picture:
 Picture from
 [link](http://pics-about-space.com/solar-system-gif-animation?p=1#).
 
-Flask microservices
-===================
+# Flask microservices
 
 We choose the [flask](http://flask.pocoo.org/) as a tool that will be
 used in our microservices. It doesn't set any boundaries and it's
-flexible but don't have *batteries included*. Let's start with the first
+flexible but don't have _batteries included_. Let's start with the first
 flask extension that helps us building microservices:
 
-Flask-Script
-------------
+## Flask-Script
 
 Django has a set of powerful commands available. To enable such a
 feature in flask you need
@@ -83,8 +80,7 @@ manager.add_command(
 )
 ```
 
-Flask-RESTful
--------------
+## Flask-RESTful
 
 To communicate between microservices I use REST. To ease yourself when
 creating resources and endpoints you can use
@@ -108,8 +104,7 @@ def output_xml(data, code, headers=None):
     return response
 ```
 
-Marshallow & flask-marshallow
------------------------------
+## Marshallow & flask-marshallow
 
 To serialize or deserialize objects you can use
 [flask-marshallow](https://flask-marshmallow.readthedocs.io/en/latest/).
@@ -133,8 +128,7 @@ class CustomSchema(ma.Schema):
         return jsonify(result.data)
 ```
 
-Flask-SQLAlchemy
-----------------
+## Flask-SQLAlchemy
 
 Most of the modern frameworks have support for ORM- the same is with
 Flask. There is an extension called
@@ -173,8 +167,7 @@ database. I also add columns to that table like `model_type`,
 Flask SQLAlchemy is layer sitting on top of SQLAlchemy so you can use
 all advantages of ORM like having queries written in python.
 
-Flask-Migrate
--------------
+## Flask-Migrate
 
 When your database keeps getting larger there is a need for database
 migrations to make sure that everyone has the same database structure.
@@ -184,7 +177,7 @@ To accomplish that we use
 you have to make sure that adjust your migration files after generation.
 Example migration file can look as follows:
 
-``` {.sourceCode .python}
+```{.sourceCode .python}
 def upgrade():
     op.create_table(
         'my_model',
@@ -211,8 +204,7 @@ In snipped above I created two tables: `my_model` and `my_model_values`
 with respective columns. Also `my_model_values` has `ForeignKey`
 relation to `my_model` by their ids.
 
-Testing
-=======
+## Testing
 
 During the development of microservices, we write unit tests as well as
 integration ones. Testing how well microservices behave with each other
@@ -223,20 +215,17 @@ external microservice in most cases with a form of HTTP status code and
 a small message in JSON or XML. Then I need to debug not only my
 microservice but also external one.
 
-Deployment
-==========
+## Deployment
 
 After testing is done we deploy microservice using few tools:
 
-Puppet
-------
+## Puppet
 
 We use puppet for managing and provisioning our microservices.
 Especially we use an R10k module for puppet: [gtihub
 link](https://github.com/puppetlabs/r10k).
 
-Cookiecutter
-------------
+## Cookiecutter
 
 To make sure that every microservice has the same structure we also use
 [cookiecutter](https://github.com/audreyr/cookiecutter). Thanks to that
@@ -244,7 +233,7 @@ puppet knows that config file is always in this location or there will
 be logs stored there. Example microservice structure will look as
 follows:
 
-``` {.sourceCode .shell}
+```{.sourceCode .shell}
 └── flask_microservice
     ├── AUTHORS.rst
     ├── debian
@@ -278,8 +267,7 @@ follows:
         └── tox.ini
 ```
 
-Dh-virtualenv
--------------
+## Dh-virtualenv
 
 To distribute packages we use
 [dh-virtualenv](dh-virtualenv.readthedocs.io/en/latest/). This basically

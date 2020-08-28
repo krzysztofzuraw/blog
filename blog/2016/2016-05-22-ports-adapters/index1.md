@@ -1,13 +1,11 @@
 ---
 title: Ports and Adapters in python - part two
 date: '2016-06-05T10:20Z'
-slug: '/blog/2016/ports-and-adapters-in-python-part-two.html'
-tags: 
-    - django
-    - python
-    - design_patterns
-readNext: '/blog/2016/ports-and-adapters-in-python-part-three.html'
-readPrev: '/blog/2016/ports-and-adapters-in-python-part-one.html'
+slug: '/blog/2016/ports-and-adapters-in-python-part-two'
+tags:
+  - django
+  - python
+  - design_patterns
 ---
 
 **Last time I wrote about how to do simple port & adapter in python. In
@@ -105,8 +103,8 @@ parameter in html:
 
 ```html
 <form method="get" class="form" role="form">
-    {{ form }}
-    <input type="submit" class="btn btn-primary" value="Search">
+  {{ form }}
+  <input type="submit" class="btn btn-primary" value="Search" />
 </form>
 ```
 
@@ -134,10 +132,9 @@ And that basically all for search view. In next post I will take care of
 saving results to database. Code for this you can find under this
 [repo](https://github.com/krzysztofzuraw/reddit-stars).
 
-Changes from 07.06.16:
-----------------------
+## Changes from 07.06.16:
 
--   Moving port & adapter to it's own module
--   Having only one instance of port & adapter
+- Moving port & adapter to it's own module
+- Having only one instance of port & adapter
 
 (Special thanks for pointing this to Mariusz)

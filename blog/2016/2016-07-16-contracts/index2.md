@@ -1,13 +1,11 @@
 ---
 title: Design by contract in python- part two
 date: '2016-07-23T10:00Z'
-slug: '/blog/2016/design-by-contract-in-python-part-two.html'
-tags: 
-    - python
-    - design
-    - contracts
-readPrev: '/blog/2016/design-by-contract-in-python-part-one.html'
-readNext: '/blog/2016/design-by-contract-in-python-part-three.html'
+slug: '/blog/2016/design-by-contract-in-python-part-two'
+tags:
+  - python
+  - design
+  - contracts
 ---
 
 **Last time I wrote about py.contracts- today is the time for another

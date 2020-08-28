@@ -1,12 +1,11 @@
 ---
 title: Django + Celery & Rabbit - part one
 date: '2016-02-26T10:20Z'
-slug: '/blog/2016/django-celery-rabbit-part-one.html'
-tags: 
-    - django
-    - celery
-    - rabbit
-readNext: '/blog/2016/django-celery-rabbit-part-two.html'
+slug: '/blog/2016/django-celery-rabbit-part-one'
+tags:
+  - django
+  - celery
+  - rabbit
 ---
 
 **Hello, today post is first one in series about Celery in Django

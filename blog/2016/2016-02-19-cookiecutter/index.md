@@ -1,10 +1,10 @@
 ---
 title: Django cookiecutter
 date: '2016-02-19T10:20Z'
-slug: '/blog/2016/django-cookiecutter.html'
-tags: 
-    - django
-    - automation
+slug: '/blog/2016/django-cookiecutter'
+tags:
+  - django
+  - automation
 ---
 
 **Have you ever wanted to automate all these boring things that you have
@@ -34,29 +34,29 @@ GitHub
 [README](https://github.com/pydanny/cookiecutter-django/blob/master/README.rst)
 it provides:
 
-> -   For Django 1.9
-> -   Renders Django projects with 100% test coverage
-> -   Twitter Bootstrap v4.0.0 - alpha
-> -   End-to-end via Hitch
-> -   AngularJS
-> -   12-Factor based settings via django-environ
-> -   Optimized development and production settings
-> -   Registration via django-allauth
-> -   Comes with custom user model ready to go.
-> -   Grunt build for compass and livereload
-> -   Basic e-mail configurations for sending emails via Mailgun
-> -   Media storage using Amazon S3
-> -   Docker support using docker-compose for development and production
-> -   Procfile for deploying to Heroku
+> - For Django 1.9
+> - Renders Django projects with 100% test coverage
+> - Twitter Bootstrap v4.0.0 - alpha
+> - End-to-end via Hitch
+> - AngularJS
+> - 12-Factor based settings via django-environ
+> - Optimized development and production settings
+> - Registration via django-allauth
+> - Comes with custom user model ready to go.
+> - Grunt build for compass and livereload
+> - Basic e-mail configurations for sending emails via Mailgun
+> - Media storage using Amazon S3
+> - Docker support using docker-compose for development and production
+> - Procfile for deploying to Heroku
 
 And some additional features:
 
-> -   Serve static files from Amazon S3 or Whitenoise
-> -   Configuration for Celery
-> -   Integration with MailHog for local email testing
-> -   Integration with Sentry for error logging
-> -   Integration with NewRelic for performance monitoring
-> -   Integration with Opbeat for performance monitoring
+> - Serve static files from Amazon S3 or Whitenoise
+> - Configuration for Celery
+> - Integration with MailHog for local email testing
+> - Integration with Sentry for error logging
+> - Integration with NewRelic for performance monitoring
+> - Integration with Opbeat for performance monitoring
 
 So it can make a huge improvement in initial project configuration.
 Let's try this out!
@@ -191,7 +191,7 @@ $ sudo sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-
 Now it's time to add entry in `/etc/apt/sources.list.d/docker.list` for
 Ubuntu 14.04
 
-``` {.sourceCode .text}
+```{.sourceCode .text}
 deb https://apt.dockerproject.org/repo ubuntu-trusty main
 ```
 
@@ -206,7 +206,7 @@ $ sudo apt-get install docker-engine
 Then verify if everything is installed:
 
 ```bash
-$ sudo service docker start 
+$ sudo service docker start
 $ sudo docker run hello-world
 ```
 
@@ -246,8 +246,7 @@ $ sudo docker-compose -f dev.yml run django python manage.py createsuperuser
 And that's it! You got the working project made in few minutes. If you
 found this post helpful please share it with your friends.
 
-Resources:
-----------
+## Resources:
 
 1.  [Development and deployment of cookiecutter django via
     docker](https://realpython.com/blog/python/development-and-deployment-of-cookiecutter-django-via-docker/)

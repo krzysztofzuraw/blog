@@ -1,11 +1,10 @@
 ---
 title: Transcoding with AWS- part one
 date: '2016-12-04T10:00Z'
-slug: '/blog/2016/transcoding-aws-part-one.html'
+slug: '/blog/2016/transcoding-aws-part-one'
 tags:
-    - django
-    - aws
-readNext: '/blog/2016/transcoding-aws-part-two.html'
+  - django
+  - aws
 ---
 
 **Nowadays moving everything to the cloud becomes more and more popular.
@@ -15,21 +14,19 @@ Services - AWS. That's why I decided decided to adapt existing code from
 my previous project and move transcoding to write blog posts about that.
 In this series I process to cloud.**
 
-Overview of series
-==================
+## Overview of series
 
 I decided to adapt code from my previous blog series about celery and
 rabbit-mq. I did that because code
 from this django application actually transcodes mp3 files to other
 formats. This series will be divided into these parts:
 
--   Moving static and media files to AWS
--   Transcoding files inside AWS transcoder
--   Notifying user that transcode is complete
--   User downloads transcoded file
+- Moving static and media files to AWS
+- Transcoding files inside AWS transcoder
+- Notifying user that transcode is complete
+- User downloads transcoded file
 
-Moving static and media files to AWS
-====================================
+## Moving static and media files to AWS
 
 AWS transcoder operates only on files that are inside S3 bucket so first
 I need to change how these files are served in django.
@@ -57,25 +54,23 @@ This policy looks like this:
 {
   "Version": "2008-10-17",
   "Statement": [
-      {
-          "Sid": "PublicReadForGetBucketObjects",
-          "Effect": "Allow",
-          "Principal": {
-              "AWS": "*"
-          },
-          "Action": "s3:GetObject",
-          "Resource": "AWS_RESOURCE"
+    {
+      "Sid": "PublicReadForGetBucketObjects",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
       },
-      {
-          "Effect": "Allow",
-          "Principal": {
-              "AWS": "AWS_PRINCIPAL"
-          },
-          "Action": "s3:*",
-          "Resource": [
-              "AWS_RESOURCE",
-          ]
-      }
+      "Action": "s3:GetObject",
+      "Resource": "AWS_RESOURCE"
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "AWS_PRINCIPAL"
+      },
+      "Action": "s3:*",
+      "Resource": ["AWS_RESOURCE"]
+    }
   ]
 }
 ```
@@ -116,7 +111,7 @@ I'm using here another package called
 to get certain settings from environmental variables. I'm setting them
 in my virtualenvwrapper script inside `$ENV_PATH/bin/postactivate`:
 
-``` {.sourceCode .shell}
+```{.sourceCode .shell}
 export AWS_STORAGE_BUCKET_NAME='name'
 export AWS_ACCESS_KEY_ID='key'
 export AWS_SECRET_ACCESS_KEY='acces_id'

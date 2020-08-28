@@ -1,11 +1,10 @@
 ---
 title: GeoDjango and Leaflet.js- part one
-date: "2016-01-01T22:12:03.284Z"
-slug: "/blog/2016/geodjango-leaflet-part-one.html"
-tags: 
-    - django 
-    - leaflet.js
-readNext: '/blog/2016/geodjango-leaflet-part-two.html'
+date: '2016-01-01T22:12:03.284Z'
+slug: '/blog/2016/geodjango-leaflet-part-one'
+tags:
+  - django
+  - leaflet.js
 ---
 
 **Today is the day, when I will start my blog. I would like to publish
@@ -96,7 +95,7 @@ In QGIS this shapefile presents as follows:
 
 Using ogrinfo:
 
-```terminal
+```shell
 $ ogrinfo -so data/PRG_jednostki_administracyjne_v10/województwa.shp województwa
 
 INFO: Open of `data/PRG_jednostki_administracyjne_v10/województwa.shp'
@@ -156,7 +155,7 @@ PROJCS["ETRS89 / Poland CS92",
 We can make model representing this data in our application by hand but
 it's django so you can type:
 
-```console
+```shell
 $ ./manage.py ogrinspect data/PRG_jednostki_administracyjne_v10/województwa.shp Voivodeship --mapping --srid 2180 --multi >> voivodeships/models.py
 ```
 
@@ -420,4 +419,4 @@ how display data on actual map.
 
 ## Update 08.01.16:
 
-* Fixing grammar errors. Thank you Adrianna!
+- Fixing grammar errors. Thank you Adrianna!

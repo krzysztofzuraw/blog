@@ -1,10 +1,10 @@
 ---
 title: Python __slots__
 date: '2016-01-23T10:20Z'
-slug: 'blog/2016/python-slots.html'
-tags: 
-    - python
-    - slots
+slug: 'blog/2016/python-slots'
+tags:
+  - python
+  - slots
 ---
 
 **Hello everyone in new layout of blog. Today I will write more about
@@ -44,7 +44,7 @@ instances, but when we use `dir()`:
 27
 ```
 
-So what is different? The answer is slots got `__slots__` and no\_slots:
+So what is different? The answer is slots got `__slots__` and no_slots:
 `__dict__` and `__weakref__`. The implication of this is as follows:
 
 ```python

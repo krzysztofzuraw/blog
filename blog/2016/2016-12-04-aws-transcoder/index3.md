@@ -1,12 +1,10 @@
 ---
 title: Transcoding with AWS- part four
 date: '2017-01-15T10:00Z'
-slug: '/blog/2017/transcoding-aws-part-four.html'
+slug: '/blog/2017/transcoding-aws-part-four'
 tags:
-    - django
-    - aws
-readNext: '/blog/2016/transcoding-aws-part-five.html'
-readPrev: '/blog/2016/transcoding-aws-part-three.html'
+  - django
+  - aws
 ---
 
 **As I have my transcoder up and running now it's time to let user know
@@ -14,8 +12,7 @@ that their uploaded files were transcoded. To this occasion I will use
 AWS SNS service which allows me to send notification about completion of
 transcode job.**
 
-Setting up AWS SNS to work with AWS Transcoder
-==============================================
+## Setting up AWS SNS to work with AWS Transcoder
 
 After logging to AWS console and selecting SNS I have to create a topic:
 
@@ -31,8 +28,7 @@ Last thing I have to do was to create subscription for topic created
 above. They are a lot of types of subscription that you can find in SNS
 settings but I will be using HTTP request.
 
-Receiving notifications from SNS service in Django
-==================================================
+## Receiving notifications from SNS service in Django
 
 The flow of application will look like this:
 

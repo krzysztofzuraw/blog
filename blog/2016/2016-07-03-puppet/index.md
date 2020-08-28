@@ -1,11 +1,10 @@
 ---
 title: Django application with puppet- part one
 date: '2016-07-03T10:20Z'
-slug: '/blog/2016/django-application-puppet-part-one.html'
-tags: 
+slug: '/blog/2016/django-application-puppet-part-one'
+tags:
   - django
   - puppet
-readNext: '/blog/2016/django-application-puppet-part-two.html'
 ---
 
 **This post is a quick tutorial how to provision geodjango application
@@ -27,7 +26,7 @@ I use it in my work as a tool for automation as well as I was keen to
 look more how this all works.
 
 Puppet is different from other mentioned tools in a way it does
-*deployment*: there are two entities: puppet master and a puppet agent.
+_deployment_: there are two entities: puppet master and a puppet agent.
 Master is responsible for keeping the configuration how puppet agent
 should look like. When puppet is run it pulls out information from
 puppet master and apply to puppet agent. In other words, puppet agent

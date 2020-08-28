@@ -1,17 +1,16 @@
 ---
 title: Http and websockets logging handlers
 date: '2016-01-16T10:20Z'
-slug: 'blog/2016/http-websockets-logging-handlers.html'
-tags: 
-    - python
-    - logging
+slug: 'blog/2016/http-websockets-logging-handlers'
+tags:
+  - python
+  - logging
 ---
 
 **Hello, this posts will be about 3 specific logging handlers:
 HTTPHandler, SocketHandler and DatagramHandler.**
 
-HTTPHandler
-===========
+## HTTPHandler
 
 Let's start with HTTPHandler: reading python docs about
 [HTTPHandler](https://docs.python.org/3.4/library/logging.handlers.html#httphandler)
@@ -51,7 +50,7 @@ if __name__ == "__main__":
 app.run(debug=True)
 ```
 
-To send some data, create script called send\_log.py:
+To send some data, create script called send_log.py:
 
 ```python
 import logging
@@ -71,8 +70,7 @@ logger.setLevel(logging.DEBUG)
 logger.debug("Test message.")
 ```
 
-SocketHandler
-=============
+## SocketHandler
 
 Now let's move to the
 [SocketHandler](https://docs.python.org/3.4/library/logging.handlers.html#sockethandler):
@@ -153,8 +151,7 @@ In method `handle` we read chunks of information from sent logging
 message. The chunk is byte type so then we need to translate it to
 python object by calling `pickle.loads()`.
 
-DatagramHandler
-===============
+## DatagramHandler
 
 Lastly, there is
 [DatagramHandler](https://docs.python.org/3.4/library/logging.handlers.html#datagramhandler)
@@ -182,7 +179,6 @@ on
 I got this working by omitting first 4 bytes of data because they
 contain length of dumped object.
 
-Updates
--------
+### Updates
 
--   23.01.16 Thanks to RooTer answer I added UDP log handler
+- 23.01.16 Thanks to RooTer answer I added UDP log handler

@@ -1,11 +1,11 @@
 ---
 title: Makefiles in python projects
 date: '2016-09-03T10:00Z'
-slug: '/blog/2016/makefiles-in-python-projects.html'
-tags: 
-    - python
-    - make
-    - makefile
+slug: '/blog/2016/makefiles-in-python-projects'
+tags:
+  - python
+  - make
+  - makefile
 ---
 
 **When I join my current company I saw in their git repos strange file.
@@ -14,8 +14,7 @@ the project. I asked my colleagues what is this file for? They told me-
 to make your life easier. That's why today I write about this file-
 Makefile.**
 
-What is makefile and what is it typical use
-===========================================
+## What is makefile and what is it typical use
 
 From this
 [tutorial](http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/):
@@ -45,8 +44,7 @@ compiled itself while invoked so it doesn't need any makefiles to work.
 As I said in the beginning in python projects you can ease your life and
 save a lot of keystrokes using makefile.
 
-What specific to python you can put in makefile
-===============================================
+## What specific to python you can put in makefile
 
 Have you ever wanted to clean up `.pyc` files from your project or
 remove artifacts after building python packages? Or maybe you want to
@@ -67,7 +65,7 @@ TEST_PATH=./
 clean-pyc:
     find . -name '*.pyc' -exec rm --force {} +
     find . -name '*.pyo' -exec rm --force {} +
-   name '*~' -exec rm --force  {} 
+   name '*~' -exec rm --force  {}
 
 clean-build:
     rm --force --recursive build/
@@ -161,8 +159,7 @@ $ make run HOST=127.0.0.1 PORT=8000
 Lastly be aware that indentation in makefile has to be made using TAB,
 not spaces.
 
-What benefit you can have by using makefile in python projects
-==============================================================
+## What benefit you can have by using makefile in python projects
 
 As you can see using makefile in python projects can bring many good
 things. If you are tired of writing complicated shell commands- put them

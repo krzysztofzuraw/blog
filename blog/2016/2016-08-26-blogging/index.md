@@ -1,25 +1,23 @@
 ---
 title: My thoughts on blogging
 date: '2016-08-26T10:00Z'
-slug: '/blog/2016/my-thoughts-on-blogging.html'
-tags: 
-    - blogging
+slug: '/blog/2016/my-thoughts-on-blogging'
+tags:
+  - blogging
 ---
 
 **This week I decided to write something more about what are reasons I
 wrote this blog, what I am taking from it so if you want some more
 technical post please check other articles.**
 
-What I want from this blog
-==========================
+## What I want from this blog
 
 I started this blog as a reference to myself about things in software
 development that I learn along the way. Moreover, this blog is a place
 to present my own opinions but I really welcome any comments especially
 ones that expand my view.
 
-Why blogging?
-=============
+## Why blogging?
 
 I see couple benefits of blogging. First of all, you are learning. And I
 mean a lot- every blog post I write teach me something- either how to
@@ -43,8 +41,7 @@ know a big deal of subject if you want to write a good blog post and
 during writing, you are thinking how to present this topic in simple and
 consistent manner.
 
-Conclusion and why I write this post
-====================================
+## Conclusion and why I write this post
 
 I made this quick blog post for the remainder to myself why I made this
 blog as well as for readers who may be interested in figuring out for

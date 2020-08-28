@@ -1,19 +1,17 @@
 ---
 title: Django + Celery & Rabbit - part four
 date: '2016-03-19T10:20Z'
-slug: '/blog/2016/django-celery-rabbit-part-four.html'
-tags: 
-    - django
-    - celery
-    - rabbit
-readPrev: '/blog/2016/django-celery-rabbit-part-three.html'
+slug: '/blog/2016/django-celery-rabbit-part-four'
+tags:
+  - django
+  - celery
+  - rabbit
 ---
 
 **This is the fourth part of Celery and RabbitMQ in Django series. Today
 I will fix minor bugs and sum up this series.**
 
-Audio File detail view
-======================
+## Audio File detail view
 
 The problem was after successful upload django redirect to detail view
 of uploaded file. And in HTML template of this view, it expects that
@@ -53,14 +51,21 @@ set.
 
 ```html
 {% if object.was_processed %}
-    <ul><a href="{{ object.ac3_file.url}}">Ac3 File</a></ul>
-    <ul><a href="{{ object.ogg_file.url}}">Ogg File</a></ul>
-    <ul><a href="{{ object.wav_file.url}}">Wav File</a><ul>
-{% endif %}
+<ul>
+  <a href="{{ object.ac3_file.url}}">Ac3 File</a>
+</ul>
+<ul>
+  <a href="{{ object.ogg_file.url}}">Ogg File</a>
+</ul>
+<ul>
+  <a href="{{ object.wav_file.url}}">Wav File</a>
+  <ul>
+    {% endif %}
+  </ul>
+</ul>
 ```
 
-Logging
-=======
+## Logging
 
 Right now everything works great but what if something goes wrong? To
 make sure that I will be able to find the issue I need logging. This is
@@ -100,8 +105,7 @@ Thanks to that I can see in my console:
 [2016-03-19 09:55:11,837: INFO/Worker-4] taskapp.tasks.transcode_mp3[b6ca93d4-e58c-496f-b8e5-4ba493b8a92a]: End of transcoding.
 ```
 
-Summary
-=======
+## Summary
 
 This was the last post of Django Celery Rabbit series. I made basic
 transcoder application that uses FFmpeg, Django, Celery and RabbitMQ. I

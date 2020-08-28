@@ -1,12 +1,11 @@
 ---
 title: JSON Web Tokens in django application- part one
 date: '2016-10-02T09:00Z'
-slug: '/blog/2016/jwt-in-django-application-part-one.html'
+slug: '/blog/2016/jwt-in-django-application-part-one'
 tags:
   - python
   - django
   - jwt
-readNext: '/blog/2016/jwt-in-django-application-part-two.html'
 ---
 
 **Recently I attended a workshop about web security. During these hours
@@ -15,7 +14,7 @@ I decided to write a blog post series about how to use JSON Web Tokens
 in simple django application. Today it is the first part of this
 series.**
 
-# What is JWT?
+## What is JWT?
 
 JWT aka JSON Web Tokens is a method of authentication. What it does: You
 as a user first send a request to the server saying: I want to login!
@@ -65,7 +64,7 @@ Payload will look like this:
 Last part is a signature. It is basically the sum of all previously
 mentioned parts encoded in base64 + secret.
 
-# How can you use JWT and why?
+## How can you use JWT and why?
 
 When you get your response back from a server with JSON Web Token you
 can use it in header like this:
@@ -81,7 +80,7 @@ problem with parsers for that format.
 That's all for today and stay tuned for the next post in blog series
 about JWT!
 
-# Resources:
+## Resources:
 
 1.  <https://jwt.io/>
 

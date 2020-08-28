@@ -1,20 +1,17 @@
 ---
 title: Transcoding with AWS- part five
 date: '2017-01-22T10:00Z'
-slug: '/blog/2017/transcoding-aws-part-five.html'
+slug: '/blog/2017/transcoding-aws-part-five'
 tags:
-    - django
-    - aws
-readPrev: '/blog/2016/transcoding-aws-part-four.html'
+  - django
+  - aws
 ---
-
 
 **This is the last blog post in this series - the only thing that has to
 be done is telling the user that file he or she uploads is processed. It
 will be done by writing custom message application.**
 
-How message application should work
-===================================
+## How message application should work
 
 From previous I know
 that the last point of my application flow is to inform user that file
@@ -26,8 +23,7 @@ only with request. As I decided to show message for different users as
 long as they dismiss this information I had to write my own small
 application.
 
-Implementation in django
-========================
+## Implementation in django
 
 In my newly created application I created following model:
 
@@ -94,16 +90,19 @@ TEMPLATES = [
 And adding a message as django template tag:
 
 ```html
-{% if messages %}
-  {% for message in messages %}
-    <div class="alert alert-success alert-dismissible" data-message-id="{{ message.id }}" data-message-url="{% url 'messages:read-message' %}"role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">x</span>
-      </button>
-      {{ message.text }}
-    </div>
-  {% endfor %}
-{% endif %}
+{% if messages %} {% for message in messages %}
+<div
+  class="alert alert-success alert-dismissible"
+  data-message-id="{{ message.id }}"
+  data-message-url="{% url 'messages:read-message' %}"
+  role="alert"
+>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">x</span>
+  </button>
+  {{ message.text }}
+</div>
+{% endfor %} {% endif %}
 ```
 
 Which renders as follows:
@@ -118,24 +117,22 @@ script:
 var csrftoken = Cookies.get('csrftoken');
 
 function csrfSafeMethod(method) {
-    // these HTTP methods do not require CSRF protection
-    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+  // these HTTP methods do not require CSRF protection
+  return /^(GET|HEAD|OPTIONS|TRACE)$/.test(method);
 }
 $.ajaxSetup({
-    beforeSend: function(xhr, settings) {
-        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-            xhr.setRequestHeader("X-CSRFToken", csrftoken);
-        }
+  beforeSend: function (xhr, settings) {
+    if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+      xhr.setRequestHeader('X-CSRFToken', csrftoken);
     }
+  },
 });
 
-
-
-$('.alert').on('closed.bs.alert', function(event) {
+$('.alert').on('closed.bs.alert', function (event) {
   $.ajax({
     url: event.target.dataset.messageUrl,
     method: 'POST',
-    data: {'message_id': event.target.dataset.messageId}
+    data: { message_id: event.target.dataset.messageId },
   });
 });
 ```

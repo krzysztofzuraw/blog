@@ -1,20 +1,17 @@
 ---
 title: JSON Web Tokens in django application- part three
 date: '2016-10-30T09:00Z'
-slug: '/blog/2016/jwt-in-django-application-part-three.html'
-tags: 
-    - python
-    - django
-    - jwt
-readNext: '/blog/2016/jwt-in-django-application-part-four.html'
-readPrev: '/blog/2016jwt-in-django-application-part-two.html'
+slug: '/blog/2016/jwt-in-django-application-part-three'
+tags:
+  - python
+  - django
+  - jwt
 ---
 
 **As we have working application now it's high time to make it more
 secure by authenticating users. To do this I will use JSON Web Tokens.**
 
-JWT in Django Rest Framework
-============================
+## JWT in Django Rest Framework
 
 There are few packages on
 [pypi](https://pypi.python.org/pypi?%3Aaction=search&term=JWT&submit=search)
@@ -26,8 +23,7 @@ But you have to make sure that your application is behind SSL/TLS as JWT
 tokens generated are not signed. But enough writing- let's jump into the
 code.
 
-Implementing JWT in DRF application
-===================================
+## Implementing JWT in DRF application
 
 First I added small change to my `Task` model definition in models.py:
 

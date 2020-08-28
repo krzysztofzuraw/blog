@@ -1,20 +1,17 @@
 ---
 title: Transcoding with AWS- part two
 date: '2016-12-11T10:00Z'
-slug: '/blog/2016/transcoding-aws-part-two.html'
+slug: '/blog/2016/transcoding-aws-part-two'
 tags:
-    - django
-    - aws
-readNext: '/blog/2016/transcoding-aws-part-three.html'
-readPrev: '/blog/2016/transcoding-aws-part-one.html'
+  - django
+  - aws
 ---
 
 **As I have static and media files integrated with AWS now it's time to
 transcode them. In this post, I will write a short example of how to
 integrate AWS ElasticTranscoder with Django application.**
 
-Basic terms
-===========
+## Basic terms
 
 ElasticTranscoder allows you to transcode files from your S3 bucket to
 various formats. To set this service up first you have to create a
@@ -38,8 +35,7 @@ resolution should video files have? All of this is set up in present.
 As we know basic terms used in AWS Elastic Transcoder let's jump into
 the code.
 
-Code
-====
+## Code
 
 AWS has very good python API called
 [boto3](http://boto3.readthedocs.io/en/latest/). Using that API and few

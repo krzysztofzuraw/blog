@@ -1,12 +1,11 @@
 ---
 title: Django Haystack and Elasticsearch- part two
 date: '2016-02-12T10:20Z'
-slug: '/blog/2016/haystack-elasticsearch-part-two.html'
-tags: 
-    - django
-    - elasticsearch
-    - haystack
-readPrev: '/blog/2016/haystack-elasticsearch-part-one.html'
+slug: '/blog/2016/haystack-elasticsearch-part-two'
+tags:
+  - django
+  - elasticsearch
+  - haystack
 ---
 
 **Hello! This is the second part of Django Haystack and Elasticsearch
@@ -267,8 +266,7 @@ And that's all. We got working search! You can find the repo on
 If you feel that this post was valuable please send me email.
 Thanks!
 
-Resources:
-----------
+## Resources:
 
 1.  [django-haystack
     docs](https://django-haystack.readthedocs.org/en/v2.4.1/tutorial.html)

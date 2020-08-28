@@ -1,12 +1,11 @@
 ---
 title: JSON Web Tokens in django application- part four
 date: '2016-11-13T09:00Z'
-slug: '/blog/2016/jwt-in-django-application-part-four.html'
-tags: 
-    - python
-    - django
-    - jwt
-readPrev: '/blog/2016jwt-in-django-application-part-three.html'
+slug: '/blog/2016/jwt-in-django-application-part-four'
+tags:
+  - python
+  - django
+  - jwt
 ---
 
 **When I started this series I have got one comment from my co-worker
@@ -14,8 +13,7 @@ that instead of authentication JWT can be used to sign one time links.
 After reading through the documentation I found that can be a great idea
 so I decided to write a blog post about it.**
 
-Use case
-========
+## Use case
 
 Nowadays when a user creates an account he or she has to confirm
 identity. It is done by sending an email with the link to confirm and
@@ -26,8 +24,7 @@ JSON Web Tokens. Such tokens can be generated for every user and set to
 expire for example after two hours. How can it be done in Django? Let's
 jump into the code.
 
-JSON Web Tokens in urls
-=======================
+## JSON Web Tokens in urls
 
 First I change the previous code from series and made special django app
 just for users. But the first user has to register - that's why I made
@@ -115,7 +112,7 @@ It is simply for setting user as inactive during the process of account
 creation. Right now when user wants to create an account he/she has to
 send the following request:
 
-``` {.sourceCode .shell}
+```{.sourceCode .shell}
 $ http POST 127.0.0.1:9000/api-register/ username=krzysiek password=krzysiek email=krzysztof@kz.com
 HTTP/1.0 201 Created
 Allow: POST, OPTIONS

@@ -1,13 +1,11 @@
 ---
 title: JSON Web Tokens in django application- part two
 date: '2016-10-23T09:00Z'
-slug: '/blog/2016/jwt-in-django-application-part-two.html'
-tags: 
-    - python
-    - django
-    - jwt
-readNext: '/blog/2016/jwt-in-django-application-part-three.html'
-readPrev: '/blog/2016jwt-in-django-application-part-one.html'
+slug: '/blog/2016/jwt-in-django-application-part-two'
+tags:
+  - python
+  - django
+  - jwt
 ---
 
 **In this blog post, I will deal with creating simple Django application
@@ -15,8 +13,7 @@ for creating tasks using django rest framework.**
 
 From this blog post, you can learn how to setup basic DRF application.
 
-Overview of application
-=======================
+## Overview of application
 
 The main goal of this application is to create tasks. Each task has a
 title - string with a maximum length of 100 characters. Task also has a
@@ -27,8 +24,7 @@ methods are supported.
 
 As we know how the application is designed let's jump into the code.
 
-Application code
-================
+## Application code
 
 First, there is a need to create model for Task:
 

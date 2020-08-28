@@ -1,11 +1,11 @@
 ---
 title: Django Girls- Kraków #3
 date: '2016-11-20T14:00Z'
-slug: '/blog/2016/django-girls-krakow-3.html'
-tags: 
-    - django
-    - workshop
-    - djangogirls
+slug: '/blog/2016/django-girls-krakow-3'
+tags:
+  - django
+  - workshop
+  - djangogirls
 ---
 
 **As I said many times on this blog I really like teaching others so I
@@ -13,8 +13,7 @@ can improve myself. That's why when I heard about Django Girls Kraków I
 didn't hesitate and I joined this event as a coach. This is short recap
 from Django Girls Kraków #3.**
 
-Installation party
-==================
+## Installation party
 
 The main event was held on Saturday but the day before there was a small
 installation party when for two hours girls were installing necessary
@@ -28,8 +27,7 @@ major problems (considered that girls used Windows). After the
 installation party there was a pleasant surprise - dinner for coaches to
 thank for their work. Super cool!
 
-Workshop day
-============
+## Workshop day
 
 Workshops started early - at 9 am. Girls started working on [django
 girls tutorial](https://tutorial.djangogirls.org/en/). I decided to do
@@ -44,8 +42,7 @@ to do but some problems were not trivial. I learn not to do something
 called 'dive back driving' so doing everything rather than letting girls
 do it and learn along the way. I also have to train my patience.
 
-Conclusion
-==========
+## Conclusion
 
 I learnt quite a few things during these workshops. But I wanted to
 thank organizators for their hard work on this event. Moreover, I wanted

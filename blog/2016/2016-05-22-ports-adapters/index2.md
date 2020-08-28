@@ -1,12 +1,11 @@
 ---
 title: Ports and Adapters in python - part three
 date: '2016-06-12T10:20Z'
-slug: '/blog/2016/ports-and-adapters-in-python-part-three.html'
-tags: 
-    - django
-    - python
-    - design_patterns
-readPrev: '/blog/2016/ports-and-adapters-in-python-part-two.html'
+slug: '/blog/2016/ports-and-adapters-in-python-part-three'
+tags:
+  - django
+  - python
+  - design_patterns
 ---
 
 **Next part of my application will be module for saving links to read
@@ -88,12 +87,13 @@ incorrect I rerender template with form errors. Thanks to that my
 
 ```html
 {% if sucess %}
-    <form method="post" action="{% url 'add_to_favourites' %}">{% csrf_token %}
-        <table>
-            {{ reddit_links_formset }}
-        </table>
-            <input type="submit" class="btn btn-primary" value="Favourite">
-    </form>
+<form method="post" action="{% url 'add_to_favourites' %}">
+  {% csrf_token %}
+  <table>
+    {{ reddit_links_formset }}
+  </table>
+  <input type="submit" class="btn btn-primary" value="Favourite" />
+</form>
 {% else %}
 ```
 

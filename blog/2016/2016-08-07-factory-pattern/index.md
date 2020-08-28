@@ -1,11 +1,11 @@
 ---
 title: Factory pattern in python
 date: '2016-08-07T10:20Z'
-slug: '/blog/2016/factory-pattern-python.html'
-tags: 
-    - python
-    - factory
-    - design pattern
+slug: '/blog/2016/factory-pattern-python'
+tags:
+  - python
+  - factory
+  - design pattern
 ---
 
 What is factory pattern all about? It introduces abstraction. In other
@@ -23,9 +23,9 @@ exchange](http://programmers.stackexchange.com/questions/253254/why-should-i-use
 > It allows for a more decoupled - and therefore more testable - design.
 > (...)
 >
-> * It allows you to introduce an IoC container easily
-> * It makes your code more testable as you can mock interfaces
-> * It gives you a lot more flexibility when it comes time to change
+> - It allows you to introduce an IoC container easily
+> - It makes your code more testable as you can mock interfaces
+> - It gives you a lot more flexibility when it comes time to change
 >   the application (i.e. you can create new implementations without
 >   changing the dependent code)
 
@@ -138,12 +138,12 @@ feel free to comment.
 
 ## Edits (12.08.2016):
 
-* Refactor of `check_extenstion` method
+- Refactor of `check_extenstion` method
 
 ## Edits (30.07.2017):
 
-* Add missing EXTENSION parameter (by Jayesh Pawar)
+- Add missing EXTENSION parameter (by Jayesh Pawar)
 
 ## Edits (07.06.2018):
 
-* Fixed this [bug](https://github.com/krzysztofzuraw/blog-projects/issues/1) - thanks to [con-f-use](https://github.com/con-f-use)
+- Fixed this [bug](https://github.com/krzysztofzuraw/blog-projects/issues/1) - thanks to [con-f-use](https://github.com/con-f-use)

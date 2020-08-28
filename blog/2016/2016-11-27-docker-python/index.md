@@ -1,7 +1,7 @@
 ---
 title: Docker.py- python API for Docker
 date: '2016-11-27T10:00Z'
-slug: '/blog/2016/docker-py.html'
+slug: '/blog/2016/docker-py'
 tags:
   - python
   - docker
@@ -15,7 +15,7 @@ of an application that runs the code inside Docker container which is
 immediately destroyed after the code has been run. This blog post is
 about this prototype.**
 
-# Assumptions
+## Assumptions
 
 I need an application that gets a code from the user, executes it and
 gives output back. As many people before me said output from user cannot
@@ -29,7 +29,7 @@ take the output from the container and destroy it afterwards.
 
 As we know what application should do, let's jump into the code.
 
-# Code
+## Code
 
 The first problem that I have is that I don't want to write a code
 provided by the user to a disk, then read it from the disk and it

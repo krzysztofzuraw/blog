@@ -1,11 +1,10 @@
 ---
 title: Python & WebDAV- part one
 date: '2016-09-11T10:00Z'
-slug: '/blog/2016/python-webdav-part-one.html'
-tags: 
-    - webdav
-    - python
-readNext: '/blog/2016/python-webdav-part-two.html'
+slug: '/blog/2016/python-webdav-part-one'
+tags:
+  - webdav
+  - python
 ---
 
 **I must confess I was ignorant. Recently I saw an application done by
@@ -17,8 +16,7 @@ and contacts (CardDAV). And there I have WebDAV which is filesystem.**
 what it is. This is the first part of blog series about this extension
 to HTTP.**
 
-What is WebDAV and what is it useful for?
-=========================================
+## What is WebDAV and what is it useful for?
 
 From [wikipedia](https://en.wikipedia.org/wiki/WebDAV):
 
@@ -39,8 +37,7 @@ top of HTTP. WebDAV also support SSL and authentication.
 CardDAV and CalDAV are extensions to WebDAV that enable client/server
 address book and to accessing the calendar on the remote server.
 
-Setting up your own WebDAV server
-=================================
+## Setting up your own WebDAV server
 
 I will set up basic WebDAV server using
 [owncloud](https://owncloud.com/). Owncloud is a self-hosted solution

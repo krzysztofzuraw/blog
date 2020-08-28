@@ -1,11 +1,11 @@
 ---
 title: Mocks and monkeypatching in python
 date: '2016-04-24T10:20Z'
-slug: '/blog/2016/mocks-monkeypatching-in-python.html'
-tags: 
-    - python
-    - testing
-    - mocking
+slug: '/blog/2016/mocks-monkeypatching-in-python'
+tags:
+  - python
+  - testing
+  - mocking
 ---
 
 **Hello, in today's post I will look onto essential part of testing-
@@ -16,8 +16,7 @@ examples of how to mock data using two tools:
 [mock](https://docs.python.org/3/library/unittest.mock.html) and [pytest
 monkeypatch](https://pytest.org/latest/monkeypatch.html).
 
-Why bother mocking?
-===================
+## Why bother mocking?
 
 Some of the parts of our application may have dependencies for other
 libraries or objects. To isolate behaviour of our parts we need to
@@ -25,8 +24,7 @@ substitue external dependencies. Here comes the mocking. We mock
 external API to have certain behaviours such as proper return values
 that we previously defined.
 
-Mocking function
-================
+## Mocking function
 
 Let's say we have module called `function.py`:
 
@@ -112,8 +110,7 @@ As you can see I'm using `monkeypatch.setattr` for setting up return
 value for given functions. I'm still need to monkeypatch it in proper
 place: `test_function_pytest` and `function`.
 
-Mocking classes
-===============
+## Mocking classes
 
 I have module called `square`:
 
@@ -125,7 +122,7 @@ class Square(object):
          self.radius = radius
 
      def calculate_area(self):
-         return math.sqrt(self.radius) * math.pi 
+         return math.sqrt(self.radius) * math.pi
 ```
 
 And mocks using standard lib:
@@ -203,8 +200,7 @@ this so if you can help I appreciate this!
 All examples can be found under this
 [repo](https://github.com/krzysztofzuraw/personal-blog-projects/tree/master/blog_mocks).
 
-References:
------------
+## References:
 
 1.  [What is
     mocking](http://stackoverflow.com/questions/2665812/what-is-mocking).

@@ -1,17 +1,16 @@
 ---
 title: Archives from memory- libarchive
 date: '2016-09-25T09:00Z'
-slug: '/blog/2016/archives-from-memory.html'
-tags: 
-    - python
-    - archive
+slug: '/blog/2016/archives-from-memory'
+tags:
+  - python
+  - archive
 ---
 
 **This blog post is about python wrapper around libarchive and how to
 use it to generate archive from memory.**
 
-Libarchive & python-libarchive-c
-================================
+## Libarchive & python-libarchive-c
 
 If you happen to learn more about how to create archives in various
 formats like tar, iso or zip I bet you heard about
@@ -25,8 +24,7 @@ When in my work I was to implement the feature of adding entries to
 archive from memory I decided to use existing module and give something
 back to a community in form of an open source contribution.
 
-Add entry from memory
-=====================
+## Add entry from memory
 
 To make such a feature I have to reread carefully code examples in
 libarchive c itself. I also get familiar with few archive formats and

@@ -1,12 +1,11 @@
 ---
 title: Design by contract in python- part three
 date: '2016-07-31T10:00Z'
-slug: '/blog/2016/design-by-contract-in-python-part-three.html'
-tags: 
-    - python
-    - design
-    - contracts
-readPrev: '/blog/2016/design-by-contract-in-python-part-two.html'
+slug: '/blog/2016/design-by-contract-in-python-part-three'
+tags:
+  - python
+  - design
+  - contracts
 ---
 
 **I covered py.contracts and zope.interface, now it's time to write

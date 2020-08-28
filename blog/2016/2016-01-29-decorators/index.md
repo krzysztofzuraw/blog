@@ -1,11 +1,11 @@
 ---
 title: Python class @decorators
 date: '2016-01-29T10:20Z'
-slug: '/blog/2016/python-class-decorators.html'
-tags: 
-    - python
-    - classes
-    - decorators
+slug: '/blog/2016/python-class-decorators'
+tags:
+  - python
+  - classes
+  - decorators
 ---
 
 **Today post will be about syntactic sugar of python
@@ -132,7 +132,7 @@ Here the decorator wraps either class or function. In the first case
 tuple with args contains only variables passed to the unction. In the
 class call in args, there is also an instance of C class.
 
-It's also possible to decorate whole classes, like in example\_4:
+It's also possible to decorate whole classes, like in example_4:
 
 ```python
 def decorator(cls):

@@ -1,10 +1,10 @@
 ---
 title: Two forms one view in django
 date: '2016-06-26T10:20Z'
-slug: '/blog/2016/two-forms-one-view-django.html'
-tags: 
-    - django
-    - forms
+slug: '/blog/2016/two-forms-one-view-django'
+tags:
+  - django
+  - forms
 ---
 
 **This post is a reference for myself how to do a simple thing like
@@ -82,7 +82,7 @@ class QuestionFormView(FormView):
         return self.render_to_response(
         self.get_context_data(
                 question_form=question_form,
-   
+
         )
 
 
@@ -122,10 +122,8 @@ the user that request was sent like:
 
 ```html
 {% if success %}
-   <h1>Your request has been submitted</h1>
-{% else %}
-  # Forms here
-{% endif %}
+<h1>Your request has been submitted</h1>
+{% else %} # Forms here {% endif %}
 ```
 
 If the user input was invalid I render both forms: one with errors and

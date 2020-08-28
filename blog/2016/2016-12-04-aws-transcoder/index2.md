@@ -1,20 +1,17 @@
 ---
 title: Transcoding with AWS- part three
 date: '2016-12-18T10:00Z'
-slug: '/blog/2016/transcoding-aws-part-three.html'
+slug: '/blog/2016/transcoding-aws-part-three'
 tags:
-    - django
-    - aws
-readNext: '/blog/2016/transcoding-aws-part-four.html'
-readPrev: '/blog/2016/transcoding-aws-part-two.html'
+  - django
+  - aws
 ---
 
 **I've ran transcoder from django application using AWS python API. But
 there is also one more way to do the same - use AWS Lambda. Today I will
 write how to use this tool to trigger transcoding of uploaded files.**
 
-What is AWS Lambda
-==================
+## What is AWS Lambda
 
 [AWS Lambda](http://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
 is a service that allows you to run code against some event. What event
@@ -25,8 +22,7 @@ application I trigger AWS Lambda function that does the same job.
 
 Right now it's time to jump into the code.
 
-Setting up AWS Lambda for transcoder
-====================================
+## Setting up AWS Lambda for transcoder
 
 When you want to create an AWS Lambda functions you can use a couple of
 predefined functions a.k.a blueprints. As a base, I used one called:
@@ -108,42 +104,42 @@ function will run against this test event:
 
 ```json
 {
-"Records": [
-  {
-    "eventVersion": "2.0",
-    "eventTime": "2016-12-15T21:20:44.231Z",
-    "requestParameters": {
-      "sourceIPAddress": "IP_ADDRESS"
-    },
-    "s3": {
-      "configurationId": "configurationId",
-      "object": {
-        "eTag": "eTag",
-        "sequencer": "sequencer",
-        "key": "media/5981d6e9-8e88-44a9-bd7b-f8dce886877b",
-        "size": 571258
+  "Records": [
+    {
+      "eventVersion": "2.0",
+      "eventTime": "2016-12-15T21:20:44.231Z",
+      "requestParameters": {
+        "sourceIPAddress": "IP_ADDRESS"
       },
-      "bucket": {
-        "arn": "arn:aws:s3:::YOUR_BUCKET_NAME",
-        "name": "YOUR_BUCKET_NAME",
-        "ownerIdentity": {
-          "principalId": "YOUR_BUCKET_ID"
-        }
+      "s3": {
+        "configurationId": "configurationId",
+        "object": {
+          "eTag": "eTag",
+          "sequencer": "sequencer",
+          "key": "media/5981d6e9-8e88-44a9-bd7b-f8dce886877b",
+          "size": 571258
+        },
+        "bucket": {
+          "arn": "arn:aws:s3:::YOUR_BUCKET_NAME",
+          "name": "YOUR_BUCKET_NAME",
+          "ownerIdentity": {
+            "principalId": "YOUR_BUCKET_ID"
+          }
+        },
+        "s3SchemaVersion": "1.0"
       },
-      "s3SchemaVersion": "1.0"
-    },
-    "responseElements": {
-      "x-amz-id-2": "x-amz-id-2",
-      "x-amz-request-id": "x-amz-request-id"
-    },
-    "awsRegion": "eu-west-1",
-    "eventName": "ObjectCreated:Put",
-    "userIdentity": {
-      "principalId": "AWS:USER_ID"
-    },
-    "eventSource": "aws:s3"
-  }
-]
+      "responseElements": {
+        "x-amz-id-2": "x-amz-id-2",
+        "x-amz-request-id": "x-amz-request-id"
+      },
+      "awsRegion": "eu-west-1",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "AWS:USER_ID"
+      },
+      "eventSource": "aws:s3"
+    }
+  ]
 }
 ```
 

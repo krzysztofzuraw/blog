@@ -1,18 +1,16 @@
 ---
 title: Python & WebDAV- part two
 date: '2016-09-18T10:00Z'
-slug: '/blog/2016/python-webdav-part-two.html'
-tags: 
-    - python
-    - webdav
-readPrev: '/blog/2016/python-webdav-part-one.html'
+slug: '/blog/2016/python-webdav-part-two'
+tags:
+  - python
+  - webdav
 ---
 
 **In the last post, I set up owncloud with WebDAV server. Now it's time
 to use it.**
 
-Python WebDAV client - easywebdav
-=================================
+## Python WebDAV client - easywebdav
 
 I was searching for good python library to work with WebDAV for a long
 time. I finally found it-
@@ -20,8 +18,7 @@ time. I finally found it-
 the problem is that doesn't have support for python 3. Let's jump
 quickly to my simple project for cli tool- webdav editor.
 
-WebDAV editor
-=============
+## WebDAV editor
 
 I decided to create cli tool to work with WebDAV server- webdav editor.
 Right now it supports only basic commands like login, listing the
@@ -160,8 +157,7 @@ $ python cli.py ls --path '/'
 ['/owncloud/remote.php/webdav/', '/owncloud/remote.php/webdav/Documents/', '/owncloud/remote.php/webdav/Photos/', '/owncloud/remote.php/webdav/ownCloud%20Manual.pdf']
 ```
 
-Conclusion
-==========
+## Conclusion
 
 In this series, I setup an owncloud server and write simple tool just to
 show capabilities of WebDAV. I believe that some work, especially for

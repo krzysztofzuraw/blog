@@ -1,12 +1,11 @@
 ---
 title: Design by contract in python- part one
 date: '2016-07-16T10:00Z'
-slug: '/blog/2016/design-by-contract-in-python-part-one.html'
-tags: 
-    - python
-    - design
-    - contracts
-readNext: '/blog/2016/design-by-contract-in-python-part-two.html'
+slug: '/blog/2016/design-by-contract-in-python-part-one'
+tags:
+  - python
+  - design
+  - contracts
 ---
 
 **What exactly is design by contract? What is good and what is bad in
@@ -120,8 +119,7 @@ you always can use `assert`.
 That's all for this blog post! Feel free to comment and in next week I
 will look into another contract library in python.
 
-Edits (01.08.2016):
--------------------
+## Edits (01.08.2016):
 
--   Add additional method for invoking metaclass in py.contracts (thanks
-    to [mm\_ma\_ma](https://www.reddit.com/user/mm_ma_ma))
+- Add additional method for invoking metaclass in py.contracts (thanks
+  to [mm_ma_ma](https://www.reddit.com/user/mm_ma_ma))

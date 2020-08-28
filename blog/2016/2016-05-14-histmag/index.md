@@ -1,18 +1,17 @@
 ---
 title: My first personal project
 date: '2016-05-14T10:20Z'
-slug: '/blog/2016/my-first-personal-project.html'
-tags: 
-    - python
-    - histmag
+slug: '/blog/2016/my-first-personal-project'
+tags:
+  - python
+  - histmag
 ---
 
 **Hi, today I wanted to share my thoughts about project that I made
 called** [histmag to
 kindle](https://github.com/krzysztofzuraw/histmag_to_kindle).
 
-Why?
-====
+## Why?
 
 I really enjoy reading historical articles over the internet. Very good
 source of such writings in polish is [histmag](http://histmag.org/). One
@@ -23,8 +22,7 @@ started adding every subpage manually to my queue in pocket. As a step
 into programming path I decided to code my own crawler to crawl through
 the website and then send the neatly prepared mobi file to my kindle.
 
-What I learned?
-===============
+## What I learned?
 
 After I made my mind I have to choose between many crawling tools
 available in python like: [scrapy](http://scrapy.org/),
@@ -59,13 +57,13 @@ that sometimes installing lxml can cause memory problems as well as you
 need to install some packages first (system wide).
 
 Another thing that I try was TDD (Test Driven Development). I have used
-in on code dojo before but no in *real* project. The first thing that I
+in on code dojo before but no in _real_ project. The first thing that I
 learned was to use TDD only for production code- I was trying to test
 code that supposes to be playground and I wasn't able to do this. But
 after designing how it suppose to work, TDD actually helps. Thanks to
 that method I have to create such small functions or classes that they
 will be easily testable. Moreover, I have a lot html in test because it
-is a web crawler so I created a *mocked* web pages to be the same as
+is a web crawler so I created a _mocked_ web pages to be the same as
 real one. What is more test allows me to change my code and see if there
 is any place that my program is broken.
 
@@ -126,8 +124,7 @@ It could be done in better way with my own domain, because right now
 end user has to provide `mailgun_api_key` and `email_server` for sending
 messages to kindle.
 
-What can be done differently?
-=============================
+## What can be done differently?
 
 I believe that whole crawling mechanism should be redesigned due to
 being synchronous. Moreover, next time I will try beautifulsoup for

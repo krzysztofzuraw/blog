@@ -1,10 +1,10 @@
 ---
 title: Django Under The Hood 2016 recap
 date: '2016-11-06T20:00Z'
-slug: '/blog/2016/duth-2016-recap.html'
-tags: 
-    - django
-    - conference
+slug: '/blog/2016/duth-2016-recap'
+tags:
+  - django
+  - conference
 ---
 
 **From the beginning I really wanted to contribute to Django. I asked a
@@ -12,8 +12,7 @@ friend of mine- "Do you know where I can start contributing?" She
 answers- "Go to Django Under The Hood". So I went. This is my small
 recap of this very event.**
 
-Day one
-=======
+## Day one
 
 After wandering a little bit around the city I finally got to the venue
 and the talks started- the first one was Channels by Andrew Godwin.
@@ -40,8 +39,7 @@ improving performance. To speed your page load you should start by
 improving your frontend and then go to the backend. When it comes to
 backend I heard some interesting ideas on how to improve performance.
 
-Day two
-=======
+## Day two
 
 The second day started with a keynote by Jennifer Akullian. It was a
 talk about mental health in IT. I found this topic really interesting
@@ -73,8 +71,7 @@ replaced or improved along the way. The funny thing was about Justin
 Bieber- his photos (especially likes to this photos) heat up the
 postgres database. I enjoyed the way the instagram handle performance.
 
-Day three & four
-================
+## Day three & four
 
 As the talks day ended time has come for sprints! There were held in
 another location of Amsterdam but I found it comfortable too. Also, the
@@ -85,8 +82,7 @@ work on some GeoDjango stuff. I was able to close
 [documentation](https://code.djangoproject.com/ticket/27133). Awesome
 time!
 
-Conclusion
-==========
+## Conclusion
 
 It was a great time in Amsterdam! Talks were deeply technical and
 sprints productive. Superb organization. Highly recommended to everyone!

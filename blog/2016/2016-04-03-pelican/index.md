@@ -1,12 +1,11 @@
 ---
 title: Moving blog to pelican
 date: '2016-04-03T10:20Z'
-slug: '/blog/2016/moving-blog-to-pelican.html'
-tags: 
-    - pelican
-    - jekyll
-    - nikola
-readNext: '/blog/2016/automatic-blog-deployment-with-travis.html'
+slug: '/blog/2016/moving-blog-to-pelican'
+tags:
+  - pelican
+  - jekyll
+  - nikola
 ---
 
 **Hello! Spring has come so I decided that I need to changes- so I
@@ -21,8 +20,7 @@ Basically they are engines that generates web sites using only static
 content. So there is no need for any backend or database at all. Most of
 static site generators allow writing posts in markdown or rst formats.
 
-Nikola
-======
+## Nikola
 
 ![](./nikola.png)
 
@@ -41,8 +39,7 @@ I really enjoyed working with Nikola, but I changed it to another engine
 because I was overwhelmed by a lot of options that I don't need. Also
 community is not huge but it is very helpful.
 
-Jekyll
-======
+## Jekyll
 
 ![](./jekyll.png)
 
@@ -56,8 +53,7 @@ while you 'upload' your entire catalog with jekyll configuration your
 custom plugins don't work. You have to stick to these provided in
 [github](https://pages.github.com/versions/).
 
-Pelican
-=======
+## Pelican
 
 ![](./pelican.png)
 

@@ -1,11 +1,10 @@
 ---
 title: Django application with puppet- part two
 date: '2016-07-09T08:00Z'
-slug: '/blog/2016/django-application-puppet-part-two.html'
-tags: 
+slug: '/blog/2016/django-application-puppet-part-two'
+tags:
   - django
   - puppet
-readPrev: '/blog/2016/django-application-puppet-part-one.html'
 ---
 
 **I end first post at the moment of pulling code from git. This text is

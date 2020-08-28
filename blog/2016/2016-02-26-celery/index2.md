@@ -1,18 +1,15 @@
 ---
 title: Django + Celery & Rabbit - part three
 date: '2016-03-12T10:20Z'
-slug: '/blog/2016/django-celery-rabbit-part-three.html'
-tags: 
-    - django
-    - celery
-    - rabbit
-readNext: '/blog/2016/django-celery-rabbit-part-four.html'
-readPrev: '/blog/2016/django-celery-rabbit-part-two.html'
+slug: '/blog/2016/django-celery-rabbit-part-three'
+tags:
+  - django
+  - celery
+  - rabbit
 ---
 
 **This is a third part of Celery and RabbitMQ in Django series. Today I
 will be building the Celery and RabbitMQ stack.**
-
 
 First: why we need Celery? Imagine that user upload mp3 file to the
 application and then in form validation the file is transcoded to other

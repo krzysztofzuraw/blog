@@ -1,11 +1,10 @@
 ---
 title: GeoDjango and Leaflet.js- part two
-date: "2016-01-08T10:20Z"
-slug: "/blog/2016/geodjango-leaflet-part-two.html"
-tags: 
-    - django
-    - leaflet.js
-readPrev: "/blog/2016/geodjango-leaflet-part-one.html"
+date: '2016-01-08T10:20Z'
+slug: '/blog/2016/geodjango-leaflet-part-two'
+tags:
+  - django
+  - leaflet.js
 ---
 
 **This is the second post from GeoDjango i Leaflet.js series. You can
@@ -105,14 +104,13 @@ After this add new `index.html` under
 
 ```html
 <html>
-{% load leaflet_tags %}
-    <head>
-        {% leaflet_js %}
-        {% leaflet_css %}
-    </head>
-    <body>
-        {% leaflet_map "poland" %}
-    </body>
+  {% load leaflet_tags %}
+  <head>
+    {% leaflet_js %} {% leaflet_css %}
+  </head>
+  <body>
+    {% leaflet_map "poland" %}
+  </body>
 </html>
 ```
 
@@ -138,10 +136,14 @@ CSS lines to fix that in index.html:
 
 ```html
 <head>
-   <style media="screen">
-     #poland { width:100%; height:100% }
-   </style>
-   <!-- Rest of html -->
+  <style media="screen">
+    #poland {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <!-- Rest of html -->
+</head>
 ```
 
 One of the Leaflet.js strong points is huge extensions
@@ -169,32 +171,32 @@ After installation got to index.html and use these plugins:
 
 ```html
 {% load static %}
-   <head>
-      <!-- style tag and django-leaflet tag here -->
-      <script src="{% static 'leaflet-ajax/dist/leaflet.ajax.min.js' %}"></script>
-      <script src="{% static 'spin.js/spin.min.js' %}"></script>
-      <script src="{% static 'leaflet-spin/leaflet.spin.js' %}"></script>
-   </head>
-   <body>
-      <script type="text/javascript">
-         function map_init_basic (map, options) {
-               var geojsonPointLayer = new L.GeoJSON.AJAX("{% url 'points' %}", {
-                   onEachFeature:function(feature, layer) {
-                        layer.bindPopup(feature.properties.name.toString());
-                    }
-                });
-               geojsonPointLayer.addTo(map);
+<head>
+  <!-- style tag and django-leaflet tag here -->
+  <script src="{% static 'leaflet-ajax/dist/leaflet.ajax.min.js' %}"></script>
+  <script src="{% static 'spin.js/spin.min.js' %}"></script>
+  <script src="{% static 'leaflet-spin/leaflet.spin.js' %}"></script>
+</head>
+<body>
+  <script type="text/javascript">
+    function map_init_basic(map, options) {
+      var geojsonPointLayer = new L.GeoJSON.AJAX("{% url 'points' %}", {
+        onEachFeature: function (feature, layer) {
+          layer.bindPopup(feature.properties.name.toString());
+        },
+      });
+      geojsonPointLayer.addTo(map);
 
-               var geojsonVoivodeshipsLayer = new L.GeoJSON.AJAX("{% url 'voivodeships' %}", {
-                   onEachFeature:function(feature, layer) {
-                       layer.bindPopup(feature.properties.jpt_nazwa_field.toString());
-                   }
-               });
-               geojsonVoivodeshipsLayer.addTo(map);
-           }
-      </script>
-      {% leaflet_map "poland" callback="window.map_init_basic" %}
-   </body>
+      var geojsonVoivodeshipsLayer = new L.GeoJSON.AJAX("{% url 'voivodeships' %}", {
+        onEachFeature: function (feature, layer) {
+          layer.bindPopup(feature.properties.jpt_nazwa_field.toString());
+        },
+      });
+      geojsonVoivodeshipsLayer.addTo(map);
+    }
+  </script>
+  {% leaflet_map "poland" callback="window.map_init_basic" %}
+</body>
 ```
 
 I added new function `map_init_basic` which is a callback for
@@ -265,7 +267,7 @@ That's all: you have working GeoDjango application. The github repo is
 under this
 [link](https://github.com/krzysztofzuraw/personal-blog-projects/tree/master/blog_geodjango_leaflet)
 
-* Update 28.06.18:
+- Update 28.06.18:
 
 If you want your views to work with Django 2.0 you can use this snippet:
 

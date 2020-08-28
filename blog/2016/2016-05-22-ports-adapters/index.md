@@ -1,12 +1,11 @@
 ---
 title: Ports and Adapters in python - part one
 date: '2016-05-22T10:20Z'
-slug: '/blog/2016/ports-and-adapters-in-python-part-one.html'
-tags: 
-    - django
-    - python
-    - design_patterns
-readNext: '/blog/2016/ports-and-adapters-in-python-part-two.html'
+slug: '/blog/2016/ports-and-adapters-in-python-part-one'
+tags:
+  - django
+  - python
+  - design_patterns
 ---
 
 **Welcome! Today I'm going to start series about how to use port and
@@ -41,7 +40,7 @@ Such design pattern is also called hexagonal architecture.
 
 ![Hexagonal architecutre](./reddit_hexagonal.png)
 
-*This is a picture presenting adapters and ports in my application.*
+_This is a picture presenting adapters and ports in my application._
 
 As you can see in above picture all connections to external APIs are
 made using ExternalAPIPort so this class in python knows only about the
@@ -63,7 +62,7 @@ class ExternalAPIPort(object):
 As you can see port takes adapter in `__init__`. Then in `search` it
 uses adapter method for searching and passing results. I only needed the
 title of a post that comes from search so I generate them using
-generator expression. Moreover here we have *contract* that tell us that
+generator expression. Moreover here we have _contract_ that tell us that
 adapter has to have such method as `search` that uses query arguments
 (at least).
 
@@ -234,7 +233,7 @@ class FakeRedditAdapter(object):
     def search(self, query, subreddit=None):
         search_result = []
         for result in REDDIT_RESPONSE['data']['children']:
-            search_result.append(result['data']['title'])            
+            search_result.append(result['data']['title'])
         return search_result
 ```
 
@@ -263,8 +262,8 @@ That's all for today. In the next post, I will show how to combine these
 ports and adapters with django application. Code for this you can find
 under this [repo](https://github.com/krzysztofzuraw/reddit-stars).
 
-Changes from 23.05.16:
-----------------------
--   Removing coupling from `ExternalAPIPort`
--   Adding new test
--   Adding word about contracts
+## Changes from 23.05.16:
+
+- Removing coupling from `ExternalAPIPort`
+- Adding new test
+- Adding word about contracts

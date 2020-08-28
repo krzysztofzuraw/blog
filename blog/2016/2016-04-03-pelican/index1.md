@@ -1,12 +1,11 @@
 ---
 title: Automatic blog deployment with TravisCI
 date: '2016-04-09T10:20Z'
-slug: '/blog/2016/automatic-blog-deployment-with-travis.html'
-tags: 
+slug: '/blog/2016/automatic-blog-deployment-with-travis'
+tags:
   - pelican
   - travis
   - automation
-prev: '/blog/2016/moving-blog-to-pelican.html'
 ---
 
 **Hello! Today I will write about how to automate blog deployment
@@ -16,12 +15,12 @@ When I first started writing blog using pelican my workflow look as
 follows:
 
 1. I open one terminal window and go under `output` just for serving
-    static files using `python -m SimpleHTTPServer`
+   static files using `python -m SimpleHTTPServer`
 2. Then I open another terminal and if I wanted to generate my changes
-    in the post I have to do
-    `pelican content -s pelicanconf.py -t  pelican-clean-blog`
+   in the post I have to do
+   `pelican content -s pelicanconf.py -t pelican-clean-blog`
 3. After this I open my browser window and go to `127.0.0.1:8000` to
-    see my changes
+   see my changes
 4. To publish content I push it to responsible branch
 
 After some time, I know that there must be the way to automate such
@@ -108,17 +107,18 @@ It is using [ghp-import](https://github.com/davisp/ghp-import).
 branches. Why is that important? The GitHub pages are organized in that
 way:
 
-  ------------------------------- ------------------------- --------------
-  Type of site                    Page address              Publishing
-                                                            branch
+---
 
-  User Pages site                 `username.github.io`      master
+Type of site Page address Publishing
+branch
 
-  Project Pages site owned by a   `username.github.io/proje gh-pages
-  user account                    ctname`                   
-  ------------------------------- ------------------------- --------------
+User Pages site `username.github.io` master
 
-*Table taken from* [GitHub Pages
+Project Pages site owned by a `username.github.io/proje gh-pages user account ctname`
+
+---
+
+_Table taken from_ [GitHub Pages
 help](https://help.github.com/articles/user-organization-and-project-pages/).
 
 As you can see to publish content on GitHub Pages you have to push
@@ -142,7 +142,7 @@ page setup two environmental variables:
 `GH_TOKEN` is your token generated from this
 [page](https://github.com/settings/tokens). Click there on
 `Generate new token` and in next screen make sure you add token
-description and scope for public\_repo:
+description and scope for public_repo:
 
 ![image](./travis3.png)
 
@@ -156,13 +156,13 @@ pelican blog project with following content:
 language: python
 branches:
   only:
-  - master
+    - master
 install:
-- pip install pelican
-- pip install ghp-import
-- pip install pelican_gist
+  - pip install pelican
+  - pip install ghp-import
+  - pip install pelican_gist
 script:
-- make publish github
+  - make publish github
 ```
 
 It tells Travis to install pelican, ghp-import and `pelican_gist` (plugin
@@ -182,7 +182,7 @@ Travis is able to do it.
 So right now when I push my commits to master branch the Travis starts
 building my blog!
 
-References:
------------
+## References:
+
 1.  [Publish your Pelican blog on Github pages via
     Travis-CI](http://blog.mathieu-leplatre.info/publish-your-pelican-blog-on-github-pages-via-travis-ci.html).
