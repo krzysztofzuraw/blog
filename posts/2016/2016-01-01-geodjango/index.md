@@ -29,7 +29,7 @@ From official geodjango
 To run GeoDjango you have to install some additional packages. In ubuntu
 you can easily do this way:
 
-```console
+```shell
 $ sudo apt-get install binutils libproj-dev gdal-bin
 ```
 
@@ -356,7 +356,7 @@ that geometric field is displayed in form of a map:
 To make our map more robust let's add additional data (points). There
 are 16 points in capitals of polish voivodeships in CSV file.
 
-```console
+```shell
 "Rzeszów","50.04015435","22.006124806535"
 "Kraków","50.0591381","19.9372696"
 "Katowice","50.244967474000475","19.02679182200046"

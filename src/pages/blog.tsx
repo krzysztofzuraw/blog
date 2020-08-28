@@ -30,7 +30,7 @@ const BlogListPage: FunctionComponent<Props> = ({
                   gap: theme.spacing.s0,
                 })}
               >
-                <time css={{ fontWeight: 200 }}>{node.frontmatter.date}</time>
+                <time>{node.frontmatter.date}</time>
                 <ul
                   css={(theme) => ({
                     fontStyle: 'italic',

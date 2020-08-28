@@ -65,7 +65,7 @@ def search(self, query, *args, **kwargs):
 
 And messing around with wrong returns values gives you following errors:
 
-```pythontraceback
+```python
 contracts.interface.ContractNotRespected: Breach for return value of ExternalAPIPort:search().
 Expected a list, got 'int'.
 checking: list(str)   for value: Instance of <class 'int'>: 1

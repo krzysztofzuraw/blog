@@ -44,7 +44,7 @@ class ExternalAPIPort(object):
 
 Running this in python 3 will give you following traceback:
 
-```pythontraceback
+```python
 File "reddit-stars/external_api/external_api_port.py", line 11, in <module>
   class ExternalAPIPort(object):
 File "reddit-stars/external_api/external_api_port.py", line 12, in ExternalAPIPort
@@ -104,7 +104,7 @@ def search():
 Right now when you run it, you will receive following error that query
 either has to be a string or not be empty:
 
-```pythontraceback
+```python
 File "/Development/reddit-stars/reddit_stars/urls.py", line 19, in <module>
    views import RedditSearchVie
  File "/Development/reddit-stars/search/views.py", line 4, in <module>
@@ -143,7 +143,7 @@ def search_invariant(obj):
 
 And right now traceback will show custom error:
 
-```pythontraceback
+```python
 external_api.external_api_port.QueryError: QueryError(query cannot be empty)
 ```
 

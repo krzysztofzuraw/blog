@@ -146,7 +146,7 @@ const user: IUserModel = {
 
 that has additional property (like `evil`) TypeScript will tell me that:
 
-```plain
+```
 Type '{ name: string; passwordHash: string; isSuperUser: true; evil: boolean; }' is not assignable to type 'IUserModel'.
   Object literal may only specify known properties, and 'evil' does not exist in type 'IUserModel'.ts
 ```

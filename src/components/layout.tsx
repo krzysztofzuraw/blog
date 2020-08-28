@@ -3,7 +3,7 @@ import { Link } from '.';
 import { BlogTheme } from '../theme';
 
 type Props = {
-  location: 'home' | 'about' | 'blog';
+  location: 'home' | 'about' | 'blog' | 'uses' | 'projects' | 'now';
 };
 
 export const Layout: FunctionComponent<Props> = ({ children, location }) => (
@@ -60,16 +60,28 @@ export const Layout: FunctionComponent<Props> = ({ children, location }) => (
             </Link>
           </li>
           <li>
-            <a href="">RSS</a>
+            <Link to="" css={{ textDecoration: location === 'projects' ? 'none' : 'inital' }}>
+              Projects
+            </Link>
           </li>
           <li>
-            <a href="">Uses</a>
+            <Link to="/now" css={{ textDecoration: location === 'now' ? 'none' : 'inital' }}>
+              Now
+            </Link>
           </li>
           <li>
-            <a href="">Now</a>
+            <Link to="/uses" css={{ textDecoration: location === 'uses' ? 'none' : 'inital' }}>
+              Uses
+            </Link>
           </li>
           <li>
-            <a href="">Projects</a>
+            <a href="/feeds/all.rss.xml">RSS</a>
+          </li>
+          <li>
+            <a href="https://buttondown.email/krzysztof_zuraw">Newsletter</a>
+          </li>
+          <li>
+            <a href="https://github.com/krzysztofzuraw">Github</a>
           </li>
         </ul>
       </header>

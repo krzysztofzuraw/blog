@@ -110,6 +110,10 @@ export const BlogTheme: FunctionComponent = ({ children }) => (
         img {
           width: 100%;
         }
+
+        time {
+          font-weight: 200;
+        }
       `}
     />
     {children}
