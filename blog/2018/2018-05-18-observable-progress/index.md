@@ -1,13 +1,13 @@
 ---
 title: How to update progress of long request with redux-observable
-date: "2018-05-19T09:12:03.284Z"
-slug: "/blog/2018/update-progress-rxjs.html"
+date: '2018-05-19T09:12:03.284Z'
+slug: '/blog/2018/update-progress-rxjs'
 tags:
-    - rxjs
-    - redux
-    - react
-    - javascript
-    - redux-observable
+  - rxjs
+  - redux
+  - react
+  - javascript
+  - redux-observable
 ---
 
 ### Problem
@@ -17,17 +17,15 @@ I want to send a couple of requests an update a progress after each one is succe
 ### Solution
 
 ```jsx
-const epic = action$ =>
-  action$.filter(action.fetchRequestStart).switchMap(action =>
+const epic = (action$) =>
+  action$.filter(action.fetchRequestStart).switchMap((action) =>
     Observable.range(1, repeatTimes)
       .mergeMap(() =>
-        Observable.from(fetchRequest).mergeMapTo(
-          Observable.of(action.increaseProgress())
-        )
+        Observable.from(fetchRequest).mergeMapTo(Observable.of(action.increaseProgress()))
       )
       .concat(Observable.of(action.fetchRequestSuccess()))
-      .catch(action => Observable.of(action.fetchRequestError()))
-  )
+      .catch((action) => Observable.of(action.fetchRequestError()))
+  );
 ```
 
 This is a simple epic implementing this logic. How does it work? After I filter out the action that is interesting for me from a stream, I map through it using `switchMap` so if user action dispatches the same action one more time during `Observable.range` the pending operation will be canceled.

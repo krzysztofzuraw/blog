@@ -1,14 +1,14 @@
 ---
 title: Open sourcing tsconfig
 date: '2019-04-08T10:20Z'
-slug: '/blog/2019/opensourcing-tsconfig.html'
+slug: '/blog/2019/opensourcing-tsconfig'
 tags:
   - typescript
   - open source
   - config
 ---
 
-# Hi again 🖖
+## Hi again 🖖
 
 Today I want to write about the thing that we did in my work. I currently work at [Ingrid](https://www.ingrid.com/). All of your codebases is written in TypeScript which is using `tsconfig` as a way
 to tell the compiler what to do. Most of tsconfig is the same for all of your project

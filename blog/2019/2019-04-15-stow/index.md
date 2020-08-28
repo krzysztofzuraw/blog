@@ -1,13 +1,13 @@
 ---
 title: Multiple stow directories
 date: '2019-04-15T09:12:03.284Z'
-slug: '/blog/2019/multiple-stow-directories.html'
+slug: '/blog/2019/multiple-stow-directories'
 tags:
   - stow
   - dotfiles
 ---
 
-# Hi again 👋
+## Hi again 👋
 
 Today I want to write about the problem that I recently had that I solved after a few
 hours of searching google. It may help others so I write a post about it.

@@ -1,13 +1,12 @@
 ---
 title: Debouncing forms in React with Redux - part three
-date: "2018-02-25T09:12:03.284Z"
-slug: "/blog/2018/debouncing-forms-in-react-part-three.html"
+date: '2018-02-25T09:12:03.284Z'
+slug: '/blog/2018/debouncing-forms-in-react-part-three'
 tags:
-    - javascript
-    - react
-    - redux
-    - debounce
-readPrev: '/blog/2018/debouncing-forms-in-react-part-two.html'
+  - javascript
+  - react
+  - redux
+  - debounce
 ---
 
 **Hi! Welcome to the last part of blog series about debouncing forms in React. Today I want to show you
@@ -22,29 +21,29 @@ So, after adding `redux` and `react-redux` to my application I started by creati
 creators under `src/actions/index.js`:
 
 ```js
-export const ADD_WORD = 'ADD_WORD'
+export const ADD_WORD = 'ADD_WORD';
 
-export const addWord = word => ({
+export const addWord = (word) => ({
   type: ADD_WORD,
   word,
-})
+});
 ```
 
 To explain how those two can be used I added a small test in 'actions.test.js`:
 
 ```js
-import { ADD_WORD, addWord } from './index'
+import { ADD_WORD, addWord } from './index';
 
 describe('Actions', () => {
   it('should create action to add word', () => {
     const expectedAction = {
       type: ADD_WORD,
       word: 'fake',
-    }
+    };
 
-    expect(addWord('fake')).toEqual(expectedAction)
-  })
-})
+    expect(addWord('fake')).toEqual(expectedAction);
+  });
+});
 ```
 
 As you can see calling `addWord` with some string should dispatch action with `ADD_WORD` type and typed
@@ -53,62 +52,59 @@ a word.
 Next step was to add `src/reducers/index.js`:
 
 ```js
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
 
-import { ADD_WORD } from '../actions/index'
+import { ADD_WORD } from '../actions/index';
 
 export const words = (state = [], action) => {
   switch (action.type) {
     case ADD_WORD:
-      return [action.word, ...state]
+      return [action.word, ...state];
     default:
-      return state
+      return state;
   }
-}
+};
 
-const rootReducer = combineReducers({ words })
-export default rootReducer
+const rootReducer = combineReducers({ words });
+export default rootReducer;
 ```
 
 Where I have my pure function `words` which is getting its own piece of state to work with. In this
 case, I want my typed words to be first in a state of my application. I also added tests:
 
 ```js
-import { words } from './index'
-import { ADD_WORD } from '../actions/index'
+import { words } from './index';
+import { ADD_WORD } from '../actions/index';
 
 describe('Words reducer', () => {
   it('should return initial state', () => {
-    expect(words(undefined, {})).toEqual([])
-  })
+    expect(words(undefined, {})).toEqual([]);
+  });
 
   it('should handle ADD_WORD on initial state', () => {
-    expect(words([], { type: ADD_WORD, word: 'tom' })).toEqual(['tom'])
-  })
+    expect(words([], { type: ADD_WORD, word: 'tom' })).toEqual(['tom']);
+  });
 
   it('should handle ADD_WORD on existing state', () => {
-    expect(words(['tim'], { type: ADD_WORD, word: 'tom' })).toEqual([
-      'tom',
-      'tim',
-    ])
-  })
-})
+    expect(words(['tim'], { type: ADD_WORD, word: 'tom' })).toEqual(['tom', 'tim']);
+  });
+});
 ```
 
 The last thing is to set up my store and connect it with react application. The first step is happening in
 `store.js`:
 
 ```js
-import { createStore, compose } from 'redux'
+import { createStore, compose } from 'redux';
 
-import rootReducer from './reducers'
+import rootReducer from './reducers';
 
 const store = createStore(
   rootReducer,
-  compose(window.devToolsExtension ? window.devToolsExtension() : f => f)
-)
+  compose(window.devToolsExtension ? window.devToolsExtension() : (f) => f)
+);
 
-export default store
+export default store;
 ```
 
 I create here my store with `rootReducer` which in this case is just only `words` reducer and I also
@@ -117,16 +113,16 @@ added [redux dev tools](https://github.com/gaearon/redux-devtools) which help me
 The second step is to modify my `index.js` so redux can be injected into my application:
 
 ```js
-import { Provider } from 'react-redux'
-import AppContainer from './components/App/AppContainer'
-import store from './store'
+import { Provider } from 'react-redux';
+import AppContainer from './components/App/AppContainer';
+import store from './store';
 
 const root = (
   <Provider store={store}>
     <AppContainer />
   </Provider>
-)
-ReactDOM.render(root, document.getElementById('root'))
+);
+ReactDOM.render(root, document.getElementById('root'));
 ```
 
 ## Using redux with react applications
@@ -138,26 +134,24 @@ A component is responsible only for rendering html. A container is a way to get 
 That's why I created `AppContainer`:
 
 ```js
-import React from 'react'
-import { connect } from 'react-redux'
+import React from 'react';
+import { connect } from 'react-redux';
 
-import { addWord } from '../../actions/index'
+import { addWord } from '../../actions/index';
 
-import App from './App'
+import App from './App';
 
-export const AppContainer = props => (
-  <App addWord={props.addWord} words={props.words} />
-)
+export const AppContainer = (props) => <App addWord={props.addWord} words={props.words} />;
 
-const mapDispatchToProps = dispatch => ({
-  addWord: word => dispatch(addWord(word)),
-})
+const mapDispatchToProps = (dispatch) => ({
+  addWord: (word) => dispatch(addWord(word)),
+});
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   words: state.words,
-})
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);
 ```
 
 Here I added two typical functions for react applications with redux - `mapDispatchToProps` &

@@ -1,7 +1,7 @@
 ---
 title: Safari scrolling error
 date: '2019-07-05T09:12:03.284Z'
-slug: '/blog/2019/safari-scrolling-error.html'
+slug: '/blog/2019/safari-scrolling-error'
 tags:
   - safari
   - error

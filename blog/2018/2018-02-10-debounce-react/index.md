@@ -1,13 +1,12 @@
 ---
 title: Debouncing forms in React with Redux - part one
-date: "2018-02-10T10:12:03.284Z"
-slug: "/blog/2018/debouncing-forms-in-react-part-one.html"
+date: '2018-02-10T10:12:03.284Z'
+slug: '/blog/2018/debouncing-forms-in-react-part-one'
 tags:
-    - javascript
-    - react
-    - redux
-    - debounce
-readNext: '/blog/2018/debouncing-forms-in-react-part-two.html'
+  - javascript
+  - react
+  - redux
+  - debounce
 ---
 
 **Hi! Today I want to start a new blog post series. This one will be all about debouncing react forms.
@@ -26,29 +25,27 @@ in two components - `App.js`:
 ```jsx
 class App extends Component {
   constructor(props) {
-    super(props)
-    this.state = { typedWords: [] }
+    super(props);
+    this.state = { typedWords: [] };
   }
 
-  handleChange = event => {
-    const { value } = event.target
-    let typedWords = [...this.state.typedWords, value]
-    this.setState({ typedWords })
-  }
+  handleChange = (event) => {
+    const { value } = event.target;
+    let typedWords = [...this.state.typedWords, value];
+    this.setState({ typedWords });
+  };
   render() {
     return (
       <div className="flex flex-col items-center min-h-screen w-full bg-teal-lighter bg-repeat">
         <div className="container md:max-w-sm md:mx-auto">
-          <h1 className="block w-full text-center text-grey-darkest mb-6">
-            Debounce in React
-          </h1>
+          <h1 className="block w-full text-center text-grey-darkest mb-6">Debounce in React</h1>
           <SearchInput handleChange={this.handleChange} />
         </div>
         {this.state.typedWords.map((word, key) => (
           <SearchResult text={word} key={key} />
         ))}
       </div>
-    )
+    );
   }
 }
 ```
@@ -58,7 +55,7 @@ and `SearchInput`:
 ```jsx
 class SearchInput extends Component {
   render() {
-    const { handleChange } = this.props
+    const { handleChange } = this.props;
     return (
       <form className="mb-4" onChange={handleChange}>
         <div className="flex flex-col mb-4 md:w-full">
@@ -71,7 +68,7 @@ class SearchInput extends Component {
           <input className="field" name="search" type="text" id="search" />
         </div>
       </form>
-    )
+    );
   }
 }
 ```
@@ -88,12 +85,12 @@ You may notice another component - `SearchResult` which looks like this:
 
 ```jsx
 function SearchResult(props) {
-  const { text } = props
+  const { text } = props;
   return (
     <div className="container md:max-w-sm md:mx-auto">
       <span>{text}</span>
     </div>
-  )
+  );
 }
 ```
 

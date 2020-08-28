@@ -1,14 +1,14 @@
 ---
 title: Hiding elements with opacity
 date: '2019-04-22T09:12:03.284Z'
-slug: '/blog/2019/hiding-elements-with-opacity.html'
+slug: '/blog/2019/hiding-elements-with-opacity'
 tags:
   - opacity
   - css
   - hiding elements
 ---
 
-# Problem
+## Problem
 
 Recently I had a task that requires me to show an icon when a user hovers over a certain element and hide
 it after the user leaves the page.

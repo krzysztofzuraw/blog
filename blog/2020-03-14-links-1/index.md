@@ -9,7 +9,7 @@ tags:
 
 This is the first of my series about things that I found on the internet this week.
 
-# Coding
+## Coding
 
 - [When to useMemo and useCallback](https://kentcdodds.com/blog/usememo-and-usecallback/). This is old
   piece by Kent but I've got it in his weekly newsletter. Reading through examples requires some work
@@ -22,6 +22,6 @@ This is the first of my series about things that I found on the internet this we
 - I learned that you can have CSS Grid inside your buttons too!. I've made a quick codepen [example](https://codepen.io/krzysztofzuraw/pen/xxGWMMz).
   [Source](https://twitter.com/argyleink/status/1236161977845567488?prefetchtimestamp=1584179587454).
 
-# Other
+## Other
 
 - Interesting piece on how to [work from home](https://nesslabs.com/working-from-home) & about [asynchronous communication](https://nesslabs.com/asynchronous-communication)

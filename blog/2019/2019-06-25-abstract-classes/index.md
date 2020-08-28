@@ -1,7 +1,7 @@
 ---
 title: TypeScript abstract classes
 date: '2019-06-25T09:12:03.284Z'
-slug: '/blog/2019/typescript-abstract-classes.html'
+slug: '/blog/2019/typescript-abstract-classes'
 tags:
   - typescript
   - abstract

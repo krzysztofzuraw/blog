@@ -1,10 +1,10 @@
 ---
 title: How to find blog ideas
-date: "2018-06-22T09:12:03.284Z"
-slug: "/blog/2018/how-to-find-blog-ideas.html"
+date: '2018-06-22T09:12:03.284Z'
+slug: '/blog/2018/how-to-find-blog-ideas'
 tags:
-    - blog
-    - writing
+  - blog
+  - writing
 ---
 
 Recently I was a little bit stuck. I did not have any idea about next blog post. I started researching why it happened and it turned out that I wasn’t considering a couple of ideas that may help me with finding blog ideas.
@@ -19,6 +19,6 @@ Last ideas that I found is about finding new ideas. The first one is that you ha
 
 In this short article I presented three ways to find blog ideas:
 
-* Have a list of topic to write about and note everything that comes to your mind down
-* Write what is interesting to you
-* Ask your audience what is interesting to them
+- Have a list of topic to write about and note everything that comes to your mind down
+- Write what is interesting to you
+- Ask your audience what is interesting to them

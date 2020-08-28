@@ -1,10 +1,10 @@
 ---
 title: You don't know promises
-date: "2018-03-02T10:12:03.284Z"
-slug: "/blog/2018/you-do-not-know-promises.html"
+date: '2018-03-02T10:12:03.284Z'
+slug: '/blog/2018/you-do-not-know-promises'
 tags:
-    - javascript
-    - promises
+  - javascript
+  - promises
 ---
 
 **Recently I receive book recommendation. There was one chapter in this book series about Promises
@@ -18,8 +18,8 @@ The first example is simple `fetch`:
 
 ```js
 fetch('https://httpbin.org/get?name=krzysztof')
-  .then(response => response.json())
-  .then(json => console.log(json))
+  .then((response) => response.json())
+  .then((json) => console.log(json));
 ```
 
 It is using [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) to get json response
@@ -30,18 +30,18 @@ from httpbin. Nothing serious here besides fetching data from external API and u
 The second example is using `Promise.race`:
 
 ```js
-const fetchName = name =>
+const fetchName = (name) =>
   fetch(`https://httpbin.org/get?name=${name}`)
-    .then(response => response.json())
-    .then(json => json)
+    .then((response) => response.json())
+    .then((json) => json);
 
-const fetchLastName = lastName =>
+const fetchLastName = (lastName) =>
   fetch(`https://httpbin.org/get?lastname=${lastName}`)
-    .then(response => response.json())
-    .then(json => json)
+    .then((response) => response.json())
+    .then((json) => json);
 
-const race = Promise.race([fetchName('krzysztof'), fetchLastName('zuraw')])
-race.then(value => console.log(value)).catch(err => console.log(err))
+const race = Promise.race([fetchName('krzysztof'), fetchLastName('zuraw')]);
+race.then((value) => console.log(value)).catch((err) => console.log(err));
 ```
 
 In the beginning, I added functions that allow me to have my code reused. The most
@@ -53,18 +53,15 @@ this value.
 I also catch error so if I have my function that I always failing:
 
 ```js
-const fetchLastNameWithError = lastName =>
+const fetchLastNameWithError = (lastName) =>
   fetch(`https://htpbin.org/get?lastname=${lastName}`)
-    .then(response => response.json())
-    .then(json => json)
+    .then((response) => response.json())
+    .then((json) => json);
 
-const raceWithError = Promise.race([
-  fetchName('krzysztof'),
-  fetchLastNameWithError('zuraw'),
-])
+const raceWithError = Promise.race([fetchName('krzysztof'), fetchLastNameWithError('zuraw')]);
 raceWithError
-  .then(value => console.log(value))
-  .catch(err => console.log('Error in race: ', err))
+  .then((value) => console.log(value))
+  .catch((err) => console.log('Error in race: ', err));
 ```
 
 I will get `Error in race: TypeError: Failed to fetch`.
@@ -74,16 +71,12 @@ I will get `Error in race: TypeError: Failed to fetch`.
 What if I want to get data from two sources and used it later? I can use `Promise.all`:
 
 ```js
-const allResults = Promise.all([fetchName('krzysztof'), fetchLastName('zuraw')])
+const allResults = Promise.all([fetchName('krzysztof'), fetchLastName('zuraw')]);
 
-allResults.then(values => {
-  const [fetchNameResponse, fetchLastNameResponse] = values
-  console.log(
-    `My name is ${fetchNameResponse.args.name} ${
-      fetchLastNameResponse.args.lastname
-    }`
-  )
-})
+allResults.then((values) => {
+  const [fetchNameResponse, fetchLastNameResponse] = values;
+  console.log(`My name is ${fetchNameResponse.args.name} ${fetchLastNameResponse.args.lastname}`);
+});
 ```
 
 It will wait until all promises provided to `all` call resolve and logs: `My name is krzysztof zuraw`.
@@ -93,20 +86,13 @@ out the order of Promises added to `all` call is preserved.
 Similarly as in `Promise.race` throwing an error results in stopping at first rejection:
 
 ```js
-const allResultsWithError = Promise.all([
-  fetchName('krzysztof'),
-  fetchLastNameWithError('zuraw'),
-])
+const allResultsWithError = Promise.all([fetchName('krzysztof'), fetchLastNameWithError('zuraw')]);
 allResultsWithError
-  .then(values => {
-    const [fetchNameResponse, fetchLastNameResponse] = values
-    console.log(
-      `My name is ${fetchNameResponse.args.name} ${
-        fetchLastNameResponse.args.lastname
-      }`
-    )
+  .then((values) => {
+    const [fetchNameResponse, fetchLastNameResponse] = values;
+    console.log(`My name is ${fetchNameResponse.args.name} ${fetchLastNameResponse.args.lastname}`);
   })
-  .catch(err => console.log('Error in all: ', err))
+  .catch((err) => console.log('Error in all: ', err));
 ```
 
 It will log `Error in all: TypeError: Failed to fetch`.

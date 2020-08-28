@@ -1,16 +1,16 @@
 ---
 title: Legacy projects
-date: "2018-01-20T10:12:03.284Z"
-slug: "/blog/2018/legacy-projects.html"
+date: '2018-01-20T10:12:03.284Z'
+slug: '/blog/2018/legacy-projects'
 tags:
-    - legacy
-    - projects
+  - legacy
+  - projects
 ---
 
 **Hi! This blog post is mainly for me to remind myself that I can sometimes work with legacy
 projects.**
 
-# Beginning
+## Beginning
 
 Recently in my work, I changed project. The one that has the bleeding edge technologies has ended.
 I was assigned to work on another one. The problem was that the new one wasn't so bleeding - actually,
@@ -25,7 +25,7 @@ I thought I have two options:
 At first, I was in phase one. I started telling myself how miserable I was because of receiving such
 old project. I started complaining about everything.
 
-# Realization
+## Realization
 
 But after some time I realized that which project I will get is outside my control. What is inside
 my control is how I respond to this circumstance.
@@ -35,7 +35,7 @@ legacy codebase. Learning from this experience and doing the work. Like software
 
 It wasn't the easiest task - especially when I have so many other new projects that I could work on.
 
-# Summary
+## Summary
 
 If you ever happened to be in a situation where you are in a legacy project - **do the work**. Do not
 fear legacy projects.

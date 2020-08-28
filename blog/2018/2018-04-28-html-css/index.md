@@ -1,10 +1,10 @@
 ---
 title: Lessons learned from coding TM Conference website
-date: "2018-04-28T10:12:03.284Z"
-slug: "/blog/2018/lessons-learned-from-tm-conference-website.html"
+date: '2018-04-28T10:12:03.284Z'
+slug: '/blog/2018/lessons-learned-from-tm-conference-website'
 tags:
-    - html
-    - css
+  - html
+  - css
 ---
 
 **Recently I was less active on my blog mainly because I had a lot of side projects that I was doing. Today I want to share with you lessons learned from doing one.**

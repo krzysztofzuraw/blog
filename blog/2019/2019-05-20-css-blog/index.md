@@ -1,7 +1,7 @@
 ---
 title: Side project - CSS on blog
 date: '2019-05-20T09:12:03.284Z'
-slug: '/blog/2019/side-project-css-on-blog.html'
+slug: '/blog/2019/side-project-css-on-blog'
 tags:
   - side project
   - css

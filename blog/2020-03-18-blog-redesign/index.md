@@ -51,7 +51,8 @@ The idea is as follows - I select all `a` tags that have a target other than my 
 
 ```css
 a[href^="http://"]:not([href*="krzysztofzuraw.com"]):after,
-a[href^="https://"]:not([href*="krzysztofzuraw.com"]):after {
+a[href^="https://"]:not([href*="krzysztofzuraw.com"]):after
+{
   content: ' ↗️';
 }
 ```

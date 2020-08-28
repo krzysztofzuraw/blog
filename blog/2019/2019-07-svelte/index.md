@@ -1,7 +1,7 @@
 ---
 title: Side project with svelte
 date: '2019-07-15T09:12:03.284Z'
-slug: '/blog/2019/svelte.html'
+slug: '/blog/2019/svelte'
 tags:
   - svelte
   - framework
@@ -61,9 +61,9 @@ Instead of having:
 
 You have:
 
-```svelte
+```html
 {#if showComponent}
-  <Component />
+<Component />
 {/if}
 ```
 

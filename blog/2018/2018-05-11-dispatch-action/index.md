@@ -1,14 +1,14 @@
 ---
 title: How to dispatch multiple actions based on api call in redux-observable
-date: "2018-05-11T10:12:03.284Z"
-slug: "/blog/2018/dispatch-actions-on-api.html"
+date: '2018-05-11T10:12:03.284Z'
+slug: '/blog/2018/dispatch-actions-on-api'
 tags:
-    - rxjs
-    - redux
-    - react
-    - javascript
-    - redux-observable
-    - typescript
+  - rxjs
+  - redux
+  - react
+  - javascript
+  - redux-observable
+  - typescript
 ---
 
 ### Problem
@@ -19,16 +19,13 @@ In my work a have a task - when one of the actions in [redux-observable](https:/
 
 ```jsx
 const sampleEpic: Epic<RootAction, RootState> = (action$, store) =>
-  action$.filter(isActionOf(myTriggerAction)).switchMap(action =>
+  action$.filter(isActionOf(myTriggerAction)).switchMap((action) =>
     Observable.from(apiRequest(action.id))
-      .switchMap(res =>
-        Observable.concat(
-          Observable.of(firstTriggeredAction),
-          Observable.of(secondTriggeredAction)
-        )
+      .switchMap((res) =>
+        Observable.concat(Observable.of(firstTriggeredAction), Observable.of(secondTriggeredAction))
       )
       .catch(({ message, stack }) => Observable.of(errorAction))
-  )
+  );
 ```
 
 At the beginning of this snippet I filtering stream of actions in order to pick only those that I’m interested in. After that, I perform `apiRequest` and cast in to be [Observable](http://reactivex.io/documentation/observable.html). - standard way.

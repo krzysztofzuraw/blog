@@ -7,7 +7,7 @@ tags:
   - articles
 ---
 
-# Coding
+## Coding
 
 - [Design for Developers on Fronted Masters](https://frontendmasters.com/courses/design-for-developers/).
   This course by [Sarah Drasner](https://sarahdrasnerdesign.com/) blew my mind. I'm still in progress but
@@ -35,7 +35,7 @@ tags:
 - [CSS Viewport Units](https://ishadeed.com/article/viewport-units/). Really interesting article about viewport
   units and why you may need them.
 
-# Other
+## Other
 
 - [Identifying properties and streets in government data](https://technology.blog.gov.uk/2020/04/02/identifying-properties-and-streets-in-government-data/).
   A nice blog post about identifying addresses in the UK.

@@ -1,14 +1,14 @@
 ---
 title: Setting up simple React & TypeScript project
 date: '2019-03-11T09:12:03.284Z'
-slug: '/blog/2019/react-typescript-playground.html'
+slug: '/blog/2019/react-typescript-playground'
 tags:
   - typescript
   - react
   - parcel
 ---
 
-# Hello 👋🏻
+## Hello 👋🏻
 
 It's have been a long time since I last wrote my last blog post.
 But don't worry I back and in the first blog post I give you

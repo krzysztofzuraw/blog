@@ -1,13 +1,13 @@
 ---
 title: switchMap in redux-observable
-date: "2018-06-02T09:12:03.284Z"
-slug: "/blog/2018/switchmap-redux-observable.html"
+date: '2018-06-02T09:12:03.284Z'
+slug: '/blog/2018/switchmap-redux-observable'
 tags:
-    - rxjs
-    - redux
-    - react
-    - javascript
-    - redux-observable
+  - rxjs
+  - redux
+  - react
+  - javascript
+  - redux-observable
 ---
 
 ## Introduction
@@ -39,7 +39,7 @@ Let’s start from the top. What exactly is `action$`? It is a stream of your re
 ```js
 const backendRequestInit = {
   type: 'BACKEND_REQUEST_INIT',
-}
+};
 ```
 
 As my stream of actions is coming I filter out only needed action - in this case, - `backendRequestInit`. As I have my action I would like to do something - in this case make an asynchronous request to external API. I use here `switchMap` - why?

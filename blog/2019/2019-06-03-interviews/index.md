@@ -1,7 +1,7 @@
 ---
 title: My first interviews for software developer
 date: '2019-06-03T09:12:03.284Z'
-slug: '/blog/2019/software-developer-interviews.html'
+slug: '/blog/2019/software-developer-interviews'
 tags:
   - recruitment
   - coding

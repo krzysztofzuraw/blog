@@ -1,14 +1,12 @@
 ---
 title: Debouncing forms in React with Redux - part two
-date: "2018-02-17T09:12:03.284Z"
-slug: "/blog/2018/debouncing-forms-in-react-part-two.html"
+date: '2018-02-17T09:12:03.284Z'
+slug: '/blog/2018/debouncing-forms-in-react-part-two'
 tags:
-    - javascript
-    - react
-    - redux
-    - debounce
-readPrev: '/blog/2018/debouncing-forms-in-react-part-one.html'
-readNext: '/blog/2018/debouncing-forms-in-react-part-three.html'
+  - javascript
+  - react
+  - redux
+  - debounce
 ---
 
 **Hello! Today I continue with building debounce input in React!. Let's get started.**
@@ -32,26 +30,26 @@ My `App` component will look like this after a change:
 ```jsx
 class App extends Component {
   constructor() {
-    super()
-    this.state = { typedWords: [] }
+    super();
+    this.state = { typedWords: [] };
 
-    this.emitChangeDebounced = debounce(this.emitChange, 250)
+    this.emitChangeDebounced = debounce(this.emitChange, 250);
   }
 
   componentWillUnmount() {
-    this.emitChangeDebounced.cancel()
+    this.emitChangeDebounced.cancel();
   }
 
-  handleChange = event => {
-    this.emitChangeDebounced(event.target.value)
-  }
+  handleChange = (event) => {
+    this.emitChangeDebounced(event.target.value);
+  };
 
-  emitChange = value => {
+  emitChange = (value) => {
     if (value !== '') {
-      let typedWords = [...this.state.typedWords, value]
-      this.setState({ typedWords })
+      let typedWords = [...this.state.typedWords, value];
+      this.setState({ typedWords });
     }
-  }
+  };
   // render method here
 }
 ```
@@ -68,10 +66,10 @@ has ended I have to either provide only `value` to my function or call `event.pe
 With `event.persist()` my `handleChange` event will look like this:
 
 ```jsx
-handleChange = event => {
-  event.persist()
-  this.emitChangeDebounced(event)
-}
+handleChange = (event) => {
+  event.persist();
+  this.emitChangeDebounced(event);
+};
 ```
 
 If I wanted to pass entire event without `persist` I will get an error:
@@ -87,16 +85,16 @@ I have the following test:
 
 ```jsx
 it('should set state when input has changed', () => {
-  const wrapper = mount(<App />)
-  const searchInputWrapper = wrapper.find('#search')
+  const wrapper = mount(<App />);
+  const searchInputWrapper = wrapper.find('#search');
   searchInputWrapper.simulate('change', {
     target: { value: 'Fake Name' },
-  })
+  });
 
   setTimeout(() => {
-    expect(wrapper.state().typedWords).toEqual(['Fake Name'])
-  }, 200)
-})
+    expect(wrapper.state().typedWords).toEqual(['Fake Name']);
+  }, 200);
+});
 ```
 
 The first few lines are component setup using enzyme. Right after that, I simulate change event on my

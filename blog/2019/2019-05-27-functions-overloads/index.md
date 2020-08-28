@@ -1,7 +1,7 @@
 ---
 title: TypeScript function overloads
 date: '2019-05-27T09:12:03.284Z'
-slug: '/blog/2019/typescript-function-overloads.html'
+slug: '/blog/2019/typescript-function-overloads'
 tags:
   - typescript
   - function

@@ -1,12 +1,12 @@
 ---
 title: TypeScript classes, interfaces and all between
 date: '2019-03-25T10:20Z'
-slug: '/blog/2019/typescript-classes-interfaces.html'
+slug: '/blog/2019/typescript-classes-interfaces'
 tags:
   - typescript
 ---
 
-# Hello 👋
+## Hello 👋
 
 What is a better way of explaining classes & interfaces than showing them in action?
 One of the clever use of classes I saw is this connected to validating response from API.
@@ -24,7 +24,7 @@ If you read 👆paragraph - congratulations 🎉. Let's jump straight into the c
 bored:
 
 ```typescript
-axios.get<{ user: IUserDTO }>('api/users/1').then(res => UserModel.create(res.data));
+axios.get<{ user: IUserDTO }>('api/users/1').then((res) => UserModel.create(res.data));
 ```
 
 I'm using `IUserDTO` to tell axios what response I may get from API - in my case, it will be:

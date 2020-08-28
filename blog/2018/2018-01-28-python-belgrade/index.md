@@ -1,16 +1,16 @@
 ---
 title: Python Belgrade
-date: "2018-01-28T10:12:03.284Z"
-slug: "/blog/2018/python-belgrade.html"
+date: '2018-01-28T10:12:03.284Z'
+slug: '/blog/2018/python-belgrade'
 tags:
-    - meetup
-    - python
-    - belgrade
+  - meetup
+  - python
+  - belgrade
 ---
 
 **In this blog post, I want to write about my experience with taking at Python Belgrade.**
 
-# Introduction
+## Introduction
 
 You may ask - why you even write about this? This is a valid question and I want to answer it in one
 simple sentence - _because I want to give back_.
@@ -23,7 +23,7 @@ situation.
 That's why when I got an invitation to [Python Belgrade](http://pythonbelgrade.com/) I do not hesitate
 to go there and give a speech!
 
-# My thoughts
+## My thoughts
 
 My speech was about Lessons Learned from integrating Django & GraphQL. You can find slides
 [here](https://speakerdeck.com/krzysztofzuraw/lessons-learned-from-integrating-django-and-graphql).
@@ -39,7 +39,7 @@ What is more, I was able to see Belgrade - beautiful city where even in winter s
 Overall I was really impressed of the quality of the event (this is a local meetup). I saw agenda
 a couple weeks before. There were about ~ 50 people who spend their Friday evening listening to others.
 
-# Summary
+## Summary
 
 At the beginning paragraph, I talk about why I write about it. I forgot to mention that they are
 constantly looking for new speakers! So if you want to give a speech or know someone who wants please

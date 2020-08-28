@@ -1,7 +1,7 @@
 ---
 title: On React Render props vs HOC
 date: '2019-03-18T09:12:03.284Z'
-slug: '/blog/2019/react-props-hoc.html'
+slug: '/blog/2019/react-props-hoc'
 tags:
   - render props
   - react
@@ -21,7 +21,7 @@ interface OwnProps {
   name: string;
 }
 
-const Button: React.FunctionComponent<OwnProps> = props => (
+const Button: React.FunctionComponent<OwnProps> = (props) => (
   <button onClick={props.onClick}>
     {props.name} {props.amount}
   </button>
@@ -45,7 +45,7 @@ export const withHOC = <WrappedComponentProps extends object>(
   // tslint:disable-next-line:no-console
   const onClick = () => console.log('Clicked! from HOC');
 
-  const HOC: React.FunctionComponent<WrappedComponentProps & HOCProps> = props => {
+  const HOC: React.FunctionComponent<WrappedComponentProps & HOCProps> = (props) => {
     return <WrappedComponent {...props} onClick={onClick} />;
   };
   HOC.displayName = `withHOC(${WrappedComponent})`;
@@ -88,7 +88,7 @@ export interface OwnProps {
   render: ({ onClick }: { onClick: () => void }) => JSX.Element;
 }
 
-export const RenderPropsButton: React.FunctionComponent<OwnProps> = props => {
+export const RenderPropsButton: React.FunctionComponent<OwnProps> = (props) => {
   // tslint:disable-next-line:no-console
   const onClick = () => console.log('Clicked from renderProps');
   return props.render({ onClick });
@@ -99,7 +99,7 @@ it can be used like this:
 
 ```tsx
 <RenderPropsButton
-  render={renderProps => (
+  render={(renderProps) => (
     <Button onClick={renderProps.onClick} amount={amount} name="RenderProps button" />
   )}
 />
