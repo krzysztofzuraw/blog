@@ -1,19 +1,17 @@
 ---
 title: Pomodoro timer - how good was your pomodoro?
 date: '2017-03-12T10:00Z'
-slug: '/blog/2017/pomodoro-timer-how-good-was-your-pomodoro.html'
-tags: 
-    - javascript
-    - pomodoro technique
-readPrev: '/blog/2017/pomodoro-timer-breaks-localstorage.html'
+slug: '/blog/2017/pomodoro-timer-how-good-was-your-pomodoro'
+tags:
+  - javascript
+  - pomodoro technique
 ---
 
 **Hello! This week I made the main feature of my pomodoro timer -
 checking if pomodoro was good or bad. I believe that is one of the ways
 to measure your productivity. Let's get started!**
 
-How to check how good your pomodoro was?
-========================================
+## How to check how good your pomodoro was?
 
 When did I decide that I want my pomodoro timer to record if my 25
 minutes work was worth something I have this burning question: How to do
@@ -24,24 +22,29 @@ thinking what if at the end of 25 minutes I display modal to the end
 user: please select how good was your pomodoro?. Which this thought in
 my head I start coding.
 
-Modals in javascript
-====================
+## Modals in javascript
 
 First I need some HTML structure for my modal:
 
 ```html
 <div class="is-hidden modal-overlay">
-     <div class="modal">
-       <h2 class="modal_question">How was your pomodoro?</h2>
-       <div class="modal_buttons">
-         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" data-productive="true">
-           Productive
-         </button>
-         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" data-productive="false">
-           Not really productive
-         </button>
-       </div>
-     </div>
+  <div class="modal">
+    <h2 class="modal_question">How was your pomodoro?</h2>
+    <div class="modal_buttons">
+      <button
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+        data-productive="true"
+      >
+        Productive
+      </button>
+      <button
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"
+        data-productive="false"
+      >
+        Not really productive
+      </button>
+    </div>
+  </div>
 </div>
 ```
 
@@ -65,7 +68,7 @@ the web page is dimmed:
   position: relative;
   min-height: 300px;
   margin: 5% auto 0;
-  background: #FFF;
+  background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -131,11 +134,10 @@ const modalButtons = modal.querySelectorAll('[data-productive]');
 let now;
 let then;
 
-function timer(seconds, hasBreakAfter = true){
+function timer(seconds, hasBreakAfter = true) {
   now = Date.now();
-  then = now + (seconds * 1000);
+  then = now + seconds * 1000;
   // rest of timer body
-
 }
 
 modalButtons.forEach((button) => {
@@ -161,11 +163,15 @@ have updated `retriveTimeEntryFromLocalStorage`:
 
 ```javascript
 function retrieveTimeEntryFromLocalStorage() {
-  tableBody.innerHTML = entries.map(entry => `
+  tableBody.innerHTML = entries
+    .map(
+      (entry) => `
      <tr>
        <td class="mdl-data-table__cell--non-numeric">${entry.wasGood === true ? '✔' : '✖'}</td>
      </tr>
-  `).join('');
+  `
+    )
+    .join('');
 }
 ```
 
@@ -189,8 +195,7 @@ today blog post - stay tuned for the next. Feel free to comment!
 Repo with this code is available on
 [github](https://github.com/krzysztofzuraw/pomodoro-timer).
 
-References
-==========
+## References
 
--   [Modals in Pure ES6
-    JavaScript](https://lowrey.me/modals-in-pure-es6-javascript/)
+- [Modals in Pure ES6
+  JavaScript](https://lowrey.me/modals-in-pure-es6-javascript/)

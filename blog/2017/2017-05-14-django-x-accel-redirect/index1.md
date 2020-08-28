@@ -1,13 +1,12 @@
 ---
 title: Django and nginx file proxy - part two
 date: '2017-05-21T10:00Z'
-slug: '/blog/2017/django-nginx-file-proxy-part-two.html'
+slug: '/blog/2017/django-nginx-file-proxy-part-two'
 tags:
-    - django
-    - nginx
-    - python
-    - proxy
-readPrev: '/blog/2017/django-nginx-file-proxy-part-one.html'
+  - django
+  - nginx
+  - python
+  - proxy
 ---
 
 **You have our application up and running but there is a problem. You
@@ -15,8 +14,7 @@ don't want the user to see that your media files are served from media
 url. How to fix that? This blog post will tell you one of the solutions.
 Let's go!**
 
-How to hide urls from the user?
-===============================
+## How to hide urls from the user?
 
 It can be done in several ways but I will show it how you can use a
 power of Nginx to do that.
@@ -29,8 +27,7 @@ to the server response. This header will tell Nginx that media files are
 served from internal location. The user will see the only first link,
 not the hidden one!
 
-How to use X-Accel-Redirect with Django?
-========================================
+## How to use X-Accel-Redirect with Django?
 
 First of all, I want my `media` location to be internal. It means that
 Nginx will allow access only when the location is accessed via

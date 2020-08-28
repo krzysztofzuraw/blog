@@ -1,12 +1,12 @@
 ---
 title: Python imports validation
 date: '2017-09-24T10:00Z'
-slug: '/blog/2017/python-imports-validation.html'
+slug: '/blog/2017/python-imports-validation'
 tags:
-    - python
-    - import
-    - validation
-    - modules
+  - python
+  - import
+  - validation
+  - modules
 ---
 
 **Recently a colleague from work presented to me a nice pattern. I

@@ -1,10 +1,10 @@
 ---
 title: Chaining promises in JavaScript
 date: '2017-05-28T10:00Z'
-slug: '/blog/2017/chaining-promises-in-javascript.html'
-tags: 
-    - javascript
-    - promise
+slug: '/blog/2017/chaining-promises-in-javascript'
+tags:
+  - javascript
+  - promise
 ---
 
 **In this blog post, I will present to you how you can chain promises
@@ -53,18 +53,18 @@ able to refactor it to this form:
 
 ```javascript
 geocodeAddress(placeValue)
-    .then(geocodedCoords => createMainWaypoint(geocodedCoords, map))
-    .then((mainWayPointCoords) => {
-        mainWayPoint = mainWayPointCoords;
-        return createPoint(map);
-    })
-    .then((startingPointCoords) => {
-        startingPoint = startingPointCoords;
-        return createPoint(map);
-    })
-    .then((endPoint) => {
-        calculateAndDisplayRoute(mainWayPoint, startingPoint, endPoint, map);
-    });
+  .then((geocodedCoords) => createMainWaypoint(geocodedCoords, map))
+  .then((mainWayPointCoords) => {
+    mainWayPoint = mainWayPointCoords;
+    return createPoint(map);
+  })
+  .then((startingPointCoords) => {
+    startingPoint = startingPointCoords;
+    return createPoint(map);
+  })
+  .then((endPoint) => {
+    calculateAndDisplayRoute(mainWayPoint, startingPoint, endPoint, map);
+  });
 ```
 
 It's doing exactly the same but code is far more readable than before. I

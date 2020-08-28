@@ -1,12 +1,11 @@
 ---
 title: Django, GraphQL & React - part one
 date: '2017-07-02T10:00Z'
-slug: '/blog/2017/django-graphql-react-part-one.html'
-tags: 
-    - django
-    - python
-    - graphql
-readNext: '/blog/2017/django-graphql-react-part-two.html'
+slug: '/blog/2017/django-graphql-react-part-one'
+tags:
+  - django
+  - python
+  - graphql
 ---
 
 **Hello! Welcome back after a little break - I recently started working

@@ -1,10 +1,10 @@
 ---
 title: Debugging python code with wdb
-date: "2017-10-01T22:12:03.284Z"
-slug: "/blog/2017/debugging-python-code-with-wdb.html"
+date: '2017-10-01T22:12:03.284Z'
+slug: '/blog/2017/debugging-python-code-with-wdb'
 tags:
-    - debugging
-    - python
+  - debugging
+  - python
 ---
 
 **While I was on PyConPL conference last year I heard about interesting
@@ -27,12 +27,12 @@ As it's in docker I only need to add an entry in `docker-compose`:
 
 ```yaml
 django:
-    links:
-        - wdb
+  links:
+    - wdb
 wdb:
-    image: kozea/wdb-server
-    ports:
-        - "1984:1984"
+  image: kozea/wdb-server
+  ports:
+    - '1984:1984'
 ```
 
 The last thing is to add wdb support to `wsgi.py`:

@@ -1,11 +1,10 @@
 ---
 title: Pomodoro timer - beginning
 date: '2017-02-12T10:00Z'
-slug: '/blog/2017/pomodoro-timer-beginning.html'
-tags: 
-    - javascript
-    - pomodoro technique
-readNext: '/blog/2017/pomodoro-timer-counting.html'
+slug: '/blog/2017/pomodoro-timer-beginning'
+tags:
+  - javascript
+  - pomodoro technique
 ---
 
 **From this post I will try to make new a blog post series - documenting
@@ -15,8 +14,7 @@ to 4. Right now, I want to try writing as many blog posts as it will be
 necessary to end a project - without any specific number in mind. Let's
 get started!**
 
-What pomodoro-timer project will be about
-=========================================
+## What pomodoro-timer project will be about
 
 I stumbled upon [pomodoro
 technique](http://cirillocompany.de/pages/pomodoro-technique) during my
@@ -36,8 +34,7 @@ on that I can start tracking my productivity throughout the day.
 Moreover, I wanted to learn javascript so I decided to create my own
 pomodoro timer as a web page.
 
-A few words about tools
-=======================
+## A few words about tools
 
 In today javascript there are infinite number of tools, frameworks - by
 the way I recommend to read this
@@ -79,7 +76,7 @@ to that in my `.eslintrc` I just wrote:
 
 ```json
 {
-  "extends": "airbnb",
+  "extends": "airbnb"
 }
 ```
 

@@ -1,10 +1,10 @@
 ---
 title: 100 days of code
-date: "2017-12-23T15:12:03.284Z"
-slug: "/blog/2017/100days.html"
+date: '2017-12-23T15:12:03.284Z'
+slug: '/blog/2017/100days'
 tags:
-    - challenge
-    - 100days
+  - challenge
+  - 100days
 ---
 
 **Today I want to write to you about some very interesting idea - coding challenge!**

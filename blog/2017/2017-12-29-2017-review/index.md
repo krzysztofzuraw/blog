@@ -1,10 +1,10 @@
 ---
 title: Summary of 2017
-date: "2017-12-29T11:12:03.284Z"
-slug: "/blog/2017/2017-summary.html"
+date: '2017-12-29T11:12:03.284Z'
+slug: '/blog/2017/2017-summary'
 tags:
-    - review
-    - blogging
+  - review
+  - blogging
 ---
 
 **Hello! In this blog post, I will write a little bit more what I was able to do in passing 2017. Let's get started!**
@@ -25,7 +25,7 @@ that I will continue my career with this direction and work next year also with 
 
 ## What I did not
 
-This year was also a year of a few shortcomings: I figured out that I'm not the best developer out 
+This year was also a year of a few shortcomings: I figured out that I'm not the best developer out
 here - I got a lesson about being humble. I also didn't manage to keep my promises - lessons learned -
 do not promise things that you can't deliver. I learn how not to handle large tasks and develop large
 features. How I can be distracted. How it is easy to waste a whole day of work.

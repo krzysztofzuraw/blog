@@ -1,10 +1,10 @@
 ---
 title: Review of 2016
 date: '2017-01-08T10:00Z'
-slug: '/blog/2017/2016-review.html'
-tags: 
-    - blogging
-    - review
+slug: '/blog/2017/2016-review'
+tags:
+  - blogging
+  - review
 ---
 
 **Hello in the new year - 2017! I wish you all good things! Today's post
@@ -12,8 +12,7 @@ will be about one year of this very blog and other things that I was
 able to accomplish in the previous year. This blog post won't contain
 code so if you are hungry for that please wait one more week.**
 
-Projects that I did
-===================
+## Projects that I did
 
 I really like doing things and based on that learning form it. Recently
 I read a couple of good pieces about why this is important from people
@@ -40,8 +39,7 @@ I also started one project:
 [poznaj](https://github.com/kj-wroclaw/poznaj-backend) that I'm working
 on in my free time.
 
-Conferences, events that I went & speeches that I had
-=====================================================
+## Conferences, events that I went & speeches that I had
 
 I happened to be at 2 conferences previous year:
 PyConPl and Django Under The Hood. I also did become a mentor in
@@ -51,8 +49,7 @@ I did one speech about
 [microservices](http://www.slideshare.net/Krzysztofuraw/wrocpy-32-microservices-in-flask)
 during [wrocpy](https://www.meetup.com/wrocpy/).
 
-Open source contributions
-=========================
+## Open source contributions
 
 This is the area that I can work on more - I made a contribution to
 [python-libarchive-c](https://github.com/Changaco/python-libarchive-c).

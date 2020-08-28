@@ -1,13 +1,11 @@
 ---
 title: Monorepo structure for Django & React Applications
 date: '2017-08-20T10:00Z'
-slug: '/blog/2017/monorepo-structure.html'
-tags: 
-    - django
-    - python
-    - graphql
-readNext: '/blog/2017/moving-to-relay-in-django-backend.html'
-readPrev: '/blog/2017/django-graphql-react-part-two.html'
+slug: '/blog/2017/monorepo-structure'
+tags:
+  - django
+  - python
+  - graphql
 ---
 
 **Hello! Today I will guide you through setting up React application
@@ -50,15 +48,15 @@ How do I setup this everything? I use docker-compose:
 
 ```yaml
 film_ui:
-    build:
-    context: .
-    dockerfile: ./compose/ui/Dockerfile
-    volumes:
+  build:
+  context: .
+  dockerfile: ./compose/ui/Dockerfile
+  volumes:
     - ./film_ui/:/app
     - /app/node_modules
-    command: yarn start
-    ports:
-    - "3000:3000"
+  command: yarn start
+  ports:
+    - '3000:3000'
 ```
 
 The interesting setting here is volume `/app/node_modules` which allow

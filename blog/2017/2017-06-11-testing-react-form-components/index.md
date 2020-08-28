@@ -1,13 +1,13 @@
 ---
 title: Testing React form components
 date: '2017-06-11T22:12:03.284Z'
-slug: '/blog/2017/testing-react-form-components.html'
+slug: '/blog/2017/testing-react-form-components'
 tags:
-    - react
-    - javascript
-    - testing
-    - components
-    - form
+  - react
+  - javascript
+  - testing
+  - components
+  - form
 ---
 
 **In this blog post, I will present quick code snippets on how to test
@@ -25,28 +25,27 @@ created this two components:
 
 ```jsx
 class App extends Component {
-
-constructor() {
+  constructor() {
     super();
     this.addPodcast = this.addPodcast.bind(this);
-}
+  }
 
-state = {
-    podcasts: {}
-};
+  state = {
+    podcasts: {},
+  };
 
-addPodcast (podcast) {
+  addPodcast(podcast) {
     const podcasts = { ...this.state.podcasts };
-    const timestamp = Date.now()
+    const timestamp = Date.now();
     podcasts[`podcast-${timestamp}`] = podcast;
     this.setState({ podcasts });
-}
+  }
 
-render () {
+  render() {
     return (
-    <div className="App">
+      <div className="App">
         <SearchPodcastForm addPodcast={this.addPodcast} />
-    </div>
+      </div>
     );
   }
 }
@@ -56,26 +55,26 @@ render () {
 
 ```jsx
 class SearchPodcastForm extends Component {
-
-searchForPodcast (event) {
+  searchForPodcast(event) {
     event.preventDefault();
     const podcastTitle = this.refs.title.value;
-    axios.get(`https://gpodder.net/search.json?q=${encodeURIComponent(podcastTitle)}`)
-    .then((response) => {
-        response.data.map(podcast => this.props.addPodcast(podcast));
-    })
-    .catch((error) => {
+    axios
+      .get(`https://gpodder.net/search.json?q=${encodeURIComponent(podcastTitle)}`)
+      .then((response) => {
+        response.data.map((podcast) => this.props.addPodcast(podcast));
+      })
+      .catch((error) => {
         console.log(error);
-    });
-}
+      });
+  }
 
-render () {
+  render() {
     return (
-    <form className='podcast-search' onSubmit={(e) => this.searchForPodcast(e)}>
-        <input ref='title' type='text' placeholder='Type name of podcast' />
-        <button type='submit'>Search</button>
-    </form>
-    )
+      <form className="podcast-search" onSubmit={(e) => this.searchForPodcast(e)}>
+        <input ref="title" type="text" placeholder="Type name of podcast" />
+        <button type="submit">Search</button>
+      </form>
+    );
   }
 }
 ```
@@ -95,9 +94,7 @@ used `enzyme`. It can be done this way:
 ```jsx
 import { mount } from 'enzyme';
 const addPodcastMock = jest.fn();
-const component = mount(
-    <SearchPodcastForm addPodcast={addPodcastMock} />
-);
+const component = mount(<SearchPodcastForm addPodcast={addPodcastMock} />);
 ```
 
 Why `mount`? To submit a form I need first to mount my component. As it
@@ -143,10 +140,10 @@ mocking before all tests:
 
 ```jsx
 beforeAll(() => {
-    const resolved = new Promise((r) => r({ data: Array.from([{ 0: { description: 'desc' } }]) }));
-    sinon.stub(axios, 'get').returns(resolved);
-    component.find('input').node.value = 'This American Life';
-    component.find('form').simulate('submit', { preventDefault: jest.fn() });
+  const resolved = new Promise((r) => r({ data: Array.from([{ 0: { description: 'desc' } }]) }));
+  sinon.stub(axios, 'get').returns(resolved);
+  component.find('input').node.value = 'This American Life';
+  component.find('form').simulate('submit', { preventDefault: jest.fn() });
 });
 ```
 
@@ -158,8 +155,8 @@ can use `describe` as an indication of large test suite too:
 
 ```jsx
 test('submitting form calls addPodcast', () => {
-    expect(addPodcastMock.mock.calls.length).toBe(1);
-    expect(addPodcastMock.mock.calls[0]).toEqual([{ 0: { description: 'desc' } }]);
+  expect(addPodcastMock.mock.calls.length).toBe(1);
+  expect(addPodcastMock.mock.calls[0]).toEqual([{ 0: { description: 'desc' } }]);
 });
 ```
 
@@ -172,13 +169,10 @@ import { mount } from 'enzyme';
 
 import App from '../components/App';
 
-
 test('calling addPodcast should change the state', () => {
-    const component = mount(
-        <App />
-    );
-    component.instance().addPodcast({ 0: { description: 'desc' } });
-    expect(Object.keys(component.state('podcasts')).length).toBe(1);
+  const component = mount(<App />);
+  component.instance().addPodcast({ 0: { description: 'desc' } });
+  expect(Object.keys(component.state('podcasts')).length).toBe(1);
 });
 ```
 

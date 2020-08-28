@@ -1,13 +1,12 @@
 ---
 title: Django and nginx file proxy - part one
 date: '2017-05-14T10:00Z'
-slug: '/blog/2017/django-nginx-file-proxy-part-one.html'
+slug: '/blog/2017/django-nginx-file-proxy-part-one'
 tags:
-    - django
-    - nginx
-    - python
-    - proxy
-readNext: '/blog/2017/django-nginx-file-proxy-part-two.html'
+  - django
+  - nginx
+  - python
+  - proxy
 ---
 
 **In this blog post series, I will show you how to use Nginx for hiding
@@ -18,8 +17,7 @@ via api and then she/he wants to download it. But as a creator of this
 service I decided to not show my url to end user - instead I want to use
 a proxy.
 
-Setting up Django & Nginx application in docker
-===============================================
+## Setting up Django & Nginx application in docker
 
 In this blog post, I will setup django with Nginx using docker
 containers. If you want to know how to use Nginx for hiding download
@@ -138,7 +136,7 @@ nginx:
   depends_on:
     - django
   ports:
-    - "0.0.0.0:80:80"
+    - '0.0.0.0:80:80'
   volumes:
     - ./django_nginx_proxy/media:/var/www/media
 ```

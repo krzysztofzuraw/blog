@@ -1,16 +1,15 @@
 ---
 title: Don't use defaults
 date: '2017-05-07T10:00Z'
-slug: '/blog/2017/dont-use-defaults.html'
-tags: 
-    - opinion
+slug: '/blog/2017/dont-use-defaults'
+tags:
+  - opinion
 ---
 
 **Recently I bought simple LTE router. While reading through manual I
 noticed something interesting.**
 
-Why leaving insecure defaults can be a problem?
-===============================================
+## Why leaving insecure defaults can be a problem?
 
 Everyone who buys this model will have the same settings. For example
 accessing the main router dashboard. Just type 192.168.1.1 and
@@ -32,8 +31,7 @@ Leaving insecure defaults can lead to for example [MongoDB
 hack](https://snyk.io/blog/mongodb-hack-and-secure-defaults/). Imagine
 how this can affect your customer.
 
-What can you do?
-================
+## What can you do?
 
 I use mostly Django for web applications. As you may know, Django comes
 with [admin
@@ -53,8 +51,7 @@ that you will be using like
 [Postgres](https://www.enterprisedb.com/blog/first-rule-securing-postgres-don%E2%80%99t-be-dumb)
 or [redis](https://redis.io/topics/security).
 
-Conclusion
-==========
+## Conclusion
 
 Change insecure default settings in production!
 

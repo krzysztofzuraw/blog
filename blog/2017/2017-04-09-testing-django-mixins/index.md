@@ -1,18 +1,17 @@
 ---
 title: Testing django mixins
 date: '2017-04-09T10:00Z'
-slug: '/blog/2017/how-to-test-django-mixins.html'
-tags: 
-    - testing
-    - django
-    - mixins
+slug: '/blog/2017/how-to-test-django-mixins'
+tags:
+  - testing
+  - django
+  - mixins
 ---
 
 **You may read all these books and tutorials that tell you - test your
 code! This blog post is to help you test your django mixins.**
 
-Why is it worth to test mixins?
-===============================
+## Why is it worth to test mixins?
 
 You come to django world and you discover mixins - at the beginning, you
 think it awesome! Let write more of those!
@@ -23,8 +22,7 @@ save you a lot of trouble.
 
 Ok, you are ready to write some test. How to do it?
 
-How to test mixins?
-===================
+## How to test mixins?
 
 Imagine that you have this simple `TemplateView` with mixin:
 

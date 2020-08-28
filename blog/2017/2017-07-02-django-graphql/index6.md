@@ -1,13 +1,12 @@
 ---
 title: Mutations in Relay Modern
 date: '2018-01-06T10:00Z'
-slug: '/blog/2018/mutations-in-relay-modern.html'
+slug: '/blog/2018/mutations-in-relay-modern'
 tags:
-    - graphql
-    - relay
-    - javascript
-    - react
-readPrev: '/blog/2017/fragments-queries-in-relay-modern.html'
+  - graphql
+  - relay
+  - javascript
+  - react
 ---
 
 **In this series, I covered various topics starting from setting up Django and ending in Relay queries.
@@ -54,19 +53,18 @@ export default class AddFilmForm extends Component {
     super(props);
 
     this.state = {
-      title: "",
-      date: "",
-      rating: 0
+      title: '',
+      date: '',
+      rating: 0,
     };
   }
 
-  handleChange = event => {
+  handleChange = (event) => {
     const target = event.target;
     const name = target.name;
-    const value =
-      target.type === "select-one" ? parseInt(target.value, 10) : target.value;
+    const value = target.type === 'select-one' ? parseInt(target.value, 10) : target.value;
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -99,11 +97,7 @@ export default class AddFilmForm extends Component {
         </FormGroup>
         <FormGroup onChange={this.handleChange}>
           <ControlLabel>Select rating</ControlLabel>
-          <FormControl
-            componentClass="select"
-            placeholder="select"
-            name="rating"
-          >
+          <FormControl componentClass="select" placeholder="select" name="rating">
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -125,8 +119,8 @@ At the end when user clicks submit I just fire up `CreateFilmMutation` inside `h
 How is this mutation implemented? Look below:
 
 ```jsx
-import { commitMutation, graphql } from "react-relay";
-import environment from "../Environment";
+import { commitMutation, graphql } from 'react-relay';
+import environment from '../Environment';
 
 const mutation = graphql`
   mutation CreateFilmMutation($input: CreateFilmInput!) {
@@ -151,16 +145,16 @@ export default function CreateFilmMutation(title, airDate, rating) {
       title,
       airDate,
       rating,
-      actors: [{ actorId: "QWN0b3I6MQ==" }]
-    }
+      actors: [{ actorId: 'QWN0b3I6MQ==' }],
+    },
   };
   commitMutation(environment, {
     mutation,
     variables,
     onCompleted: (response, errors) => {
-      console.log("Response received from server.");
+      console.log('Response received from server.');
     },
-    onError: err => console.error(err)
+    onError: (err) => console.error(err),
   });
 }
 ```

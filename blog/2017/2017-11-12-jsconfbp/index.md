@@ -1,13 +1,13 @@
 ---
 title: Javascript Conference Budapest 2017
-date: "2017-11-12T22:12:03.284Z"
-slug: "/blog/2017/jsconfbp2017.html"
+date: '2017-11-12T22:12:03.284Z'
+slug: '/blog/2017/jsconfbp2017'
 tags:
-    - javascript
-    - conference
+  - javascript
+  - conference
 ---
 
-# Day 1
+## Day 1
 
 Until the break, there were four speeches. First about community, open source and licenses.
 What I got from it is that: use Apache license instead of MIT one. Why? The first one has
@@ -35,7 +35,7 @@ word - running not only JavaScript in the browser.
 The closing talk was about home automation - I listened man to with great passion for what he does -
 it was amazing talk.
 
-# Day 2
+## Day 2
 
 The first day started with a talk about MVC but not the Model-View-Controller but about Mozart Violin
 Concerto. It was a great to remind myself about principles that are actual in software engineering word

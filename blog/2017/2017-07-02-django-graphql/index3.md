@@ -1,21 +1,18 @@
 ---
 title: Moving to Relay in Django backend
 date: '2017-09-03T10:00Z'
-slug: '/blog/2017/moving-to-relay-in-django-backend.html'
-tags: 
-    - django
-    - python
-    - graphql
-readNext: '/blog/2017/setting-up-relay-modern-on-fe.html'
-readPrev: '/blog/2017/monorepo-structure.html'
+slug: '/blog/2017/moving-to-relay-in-django-backend'
+tags:
+  - django
+  - python
+  - graphql
 ---
 
 **Today I want to talk a little bit more about my next step in
 developing a GraphQL application. This step is connected with moving
 backend so it understands Relay.**
 
-What exactly is Realy
-======================
+## What exactly is Realy
 
 As documentation of [Relay](https://facebook.github.io/relay/) suggests
 it's framework for working with external data in React. What does it
@@ -23,8 +20,7 @@ mean? It allows a developer to declare what data he or she needs on
 frontend and relay will take care how to fetch it and use it in React
 code.
 
-How to setup Relay in Django
-=============================
+## How to setup Relay in Django
 
 In 2 first blog post of this series, I created GraphQL from Django using
 `DjangoObjectType`. Right now if I want to

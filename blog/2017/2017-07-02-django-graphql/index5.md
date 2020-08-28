@@ -1,13 +1,11 @@
 ---
 title: Fragments and queries in Relay Modern
 date: '2017-12-09T10:00Z'
-slug: '/blog/2017/fragments-queries-in-relay-modern.html'
+slug: '/blog/2017/fragments-queries-in-relay-modern'
 tags:
-    - graphql
-    - relay
-    - javascript
-readPrev: '/blog/2017/setting-up-relay-modern-on-fe.html'
-readNext: '/blog/2018/mutations-in-relay-modern.html'
+  - graphql
+  - relay
+  - javascript
 ---
 
 **Today I want to cover two points: how to use fragments in relay modern and one of the ways of handling
@@ -32,9 +30,7 @@ const AppQuery = graphql`
 Which then was used in `App.jsx`:
 
 ```jsx
-<QueryRenderer
-    query={AppQuery}
-/>
+<QueryRenderer query={AppQuery} />
 ```
 
 But I want to fetch title of my films in `FilmList` component. To do that I will use a feature called
@@ -111,7 +107,7 @@ export default class FilmContainer extends Component {
         environment={environment}
         query={FilmQuery}
         variables={{
-          filmID: this.props.match.params.filmId
+          filmID: this.props.match.params.filmId,
         }}
         render={({ error, props }) => {
           if (error) {

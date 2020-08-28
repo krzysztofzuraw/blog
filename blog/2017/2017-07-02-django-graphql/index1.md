@@ -1,15 +1,12 @@
 ---
 title: Django, GraphQL & React - part two
 date: '2017-07-30T10:00Z'
-slug: '/blog/2017/django-graphql-react-part-two.html'
-tags: 
-    - django
-    - python
-    - graphql
-readNext: '/blog/2017/monorepo-structure.html'
-readPrev: '/blog/2017/django-graphql-react-part-one.html'
+slug: '/blog/2017/django-graphql-react-part-two'
+tags:
+  - django
+  - python
+  - graphql
 ---
-
 
 **In this post, I will guide you through setting up GraphQL with Django.
 Let's get started!**
@@ -267,7 +264,7 @@ and allows me to query for description:
 
 ```javascript
 {
-    description(title: "Pulp Fiction")
+  description((title: 'Pulp Fiction'));
 }
 ```
 

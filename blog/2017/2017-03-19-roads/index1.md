@@ -1,18 +1,16 @@
 ---
 title: On building application using Google Maps API
 date: '2017-03-26T10:00Z'
-slug: '/blog/2017/building-application-using-google-maps-api.html'
-tags: 
-    - javascript
-    - google maps
-readNext: '/blog/2017/all-roads-lead-to.html'
+slug: '/blog/2017/building-application-using-google-maps-api'
+tags:
+  - javascript
+  - google maps
 ---
 
 **This blog post will be about my failure. Failure to understand how
 javascript works but also what I learned along the way.**
 
-What I wanted to accomplish this week
-=====================================
+## What I wanted to accomplish this week
 
 I divide the task of writing this application in small chunks. Last time
 I setup small form to which user can type a name of the place. Then this
@@ -20,17 +18,18 @@ form should disappear and a map should be visible. I wanted to have a
 simple map with one marker in it. I was quite challenge to get it
 working.
 
-What problem I had
-==================
+## What problem I had
 
 Firstly I add some scripts to HTML so they allow me to load google maps
 api and div so google maps know where should they be rendered:
 
 ```html
 <div id="map"></div>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRv_y2yX-QyB7LcQDZKPYaItS8p3AYEQg&callback=initMap">
- </script>
+<script
+  async
+  defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRv_y2yX-QyB7LcQDZKPYaItS8p3AYEQg&callback=initMap"
+></script>
 ```
 
 And there was the first problem - I wanted my map to occupy all
@@ -55,9 +54,7 @@ function initMap() {
     event.preventDefault();
     questionForm.classList.add('is-hidden');
     const mainPointCoords = geocodeAddress(searchForm.querySelector('[name=place]').value);
-    const map = new google.maps.Map(
-     mapElem,
-     { zoom: 4, center: mainPointCoords });
+    const map = new google.maps.Map(mapElem, { zoom: 4, center: mainPointCoords });
   });
 }
 ```
@@ -100,8 +97,7 @@ debugger in Chrome just to see that `mainPointCoords` is `undefined`.
 Debugging further shows that application flow goes through geocodeAdress
 and returns proper object but it is lost somewhere between.
 
-What to do next?
-================
+## What to do next?
 
 I write this blog post to ask you - dear reader, to help me with this
 problem. What I'm doing wrong? What can I change? What can be done

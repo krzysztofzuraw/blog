@@ -1,15 +1,13 @@
 ---
 title: Setting up Relay Modern on frontend
 date: '2017-11-25T10:00Z'
-slug: '/blog/2017/setting-up-relay-modern-on-fe.html'
-tags: 
-    - django
-    - python
-    - graphql
-    - relay
-    - javascript
-readNext: '/blog/2017/fragments-queries-in-relay-modern.html'
-readPrev: '/blog/2017/moving-to-relay-in-django-backend.html'
+slug: '/blog/2017/setting-up-relay-modern-on-fe'
+tags:
+  - django
+  - python
+  - graphql
+  - relay
+  - javascript
 ---
 
 **Hello, for such long break I'm back to the Django, React & Relay tutorial! Today I will show you
@@ -30,7 +28,7 @@ generate-schema:
 	mv film_api/schema.json film_ui/schema.json
 ```
 
-I'm using here command (`graphql_schema`) provided by django graphene. Indent option in just for a 
+I'm using here command (`graphql_schema`) provided by django graphene. Indent option in just for a
 sake of better readability of generated schema which looks like:
 
 ```json
@@ -127,29 +125,29 @@ recognizes only `.js` files.
 I have my dev dependencies done - right now I can setup Relay! First I need `Environment.js`:
 
 ```js
-import { Environment, Network, RecordSource, Store } from "relay-runtime";
+import { Environment, Network, RecordSource, Store } from 'relay-runtime';
 
 const store = new Store(new RecordSource());
 
 const network = Network.create((operation, variables) => {
-  return fetch("http://127.0.0.1:8000/graphql/", {
-    method: "POST",
+  return fetch('http://127.0.0.1:8000/graphql/', {
+    method: 'POST',
     headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json"
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       query: operation.text,
-      variables
-    })
-  }).then(response => {
+      variables,
+    }),
+  }).then((response) => {
     return response.json();
   });
 });
 
 const environment = new Environment({
   network,
-  store
+  store,
 });
 
 export default environment;
@@ -161,8 +159,8 @@ the address of `graphql` instance - In my case where Django Graphene listens to.
 it in my `App.jsx`:
 
 ```jsx
-import { QueryRenderer, graphql } from "react-relay";
-import environment from "../Environment";
+import { QueryRenderer, graphql } from 'react-relay';
+import environment from '../Environment';
 
 const FilmListQuery = graphql`
   query AppQuery {

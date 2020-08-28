@@ -1,27 +1,26 @@
 ---
 title: Solutions reviews
 date: '2017-07-23T08:00Z'
-slug: '/blog/2017/solutions-reviews.html'
+slug: '/blog/2017/solutions-reviews'
 tags:
-    - programming
-    - review
-    - code
-    - solution
+  - programming
+  - review
+  - code
+  - solution
 ---
 
 **What are solutions reviews? Why may you need one? Read this blog post
 to find out!**
 
 Recently I was listening to the podcast - [DevTalk](http://devtalk.pl/).
-In one of the episodes, guys were talking about the interesting concept - solution reviews. 
+In one of the episodes, guys were talking about the interesting concept - solution reviews.
 I started thinking - maybe it is a good idea?
 
 As my mind was thinking about it I decided to give a lightning talk to
 my team about that specific topic. You can find this presentation
 [here](http://slides.com/noaal/deck-3920bcb1-4b6a-49cf-8d78-d132e2f4f90e#/).
 
-What are solution reviews and why they are needed?
-==================================================
+## What are solution reviews and why they are needed?
 
 Imagine that you get a new task to code. Everything works fine - you
 already know the answer. You code it without any problems. But then
@@ -50,8 +49,7 @@ that they knew all of the systems that they work in. But second pair
 eyes can open new possibilities of regressions or performance
 degradation.
 
-How solution reviews can be implemented
-=======================================
+## How solution reviews can be implemented
 
 After discussion with my colleagues from work, I found out that solution
 reviews could take many forms.

@@ -1,19 +1,16 @@
 ---
 title: Pomodoro timer - breaks & localStorage
 date: '2017-03-05T10:00Z'
-slug: '/blog/2017/pomodoro-timer-breaks-localstorage.html'
-tags: 
-    - javascript
-    - pomodoro technique
-readNext: '/blog/2017/pomodoro-timer-how-good-was-your-pomodoro.html'
-readPrev: '/blog/2017/pomodoro-timer-notifications.html'
+slug: '/blog/2017/pomodoro-timer-breaks-localstorage'
+tags:
+  - javascript
+  - pomodoro technique
 ---
 
 **Hello! In today blog post I will write what I learn during this week
 of pomodoro timer development - breaks and localStorage.**
 
-Breaks for pomodoro timer
-=========================
+## Breaks for pomodoro timer
 
 The whole idea of pomodoro is that after every 25 minutes of work you
 have 5 minutes of break to get up from computer and rest. I wanted to
@@ -27,9 +24,9 @@ I did this by passing flag to `timer` called `hasBreakAfter` - if timer
 has break after call timer with 300 seconds if not go on with the flow.
 
 ```javascript
-function timer(seconds, hasBreakAfter = true){
+function timer(seconds, hasBreakAfter = true) {
   // function body
-  if (secondsLeft < 0){
+  if (secondsLeft < 0) {
     makeBreak(hasBreakAfter);
   }
 }
@@ -48,8 +45,7 @@ I also have to adjust notifications text:
 displayNotification(hasBreakAfter ? 'Time to rest dude!' : 'Time to work dude!');
 ```
 
-Displaying & storing breaks and pomodoros
-=========================================
+## Displaying & storing breaks and pomodoros
 
 I have my breaks and pomodoros but it will be awesome to present it to
 the user so he can see how much time he works today.
@@ -58,7 +54,6 @@ After notification is displayed I use `saveTimeEntryToLocalStorage`:
 
 ```javascript
 const entries = JSON.parse(localStorage.getItem('entries')) || [];
-
 
 function extractHoursMinutes(date) {
   return date.split(' ').splice(4, 1)[0].slice(0, 5);
@@ -97,13 +92,17 @@ The last thing is to get these entries and render them to the end user:
 
 ```javascript
 function retrieveTimeEntryFromLocalStorage() {
-  tableBody.innerHTML = entries.map(entry => `
+  tableBody.innerHTML = entries
+    .map(
+      (entry) => `
       <tr>
         <td class="mdl-data-table__cell--non-numeric">${entry.startTime}</td>
         <td class="mdl-data-table__cell--non-numeric">${entry.endTime}</td>
         <td class="mdl-data-table__cell--non-numeric">${entry.type}</td>
       </tr>
-    `).join('');
+    `
+    )
+    .join('');
 }
 ```
 

@@ -1,28 +1,24 @@
 ---
 title: Pomodoro timer - counting
 date: '2017-02-17T10:00Z'
-slug: '/blog/2017/pomodoro-timer-counting.html'
-tags: 
-    - javascript
-    - pomodoro technique
-readNext: '/blog/2017/pomodoro-timer-notifications.html'
-readPrev: '/blog/2017/pomodoro-timer-beginning.html'
+slug: '/blog/2017/pomodoro-timer-counting'
+tags:
+  - javascript
+  - pomodoro technique
 ---
 
 **Welcome to today's blog post! This blog post will be about
 implementing countdown in JavaScript and also about some CSS work I have
 to do so my timer looks decent.**
 
-Core functionality of pomodoro timer
-====================================
+## Core functionality of pomodoro timer
 
 As the name suggests the core functionality of a timer is to count down
 time. In the case of this timer, I will be using 25 minutes as a timer
 that needs to be counted down. I decided that for the time being, I will
 have only two control buttons for the timer: start & restart.
 
-Implementing timer in JavaScript
-================================
+## Implementing timer in JavaScript
 
 As I know what I want to accomplish the first thing is the look of my
 timer. I was wondering if it will be better to write some CSS from
@@ -35,8 +31,8 @@ CDN:
 
 ```html
 <head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
 </head>
 <body>
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -85,19 +81,27 @@ styles ready I add this HTML to the body:
 
 ```html
 <body>
-<h1 class="display__time-left">25:00</h1>
-<div class="control_buttons">
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" data-action="start">
-    Start
-  </button>
+  <h1 class="display__time-left">25:00</h1>
+  <div class="control_buttons">
+    <button
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+      data-action="start"
+    >
+      Start
+    </button>
 
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" data-action="stop">
-    Restart
-  </button>
-</div>
+    <button
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+      data-action="stop"
+    >
+      Restart
+    </button>
+  </div>
 
-<audio id="end_sound" src="sound.wav"></audio>
+  <audio id="end_sound" src="sound.wav"></audio>
+</body>
 ```
+
 At the beginning I show time left in pomodoro which by default is 25
 minutes. Next, I have my control buttons with classes from Material
 Design Lite. At the end, there is an audio file which I will be playing
@@ -133,9 +137,8 @@ Then I run `timer`:
 ```javascript
 function timer(seconds) {
   const now = Date.now();
-  const then = now + (seconds * 1000);
+  const then = now + seconds * 1000;
   displayTimeLeft(seconds);
-
 }
 ```
 
@@ -208,16 +211,15 @@ restartTimeBtn.addEventListener('click', () => {
 I stop interval, set the `countdown` to `undefined` so I can start my
 timer again. I also redisplay remaining time.
 
-What is next?
-=============
+# What is next?
 
 That's all for today! Thanks for reading but don't worry there is still
 a lot to do:
 
--   checking if pomodoro was good or bad
--   breakes
--   notifications
--   storing good & bad pomodoros
+- checking if pomodoro was good or bad
+- breakes
+- notifications
+- storing good & bad pomodoros
 
 Please feel free to comment! If you have another way to do any of this
 don't hesitate and write to me.

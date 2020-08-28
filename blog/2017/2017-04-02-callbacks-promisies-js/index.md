@@ -1,20 +1,16 @@
 ---
 title: Callbacks & promises in JS for newbies
 date: '2017-04-02T10:00Z'
-slug: '/blog/2017/callbacks-promises-in-js-for-newbies.html'
+slug: '/blog/2017/callbacks-promises-in-js-for-newbies'
 tags:
-    - javascript
-    - callbacks
-    - promises
-    - newbies
-    - google maps
+  - javascript
+  - google maps
 ---
 
 **You are a newbie in JavaScript? You want to know a little bit more
 about asynchronous nature of this language? Join me!**
 
-Problem
-=======
+## Problem
 
 I was working on my project that is using Google Maps. I stumbled upon
 an issue - how I display a map after submitting a form with geocoded
@@ -35,8 +31,7 @@ I dig more and ask a question on
 [reddit](https://www.reddit.com/r/learnjavascript/comments/61nq5t/display_map_after_form_submission_with_geocoded/).
 Then I got my answer - use callback or promise!
 
-Solution
-========
+## Solution
 
 Based on an answer from
 [adavidmiller](https://www.reddit.com/user/adavidmiller) from reddit I
@@ -45,18 +40,21 @@ was able to write this code:
 ```javascript
 function geocodeAddress(address, callback) {
   const geocoder = new google.maps.Geocoder();
-  geocoder.geocode({
-    address,
-  }, function (results, status) {
-    if (status === 'OK') {
-      callback({
-        lat: results[0].geometry.location.lat(),
-        lng: results[0].geometry.location.lng(),
-      });
-    } else {
-      alert('Cannot find address');
+  geocoder.geocode(
+    {
+      address,
+    },
+    function (results, status) {
+      if (status === 'OK') {
+        callback({
+          lat: results[0].geometry.location.lat(),
+          lng: results[0].geometry.location.lng(),
+        });
+      } else {
+        alert('Cannot find address');
+      }
     }
-  });
+  );
 }
 ```
 
@@ -66,11 +64,10 @@ this:
 
 ```javascript
 function onGeocodeComplete() {
-  const map = new google.maps.Map(
-    mapElem, {
-      zoom: 4,
-      center: coords
-    });
+  const map = new google.maps.Map(mapElem, {
+    zoom: 4,
+    center: coords,
+  });
   const marker = new google.maps.Marker({
     position: coords,
     map,
@@ -108,18 +105,21 @@ The same function - `geocodeAddress` written using promise:
 function geocodeAddressPromise(address) {
   return new Promise((resolve, reject) => {
     const geocoder = new google.maps.Geocoder();
-    geocoder.geocode({
-      address,
-    }, (results, status) => {
-      if (status === 'OK') {
-        resolve({
-          lat: results[0].geometry.location.lat(),
-          lng: results[0].geometry.location.lng(),
-        });
-      } else {
-        reject('Cannot find address');
+    geocoder.geocode(
+      {
+        address,
+      },
+      (results, status) => {
+        if (status === 'OK') {
+          resolve({
+            lat: results[0].geometry.location.lat(),
+            lng: results[0].geometry.location.lng(),
+          });
+        } else {
+          reject('Cannot find address');
+        }
       }
-    });
+    );
   });
 }
 ```
@@ -137,11 +137,14 @@ function initMap() {
     event.preventDefault();
     questionForm.classList.add('is-hidden');
     const place = searchForm.querySelector('[name=place]').value;
-    geocodeAddressPromise(place).then((response) => {
-      onGeocodeComplete(response);
-    }, (error) => {
-      alert(error);
-    });
+    geocodeAddressPromise(place).then(
+      (response) => {
+        onGeocodeComplete(response);
+      },
+      (error) => {
+        alert(error);
+      }
+    );
   });
 }
 ```
@@ -150,8 +153,7 @@ I resolve a promise by calling `then` on it. I pass here arrow function
 with a response if the promise was resolved. In another case, I just
 display an error to the user.
 
-What I've learn
-===============
+# What I've learn
 
 I learn quite a lot from having this kind of problem:
 
@@ -164,8 +166,7 @@ me. I just want to thank one more time
 [adavidmiller](https://www.reddit.com/user/adavidmiller) for taking his
 time to show me how to write code using callbacks.
 
-Update 10.07.2017
-=================
+# Update 10.07.2017
 
 As [Daniel Levy](https://github.com/justsml) pointed out in comment you
 can refactor my code, so `geocodeAddressPromise` will look like this:
@@ -174,7 +175,7 @@ can refactor my code, so `geocodeAddressPromise` will look like this:
 // Updated code for https://krzysztofzuraw.com/blog/2017/callbacks-promises-in-js-for-newbies.html
 const Promise = require('bluebird');
 const geocoder = new google.maps.Geocoder();
-// Most JS API's let you use Bluebird.promisify[All] 
+// Most JS API's let you use Bluebird.promisify[All]
 // Unfortunately Google's APIs are a little dumb when it comes to promises and Node callbacks.
 const geocodeAddressPromise = (address) => new Promise((resolve, reject) => geocoder
   .geocode({ address }, (results, status) => status === 'OK'
@@ -193,16 +194,15 @@ more javascripty syntax.
 
 ```javascript
 function onGeocodeComplete(coords) {
-  const map = new google.maps.Map(
-    mapElem, {
-      zoom: 4,
-      center: coords
-    });
+  const map = new google.maps.Map(mapElem, {
+    zoom: 4,
+    center: coords,
+  });
   const marker = new google.maps.Marker({
     position: coords,
     map,
   });
-  return {map, marker}
+  return { map, marker };
 }
 ```
 
@@ -214,9 +214,7 @@ function initMap() {
     event.preventDefault();
     questionForm.classList.add('is-hidden');
     const place = searchForm.querySelector('[name=place]').value;
-    geocodeAddressPromise(place)
-      .then(onGeocodeComplete)
-      .catch(alert);
+    geocodeAddressPromise(place).then(onGeocodeComplete).catch(alert);
   });
 }
 ```

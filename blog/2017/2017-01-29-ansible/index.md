@@ -1,31 +1,29 @@
 ---
 title: Provisioning django application using ansible
 date: '2017-01-29T10:00Z'
-slug: '/blog/2017/provisioning-django-application-ansible.html'
-tags: 
-    - django
-    - ansible
+slug: '/blog/2017/provisioning-django-application-ansible'
+tags:
+  - django
+  - ansible
 ---
 
 **As I recently have opportunity of having a workshop about ansible in
 my work and I decided to write a blog post on how to provision django
 application using this tool.**
 
-What is ansible and how's is different from puppet
-==================================================
+## What is ansible and how's is different from puppet
 
 Ansible is a tool that helps automate boring tasks. These tasks are
 connected with setting up Linux machines, installing proper software on
 them and moving code from repositories to machines. Ansible has a
 different way of accomplishing these tasks than puppet. It is using push
-*system* - in short ansible connects to your machine via ssh and push
+_system_ - in short ansible connects to your machine via ssh and push
 changes. No need for masters and agents etc. Puppet, on the other hand,
-is using pull *system* which allows every machine to pull changes from
+is using pull _system_ which allows every machine to pull changes from
 master. Ansible is using the same principles as puppet so you declare
 how should host look like after running ansible.
 
-Provisioning django application using ansible
-=============================================
+## Provisioning django application using ansible
 
 I will be provisioning
 [geodjango-leaflet](https://github.com/krzysztofzuraw/geodjango-leaflet).
@@ -99,7 +97,6 @@ roles:
 
 ```yaml
 ---
-
 - hosts: vagrant-ansible
   become: yes
 
@@ -114,14 +111,12 @@ tasks folder with `main.yml`:
 
 ```yaml
 ---
-
-
 - name: ensure apt cache is up to date
   apt: update_cache=yes
 
 - name: ensure packages are installed
   apt:
-    name: "{{item}}"
+    name: '{{item}}'
   with_items:
     - postgresql
     - libpq-dev
@@ -157,10 +152,9 @@ completes ansible will execute `geodjango` role:
 
 ```yaml
 ---
-
 - name: ensure packages are installed
   apt:
-    name: "{{item}}"
+    name: '{{item}}'
   with_items:
     - binutils
     - libproj-dev
@@ -253,7 +247,6 @@ services. In my case they look as follows:
 
 ```yaml
 ---
-
 - name: reread supervisor
   supervisorctl:
     name: geodjango_leaflet
@@ -269,10 +262,9 @@ The last role is redis. This code installs redis-server and starts it:
 
 ```yaml
 ---
-
 - name: ensure redis packages are installed
   apt:
-    name: "{{item}}"
+    name: '{{item}}'
   with_items:
     - redis-server
 
@@ -284,8 +276,7 @@ The last role is redis. This code installs redis-server and starts it:
     enabled: yes
 ```
 
-My thoughts and feelings about ansible
-======================================
+## My thoughts and feelings about ansible
 
 I have to say I'm really impressed on how easy is to write ansible
 tasks. With puppet, I have this problem that I need to look for modules

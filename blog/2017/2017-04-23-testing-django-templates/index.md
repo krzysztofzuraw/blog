@@ -1,18 +1,17 @@
 ---
 title: Testing django template tags
 date: '2017-04-23T22:12:03.284Z'
-slug: '/blog/2017/how-to-test-django-template-tags.html'
-tags: 
-    - testing
-    - django
-    - templatetags
+slug: '/blog/2017/how-to-test-django-template-tags'
+tags:
+  - testing
+  - django
+  - templatetags
 ---
 
 **In this blog post I will give you simple example how to test your
 template tags in django using django testing tools. Let's get started!**
 
-How to test templatetags?
-=========================
+## How to test templatetags?
 
 Let say that you got this template tag under
 `/templatetags/create_header.py` in django:

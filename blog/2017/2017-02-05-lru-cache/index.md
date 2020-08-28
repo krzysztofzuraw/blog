@@ -1,18 +1,17 @@
 ---
 title: Gunicorn & LRU cache pitfall
 date: '2017-02-05T10:00Z'
-slug: '/blog/2017/gunicorn-lru-cache-pitfall.html'
-tags: 
-    - python
-    - lru cache
-    - gunicorn
+slug: '/blog/2017/gunicorn-lru-cache-pitfall'
+tags:
+  - python
+  - lru cache
+  - gunicorn
 ---
 
 **Today I want to write about some interesting situation connected with
 using python LRU cache in an application that uses gunicorn.**
 
-What is LRU cache?
-==================
+## What is LRU cache?
 
 When you cache is starting to grow more and more you have to remove
 something so new values can be stored in a cache. One of the algorithms
@@ -26,8 +25,7 @@ a new element to cache - `F`. At this moment the least recently used
 item is `B` so you throw it and replace with `F`. The same mechanism
 goes for other items. That's how LRU cache works.
 
-Gunicorn & LRU pitfall
-======================
+## Gunicorn & LRU pitfall
 
 In python 3 you can use decorator `@lru_cache` from `functools` module.
 It stores a result of decorated function inside the cache. Imagine that
@@ -128,7 +126,6 @@ The code that I have made so far is available on
 Stay tuned for next blog post from this series.
 
 #### Update 13-02-16:
-
 
 Side note from my friend from work: Cache per worker is good for data
 that doesn't change like archival exchange rate. But this type of cache

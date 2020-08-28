@@ -1,11 +1,11 @@
 ---
 title: On moving blog to Gatsby.js
-date: "2017-11-04T09:12:03.284Z"
-slug: "/blog/2017/moving-blog-to-gatsby.html"
+date: '2017-11-04T09:12:03.284Z'
+slug: '/blog/2017/moving-blog-to-gatsby'
 tags:
-    - blog
-    - javascript
-    - react
+  - blog
+  - javascript
+  - react
 ---
 
 **Sometimes it is time to change and I decided to move from [Pelican](https://blog.getpelican.com/)

@@ -2,14 +2,14 @@
 title: Building python packages for debian
 category: blog
 date: '2017-06-04T10:00Z'
-slug: '/blog/2017/building-python-packages-for-debian.html'
+slug: '/blog/2017/building-python-packages-for-debian'
 tags:
-    - python
-    - debian
-    - ubuntu
-    - packages
-    - building
-    - docker
+  - python
+  - debian
+  - ubuntu
+  - packages
+  - building
+  - docker
 ---
 
 **There are many ways how to build & distribute python packages: pypi,
@@ -110,7 +110,7 @@ have makefile like syntax and specify how a package will be built.
 I'm using here really cool package called
 [dh-virtualenv](https://github.com/spotify/dh-virtualenv). Basically, it
 doing all hard work: making sure that virtualenv is correctly setup or
-files are in their places. In my example, I tell dh\_virtualenv to use
+files are in their places. In my example, I tell dh_virtualenv to use
 python3.5 which is by default in ubuntu 16.04. In `override_dh_builddeb`
 I specified where build package should be present
 `root_folder/debian/dist`.
