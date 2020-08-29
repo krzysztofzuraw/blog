@@ -61,7 +61,6 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")

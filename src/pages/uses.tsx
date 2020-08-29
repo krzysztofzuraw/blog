@@ -23,9 +23,6 @@ const UsesPage: FunctionComponent = () => {
             <a href="https://affinity.serif.com/en-gb/designer/">Affinity Designer</a>
           </li>
           <li>
-            <a href="https://www.mozilla.org/en-US/firefox/developer/">Firefox Developer Edition</a>
-          </li>
-          <li>
             <a href="https://karabiner-elements.pqrs.org/">Karabiner elements</a>
           </li>
           <li>Spotify</li>
@@ -38,7 +35,7 @@ const UsesPage: FunctionComponent = () => {
           <li>
             <a href="https://heyfocus.com/">Focus</a>
           </li>
-          <li>Google Chrome for testing</li>
+          <li>Google Chrome</li>
           <li>
             <a href="https://www.ergonis.com/products/typinator/">Typinator</a>
           </li>
@@ -90,7 +87,7 @@ const UsesPage: FunctionComponent = () => {
           </li>
         </Stack>
         <p>
-          Last updated <time>August 28, 2020</time>
+          Last updated in <time>August 28, 2020</time>
         </p>
       </Stack>
     </Layout>

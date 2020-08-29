@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { Layout, Stack } from '../components';
 
-const IndexPage: FunctionComponent = () => {
+const NowPage: FunctionComponent = () => {
   return (
     <Layout location="now">
       <Stack>
@@ -11,11 +11,11 @@ const IndexPage: FunctionComponent = () => {
           people lifes. Going back to running and more exercising.
         </p>
         <p>
-          Last updated <time>August 28, 2020</time>
+          Last updated in <time>August 28, 2020</time>
         </p>
       </Stack>
     </Layout>
   );
 };
 
-export default IndexPage;
+export default NowPage;

@@ -1,1 +1,2 @@
-export { BlogTheme, Theme } from './theme';
+export { BlogTheme } from './theme';
+export type { Theme } from './theme';
