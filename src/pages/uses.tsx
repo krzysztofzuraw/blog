@@ -1,10 +1,12 @@
+import { css } from '@emotion/core';
 import React, { FunctionComponent } from 'react';
+import { Theme } from 'src/theme';
 import { Layout, Stack } from '../components';
 
 const UsesPage: FunctionComponent = () => {
   return (
     <Layout location="uses">
-      <Stack css={(theme) => ({ ul: { listStyle: 'disc', paddingLeft: theme.spacing['s+1'] } })}>
+      <Stack css={styles.list}>
         <h1>Tools that I'm using</h1>
         <h2>Software (MacOS)</h2>
         <Stack as="ul" space="s-1">
@@ -92,6 +94,10 @@ const UsesPage: FunctionComponent = () => {
       </Stack>
     </Layout>
   );
+};
+
+const styles = {
+  list: (theme: Theme) => css({ ul: { listStyle: 'disc', paddingLeft: theme.spacing['s+1'] } }),
 };
 
 export default UsesPage;

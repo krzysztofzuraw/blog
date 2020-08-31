@@ -1,4 +1,6 @@
+import { css } from '@emotion/core';
 import React, { FunctionComponent } from 'react';
+import { Theme } from 'src/theme';
 import { Layout, Stack } from '../components';
 
 const ProjectsPage: FunctionComponent = () => {
@@ -6,32 +8,16 @@ const ProjectsPage: FunctionComponent = () => {
     <Layout location="projects">
       <Stack>
         <h1>Projects</h1>
-        <div
-          css={(theme) => ({
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(250px, 100%), 1fr))',
-            gridGap: theme.spacing['s0'],
-          })}
-        >
+        <div css={styles.grid}>
           {projectList.map((project) => (
             <div
               key={`${project.title}-${project.description}-${project.stack}`}
-              css={(theme) => ({
-                padding: theme.spacing['s+1'],
-                border: '1px solid',
-                cursor: 'pointer',
-                color: '#000',
-                backgroundColor: '#fff',
-                ':hover': {
-                  color: '#fff',
-                  backgroundColor: '#000',
-                },
-              })}
+              css={styles.gridItem}
             >
-              <a href={project.link} css={{ color: 'inherit', textDecoration: 'none' }}>
+              <a href={project.link} css={styles.link}>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                <p css={{ fontStyle: 'italic' }}>{project.stack}</p>
+                <p css={styles.stack}>{project.stack}</p>
               </a>
             </div>
           ))}
@@ -42,6 +28,29 @@ const ProjectsPage: FunctionComponent = () => {
 };
 
 export default ProjectsPage;
+
+const styles = {
+  grid: (theme: Theme) =>
+    css({
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(min(250px, 100%), 1fr))',
+      gridGap: theme.spacing['s0'],
+    }),
+  gridItem: (theme: Theme) =>
+    css({
+      padding: theme.spacing['s+1'],
+      border: '1px solid',
+      cursor: 'pointer',
+      color: '#000',
+      backgroundColor: '#fff',
+      ':hover': {
+        color: '#fff',
+        backgroundColor: '#000',
+      },
+    }),
+  link: css({ color: 'inherit', textDecoration: 'none' }),
+  stack: css({ fontStyle: 'italic' }),
+};
 
 type SideProject = { title: string; description: string; link: string; stack: string };
 

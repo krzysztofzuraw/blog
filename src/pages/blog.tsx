@@ -1,5 +1,7 @@
+import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
 import React, { FunctionComponent } from 'react';
+import { Theme } from 'src/theme';
 import { Layout, Link, Stack } from '../components';
 
 type Props = {
@@ -21,26 +23,9 @@ const BlogListPage: FunctionComponent<Props> = ({
               <h3>
                 <Link to={node.frontmatter.slug}>{node.frontmatter.title}</Link>
               </h3>
-              <div
-                css={(theme) => ({
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: theme.spacing.s0,
-                })}
-              >
+              <div css={styles.itemInfo}>
                 <time>{node.frontmatter.date}</time>
-                <ul
-                  css={(theme) => ({
-                    fontStyle: 'italic',
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    gap: theme.spacing['s-1'],
-                  })}
-                >
+                <ul css={styles.tagsList}>
                   {node.frontmatter.tags.map((tag: any) => (
                     <li key={tag}>#{tag}</li>
                   ))}
@@ -72,3 +57,23 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+const styles = {
+  itemInfo: (theme: Theme) =>
+    css({
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: theme.spacing.s0,
+    }),
+  tagsList: (theme: Theme) =>
+    css({
+      fontStyle: 'italic',
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: theme.spacing['s-1'],
+    }),
+};

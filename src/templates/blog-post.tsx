@@ -1,5 +1,7 @@
+import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
 import * as React from 'react';
+import { Theme } from 'src/theme';
 import { Layout, Stack } from '../components';
 
 type Props = {
@@ -11,36 +13,16 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark }
     <Layout location="blog">
       <Stack>
         <h1>{markdownRemark.frontmatter.title}</h1>
-        <div
-          css={(theme) => ({
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: theme.spacing.s0,
-          })}
-        >
-          <time css={{ fontWeight: 200 }}>{markdownRemark.frontmatter.date}</time>
-          <ul
-            css={(theme) => ({
-              fontStyle: 'italic',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: theme.spacing['s-1'],
-            })}
-          >
+        <div css={styles.infoWrapper}>
+          <time>{markdownRemark.frontmatter.date}</time>
+          <ul css={styles.tagsList}>
             {markdownRemark.frontmatter.tags.map((tag: any) => (
               <li key={tag}>#{tag}</li>
             ))}
           </ul>
         </div>
         <Stack
-          css={(theme) => ({
-            ol: { listStyle: 'decimal', paddingLeft: theme.spacing['s+1'] },
-            ul: { listStyle: 'disc', paddingLeft: theme.spacing['s+1'] },
-          })}
+          css={styles.article}
           as="article"
           dangerouslySetInnerHTML={{ __html: markdownRemark.html }}
         />
@@ -65,3 +47,28 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+const styles = {
+  infoWrapper: (theme: Theme) =>
+    css({
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: theme.spacing.s0,
+    }),
+  tagsList: (theme: Theme) =>
+    css({
+      fontStyle: 'italic',
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: theme.spacing['s-1'],
+    }),
+  article: (theme: Theme) =>
+    css({
+      ol: { listStyle: 'decimal', paddingLeft: theme.spacing['s+1'] },
+      ul: { listStyle: 'disc', paddingLeft: theme.spacing['s+1'] },
+    }),
+};

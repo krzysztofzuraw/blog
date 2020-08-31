@@ -1,3 +1,4 @@
+import { css } from '@emotion/core';
 import React, { FunctionComponent } from 'react';
 import { Link } from '.';
 import { BlogTheme, Theme } from '../theme';
@@ -63,7 +64,7 @@ export const Layout: FunctionComponent<Props> = ({ children, location }) => (
 
 const styles = {
   wrapper: ({ spacing }: Theme) =>
-    ({
+    css({
       display: 'flex',
       flexDirection: 'column',
       minHeight: '100vh',
@@ -78,32 +79,34 @@ const styles = {
       '> :last-child:not(main)': {
         marginBottom: 0,
       },
-    } as const),
+    }),
   header: ({ spacing }: Theme) =>
-    ({
+    css({
       display: 'flex',
       flexWrap: 'wrap',
       alignItems: 'center',
       gap: spacing.s0,
       justifyContent: 'space-between',
       fontWeight: 600,
-    } as const),
-  link: ({ dontShowLinkDecor }: { dontShowLinkDecor: boolean }) => ({
-    textDecoration: dontShowLinkDecor ? 'none' : 'inital',
-  }),
+    }),
+  link: ({ dontShowLinkDecor }: { dontShowLinkDecor: boolean }) =>
+    css({
+      textDecoration: dontShowLinkDecor ? 'none' : 'inital',
+    }),
   menu: ({ spacing }: Theme) =>
-    ({
+    css({
       display: 'flex',
       flexWrap: 'wrap',
       alignItems: 'center',
       gap: spacing.s0,
-    } as const),
-  content: ({ measure }: Theme) => ({
-    marginTop: 'auto',
-    marginBottom: 'auto',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    maxWidth: measure,
-  }),
-  footer: { alignSelf: 'center' },
+    }),
+  content: ({ measure }: Theme) =>
+    css({
+      marginTop: 'auto',
+      marginBottom: 'auto',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      maxWidth: measure,
+    }),
+  footer: css({ alignSelf: 'center' }),
 };
