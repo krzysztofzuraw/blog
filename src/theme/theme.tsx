@@ -5,17 +5,17 @@ import React, { FunctionComponent } from 'react';
 
 export type Theme = {
   colors: {
-    white: string;
-    black: string;
+    background: string;
+    text: string;
   };
   spacing: {
-    's-1': string;
+    small: string;
     code: string;
-    s0: string;
-    's+1': string;
-    's+2': string;
-    's+3': string;
-    's+4': string;
+    base: string;
+    medium: string;
+    large: string;
+    xlarge: string;
+    xxlarge: string;
   };
   ratio: number;
   measure: string;
@@ -23,17 +23,17 @@ export type Theme = {
 
 const theme: Theme = {
   colors: {
-    white: '#fafafa',
-    black: '#333',
+    background: '#fafafa',
+    text: '#333',
   },
   spacing: {
-    's-1': '0.667rem',
+    small: '0.667rem',
     code: '0.875rem',
-    s0: '1rem',
-    's+1': '1.5rem',
-    's+2': '2.25rem',
-    's+3': '3.375rem',
-    's+4': '5.063rem',
+    base: '1rem',
+    medium: '1.5rem',
+    large: '2.25rem',
+    xlarge: '3.375rem',
+    xxlarge: '5.063rem',
   },
   ratio: 1.5,
   measure: '60ch',
@@ -69,42 +69,42 @@ export const BlogTheme: FunctionComponent = ({ children }) => (
         }
 
         body {
-          background-color: ${theme.colors.white};
-          color: ${theme.colors.black};
+          background-color: ${theme.colors.background};
+          color: ${theme.colors.text};
           line-height: ${theme.ratio};
         }
 
         h1 {
-          font-size: ${theme.spacing['s+3']};
+          font-size: ${theme.spacing.xlarge};
           font-weight: 600;
         }
 
         h2 {
-          font-size: ${theme.spacing['s+2']};
+          font-size: ${theme.spacing.large};
           font-weight: 600;
         }
 
         h3 {
-          font-size: ${theme.spacing['s+1']};
+          font-size: ${theme.spacing.medium};
           font-weight: 600;
         }
 
         a {
-          color: ${theme.colors.black};
+          color: ${theme.colors.text};
         }
 
         p {
-          font-size: ${theme.spacing['s0']};
+          font-size: ${theme.spacing.base};
         }
 
         pre,
         code {
-          font-size: ${theme.spacing['code']} !important;
+          font-size: ${theme.spacing.code} !important;
           font-family: SF Mono, Menlo, Monaco, 'Courier New', monospace !important;
         }
 
         .gatsby-highlight {
-          max-width: calc(100vw - ${theme.spacing['s+1']});
+          max-width: calc(100vw - ${theme.spacing.medium});
         }
 
         img {

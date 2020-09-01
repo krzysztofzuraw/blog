@@ -17,7 +17,7 @@ const BlogListPage: FunctionComponent<Props> = ({
     <Layout location="blog">
       <Stack>
         <h1>Blog posts</h1>
-        <Stack as="ul" space="s+4">
+        <Stack as="ul" space="xxlarge">
           {edges.map(({ node }: any) => (
             <Stack as="li" key={node.id}>
               <h3>
@@ -65,7 +65,7 @@ const styles = {
       flexWrap: 'wrap',
       alignItems: 'center',
       justifyContent: 'space-between',
-      gap: theme.spacing.s0,
+      gap: theme.spacing.base,
     }),
   tagsList: (theme: Theme) =>
     css({
@@ -74,6 +74,6 @@ const styles = {
       flexWrap: 'wrap',
       alignItems: 'center',
       justifyContent: 'space-between',
-      gap: theme.spacing['s-1'],
+      gap: theme.spacing.small,
     }),
 };

@@ -68,10 +68,10 @@ const styles = {
       display: 'flex',
       flexDirection: 'column',
       minHeight: '100vh',
-      padding: spacing.s0,
+      padding: spacing.base,
       '> * ': {
-        marginTop: spacing.s0,
-        marginBottom: spacing.s0,
+        marginTop: spacing.base,
+        marginBottom: spacing.base,
       },
       '> :first-child:not(main)': {
         marginTop: 0,
@@ -85,7 +85,7 @@ const styles = {
       display: 'flex',
       flexWrap: 'wrap',
       alignItems: 'center',
-      gap: spacing.s0,
+      gap: spacing.base,
       justifyContent: 'space-between',
       fontWeight: 600,
     }),
@@ -98,7 +98,7 @@ const styles = {
       display: 'flex',
       flexWrap: 'wrap',
       alignItems: 'center',
-      gap: spacing.s0,
+      gap: spacing.base,
     }),
   content: ({ measure }: Theme) =>
     css({

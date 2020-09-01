@@ -9,7 +9,7 @@ const UsesPage: FunctionComponent = () => {
       <Stack css={styles.list}>
         <h1>Tools that I'm using</h1>
         <h2>Software (MacOS)</h2>
-        <Stack as="ul" space="s-1">
+        <Stack as="ul" space="small">
           <li>
             <a href="https://code.visualstudio.com/">Visual Studio Code</a> with Dark+ theme/SF Mono
           </li>
@@ -46,7 +46,7 @@ const UsesPage: FunctionComponent = () => {
           </li>
         </Stack>
         <h2>Hardware</h2>
-        <Stack as="ul" space="s-1">
+        <Stack as="ul" space="small">
           <li>MacBook Air 2019 - personal</li>
           <li>MacBook Pro 2015 - work</li>
           <li>Iphone 11 64GB</li>
@@ -69,7 +69,7 @@ const UsesPage: FunctionComponent = () => {
           </li>
         </Stack>
         <h2>Coffee Gear</h2>
-        <Stack as="ul" space="s-1">
+        <Stack as="ul" space="small">
           <li>
             <a href="https://www.chemexcoffeemaker.com/">Chemex</a>
           </li>
@@ -97,7 +97,7 @@ const UsesPage: FunctionComponent = () => {
 };
 
 const styles = {
-  list: (theme: Theme) => css({ ul: { listStyle: 'disc', paddingLeft: theme.spacing['s+1'] } }),
+  list: (theme: Theme) => css({ ul: { listStyle: 'disc', paddingLeft: theme.spacing.medium } }),
 };
 
 export default UsesPage;

@@ -55,7 +55,7 @@ const styles = {
       flexWrap: 'wrap',
       alignItems: 'center',
       justifyContent: 'space-between',
-      gap: theme.spacing.s0,
+      gap: theme.spacing.base,
     }),
   tagsList: (theme: Theme) =>
     css({
@@ -64,11 +64,11 @@ const styles = {
       flexWrap: 'wrap',
       alignItems: 'center',
       justifyContent: 'space-between',
-      gap: theme.spacing['s-1'],
+      gap: theme.spacing.small,
     }),
   article: (theme: Theme) =>
     css({
-      ol: { listStyle: 'decimal', paddingLeft: theme.spacing['s+1'] },
-      ul: { listStyle: 'disc', paddingLeft: theme.spacing['s+1'] },
+      ol: { listStyle: 'decimal', paddingLeft: theme.spacing.medium },
+      ul: { listStyle: 'disc', paddingLeft: theme.spacing.medium },
     }),
 };

@@ -6,7 +6,7 @@ type Props = {
   as?: 'ul' | 'li' | 'article';
 };
 
-export const Stack = styled.div<Props, Theme>(({ theme, space = 's+1' }) => ({
+export const Stack = styled.div<Props, Theme>(({ theme, space = 'base' }) => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-start',

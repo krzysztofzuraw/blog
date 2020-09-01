@@ -34,11 +34,11 @@ const styles = {
     css({
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(min(250px, 100%), 1fr))',
-      gridGap: theme.spacing['s0'],
+      gridGap: theme.spacing.base,
     }),
   gridItem: (theme: Theme) =>
     css({
-      padding: theme.spacing['s+1'],
+      padding: theme.spacing.medium,
       border: '1px solid',
       cursor: 'pointer',
       color: '#000',
