@@ -2,7 +2,7 @@ import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
 import * as React from 'react';
 import { Theme } from 'src/theme';
-import { Layout, Stack } from '../components';
+import { Layout, SEO, Stack } from '../components';
 
 type Props = {
   data: any;
@@ -11,6 +11,7 @@ type Props = {
 const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark } }) => {
   return (
     <Layout location="blog">
+      <SEO title={markdownRemark.frontmatter.title} />
       <Stack>
         <h1>{markdownRemark.frontmatter.title}</h1>
         <div css={styles.infoWrapper}>

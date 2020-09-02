@@ -100,7 +100,8 @@ export const BlogTheme: FunctionComponent = ({ children }) => (
         pre,
         code {
           font-size: ${theme.spacing.code} !important;
-          font-family: SF Mono, Menlo, Monaco, 'Courier New', monospace !important;
+          font-family: SF Mono, Menlo, Monaco, Consolas, 'Droid Sans Mono', 'Courier New',
+            'Inconsolata', monospace !important;
         }
 
         .gatsby-highlight {

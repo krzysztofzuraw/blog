@@ -1,11 +1,12 @@
 import { css } from '@emotion/core';
 import React, { FunctionComponent } from 'react';
 import { Theme } from 'src/theme';
-import { Layout, Stack } from '../components';
+import { Layout, SEO, Stack } from '../components';
 
 const UsesPage: FunctionComponent = () => {
   return (
     <Layout location="uses">
+      <SEO title="Uses" />
       <Stack css={styles.list}>
         <h1>Tools that I'm using</h1>
         <h2>Software (MacOS)</h2>

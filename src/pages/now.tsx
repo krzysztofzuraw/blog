@@ -1,9 +1,10 @@
 import React, { FunctionComponent } from 'react';
-import { Layout, Stack } from '../components';
+import { Layout, SEO, Stack } from '../components';
 
 const NowPage: FunctionComponent = () => {
   return (
     <Layout location="now">
+      <SEO title="Now" />
       <Stack>
         <h1>What I'm doing now</h1>
         <p>

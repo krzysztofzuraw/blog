@@ -2,7 +2,7 @@ import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
 import React, { FunctionComponent } from 'react';
 import { Theme } from 'src/theme';
-import { Layout, Link, Stack } from '../components';
+import { Layout, Link, SEO, Stack } from '../components';
 
 type Props = {
   data: any;
@@ -15,6 +15,7 @@ const BlogListPage: FunctionComponent<Props> = ({
 }) => {
   return (
     <Layout location="blog">
+      <SEO title="Blog list" />
       <Stack>
         <h1>Blog posts</h1>
         <Stack as="ul" space="xxlarge">

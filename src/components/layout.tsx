@@ -16,42 +16,47 @@ export const Layout: FunctionComponent<Props> = ({ children, location }) => (
             Krzysztof Żuraw
           </Link>
         </div>
-        <ul css={styles.menu}>
-          <li>
-            <Link to="/about" css={styles.link({ dontShowLinkDecor: location === 'about' })}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/blog" css={styles.link({ dontShowLinkDecor: location === 'blog' })}>
-              Blog
-            </Link>
-          </li>
-          <li>
-            <Link to="/projects" css={styles.link({ dontShowLinkDecor: location === 'projects' })}>
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link to="/now" css={styles.link({ dontShowLinkDecor: location === 'now' })}>
-              Now
-            </Link>
-          </li>
-          <li>
-            <Link to="/uses" css={styles.link({ dontShowLinkDecor: location === 'uses' })}>
-              Uses
-            </Link>
-          </li>
-          <li>
-            <a href="/feeds/all.rss.xml">RSS</a>
-          </li>
-          <li>
-            <a href="https://buttondown.email/krzysztof_zuraw">Newsletter</a>
-          </li>
-          <li>
-            <a href="https://github.com/krzysztofzuraw">Github</a>
-          </li>
-        </ul>
+        <nav>
+          <ul css={styles.menu}>
+            <li>
+              <Link to="/about" css={styles.link({ dontShowLinkDecor: location === 'about' })}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to="/blog" css={styles.link({ dontShowLinkDecor: location === 'blog' })}>
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/projects"
+                css={styles.link({ dontShowLinkDecor: location === 'projects' })}
+              >
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link to="/now" css={styles.link({ dontShowLinkDecor: location === 'now' })}>
+                Now
+              </Link>
+            </li>
+            <li>
+              <Link to="/uses" css={styles.link({ dontShowLinkDecor: location === 'uses' })}>
+                Uses
+              </Link>
+            </li>
+            <li>
+              <a href="/feeds/all.rss.xml">RSS</a>
+            </li>
+            <li>
+              <a href="https://buttondown.email/krzysztof_zuraw">Newsletter</a>
+            </li>
+            <li>
+              <a href="https://github.com/krzysztofzuraw">Github</a>
+            </li>
+          </ul>
+        </nav>
       </header>
       <main css={styles.content}>{children}</main>
       <footer css={styles.footer}>

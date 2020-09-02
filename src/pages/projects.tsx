@@ -1,11 +1,12 @@
 import { css } from '@emotion/core';
 import React, { FunctionComponent } from 'react';
 import { Theme } from 'src/theme';
-import { Layout, Stack } from '../components';
+import { Layout, SEO, Stack } from '../components';
 
 const ProjectsPage: FunctionComponent = () => {
   return (
     <Layout location="projects">
+      <SEO title="Projects" />
       <Stack>
         <h1>Projects</h1>
         <div css={styles.grid}>

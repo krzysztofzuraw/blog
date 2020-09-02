@@ -1,9 +1,10 @@
 import React, { FunctionComponent } from 'react';
-import { Layout, Stack, Link } from '../components';
+import { Layout, Link, SEO, Stack } from '../components';
 
 const AboutPage: FunctionComponent = () => {
   return (
     <Layout location="about">
+      <SEO title="About" />
       <Stack>
         <h1>About</h1>
         <p>
