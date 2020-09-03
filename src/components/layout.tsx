@@ -29,31 +29,10 @@ export const Layout: FunctionComponent<Props> = ({ children, location }) => (
               </Link>
             </li>
             <li>
-              <Link
-                to="/projects"
-                css={styles.link({ dontShowLinkDecor: location === 'projects' })}
-              >
-                Projects
-              </Link>
+              <Link to="/feeds/all.rss.xml">RSS</Link>
             </li>
             <li>
-              <Link to="/now" css={styles.link({ dontShowLinkDecor: location === 'now' })}>
-                Now
-              </Link>
-            </li>
-            <li>
-              <Link to="/uses" css={styles.link({ dontShowLinkDecor: location === 'uses' })}>
-                Uses
-              </Link>
-            </li>
-            <li>
-              <a href="/feeds/all.rss.xml">RSS</a>
-            </li>
-            <li>
-              <a href="https://buttondown.email/krzysztof_zuraw">Newsletter</a>
-            </li>
-            <li>
-              <a href="https://github.com/krzysztofzuraw">Github</a>
+              <Link to="https://buttondown.email/krzysztof_zuraw">Newsletter</Link>
             </li>
           </ul>
         </nav>
@@ -90,9 +69,11 @@ const styles = {
       display: 'flex',
       flexWrap: 'wrap',
       alignItems: 'center',
-      gap: spacing.base,
       justifyContent: 'space-between',
       fontWeight: 600,
+      li: {
+        marginRight: spacing.small,
+      },
     }),
   link: ({ dontShowLinkDecor }: { dontShowLinkDecor: boolean }) =>
     css({

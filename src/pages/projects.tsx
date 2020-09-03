@@ -1,7 +1,7 @@
 import { css } from '@emotion/core';
 import React, { FunctionComponent } from 'react';
 import { Theme } from 'src/theme';
-import { Layout, SEO, Stack } from '../components';
+import { Layout, Link, SEO, Stack } from '../components';
 
 const ProjectsPage: FunctionComponent = () => {
   return (
@@ -15,11 +15,11 @@ const ProjectsPage: FunctionComponent = () => {
               key={`${project.title}-${project.description}-${project.stack}`}
               css={styles.gridItem}
             >
-              <a href={project.link} css={styles.link}>
+              <Link to={project.link} css={styles.link}>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <p css={styles.stack}>{project.stack}</p>
-              </a>
+              </Link>
             </div>
           ))}
         </div>

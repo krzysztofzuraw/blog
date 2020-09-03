@@ -25,6 +25,21 @@ const AboutPage: FunctionComponent = () => {
           place & help with preparing some event do not hesitate to contact me (email is on the
           footer).
         </p>
+        <h2>Additional pages</h2>
+        <Stack as="ul">
+          <li>
+            <Link to="/now">Now</Link> - what I'm doing now
+          </li>
+          <li>
+            <Link to="/uses">Uses</Link> - tools that I'm using
+          </li>
+          <li>
+            <Link to="/projects">Projects</Link> - what I did
+          </li>
+          <li>
+            <Link to="https://github.com/krzysztofzuraw">Github</Link>
+          </li>
+        </Stack>
       </Stack>
     </Layout>
   );

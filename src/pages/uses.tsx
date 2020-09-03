@@ -1,7 +1,7 @@
 import { css } from '@emotion/core';
 import React, { FunctionComponent } from 'react';
 import { Theme } from 'src/theme';
-import { Layout, SEO, Stack } from '../components';
+import { Layout, Link, SEO, Stack } from '../components';
 
 const UsesPage: FunctionComponent = () => {
   return (
@@ -12,38 +12,49 @@ const UsesPage: FunctionComponent = () => {
         <h2>Software (MacOS)</h2>
         <Stack as="ul" space="small">
           <li>
-            <a href="https://code.visualstudio.com/">Visual Studio Code</a> with Dark+ theme/SF Mono
-          </li>
-          <li>Apple Calendar</li>
-          <li>Plain text for todos</li>
-          <li>
-            <a href="https://www.alfredapp.com/">Alfred</a>
+            <Link to="https://culturedcode.com/things/">Things</Link> for managing my todo list
           </li>
           <li>
-            <a href="https://cleanshot.com/">Cleanshot</a>
+            <Link to="https://ia.net/writer">iA Writer</Link> for all kinds of notes
           </li>
           <li>
-            <a href="https://affinity.serif.com/en-gb/designer/">Affinity Designer</a>
+            <Link to="https://code.visualstudio.com/">Visual Studio Code</Link> for editing code
+          </li>
+          <li>Apple Calendar for time blocking and events</li>
+          <li>
+            <Link to="https://www.alfredapp.com/">Alfred</Link> for launching applications &
+            workflows
           </li>
           <li>
-            <a href="https://karabiner-elements.pqrs.org/">Karabiner elements</a>
-          </li>
-          <li>Spotify</li>
-          <li>
-            <a href="http://freemacsoft.net/appcleaner/">AppCleaner</a>
+            <Link to="https://cleanshot.com/">Cleanshot</Link> for taking screenshots
           </li>
           <li>
-            <a href="https://www.macbartender.com/">Bartender 3</a>
+            <Link to="https://affinity.serif.com/en-gb/designer/">Affinity Designer</Link> for
+            vector graphic
           </li>
           <li>
-            <a href="https://heyfocus.com/">Focus</a>
+            <Link to="https://karabiner-elements.pqrs.org/">Karabiner elements</Link> for
+            reassigning keyboard shortcuts.
+          </li>
+          <li>Spotify for music</li>
+          <li>
+            <Link to="http://freemacsoft.net/appcleaner/">AppCleaner</Link> for cleaning application
+            lefovers
+          </li>
+          <li>
+            <Link to="https://www.macbartender.com/">Bartender 3</Link> for hiding mac menu bar
+            items
+          </li>
+          <li>
+            <Link to="https://heyfocus.com/">Focus</Link> for blocking distrating sites
           </li>
           <li>Google Chrome</li>
           <li>
-            <a href="https://www.ergonis.com/products/typinator/">Typinator</a>
+            <Link to="https://www.ergonis.com/products/typinator/">Typinator</Link> for text
+            expansion
           </li>
           <li>
-            <a href="https://c-command.com/toothfairy/">ToothFairy</a>
+            <Link to="https://c-command.com/toothfairy/">ToothFairy</Link> for menu bar bluetooth
           </li>
         </Stack>
         <h2>Hardware</h2>
@@ -53,40 +64,43 @@ const UsesPage: FunctionComponent = () => {
           <li>Iphone 11 64GB</li>
           <li>Airpods</li>
           <li>
-            <a href="https://www.bose.pl/pl_pl/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii.html#v=qc35_ii_black">
+            <Link to="https://www.bose.pl/pl_pl/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii.html#v=qc35_ii_black">
               Bose QC 35
-            </a>
+            </Link>{' '}
+            - noise canceling headphones
           </li>
           <li>Apple watch</li>
           <li>
-            <a href="https://www.logitech.com/pl-pl/product/mx-vertical-ergonomic-mouse">
+            <Link to="https://www.logitech.com/pl-pl/product/mx-vertical-ergonomic-mouse">
               MX Vertical
-            </a>
+            </Link>{' '}
+            - vertical mouse
           </li>
           <li>
-            <a href="https://www.keychron.com/products/keychron-k2-wireless-mechanical-keyboard">
+            <Link to="https://www.keychron.com/products/keychron-k2-wireless-mechanical-keyboard">
               Keychron K1
-            </a>
+            </Link>{' '}
+            - keyboard
           </li>
         </Stack>
         <h2>Coffee Gear</h2>
         <Stack as="ul" space="small">
           <li>
-            <a href="https://www.chemexcoffeemaker.com/">Chemex</a>
+            <Link to="https://www.chemexcoffeemaker.com/">Chemex</Link>
           </li>
           <li>
-            <a href="https://aeropress.com/">Areopress</a>
+            <Link to="https://aeropress.com/">Areopress</Link>
           </li>
           <li>
-            <a href="https://www.hario.jp/sp_v60series.html">Hairo v60</a>
+            <Link to="https://www.hario.jp/sp_v60series.html">Hairo v60</Link>
           </li>
           <li>
-            <a href="https://baratza.com/grinder/encore/">Baratza encore</a>
+            <Link to="https://baratza.com/grinder/encore/">Baratza encore</Link>
           </li>
           <li>
-            <a href="https://alternativebrewing.com.au/product/brewista-smart-pour-variable-temperature-gooseneck-kettle/">
+            <Link to="https://alternativebrewing.com.au/product/brewista-smart-pour-variable-temperature-gooseneck-kettle/">
               Brewista kettle
-            </a>
+            </Link>
           </li>
         </Stack>
         <p>
