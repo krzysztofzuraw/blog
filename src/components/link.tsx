@@ -1,7 +1,7 @@
 import { GatsbyLinkProps, Link as GatsbyLink } from 'gatsby';
-import * as React from 'react';
+import React, { FunctionComponent } from 'react';
 
-export const Link: React.FunctionComponent<Omit<GatsbyLinkProps<{}>, 'ref'>> = ({
+export const Link: FunctionComponent<Omit<GatsbyLinkProps<{}>, 'ref'>> = ({
   to,
   children,
   ...restProps

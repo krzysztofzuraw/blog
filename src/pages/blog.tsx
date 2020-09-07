@@ -1,47 +1,61 @@
+import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
-import * as React from 'react';
-import { BlogPageQuery } from 'typings/graphql';
-import { Layout, Link, SEO } from '../components';
-import { parseDate } from '../utils';
+import React, { FunctionComponent } from 'react';
+import { Theme } from 'src/theme';
+import { Layout, Link, SEO, Stack } from '../components';
 
 type Props = {
-  data: BlogPageQuery;
+  data: {
+    allMarkdownRemark: {
+      edges: Array<{
+        node: {
+          frontmatter: { slug: string; title: string; date: string; tags: string[] };
+          id: string;
+        };
+      }>;
+    };
+  };
 };
 
-const BlogIndexPage: React.FunctionComponent<Props> = ({
+const BlogListPage: FunctionComponent<Props> = ({
   data: {
     allMarkdownRemark: { edges },
   },
 }) => {
   return (
-    <Layout>
-      <SEO title="Blog | Krzysztof Żuraw" description="Blog index page" slug="/blog" />
-      <ul className="blog-post-list">
-        {edges.map(({ node }) => (
-          <li key={node.id}>
-            <h4>
-              <Link to={node.frontmatter.slug}>{node.frontmatter.title}</Link>
-            </h4>
-            <p>
-              <span>{parseDate(node.frontmatter.date)}</span>
-              <span>{node.frontmatter.tags.map((tag) => `#${tag}`).join(', ')}</span>
-            </p>
-          </li>
-        ))}
-      </ul>
+    <Layout location="blog">
+      <SEO title="Blog list" />
+      <Stack>
+        <h1>Blog posts</h1>
+        <Stack as="ul" space="xxlarge">
+          {edges.map(({ node }) => (
+            <Stack as="li" key={node.id}>
+              <h3>
+                <Link to={node.frontmatter.slug}>{node.frontmatter.title}</Link>
+              </h3>
+              <div css={styles.itemInfo}>
+                <time>{node.frontmatter.date}</time>
+                <ul css={styles.tagsList}>
+                  {node.frontmatter.tags.map((tag) => (
+                    <li key={tag}>#{tag}</li>
+                  ))}
+                </ul>
+              </div>
+            </Stack>
+          ))}
+        </Stack>
+      </Stack>
     </Layout>
   );
 };
 
-export default BlogIndexPage;
-
+export default BlogListPage;
 export const pageQuery = graphql`
-  query BlogPage {
+  query BlogListPage {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           id
-          excerpt
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
@@ -53,3 +67,23 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+const styles = {
+  itemInfo: (theme: Theme) =>
+    css({
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: theme.spacing.base,
+    }),
+  tagsList: (theme: Theme) =>
+    css({
+      fontStyle: 'italic',
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: theme.spacing.small,
+    }),
+};

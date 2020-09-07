@@ -1,32 +1,35 @@
+import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
 import * as React from 'react';
-import { BlogPostBySlugQuery } from 'typings/graphql';
-import { Layout, Newsletter, SEO } from '../components';
-import { parseDate } from '../utils';
+import { Theme } from 'src/theme';
+import { Layout, SEO, Stack } from '../components';
 
 type Props = {
-  data: BlogPostBySlugQuery;
+  data: {
+    markdownRemark: { frontmatter: { title: string; date: string; tags: string[] }; html: string };
+  };
 };
 
 const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark } }) => {
   return (
-    <Layout>
-      <SEO
-        title={`${markdownRemark!.frontmatter.title} | Krzysztof Żuraw`}
-        description={markdownRemark?.excerpt ?? ''}
-        slug={markdownRemark?.frontmatter.slug ?? ''}
-      />
-      <div className="blog-post">
-        <h1>{markdownRemark!.frontmatter.title}</h1>
-        <div>
-          <div>{parseDate(markdownRemark!.frontmatter.date)}</div>
-          <div>{markdownRemark!.frontmatter.tags.map((tag) => `#${tag}`).join(', ')}</div>
+    <Layout location="blog">
+      <SEO title={markdownRemark.frontmatter.title} />
+      <Stack>
+        <h1>{markdownRemark.frontmatter.title}</h1>
+        <div css={styles.infoWrapper}>
+          <time>{markdownRemark.frontmatter.date}</time>
+          <ul css={styles.tagsList}>
+            {markdownRemark.frontmatter.tags.map((tag) => (
+              <li key={tag}>#{tag}</li>
+            ))}
+          </ul>
         </div>
-        <hr />
-        <div dangerouslySetInnerHTML={{ __html: markdownRemark!.html! }} />
-        <hr />
-      </div>
-      <Newsletter />
+        <Stack
+          css={styles.article}
+          as="article"
+          dangerouslySetInnerHTML={{ __html: markdownRemark.html }}
+        />
+      </Stack>
     </Layout>
   );
 };
@@ -47,3 +50,28 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+const styles = {
+  infoWrapper: (theme: Theme) =>
+    css({
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: theme.spacing.base,
+    }),
+  tagsList: (theme: Theme) =>
+    css({
+      fontStyle: 'italic',
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: theme.spacing.small,
+    }),
+  article: (theme: Theme) =>
+    css({
+      ol: { listStyle: 'decimal', paddingLeft: theme.spacing.medium },
+      ul: { listStyle: 'disc', paddingLeft: theme.spacing.medium },
+    }),
+};

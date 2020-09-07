@@ -1,4 +1,4 @@
-export * from './layout';
-export * from './link';
-export * from './newsletter';
-export * from './seo';
+export { Layout } from './layout';
+export { Link } from './link';
+export { SEO } from './seo';
+export { Stack } from './stack';
