@@ -49,9 +49,36 @@ export const BlogTheme: FunctionComponent = ({ children }) => (
       styles={css`
         ${emotionReset}
 
+        @font-face {
+          font-family: 'iA Writer Quattro S';
+          font-weight: normal;
+          font-style: normal;
+          src: url('static/iAWriterQuattroS-Regular.woff2') format('woff2');
+        }
+
+        @font-face {
+          font-family: 'iA Writer Quattro S';
+          font-weight: normal;
+          font-style: italic;
+          src: url('static/iAWriterQuattroS-Italic.woff2') format('woff2');
+        }
+
+        @font-face {
+          font-family: 'iA Writer Quattro S';
+          font-weight: bold;
+          font-style: normal;
+          src: url('static/iAWriterQuattroS-Bold.woff2') format('woff2');
+        }
+
+        @font-face {
+          font-family: 'JetBrainsMono';
+          font-weight: normal;
+          font-style: normal;
+          src: url('static/JetBrainsMono-Regular.woff2') format('woff2');
+        }
+
         html {
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-            Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          font-family: 'iA Writer Quattro S', sans-serif;
           font-size: 100%;
         }
 
@@ -104,8 +131,7 @@ export const BlogTheme: FunctionComponent = ({ children }) => (
         pre,
         code {
           font-size: ${theme.spacing.code} !important;
-          font-family: SF Mono, Menlo, Monaco, Consolas, 'Droid Sans Mono', 'Courier New',
-            'Inconsolata', monospace !important;
+          font-family: JetBrainsMono, monospace !important;
         }
 
         .gatsby-highlight {
