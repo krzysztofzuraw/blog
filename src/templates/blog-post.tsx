@@ -5,7 +5,9 @@ import { Theme } from 'src/theme';
 import { Layout, SEO, Stack } from '../components';
 
 type Props = {
-  data: any;
+  data: {
+    markdownRemark: { frontmatter: { title: string; date: string; tags: string[] }; html: string };
+  };
 };
 
 const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark } }) => {
@@ -17,7 +19,7 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark }
         <div css={styles.infoWrapper}>
           <time>{markdownRemark.frontmatter.date}</time>
           <ul css={styles.tagsList}>
-            {markdownRemark.frontmatter.tags.map((tag: any) => (
+            {markdownRemark.frontmatter.tags.map((tag) => (
               <li key={tag}>#{tag}</li>
             ))}
           </ul>

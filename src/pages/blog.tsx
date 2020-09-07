@@ -5,7 +5,16 @@ import { Theme } from 'src/theme';
 import { Layout, Link, SEO, Stack } from '../components';
 
 type Props = {
-  data: any;
+  data: {
+    allMarkdownRemark: {
+      edges: Array<{
+        node: {
+          frontmatter: { slug: string; title: string; date: string; tags: string[] };
+          id: string;
+        };
+      }>;
+    };
+  };
 };
 
 const BlogListPage: FunctionComponent<Props> = ({
@@ -19,7 +28,7 @@ const BlogListPage: FunctionComponent<Props> = ({
       <Stack>
         <h1>Blog posts</h1>
         <Stack as="ul" space="xxlarge">
-          {edges.map(({ node }: any) => (
+          {edges.map(({ node }) => (
             <Stack as="li" key={node.id}>
               <h3>
                 <Link to={node.frontmatter.slug}>{node.frontmatter.title}</Link>
@@ -27,7 +36,7 @@ const BlogListPage: FunctionComponent<Props> = ({
               <div css={styles.itemInfo}>
                 <time>{node.frontmatter.date}</time>
                 <ul css={styles.tagsList}>
-                  {node.frontmatter.tags.map((tag: any) => (
+                  {node.frontmatter.tags.map((tag) => (
                     <li key={tag}>#{tag}</li>
                   ))}
                 </ul>

@@ -31,22 +31,22 @@ const ProjectsPage: FunctionComponent = () => {
 export default ProjectsPage;
 
 const styles = {
-  grid: (theme: Theme) =>
+  grid: ({ spacing }: Theme) =>
     css({
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(min(250px, 100%), 1fr))',
-      gridGap: theme.spacing.base,
+      gridGap: spacing.base,
     }),
-  gridItem: (theme: Theme) =>
+  gridItem: ({ colors, spacing }: Theme) =>
     css({
-      padding: theme.spacing.medium,
+      padding: spacing.medium,
       border: '1px solid',
       cursor: 'pointer',
-      color: '#000',
-      backgroundColor: '#fff',
+      color: colors.boxText,
+      backgroundColor: colors.boxBackground,
       ':hover': {
-        color: '#fff',
-        backgroundColor: '#000',
+        color: colors.boxBackground,
+        backgroundColor: colors.boxText,
       },
     }),
   link: css({ color: 'inherit', textDecoration: 'none' }),

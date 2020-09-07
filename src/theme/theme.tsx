@@ -7,6 +7,8 @@ export type Theme = {
   colors: {
     background: string;
     text: string;
+    boxBackground: string;
+    boxText: string;
   };
   spacing: {
     small: string;
@@ -25,6 +27,8 @@ const theme: Theme = {
   colors: {
     background: '#fafafa',
     text: '#333',
+    boxBackground: '#fff',
+    boxText: '#000',
   },
   spacing: {
     small: '0.667rem',

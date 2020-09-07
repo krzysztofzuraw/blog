@@ -1,4 +1,6 @@
+import { css } from '@emotion/core';
 import React, { FunctionComponent } from 'react';
+import { Theme } from 'src/theme';
 import { Layout, SEO, Stack } from '../components';
 
 const ErrorPage: FunctionComponent = () => {
@@ -8,12 +10,28 @@ const ErrorPage: FunctionComponent = () => {
       <Stack>
         <h1>Page not found</h1>
         <p>Oops! The page you are looking for has been removed or relocated.</p>
-        <a onClick={() => history.back()} href="">
+        <button onClick={() => history.back()} css={styles.button}>
           Go back
-        </a>
+        </button>
       </Stack>
     </Layout>
   );
+};
+
+const styles = {
+  button: ({ colors, spacing }: Theme) =>
+    css({
+      border: '1px solid',
+      cursor: 'pointer',
+      padding: spacing.base,
+      color: colors.boxText,
+      backgroundColor: colors.boxBackground,
+      ':hover': {
+        color: colors.boxBackground,
+        backgroundColor: colors.boxText,
+      },
+      alignSelf: 'flex-start',
+    }),
 };
 
 export default ErrorPage;
