@@ -49,43 +49,9 @@ export const BlogTheme: FunctionComponent = ({ children }) => (
       styles={css`
         ${emotionReset}
 
-        @font-face {
-          font-family: 'iA Writer Quattro';
-          font-weight: normal;
-          font-style: normal;
-          src: url('/fonts/iAWriterQuattroS-Regular.woff2') format('woff2');
-        }
-
-        @font-face {
-          font-family: 'iA Writer Quattro';
-          font-weight: normal;
-          font-style: italic;
-          src: url('/fonts/iAWriterQuattroS-Italic.woff2') format('woff2');
-        }
-
-        @font-face {
-          font-family: 'iA Writer Quattro';
-          font-weight: bold;
-          font-style: normal;
-          src: url('/fonts/iAWriterQuattroS-Bold.woff2') format('woff2');
-        }
-
-        @font-face {
-          font-family: 'iA Writer Quattro';
-          font-weight: bold;
-          font-style: italic;
-          src: url('/fonts/iAWriterQuattroS-BoldItalic.woff2') format('woff2');
-        }
-
-        @font-face {
-          font-family: 'JetBrains Mono';
-          font-weight: normal;
-          font-style: normal;
-          src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
-        }
-
         html {
-          font-family: 'iA Writer Quattro', sans-serif;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+            Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
           font-size: 100%;
         }
 
@@ -138,7 +104,8 @@ export const BlogTheme: FunctionComponent = ({ children }) => (
         pre,
         code {
           font-size: ${theme.spacing.code} !important;
-          font-family: 'JetBrains Mono', monospace !important;
+          font-family: SF Mono, Menlo, Monaco, 'Consolas', 'Droid Sans Mono', 'Courier New',
+            monospace !important;
         }
 
         .gatsby-highlight {
@@ -150,7 +117,6 @@ export const BlogTheme: FunctionComponent = ({ children }) => (
         }
 
         time {
-          font-weight: 800;
           font-style: italic;
         }
       `}
