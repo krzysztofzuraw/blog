@@ -29,6 +29,9 @@ export const Layout: FunctionComponent<Props> = ({ children, location }) => (
               </Link>
             </li>
             <li>
+              <Link to="https://github.com/krzysztofzuraw/public-notes">Notes</Link>
+            </li>
+            <li>
               <Link to="/feeds/all.rss.xml">RSS</Link>
             </li>
             <li>
