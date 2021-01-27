@@ -4,9 +4,9 @@
   "main": "n/a",
   "description": "Krzysztof Żuraw personal site",
   "scripts": {
-    "start": "gatsby develop",
+    "dev": "gatsby develop",
     "tsc": "tsc",
-    "lint": "eslint 'src/*/*.{js,ts,tsx}' --quiet --fix",
+    "lint": "eslint 'src/*/*.{ts,tsx}' --quiet --fix",
     "reinstall": "rimraf node_modules && npm install"
   },
   "keywords": [
@@ -18,10 +18,8 @@
   "author": "Krzysztof Żuraw",
   "license": "MIT",
   "dependencies": {
-    "@emotion/core": "10.0.35",
-    "@emotion/styled": "10.0.27",
-    "emotion-reset": "2.0.7",
-    "emotion-theming": "10.0.27",
+    "@emotion/react": "11.1.4",
+    "@tailwindcss/typography": "0.4.0",
     "gatsby": "2.24.37",
     "gatsby-image": "2.4.0",
     "gatsby-plugin-emotion": "4.3.10",
@@ -44,16 +42,19 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-helmet": "5.2.1",
-    "sharp": "0.25.2"
+    "sharp": "0.25.2",
+    "tailwindcss": "2.0.2",
+    "twin.macro": "2.1.1"
   },
   "devDependencies": {
+    "@types/react-helmet": "5.0.15",
     "eslint": "7.8.1",
     "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-jsx-a11y": "6.3.1",
     "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-react": "7.20.6",
     "eslint-plugin-react-hooks": "4.1.0",
-    "@types/react-helmet": "5.0.15",
-    "eslint-plugin-jsx-a11y": "6.3.1",
+    "postcss": "8.2.4",
     "prettier": "2.0.2",
     "rimraf": "3.0.1",
     "typescript": "3.9.7"

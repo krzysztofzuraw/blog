@@ -4,9 +4,9 @@ module.exports = {
   siteMetadata: {
     siteName: 'Krzysztof Żuraw',
     author: 'Krzysztof Żuraw',
-    description: 'Frontend | Design | Coffee',
+    description: 'TypeScript | React | Coffee',
     siteUrl: 'https://krzysztofzuraw.com',
-    keywords: 'JavaScript, TypeScript, RxJS, React, Redux',
+    keywords: 'TypeScript, React, Redux, RxJS, JavaScript',
     social: {
       github: 'https://github.com/krzysztofzuraw',
       email: 'mailto:blog@kzuraw.com',
@@ -39,16 +39,6 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 590,
-            },
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              classPrefix: 'language-',
-              inlineCodeMarker: null,
-              aliases: {},
-              showLineNumbers: false,
-              noInlineHighlight: false,
             },
           },
           'gatsby-remark-copy-linked-files',

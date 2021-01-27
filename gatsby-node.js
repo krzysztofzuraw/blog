@@ -32,7 +32,6 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     const posts = result.data.allMarkdownRemark.edges;
-    const siteUrl = result.data.site.siteMetadata.siteUrl;
 
     posts.forEach((post) => {
       const {
@@ -45,7 +44,6 @@ exports.createPages = ({ graphql, actions }) => {
         component: blogPost,
         context: {
           slug,
-          permalink: slug.endsWith('.html') ? `${siteUrl}${slug}` : `${siteUrl}${slug}/`,
         },
       });
     });
