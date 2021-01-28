@@ -5,7 +5,7 @@
     "lib": ["dom", "es2017"],
     "allowJs": true,
     "checkJs": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "outDir": "build",
     "noEmit": true,
 
@@ -21,7 +21,8 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
 
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "jsxImportSource": "@emotion/react"
   },
   "include": ["src/**/*", "types/*"]
 }

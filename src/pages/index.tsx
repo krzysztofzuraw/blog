@@ -5,6 +5,7 @@ const IndexPage: FunctionComponent = () => {
   return (
     <Layout>
       <SEO title="Home" />
+      <p>OMG</p>
     </Layout>
   );
 };
