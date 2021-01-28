@@ -28,7 +28,7 @@ export const Layout: FunctionComponent = ({ children }) => (
           },
           html: mq({ fontSize: ['88%', '100%'], lineHeight: '1.5' }),
           body: {
-            fontFamily: 'JetBrains MonoVariable, monospace',
+            fontFamily: 'iA Writer Quattro S, JetBrains MonoVariable, monospace',
             fontVariationSettings: '"wght" 400',
             margin: 0,
             backgroundColor: theme.colors.background,

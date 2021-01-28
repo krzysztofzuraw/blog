@@ -47,6 +47,7 @@ pre[class*='language-'] {
   border-radius: 0.3em;
   color: #191919;
   background: #f9f2f4;
+  white-space: normal;
 }
 /*********************************************************
 * Tokens
