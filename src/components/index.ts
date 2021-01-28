@@ -1,3 +1,3 @@
-export { Layout } from './layout';
+export { Layout, mq } from './layout';
 export { Link } from './link';
 export { SEO } from './seo';

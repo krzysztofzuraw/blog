@@ -1,13 +1,41 @@
+import { css } from '@emotion/react';
 import { graphql } from 'gatsby';
 import React, { FunctionComponent } from 'react';
-import { Layout, SEO } from '../components';
+import { Layout, Link, SEO, mq } from '../components';
 
-const BlogListPage: FunctionComponent<any> = () => {
+const BlogListPage: FunctionComponent<any> = ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}) => {
   return (
     <Layout>
-      <SEO title="Blog list" />
+      <SEO title="Blog index" />
+      <h1 css={styles.header}>Blog index</h1>
+      <ul css={styles.list}>
+        {edges.map(({ node }) => (
+          <li key={node.id}>
+            {node.frontmatter.date} -{' '}
+            <Link to={node.frontmatter.slug} css={styles.link}>
+              {node.frontmatter.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </Layout>
   );
+};
+
+const styles = {
+  header: css({ fontSize: '1.375rem', fontVariationSettings: '"wght" 600', marginBottom: '2rem' }),
+  list: css({
+    listStyle: 'none',
+    padding: 0,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1rem',
+  }),
+  link: css({ textDecoration: 'none', ':hover': { textDecoration: 'underline' } }),
 };
 
 export default BlogListPage;
@@ -19,9 +47,8 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY-mm-DD")
             slug
-            tags
           }
         }
       }
