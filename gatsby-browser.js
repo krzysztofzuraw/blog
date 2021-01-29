@@ -1,2 +1,1 @@
-require('./src/styles/prism-vs-code.css');
-// require('prism-themes/themes/prism-atom-dark.css');
+require('prism-themes/themes/prism-dracula.css');

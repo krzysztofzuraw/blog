@@ -27,7 +27,7 @@ const BlogListPage: FunctionComponent<any> = ({
 };
 
 const styles = {
-  header: css({ fontSize: '1.375rem', fontVariationSettings: '"wght" 600', marginBottom: '2rem' }),
+  header: css({ fontSize: '1.375rem', fontWeight: 600, marginBottom: '2rem' }),
   list: css({
     listStyle: 'none',
     padding: 0,

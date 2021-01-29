@@ -1,44 +1,24 @@
 import React, { FunctionComponent } from 'react';
 import { Global, css, ThemeProvider } from '@emotion/react';
-import '@fontsource/jetbrains-mono/variable.css';
-import '@fontsource/jetbrains-mono/variable-italic.css';
-import facepaint from 'facepaint';
+
+import MonoLisaRegular from '../../static/fonts/MonoLisa-Regular.woff2';
+import MonoLisaRegularItalic from '../../static/fonts/MonoLisa-RegularItalic.woff2';
+import MonoLisaBold from '../../static/fonts/MonoLisa-Bold.woff2';
 
 import { Link } from '.';
-
-const breakpoints = [640];
-
-export const mq = facepaint(breakpoints.map((bp) => `@media (min-width: ${bp}px)`));
 
 const theme = {
   colors: {
     background: '#F7F7F7',
     text: '#191919',
-    blockquote: '#C7C5C2',
+    blockquote: '#555453',
   },
 };
 
 export const Layout: FunctionComponent = ({ children }) => (
   <ThemeProvider theme={theme}>
     <div css={styles.wrapper}>
-      <Global
-        styles={{
-          '*': {
-            boxSizing: 'border-box',
-          },
-          html: mq({ fontSize: ['88%', '100%'], lineHeight: '1.5' }),
-          body: {
-            fontFamily: 'iA Writer Quattro S, JetBrains MonoVariable, monospace',
-            fontVariationSettings: '"wght" 400',
-            margin: 0,
-            backgroundColor: theme.colors.background,
-            color: theme.colors.text,
-          },
-          img: {
-            maxWidth: '100%',
-          },
-        }}
-      />
+      <Global styles={styles.global} />
       <nav css={styles.nav}>
         <ul>
           <li>
@@ -56,6 +36,53 @@ export const Layout: FunctionComponent = ({ children }) => (
 );
 
 const styles = {
+  global: css`
+    * {
+      box-sizing: border-box;
+    }
+    html {
+      line-height: 1.5;
+      font-size: 88%;
+      @media (min-width: 640px) {
+        font-size: 100%;
+      }
+    }
+    @font-face {
+      font-family: MonoLisa;
+      font-style: normal;
+      font-weight: 400;
+      font-display: optional;
+      src: url('${MonoLisaRegular}') format('woff2');
+    }
+    @font-face {
+      font-family: MonoLisa;
+      font-style: italic;
+      font-weight: 400;
+      font-display: optional;
+      src: url('${MonoLisaRegularItalic}') format('woff2');
+    }
+    @font-face {
+      font-family: MonoLisa;
+      font-style: normal;
+      font-weight: 600;
+      font-display: optional;
+      src: url('${MonoLisaBold}') format('woff2');
+    }
+    body {
+      font-family: MonoLisa, monospace;
+      font-weight: 400;
+      margin: 0;
+      background-color: ${theme.colors.background};
+      color: ${theme.colors.text};
+    }
+    img {
+      max-width: 100%;
+    }
+    code, pre {
+      font-family: MonoLisa;
+      font-size: 0.875rem;
+    }
+  `,
   wrapper: css({
     minHeight: '100vh',
     padding: '2rem 0',
@@ -76,7 +103,7 @@ const styles = {
       listStyle: 'none',
       display: 'flex',
       gap: '1rem',
-      fontVariationSettings: '"wght" 600',
+      fontWeight: 600,
     },
   }),
   footer: css({

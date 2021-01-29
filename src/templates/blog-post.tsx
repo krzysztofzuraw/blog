@@ -10,7 +10,7 @@ const BlogPostPage: React.FunctionComponent<any> = ({ data: { markdownRemark } }
       <SEO title={markdownRemark.frontmatter.title} />
       <article css={styles.article}>
         <h1>{markdownRemark.frontmatter.title}</h1>
-        <time>Published on {markdownRemark.frontmatter.date}</time>
+        <time css={styles.time}>Published on {markdownRemark.frontmatter.date}</time>
         <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
       </article>
     </Layout>
@@ -22,7 +22,7 @@ const styles = {
     css({
       'h1, h2, h3, h4, h5, h6, h7': {
         fontSize: '1.375rem',
-        fontVariationSettings: '"wght" 600',
+        fontWeight: 600,
         marginBottom: '2rem',
       },
       h1: { '&:before': { content: '"# "' } },
@@ -37,6 +37,7 @@ const styles = {
         color: theme.colors.blockquote,
       },
     }),
+  time: css({ fontStyle: 'italic' }),
 };
 
 export default BlogPostPage;

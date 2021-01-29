@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { GatsbyLinkProps, Link as GatsbyLink } from 'gatsby';
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 
 export const Link: FunctionComponent<Omit<GatsbyLinkProps<{}>, 'ref'>> = ({
   to,

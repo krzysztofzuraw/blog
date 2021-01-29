@@ -5,7 +5,7 @@ const IndexPage: FunctionComponent = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h1 css={{ fontSize: '1.375rem', fontVariationSettings: '"wght" 600' }}>
+      <h1 css={{ fontSize: '1.375rem', fontWeight: 600 }}>
         Hello{' '}
         <span role="img" aria-label="wave">
           👋🏻
