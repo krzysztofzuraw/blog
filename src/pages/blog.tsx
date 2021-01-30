@@ -10,14 +10,12 @@ const BlogListPage: FunctionComponent<any> = ({
   return (
     <Layout>
       <SEO title="Blog index" />
-      <h1 className="blog-index-header">Blog index</h1>
+      <h1>Blog index</h1>
       <ul className="blog-index-list">
         {edges.map(({ node }) => (
           <li key={node.id}>
             {node.frontmatter.date} -{' '}
-            <Link to={node.frontmatter.slug} className="blog-index-link">
-              {node.frontmatter.title}
-            </Link>
+            <Link to={node.frontmatter.slug}>{node.frontmatter.title}</Link>
           </li>
         ))}
       </ul>

@@ -3,8 +3,8 @@ import React, { FunctionComponent } from 'react';
 import { Link } from '.';
 
 export const Layout: FunctionComponent = ({ children }) => (
-  <div className="wrapper">
-    <nav className="nav">
+  <main>
+    <nav>
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -14,7 +14,7 @@ export const Layout: FunctionComponent = ({ children }) => (
         </li>
       </ul>
     </nav>
-    <main>{children}</main>
-    <footer className="footer">Footer</footer>
-  </div>
+    <section>{children}</section>
+    <footer>Footer</footer>
+  </main>
 );

@@ -7,7 +7,7 @@ const BlogPostPage: React.FunctionComponent<any> = ({ data: { markdownRemark } }
   return (
     <Layout>
       <SEO title={markdownRemark.frontmatter.title} />
-      <article className="article">
+      <article>
         <h1>{markdownRemark.frontmatter.title}</h1>
         <time>Published on {markdownRemark.frontmatter.date}</time>
         <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
