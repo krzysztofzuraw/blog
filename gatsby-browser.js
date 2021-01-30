@@ -1,1 +1,2 @@
-require('prism-themes/themes/prism-dracula.css');
+require('./src/styles/index.css');
+require('./src/styles/prism-vs-code.css');

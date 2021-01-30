@@ -1,7 +1,6 @@
-import { css } from '@emotion/react';
 import { graphql } from 'gatsby';
 import React, { FunctionComponent } from 'react';
-import { Layout, Link, SEO, mq } from '../components';
+import { Layout, Link, SEO } from '../components';
 
 const BlogListPage: FunctionComponent<any> = ({
   data: {
@@ -11,12 +10,12 @@ const BlogListPage: FunctionComponent<any> = ({
   return (
     <Layout>
       <SEO title="Blog index" />
-      <h1 css={styles.header}>Blog index</h1>
-      <ul css={styles.list}>
+      <h1 className="blog-index-header">Blog index</h1>
+      <ul className="blog-index-list">
         {edges.map(({ node }) => (
           <li key={node.id}>
             {node.frontmatter.date} -{' '}
-            <Link to={node.frontmatter.slug} css={styles.link}>
+            <Link to={node.frontmatter.slug} className="blog-index-link">
               {node.frontmatter.title}
             </Link>
           </li>
@@ -24,18 +23,6 @@ const BlogListPage: FunctionComponent<any> = ({
       </ul>
     </Layout>
   );
-};
-
-const styles = {
-  header: css({ fontSize: '1.375rem', fontWeight: 600, marginBottom: '2rem' }),
-  list: css({
-    listStyle: 'none',
-    padding: 0,
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1rem',
-  }),
-  link: css({ textDecoration: 'none', ':hover': { textDecoration: 'underline' } }),
 };
 
 export default BlogListPage;

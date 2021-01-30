@@ -1,27 +1,22 @@
-import { css } from '@emotion/react';
 import { GatsbyLinkProps, Link as GatsbyLink } from 'gatsby';
-import { FunctionComponent } from 'react';
+import React, { FunctionComponent } from 'react';
 
 export const Link: FunctionComponent<Omit<GatsbyLinkProps<{}>, 'ref'>> = ({
   to,
   children,
   ...restProps
 }) => {
-  const internal = /^\/(?!\/)/.test(to);
-  if (internal) {
+  const isInternal = /^\/(?!\/)/.test(to);
+  if (isInternal) {
     return (
-      <GatsbyLink to={to} {...restProps} css={styles.link}>
+      <GatsbyLink to={to} {...restProps}>
         {children}
       </GatsbyLink>
     );
   }
   return (
-    <a href={to} {...restProps} css={styles.link}>
+    <a href={to} {...restProps}>
       {children}
     </a>
   );
-};
-
-const styles = {
-  link: css({ color: 'inherit' }),
 };

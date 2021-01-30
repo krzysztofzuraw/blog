@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { Helmet } from 'react-helmet';
+import React, { Helmet } from 'react-helmet';
 
 export const SEO: FunctionComponent<{ title: string }> = ({ title }) => (
   <Helmet titleTemplate="%s | Krzysztof Żuraw">
