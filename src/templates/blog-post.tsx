@@ -3,7 +3,13 @@ import * as React from 'react';
 
 import { Layout, SEO } from '../components';
 
-const BlogPostPage: React.FunctionComponent<any> = ({ data: { markdownRemark } }) => {
+type Props = {
+  data: {
+    markdownRemark: { frontmatter: { title: string; date: string }; html: string };
+  };
+};
+
+const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark } }) => {
   return (
     <Layout>
       <SEO title={markdownRemark.frontmatter.title} />

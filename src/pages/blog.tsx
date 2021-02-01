@@ -1,8 +1,22 @@
 import { graphql } from 'gatsby';
 import React, { FunctionComponent } from 'react';
+
 import { Layout, Link, SEO } from '../components';
 
-const BlogListPage: FunctionComponent<any> = ({
+type Props = {
+  data: {
+    allMarkdownRemark: {
+      edges: Array<{
+        node: {
+          frontmatter: { slug: string; title: string; date: string; tags: string[] };
+          id: string;
+        };
+      }>;
+    };
+  };
+};
+
+const BlogListPage: FunctionComponent<Props> = ({
   data: {
     allMarkdownRemark: { edges },
   },
