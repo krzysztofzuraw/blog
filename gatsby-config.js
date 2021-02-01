@@ -58,7 +58,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-plugin-feed',
       options: {
