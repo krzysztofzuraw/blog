@@ -15,6 +15,11 @@ export const Layout: FunctionComponent = ({ children }) => (
       </ul>
     </nav>
     <section>{children}</section>
-    <footer>Footer</footer>
+    <footer>
+      <span>
+        © 2016-{new Date().getFullYear()} Krzysztof Żuraw. Build with these{' '}
+        <Link to="/credits">tools</Link>.
+      </span>
+    </footer>
   </main>
 );

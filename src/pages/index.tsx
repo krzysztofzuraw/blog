@@ -40,7 +40,7 @@ const IndexPage: FunctionComponent = () => {
           Read what I'm doing <Link to="/now">now</Link>
         </li>
         <li>
-          Subscribe to <Link to="/rss">RSS</Link> feed of my blog
+          Subscribe to <Link to="/feeds/all.rss.xml">RSS</Link> feed of my blog
         </li>
       </ul>
     </Layout>

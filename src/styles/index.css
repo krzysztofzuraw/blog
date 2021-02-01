@@ -84,6 +84,22 @@ h6 {
   font-weight: 600;
 }
 
+button {
+  --color-background: hsl(0, 0%, 100%);
+  --color-text: hsl(0, 0%, 10%);
+  font-family: inherit;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-text);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  --color-text: hsl(0, 0%, 100%);
+  --color-background: hsl(0, 0%, 10%);
+}
+
 /* Components */
 main {
   min-height: 100vh;
