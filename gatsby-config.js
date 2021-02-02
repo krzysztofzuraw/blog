@@ -4,9 +4,9 @@ module.exports = {
   siteMetadata: {
     siteName: 'Krzysztof Żuraw',
     author: 'Krzysztof Żuraw',
-    description: 'Frontend | Design | Coffee',
+    description: 'TypeScript | React | Coffee',
     siteUrl: 'https://krzysztofzuraw.com',
-    keywords: 'JavaScript, TypeScript, RxJS, React, Redux',
+    keywords: 'TypeScript, React, Redux, RxJS, JavaScript',
     social: {
       github: 'https://github.com/krzysztofzuraw',
       email: 'mailto:blog@kzuraw.com',
@@ -58,7 +58,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-plugin-feed',
       options: {

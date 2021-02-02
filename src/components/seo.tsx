@@ -1,12 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { Helmet } from 'react-helmet';
 
-type Props = {
-  title: string;
-};
-
-export const SEO: FunctionComponent<Props> = ({ title }) => (
-  <Helmet titleTemplate="%s | Krzysztof Żuraw">
+export const SEO: FunctionComponent<{ title: string }> = ({ title }) => (
+  <Helmet>
     <html lang="en" />
     <title>{title}</title>
     <link

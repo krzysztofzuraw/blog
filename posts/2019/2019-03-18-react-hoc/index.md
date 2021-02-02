@@ -3,7 +3,6 @@ title: On React Render props vs HOC
 date: '2019-03-18T09:12:03.284Z'
 slug: '/blog/2019/react-props-hoc'
 tags:
-  - render props
   - react
   - hoc
 ---

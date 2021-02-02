@@ -1,8 +1,7 @@
-import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
 import React, { FunctionComponent } from 'react';
-import { Theme } from 'src/theme';
-import { Layout, Link, SEO, Stack } from '../components';
+
+import { Layout, Link, SEO } from '../components';
 
 type Props = {
   data: {
@@ -23,28 +22,17 @@ const BlogListPage: FunctionComponent<Props> = ({
   },
 }) => {
   return (
-    <Layout location="blog">
-      <SEO title="Blog list" />
-      <Stack>
-        <h1>Blog posts</h1>
-        <Stack as="ul" space="xxlarge">
-          {edges.map(({ node }) => (
-            <Stack as="li" key={node.id}>
-              <h3>
-                <Link to={node.frontmatter.slug}>{node.frontmatter.title}</Link>
-              </h3>
-              <div css={styles.itemInfo}>
-                <time>{node.frontmatter.date}</time>
-                <ul css={styles.tagsList}>
-                  {node.frontmatter.tags.map((tag) => (
-                    <li key={tag}>#{tag}</li>
-                  ))}
-                </ul>
-              </div>
-            </Stack>
-          ))}
-        </Stack>
-      </Stack>
+    <Layout>
+      <SEO title="Blog index" />
+      <h1>Blog index</h1>
+      <ul className="blog-index-list">
+        {edges.map(({ node }) => (
+          <li key={node.id}>
+            {node.frontmatter.date} -{' '}
+            <Link to={node.frontmatter.slug}>{node.frontmatter.title}</Link>
+          </li>
+        ))}
+      </ul>
     </Layout>
   );
 };
@@ -58,32 +46,11 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY-MM-DD")
             slug
-            tags
           }
         }
       }
     }
   }
 `;
-
-const styles = {
-  itemInfo: (theme: Theme) =>
-    css({
-      display: 'flex',
-      flexWrap: 'wrap',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      gap: theme.spacing.base,
-    }),
-  tagsList: (theme: Theme) =>
-    css({
-      fontStyle: 'italic',
-      display: 'flex',
-      flexWrap: 'wrap',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      gap: theme.spacing.small,
-    }),
-};
