@@ -1,4 +1,4 @@
-# Blog
+# Homepage
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
@@ -26,14 +26,14 @@ Run development server:
 npm run dev
 ```
 
-To generate graphQL schema make sure that your dev server is running and use:
-
-```shell
-npm run gen
-```
-
 To check types use:
 
 ```shell
 npm run tsc
+```
+
+To lint files use:
+
+```shell
+npm run lint
 ```
