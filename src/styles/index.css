@@ -6,6 +6,15 @@
   --color-background-pre: hsl(0, 0%, 93%);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: hsla(0, 0%, 10%, 1);
+    --color-text: hsla(0, 0%, 75%, 1);
+    --color-blockquote: hsla(212, 15%, 66%, 1);
+    --color-background-pre: hsla(0, 0%, 15%, 1);
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -96,8 +105,14 @@ button {
 }
 
 button:hover {
-  --color-text: hsl(0, 0%, 100%);
-  --color-background: hsl(0, 0%, 10%);
+  filter: invert(100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  button {
+    --color-text: hsl(0, 0%, 100%);
+    --color-background: hsl(0, 0%, 10%);
+  }
 }
 
 /* Components */
