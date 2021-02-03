@@ -139,8 +139,13 @@ nav > ul {
   margin: 0px;
   list-style: none;
   display: flex;
-  gap: 1rem;
+  /* wait till safari implements flex gap - so like 10 years */
+  /* gap: 1rem; */
   font-weight: 600;
+}
+
+nav > ul > * + * {
+  margin-left: 1rem;
 }
 
 footer {
@@ -153,7 +158,12 @@ footer {
   padding: 0px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  /* wait till safari implements flex gap - so like 10 years */
+  /* gap: 1rem; */
+}
+
+.blog-index-list > * + * {
+  margin-top: 1rem;
 }
 
 .blog-index-list a {
