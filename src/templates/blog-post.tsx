@@ -18,6 +18,22 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark }
         <time>Published on {markdownRemark.frontmatter.date}</time>
         <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
       </article>
+      <form className="newsletter">
+        <h3 className="newsletter-header">
+          Want newsletter? Please subscribe below to join <code className="language-text">NaN</code>{' '}
+          developers!
+        </h3>
+        <div className="newsletter-content">
+          <div className="input-wrapper">
+            <label htmlFor="email">Enter your email</label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <input type="submit" className="submit-button" />
+        </div>
+        <p className="credits">
+          Powered by <a href="">button down</a>
+        </p>
+      </form>
     </Layout>
   );
 };

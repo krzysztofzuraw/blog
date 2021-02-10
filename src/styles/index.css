@@ -197,3 +197,80 @@ article h5::before {
 article h6::before {
   content: '###### ';
 }
+
+.newsletter {
+  --shadow: white;
+  --form-background: black;
+  --color-text: #fafafa;
+  border: 1px solid var(--shadow);
+  padding: 2rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr auto;
+  gap: 1rem;
+  background-color: var(--form-background);
+  box-shadow: 0 0 #0000, 0 0 #0000, 2px 2px var(--shadow);
+  font-family: JetBrains Mono;
+  color: var(--color-text);
+}
+
+.newsletter-header {
+  justify-self: center;
+  align-items: center;
+  margin: 0;
+  text-align: center;
+}
+
+.input-wrapper {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.newsletter input {
+  --shadow: white;
+  --form-background: black;
+  --color-text: #fafafa;
+  font-family: inherit;
+  padding: 0.5rem;
+  box-shadow: 0 0 #0000, 0 0 #0000, 2px 2px var(--shadow);
+  border: 1px solid var(--shadow);
+  background-color: var(--form-background);
+  color: var(--color-text);
+}
+
+.newsletter-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+}
+
+.submit-button {
+  justify-self: end;
+  align-self: end;
+  cursor: pointer;
+}
+
+.credits {
+  justify-self: end;
+  align-self: end;
+}
+
+label {
+  font-size: 0.875rem;
+}
+
+.submit-btn:hover {
+  --accent-color: hsla(35, 80%, 26%, 1);
+  background-color: var(--accent-color);
+}
+
+input:focus {
+  --accent-color: hsla(35, 80%, 26%, 1);
+
+  outline: none;
+  background-color: var(--accent-color);
+}
+
+a:focus {
+  --accent-color: hsla(35, 80%, 26%, 1);
+  outline-color: var(--accent-color);
+}
