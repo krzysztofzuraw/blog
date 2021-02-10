@@ -18,20 +18,33 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark }
         <time>Published on {markdownRemark.frontmatter.date}</time>
         <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
       </article>
-      <form className="newsletter">
+      <hr />
+      <form
+        className="newsletter"
+        action="https://buttondown.email/api/emails/embed-subscribe/krzysztof_zuraw"
+        method="post"
+        target="popupwindow"
+        onSubmit={() => {
+          window.open('https://buttondown.email/krzysztof_zuraw', 'popupwindow');
+        }}
+      >
         <h3 className="newsletter-header">
-          Want newsletter? Please subscribe below to join <code className="language-text">NaN</code>{' '}
-          developers!
+          RSS is not your thing? Subscribe to monthly newsletter istead!
         </h3>
         <div className="newsletter-content">
           <div className="input-wrapper">
             <label htmlFor="email">Enter your email</label>
             <input type="email" id="email" name="email" />
           </div>
-          <input type="submit" className="submit-button" />
+          <input type="hidden" value="1" name="embed" />
+          <input type="submit" className="submit-button" value="Subscribe" />
         </div>
         <p className="credits">
-          Powered by <a href="">button down</a>
+          Powered by{' '}
+          <a href="https://buttondown.email" target="_blank" rel="noreferrer">
+            Buttondown
+          </a>
+          .
         </p>
       </form>
     </Layout>

@@ -1,22 +1,32 @@
 :root {
   --tablet-breakpoint: 639px;
+  --accent-color: hsl(212, 96%, 78%);
   --color-background: hsl(0, 0%, 97%);
   --color-text: hsl(0, 0%, 10%);
   --color-blockquote: hsl(212, 8%, 45%);
   --color-background-pre: hsl(0, 0%, 93%);
+  --color-input-background: hsl(0, 0%, 100%);
+  --color-shadow: hsl(0, 0%, 0%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --accent-color: hsla(35, 80%, 26%, 1);
     --color-background: hsla(0, 0%, 10%, 1);
     --color-text: hsla(0, 0%, 75%, 1);
     --color-blockquote: hsla(212, 15%, 66%, 1);
     --color-background-pre: hsla(0, 0%, 15%, 1);
+    --color-input-background: hsl(0, 0%, 0%);
+    --color-shadow: hsl(0, 0%, 100%);
   }
 }
 
 * {
   box-sizing: border-box;
+}
+
+*:focus {
+  outline-color: var(--accent-color);
 }
 
 @font-face {
@@ -52,9 +62,12 @@ html {
   font-size: 100%;
 }
 
-@media (max-width: var(--tablet-breakpoint)) {
+@media (max-width: var(--tablet-breakpoint, 639px)) {
   html {
     font-size: 88%;
+  }
+  body {
+    color: red;
   }
 }
 
@@ -93,26 +106,46 @@ h6 {
   font-weight: 600;
 }
 
+input,
 button {
-  --color-background: hsl(0, 0%, 100%);
-  --color-text: hsl(0, 0%, 10%);
   font-family: inherit;
-  color: var(--color-text);
-  background-color: var(--color-background);
-  border: 1px solid var(--color-text);
   padding: 0.5rem;
+  box-shadow: 0 0 #0000, 0 0 #0000, 2px 2px var(--color-shadow);
+  border: 1px solid var(--color-shadow);
+  background-color: var(--color-input-background);
+  color: var(--color-text);
+}
+
+input[type='submit']:hover {
+  background-color: var(--accent-color);
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+  background-color: var(--accent-color);
+}
+
+button {
   cursor: pointer;
 }
 
 button:hover {
-  filter: invert(100%);
+  background-color: var(--accent-color);
 }
 
-@media (prefers-color-scheme: dark) {
-  button {
-    --color-text: hsl(0, 0%, 100%);
-    --color-background: hsl(0, 0%, 10%);
-  }
+button:focus {
+  outline: none;
+  background-color: var(--accent-color);
+}
+
+label {
+  font-size: 0.875rem;
+}
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* Components */
@@ -199,18 +232,22 @@ article h6::before {
 }
 
 .newsletter {
-  --shadow: white;
-  --form-background: black;
-  --color-text: #fafafa;
-  border: 1px solid var(--shadow);
+  border: 1px solid var(--color-shadow);
   padding: 2rem;
   display: grid;
   grid-template-rows: 1fr 1fr auto;
   gap: 1rem;
-  background-color: var(--form-background);
-  box-shadow: 0 0 #0000, 0 0 #0000, 2px 2px var(--shadow);
+  background-color: var(--color-input-background);
+  box-shadow: 0 0 #0000, 0 0 #0000, 2px 2px var(--color-shadow);
   font-family: JetBrains Mono;
   color: var(--color-text);
+}
+
+@media (max-width: var(--tablet-breakpoint)) {
+  .newsletter {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .newsletter-header {
@@ -225,18 +262,6 @@ article h6::before {
   gap: 0.5rem;
 }
 
-.newsletter input {
-  --shadow: white;
-  --form-background: black;
-  --color-text: #fafafa;
-  font-family: inherit;
-  padding: 0.5rem;
-  box-shadow: 0 0 #0000, 0 0 #0000, 2px 2px var(--shadow);
-  border: 1px solid var(--shadow);
-  background-color: var(--form-background);
-  color: var(--color-text);
-}
-
 .newsletter-content {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -246,31 +271,9 @@ article h6::before {
 .submit-button {
   justify-self: end;
   align-self: end;
-  cursor: pointer;
 }
 
 .credits {
   justify-self: end;
   align-self: end;
-}
-
-label {
-  font-size: 0.875rem;
-}
-
-.submit-btn:hover {
-  --accent-color: hsla(35, 80%, 26%, 1);
-  background-color: var(--accent-color);
-}
-
-input:focus {
-  --accent-color: hsla(35, 80%, 26%, 1);
-
-  outline: none;
-  background-color: var(--accent-color);
-}
-
-a:focus {
-  --accent-color: hsla(35, 80%, 26%, 1);
-  outline-color: var(--accent-color);
 }
