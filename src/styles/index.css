@@ -62,15 +62,6 @@ html {
   font-size: 100%;
 }
 
-@media (max-width: var(--tablet-breakpoint, 639px)) {
-  html {
-    font-size: 88%;
-  }
-  body {
-    color: red;
-  }
-}
-
 body {
   font-family: 'Quattro', sans-serif;
   font-weight: 400;
@@ -101,9 +92,9 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  font-size: 1.375rem;
-  font-weight: 600;
+h6,
+p {
+  font-size: clamp(1rem, calc(1rem + 3vw), 1.3rem);
 }
 
 input,
@@ -243,13 +234,6 @@ article h6::before {
   color: var(--color-text);
 }
 
-@media (max-width: var(--tablet-breakpoint)) {
-  .newsletter {
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
 .newsletter-header {
   justify-self: center;
   align-items: center;
@@ -260,17 +244,19 @@ article h6::before {
 .input-wrapper {
   display: grid;
   gap: 0.5rem;
+  flex: 1;
 }
 
 .newsletter-content {
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.5rem;
 }
 
 .submit-button {
-  justify-self: end;
-  align-self: end;
+  align-self: flex-end;
 }
 
 .credits {
