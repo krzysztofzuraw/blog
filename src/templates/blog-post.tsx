@@ -29,7 +29,7 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark }
         }}
       >
         <h3 className="newsletter-header">
-          RSS is not your thing? Subscribe to monthly newsletter istead!
+          RSS is not your thing? Subscribe to monthly newsletter instead!
         </h3>
         <div className="newsletter-content">
           <div className="input-wrapper">
