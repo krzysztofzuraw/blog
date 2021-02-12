@@ -28,16 +28,18 @@ const BlogPostPage: React.FunctionComponent<Props> = ({ data: { markdownRemark }
           window.open('https://buttondown.email/krzysztof_zuraw', 'popupwindow');
         }}
       >
-        <h3 className="newsletter-header">
+        <header className="newsletter-header">
           RSS is not your thing? Subscribe to monthly newsletter instead!
-        </h3>
+        </header>
         <div className="newsletter-content">
           <div className="input-wrapper">
             <label htmlFor="email">Enter your email</label>
             <input type="email" id="email" name="email" />
           </div>
           <input type="hidden" value="1" name="embed" />
-          <input type="submit" className="submit-button" value="Subscribe" />
+          <button type="submit" className="submit-button">
+            Subscribe
+          </button>
         </div>
         <p className="credits">
           Powered by{' '}
