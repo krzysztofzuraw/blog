@@ -167,6 +167,7 @@ footer {
   padding: 0px;
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
   /* wait till safari implements flex gap - so like 10 years */
   /* gap: 1rem; */
 }
@@ -248,4 +249,8 @@ article h6::before {
 .credits {
   justify-self: end;
   align-self: end;
+}
+
+.blog-search {
+  width: 100%;
 }
