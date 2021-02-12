@@ -68,6 +68,12 @@ a {
   color: inherit;
 }
 
+a[href^="http://"]:not([href*="krzysztofzuraw.com"]):after,
+a[href^="https://"]:not([href*="krzysztofzuraw.com"]):after
+{
+  content: ' ↗';
+}
+
 blockquote {
   font-style: italic;
   color: var(--color-blockquote);

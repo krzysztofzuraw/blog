@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { Helmet } from 'react-helmet';
 
 export const SEO: FunctionComponent<{ title: string }> = ({ title }) => (
-  <Helmet>
+  <Helmet titleTemplate="%s | Krzysztof Żuraw">
     <html lang="en" />
     <title>{title}</title>
     <link
