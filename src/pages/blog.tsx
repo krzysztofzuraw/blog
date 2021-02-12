@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React, { FunctionComponent } from 'react';
+import React, { ChangeEvent, FunctionComponent, useEffect, useRef, useState } from 'react';
 
 import { Layout, Link, SEO } from '../components';
 
@@ -21,12 +21,53 @@ const BlogListPage: FunctionComponent<Props> = ({
     allMarkdownRemark: { edges },
   },
 }) => {
+  const ref = useRef<HTMLInputElement>(null);
+  const focusInput = (e: KeyboardEvent) => {
+    if (e.code === 'Slash') {
+      ref.current?.focus();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('keyup', focusInput);
+    return () => document.removeEventListener('keyup', focusInput);
+  }, []);
+
+  const [state, setState] = useState<{
+    filteredPosts: Props['data']['allMarkdownRemark']['edges'];
+    query: string;
+  }>({ filteredPosts: [], query: '' });
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const query = event.target.value;
+    const posts = edges;
+
+    const filteredPosts = posts.filter((post) => {
+      const { title } = post.node.frontmatter;
+      return title.toLowerCase().includes(query.toLowerCase());
+    });
+
+    setState({ filteredPosts, query });
+  };
+  const hasSearchResults = state.filteredPosts && state.query !== '';
+  const posts = hasSearchResults ? state.filteredPosts : edges;
+
   return (
     <Layout>
       <SEO title="Blog index" />
       <h1>Blog index</h1>
+      <label htmlFor="blogPostSearch">Search by post title</label>
+      <input
+        id="blogPostSearch"
+        name="blogPostSearch"
+        type="search"
+        placeholder="Type '/' to focus"
+        onChange={handleInputChange}
+        className="blog-search"
+        ref={ref}
+      />
       <ul className="blog-index-list">
-        {edges.map(({ node }) => (
+        {posts.map(({ node }) => (
           <li key={node.id}>
             {node.frontmatter.date} -{' '}
             <Link to={node.frontmatter.slug}>{node.frontmatter.title}</Link>
