@@ -1,32 +1,21 @@
 :root {
-  --tablet-breakpoint: 639px;
-  --accent-color: hsl(212, 96%, 78%);
   --color-background: hsl(0, 0%, 97%);
   --color-text: hsl(0, 0%, 10%);
   --color-blockquote: hsl(212, 8%, 45%);
   --color-background-pre: hsl(0, 0%, 93%);
-  --color-input-background: hsl(0, 0%, 100%);
-  --color-shadow: hsl(0, 0%, 0%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --accent-color: hsla(35, 80%, 26%, 1);
     --color-background: hsla(0, 0%, 10%, 1);
     --color-text: hsla(0, 0%, 75%, 1);
     --color-blockquote: hsla(212, 15%, 66%, 1);
     --color-background-pre: hsla(0, 0%, 15%, 1);
-    --color-input-background: hsl(0, 0%, 0%);
-    --color-shadow: hsl(0, 0%, 100%);
   }
 }
 
 * {
   box-sizing: border-box;
-}
-
-*:focus {
-  outline-color: var(--accent-color);
 }
 
 @font-face {
@@ -78,6 +67,12 @@ a {
   color: inherit;
 }
 
+a[href^="http://"]:not([href*="krzysztofzuraw.com"]):after,
+a[href^="https://"]:not([href*="krzysztofzuraw.com"]):after
+{
+  content: ' ↗';
+}
+
 blockquote {
   font-style: italic;
   color: var(--color-blockquote);
@@ -92,43 +87,32 @@ h2,
 h3,
 h4,
 h5,
-h6,
-li,
-p {
-  font-size: clamp(1rem, calc(1rem + 3vw), 1.3rem);
+h6 {
+  font-size: 1.375rem;
+  font-weight: 600;
 }
 
 input,
 button {
   font-family: inherit;
-  padding: 0.5rem;
-  box-shadow: 0 0 #0000, 0 0 #0000, 2px 2px var(--color-shadow);
-  border: 1px solid var(--color-shadow);
-  background-color: var(--color-input-background);
   color: var(--color-text);
-}
-
-input[type='submit']:hover {
-  background-color: var(--accent-color);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-text);
+  padding: 0.5rem;
   cursor: pointer;
 }
 
-input:focus {
-  outline: none;
-  background-color: var(--accent-color);
-}
-
-button {
-  cursor: pointer;
-}
-
+input:hover,
 button:hover {
-  background-color: var(--accent-color);
+  filter: invert(100%);
 }
 
-button:focus {
-  outline: none;
-  background-color: var(--accent-color);
+@media (prefers-color-scheme: dark) {
+  input,
+  button {
+    --color-text: hsl(0, 0%, 100%);
+    --color-background: hsl(0, 0%, 10%);
+  }
 }
 
 label {
@@ -224,15 +208,12 @@ article h6::before {
 }
 
 .newsletter {
-  border: 1px solid var(--color-shadow);
+  border: 1px solid var(--color-text);
   padding: 2rem;
   display: grid;
   grid-template-rows: 1fr 1fr auto;
   gap: 1rem;
-  background-color: var(--color-input-background);
-  box-shadow: 0 0 #0000, 0 0 #0000, 2px 2px var(--color-shadow);
   font-family: JetBrains Mono;
-  color: var(--color-text);
 }
 
 .newsletter-header {
@@ -250,10 +231,10 @@ article h6::before {
 
 .newsletter-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-wrap: wrap;
   align-items: center;
-  /* gap: 0.5rem; */
+  gap: 0.5rem;
 }
 
 .newsletter-content > * + * {
