@@ -1,5 +1,4 @@
 :root {
-  --tablet-breakpoint: 639px;
   --color-background: hsl(0, 0%, 97%);
   --color-text: hsl(0, 0%, 10%);
   --color-blockquote: hsl(212, 8%, 45%);
@@ -95,8 +94,6 @@ h6 {
 
 input,
 button {
-  --color-background: hsl(0, 0%, 100%);
-  --color-text: hsl(0, 0%, 10%);
   font-family: inherit;
   color: var(--color-text);
   background-color: var(--color-background);
@@ -211,7 +208,7 @@ article h6::before {
 }
 
 .newsletter {
-  border: 1px solid white;
+  border: 1px solid var(--color-text);
   padding: 2rem;
   display: grid;
   grid-template-rows: 1fr 1fr auto;
