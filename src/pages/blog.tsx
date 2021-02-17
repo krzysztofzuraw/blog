@@ -55,8 +55,10 @@ const BlogListPage: FunctionComponent<Props> = ({
   return (
     <Layout>
       <SEO title="Blog index" />
-      <h1>Blog index</h1>
-      <label htmlFor="blogPostSearch">Search by post title</label>
+      <span className="prose lg:prose-xl">
+        <h1 className="mb-header lg:mb-header">Blog index</h1>
+      </span>
+      {/* <label htmlFor="blogPostSearch">Search by post title</label>
       <input
         id="blogPostSearch"
         name="blogPostSearch"
@@ -65,12 +67,14 @@ const BlogListPage: FunctionComponent<Props> = ({
         onChange={handleInputChange}
         className="blog-search"
         ref={ref}
-      />
-      <ul className="blog-index-list">
+      /> */}
+      <ul className="blog-index-list grid gap-4">
         {posts.map(({ node }) => (
-          <li key={node.id}>
-            {node.frontmatter.date} -{' '}
-            <Link to={node.frontmatter.slug}>{node.frontmatter.title}</Link>
+          <li key={node.id} className="grid grid-cols-blog-index tabular-nums slashed-zero">
+            <span>
+              <Link to={node.frontmatter.slug}>{node.frontmatter.title}</Link>
+            </span>
+            <time className="italic hidden sm:block">{node.frontmatter.date}</time>
           </li>
         ))}
       </ul>

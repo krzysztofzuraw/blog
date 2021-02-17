@@ -5,14 +5,14 @@ const IndexPage: FunctionComponent = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div className="prose lg:prose-xl max-w-full">
+      <div className="prose lg:prose-xl">
         <h1>Hello, I'm Krzysztof Żuraw</h1>
         <p>
           Welcome to my site{' '}
           <span role="img" aria-label="wave">
             👋🏻
           </span>{' '}
-          A few points about me:
+          . Quick introduction:
         </p>
         <ul>
           <li>self taught frontend developer with 5+ years of experience</li>
