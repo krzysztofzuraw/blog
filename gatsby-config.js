@@ -10,19 +10,14 @@ module.exports = {
     social: {
       github: 'https://github.com/krzysztofzuraw',
       email: 'mailto:blog@kzuraw.com',
-      keybase: 'https://keybase.io/krzysztofzuraw',
+      linkedIn: '',
+      twitter: '',
     },
   },
   plugins: [
     'gatsby-plugin-typescript',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-plugin-sitemap',
-      options: {
-        sitemapSize: 5000,
-      },
-    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
@@ -37,9 +32,6 @@ module.exports = {
         plugins: [
           {
             resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 590,
-            },
           },
           {
             resolve: `gatsby-remark-prismjs`,
@@ -52,12 +44,10 @@ module.exports = {
             },
           },
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
           'gatsby-remark-external-links',
         ],
       },
     },
-    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-feed',
       options: {
