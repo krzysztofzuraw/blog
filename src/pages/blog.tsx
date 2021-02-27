@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
 
-import { Layout, Link } from '../components';
+import { Layout, Link, SEO } from '../components';
 
 type Props = {
   data: {
@@ -23,6 +23,7 @@ const BlogIndex: FunctionComponent<Props> = ({
 }) => {
   return (
     <Layout>
+      <SEO title="Blog index" />
       <h1 className="prose-header">Blog index</h1>
       <ul className="slashed-zero tabular-nums grid gap-y-4">
         {edges.map(({ node }) => (

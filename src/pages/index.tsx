@@ -1,10 +1,11 @@
 import React, { FunctionComponent } from 'react';
 
-import { Layout, Link } from '../components';
+import { Layout, Link, SEO } from '../components';
 
 const Index: FunctionComponent = () => {
   return (
     <Layout>
+      <SEO title="Home" />
       <article className="prose slashed-zero tabular-nums">
         <h1>
           Hi, I`m Krzysztof Zuraw{' '}

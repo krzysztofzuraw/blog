@@ -25,24 +25,24 @@ export const Layout: FunctionComponent = ({ children }) => {
             <Link to="/now">Now</Link>
           </li>
           <li>
-            <Link to="/newsletter">Newsletter</Link>
+            <Link to="https://buttondown.email/krzysztof_zuraw">Newsletter</Link>
           </li>
           <li>
             <Link to="/credits">Credits</Link>
           </li>
           <li>
-            <Link to="/credits">RSS</Link>
+            <Link to="/feeds/all.rss.xml">RSS</Link>
           </li>
         </ul>
         <ul className="grid gap-2 underline">
           <li>
-            <Link to="">GitHub</Link>
+            <Link to="https://github.com/krzysztofzuraw">GitHub</Link>
           </li>
           <li>
-            <Link to="">Twitter</Link>
+            <Link to="https://twitter.com/krzysztof_zuraw">Twitter</Link>
           </li>
           <li>
-            <Link to="">LinkedIn</Link>
+            <Link to="https://pl.linkedin.com/in/krzysztofzuraw">LinkedIn</Link>
           </li>
         </ul>
         <p className="slashed-zero tabular-nums">

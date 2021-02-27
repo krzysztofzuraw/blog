@@ -1,15 +1,16 @@
 import React, { FunctionComponent } from 'react';
 
-import { Layout, Link } from '../components';
+import { Layout, Link, SEO } from '../components';
 
 const Uses: FunctionComponent = () => {
   return (
     <Layout>
+      <SEO title="Uses" />
       <article className="prose slashed-zero tabular-nums">
         <h1>What I'm using</h1>
         <p>
           Make sure to check out <Link to="https://uses.tech/">uses.tech</Link> for a list of
-          everyone’s /uses pages!
+          everyone’s <code className="language-text">/uses</code> pages!
         </p>
 
         <h2>Core applications</h2>
