@@ -32,6 +32,7 @@
     "gatsby-source-filesystem": "2.1.48",
     "gatsby-transformer-remark": "2.7.1",
     "gatsby-transformer-sharp": "2.5.14",
+    "lodash.groupby": "4.6.0",
     "prismjs": "1.21.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -39,6 +40,7 @@
     "sharp": "0.25.2"
   },
   "devDependencies": {
+    "@types/lodash.groupby": "4.6.6",
     "@types/react-helmet": "5.0.15",
     "@typescript-eslint/eslint-plugin": "4.14.2",
     "@typescript-eslint/parser": "4.14.2",

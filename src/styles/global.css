@@ -5,3 +5,12 @@
 body {
   @apply bg-gray-100 text-gray-800;
 }
+
+.prose-header {
+  color: #111827;
+  font-weight: 800;
+  font-size: 2.25em;
+  margin-top: 0;
+  margin-bottom: 0.8888889em;
+  line-height: 1.1111111;
+}
