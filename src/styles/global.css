@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url(/fonts/Inter-Bold.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  src: url(/fonts/Inter-ExtraBold.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400;
+  src: url(/fonts/Inter-Italic.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url(/fonts/Inter-Medium.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/Inter-Regular.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'MonoLisa';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/MonoLisa-Regular.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'MonoLisa';
+  font-style: normal;
+  font-weight: 600;
+  src: url(/fonts/MonoLisa-Bold.woff2) format('woff2');
+}
+
+body {
+  @apply bg-gray-100 text-gray-800;
+}
+
+.prose-header {
+  color: #111827;
+  font-weight: 800;
+  font-size: 2.25em;
+  margin-top: 0;
+  margin-bottom: 0.8888889em;
+  line-height: 1.1111111;
+}
