@@ -39,8 +39,23 @@ picture {
   display: block;
 }
 
-a {
+a:not([class]) {
   color: currentColor;
+}
+
+:focus {
+  outline: 2px dashed;
+  outline-offset: 0.25rem;
+}
+
+pre,
+code {
+  max-width: 100%;
+  overflow: auto;
+}
+
+time {
+  font-style: italic;
 }
 
 /* layout */
@@ -50,6 +65,7 @@ a {
   grid-template-columns: 1fr min(65ch, 100%) 1fr;
   grid-template-rows: auto 1fr auto;
   padding: var(--s1);
+  gap: var(--s1);
 }
 
 .layout > * {
@@ -90,3 +106,66 @@ a {
 }
 
 /* article */
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.3;
+}
+
+h1,
+h2 {
+  font-weight: 900;
+}
+
+h1 {
+  font-size: var(--s3);
+}
+
+h2 {
+  font-size: var(--s2);
+}
+
+h3 {
+  font-size: var(--s1);
+}
+
+blockquote {
+  padding-left: var(--s1);
+  border-left: 2px solid;
+  font-style: italic;
+}
+
+::selection {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.99);
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+h1 {
+  max-width: 15ch;
+}
+
+h2,
+h3 {
+  max-width: 25ch;
+}
+
+.post {
+  --flow-space: var(--s3);
+}
+
+.post time {
+  --flow-space: var(--s1);
+}
+
+.post :is(h2, h3) {
+  --flow-space: var(--s4);
+}
+
+.post :is(h2, h3) + * {
+  --flow-space: var(--s1);
+}
