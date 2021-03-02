@@ -25,13 +25,13 @@ const BlogIndex: FunctionComponent<Props> = ({
     <Layout>
       <SEO title="Blog index" />
       <h1>Blog index</h1>
-      <ul>
+      <ul className="blog-posts-list">
         {edges.map(({ node }) => (
           <li key={node.id}>
             <span>
               <Link to={node.frontmatter.slug}>{node.frontmatter.title}</Link>
             </span>
-            <span>{node.frontmatter.date}</span>
+            <time dateTime={node.frontmatter.date}>{node.frontmatter.date}</time>
           </li>
         ))}
       </ul>

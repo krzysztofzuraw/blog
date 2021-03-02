@@ -5,7 +5,7 @@ import { Link } from './link';
 export const Layout: FunctionComponent = ({ children }) => {
   return (
     <div className="layout">
-      <header>
+      <header role="banner">
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -14,9 +14,10 @@ export const Layout: FunctionComponent = ({ children }) => {
             <Link to="/blog">Blog</Link>
           </li>
         </ul>
+        <button>Dark theme: off</button>
       </header>
       <main>{children}</main>
-      <footer>
+      <footer role="contentinfo">
         <ul>
           <li>
             <Link to="/uses">Uses</Link>
