@@ -34,7 +34,7 @@ export const Layout: FunctionComponent = ({ children }) => {
             <Link to="/feeds/all.rss.xml">RSS</Link>
           </li>
         </ul>
-        <ul>
+        <ul className="social">
           <li>
             <Link to="https://github.com/krzysztofzuraw">GitHub</Link>
           </li>

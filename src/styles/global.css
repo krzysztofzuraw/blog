@@ -85,4 +85,8 @@ a {
   gap: var(--s-2);
 }
 
+.layout .social {
+  place-self: start;
+}
+
 /* article */
