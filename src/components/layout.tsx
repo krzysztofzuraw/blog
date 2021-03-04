@@ -1,12 +1,11 @@
 import React, { FunctionComponent } from 'react';
-
 import { Link } from './link';
 
 export const Layout: FunctionComponent = ({ children }) => {
   return (
-    <div className="h-screen max-w-3xl mx-auto p-4 grid grid-rows-layout gap-y-4">
-      <header className="flex justify-end">
-        <ul className="grid grid-flow-col gap-4 underline font-bold text-lg">
+    <div className="layout">
+      <header role="banner">
+        <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -16,8 +15,8 @@ export const Layout: FunctionComponent = ({ children }) => {
         </ul>
       </header>
       <main>{children}</main>
-      <footer className="grid grid-cols-3 border-t-2 py-2">
-        <ul className="grid gap-2 underline">
+      <footer role="contentinfo">
+        <ul>
           <li>
             <Link to="/uses">Uses</Link>
           </li>
@@ -34,7 +33,7 @@ export const Layout: FunctionComponent = ({ children }) => {
             <Link to="/feeds/all.rss.xml">RSS</Link>
           </li>
         </ul>
-        <ul className="grid gap-2 underline">
+        <ul className="social">
           <li>
             <Link to="https://github.com/krzysztofzuraw">GitHub</Link>
           </li>
@@ -45,11 +44,8 @@ export const Layout: FunctionComponent = ({ children }) => {
             <Link to="https://pl.linkedin.com/in/krzysztofzuraw">LinkedIn</Link>
           </li>
         </ul>
-        <p className="slashed-zero tabular-nums">
-          © 2016-{new Date().getFullYear()}{' '}
-          <Link to="mailto:blog@kzuraw.com" className="underline">
-            Krzysztof Żuraw
-          </Link>
+        <p>
+          © 2016-{new Date().getFullYear()} <Link to="mailto:blog@kzuraw.com">Krzysztof Żuraw</Link>
         </p>
       </footer>
     </div>

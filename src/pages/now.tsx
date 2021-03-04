@@ -5,7 +5,7 @@ const Now: FunctionComponent = () => {
   return (
     <Layout>
       <SEO title="Now" />
-      <article className="prose slashed-zero tabular-nums">
+      <article className="flow">
         <h1>What I'm doing now</h1>
         <p>
           Make sure to check out <Link to="https://nownownow.com/">nownownow.com</Link> for a list

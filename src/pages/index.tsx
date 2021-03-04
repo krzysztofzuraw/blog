@@ -6,9 +6,9 @@ const Index: FunctionComponent = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <article className="prose slashed-zero tabular-nums">
+      <article className="flow">
         <h1>
-          Hi, I`m Krzysztof Zuraw{' '}
+          Hi, I'm Krzysztof Żuraw{' '}
           <span role="img" aria-label="wave-emoji">
             👋🏻
           </span>
