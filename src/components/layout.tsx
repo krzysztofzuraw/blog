@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-
 import { Link } from './link';
 
 export const Layout: FunctionComponent = ({ children }) => {
@@ -14,7 +13,6 @@ export const Layout: FunctionComponent = ({ children }) => {
             <Link to="/blog">Blog</Link>
           </li>
         </ul>
-        <button>Dark theme: off</button>
       </header>
       <main>{children}</main>
       <footer role="contentinfo">
