@@ -63,7 +63,7 @@ body {
   color: var(--text-color);
   background-color: var(--bg-colog);
   scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-color) var(--primary-color);
+  scrollbar-color: var(--primary-color) var(--scrollbar-color);
 }
 
 img,
