@@ -13,6 +13,7 @@
   --s5: calc(var(--s4) * var(--ratio)); /* 7.584rem */
   --text-color: #333;
   --bg-colog: #fafafa;
+  --underline-color: #bfdbfe;
 }
 
 @font-face {
@@ -74,6 +75,17 @@ a:not([class]) {
 
 a:visited {
   color: currentColor;
+}
+
+a {
+  text-decoration-skip-ink: none;
+}
+
+a:hover {
+  text-decoration-color: var(--underline-color);
+
+  text-decoration-thickness: 0.5rem;
+  text-underline-offset: -0.5rem;
 }
 
 :focus {
