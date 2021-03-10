@@ -13,7 +13,8 @@
   --s5: calc(var(--s4) * var(--ratio)); /* 7.584rem */
   --text-color: #333;
   --bg-colog: #fafafa;
-  --underline-color: #bfdbfe;
+  --primary-color: #bfdbfe;
+  --scrollbar-color: #e5e7eb;
 }
 
 @font-face {
@@ -61,6 +62,8 @@ body {
   font-variant-numeric: tabular-nums slashed-zero;
   color: var(--text-color);
   background-color: var(--bg-colog);
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-color) var(--primary-color);
 }
 
 img,
@@ -82,8 +85,7 @@ a {
 }
 
 a:hover {
-  text-decoration-color: var(--underline-color);
-
+  text-decoration-color: var(--primary-color);
   text-decoration-thickness: 0.5rem;
   text-underline-offset: -0.5rem;
 }
@@ -91,6 +93,18 @@ a:hover {
 :focus {
   outline: 2px dashed;
   outline-offset: 0.25rem;
+}
+
+::-webkit-scrollbar {
+  width: 0.1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
 }
 
 pre,
