@@ -1,8 +1,8 @@
 {
-  "name": "kzuraw-personal-site",
+  "name": "homepage",
   "version": "2.0.0",
   "main": "n/a",
-  "description": "Krzysztof Żuraw personal site",
+  "description": "Krzysztof Żuraw homepage",
   "scripts": {
     "dev": "gatsby develop",
     "tsc": "tsc",

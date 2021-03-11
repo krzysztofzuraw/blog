@@ -32,6 +32,10 @@ module.exports = {
         plugins: [
           {
             resolve: 'gatsby-remark-images',
+            options: {
+              withWebp: true,
+              withAvif: true,
+            },
           },
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-external-links',
