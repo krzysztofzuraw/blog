@@ -1,18 +1,17 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
-
 import { Layout, SEO } from '../components';
 
 type Props = {
   data: {
-    markdownRemark: { frontmatter: { title: string; date: string }; html: string };
+    markdownRemark: { frontmatter: { title: string; date: string }; html: string; excerpt: string };
   };
 };
 
 const BlogPost: React.FunctionComponent<Props> = ({ data: { markdownRemark } }) => {
   return (
     <Layout>
-      <SEO title={markdownRemark.frontmatter.title} />
+      <SEO title={markdownRemark.frontmatter.title} description={markdownRemark.excerpt} />
       <article className="post">
         <h1>{markdownRemark.frontmatter.title}</h1>
         <time dateTime={markdownRemark.frontmatter.date} className="italic">

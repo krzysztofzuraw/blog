@@ -20,6 +20,18 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        createLinkInHead: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://krzysztofzuraw.com`,
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/posts`,
