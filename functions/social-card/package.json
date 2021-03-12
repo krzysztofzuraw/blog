@@ -1,0 +1,16 @@
+{
+  "name": "social-card",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Krzysztof Żuraw <info@kzuraw.com> (https://krzysztofzuraw.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "playwright-aws-lambda": "0.6.0",
+    "playwright-core": "1.9.2"
+  }
+}

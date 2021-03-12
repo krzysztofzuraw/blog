@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{window.title}</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap');
+
+      body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        height: calc(100vh - 114px);
+        display: grid;
+        padding: 57px;
+        /* height: 630px; */
+        gap: 67px;
+        /* width: 1200px; */
+        grid-template-areas:
+          'image header'
+          'handle handle';
+        background-image: repeating-radial-gradient(
+            circle at center center,
+            transparent 0px,
+            transparent 13px,
+            rgba(0, 0, 0, 0.03) 13px,
+            rgba(0, 0, 0, 0.03) 24px,
+            transparent 24px,
+            transparent 62px,
+            rgba(0, 0, 0, 0.03) 62px,
+            rgba(0, 0, 0, 0.03) 96px
+          ),
+          repeating-radial-gradient(
+            circle at center center,
+            rgb(255, 255, 255) 0px,
+            rgb(255, 255, 255) 14px,
+            rgb(255, 255, 255) 14px,
+            rgb(255, 255, 255) 18px,
+            rgb(255, 255, 255) 18px,
+            rgb(255, 255, 255) 28px,
+            rgb(255, 255, 255) 28px,
+            rgb(255, 255, 255) 32px
+          );
+        background-size: 21px 21px;
+      }
+
+      .image {
+        grid-area: image;
+      }
+
+      h1 {
+        grid-area: header;
+        font-size: 64px;
+        line-height: 77px;
+        font-weight: 800;
+        margin: 0;
+      }
+
+      p {
+        align-self: end;
+        justify-self: end;
+        font-size: 36px;
+        line-height: 43px;
+        grid-area: handle;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="image">
+      <svg
+        height="287px"
+        width="287px"
+        fill="#000000"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+        x="0px"
+        y="0px"
+        viewBox="0 0 512 512"
+        enable-background="new 0 0 512 512"
+        xml:space="preserve"
+      >
+        <g>
+          <path
+            d="M387.1,313.4h8.2V165.9h41v-49.2H510V34.8H182.3V2H67.5v32.8h-41v81.9h41v344.1H2V510h245.8v-49.2h-65.5V116.7h155.7v49.2   h41v131.7c-27.8,4-49.2,27.9-49.2,56.8c0,31.6,25.7,57.4,57.4,57.4s57.4-25.7,57.4-57.4h-16.4c0,22.6-18.4,41-41,41s-41-18.4-41-41   C346.1,331.7,364.5,313.4,387.1,313.4z M83.9,18.4h81.9v16.4H83.9V18.4z M96.9,116.7l-13,13v-13H96.9z M165.9,375.5l-70.3-70.3   l70.3-70.3V375.5z M154.3,387.1l-70.3,70.3V316.7L154.3,387.1z M83.9,293.6V152.9l70.3,70.3L83.9,293.6z M231.4,477.2v16.4h-213   v-16.4H231.4z M103.7,460.8l62.2-62.2v62.2H103.7z M165.9,211.6l-70.3-70.3l24.6-24.6h45.8V211.6z M43,100.3V51.2h450.6v49.2H43z    M354.3,116.7h65.5v32.8h-65.5V116.7z"
+          ></path>
+          <rect x="247.8" y="67.5" width="16.4" height="16.4"></rect>
+          <rect x="280.6" y="67.5" width="16.4" height="16.4"></rect>
+          <rect x="215" y="67.5" width="16.4" height="16.4"></rect>
+        </g>
+      </svg>
+    </div>
+    <h1>{window.title}</h1>
+    <p>@krzysztof_zuraw</p>
+  </body>
+</html>
