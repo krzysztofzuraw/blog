@@ -1,3 +1,5 @@
 [build]
-  functions = "functions"
-  command = "cd functions/social-card && npm i"
+  functions = "functions/"
+  command = "npm run build"
+[[plugins]]
+  package = "netlify-plugin-gatsby-cache"
