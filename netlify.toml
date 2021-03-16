@@ -1,0 +1,12 @@
+[build]
+  functions = "functions"
+  command = "npm run build"
+  publish = "public"
+
+[[redirects]]
+  from = "/social-image/*"
+  to = "/.netlify/functions/social-image"
+  status = 200
+
+[[plugins]]
+  package = "netlify-plugin-gatsby-cache"

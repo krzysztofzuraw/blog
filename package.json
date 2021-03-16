@@ -7,7 +7,8 @@
     "dev": "gatsby develop",
     "tsc": "tsc",
     "lint": "eslint 'src/*/*.{ts,tsx}' --quiet --fix",
-    "reinstall": "rimraf node_modules && npm install"
+    "reinstall": "rimraf node_modules && npm install",
+    "build": "gatsby build"
   },
   "keywords": [
     "blog",
@@ -18,6 +19,7 @@
   "author": "Krzysztof Żuraw",
   "license": "MIT",
   "dependencies": {
+    "cloudinary": "1.25.0",
     "gatsby": "3.0.4",
     "gatsby-image": "3.0.0",
     "gatsby-plugin-canonical-urls": "3.0.0",

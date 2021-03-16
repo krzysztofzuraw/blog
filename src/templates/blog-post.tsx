@@ -4,14 +4,23 @@ import { Layout, SEO } from '../components';
 
 type Props = {
   data: {
-    markdownRemark: { frontmatter: { title: string; date: string }; html: string; excerpt: string };
+    markdownRemark: {
+      frontmatter: { title: string; date: string; slug: string };
+      html: string;
+      excerpt: string;
+    };
   };
 };
 
 const BlogPost: React.FunctionComponent<Props> = ({ data: { markdownRemark } }) => {
   return (
     <Layout>
-      <SEO title={markdownRemark.frontmatter.title} description={markdownRemark.excerpt} />
+      <SEO
+        type="article"
+        slug={markdownRemark.frontmatter.slug}
+        title={markdownRemark.frontmatter.title}
+        description={markdownRemark.excerpt}
+      />
       <article className="post">
         <h1>{markdownRemark.frontmatter.title}</h1>
         <time dateTime={markdownRemark.frontmatter.date} className="italic">

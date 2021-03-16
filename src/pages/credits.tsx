@@ -4,7 +4,7 @@ import { Layout, Link, SEO } from '../components';
 const Credits: FunctionComponent = () => {
   return (
     <Layout>
-      <SEO title="Credits" />
+      <SEO slug="/credits" title="Credits" />
       <article className="flow">
         <h1>Credits</h1>
         <ul>
