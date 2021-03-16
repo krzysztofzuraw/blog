@@ -4,7 +4,7 @@ import { Layout, SEO } from '../components';
 const Error: FunctionComponent = () => {
   return (
     <Layout>
-      <SEO title="404" />
+      <SEO title="404" slug="404" />
       <article className="flow">
         <h1>Page not found</h1>
         <p>Oops! The page you are looking for has been removed or relocated.</p>

@@ -4,7 +4,7 @@ import { Layout, Link, SEO } from '../components';
 const Now: FunctionComponent = () => {
   return (
     <Layout>
-      <SEO title="Now" />
+      <SEO slug="/now" title="Now" />
       <article className="flow">
         <h1>What I'm doing now</h1>
         <p>

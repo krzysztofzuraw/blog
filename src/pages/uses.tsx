@@ -1,11 +1,10 @@
 import React, { FunctionComponent } from 'react';
-
 import { Layout, Link, SEO } from '../components';
 
 const Uses: FunctionComponent = () => {
   return (
     <Layout>
-      <SEO title="Uses" />
+      <SEO title="Uses" slug="/uses" />
       <article className="flow">
         <h1>What I'm using</h1>
         <p>
