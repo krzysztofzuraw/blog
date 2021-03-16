@@ -46,7 +46,6 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               withWebp: true,
-              withAvif: true,
             },
           },
           'gatsby-remark-copy-linked-files',
