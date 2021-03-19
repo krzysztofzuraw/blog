@@ -20,6 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "cloudinary": "1.25.0",
+    "framer-motion": "3.10.5",
     "gatsby": "3.0.4",
     "gatsby-image": "3.0.0",
     "gatsby-plugin-canonical-urls": "3.0.0",
