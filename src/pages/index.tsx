@@ -5,7 +5,7 @@ const Index: FunctionComponent = () => {
   return (
     <Layout>
       <SEO title="Home" slug="" />
-      <article className="flow">
+      <article className="prose lg:prose-xl">
         <h1>
           Hi, I'm Krzysztof Żuraw{' '}
           <span role="img" aria-label="wave-emoji">
