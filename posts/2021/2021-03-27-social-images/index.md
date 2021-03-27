@@ -10,11 +10,11 @@ tags:
 
 I recently decided to generate social images for my blog. You know those images that are being displayed by facebook or twitter when you share link on those platforms:
 
-/example.png
+![social card example](./example.png)
 
 I want to get started and create something in finished time so I prepared a minimalistic version of banner using [figma social branding template](https://www.figma.com/community/file/820337605519256142):
 
-/social-card.jpg (My social card)
+![my social card example](./social-card.jpg)
 
 When I had my design in place I started searching for solutions on how to generate social images. What I wanted is:
 
@@ -37,7 +37,7 @@ All of them have their pros & cons but I decided to use the first solution - usi
 
 ## How it is working?
 
-/flow.png
+![flow](./flow.png)
 
 I”m using there couple of goodies from different companies:
 
