@@ -49,8 +49,8 @@ I wrote about pros but what are downsides of using it approach? I feel like I’
 
 ## Resources
 
-https://egghead.io/lessons/figma-designing-opengraph-unfurls-in-figma
-https://www.learnwithjason.dev/blog/auto-generate-social-image/
+- https://egghead.io/lessons/figma-designing-opengraph-unfurls-in-figma
+- https://www.learnwithjason.dev/blog/auto-generate-social-image/
 
 ## Summary
 
