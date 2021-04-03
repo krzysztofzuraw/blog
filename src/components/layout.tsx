@@ -5,7 +5,7 @@ export const Layout: FunctionComponent = ({ children }) => {
   return (
     <div className="mx-auto max-w-3xl grid h-screen p-4 gap-6">
       <header role="banner" className="grid place-items-end">
-        <ul className="grid grid-cols-2 gap-2 font-bold text-lg ">
+        <ul className="grid grid-cols-2 gap-2 font-bold lg:text-lg ">
           <li className="hover:underline">
             <Link to="/">Home</Link>
           </li>
@@ -17,7 +17,7 @@ export const Layout: FunctionComponent = ({ children }) => {
       {children}
       <footer
         role="contentinfo"
-        className="grid text-lg grid-cols-3 border-gray-200 border-t-2 py-2"
+        className="grid lg:text-lg grid-cols-3 border-gray-200 border-t-2 py-2"
       >
         <ul>
           <li className="hover:underline">
