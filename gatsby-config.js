@@ -6,13 +6,37 @@ module.exports = {
     author: 'Krzysztof Żuraw',
     description: 'TypeScript | React | Coffee',
     siteUrl: 'https://krzysztofzuraw.com',
-    keywords: 'TypeScript, React, Redux, RxJS, JavaScript',
+    keywords: 'TypeScript, React, Redux, RxJS, JavaScript, CSS, HTML, personal blog',
     social: {
       github: 'https://github.com/krzysztofzuraw',
       email: 'mailto:blog@kzuraw.com',
-      linkedIn: '',
-      twitter: '',
+      linkedIn: 'https://pl.linkedin.com/in/krzysztofzuraw',
+      twitter: '@krzysztof_zuraw',
     },
+    headerMenu: [
+      { to: '/', name: 'Home' },
+      { to: '/blog', name: 'Blog' },
+    ],
+    footerMenu: [
+      { to: '/uses', name: 'Uses' },
+      { to: '/now', name: 'Now' },
+      { to: 'https://buttondown.email/krzysztof_zuraw', name: 'Newsletter' },
+      { to: '/feeds/all.rss.xml', name: 'RSS' },
+    ],
+    socialMenu: [
+      {
+        to: 'https://github.com/krzysztofzuraw',
+        name: 'GitHub',
+      },
+      {
+        to: 'https://twitter.com/krzysztof_zuraw',
+        name: 'Twitter',
+      },
+      {
+        to: 'ttps://pl.linkedin.com/in/krzysztofzuraw',
+        name: 'LinkedIn',
+      },
+    ],
   },
   flags: {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
@@ -24,8 +48,15 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-typegen',
     'gatsby-plugin-postcss',
+    {
+      resolve: `gatsby-plugin-typegen`,
+      options: {
+        emitSchema: {
+          'src/__generated__/gatsby-introspection.json': true,
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {

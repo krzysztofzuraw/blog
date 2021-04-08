@@ -2,20 +2,7 @@ import { graphql } from 'gatsby';
 import React, { FunctionComponent } from 'react';
 import { Layout, Link, SEO } from '../components';
 
-type Props = {
-  data: {
-    allMarkdownRemark: {
-      edges: Array<{
-        node: {
-          frontmatter: { slug: string; title: string; date: string };
-          id: string;
-        };
-      }>;
-    };
-  };
-};
-
-const BlogIndex: FunctionComponent<Props> = ({
+const BlogIndex: FunctionComponent<{ data: GatsbyTypes.BlogListPageQuery }> = ({
   data: {
     allMarkdownRemark: { edges },
   },
@@ -27,11 +14,11 @@ const BlogIndex: FunctionComponent<Props> = ({
       <ul className="grid gap-5">
         {edges.map(({ node }) => (
           <li key={node.id} className="grid md:grid-flow-col grid-cols-list-item tabular-nums">
-            <Link to={node.frontmatter.slug} className="hover:underline">
-              {node.frontmatter.title}
+            <Link to={node.frontmatter?.slug} className="hover:underline">
+              {node.frontmatter?.title}
             </Link>
-            <time dateTime={node.frontmatter.date} className="italic">
-              {node.frontmatter.date}
+            <time dateTime={node.frontmatter?.date} className="italic">
+              {node.frontmatter?.date}
             </time>
           </li>
         ))}

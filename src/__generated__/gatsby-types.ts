@@ -294,6 +294,9 @@ type SiteSiteMetadata = {
   readonly siteUrl: Maybe<Scalars['String']>;
   readonly keywords: Maybe<Scalars['String']>;
   readonly social: Maybe<SiteSiteMetadataSocial>;
+  readonly headerMenu: Maybe<ReadonlyArray<Maybe<SiteSiteMetadataHeaderMenu>>>;
+  readonly footerMenu: Maybe<ReadonlyArray<Maybe<SiteSiteMetadataFooterMenu>>>;
+  readonly socialMenu: Maybe<ReadonlyArray<Maybe<SiteSiteMetadataSocialMenu>>>;
 };
 
 type SiteSiteMetadataSocial = {
@@ -301,6 +304,21 @@ type SiteSiteMetadataSocial = {
   readonly email: Maybe<Scalars['String']>;
   readonly linkedIn: Maybe<Scalars['String']>;
   readonly twitter: Maybe<Scalars['String']>;
+};
+
+type SiteSiteMetadataHeaderMenu = {
+  readonly to: Maybe<Scalars['String']>;
+  readonly name: Maybe<Scalars['String']>;
+};
+
+type SiteSiteMetadataFooterMenu = {
+  readonly to: Maybe<Scalars['String']>;
+  readonly name: Maybe<Scalars['String']>;
+};
+
+type SiteSiteMetadataSocialMenu = {
+  readonly to: Maybe<Scalars['String']>;
+  readonly name: Maybe<Scalars['String']>;
 };
 
 type SitePage = Node & {
@@ -700,6 +718,7 @@ type SitePluginPluginOptions = {
   readonly stripMetadata: Maybe<Scalars['Boolean']>;
   readonly defaultQuality: Maybe<Scalars['Int']>;
   readonly failOnError: Maybe<Scalars['Boolean']>;
+  readonly emitSchema: Maybe<SitePluginPluginOptionsEmitSchema>;
   readonly createLinkInHead: Maybe<Scalars['Boolean']>;
   readonly output: Maybe<Scalars['String']>;
   readonly siteUrl: Maybe<Scalars['String']>;
@@ -767,6 +786,10 @@ type SitePluginPluginOptionsPluginsPluginOptions = {
   readonly loop: Maybe<Scalars['Boolean']>;
   readonly offsetY: Maybe<Scalars['Int']>;
   readonly className: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsEmitSchema = {
+  readonly src___generated___gatsby_introspection_json: Maybe<Scalars['Boolean']>;
 };
 
 type SitePluginPluginOptionsFeeds = {
@@ -1939,6 +1962,9 @@ type SiteSiteMetadataFilterInput = {
   readonly siteUrl: Maybe<StringQueryOperatorInput>;
   readonly keywords: Maybe<StringQueryOperatorInput>;
   readonly social: Maybe<SiteSiteMetadataSocialFilterInput>;
+  readonly headerMenu: Maybe<SiteSiteMetadataHeaderMenuFilterListInput>;
+  readonly footerMenu: Maybe<SiteSiteMetadataFooterMenuFilterListInput>;
+  readonly socialMenu: Maybe<SiteSiteMetadataSocialMenuFilterListInput>;
 };
 
 type SiteSiteMetadataSocialFilterInput = {
@@ -1946,6 +1972,33 @@ type SiteSiteMetadataSocialFilterInput = {
   readonly email: Maybe<StringQueryOperatorInput>;
   readonly linkedIn: Maybe<StringQueryOperatorInput>;
   readonly twitter: Maybe<StringQueryOperatorInput>;
+};
+
+type SiteSiteMetadataHeaderMenuFilterListInput = {
+  readonly elemMatch: Maybe<SiteSiteMetadataHeaderMenuFilterInput>;
+};
+
+type SiteSiteMetadataHeaderMenuFilterInput = {
+  readonly to: Maybe<StringQueryOperatorInput>;
+  readonly name: Maybe<StringQueryOperatorInput>;
+};
+
+type SiteSiteMetadataFooterMenuFilterListInput = {
+  readonly elemMatch: Maybe<SiteSiteMetadataFooterMenuFilterInput>;
+};
+
+type SiteSiteMetadataFooterMenuFilterInput = {
+  readonly to: Maybe<StringQueryOperatorInput>;
+  readonly name: Maybe<StringQueryOperatorInput>;
+};
+
+type SiteSiteMetadataSocialMenuFilterListInput = {
+  readonly elemMatch: Maybe<SiteSiteMetadataSocialMenuFilterInput>;
+};
+
+type SiteSiteMetadataSocialMenuFilterInput = {
+  readonly to: Maybe<StringQueryOperatorInput>;
+  readonly name: Maybe<StringQueryOperatorInput>;
 };
 
 type SiteFlagsFilterInput = {
@@ -1993,6 +2046,15 @@ type SiteFieldsEnum =
   | 'siteMetadata.social.email'
   | 'siteMetadata.social.linkedIn'
   | 'siteMetadata.social.twitter'
+  | 'siteMetadata.headerMenu'
+  | 'siteMetadata.headerMenu.to'
+  | 'siteMetadata.headerMenu.name'
+  | 'siteMetadata.footerMenu'
+  | 'siteMetadata.footerMenu.to'
+  | 'siteMetadata.footerMenu.name'
+  | 'siteMetadata.socialMenu'
+  | 'siteMetadata.socialMenu.to'
+  | 'siteMetadata.socialMenu.name'
   | 'port'
   | 'host'
   | 'flags.PRESERVE_FILE_DOWNLOAD_CACHE'
@@ -2144,6 +2206,7 @@ type SitePluginPluginOptionsFilterInput = {
   readonly stripMetadata: Maybe<BooleanQueryOperatorInput>;
   readonly defaultQuality: Maybe<IntQueryOperatorInput>;
   readonly failOnError: Maybe<BooleanQueryOperatorInput>;
+  readonly emitSchema: Maybe<SitePluginPluginOptionsEmitSchemaFilterInput>;
   readonly createLinkInHead: Maybe<BooleanQueryOperatorInput>;
   readonly output: Maybe<StringQueryOperatorInput>;
   readonly siteUrl: Maybe<StringQueryOperatorInput>;
@@ -2215,6 +2278,10 @@ type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   readonly loop: Maybe<BooleanQueryOperatorInput>;
   readonly offsetY: Maybe<IntQueryOperatorInput>;
   readonly className: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsEmitSchemaFilterInput = {
+  readonly src___generated___gatsby_introspection_json: Maybe<BooleanQueryOperatorInput>;
 };
 
 type SitePluginPluginOptionsFeedsFilterListInput = {
@@ -2445,6 +2512,7 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.stripMetadata'
   | 'pluginCreator.pluginOptions.defaultQuality'
   | 'pluginCreator.pluginOptions.failOnError'
+  | 'pluginCreator.pluginOptions.emitSchema.src___generated___gatsby_introspection_json'
   | 'pluginCreator.pluginOptions.createLinkInHead'
   | 'pluginCreator.pluginOptions.output'
   | 'pluginCreator.pluginOptions.siteUrl'
@@ -3135,6 +3203,7 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.stripMetadata'
   | 'pluginOptions.defaultQuality'
   | 'pluginOptions.failOnError'
+  | 'pluginOptions.emitSchema.src___generated___gatsby_introspection_json'
   | 'pluginOptions.createLinkInHead'
   | 'pluginOptions.output'
   | 'pluginOptions.siteUrl'
@@ -3225,6 +3294,19 @@ type BlogListPageQuery = { readonly allMarkdownRemark: { readonly edges: Readonl
         Pick<MarkdownRemark, 'id'>
         & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'slug'>> }
       ) }> } };
+
+type LayoutQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type LayoutQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly headerMenu: Maybe<ReadonlyArray<Maybe<Pick<SiteSiteMetadataHeaderMenu, 'to' | 'name'>>>>, readonly footerMenu: Maybe<ReadonlyArray<Maybe<Pick<SiteSiteMetadataFooterMenu, 'to' | 'name'>>>>, readonly socialMenu: Maybe<ReadonlyArray<Maybe<Pick<SiteSiteMetadataSocialMenu, 'to' | 'name'>>>>, readonly social: Maybe<Pick<SiteSiteMetadataSocial, 'email'>> }> }> };
+
+type SEOQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
+      Pick<SiteSiteMetadata, 'siteUrl' | 'siteName' | 'author' | 'description' | 'keywords'>
+      & { readonly social: Maybe<Pick<SiteSiteMetadataSocial, 'twitter'>> }
+    )> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

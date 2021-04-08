@@ -1,11 +1,9 @@
 import { GatsbyLinkProps, Link as GatsbyLink } from 'gatsby';
 import React, { FunctionComponent } from 'react';
 
-export const Link: FunctionComponent<Omit<GatsbyLinkProps<unknown>, 'ref'>> = ({
-  to,
-  children,
-  ...restProps
-}) => {
+export const Link: FunctionComponent<
+  Omit<GatsbyLinkProps<unknown>, 'ref' | 'to'> & { to?: string }
+> = ({ to = '', children, ...restProps }) => {
   const isInternal = /^\/(?!\/)/.test(to);
   if (isInternal) {
     return (

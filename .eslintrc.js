@@ -1,6 +1,8 @@
+const path = require('path');
+
 module.exports = {
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'react-hooks', 'jsx-a11y'],
+  plugins: ['@typescript-eslint', 'react-hooks', 'jsx-a11y', 'graphql'],
   ignorePatterns: ['node_modules', 'dist', '.cache'],
   extends: [
     'plugin:react/recommended',
@@ -23,6 +25,14 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'no-console': 'error',
+    'graphql/template-strings': [
+      'error',
+      {
+        env: 'relay',
+        tagName: 'graphql',
+        schemaJsonFilepath: path.resolve(__dirname, 'src/__generated__/gatsby-introspection.json'),
+      },
+    ],
   },
   settings: {
     react: {
