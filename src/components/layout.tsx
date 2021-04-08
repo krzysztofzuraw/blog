@@ -3,9 +3,9 @@ import { Link } from './link';
 
 export const Layout: FunctionComponent = ({ children }) => {
   return (
-    <div className="mx-auto max-w-3xl grid h-screen p-4 gap-6">
-      <header role="banner" className="grid place-items-end">
-        <ul className="grid grid-cols-2 gap-2 font-bold lg:text-lg ">
+    <div className="mx-auto max-w-3xl grid h-screen px-4 py-10 gap-6">
+      <header role="banner" className="flex justify-end">
+        <ul className="flex gap-2 font-bold lg:text-lg">
           <li className="hover:underline">
             <Link to="/">Home</Link>
           </li>

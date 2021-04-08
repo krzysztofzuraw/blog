@@ -5,16 +5,14 @@ const Index: FunctionComponent = () => {
   return (
     <Layout>
       <SEO title="Home" slug="" />
-      <article className="prose lg:prose-xl">
+      <article className="prose lg:prose-lg">
         <h1>
           Hi, I'm Krzysztof Żuraw{' '}
           <span role="img" aria-label="wave-emoji">
             👋🏻
           </span>
         </h1>
-
         <p>Welcome to my personal page. A few words about me:</p>
-
         <ul>
           <li>self taught frontend developer with 5+ years of experience</li>
           <li>specialise in building React &amp; TypeScript websites/web-apps</li>
