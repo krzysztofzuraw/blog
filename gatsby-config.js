@@ -24,6 +24,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-typegen',
     'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-sitemap',

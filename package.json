@@ -21,7 +21,6 @@
   "dependencies": {
     "@tailwindcss/typography": "0.4.0",
     "cloudinary": "1.25.0",
-    "framer-motion": "3.10.5",
     "gatsby": "3.0.4",
     "gatsby-image": "3.0.0",
     "gatsby-plugin-canonical-urls": "3.0.0",
@@ -29,6 +28,7 @@
     "gatsby-plugin-react-helmet": "4.0.0",
     "gatsby-plugin-sharp": "3.0.0",
     "gatsby-plugin-sitemap": "3.0.0",
+    "gatsby-plugin-typegen": "2.2.4",
     "gatsby-plugin-typescript": "3.0.0",
     "gatsby-remark-autolink-headers": "3.1.0",
     "gatsby-remark-copy-linked-files": "3.0.0",
@@ -41,8 +41,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-helmet": "6.1.0",
-    "sharp": "0.27.2",
-    "tailwind-underline-utils": "1.1.2"
+    "sharp": "0.27.2"
   },
   "devDependencies": {
     "@types/react-helmet": "6.1.0",

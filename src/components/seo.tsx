@@ -2,11 +2,11 @@ import React, { FunctionComponent } from 'react';
 import { Helmet } from 'react-helmet';
 
 export const SEO: FunctionComponent<{
-  title: string;
+  title?: string;
   description?: string;
-  slug: string;
+  slug?: string;
   type?: 'website' | 'article';
-}> = ({ title, description, slug, type = 'website' }) => (
+}> = ({ title = '', description, slug, type = 'website' }) => (
   <Helmet titleTemplate="%s | Krzysztof Żuraw">
     <html lang="en" />
     <title>{title}</title>
@@ -41,6 +41,12 @@ export const SEO: FunctionComponent<{
     <meta
       name="og:image"
       content={`https://krzysztofzuraw.com/social-image?title=${encodeURIComponent(title)}`}
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Krzysztof Żuraw blog's RSS Feed"
+      href="https://krzysztofzuraw.com/feeds/all.rss.xml"
     />
   </Helmet>
 );
