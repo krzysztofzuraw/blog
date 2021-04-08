@@ -24,7 +24,7 @@ const BlogPost: React.FunctionComponent<Props> = ({ data: { markdownRemark } }) 
       <article className="prose lg:prose-xl">
         <h1>{markdownRemark.frontmatter.title}</h1>
         <time dateTime={markdownRemark.frontmatter.date} className="italic">
-          Published on {markdownRemark.frontmatter.date}
+          {markdownRemark.frontmatter.date}
         </time>
         <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
       </article>

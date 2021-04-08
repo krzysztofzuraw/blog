@@ -5,7 +5,7 @@ const Now: FunctionComponent = () => {
   return (
     <Layout>
       <SEO slug="/now" title="Now" />
-      <article className="flow">
+      <article className="prose lg:prose-lg">
         <h1>What I'm doing now</h1>
         <p>
           Make sure to check out <Link to="https://nownownow.com/">nownownow.com</Link> for a list
@@ -18,7 +18,9 @@ const Now: FunctionComponent = () => {
           <li>Working on this website</li>
           <li>Learning to type using Colemak DH layout</li>
         </ul>
-        <time dateTime="2021-02-27">Last updated on 2020-02-27</time>
+        <time dateTime="2021-02-27" className="italic">
+          Last updated on 2020-02-27
+        </time>
       </article>
     </Layout>
   );

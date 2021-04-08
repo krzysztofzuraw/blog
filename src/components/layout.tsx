@@ -30,9 +30,6 @@ export const Layout: FunctionComponent = ({ children }) => {
             <Link to="https://buttondown.email/krzysztof_zuraw">Newsletter</Link>
           </li>
           <li className="hover:underline">
-            <Link to="/credits">Credits</Link>
-          </li>
-          <li className="hover:underline">
             <Link to="/feeds/all.rss.xml">RSS</Link>
           </li>
         </ul>
