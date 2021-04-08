@@ -14,11 +14,17 @@ module.exports = {
       twitter: '',
     },
   },
+  flags: {
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true,
+    FAST_DEV: true,
+  },
   plugins: [
     'gatsby-plugin-typescript',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {

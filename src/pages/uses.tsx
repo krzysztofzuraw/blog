@@ -5,7 +5,7 @@ const Uses: FunctionComponent = () => {
   return (
     <Layout>
       <SEO title="Uses" slug="/uses" />
-      <article className="flow">
+      <article className="prose lg:prose-lg">
         <h1>What I'm using</h1>
         <p>
           Make sure to check out <Link to="https://uses.tech/">uses.tech</Link> for a list of
