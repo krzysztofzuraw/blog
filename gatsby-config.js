@@ -19,6 +19,7 @@ module.exports = {
       { to: '/uses', name: 'Uses' },
       { to: '/now', name: 'Now' },
       { to: '/feeds/all.rss.xml', name: 'RSS' },
+      { to: '/credits', name: 'Credits' },
     ],
     socialMenu: [
       {
@@ -75,14 +76,14 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/new-pages/`,
+        path: `${__dirname}/src/pages/`,
         name: 'pages',
       },
     },
     {
       resolve: 'gatsby-plugin-page-creator',
       options: {
-        path: `${__dirname}/src/new-pages`,
+        path: `${__dirname}/src/pages`,
       },
     },
     {
