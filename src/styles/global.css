@@ -164,7 +164,7 @@ h3 {
   }
 }
 
-.post code,
+.post code:not([class*='language-']),
 li {
   word-wrap: break-word;
   word-break: break-word;
@@ -172,9 +172,15 @@ li {
 }
 
 code {
-  background-color: #efefef;
   padding: 0.15rem;
   border-radius: 0.15em;
+  font-weight: 700;
+}
+
+/* do not match pre blocks */
+code:not([class*='language-'])::after,
+code:not([class*='language-'])::before {
+  content: '`';
 }
 
 /* override prismjs default fonts */
