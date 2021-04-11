@@ -10,16 +10,12 @@ const BlogIndex: FunctionComponent<{ data: GatsbyTypes.BlogListPageQuery }> = ({
   return (
     <Layout>
       <SEO slug="/blog" title="Blog index" />
-      <h1 className="text-4xl lg:text-5xl font-extrabold mb-3 lg:mb-8">Blog index</h1>
-      <ul className="grid gap-5">
+      <h1>Blog index</h1>
+      <ul className="blog-list">
         {edges.map(({ node }) => (
-          <li key={node.id} className="grid md:grid-flow-col grid-cols-list-item tabular-nums">
-            <Link to={node.frontmatter?.slug} className="hover:underline">
-              {node.frontmatter?.title}
-            </Link>
-            <time dateTime={node.frontmatter?.date} className="italic">
-              {node.frontmatter?.date}
-            </time>
+          <li key={node.id} className="">
+            <Link to={node.frontmatter?.slug}>{node.frontmatter?.title}</Link>
+            <time dateTime={node.frontmatter?.date}>{node.frontmatter?.date}</time>
           </li>
         ))}
       </ul>

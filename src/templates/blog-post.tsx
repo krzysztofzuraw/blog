@@ -13,10 +13,15 @@ const BlogPost: React.FunctionComponent<{ data: GatsbyTypes.BlogPostBySlugQuery 
         title={markdownRemark?.frontmatter?.title}
         description={markdownRemark?.excerpt}
       />
-      <article className="prose lg:prose-xl">
+      <article className="post flow">
         <h1>{markdownRemark?.frontmatter?.title}</h1>
-        <time dateTime={markdownRemark?.frontmatter?.date} className="italic">
-          {markdownRemark?.frontmatter?.date}
+        <time dateTime={markdownRemark?.frontmatter?.date}>
+          {new Date(markdownRemark?.frontmatter?.date ?? '').toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
         </time>
         <div dangerouslySetInnerHTML={{ __html: markdownRemark?.html ?? '' }} />
       </article>

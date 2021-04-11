@@ -8,9 +8,7 @@ module.exports = {
     siteUrl: 'https://krzysztofzuraw.com',
     keywords: 'TypeScript, React, Redux, RxJS, JavaScript, CSS, HTML, personal blog',
     social: {
-      github: 'https://github.com/krzysztofzuraw',
       email: 'mailto:blog@kzuraw.com',
-      linkedIn: 'https://pl.linkedin.com/in/krzysztofzuraw',
       twitter: '@krzysztof_zuraw',
     },
     headerMenu: [
@@ -20,7 +18,6 @@ module.exports = {
     footerMenu: [
       { to: '/uses', name: 'Uses' },
       { to: '/now', name: 'Now' },
-      { to: 'https://buttondown.email/krzysztof_zuraw', name: 'Newsletter' },
       { to: '/feeds/all.rss.xml', name: 'RSS' },
     ],
     socialMenu: [
@@ -48,7 +45,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-postcss',
     {
       resolve: `gatsby-plugin-typegen`,
       options: {
@@ -77,6 +73,27 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/new-pages/`,
+        name: 'pages',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-page-creator',
+      options: {
+        path: `${__dirname}/src/new-pages`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve('./src/components/layout.tsx'),
+        },
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
@@ -102,6 +119,12 @@ module.exports = {
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-external-links',
           'gatsby-remark-autolink-headers',
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              noInlineHighlight: true,
+            },
+          },
         ],
       },
     },
