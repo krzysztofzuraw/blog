@@ -6,36 +6,59 @@
   --size-700: 2.36rem;
   --size-800: 3.15rem;
   --size-900: 4.2rem;
+  --bg-color: #f3f3f3;
+  --text-color: #252525;
+  --accent-color: #717ec3;
+  --font-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-serif: Georgia, 'Times New Roman', Times, serif;
+  --font-mono: monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  background-color: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+  font-family: var(--font-sans-serif);
 }
 
 body {
-  background: #f3f3f3;
-  color: #252525;
+  text-rendering: optimizeSpeed;
+  background: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.5;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue', sans-serif;
-  padding: 2rem 0;
+  /* padding: 2rem 0; */
   margin: 0;
 }
 
 .layout {
-  height: calc(100vh - 4rem);
+  min-height: 100vh;
   display: grid;
-  grid-template-rows: auto 1fr auto;
   row-gap: 1em;
-  width: clamp(16rem, 90vw, 70rem);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  grid-template-columns: 1fr min(65ch, 100%) 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+.layout > * {
+  grid-column: 2;
 }
 
 a:not([class]) {
   color: currentColor;
 }
 
+[aria-current]:not([aria-current='false']) {
+  color: var(--accent-color);
+}
+
 :focus {
-  outline: 2px dashed;
+  outline: 2px dashed var(--accent-color);
   outline-offset: 0.25rem;
 }
 
@@ -51,8 +74,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica,
-    Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  font-family: var(--font-sans-serif);
   line-height: 1.3;
 }
 
@@ -73,13 +95,13 @@ h3 {
   font-size: var(--size-600);
 }
 
-img {
-  max-width: min(55rem, 100%);
+img,
+video {
+  max-width: 100%;
 }
 
 figcaption {
   font-size: var(--size-300);
-
   font-style: italic;
   margin-top: 1rem;
 }
@@ -99,11 +121,6 @@ blockquote {
   margin-top: var(--flow-space, 1em);
 }
 
-p,
-li {
-  max-width: 60ch;
-}
-
 h1 {
   max-width: 15ch;
 }
@@ -113,9 +130,12 @@ h3 {
   max-width: 25ch;
 }
 
+article {
+  font-family: var(--font-serif);
+}
+
 .post {
   --flow-space: var(--size-700);
-  font-family: Georgia, serif;
 }
 
 .post time {
@@ -171,21 +191,9 @@ li {
   hyphens: auto;
 }
 
-code {
-  padding: 0.15rem;
-  border-radius: 0.15em;
+code:not([class*='language-']) {
   font-weight: 700;
-}
-
-/* do not match pre blocks */
-code:not([class*='language-'])::after,
-code:not([class*='language-'])::before {
-  content: '`';
-}
-
-/* override prismjs default fonts */
-pre[class*='language-'] {
-  font-family: monospace;
+  color: var(--accent-color);
 }
 
 time {
@@ -194,7 +202,7 @@ time {
 
 header ul {
   list-style: none;
-  padding: 0;
+  padding: 2rem;
   margin: 0;
   display: flex;
   justify-content: flex-end;
