@@ -7,7 +7,6 @@
     "dev": "gatsby develop",
     "tsc": "tsc",
     "lint": "eslint 'src/*/*.{ts,tsx}' --quiet --fix",
-    "prettier": "prettier --write --ignore-unknown src/*",
     "reinstall": "rimraf node_modules && npm install",
     "build": "gatsby build"
   },
@@ -69,6 +68,9 @@
       "pre-commit": "npm run tsc && npm run lint"
     }
   },
+  "browserslist": [
+    "defaults"
+  ],
   "prettier": {
     "printWidth": 100,
     "trailingComma": "es5",

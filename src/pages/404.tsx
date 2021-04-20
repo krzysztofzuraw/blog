@@ -8,7 +8,9 @@ const Error: FunctionComponent = () => {
       <div>
         <h1>Page not found</h1>
         <p>Oops! The page you are looking for has been removed or relocated.</p>
-        <button onClick={() => history.back()}>Go back</button>
+        <button type="button" onClick={() => history.back()}>
+          Go back
+        </button>
       </div>
     </Layout>
   );
