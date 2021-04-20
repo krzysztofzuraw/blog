@@ -15,6 +15,7 @@ Thanks to reading about [Tools for keeping focused](https://www.benkuhn.net/focu
 ![Facebook navbar without uBlock](./without-ublock.png)
 
 and with:
+
 ![Facebook navbar with uBlock](./with-ublock.png)
 
 How to use uBlock to block elements on the page?

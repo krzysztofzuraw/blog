@@ -1,7 +1,280 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --size-300: 0.75rem;
+  --size-400: 1rem;
+  --size-500: 1.33rem;
+  --size-600: 1.77rem;
+  --size-700: 2.36rem;
+  --size-800: 3.15rem;
+  --size-900: 4.2rem;
+  --bg-color: #f3f3f3;
+  --text-color: #252525;
+  --accent-color: #717ec3;
+  --font-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-serif: Georgia, 'Times New Roman', Times, serif;
+  --font-mono: monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  background-color: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+  font-family: var(--font-sans-serif);
+}
 
 body {
-  @apply bg-gray-100;
+  text-rendering: optimizeSpeed;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  /* padding: 2rem 0; */
+  margin: 0;
+}
+
+.layout {
+  min-height: 100vh;
+  display: grid;
+  row-gap: 1em;
+  grid-template-columns: 1fr min(90vw, 100%) 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+.layout > * {
+  grid-column: 2;
+}
+
+a:not([class]) {
+  color: currentColor;
+}
+
+[aria-current]:not([aria-current='false']) {
+  color: var(--accent-color);
+}
+
+:focus {
+  outline: 2px dashed var(--accent-color);
+  outline-offset: 0.25rem;
+}
+
+main:focus {
+  outline: none;
+}
+
+[href]:hover {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-sans-serif);
+  line-height: 1.3;
+}
+
+h1,
+h2 {
+  font-weight: 900;
+}
+
+h1 {
+  font-size: var(--size-700);
+}
+
+h2 {
+  font-size: var(--size-600);
+}
+
+h3 {
+  font-size: var(--size-600);
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+figcaption {
+  font-size: var(--size-300);
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+blockquote {
+  padding-left: var(--size-600);
+  border-left: 5px solid;
+  font-style: italic;
+}
+
+::selection {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.99);
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+h1 {
+  max-width: 15ch;
+}
+
+h2,
+h3 {
+  max-width: 25ch;
+}
+
+p,
+li {
+  max-width: 65ch;
+}
+
+article {
+  font-family: var(--font-serif);
+}
+
+.post {
+  --flow-space: var(--size-700);
+}
+
+.post time {
+  --flow-space: var(--size-400);
+  display: block;
+}
+
+.post :is(h2, h3) {
+  --flow-space: var(--size-900);
+}
+
+.post :is(h2, h3) + * {
+  --flow-space: var(--size-400);
+}
+
+.post figure,
+.post figure + * {
+  --flow-space: var(--size-900);
+}
+
+@media (min-width: 45em) {
+  h1 {
+    font-size: var(--size-900);
+  }
+
+  h2 {
+    font-size: var(--size-700);
+  }
+
+  p,
+  li {
+    font-size: var(--size-500);
+  }
+
+  figcaption {
+    font-size: var(--size-400);
+  }
+
+  blockquote p {
+    font-size: var(--size-600);
+    max-width: 40ch;
+  }
+
+  .post time {
+    font-size: var(--size-600);
+  }
+}
+
+.post code:not([class*='language-']),
+li {
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+code:not([class*='language-']) {
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+time {
+  font-style: italic;
+}
+
+header ul {
+  list-style: none;
+  padding: 2rem;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* remove this when safari supports flex gap */
+header ul > * + * {
+  margin-left: 2rem;
+}
+
+footer {
+  border-top: 2px dashed;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+/* remove this when safari supports flex gap */
+footer ul > * + * {
+  margin-left: 2rem;
+}
+
+.blog-list {
+  display: grid;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+}
+
+.blog-list > li {
+  display: grid;
+}
+
+button {
+  background: #fafafa;
+  border: 1px solid;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button:hover {
+  filter: invert(100%);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color); /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border: 1px solid var(--text-color);
 }

@@ -20,7 +20,7 @@ This blog post is for those who known basic of CSS-in-JS: `styled` component or 
 The first pattern is the most basic - you take your `div`, `a` and other HTML tags and wrap them
 using `styled` function. If you have following structure:
 
-```tsx
+```html
 <div>
   <h1>Header</h1>
   <p>Description</p>
@@ -90,14 +90,14 @@ const Card = styled('div', (props) => ({
 }));
 ```
 
-Which not only have a problem with mental congnition about why `Card` should have `useWhite` prop and
+Which not only have a problem with mental cognition about why `Card` should have `useWhite` prop and
 why the heck it is needed here? Also you need to use [shouldForwardProp](https://emotion.sh/docs/styled#customizing-prop-forwarding) as React will start shouting at you for passing down the `useWhite` custom prop to HTML element.
 
 Benefit of this pattern is that you have one `styled` component that holds truth about your CSS.
 
 ## CSS Prop
 
-The last pattern is taking advantage of having `css` prop aviable on any of HTML tag. If we look
+The last pattern is taking advantage of having `css` prop available on any of HTML tag. If we look
 a the example:
 
 ```tsx
@@ -134,7 +134,7 @@ is done with `p` tag in example above.
 
 ## Conclusion
 
-You can check all of those examples in more complicated scenarios below in codesandbox:
+You can check all of those examples in more complicated scenarios below in code-sandbox:
 
 <iframe
      src="https://codesandbox.io/embed/css-in-js-patterns-zz7ns?fontsize=14&hidenavigation=1&theme=dark"
@@ -153,5 +153,5 @@ In this blog post I wanted to present 3 CSS-in-JS patterns:
   with `styled` and then inside its definition use CSS selectors to style tags inside. It has smaller
   boilerplate but question is still here - how should you structure your code?
 
-- css prop. This is patern I haven't used yet. It seems like a nice way of writing CSS-in-JS but
+- css prop. This is pattern I haven't used yet. It seems like a nice way of writing CSS-in-JS but
   I have to try it first.
