@@ -153,7 +153,15 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                  custom_elements: [
+                    {
+                      'content:encoded': `
+                        ${edge.node.html}
+                        <p><a href=mailto:blog@kzuraw.com?subject=${encodeURI(
+                          edge.node.frontmatter.title
+                        )}>Reply via email</a></p>`,
+                    },
+                  ],
                 });
               });
             },
