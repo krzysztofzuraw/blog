@@ -7,7 +7,10 @@
     "dev": "gatsby develop",
     "reinstall": "rimraf node_modules && npm install",
     "build": "gatsby build",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint --cache --fix --quiet",
+    "prettier": "eslint --cache --fix --quiet",
+    "tsc": "tsc"
   },
   "keywords": [
     "blog",
@@ -69,8 +72,8 @@
     "semi": true
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --cache --fix --quiet",
-    "*.{js,jsx,ts,tsx,md,html,css,json}": "prettier --write",
-    "*.{ts,tsx}": "tsc"
+    "*.{js,jsx,ts,tsx}": "npm run lint --",
+    "*.{js,jsx,ts,tsx,md,html,css,json}": "npm run prettier --",
+    "*.{ts,tsx}": "npm run tsc --"
   }
 }
