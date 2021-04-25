@@ -5,10 +5,9 @@
   "description": "Krzysztof Żuraw homepage",
   "scripts": {
     "dev": "gatsby develop",
-    "tsc": "tsc",
-    "lint": "eslint 'src/*/*.{ts,tsx}' --quiet --fix",
     "reinstall": "rimraf node_modules && npm install",
-    "build": "gatsby build"
+    "build": "gatsby build",
+    "prepare": "husky install"
   },
   "keywords": [
     "blog",
@@ -51,30 +50,27 @@
     "@types/react-helmet": "6.1.1",
     "@typescript-eslint/eslint-plugin": "4.17.0",
     "@typescript-eslint/parser": "4.17.0",
-    "autoprefixer": "10.2.5",
     "eslint": "7.24.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-prettier": "3.3.1",
     "eslint-plugin-react": "7.22.0",
     "eslint-plugin-react-hooks": "4.2.0",
-    "husky": "4.3.8",
+    "husky": "6.0.0",
+    "lint-staged": "10.5.4",
     "prettier": "2.2.1",
     "rimraf": "3.0.2",
     "typescript": "4.2.3"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run tsc && npm run lint"
-    }
-  },
-  "browserslist": [
-    "defaults"
-  ],
   "prettier": {
     "printWidth": 100,
     "trailingComma": "es5",
     "singleQuote": true,
     "semi": true
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix --quiet",
+    "*.{js,jsx,ts,tsx,md,html,css}": "prettier --write",
+    "*.{ts,tsx}": "tsc"
   }
 }
