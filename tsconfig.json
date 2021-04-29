@@ -20,7 +20,9 @@
     "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "removeComments": true,
     "skipLibCheck": true
   },
   "include": ["src/**/*"]

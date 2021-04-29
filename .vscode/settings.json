@@ -2,5 +2,7 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "files.associations": {
     "*.mdx": "markdown"
-  }
+  },
+  "write-good.languages": ["markdown", "plaintext"],
+  "spellright.language": ["en-US", "pl-PL"]
 }

@@ -13,7 +13,7 @@ const BlogIndex: FunctionComponent<{ data: GatsbyTypes.BlogListPageQuery }> = ({
       <h1>Blog index</h1>
       <ul className="blog-list">
         {edges.map(({ node }) => (
-          <li key={node.id} className="">
+          <li key={node.id}>
             <Link to={node.frontmatter?.slug}>{node.frontmatter?.title}</Link>
             <time dateTime={node.frontmatter?.date}>{node.frontmatter?.date}</time>
           </li>
