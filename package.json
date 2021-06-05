@@ -9,7 +9,7 @@
     "build": "gatsby build",
     "prepare": "husky install",
     "lint": "eslint --cache --fix --quiet",
-    "prettier": "eslint --cache --fix --quiet",
+    "prettier": "prettier --write",
     "tsc": "tsc"
   },
   "keywords": [
@@ -80,7 +80,7 @@
   ],
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "npm run lint",
-    "*.{js,jsx,ts,tsx,md,html,css,json}": "npm run prettier",
+    "*.{md,mdx}": "npm run prettier",
     "*.{ts,tsx}": "bash -c 'npm run tsc'"
   }
 }
