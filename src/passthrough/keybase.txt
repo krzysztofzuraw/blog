@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/krzysztofzuraw
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://krzysztofzuraw.com
+  * I am krzysztofzuraw (https://keybase.io/krzysztofzuraw) on keybase.
+  * I have a public key ASDcUVreiB0qRdtdPHPSIFhOfHwT-R7kdXkHnY1w9MVCAAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120af2d506813d756e23a9a8196f4ccb7d245b194147896899ead83501fd794f28b0a",
+      "host": "keybase.io",
+      "kid": "0120dc515ade881d2a45db5d3c73d220584e7c7c13f91ee47579079d8d70f4c542000a",
+      "uid": "b8f19b0959c4d649dbc53c2529ef4d19",
+      "username": "krzysztofzuraw"
+    },
+    "merkle_root": {
+      "ctime": 1585249248,
+      "hash": "0a43e89ef680fc0f3dc970df7bb29d4147e19e1fe25ffd1515705ac93415a5d4e47b2f749cd343d3d75621b30dfe37acf3ceb61f0ce26799976732c651469a40",
+      "hash_meta": "8f19c4fda073d373c8dd24f38c604931eb381db16774d0a644cdaf7bc9973fd0",
+      "seqno": 15632700
+    },
+    "service": {
+      "entropy": "0NFGSeBQ3AM44TBSB+112r1g",
+      "hostname": "krzysztofzuraw.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.3.0"
+  },
+  "ctime": 1585249256,
+  "expire_in": 504576000,
+  "prev": "c895d937494006d51d37aa5e6486105819362a8e841f45f61096972fbb59f731",
+  "seqno": 66,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg3FFa3ogdKkXbXTxz0iBYTnx8E/ke5HV5B52NcPTFQgAKp3BheWxvYWTESpcCQsQgyJXZN0lABtUdN6peZIYQWBk2Ko6EH0X2EJaXL7tZ9zHEIDOtMbC6RzvCIe3HsOF/YnIbdNM/Y1eHTNdWMC1n2WonAgHCo3NpZ8RAs5ALL5HPPa99hlALHl09sBUrQqRXADvJqgYUlIURfCXwwoxs2OYjL06eCu0T1Zku3UbaXpUo4gkkvyUF73NNBahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEILrRpi8RRxeOD6G3su9i9rOTjQ2fV2depfkYvmAnwDqko3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/krzysztofzuraw
+
+==================================================================

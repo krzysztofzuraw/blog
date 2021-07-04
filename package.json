@@ -1,0 +1,31 @@
+{
+  "name": "krzysztofzuraw.com",
+  "version": "3.0.0",
+  "description": "Krzysztof Żuraw site",
+  "main": "n/a",
+  "scripts": {
+    "start": "eleventy --serve",
+    "prebuild": "npm run clean:dist",
+    "build": "eleventy",
+    "debug": "DEBUG=* eleventy",
+    "clean:dist": "rimraf dist/*",
+    "prereinstall": "npm run clean:dist",
+    "reinstall": "rimraf node_modules/*",
+    "postreinstall": "npm install",
+    "img:convert": "npx @squoosh/cli --webp '{quality: 75}'"
+  },
+  "keywords": [
+    "blog",
+    "11ty"
+  ],
+  "author": "Krzysztof Żuraw <info@kzuraw.com> (https://krzysztofzuraw.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "0.12.1",
+    "@11ty/eleventy-navigation": "0.3.2",
+    "@11ty/eleventy-plugin-rss": "1.1.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "3.1.1",
+    "luxon": "1.27.0",
+    "rimraf": "2.7.1"
+  }
+}
