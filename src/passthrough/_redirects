@@ -1,10 +1,18 @@
 # Redirects from what the browser requests to what we serve
-/feeds/all.rss.xml                         /feed.xml
-/blog/2016/geodjango-leaflet-part-one      /blog/2016/geodjango-leaflet
-/blog/2016/geodjango-leaflet-part-two      /blog/2016/geodjango-leaflet
-/blog/2016/haystack-elasticsearch-part-one /blog/2016/haystack-elasticsearch
-/blog/2016/haystack-elasticsearch-part-two /blog/2016/haystack-elasticsearch
-/blog/2016/django-celery-rabbit-part-one   /blog/2016/django-celery-rabbit
-/blog/2016/django-celery-rabbit-part-two   /blog/2016/django-celery-rabbit
-/blog/2016/django-celery-rabbit-part-three /blog/2016/django-celery-rabbit
-/blog/2016/django-celery-rabbit-part-four  /blog/2016/django-celery-rabbit
+/feeds/all.rss.xml                                 /feed.xml
+/blog/2016/geodjango-leaflet-part-one              /blog/2016/geodjango-leaflet
+/blog/2016/geodjango-leaflet-part-two              /blog/2016/geodjango-leaflet
+/blog/2016/haystack-elasticsearch-part-one         /blog/2016/haystack-elasticsearch
+/blog/2016/haystack-elasticsearch-part-two         /blog/2016/haystack-elasticsearch
+/blog/2016/django-celery-rabbit-part-one           /blog/2016/django-celery-rabbit
+/blog/2016/django-celery-rabbit-part-two           /blog/2016/django-celery-rabbit
+/blog/2016/django-celery-rabbit-part-three         /blog/2016/django-celery-rabbit
+/blog/2016/django-celery-rabbit-part-four          /blog/2016/django-celery-rabbit
+/blog/2016/ports-and-adapters-in-python-part-one   /blog/2016/ports-and-adapters-in-python
+/blog/2016/ports-and-adapters-in-python-part-two   /blog/2016/ports-and-adapters-in-python
+/blog/2016/ports-and-adapters-in-python-part-three /blog/2016/ports-and-adapters-in-python
+/blog/2016/django-application-puppet-part-one      /blog/2016/django-application-puppet
+/blog/2016/django-application-puppet-part-two      /blog/2016/django-application-puppet
+/blog/2016/design-by-contract-in-python-part-one   /blog/2016/design-by-contract-in-python
+/blog/2016/design-by-contract-in-python-part-two   /blog/2016/design-by-contract-in-python
+/blog/2016/design-by-contract-in-python-part-three /blog/2016/design-by-contract-in-python

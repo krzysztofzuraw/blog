@@ -1,11 +1,8 @@
 ---
-title: Ports and Adapters in python - part one
+title: Ports and Adapters in python
 date: 2016-05-22
-permalink: "/blog/2016/ports-and-adapters-in-python-part-one/index.html"
+permalink: "/blog/2016/ports-and-adapters-in-python/index.html"
 ---
-
-**Welcome! Today I'm going to start series about how to use port and
-adapter design pattern in simple django application.**
 
 Let me explain a little bit what exactly ports and adapters design
 pattern is. According to this [article](http://a.cockburn.us/1807)
@@ -252,12 +249,255 @@ def test_reddit_search(reddit_port):
     assert list(reddit_port.search('test_search')) == ['Post title']
 ```
 
-That's all for today. In the next post, I will show how to combine these
-ports and adapters with django application. Code for this you can find
-under this [repo](https://github.com/krzysztofzuraw/reddit-stars).
+I briefly remind you what is purpose of application build in this
+series: user will log in, then search with keyword so he can save any
+search result to database for read it later.
+
+I decided to first implement search mechanism for Reddit. This is what I
+will write today. Search request will be sent via GET. First, I need
+some form to handle this:
+
+```python
+from django import forms
+from django.conf import settings
+
+from external_api.external_api_port import instantiated_port
+
+class RedditSearchForm(forms.Form):
+    query = forms.CharField(label='search query', max_length=100)
+
+    def perform_search(self):
+        search_result = instantiated_port.search(self.cleaned_data['query'])
+        return search_result
+```
+
+I defined simple form that has only one field: `query` which is
+`CharField` field with label. My form has one method `perform_search`.
+In this method, I import instantiated reddit port that takes instance of
+reddit adapter with settings from django settings module. Idealy this
+adapter should be singleton class. This is how it looks in
+`reddit_adapter`:
+
+```python
+from django.conf import settings
+
+# reddit adapter class here ...
+
+instantiated_adapter = RedditAdapter(
+    settings.REDDIT_CLIENT_ID,
+    settings.REDDIT_CLIENT_SECRET,
+    settings.REDDIT_USERNAME,
+    settings.REDDIT_PASSWORD
+)
+```
+
+and in `external_api_port`:
+
+```python
+from .reddit_adapter import instantiated_adapter
+
+# port class here ...
+
+instantiated_port = ExternalAPIPort(instantiated_adapter)
+```
+
+Lastly, I perform the search using the port and `cleaned_data['query']`.
+I have access to `cleaned_data` attribute after form validation which
+will be shown in the view. At the end of `perform_search` I return
+search results. These results are processed further in view:
+
+```python
+from django.views.generic.edit import FormView
+from django.http import HttpResponse
+from django.shortcuts import render
+from .forms import RedditSearchForm
+
+class RedditSearchView(FormView):
+    template_name = 'search/index.html'
+    form_class = RedditSearchForm
+    success_url = 'add-to-favourites'
+    search_result = None
+
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(self.request.GET or None)
+        if form.is_valid():
+            self.search_result = form.perform_search()
+        return self.render_to_response(self.get_context_data(form=form))
+
+    def get_context_data(self, **kwargs):
+        context = super(RedditSearchView, self).get_context_data(**kwargs)
+        if self.search_result:
+            context.update({
+                'search_result': self.search_result,
+                'sucess': True
+                }
+            )
+        return context
+```
+
+Let begin from `get` method: this method is called every time get
+request is performed by the user. How to ensure that? I used `method`
+parameter in html:
+
+{% raw %}
+
+```html
+<form method="get" class="form" role="form">
+  {{ form }}
+  <input type="submit" class="btn btn-primary" value="Search" />
+</form>
+```
+
+{% endraw %}
+
+In `get` method I get the form for given `request.GET`. On this form I
+call `form.is_valid()` to get access to `cleaned_data`. After that I
+have search results so I can insert them to html. It is done via
+`get_context_data` method when I get my basic context calling `super`.
+And if there was search performed I update context with search results
+and I tell my html to render them in one template.
+
+Such updated context is taken by django and rendered to full html. Key
+`success` is present because I got if statement in html template which
+allows me to render results on the same page that search was performed:
+
+{% raw %}
+
+```html
+{% if sucess %}
+    {% for item in search_result %}
+        <li>{{ item }}</li>
+    {% endfor %}
+{% else %}
+<!--- form here ---!>
+```
+
+{% endraw %}
+
+And that basically all for search view. In next post I will take care of
+saving results to database. Code for this you can find under this
+[repo](https://github.com/krzysztofzuraw/reddit-stars).
+
+I made a reddit search view for the specific keyword
+that display results to the user. To save them to read later I need
+database representation of link from reddit:
+
+```python
+from django.db import models
+
+class RedditLink(models.Model):
+    title = models.CharField(max_length=250)
+    is_favourite = models.BooleanField(default=False)
+
+    def save(self, *args, **kwargs):
+        if self.is_favourite:
+            super(RedditLink, self).save(*args, **kwargs)
+```
+
+I made my own `save` because I only need links that are favorite in my
+database. In addition, I have multiple reddit links on my search page to
+save. So how to handle multiple forms of the same model in django? The
+answer is to use `Fromset`. What is it? It is module provided by django
+for creation multiple forms. How to use it? Look at `forms.py`:
+
+```python
+from django import forms
+from .models import RedditLink
+
+RedditAddToFavouritesFormset = forms.modelformset_factory(
+    RedditLink,
+    fields=('title', 'is_favourite'),
+    extra=5
+)
+```
+
+I used something called `forms.modelformset_factory` which is a function
+to produce fromset from model. So I provided model name with fields to
+calling this function. What is more, I add additional argument `extra`
+for creating more than one form in formset. How to use newly created
+`RedditAddToFavouritesFormset`? In views:
+
+```python
+from django.views.generic import CreateView
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse_lazy
+from .forms import RedditAddToFavouritesFormset
+
+
+class RedditAddToFavourites(CreateView):
+    template_name = 'search/index.html'
+    success_url = reverse_lazy('main_page')
+
+    def post(self, request, *args, **kwags):
+        reddit_links_formset = RedditAddToFavouritesFormset(request.POST)
+        if reddit_links_formset.is_valid():
+            reddit_links_formset.save()
+            return HttpResponseRedirect(success_url)
+        else:
+            return self.render_to_response(
+                'search/index.html',
+                self.get_context_data(
+                    reddit_links_formset=reddit_links_formset
+                )
+            )
+```
+
+I write `RedditAddToFavourites` which is a subclass of `CreateView`. The
+main point for this view class is to create `RedditLink` instances from
+formset. So I override `post` method which is responsible for handling
+POST requests. At first I a create new instance of formset from the
+request. After validation if everything was filled in correctly by the
+user. If so I save formset and create entries in database. Then
+`HttpResponseRedirect` redirect user to main page. If validation was
+incorrect I rerender template with form errors. Thanks to that my
+`search/index.html` looks as follows:
+
+{% raw %}
+
+```html
+{% if sucess %}
+<form method="post" action="{% url 'add_to_favourites' %}">
+  {% csrf_token %}
+  <table>
+    {{ reddit_links_formset }}
+  </table>
+  <input type="submit" class="btn btn-primary" value="Favourite" />
+</form>
+{% else %}
+```
+
+{% endraw %}
+
+To insert values that are from search I have to instantiate formset with
+argument initial in `search/views.py` under `get_context_data` method:
+
+```python
+reddit_links_formset = RedditAddToFavouritesFormset(
+    initial=[{'title': title} for title in self.search_result[:5]]
+)
+```
+
+And that all! Right now when user type query to search bar and click
+search he or she is redirected to page with 5 forms that have initial
+title set. After that user select favorite links and saves them to
+database. But I see a problem here: first, I only display for user 5
+forms with data from search results and I want it more, but it is what I
+will be taking care of in next blog post.
+
+I really appreciate every comment that you have! You can reach me in any
+way- just click icons at the bottom of this very page. Thank you for
+reading! Code for this you can find under this
+[repo](https://github.com/krzysztofzuraw/reddit-stars).
 
 ## Changes from 23.05.16:
 
 - Removing coupling from `ExternalAPIPort`
 - Adding new test
 - Adding word about contracts
+
+## Changes from 07.06.16:
+
+- Moving port & adapter to it's own module
+- Having only one instance of port & adapter
+
+(Special thanks for pointing this to Mariusz)
