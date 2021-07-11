@@ -6,7 +6,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 module.exports = (config) => {
   config.addPassthroughCopy("src/css");
   config.addPassthroughCopy("src/img");
-  config.addPassthroughCopy({"src/passthrough": "/"});
+  config.addPassthroughCopy({ "src/passthrough": "/" });
 
   config.addPlugin(syntaxHighlight);
   config.addPlugin(eleventyNavigationPlugin);
@@ -21,17 +21,17 @@ module.exports = (config) => {
     });
   });
 
-  config.addFilter('htmlDateString', (dateObj) => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+  config.addFilter("htmlDateString", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
   });
 
   config.addFilter("formatDate", (date) => {
     return DateTime.fromJSDate(date).toFormat("yyyy-LL-dd");
   });
 
-  config.addShortcode('currentYear', () => {
-    return DateTime.now().toLocaleString({year: 'numeric'})
-  })
+  config.addShortcode("currentYear", () => {
+    return DateTime.now().toLocaleString({ year: "numeric" });
+  });
 
   config.addShortcode("img", (path, alt, figcaption) => {
     return /*html*/ `<figure>
