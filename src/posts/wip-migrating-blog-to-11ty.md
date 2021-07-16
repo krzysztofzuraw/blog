@@ -1,19 +1,27 @@
 ---
-title: Migrating blog to 11ty
+title: Migrating blog to Eleventy
 date: Last Modified
 spellcheck: off
 permalink: "/blog/2021/migrating-blog-to-11ty/index.html"
 ---
 
-* Migrated blog to evenlty - 11ty
-* Gatsby was good - especialy image handling
-* 11ty is fast
-* I dont need JS on my site yet
-* It is HTML & CSS and it is really nice to write it
-* Migration was hard
-  * 11ty handles images diffrently by default - you provide a folder with images and they are copied through
-  * gatsby do it automaticly by coping images linked inside markdown - you can have the same in 11ty by using this extension
-  * What I did: copied images from posts into `src/img`, convert them to webp & use inside blog posts using shorcode
+I recently migrated my blog to [Eleventy](). My previous engine for generating static site was
+[Gatsby.js](). Why change then? Problem with gatsby was that it was really slow. And I mean that.
+To start development server on my Macbook Air 2019 I had to wait a bit for gatsby to start. The same
+was with deployment to [Netlify](). What was good? Image handling and plugin system. For every stuff
+you may need you could plug gatsby plugin something and in most cases it worked. Why 11ty then?
+I turns out that it is pretty fast and I really like to going back to some basic HTML, CSS & JS. I have
+to admit that after being in React land it was nice to just throw bunch of [nunjucks](https://link)
+templates and render website.
+
+The main painpoint for me was a migration process. Firstly 11ty handles images differently than gatsby
+does. By default it expects you to have a folder `img` which then can be copied passthrought by 11ty.
+What I did was: copy images to `src/img`, convert them to wepb & use blog post dates as a prefix.
+
+Gatsby in the other hand is coping through images linked inside markdown. To accomplish that in 11ty
+you can use [eleventy-plugin-page-assets](https://www.npmjs.com/package/eleventy-plugin-page-assets).
+
+Because of migrating images to `src/img` I had to migrate image references as well in markdown files.
 
 * Shorcode
 
