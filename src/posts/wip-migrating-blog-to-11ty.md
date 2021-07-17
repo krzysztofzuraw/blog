@@ -1,7 +1,6 @@
 ---
 title: Migrating blog to Eleventy
 date: Last Modified
-spellcheck: off
 permalink: "/blog/2021/migrating-blog-to-11ty/index.html"
 ---
 
