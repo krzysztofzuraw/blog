@@ -61,4 +61,3 @@ permalink: '$1/index.html'
 tags:(.|\n)+?
 ---
 ```
-
