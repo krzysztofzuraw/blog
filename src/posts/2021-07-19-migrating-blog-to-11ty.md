@@ -10,7 +10,7 @@ To start development server on my Macbook Air 2019 I had to wait a bit for gatsb
 was with deployment to [Netlify](https://www.netlify.com/). What was good? Image handling and plugin system. For every stuff
 you may need you could plug gatsby plugin something and in most cases it worked. Why 11ty then?
 I turns out that it is pretty fast and I really like to going back to some basic HTML, CSS & JS. I have
-to admit that after being in React land it was nice to just throw bunch of [nunjucks](https://link)
+to admit that after being in React land it was nice to just throw bunch of [nunjucks](https://mozilla.github.io/nunjucks/)
 templates and render website.
 
 The main pain-point for me was a migration process. Firstly 11ty handles images differently than gatsby
