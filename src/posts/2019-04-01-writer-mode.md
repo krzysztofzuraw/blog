@@ -1,7 +1,7 @@
 ---
 title: I build a thing - writer mode for VSCode
 date: 2019-04-01
-permalink: '/blog/2019/writer-mode-vscode/index.html'
+permalink: "/blog/2019/writer-mode-vscode/index.html"
 ---
 
 ## Why
@@ -18,7 +18,7 @@ larger font & I disabled vertical rules that guide how many characters are in li
 
 ![Imgur](https://i.imgur.com/33zYvoE.gif)
 
-I also played a little bit vs code api. I have to say it is really easy to start developing your own extension from
+I also played a little bit vs code api. I have to say it is simple to start developing your own extension from
 scratch. Sometimes I felt a little bit lost on how
 to get access to certain things but the overall experience was really nice.
 

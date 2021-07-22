@@ -55,14 +55,14 @@ start browser-sync I have this one line in my `package.json`:
 }
 ```
 
-Then I just write `npm start`.
+Then I write `npm start`.
 
 When I learn a new language I always look for the best practices. In
 javascript word there is a couple of them but I choose [Airbnb
 JavaScript Style Guide](https://github.com/airbnb/javascript). Hot tool
 for linting js files right now is [eslint](http://eslint.org/). To use
 eslint with this style guide I installed `eslint-config-airbnb`. Thanks
-to that in my `.eslintrc` I just wrote:
+to that in my `.eslintrc` I wrote:
 
 ```json
 {
@@ -176,7 +176,7 @@ const startTimeBtn = document.querySelector('[data-action="start"]');
 const restartTimeBtn = document.querySelector('[data-action="stop"]');
 ```
 
-Here I just select necessary elements from HTML. I'm using
+Here I select necessary elements from HTML. I'm using
 `querySelector` to take class and data attributes. As I have my
 `startTimeBtn` selected then I add an event listener to it:
 
@@ -612,7 +612,7 @@ function closeModal(event) {
 ```
 
 It closes modal by adding `is-hidden` which is equivalent to
-`display: none`. Then I simply save entry and retrieve it. As I wanted
+`display: none`. Then I save entry and retrieve it. As I wanted
 something different than `true` or `false` to be displayed to end user I
 have updated `retriveTimeEntryFromLocalStorage`:
 

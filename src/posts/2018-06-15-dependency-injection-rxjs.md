@@ -1,7 +1,7 @@
 ---
 title: Dependency injection in  redux-observable
 date: 2018-06-15
-permalink: '/blog/2018/dependency-injection-redux-observable/index.html'
+permalink: "/blog/2018/dependency-injection-redux-observable/index.html"
 ---
 
 Imagine that you have following situation: your calls to external api are using helper modules where all request logic lies. For instance, you have
@@ -14,7 +14,7 @@ export const makeRequest = async () => return fetch.get('http://www.some_api.com
 In your epic you use this as follows:
 
 ```js
-import * as backendService from './backendService';
+import * as backendService from "./backendService";
 
 const fetchBackendServiceEpic = (action$, store) =>
   action$
@@ -27,8 +27,8 @@ const fetchBackendServiceEpic = (action$, store) =>
 Everything seems fine but to test this epic you have to mock whole API request to `http://www.some_api.com` using for instance [nock](https://www.npmjs.com/package/nock) . Your test starts to get a little bit heavy to write:
 
 ```js
-describe('fetchBackendServiceEpic', () => {
-  it.should('fetch service', () => {
+describe("fetchBackendServiceEpic", () => {
+  it.should("fetch service", () => {
     const mockStore = configureMockStore();
     nock(`http://www.some_api.com`).get().reply(200, {});
     return rootEpic(ActionsObservable.from(YOUR_TRIGGER_ACTION), mockStore)
@@ -56,8 +56,8 @@ const fetchBackendServiceEpic = (action$, store, { makeRequest }) =>
 To test it you need:
 
 ```js
-describe('fetchBackendServiceEpic', () => {
-  it.should('fetch service', () => {
+describe("fetchBackendServiceEpic", () => {
+  it.should("fetch service", () => {
     const dependencies = { makeRequest: jest.fn().mockReturnValue([{}]) };
 
     fetchBackendServiceEpic(YOUR_TRIGGER_ACTION, (store = null), dependencies)
@@ -69,7 +69,7 @@ describe('fetchBackendServiceEpic', () => {
 });
 ```
 
-As you see here there is just injecting dependency with your desired return value - you are testing just logic of your epics and if proper actions are dispatched of your `TRIGGER_ACTION`.
+As you see here there is injecting dependency with your desired return value - you are testing logic of your epics and if proper actions are dispatched of your `TRIGGER_ACTION`.
 
 ### Summary
 

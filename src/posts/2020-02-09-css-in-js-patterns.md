@@ -1,10 +1,10 @@
 ---
 title: CSS in JS patterns
 date: 2020-02-09
-permalink: '/blog/2020/css-in-js-patterns/index.html'
+permalink: "/blog/2020/css-in-js-patterns/index.html"
 ---
 
-I have read a lot of articles about CSS in JS. Yet majority of them are just some introductory articles
+I have read a lot of articles about CSS in JS. Yet majority of them are some introductory articles
 or why having CSS in JS is a nice thing. So I decided to write my own blog post with CSS-in-JS patterns
 that I either heard, used or am currently using while working with CSS in JavaScript.
 
@@ -30,9 +30,9 @@ Then you create corresponding components wrapped in styled:
   <Description>Description</Description>
 </Card>;
 
-const Card = styled('div');
-const Header = styled('h1');
-const Description = styled('p');
+const Card = styled("div");
+const Header = styled("h1");
+const Description = styled("p");
 ```
 
 At my job in [Ingrid](https://www.ingrid.com/) we have whole application written using `styled` components and in the beginning it seems
@@ -40,7 +40,7 @@ like really nice pattern, yet if you don't rethink how you want to reuse your co
 up having a lot a duplications.
 
 This is our problem right now as we need to maintain whole file next
-to component that have all CSS-in-JS definitions. It is easy to read but if you need to change some
+to component that have all CSS-in-JS definitions. It is simple to read but if you need to change some
 padding or color you need to dive deep into `style.tsx` file and search for your particular component.
 
 ## Styled Component with CSS classes
@@ -63,11 +63,11 @@ You will end up with:
   <p>Description</p>
 </Card>;
 
-const Card = styled('div', () => ({
-  '.header': {
+const Card = styled("div", () => ({
+  ".header": {
     // styles applied to header class
   },
-  '& > p': {
+  "& > p": {
     // styles applied to p tag via CSS selector
   },
 }));
@@ -78,9 +78,9 @@ header of different color based on some prop. Then we add a new prop into `Card`
 calculation:
 
 ```tsx
-const Card = styled('div', (props) => ({
-  '.header': {
-    color: props.useWhite ? 'white' : 'red',
+const Card = styled("div", (props) => ({
+  ".header": {
+    color: props.useWhite ? "white" : "red",
   },
 }));
 ```

@@ -1,7 +1,7 @@
 ---
 title: What I learned from redesigning my blog
 date: 2020-03-18
-permalink: '/blog/2020/blog-redesign/index.html'
+permalink: "/blog/2020/blog-redesign/index.html"
 ---
 
 When I type `blog redesign` into Google I've got a lot of links why redesigning your blog can be a
@@ -27,7 +27,7 @@ But then I started thinking about what I really need from my CSS? I do not plan 
 theme - do I really need all those tools? That is why I picked the most basic of them all importing CSS from React files:
 
 ```tsx
-import '../styles/layout.css';
+import "../styles/layout.css";
 
 export const Layout: React.FunctionComponent = ({ children }) => {
   return <div>{children}</div>;
@@ -49,7 +49,7 @@ The idea is as follows - I select all `a` tags that have a target other than my 
 a[href^="http://"]:not([href*="krzysztofzuraw.com"]):after,
 a[href^="https://"]:not([href*="krzysztofzuraw.com"]):after
 {
-  content: ' ↗️';
+  content: " ↗️";
 }
 ```
 
@@ -81,7 +81,7 @@ By default, they are for the white theme but I'm using [prefers-color-scheme](ht
 Where I'm doing override those colors to [Dracula Theme](https://draculatheme.com/) one.
 
 I've changed the layout of my blog to use `flexbox` and it currently works fine. This was the first example
-outside of course where I could try laying out elements on the page using flexbox. I have experience
+outside where I could try laying out elements on the page using flexbox. I have experience
 with flexbox before but it was mostly to center elements inside some container.
 
 I've also removed google analytics script & discuss comments. I've created a small form (you can see

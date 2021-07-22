@@ -1,7 +1,7 @@
 ---
 title: Explain TypeScript to me
 date: 2019-09-03
-permalink: '/blog/2019/explain-typescript/index.html'
+permalink: "/blog/2019/explain-typescript/index.html"
 ---
 
 Hello 👋🏻
@@ -29,7 +29,7 @@ I like to think about ExplainTypeScript as a glossary of terms like [dictionary.
 If you were brave enough to enter [https://explaintypescript.com/](https://explaintypescript.com/) you may
 notice that there are not so many entries there.
 
-This is true - I just started this project. But if you want to help in project development, you can
+This is true - I started this project. But if you want to help in project development, you can
 add, fix or suggest an entry [here](https://github.com/krzysztofzuraw/explain-typescript/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc).
 
 ## Plans for the future

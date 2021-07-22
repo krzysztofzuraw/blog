@@ -1,7 +1,7 @@
 ---
 title: switchMap in redux-observable
 date: 2018-06-02
-permalink: '/blog/2018/switchmap-redux-observable/index.html'
+permalink: "/blog/2018/switchmap-redux-observable/index.html"
 ---
 
 ## Introduction
@@ -28,11 +28,11 @@ const exampleEpic (
     );
 ```
 
-Let’s start from the top. What exactly is `action$`? It is a stream of your redux store actions. So just all actions that you can imagine like: initializing your application, request initiators. They look like this:
+Let’s start from the top. What exactly is `action$`? It is a stream of your redux store actions. So all actions that you can imagine like: initializing your application, request initiators. They look like this:
 
 ```js
 const backendRequestInit = {
-  type: 'BACKEND_REQUEST_INIT',
+  type: "BACKEND_REQUEST_INIT",
 };
 ```
 

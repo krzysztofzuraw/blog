@@ -1,13 +1,13 @@
 ---
 title: Safari scrolling error
 date: 2019-07-05
-permalink: '/blog/2019/safari-scrolling-error/index.html'
+permalink: "/blog/2019/safari-scrolling-error/index.html"
 ---
 
 If you are developing applications for modern web you ultimately run into problems between different
 browsers.
 
-Some of them are fairly easy - like adding specific vendor prefix to your CSS. Yet there
+Some of them are simple - like adding specific vendor prefix to your CSS. Yet there
 is one category of bugs that can cause sleepless nights and hours of debugging.
 
 Those are **interactions** bugs.

@@ -1,7 +1,7 @@
 ---
 title: On generating social images for this blog
 date: 2021-03-27
-permalink: '/blog/2021/social-images/index.html'
+permalink: "/blog/2021/social-images/index.html"
 ---
 
 I recently decided to generate social images for my blog. You know those images that are being displayed by facebook or twitter when you share link on those platforms:
@@ -15,7 +15,7 @@ I want to get started and create something in finished time so I prepared a mini
 When I had my design in place I started searching for solutions on how to generate social images. What I wanted is:
 
 - generate social card based on title of page/blog post
-- it should be fairly easy to integrate & debug
+- it should be simple to integrate & debug
 - it should not cost me money - I’m trying stuff out now
 - it should be fun to do
 

@@ -15,12 +15,12 @@ the content of search query provided by the user. After that user can
 save for later founded link. In this blog post, I will focus only on
 reddit API part. Normally you will write some module using request for
 retrieving search results from reddit. But what when it comes to testing
-such code? You just mock requests calls or use responses library.
+such code? You mock requests calls or use responses library.
 
 How do you do it in ports and adapters way? You will have one thing
 called port for all external connections. Throught this all requests to
 external APIs will be done because who knows if the reddit will not
-change to duckduckgo? In such case you just add DuckDuckGo Adapter and
+change to duckduckgo? In such case you add DuckDuckGo Adapter and
 you are all set. Because port don't care if there is Reddit adapter or
 DuckDuckGo adapter as long as it provides necessary methods. As I
 mentioned before, port is communicating only with adapters. And what is
@@ -374,7 +374,7 @@ allows me to render results on the same page that search was performed:
 
 {% endraw %}
 
-And that basically all for search view. In next post I will take care of
+And that is all for search view. In next post I will take care of
 saving results to database. Code for this you can find under this
 [repo](https://github.com/krzysztofzuraw/reddit-stars).
 
@@ -485,7 +485,7 @@ forms with data from search results and I want it more, but it is what I
 will be taking care of in next blog post.
 
 I really appreciate every comment that you have! You can reach me in any
-way- just click icons at the bottom of this very page. Thank you for
+way - click icons at the bottom of this very page. Thank you for
 reading! Code for this you can find under this
 [repo](https://github.com/krzysztofzuraw/reddit-stars).
 

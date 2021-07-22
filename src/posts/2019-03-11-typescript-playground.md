@@ -1,7 +1,7 @@
 ---
 title: Setting up simple React & TypeScript project
 date: 2019-03-11
-permalink: '/blog/2019/react-typescript-playground/index.html'
+permalink: "/blog/2019/react-typescript-playground/index.html"
 ---
 
 ## Hello 👋🏻
@@ -19,7 +19,7 @@ see what was added and why.
 
 ## Template
 
-It is nothing magical over there: you have [parcel-bundler](https://parceljs.org) that is doing the most of the work. You just plug `index.tsx` like you can see in `index.html`:
+It is nothing magical over there: you have [parcel-bundler](https://parceljs.org) that is doing the most of the work. You plug `index.tsx` like you can see in `index.html`:
 
 ```html
 <!DOCTYPE html>

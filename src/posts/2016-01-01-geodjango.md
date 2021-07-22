@@ -6,7 +6,7 @@ permalink: "/blog/2016/geodjango-leaflet/index.html"
 
 **Today is the day, when I will start my blog. I would like to publish
 new posts once a week.** **The comments and feedback will be pretty much
-appreciated as I have just started blogging in English.**
+appreciated as I have started blogging in English.**
 
 I assume that the Reader knows how to run basic Django application.
 However, if this is not the case, I encourage you to start
@@ -16,7 +16,7 @@ So, let's start:
 
 First of all, what is GeoDjango?
 
-From official geodjango
+From official GeoDjango
 [documentation](https://docs.djangoproject.com/en/dev/ref/contrib/gis/):
 
 > GeoDjango intends to be a world-class geographic Web framework. Its
@@ -243,7 +243,7 @@ voivodeship_mapping = {
 
 Where under Voivodeship model we have all fields from shp file and in
 `voivodeship_mapping`we got proper mapping for loading data. I added
-`__str__` and `__unicode__` just for convenience.
+`__str__` and `__unicode__` for convenience.
 
 Let's add an admin for our voivodeship application by editing admin.py:
 
