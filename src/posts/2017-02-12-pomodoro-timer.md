@@ -1,7 +1,7 @@
 ---
 title: Pomodoro timer
 date: 2017-02-12
-permalink: '/blog/2017/pomodoro-timer/index.html'
+permalink: "/blog/2017/pomodoro-timer/index.html"
 ---
 
 ## What pomodoro-timer project will be about
@@ -133,7 +133,7 @@ element in its available space. `.control_buttons` are evenly spaced on
 the webpage with space between them by `space-around`. After loading a
 page it looks like this:
 
-{% img "2017-02-12-layout", "Basic layout", "Basic layout" %}
+{% img "2017-02-17-layout", "Basic layout", "Basic layout" %}
 
 I am aware that this look needs a bit of work though. As I have my
 styles ready I add this HTML to the body:
@@ -171,7 +171,7 @@ script.js:
 
 ```javascript
 let countdown;
-const timerDisplay = document.querySelector('.display__time-left');
+const timerDisplay = document.querySelector(".display__time-left");
 const startTimeBtn = document.querySelector('[data-action="start"]');
 const restartTimeBtn = document.querySelector('[data-action="stop"]');
 ```
@@ -181,7 +181,7 @@ Here I just select necessary elements from HTML. I'm using
 `startTimeBtn` selected then I add an event listener to it:
 
 ```javascript
-startTimeBtn.addEventListener('click', () => {
+startTimeBtn.addEventListener("click", () => {
   if (countdown) return;
   timer(1500);
 });
@@ -209,7 +209,7 @@ I call `displayTimeLeft`:
 function displayTimeLeft(seconds) {
   const minutes = Math.floor(seconds / 60);
   const remainderSeconds = seconds % 60;
-  const display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+  const display = `${minutes}:${remainderSeconds < 10 ? "0" : ""}${remainderSeconds}`;
   timerDisplay.textContent = display;
 }
 ```
@@ -246,7 +246,7 @@ sound and exit the function. At the end, I display changing time.
 `playAudio` is a simple function:
 
 ```javascript
-const endSound = document.querySelector('#end_sound');
+const endSound = document.querySelector("#end_sound");
 
 function playAudio() {
   const sound = new Audio(endSound.src);
@@ -260,10 +260,10 @@ By the way most of these functions I take from [JavaScript
 There is the last thing to do - restart my timer:
 
 ```javascript
-restartTimeBtn.addEventListener('click', () => {
+restartTimeBtn.addEventListener("click", () => {
   clearInterval(countdown);
   countdown = undefined;
-  timerDisplay.textContent = '25:00';
+  timerDisplay.textContent = "25:00";
 });
 ```
 
@@ -306,7 +306,7 @@ notifications:
 let notificationPermission = false;
 
 Notification.requestPermission().then((result) => {
-  if (result === 'granted') {
+  if (result === "granted") {
     notificationPermission = true;
   }
 });
@@ -323,10 +323,10 @@ I want my notifications to be displayed when my time ends:
 function displayNotification() {
   if (!notificationPermission) return;
   const notification = new Notification("Time's up!", {
-    icon: 'stopwatch.png',
+    icon: "stopwatch.png",
   });
 
-  notification.addEventListener('click', () => {
+  notification.addEventListener("click", () => {
     window.focus();
   });
 }
@@ -383,7 +383,7 @@ I also have to adjust notifications text:
 
 ```javascript
 // inside if in timer function
-displayNotification(hasBreakAfter ? 'Time to rest dude!' : 'Time to work dude!');
+displayNotification(hasBreakAfter ? "Time to rest dude!" : "Time to work dude!");
 ```
 
 ## Displaying & storing breaks and pomodoros
@@ -394,10 +394,10 @@ the user so he can see how much time he works today.
 After notification is displayed I use `saveTimeEntryToLocalStorage`:
 
 ```javascript
-const entries = JSON.parse(localStorage.getItem('entries')) || [];
+const entries = JSON.parse(localStorage.getItem("entries")) || [];
 
 function extractHoursMinutes(date) {
-  return date.split(' ').splice(4, 1)[0].slice(0, 5);
+  return date.split(" ").splice(4, 1)[0].slice(0, 5);
 }
 
 function saveTimeEntryToLocalStorage(startSeconds, endSeconds, type) {
@@ -410,7 +410,7 @@ function saveTimeEntryToLocalStorage(startSeconds, endSeconds, type) {
     type,
   };
   entries.push(entry);
-  localStorage.setItem('entries', JSON.stringify(entries));
+  localStorage.setItem("entries", JSON.stringify(entries));
 }
 ```
 
@@ -443,7 +443,7 @@ function retrieveTimeEntryFromLocalStorage() {
       </tr>
     `
     )
-    .join('');
+    .join("");
 }
 ```
 
@@ -454,7 +454,7 @@ respective `td` and save to HTML. Be sure that you spell `HTML` in
 One more thing is to reset and clear localStorage:
 
 ```javascript
-resetLocalStorageBtn.addEventListener('click', () => {
+resetLocalStorageBtn.addEventListener("click", () => {
   localStorage.clear();
   window.location.reload(true);
 });
@@ -574,7 +574,7 @@ function saveTimeEntryToLocalStorage(startSeconds, endSeconds, type, wasGood) {
     wasGood,
   };
   entries.push(entry);
-  localStorage.setItem('entries', JSON.stringify(entries));
+  localStorage.setItem("entries", JSON.stringify(entries));
 }
 ```
 
@@ -584,8 +584,8 @@ pomodoro I have to introduce two global variables so I can access them
 not only from `timer` function:
 
 ```javascript
-const modal = document.querySelector('.modal-overlay');
-const modalButtons = modal.querySelectorAll('[data-productive]');
+const modal = document.querySelector(".modal-overlay");
+const modalButtons = modal.querySelectorAll("[data-productive]");
 let now;
 let then;
 
@@ -596,7 +596,7 @@ function timer(seconds, hasBreakAfter = true) {
 }
 
 modalButtons.forEach((button) => {
-  button.addEventListener('click', closeModal);
+  button.addEventListener("click", closeModal);
 });
 ```
 
@@ -605,8 +605,8 @@ buttons in the modal. When a user clicks one of them I run `closeModal`:
 
 ```javascript
 function closeModal(event) {
-  modal.classList.add('is-hidden');
-  saveTimeEntryToLocalStorage(now, then, 'Pomodoro', event.target.dataset.productive);
+  modal.classList.add("is-hidden");
+  saveTimeEntryToLocalStorage(now, then, "Pomodoro", event.target.dataset.productive);
   retrieveTimeEntryFromLocalStorage();
 }
 ```
@@ -622,11 +622,11 @@ function retrieveTimeEntryFromLocalStorage() {
     .map(
       (entry) => `
      <tr>
-       <td class="mdl-data-table__cell--non-numeric">${entry.wasGood === true ? '✔' : '✖'}</td>
+       <td class="mdl-data-table__cell--non-numeric">${entry.wasGood === true ? "✔" : "✖"}</td>
      </tr>
   `
     )
-    .join('');
+    .join("");
 }
 ```
 
@@ -638,7 +638,7 @@ function timer(seconds, hasBreakAfter = true) {
 
   if (secondsLeft < 0) {
     // do the break, display notfication, play sound
-    if (hasBreakAfter) modal.classList.remove('is-hidden');
+    if (hasBreakAfter) modal.classList.remove("is-hidden");
   }
 }
 ```

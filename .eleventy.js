@@ -36,7 +36,7 @@ module.exports = (config) => {
   config.addShortcode("img", (path, alt, figcaption) => {
     return /*html*/ `<figure>
        <a href="/img/${path}.webp" target="_blank" rel="noopener">
-        <img src="/img/${path}.webp" loading="lazy" alt="${alt}">
+        <img src="/img/${path}.webp" loading="lazy" alt="${alt}" >
       </a>
       <figcaption>${figcaption}</figcaption>
     </figure>`;
