@@ -56,7 +56,7 @@ $ pip install git+https://github.com/Changaco/python-libarchive-c
 In this snippet, I use request feature that doesn't require loading the
 whole content of the response to memory but instead I add the argument:
 `stream=True` and then I use `response.iter_content(chunk_size=1024)`.
-Rest of the code is simply calling `add_file_from_memory` with a path
+Rest of the code is calling `add_file_from_memory` with a path
 (`entry_path`) and size of the entry in an archive (`entry_size`).
 
 Under the hood, python-libarchive-c is using

@@ -78,9 +78,9 @@ manager.add_command(
 To communicate between microservices I use REST. To ease yourself when
 creating resources and endpoints you can use
 [Flask-RESTful](flask-restful.readthedocs.io/en/0.3.5/). It is
-superuseful when you need to create REST API. It is easy- you specify
+superuseful when you need to create REST API. It is simple - you specify
 endpoint with resource and rest is done by Flask-RESTful. It also has
-request parsing and it is very easy to create other representations like
+request parsing and it is very simple to create other representations like
 xml. The snippet below shows it:
 
 ```python
@@ -263,9 +263,9 @@ follows:
 ## Dh-virtualenv
 
 To distribute packages we use
-[dh-virtualenv](dh-virtualenv.readthedocs.io/en/latest/). This basically
+[dh-virtualenv](dh-virtualenv.readthedocs.io/en/latest/). This
 is taking python virtual enviroments and packing it to deb packages. So
-to have new code released we just run jenkins job to create new deb.
+to have new code released we run jenkins job to create new deb.
 
 That's all for today! The slides from this presentation can be found
 here:

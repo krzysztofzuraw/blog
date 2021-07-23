@@ -1,7 +1,7 @@
 ---
 title: Fragments and queries in Relay Modern
 date: 2017-12-09
-permalink: '/blog/2017/fragments-queries-in-relay-modern/index.html'
+permalink: "/blog/2017/fragments-queries-in-relay-modern/index.html"
 ---
 
 **Today I want to cover two points: how to use fragments in relay modern and one of the ways of handling
@@ -123,7 +123,7 @@ export default class FilmContainer extends Component {
 
 {% endraw %}
 
-In my query, I just want to have data only for a particular film so I pass its id as a variable from
+In my query, I want to have data only for a particular film so I pass its id as a variable from
 `react-router-dom` match. The rest is exactly the same as in `AppQuery`.
 
 That's all for today! I hope this post was valuable - if you have any other patterns for React & Relay

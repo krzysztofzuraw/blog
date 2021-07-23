@@ -91,7 +91,7 @@ class ExternalAPIPort(BasePort):
 ```
 
 This code will work for python 2. If you want to use `ContractsMeta`
-with python 3 you have to use function `with_metaclass` or simply write
+with python 3 you have to use function `with_metaclass` or write
 `BasePort(object, metaclass=ContractsMeta)`:
 
 ```python
@@ -294,11 +294,11 @@ all instances of that metaclass will have to provide such function.
 Inside this code, I check whether provided query is a string or not. In
 `ExternalAPIPort` which inherits from previously defined I have to call
 super for `ExternalAPIPortMetaclass` search method. Thanks to that I can
-make a validation of query. Right after that I simply return search
+make a validation of query. Right after that I return search
 query.
 
 What I don't like there is fact that I need to add additional line of
-code inside `ExternalAPIPort.search` with `super` just for checking
+code inside `ExternalAPIPort.search` with `super` for checking
 contract which can trick others. That's why I think that metaclasses and
 contracts are two different topic besides that they have some pieces in
 common (both are designed for telling: here I make contract that you

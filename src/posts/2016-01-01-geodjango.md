@@ -9,7 +9,7 @@ new posts once a week.** **The comments and feedback will be pretty much
 appreciated as I have started blogging in English.**
 
 I assume that the Reader knows how to run basic Django application.
-However, if this is not the case, I encourage you to start
+If this is not the case, I encourage you to start
 [here](https://docs.djangoproject.com/en/1.9/intro/tutorial01/).
 
 So, let's start:
@@ -20,7 +20,7 @@ From official GeoDjango
 [documentation](https://docs.djangoproject.com/en/dev/ref/contrib/gis/):
 
 > GeoDjango intends to be a world-class geographic Web framework. Its
-> goal is to make it as easy as possible to build GIS Web applications
+> goal is to make it as simple as possible to build GIS Web applications
 > and harness the power of spatially enabled data.
 
 To run GeoDjango you have to install some additional packages. In ubuntu

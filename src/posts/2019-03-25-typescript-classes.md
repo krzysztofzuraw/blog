@@ -1,7 +1,7 @@
 ---
 title: TypeScript classes, interfaces and all between
 date: 2019-03-25
-permalink: '/blog/2019/typescript-classes-interfaces/index.html'
+permalink: "/blog/2019/typescript-classes-interfaces/index.html"
 ---
 
 ## Hello 👋
@@ -22,7 +22,7 @@ If you read 👆paragraph - congratulations 🎉. Let's jump straight into the c
 bored:
 
 ```typescript
-axios.get<{ user: IUserDTO }>('api/users/1').then((res) => UserModel.create(res.data));
+axios.get<{ user: IUserDTO }>("api/users/1").then((res) => UserModel.create(res.data));
 ```
 
 I'm using `IUserDTO` to tell axios what response I may get from API - in my case, it will be:
@@ -58,7 +58,7 @@ From right on I will use only `UserModel` in my redux store, selectors or in com
 ```ts
 // actions
 interface getUserSuccess {
-  type: 'GET_USER_SUCCESS';
+  type: "GET_USER_SUCCESS";
   user: IUserModel;
 }
 
@@ -85,7 +85,7 @@ interface Dog extends Animal {
   isBarking: boolean;
 }
 
-const rex: Dog = { isBarking: true, name: 'Rex' };
+const rex: Dog = { isBarking: true, name: "Rex" };
 ```
 
 Yet there are casses where I use `type` - for example when I have react `Props` declaration:
@@ -135,8 +135,8 @@ If I have an object:
 
 ```ts
 const user: IUserModel = {
-  name: 'Evil user',
-  password: '',
+  name: "Evil user",
+  password: "",
   isSuperUser: true,
   evil: true,
 };
@@ -171,12 +171,12 @@ The last missing piece is `static create()` method. Keyword `static` means that 
 bound to instance of the class. So you don't need to write:
 
 ```ts
-const user = new UserModel('Krzysztof', '134', true, 'kz@example.com');
+const user = new UserModel("Krzysztof", "134", true, "kz@example.com");
 user.create();
 ```
 
 You can use it without instantiating class first - `UserModel.create()` which I'm using in my
-API call code. In the body of `create` I just create a new class to work with.
+API call code. In the body of `create` I create a new class to work with.
 
 ### Summary & TL;DR
 

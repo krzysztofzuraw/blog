@@ -1,7 +1,7 @@
 ---
 title: Mutations in Relay Modern
 date: 2018-01-06
-permalink: '/blog/2018/mutations-in-relay-modern/index.html'
+permalink: "/blog/2018/mutations-in-relay-modern/index.html"
 ---
 
 **In this series, I covered various topics starting from setting up Django and ending in Relay queries.
@@ -48,8 +48,8 @@ export default class AddFilmForm extends Component {
     super(props);
 
     this.state = {
-      title: '',
-      date: '',
+      title: "",
+      date: "",
       rating: 0,
     };
   }
@@ -57,7 +57,7 @@ export default class AddFilmForm extends Component {
   handleChange = (event) => {
     const target = event.target;
     const name = target.name;
-    const value = target.type === 'select-one' ? parseInt(target.value, 10) : target.value;
+    const value = target.type === "select-one" ? parseInt(target.value, 10) : target.value;
     this.setState({
       [name]: value,
     });
@@ -109,13 +109,13 @@ export default class AddFilmForm extends Component {
 
 As you can see this is a normal implementation of how to handle forms in React. I catch `onChange`
 events in `handleChange` then get value character by character and store in the component state.
-At the end when user clicks submit I just fire up `CreateFilmMutation` inside `handleSubmit`.
+At the end when user clicks submit I fire up `CreateFilmMutation` inside `handleSubmit`.
 
 How is this mutation implemented? Look below:
 
 ```jsx
-import { commitMutation, graphql } from 'react-relay';
-import environment from '../Environment';
+import { commitMutation, graphql } from "react-relay";
+import environment from "../Environment";
 
 const mutation = graphql`
   mutation CreateFilmMutation($input: CreateFilmInput!) {
@@ -140,14 +140,14 @@ export default function CreateFilmMutation(title, airDate, rating) {
       title,
       airDate,
       rating,
-      actors: [{ actorId: 'QWN0b3I6MQ==' }],
+      actors: [{ actorId: "QWN0b3I6MQ==" }],
     },
   };
   commitMutation(environment, {
     mutation,
     variables,
     onCompleted: (response, errors) => {
-      console.log('Response received from server.');
+      console.log("Response received from server.");
     },
     onError: (err) => console.error(err),
   });

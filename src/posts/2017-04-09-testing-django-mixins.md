@@ -1,7 +1,7 @@
 ---
 title: Testing django mixins
 date: 2017-04-09
-permalink: '/blog/2017/how-to-test-django-mixins/index.html'
+permalink: "/blog/2017/how-to-test-django-mixins/index.html"
 ---
 
 **You may read all these books and tutorials that tell you - test your
@@ -62,7 +62,7 @@ a key is in context. In `test_something_mixin` I instantiate
 `dummy_view`. Then take context test if it has a key that I'm interested
 in.
 
-And that's all! I have my mixin tested. Of course, if mixin become more
+And that's all! I have my mixin tested. If mixin become more
 and more complex you may need more tests.
 
 Feel free to comment! Examples based on this

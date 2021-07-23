@@ -1,7 +1,7 @@
 ---
 title: Don't use defaults
 date: 2017-05-07
-permalink: '/blog/2017/dont-use-defaults/index.html'
+permalink: "/blog/2017/dont-use-defaults/index.html"
 ---
 
 **Recently I bought simple LTE router. While reading through manual I
@@ -10,7 +10,7 @@ noticed something interesting.**
 ## Why leaving insecure defaults can be a problem?
 
 Everyone who buys this model will have the same settings. For example
-accessing the main router dashboard. Just type 192.168.1.1 and
+accessing the main router dashboard. Type 192.168.1.1 and
 admin/admin. You are inside!
 
 Isn't that a little bit dangerous?

@@ -38,7 +38,7 @@ While creating a user I want to give him access to AWS S3:
 and after I download its credentials I can create S3 container - I have
 chosen Ireland because with Frankfurt I have a problem with uploading
 files to S3. After bucket creation, it's time to add policy. The policy
-is basically JSON that tells AWS which user can access given bucket.
+is JSON that tells AWS which user can access given bucket.
 More information about that can be found
 [here](http://docs.aws.amazon.com/AmazonS3/latest/dev/intro-managing-access-s3-resources.html).
 Adding policy is quite simple from S3 management view:
@@ -144,7 +144,7 @@ class StaticStorage(S3BotoStorage):
   location = settings.STATICFILES_LOCATION
 ```
 
-To upload my static files I simply run `python manage.py collectstatic`.
+To upload my static files I run `python manage.py collectstatic`.
 After a while I can see that my files are in a bucket:
 
 {% img "2016-12-04-aws-3", "Static files inside S3", "Static files inside S3" %}
@@ -183,7 +183,7 @@ integrate AWS ElasticTranscoder with Django application.**
 
 ElasticTranscoder allows you to transcode files from your S3 bucket to
 various formats. To set this service up first you have to create a
-pipeline. What pipeline is? Basically, it's a workflow- how your
+pipeline. What pipeline is? It's a workflow- how your
 transcoder should work. You can create a different pipeline for long
 content and different for short one. In my application I created the
 following pipeline:

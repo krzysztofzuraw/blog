@@ -115,9 +115,9 @@ http {
 }
 ```
 
-I just present you the most important lines - the rest you will find in
+I present you the most important lines - the rest you will find in
 a repo. Setting `client_max_body_size` allows me to upload files till
-100M. I use nginx just to serve media files - uploaded images. That's
+100M. I use nginx to serve media files - uploaded images. That's
 why I needed `location /media/`.
 
 The rest of requests goes to django application - and in production

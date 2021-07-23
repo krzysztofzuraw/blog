@@ -1,7 +1,7 @@
 ---
 title: Lessons learned from being a mentor
 date: 2017-07-15
-permalink: '/blog/2017/lessons-learned-from-being-a-mentor/index.html'
+permalink: "/blog/2017/lessons-learned-from-being-a-mentor/index.html"
 ---
 
 **Last week I was a mentor in two day Python workshop. The main goal of
@@ -55,11 +55,11 @@ It helps a lot - as people are naturally afraid of looking stupid.
 Reminding them that there is no such thing as a stupid question allows
 to learn more.
 
-## Use fast and easy to setup environment
+## Use fast and simple to setup environment
 
 Everyone on the workshop uses Windows. Sometimes it can be a hustle to
 teach not only Python but command line. To avoid it we used [Jupyter
-notebook](http://jupyter.org/). It is easy to setup and fast. How to
+notebook](http://jupyter.org/). It is simple to setup and fast. How to
 install one on Windows? We decided to use
 [Anaconda](https://www.continuum.io/downloads) as it already has jupyter
 installed. After installation, we didn't have any complaints about dev

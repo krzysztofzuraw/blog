@@ -145,7 +145,7 @@ to get response:
 }
 ```
 
-or just for one actor:
+or for one actor:
 
 ```javascript
 {

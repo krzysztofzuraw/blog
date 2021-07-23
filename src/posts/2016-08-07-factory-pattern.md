@@ -68,7 +68,7 @@ class TARArchive(BaseArchive):
                 tar_file.add(file_)
 ```
 
-Basically, `ZIPArchive` and `TARArchive` classes have `generate` method
+`ZIPArchive` and `TARArchive` classes have `generate` method
 to create archives in given format using `ZipFile` or `tarfile` modules
 from standardlib as follows:
 
@@ -79,7 +79,7 @@ tar_archive = TARArchive(os.path.join(os.getcwd(), 'tar'), ['for_tar.txt'])
 tar_archive.generate()
 ```
 
-Then the real fun begins. Say I want to generate archive just only by
+Then the real fun begins. Say I want to generate archive only by
 providing path and files to pack into the archive. For this purpose I
 use something called `ArchiveManager` which is factory:
 
@@ -106,7 +106,7 @@ Here I have `ARCHIVE_ENGINES` class attribute for every archive engine
 that I want to use. Below in `__init__` I setup all necessary attributes
 with extension to use in `choose_archive_engine`. Here is the place
 where factory pattern starts to work: I iterate through all engines to
-`check_extenstion` and if there is a match I simply return the correct
+`check_extenstion` and if there is a match I return the correct
 engine to `self.archive_engine`. To use that I need to write some more
 code in `BaseArchive`:
 

@@ -1,7 +1,7 @@
 ---
 title: Callbacks & promises in JS for newbies
 date: 2017-04-02
-permalink: '/blog/2017/callbacks-promises-in-js-for-newbies/index.html'
+permalink: "/blog/2017/callbacks-promises-in-js-for-newbies/index.html"
 ---
 
 **You are a newbie in JavaScript? You want to know a little bit more
@@ -42,13 +42,13 @@ function geocodeAddress(address, callback) {
       address,
     },
     function (results, status) {
-      if (status === 'OK') {
+      if (status === "OK") {
         callback({
           lat: results[0].geometry.location.lat(),
           lng: results[0].geometry.location.lng(),
         });
       } else {
-        alert('Cannot find address');
+        alert("Cannot find address");
       }
     }
   );
@@ -78,10 +78,10 @@ passed to `geocodeAddress`:
 
 ```javascript
 function initMap() {
-  searchForm.addEventListener('submit', (event) => {
+  searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    questionForm.classList.add('is-hidden');
-    const place = searchForm.querySelector('[name=place]').value;
+    questionForm.classList.add("is-hidden");
+    const place = searchForm.querySelector("[name=place]").value;
     geocodeAddress(place, onGeocodeComplete);
   });
 }
@@ -107,13 +107,13 @@ function geocodeAddressPromise(address) {
         address,
       },
       (results, status) => {
-        if (status === 'OK') {
+        if (status === "OK") {
           resolve({
             lat: results[0].geometry.location.lat(),
             lng: results[0].geometry.location.lng(),
           });
         } else {
-          reject('Cannot find address');
+          reject("Cannot find address");
         }
       }
     );
@@ -130,10 +130,10 @@ How to handle such promise? You can use that:
 
 ```javascript
 function initMap() {
-  searchForm.addEventListener('submit', (event) => {
+  searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    questionForm.classList.add('is-hidden');
-    const place = searchForm.querySelector('[name=place]').value;
+    questionForm.classList.add("is-hidden");
+    const place = searchForm.querySelector("[name=place]").value;
     geocodeAddressPromise(place).then(
       (response) => {
         onGeocodeComplete(response);
@@ -147,7 +147,7 @@ function initMap() {
 ```
 
 I resolve a promise by calling `then` on it. I pass here arrow function
-with a response if the promise was resolved. In another case, I just
+with a response if the promise was resolved. In another case, I
 display an error to the user.
 
 # What I've learn
@@ -159,7 +159,7 @@ I learn quite a lot from having this kind of problem:
 3.  how to write code using both callback & promise
 
 That's all for today! Feel free to comment - all are realy valuable for
-me. I just want to thank one more time
+me. I want to thank one more time
 [adavidmiller](https://www.reddit.com/user/adavidmiller) for taking his
 time to show me how to write code using callbacks.
 
@@ -207,10 +207,10 @@ The last thing is `initMap`:
 
 ```javascript
 function initMap() {
-  searchForm.addEventListener('submit', (event) => {
+  searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    questionForm.classList.add('is-hidden');
-    const place = searchForm.querySelector('[name=place]').value;
+    questionForm.classList.add("is-hidden");
+    const place = searchForm.querySelector("[name=place]").value;
     geocodeAddressPromise(place).then(onGeocodeComplete).catch(alert);
   });
 }

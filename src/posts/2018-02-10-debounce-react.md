@@ -283,7 +283,7 @@ const store = createStore(
 export default store;
 ```
 
-I create here my store with `rootReducer` which in this case is just only `words` reducer and I also
+I create here my store with `rootReducer` which in this case is only `words` reducer and I also
 added [redux dev tools](https://github.com/gaearon/redux-devtools) which help me debug my redux code.
 
 The second step is to modify my `index.js` so redux can be injected into my application:

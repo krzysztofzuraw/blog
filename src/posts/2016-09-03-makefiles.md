@@ -5,7 +5,7 @@ permalink: "/blog/2016/makefiles-in-python-projects/index.html"
 ---
 
 **When I join my current company I saw in their git repos strange file.
-It wasn't used by any python code. It just sits in the main directory of
+It wasn't used by any python code. It sits in the main directory of
 the project. I asked my colleagues what is this file for? They told me-
 to make your life easier. That's why today I write about this file-
 Makefile.**
@@ -139,14 +139,14 @@ line to the console before it's executed. `At` sign is to suppress this
 and `@` is discarded before line is passed to the shell.
 
 But what if I wanted to run my application on different host and port
-using makefile? It's simple just add:
+using makefile? It's simple - add:
 
 ```makefile
 run:
     python manage.py runserver --host $(HOST) --port $(PORT)
 ```
 
-Then you can simply run:
+Then you can run:
 
 ```shell
 $ make run HOST=127.0.0.1 PORT=8000

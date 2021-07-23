@@ -1,7 +1,7 @@
 ---
 title: Setting up Relay Modern on frontend
 date: 2017-11-25
-permalink: '/blog/2017/setting-up-relay-modern-on-fe/index.html'
+permalink: "/blog/2017/setting-up-relay-modern-on-fe/index.html"
 ---
 
 **Hello, for such long break I'm back to the Django, React & Relay tutorial! Today I will show you
@@ -22,7 +22,7 @@ generate-schema:
 	mv film_api/schema.json film_ui/schema.json
 ```
 
-I'm using here command (`graphql_schema`) provided by django graphene. Indent option in just for a
+I'm using here command (`graphql_schema`) provided by django graphene. Indent option in for a
 sake of better readability of generated schema which looks like:
 
 ```json
@@ -119,16 +119,16 @@ recognizes only `.js` files.
 I have my dev dependencies done - right now I can setup Relay! First I need `Environment.js`:
 
 ```js
-import { Environment, Network, RecordSource, Store } from 'relay-runtime';
+import { Environment, Network, RecordSource, Store } from "relay-runtime";
 
 const store = new Store(new RecordSource());
 
 const network = Network.create((operation, variables) => {
-  return fetch('http://127.0.0.1:8000/graphql/', {
-    method: 'POST',
+  return fetch("http://127.0.0.1:8000/graphql/", {
+    method: "POST",
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       query: operation.text,
@@ -149,12 +149,12 @@ export default environment;
 
 Going from the top - I create a store for my Relay data, then I create a `network` where I submit
 the address of `graphql` instance - In my case where Django Graphene listens to. The rest of the code in
-`network` function is just JSON handling. At the end of the file I export `environment` so I can use
+`network` function is JSON handling. At the end of the file I export `environment` so I can use
 it in my `App.jsx`:
 
 ```jsx
-import { QueryRenderer, graphql } from 'react-relay';
-import environment from '../Environment';
+import { QueryRenderer, graphql } from "react-relay";
+import environment from "../Environment";
 
 const FilmListQuery = graphql`
   query AppQuery {
@@ -187,7 +187,7 @@ class App extends Component {
 export default App;
 ```
 
-What is happening here? `FilmListQuery` is the simplest query of all - I just fetch the id and title
+What is happening here? `FilmListQuery` is the simplest query of all - I fetch the id and title
 of the film - I can take this string and execute in on `127.0.0.1:8000/graphql` and the result will
 be a list of films with title and ids. In `QueryRenderer` component I specify the previously created
 `environment`, `query` and handling of errors. If there is no error and I got a data I render `FilmList`.
