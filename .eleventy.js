@@ -2,7 +2,6 @@ const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
 
 module.exports = (config) => {
   config.addPassthroughCopy("src/css");
@@ -12,7 +11,6 @@ module.exports = (config) => {
   config.addPlugin(syntaxHighlight);
   config.addPlugin(eleventyNavigationPlugin);
   config.addPlugin(pluginRss);
-  config.addPlugin(inclusiveLangPlugin);
 
   config.addFilter("humanizeDate", (date) => {
     return DateTime.fromJSDate(date).toLocaleString({

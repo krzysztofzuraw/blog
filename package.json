@@ -12,8 +12,7 @@
     "prereinstall": "npm run clean:dist",
     "reinstall": "rimraf node_modules/*",
     "postreinstall": "npm install",
-    "img:convert": "npx @squoosh/cli --webp '{quality: 75}'",
-    "lint:writing": "npx write-good"
+    "img:convert": "npx @squoosh/cli --webp '{quality: 75}'"
   },
   "keywords": [
     "blog",
