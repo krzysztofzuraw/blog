@@ -29,6 +29,21 @@ module.exports = (config) => {
     return DateTime.fromJSDate(date).toFormat("yyyy-LL-dd");
   });
 
+  config.addFilter("getYear", (date) => {
+    return DateTime.fromJSDate(date).toFormat("yyyy");
+  });
+
+  config.addFilter("getLanguage", (lang) => {
+    switch (lang) {
+      case "en":
+        return "English";
+      case "pl":
+        return "Polish";
+      default:
+        return "English";
+    }
+  });
+
   config.addShortcode("currentYear", () => {
     return DateTime.now().toLocaleString({ year: "numeric" });
   });

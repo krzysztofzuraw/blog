@@ -1,19 +1,19 @@
 ---
 layout: layouts/page.html
-title: Blog index
+title: Blog posts
 eleventyNavigation:
   key: Blog
   parent: Header
   order: 2
 ---
 
-# Blog index
+# Blog posts that I've written
 
-<ol class="blog-list">
+<ol class="list">
 {% for post in collections.posts | reverse %}
   <li>
     <a href="{{post.url}}">{{ post.data.title }}</a>
-    <time dateTime={{post.date}}>{{ post.date | formatDate }}</time>
+    <time dateTime={{post.date | formatDate }}>{{ post.date | formatDate }}</time>
   </li>
 {% endfor %}
 </ol>
