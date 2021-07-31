@@ -58,11 +58,11 @@
     <ul>
       {% for entry in metadata.social %}
       <li>
-        <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+        <a href="{{ entry.url | url }}" rel="me">{{ entry.title }}</a>
       </li>
       {% endfor %}
     </ul>
-    <p>© 2016-{% currentYear %} <a href="mailto:{{ metadata.author.email }}">{{ metadata.author.name }}</a></p>
+    <p>© 2016-{% currentYear %} <a href="mailto:{{ metadata.author.email }}" rel="me">{{ metadata.author.name }}</a></p>
   </footer>
 </body>
 
