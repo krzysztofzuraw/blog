@@ -3,6 +3,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const sanitizeHTML = require("sanitize-html");
+const groupBy = require("lodash.groupby");
 
 module.exports = (config) => {
   config.addPassthroughCopy("src/css");
@@ -95,6 +96,31 @@ module.exports = (config) => {
       <figcaption>${figcaption}</figcaption>
     </figure>`;
   });
+
+  config.addCollection("postStats", (collectionApi) => {
+    const posts = collectionApi.getFilteredByTag("posts")
+    const postsGroupedByYear = groupBy(posts, (post) =>
+      post.date.getFullYear()
+    );
+    const postsStats = Object.entries(postsGroupedByYear).map(([year, posts]) => ({
+      [year]: posts.length,
+    }));
+
+    return [...postsStats, { Total: posts.length }];
+  });
+
+  config.addCollection("bookStats", (collectionApi) => {
+    const books = collectionApi.getFilteredByTag("books")
+    const booksGroupedByYear = groupBy(books, (book) =>
+      book.date.getFullYear()
+    );
+    const booksStats = Object.entries(booksGroupedByYear).map(([year, books]) => ({
+      [year]: books.length,
+    }));
+
+    return [...booksStats, { Total: books.length }];
+  });
+
 
   return {
     templateFormats: ["md", "njk", "html"],

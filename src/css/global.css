@@ -170,7 +170,9 @@ article {
   }
 
   p,
-  li {
+  li,
+  th,
+  td {
     font-size: var(--size-500);
   }
 
@@ -186,6 +188,20 @@ article {
   .post time {
     font-size: var(--size-600);
   }
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+tr:last-child {
+  font-weight: 700;
 }
 
 .post code:not([class*="language-"]),
