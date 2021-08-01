@@ -274,3 +274,7 @@ button:hover {
   background-color: var(--accent-color);
   border: 1px solid var(--text-color);
 }
+
+.webmentions {
+  border-top: 2px dashed;
+}

@@ -8,6 +8,7 @@
   "description": "I am writing about TypeScript, React & all things frontend.",
   "keywords": "TypeScript, React, HTML, CSS, blog",
   "url": "https://krzysztofzuraw.com",
+  "domain": "krzysztofzuraw.com",
   "feed": {
     "subtitle": "I am writing about TypeScript, React & all things frontend.",
     "filename": "feed.xml",
