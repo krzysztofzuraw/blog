@@ -26,10 +26,10 @@
     "@11ty/eleventy-navigation": "0.3.2",
     "@11ty/eleventy-plugin-inclusive-language": "1.0.2",
     "@11ty/eleventy-plugin-rss": "1.1.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "3.1.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "3.1.2",
     "dotenv": "10.0.0",
     "lodash.groupby": "4.6.0",
-    "luxon": "1.27.0",
+    "luxon": "1.28.0",
     "netlify-plugin-11ty": "1.1.0",
     "rimraf": "2.7.1",
     "sanitize-html": "2.4.0"
