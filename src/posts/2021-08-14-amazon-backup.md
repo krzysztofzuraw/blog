@@ -11,14 +11,17 @@ To fix it I run on searching through the internet to see if there are different 
 Main idea was to use [Amazon S3 Glacier](https://aws.amazon.com/s3/glacier/) to store data. How is Glacier different from other available solutions? It turns out that you pay a really small fee for storing your data but to retrieve it you need to let know AWS in advance. Four hours in advance. It was not a problem for me so I decided to go this route.
 
 Now I had my backup location I started wondering what tool I can use to backup data into AWS. I could used the same solution as Paweł - and do it manually but I opt for more automated application - [Arq Backup](https://www.arqbackup.com/). Why?
-* it is not subscription
-* I can backup to multiple locations at once like AWS & my local hard drive
-* Mac native app
+
+- it is not subscription
+- I can backup to multiple locations at once like AWS & my local hard drive
+- Mac native app
 
 I bought both space on AWS & Arq backup and started using it. I was eager to see what will be my invoice after one month of storing data - it turns out for storing about 10GB of data I pay around USD 0.06 per month.
 
 ## Summary
+
 In this blog post I wrote why I picked [Arq backup](https://www.arqbackup.com/) & AWS glacier as my backup solution:
-* easy to integrate + multiple backup destinations
-* works
-* cheap
+
+- easy to integrate + multiple backup destinations
+- works
+- cheap

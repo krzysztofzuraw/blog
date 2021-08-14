@@ -12,7 +12,8 @@
     "prereinstall": "npm run clean:dist",
     "reinstall": "rimraf node_modules/*",
     "postreinstall": "npm install",
-    "img:convert": "npx @squoosh/cli --webp '{quality: 75}'"
+    "img:convert": "npx @squoosh/cli --webp '{quality: 75}'",
+    "prepare": "husky install"
   },
   "keywords": [
     "blog",
@@ -28,10 +29,16 @@
     "@11ty/eleventy-plugin-rss": "1.1.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "3.1.2",
     "dotenv": "10.0.0",
+    "husky": "7.0.1",
+    "lint-staged": "11.1.2",
     "lodash.groupby": "4.6.0",
     "luxon": "2.0.1",
     "netlify-plugin-11ty": "1.1.0",
+    "prettier": "2.3.2",
     "rimraf": "3.0.2",
     "sanitize-html": "2.4.0"
+  },
+  "lint-staged": {
+    "*.{js,css,md,html}": "prettier --write"
   }
 }
