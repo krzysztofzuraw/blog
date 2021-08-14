@@ -38,6 +38,7 @@
 <body>
   <header>
     <ul>
+      <a href="#main-content"  class="jump-to-main-content">Jump to main content</a>
       {% for entry in collections.all | eleventyNavigation("Header") %}
       <li>
         <a href="{{ entry.url | url }}">{{entry.title }}</a>
@@ -45,7 +46,7 @@
       {% endfor %}
     </ul>
   </header>
-  <main>
+  <main id="main-content">
     {% block content %}
     {% endblock %}
   </main>
