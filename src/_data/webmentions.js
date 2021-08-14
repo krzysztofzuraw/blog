@@ -16,7 +16,7 @@ module.exports = async function () {
 
   try {
     const response = await Cache(apiURL, {
-      duration: "1w",
+      duration: "2w",
       type: "json",
     });
     return response.children;
