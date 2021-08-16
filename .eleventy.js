@@ -4,6 +4,8 @@ const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const sanitizeHTML = require('sanitize-html');
 const groupBy = require('lodash.groupby');
+const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
 
 module.exports = config => {
   config.addPassthroughCopy('src/css');
@@ -116,6 +118,20 @@ module.exports = config => {
 
     return [...booksStats, { Total: books.length }];
   });
+
+  const markdownLibrary = markdownIt({
+    html: true,
+    linkify: true,
+  }).use(markdownItAnchor, {
+    permalink: markdownItAnchor.permalink.ariaHidden({
+      placement: 'after',
+      class: 'direct-link',
+      symbol: '#',
+      level: [1, 2, 3, 4],
+    }),
+    slugify: config.getFilter('slug'),
+  });
+  config.setLibrary('md', markdownLibrary);
 
   return {
     templateFormats: ['md', 'njk', 'html'],
