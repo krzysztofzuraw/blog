@@ -4,3 +4,4 @@ dist
 .cache
 .env
 .netlify
+.nova
