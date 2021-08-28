@@ -22,7 +22,6 @@
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "0.12.1",
-    "@11ty/eleventy-cache-assets": "2.3.0",
     "@11ty/eleventy-navigation": "0.3.2",
     "@11ty/eleventy-plugin-inclusive-language": "1.0.2",
     "@11ty/eleventy-plugin-rss": "1.1.1",
@@ -32,8 +31,6 @@
     "luxon": "2.0.1",
     "markdown-it": "10.0.0",
     "markdown-it-anchor": "8.1.2",
-    "netlify-plugin-11ty": "1.1.0",
-    "rimraf": "3.0.2",
-    "sanitize-html": "2.4.0"
+    "rimraf": "3.0.2"
   }
 }

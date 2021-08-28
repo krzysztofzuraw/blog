@@ -2,7 +2,6 @@ const { DateTime } = require('luxon');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
-const sanitizeHTML = require('sanitize-html');
 const groupBy = require('lodash.groupby');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
@@ -50,40 +49,6 @@ module.exports = config => {
       default:
         return 'English';
     }
-  });
-
-  config.addFilter('getWebmentionsForUrl', (webmentions, url) => {
-    const likes = ['like-of'];
-    const repost = ['repost-of'];
-    const messages = ['mention-of', 'in-reply-to'];
-
-    const hasRequiredFields = entry => {
-      const { author, published, content } = entry;
-      return author.name && published && content;
-    };
-    const sanitize = entry => {
-      const { content } = entry;
-      if (content['content-type'] === 'text/html') {
-        content.value = sanitizeHTML(content.value);
-      }
-      return entry;
-    };
-
-    return {
-      likesCount: webmentions
-        .filter(entry => entry['wm-target'] === url)
-        .filter(entry => likes.includes(entry['wm-property'])).length,
-      repostsCount: webmentions
-        .filter(entry => entry['wm-target'] === url)
-        .filter(entry => repost.includes(entry['wm-property']))
-        .filter(hasRequiredFields)
-        .map(sanitize).length,
-      messages: webmentions
-        .filter(entry => entry['wm-target'] === url)
-        .filter(entry => messages.includes(entry['wm-property']))
-        .filter(hasRequiredFields)
-        .map(sanitize),
-    };
   });
 
   config.addShortcode('currentYear', () => {
