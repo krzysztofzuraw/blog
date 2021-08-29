@@ -1,5 +1,5 @@
 {
   "tags": ["books"],
   "layout": "layouts/book.html",
-  "permalink": "/books/{{ date | getYear }}/{{ title | slug }}/index.html"
+  "permalink": "/book/{{ date | getYear }}/{{ title | slug }}/index.html"
 }
