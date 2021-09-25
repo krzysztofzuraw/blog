@@ -1,0 +1,6 @@
+{
+  "emmet.includeLanguages": {
+    "nunjucks": "html"
+  },
+  "spellright.language": ["en", "pl"]
+}
