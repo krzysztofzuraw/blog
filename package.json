@@ -29,7 +29,7 @@
     "lodash.groupby": "4.6.0",
     "luxon": "2.0.2",
     "markdown-it": "12.2.0",
-    "markdown-it-anchor": "8.3.0",
+    "markdown-it-anchor": "8.3.1",
     "rimraf": "3.0.2"
   }
 }
