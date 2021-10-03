@@ -5,6 +5,7 @@
   "main": "n/a",
   "scripts": {
     "start": "eleventy --serve",
+    "dev": "eleventy --serve",
     "prebuild": "npm run clean:dist",
     "build": "eleventy",
     "debug": "DEBUG=* eleventy",

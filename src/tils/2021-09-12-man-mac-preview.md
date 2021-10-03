@@ -1,5 +1,5 @@
 ---
-title: Open man in Mac OS Preview
+title: How to open man in Mac OS Preview
 date: 2021-09-12
 ---
 
