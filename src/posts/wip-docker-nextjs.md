@@ -74,7 +74,7 @@ CMD ["npm", "start"]
 Docker is running nicely on local machine but now it is time to enter Google Cloud domain. First one
 is Google Cloud Build.
 
-## Google Cloud Build
+## Google Cloud Build & Run
 
 First question: what is Google Cloud Build? Google is saying that it is their CI/CD platform. I say
 it is a little bit forgotten tool to build your docker images. What we are using it for? Two tasks:
@@ -82,8 +82,90 @@ it is a little bit forgotten tool to build your docker images. What we are using
 1. Run test/lint/tsc on PR
 2. Build next.js application inside docker and tell Google Cloud Run to use it
 
-- Dockerfile
-  - nextjs config
-- Gcloud
-  - Gcloud build
-  - Gcloud run
+For the first one I'm using following `cloudbuild.pr.yaml`:
+
+```yaml
+steps:
+  - id: install
+    name: 'node:14-alpine'
+    entrypoint: npm
+    args: ['ci']
+  - id: tsc
+    name: 'node:14-alpine'
+    entrypoint: npm
+    args: ['run', 'tsc']
+    waitFor: ['install']
+  - id: lint
+    name: 'node:14-alpine'
+    entrypoint: npm
+    args: ['run', 'lint']
+    waitFor: ['install']
+  - id: test
+    name: 'node:14-alpine'
+    entrypoint: npm
+    args: ['test']
+    waitFor: ['install']
+options:
+  machineType: 'E2_HIGHCPU_8'
+```
+
+We are using alpine version of node to match used in Dockerfile above.
+
+For the second one we are using `cloudbild.deploy.yaml`:
+
+```yaml
+steps:
+  - id: build
+    name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '--tag',
+        'eu.gcr.io/application:$COMMIT_SHA',
+        '--tag',
+        'eu.gcr.io/application:latest',
+        '.',
+      ]
+    env:
+      - 'NEXT_PUBLIC_KEY=SOME_KEY'
+  - id: push
+    waitFor: ['build']
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'eu.gcr.io/application:$COMMIT_SHA']
+  - id: push-latest
+    waitFor: ['build']
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'eu.gcr.io/application:latest']
+  - id: deploy
+    waitFor: ['push']
+    name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'application'
+      - '--image'
+      - 'eu.gcr.io/application:$COMMIT_SHA'
+      - '--region'
+      - 'europe-west1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+images:
+  - 'eu.gcr.io/application:$COMMIT_SHA'
+options:
+  machineType: 'E2_HIGHCPU_8'
+```
+
+Steps are as follows:
+
+1. Build docker image & tag it with current commit hash (Gloud Build gives us $COMMIT\*SHA) + latest
+   tag. In this step we are also embeding `NEXT_PUBLIC_` env variables as they need to be present in
+   [build time](https://nextjs.org/docs/basic-features/environment-variables#exposing-environment-variables-to-the-browser).
+2. Push tags
+3. Tell cloud run to use just tagged docker image with next.js application
+
+Note about yaml naming convention - we currently have two cloudbuilds in repo so it wont cost us much
+to have them in top root folder but as a rule of thumb if there will be 3 or 4 such files e.g. one
+to deploy to stage and one to prod we are going to put those files inside `cloudbuild` folder instead.
+
+## Summary
