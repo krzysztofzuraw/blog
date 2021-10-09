@@ -2,5 +2,6 @@
   "emmet.includeLanguages": {
     "nunjucks": "html"
   },
-  "spellright.language": ["en", "pl"]
+  "spellright.language": ["en", "pl"],
+  "spellright.documentTypes": ["markdown"]
 }
