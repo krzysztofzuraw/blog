@@ -4,7 +4,6 @@ code[class*='language-'],
 pre[class*='language-'] {
   color: #ccc;
   background: 0 0;
-  font-family: var(--font-mono);
   font-size: 1em;
   text-align: left;
   white-space: pre;
