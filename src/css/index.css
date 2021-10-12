@@ -9,11 +9,10 @@
   --size-900: 4.2rem;
   --bg-color: #f3f3f3;
   --text-color: #252525;
-  --accent-color: #717ec3;
   --font-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --font-serif: Georgia, serif;
-  --font-mono: 'SF Mono', 'Menlo', 'Consolas', 'Ubuntu Mono', monospace;
+  --font-mono: ui-monospace, 'SF Mono', 'Menlo', 'Consolas', 'Ubuntu Mono', monospace;
 }
 
 *,
@@ -52,12 +51,18 @@ a:not([class]) {
   color: currentColor;
 }
 
-[aria-current]:not([aria-current='false']) {
-  color: var(--accent-color);
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
 }
 
 :focus {
-  outline: 2px dashed var(--accent-color);
+  outline: 2px dashed var(--text-color);
   outline-offset: 0.25rem;
 }
 
@@ -94,12 +99,6 @@ h3 {
   font-size: var(--size-600);
 }
 
-img,
-video {
-  max-width: 100%;
-  aspect-ratio: 4/3;
-}
-
 figcaption {
   font-size: var(--size-300);
   font-style: italic;
@@ -117,14 +116,7 @@ blockquote {
   background: rgba(0, 0, 0, 0.99);
 }
 
-.flow > * + * {
-  margin-top: var(--flow-space, 1em);
-}
-
-h1 {
-  max-width: 15ch;
-}
-
+h1,
 h2,
 h3 {
   max-width: 25ch;
@@ -139,26 +131,8 @@ article {
   font-family: var(--font-serif);
 }
 
-.post {
-  --flow-space: var(--size-700);
-}
-
 .post time {
-  --flow-space: var(--size-400);
   display: block;
-}
-
-.post :is(h2, h3) {
-  --flow-space: var(--size-900);
-}
-
-.post :is(h2, h3) + * {
-  --flow-space: var(--size-400);
-}
-
-.post figure,
-.post figure + * {
-  --flow-space: var(--size-900);
 }
 
 @media (min-width: 45em) {
@@ -206,27 +180,23 @@ tr:last-child {
   font-weight: 700;
 }
 
+code:not([class*='language-']) {
+  font-weight: 700;
+}
+
 .post code:not([class*='language-']),
-li {
+.post li {
   word-wrap: break-word;
   word-break: break-word;
   hyphens: auto;
   -webkit-hyphens: auto;
 }
 
-code:not([class*='language-']) {
-  font-weight: 700;
-  font-size: var(--size-code);
-  font-family: var(--font-mono);
-  padding: 0.15rem;
-  border: 1px solid var(--text-color);
-}
-
 time {
   font-style: italic;
 }
 
-header ul {
+.page-header ul {
   list-style: none;
   padding: 2rem;
   margin: 0;
@@ -235,7 +205,7 @@ header ul {
   gap: 2rem;
 }
 
-footer {
+.page-footer {
   border-top: 2px dashed;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -246,7 +216,7 @@ footer {
   gap: 0.5rem;
 }
 
-footer ul {
+.page-footer ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -254,19 +224,6 @@ footer ul {
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.list {
-  display: grid;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  gap: 1rem;
-}
-
-.list > li {
-  display: grid;
-  gap: 0.5rem;
 }
 
 button {
@@ -282,53 +239,27 @@ button:hover {
   filter: invert(100%);
 }
 
-::-webkit-scrollbar {
-  width: 10px;
+/* components */
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--bg-color); /* color of the tracking area */
+.stack > * {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: var(--accent-color);
-  border: 1px solid var(--text-color);
+.stack > * + * {
+  margin-top: var(--space, 1.5rem);
 }
 
-.webmentions {
-  border-top: 2px dashed;
+/* other */
+.index ol {
+  list-style: disc;
 }
 
-.jump-to-main-content {
-  -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-  box-sizing: border-box;
-  position: absolute;
-  margin: 0;
+.index > ol {
   padding: 0;
-}
-
-.jump-to-main-content:focus {
-  -webkit-clip-path: none;
-  clip-path: none;
-  z-index: 1;
-  color: currentColor;
-  text-decoration: none;
-  text-align: center;
-}
-
-.direct-link {
-  text-decoration: none;
-  font-style: normal;
-  margin-left: 0.1em;
-}
-a[href].direct-link,
-a[href].direct-link:visited {
-  color: transparent;
-}
-a[href].direct-link:focus,
-a[href].direct-link:focus:visited,
-:hover > a[href].direct-link,
-:hover > a[href].direct-link:visited {
-  color: var(--accent-color);
 }

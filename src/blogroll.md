@@ -9,7 +9,7 @@ eleventyNavigation:
 
 # Blogroll
 
-<ul class="list">
+<ul class="stack">
 {% for entry in blogroll %}
   <li>
     <a href="{{ entry.url }}">{{ entry.title }}</a>

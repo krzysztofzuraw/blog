@@ -2,9 +2,7 @@ const { DateTime } = require('luxon');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
-const groupBy = require('lodash.groupby');
-const markdownIt = require('markdown-it');
-const markdownItAnchor = require('markdown-it-anchor');
+const _ = require('lodash');
 
 module.exports = config => {
   config.addPassthroughCopy('src/css');
@@ -30,6 +28,13 @@ module.exports = config => {
 
   config.addFilter('formatDate', date => {
     return DateTime.fromJSDate(date).toFormat('yyyy-LL-dd');
+  });
+
+  config.addFilter('formatDateWithoutYear', date => {
+    return DateTime.fromJSDate(date).toLocaleString({
+      month: 'long',
+      day: 'numeric',
+    });
   });
 
   config.addFilter('getYear', date => {
@@ -64,39 +69,29 @@ module.exports = config => {
     </figure>`;
   });
 
-  config.addCollection('postStats', collectionApi => {
-    const posts = collectionApi.getFilteredByTag('posts');
-    const postsGroupedByYear = groupBy(posts, post => post.date.getFullYear());
-    const postsStats = Object.entries(postsGroupedByYear).map(([year, posts]) => ({
-      [year]: posts.length,
-    }));
-
-    return [...postsStats, { Total: posts.length }];
+  config.addCollection('postsByYear', collection => {
+    return _.chain(collection.getFilteredByTag('posts'))
+      .groupBy(post => post.date.getFullYear())
+      .toPairs()
+      .reverse()
+      .value();
   });
 
-  config.addCollection('bookStats', collectionApi => {
-    const books = collectionApi.getFilteredByTag('books');
-    const booksGroupedByYear = groupBy(books, book => book.date.getFullYear());
-    const booksStats = Object.entries(booksGroupedByYear).map(([year, books]) => ({
-      [year]: books.length,
-    }));
-
-    return [...booksStats, { Total: books.length }];
+  config.addCollection('tilsByYear', collection => {
+    return _.chain(collection.getFilteredByTag('tils'))
+      .groupBy(post => post.date.getFullYear())
+      .toPairs()
+      .reverse()
+      .value();
   });
 
-  const markdownLibrary = markdownIt({
-    html: true,
-    linkify: true,
-  }).use(markdownItAnchor, {
-    permalink: markdownItAnchor.permalink.ariaHidden({
-      placement: 'after',
-      class: 'direct-link',
-      symbol: '#',
-      level: [1, 2, 3, 4],
-    }),
-    slugify: config.getFilter('slug'),
+  config.addCollection('booksByYear', collection => {
+    return _.chain(collection.getFilteredByTag('books'))
+      .groupBy(post => post.date.getFullYear())
+      .toPairs()
+      .reverse()
+      .value();
   });
-  config.setLibrary('md', markdownLibrary);
 
   return {
     templateFormats: ['md', 'njk', 'html'],

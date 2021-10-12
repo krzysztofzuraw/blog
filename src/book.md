@@ -7,13 +7,18 @@ eleventyNavigation:
   order: 5
 ---
 
-# Books that I read
+# Books index
 
-<ol class="list">
-{% for book in collections.books | reverse %}
+<ol class="stack index">
+{% for year, yearPosts in collections.booksByYear %}
+  <h2>{{ year }}</h2>
+  <ol class="stack">
+  {% for post in yearPosts | reverse %}
   <li>
-    <a href="{{ book.url }}" lang={{ book.data.lang }}>{{ book.data.title }}</a>
-    <time dateTime={{ book.date | formatDate }}>{{ book.date | formatDate }}</time>
+    <a href="{{post.url}}">{{ post.data.title }}</a> -
+    <time dateTime={{post.date | formatDateWithoutYear }}>{{ post.date | formatDateWithoutYear }}</time>
   </li>
+  {% endfor %}
+  </ol>
 {% endfor %}
 </ol>
