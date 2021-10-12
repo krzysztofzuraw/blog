@@ -3,8 +3,6 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const _ = require('lodash');
-const markdownIt = require('markdown-it');
-const markdownItAnchor = require('markdown-it-anchor');
 
 module.exports = config => {
   config.addPassthroughCopy('src/css');
