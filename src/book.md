@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 5
 ---
 
-# Books that I read
+# Books index
 
 <ol class="stack index">
 {% for year, yearPosts in collections.booksByYear %}

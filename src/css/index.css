@@ -251,7 +251,7 @@ button:hover {
 
 /* other */
 .index ol {
-  list-style: circle;
+  list-style: disc;
 }
 
 .index > ol {

@@ -10,9 +10,21 @@
     <link rel="stylesheet" href="{{ '/css/prism.css' | url }}" />
     <link
       rel="alternate"
-      href="{{ metadata.feed.path | url }}"
+      href="{{ metadata.feed.paths.posts | url }}"
       type="application/atom+xml"
-      title="{{ metadata.title }}"
+      title="{{ metadata.title }} | Blog"
+    />
+    <link
+      rel="alternate"
+      href="{{ metadata.feed.paths.books | url }}"
+      type="application/atom+xml"
+      title="{{ metadata.title }} | Books"
+    />
+    <link
+      rel="alternate"
+      href="{{ metadata.feed.paths.tils | url }}"
+      type="application/atom+xml"
+      title="{{ metadata.title }} | TIL"
     />
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | url }}" />
     <link rel="sitemap" type="application/xml" href="{{ metadata.sitemap.path | url }}" />

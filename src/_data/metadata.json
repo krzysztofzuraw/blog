@@ -11,8 +11,11 @@
   "domain": "krzysztofzuraw.com",
   "feed": {
     "subtitle": "I am writing about TypeScript, React & all things frontend.",
-    "filename": "feed.xml",
-    "path": "/feed.xml"
+    "paths": {
+      "posts": "/feed.xml",
+      "books": "/feed.books.xml",
+      "tils": "/feed.tils.xml"
+    }
   },
   "sitemap": {
     "path": "/sitemap.xml"
