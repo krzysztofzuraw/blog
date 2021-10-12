@@ -7,13 +7,18 @@ eleventyNavigation:
   order: 2
 ---
 
-# Blog posts that I've written
+# Blog index
 
-<ol class="list">
-{% for post in collections.posts | reverse %}
+<ol class="stack index">
+{% for year, yearPosts in collections.postsByYear %}
+  <h2>{{ year }}</h2>
+  <ol class="stack">
+  {% for post in yearPosts | reverse %}
   <li>
-    <a href="{{post.url}}">{{ post.data.title }}</a>
-    <time dateTime={{post.date | formatDate }}>{{ post.date | formatDate }}</time>
+    <a href="{{post.url}}">{{ post.data.title }}</a> -
+    <time dateTime={{post.date | formatDateWithoutYear }}>{{ post.date | formatDateWithoutYear }}</time>
   </li>
+  {% endfor %}
+  </ol>
 {% endfor %}
 </ol>

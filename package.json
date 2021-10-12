@@ -27,7 +27,7 @@
     "@11ty/eleventy-plugin-inclusive-language": "1.0.2",
     "@11ty/eleventy-plugin-rss": "1.1.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "3.1.2",
-    "lodash.groupby": "4.6.0",
+    "lodash": "4.17.21",
     "luxon": "2.0.2",
     "markdown-it": "12.2.0",
     "markdown-it-anchor": "8.3.1",
