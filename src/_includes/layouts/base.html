@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }} | {{ metadata.author.name }}</title>
 
-    <link rel="stylesheet" href="{{ '/css/normalize.css' | url }}" />
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/css/utils.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/css/new-index.css' | url }}" />
     <link rel="stylesheet" href="{{ '/css/prism.css' | url }}" />
     <link
       rel="alternate"
@@ -14,32 +15,20 @@
       type="application/atom+xml"
       title="{{ metadata.title }} | Blog"
     />
-    <link
-      rel="alternate"
-      href="{{ metadata.feed.paths.books | url }}"
-      type="application/atom+xml"
-      title="{{ metadata.title }} | Books"
-    />
-    <link
-      rel="alternate"
-      href="{{ metadata.feed.paths.tils | url }}"
-      type="application/atom+xml"
-      title="{{ metadata.title }} | TIL"
-    />
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | url }}" />
     <link rel="sitemap" type="application/xml" href="{{ metadata.sitemap.path | url }}" />
 
     <meta name="description" content="{{ metadata.description }}" />
     <meta name="keywords" content="{{ metadata.keywords }}" />
-    <link rel="canonical" href="{{ metadata.url }}{{ permalink }}" />
+    <link rel="canonical" href="{{ page.url | url | absoluteUrl(metadata.url) }}" />
 
     <meta name="twitter:dnt" content="on" />
 
     <meta name="format-detection" content="telephone=no" />
   </head>
 
-  <body>
-    <header class="page-header">
+  <body class="box center">
+    <header>
       <ul>
         {% for entry in collections.all | eleventyNavigation("Header") %}
         <li>
@@ -48,8 +37,8 @@
         {% endfor %}
       </ul>
     </header>
-    <main id="main-content">{% block content %} {% endblock %}</main>
-    <footer class="page-footer">
+    <main>{% block content %} {% endblock %}</main>
+    <footer class="switcher">
       <ul>
         {% for entry in collections.all | eleventyNavigation("Footer") %}
         <li>
