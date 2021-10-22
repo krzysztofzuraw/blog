@@ -2,7 +2,6 @@ const { DateTime } = require('luxon');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
-const _ = require('lodash');
 
 module.exports = config => {
   config.addPassthroughCopy('src/css');
@@ -13,47 +12,24 @@ module.exports = config => {
   config.addPlugin(eleventyNavigationPlugin);
   config.addPlugin(pluginRss);
 
-  config.addFilter('humanizeDate', date => {
-    return DateTime.fromJSDate(date).toLocaleString({
-      weekday: 'long',
+  config.addFilter('humanizeDate', date =>
+    DateTime.fromJSDate(date).toLocaleString({
       year: 'numeric',
       month: 'long',
       day: 'numeric',
-    });
-  });
+    })
+  );
 
-  config.addFilter('htmlDateString', dateObj => {
-    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
-  });
-
-  config.addFilter('formatDate', date => {
-    return DateTime.fromJSDate(date).toFormat('yyyy-LL-dd');
-  });
-
-  config.addFilter('formatDateWithoutYear', date => {
-    return DateTime.fromJSDate(date).toLocaleString({
-      month: 'long',
-      day: 'numeric',
-    });
-  });
+  config.addFilter('formatDate', date =>
+    DateTime.fromJSDate(date).toLocaleString({
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    })
+  );
 
   config.addFilter('getYear', date => {
     return DateTime.fromJSDate(date).toFormat('yyyy');
-  });
-
-  config.addFilter('formatDateFromString', dateStr => {
-    return DateTime.fromISO(dateStr).toFormat('yyyy-LL-dd');
-  });
-
-  config.addFilter('getLanguage', lang => {
-    switch (lang) {
-      case 'en':
-        return 'English';
-      case 'pl':
-        return 'Polish';
-      default:
-        return 'English';
-    }
   });
 
   config.addShortcode('currentYear', () => {
@@ -67,30 +43,6 @@ module.exports = config => {
       </a>
       <figcaption>${figcaption}</figcaption>
     </figure>`;
-  });
-
-  config.addCollection('postsByYear', collection => {
-    return _.chain(collection.getFilteredByTag('posts'))
-      .groupBy(post => post.date.getFullYear())
-      .toPairs()
-      .reverse()
-      .value();
-  });
-
-  config.addCollection('tilsByYear', collection => {
-    return _.chain(collection.getFilteredByTag('tils'))
-      .groupBy(post => post.date.getFullYear())
-      .toPairs()
-      .reverse()
-      .value();
-  });
-
-  config.addCollection('booksByYear', collection => {
-    return _.chain(collection.getFilteredByTag('books'))
-      .groupBy(post => post.date.getFullYear())
-      .toPairs()
-      .reverse()
-      .value();
   });
 
   return {
