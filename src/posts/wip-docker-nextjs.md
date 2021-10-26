@@ -2,24 +2,25 @@
 title: On setting up Next.js with Docker on Google Cloud
 date: Last Modified
 permalink: '/blog/2021/nextjs-docker-gcloud/index.html'
-spellcheck: off
 ---
 
-In this blog post I want to write about my fidings while setting up Google Cloud infrastructure that
-enables Next.js application to work on this cloud provider.
+In this blog post I want to write about findings while setting up Google Cloud infrastructure that
+enables [Next.js](https://nextjs.org/) application to work on this cloud provider.
 
 You may ask at first why do not use already great hosting provider for Next.js apps? Of course I'm
-talking here about Vercel. We analysie their pricing and we asked ourselves - don't we have a already
-existing infrastructure that we pay for a lot? Maybe we can use it? It turns out that is possbile -
-you just need to build your Next.js app in the Docker.
+talking here about [Vercel](https://vercel.com/).
+We at [Ingrid](https://www.ingrid.com/) analyze their pricing and we asked ourselves - don't we have a already
+existing infrastructure that we pay for a lot? Maybe we can use it?
+
+It turns out that is possible - you just need to build your Next.js app in the Docker.
 
 ## Next.js in the docker
 
-You can use next.js example for docker https://github.com/vercel/next.js/tree/canary/examples/with-docker
+You can use next.js example for docker from [GitHub](https://github.com/vercel/next.js/tree/canary/examples/with-docker)
 but I want to give you a few hints:
 
 1. If you are using npm you need to adjust a Dockerfile in a few places so you are not developing
-   localy using npm and then docker is using yarn - of course if you want to go on.
+   locally using npm and then docker is using yarn - of course if you want to go on.
 
 ```dockerfile
 # Install dependencies only when needed
@@ -68,11 +69,10 @@ CMD ["npm", "start"]
 2. One of the most important part of above dockerfile is `COPY --from=builder /app/next.config.js ./`.
    Why? I spend a couple of hours searching for solution on why in production build images using next.js
    image do now work - it turns out that I was not enclosing `next.config.js`. So if you are using custom
-   next.js config - and I think you will if you want to use sentry or vanilla extract or other change
-   in default next.js - remeber to uncomment this line as it is commented with example.
+   next.js config - and I think you will if you want to use sentry or [vanilla-extract](https://vanilla-extract.style/) or other change
+   in default next.js - remember to uncomment this line as it is commented with example.
 
-Docker is running nicely on local machine but now it is time to enter Google Cloud domain. First one
-is Google Cloud Build.
+Docker is running nicely on local machine but now it is time to enter Google Cloud domain.
 
 ## Google Cloud Build & Run
 
@@ -158,8 +158,8 @@ options:
 
 Steps are as follows:
 
-1. Build docker image & tag it with current commit hash (Gloud Build gives us $COMMIT\*SHA) + latest
-   tag. In this step we are also embeding `NEXT_PUBLIC_` env variables as they need to be present in
+1. Build docker image & tag it with current commit hash (Gloud Build gives us `$COMMIT_SHA`) + latest
+   tag. In this step we are also embedding `NEXT_PUBLIC_` env variables as they need to be present in
    [build time](https://nextjs.org/docs/basic-features/environment-variables#exposing-environment-variables-to-the-browser).
 2. Push tags
 3. Tell cloud run to use just tagged docker image with next.js application
@@ -171,7 +171,8 @@ to deploy to stage and one to prod we are going to put those files inside `cloud
 ## Summary
 
 In this blog post I shared a few thoughts about using Google Cloud with Next.js:
-* works almost out of the box based on next.js example & youtube walkthrought. You can add small adjustments like in section above.
-* google cloud build & run also works fine - and I my opinion it is the fastest way of deploying images as you work in one enviroment
-  with buidling images & deploying them. One thing for devops is to move cloud build & run configurations into something like terraform.
+
+- works almost out of the box based on [next.js example](https://github.com/vercel/next.js/tree/canary/examples/with-docker) & [YouTube walkthrough](https://www.youtube.com/watch?v=Pd2tVxhFnO4). You can add small adjustments like in section above.
+- google cloud build & run also works fine - and I my opinion it is the fastest way of deploying images as you work in one environment
+  with building images & deploying them. One thing for DevOps people is to move cloud build & run configurations into something like terraform.
   For this one stay tuned for next blog post.
