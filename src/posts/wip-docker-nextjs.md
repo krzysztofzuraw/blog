@@ -169,3 +169,9 @@ to have them in top root folder but as a rule of thumb if there will be 3 or 4 s
 to deploy to stage and one to prod we are going to put those files inside `cloudbuild` folder instead.
 
 ## Summary
+
+In this blog post I shared a few thoughts about using Google Cloud with Next.js:
+* works almost out of the box based on next.js example & youtube walkthrought. You can add small adjustments like in section above.
+* google cloud build & run also works fine - and I my opinion it is the fastest way of deploying images as you work in one enviroment
+  with buidling images & deploying them. One thing for devops is to move cloud build & run configurations into something like terraform.
+  For this one stay tuned for next blog post.
