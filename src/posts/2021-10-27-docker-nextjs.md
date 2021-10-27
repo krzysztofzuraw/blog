@@ -1,6 +1,6 @@
 ---
 title: On setting up Next.js with Docker on Google Cloud
-date: Last Modified
+date: 2021-10-27
 permalink: '/blog/2021/nextjs-docker-gcloud/index.html'
 ---
 
@@ -166,3 +166,5 @@ This blog post was about a few thoughts on how to setup Google Cloud with Next.j
 - google cloud build & run also works fine - it is the fastest way of deploying images as you work in one environment
   that is responsible for building images & deploying them. One thing for DevOps people is to move cloud build & run configurations into something like terraform.
   For this one stay tuned for next blog post.
+
+Huge thanks for this blog post editor - Kuba.
