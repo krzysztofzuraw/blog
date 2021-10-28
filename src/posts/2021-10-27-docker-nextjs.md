@@ -3,17 +3,16 @@ title: On setting up Next.js with Docker on Google Cloud
 date: 2021-10-27
 permalink: '/blog/2021/nextjs-docker-gcloud/index.html'
 ---
-
 One might wonder why would anyone consider Google Cloud as a hosting provider if there's [Vercel](https://vercel.com/)?
+
 You personally, or your organization most likely already has an infrastructure that's
 capable of handling Next.js - you just need to build your app in the Docker.
 
-## Next.js in the docker
+## Next.js and Docker
 
-You can use next.js example for docker from [GitHub](https://github.com/vercel/next.js/tree/canary/examples/with-docker)
-but here's a few hints you might find useful:
+You can use Next.js example for Docker from [GitHub](https://github.com/vercel/next.js/tree/canary/examples/with-docker) but here's a few hints you might find useful.
 
-1. Docker is using yarn internally, so if you're an npm user, you need to adjust a Dockerfile in a few places.
+1. Docker uses yarn internally, so if you're an NPM user, you need to adjust a `Dockerfile` in a few places.
 
 ```dockerfile
 # Install dependencies only when needed
@@ -60,19 +59,19 @@ CMD ["npm", "start"]
 ```
 
 2. One of the most important parts is `COPY --from=builder /app/next.config.js ./`.
-   If you're using a custom next.js config, remember to have this line uncommented.
+   If you're using a custom Next.js config, remember to have this line uncommented.
 
 Docker is running nicely on a local machine but now it is time to enter the Google Cloud domain.
 
-## Google Cloud Build & Run
+## Google Cloud Build and Run
 
-First question: what is Google Cloud Build? Google says it's their CI/CD platform.
-But you can utilize it to build your docker images. What we are using it for? Two tasks:
+First question: what is [Google Cloud Build](https://cloud.google.com/build)? Google says it's their CI/CD platform.
+But you can utilize it to build your docker images. What we are using it for?
 
 1. Run test/lint/tsc on PR
-2. Build next.js application inside docker and tell Google Cloud Run to use it
+2. Build Next.js application inside docker and tell [Google Cloud Run](https://cloud.google.com/run/) to use it
 
-For the first one I'm using following `cloudbuild.pr.yaml`:
+For the first one we are using following `cloudbuild.pr.yaml`:
 
 ```yaml
 steps:
@@ -99,23 +98,15 @@ options:
   machineType: 'E2_HIGHCPU_8'
 ```
 
-We are using alpine version of node to match used in Dockerfile above.
+We are using alpine version of node to match used in `Dockerfile` above.
 
-For the second one we are using `cloudbild.deploy.yaml`:
+For the second one we are using `cloudbuild.deploy.yaml`:
 
 ```yaml
 steps:
   - id: build
     name: 'gcr.io/cloud-builders/docker'
-    args:
-      [
-        'build',
-        '--tag',
-        'eu.gcr.io/application:$COMMIT_SHA',
-        '--tag',
-        'eu.gcr.io/application:latest',
-        '.',
-      ]
+    args: ['build', '--tag', 'eu.gcr.io/application:$COMMIT_SHA', '--tag', 'eu.gcr.io/application:latest', '.']
     env:
       - 'NEXT_PUBLIC_KEY=SOME_KEY'
   - id: push
@@ -148,23 +139,17 @@ options:
 
 Steps are as follows:
 
-1. Build docker image & tag it with current commit hash (Gloud Build gives us `$COMMIT_SHA`) + latest
-   tag. In this step we are also embedding `NEXT_PUBLIC_` env variables as they need to be present in
-   [build time](https://nextjs.org/docs/basic-features/environment-variables#exposing-environment-variables-to-the-browser).
+1. Build Docker image and tag it with current commit hash (Google Cloud Build gives us `$COMMIT_SHA`) + latest tag. In this step we are also embedding `NEXT_PUBLIC_` env variables as they need to be present in [build time](https://nextjs.org/docs/basic-features/environment-variables#exposing-environment-variables-to-the-browser).
 2. Push tags
-3. Tell cloud run to use just the tagged docker image with next.js application
+3. Tell cloud run to use just the tagged Docker image with Next.js application
 
-Note about yaml naming convention - we currently have two cloudbuilds in repo, so it doesn't cost us much
-to have them in top root folder, but as a rule of thumb, if there are 3 or 4 such files e.g. one
-to deploy to stage and one to production, it's better to put those files inside `cloudbuild` folder instead.
+Note about yaml naming convention - we currently have two `cloudbuilds.yaml` in repo, so it doesn't cost us much to have them in top root folder, but as a rule of thumb, if there are 3 or 4 such files e.g. one to deploy to stage and one to production, it's better to put those files inside `cloudbuild` folder instead.
 
 ## Summary
 
-This blog post was about a few thoughts on how to setup Google Cloud with Next.js:
+This blog post was about a few thoughts on how to setup Google Cloud with Next.js.
 
-- works almost out of the box based on [next.js example](https://github.com/vercel/next.js/tree/canary/examples/with-docker) & [YouTube walkthrough](https://www.youtube.com/watch?v=Pd2tVxhFnO4). You can add small adjustments like in section above.
-- google cloud build & run also works fine - it is the fastest way of deploying images as you work in one environment
-  that is responsible for building images & deploying them. One thing for DevOps people is to move cloud build & run configurations into something like terraform.
-  For this one stay tuned for next blog post.
+- Works almost out of the box based on [Next.js example](https://github.com/vercel/next.js/tree/canary/examples/with-docker) and [YouTube walkthrough](https://www.youtube.com/watch?v=Pd2tVxhFnO4). You can add small adjustments like in section above.
+- [Google Cloud Build](https://cloud.google.com/build) and [Google Cloud Run](https://cloud.google.com/run/) also works fine - it is the fastest way of deploying images as you work in one environment that is responsible for building images and deploying them. One thing for DevOps people is to move cloud build and run configurations into something like Terraform. For this one stay tuned for next blog post.
 
-Huge thanks for this blog post editor - Kuba.
+Huge thanks for this blog post editors - Kuba & Ilia.
