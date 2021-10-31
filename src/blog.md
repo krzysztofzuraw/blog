@@ -11,7 +11,7 @@ eleventyNavigation:
 
 <ol class="flex gap-4 flex-col">
 {% for post in collections.posts | reverse %}
-  <li class="grid">
+  <li class="flex flex-col">
     <time dateTime="{{post.date | formatDate }}">{{ post.date | formatDate }}</time>
     <a href="{{post.url}}" class="hover:underline">{{ post.data.title }}</a>
   </li>
