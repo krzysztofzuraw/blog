@@ -1,5 +1,28 @@
 {
   "emmet.includeLanguages": {
     "nunjucks": "html"
+  },
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100,
+    "editor.lineNumbers": "off",
+    "editor.quickSuggestions": false
+  },
+  "markdown.styles": [
+    "https://krzysztofzuraw.com/css/index.css",
+    "https://krzysztofzuraw.com/css/prism.css"
+  ],
+  "spellright.language": [
+    "en",
+    "pl"
+  ],
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext"
+  ],
+  "css.validate": false,
+  "editor.quickSuggestions": {
+    "strings": true
   }
 }

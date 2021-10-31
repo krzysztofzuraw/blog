@@ -1,14 +1,16 @@
 const { DateTime } = require('luxon');
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+// const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
+const sizeOf = require('image-size');
+const path = require('path');
 
 module.exports = config => {
-  config.addPassthroughCopy('src/css');
+  // config.addPassthroughCopy('src/css');
   config.addPassthroughCopy('src/img');
   config.addPassthroughCopy({ 'src/passthrough': '/' });
 
-  config.addPlugin(syntaxHighlight);
+  // config.addPlugin(syntaxHighlight);
   config.addPlugin(eleventyNavigationPlugin);
   config.addPlugin(pluginRss);
 
@@ -36,10 +38,12 @@ module.exports = config => {
     return DateTime.now().toLocaleString({ year: 'numeric' });
   });
 
-  config.addShortcode('img', (path, alt, figcaption) => {
+  config.addShortcode('img', (imgPath, alt, figcaption) => {
+    const dimensions = sizeOf(path.resolve(process.cwd(), 'src', 'img', `${imgPath}.webp`));
+
     return /*html*/ `<figure>
-       <a href="/img/${path}.webp" target="_blank" rel="noopener">
-        <img src="/img/${path}.webp" loading="lazy" alt="${alt}" >
+       <a href="/img/${imgPath}.webp" target="_blank" rel="noopener">
+        <img src="/img/${imgPath}.webp" loading="lazy" alt="${alt}" height="${dimensions.height}" width="${dimensions.width}">
       </a>
       <figcaption>${figcaption}</figcaption>
     </figure>`;
