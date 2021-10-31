@@ -6,9 +6,10 @@
   "scripts": {
     "tailwind:watch": "tailwindcss --input ./src/css/index.css --output ./dist/css/index.css --watch",
     "start": "eleventy --serve",
-    "dev": "eleventy --serve",
+    "dev": "npm run start & npm run tailwind:watch",
+    "tailwind:build": "NODE_ENV=production tailwindcss --input ./src/css/index.css --output ./dist/css/index.css --minify",
     "prebuild": "npm run clean:dist",
-    "build": "eleventy",
+    "build": "eleventy & npm run tailwind:build",
     "debug": "DEBUG=* eleventy",
     "clean:dist": "rimraf dist/*",
     "prereinstall": "npm run clean:dist",
@@ -18,7 +19,8 @@
   },
   "keywords": [
     "blog",
-    "11ty"
+    "11ty",
+    "tailwindcss"
   ],
   "author": "Krzysztof Żuraw <info@kzuraw.com> (https://krzysztofzuraw.com/)",
   "license": "MIT",
