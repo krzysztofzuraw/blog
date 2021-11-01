@@ -1,17 +1,17 @@
 {
-  "title": "Krzysztof Żuraw site",
+  "title": "Krzysztof Żuraw blog",
   "author": {
     "name": "Krzysztof Żuraw",
-    "email": "blog@kzuraw.com",
-    "twitter": "@krzysztof_zuraw"
+    "email": "blog@kzuraw.com"
   },
-  "description": "I am writing about TypeScript, React & all things frontend.",
+  "description": "TypeScript, React & all things frontend.",
   "keywords": "TypeScript, React, HTML, CSS, blog",
   "url": "https://krzysztofzuraw.com",
   "domain": "krzysztofzuraw.com",
   "feed": {
-    "subtitle": "I am writing about TypeScript, React & all things frontend.",
-    "path": "/feed.xml"
+    "subtitle": "TypeScript, React & all things frontend.",
+    "path": "/feed.xml",
+    "id": "https://krzysztofzuraw.com"
   },
   "sitemap": {
     "path": "/sitemap.xml"
