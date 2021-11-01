@@ -1,16 +1,13 @@
 const { DateTime } = require('luxon');
-// const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const sizeOf = require('image-size');
 const path = require('path');
 
 module.exports = config => {
-  // config.addPassthroughCopy('src/css');
   config.addPassthroughCopy('src/img');
   config.addPassthroughCopy({ 'src/passthrough': '/' });
 
-  // config.addPlugin(syntaxHighlight);
   config.addPlugin(eleventyNavigationPlugin);
   config.addPlugin(pluginRss);
 
@@ -33,6 +30,18 @@ module.exports = config => {
   config.addFilter('getYear', date => {
     return DateTime.fromJSDate(date).toFormat('yyyy');
   });
+
+  config.addFilter("head", (array, n) => {
+    if(!Array.isArray(array) || array.length === 0) {
+      return [];
+    }
+    if( n < 0 ) {
+      return array.slice(n);
+    }
+
+    return array.slice(0, n);
+  });
+
 
   config.addShortcode('currentYear', () => {
     return DateTime.now().toLocaleString({ year: 'numeric' });

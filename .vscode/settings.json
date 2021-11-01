@@ -6,7 +6,8 @@
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 100,
     "editor.lineNumbers": "off",
-    "editor.quickSuggestions": false
+    "editor.quickSuggestions": true,
+    "editor.wordBasedSuggestions": false
   },
   "markdown.styles": [
     "https://krzysztofzuraw.com/css/index.css",

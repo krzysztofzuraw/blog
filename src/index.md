@@ -17,7 +17,15 @@ Welcome to my personal page. A few words about me:
 - learning about CSS & design
 - brewing speciality coffee using Chemex
 
-I’m currently living in Wrocław but I’m open to working remotely or relocating.
+## Latest 3 blog posts
+
+<ol>
+  {% for post in collections.posts | reverse | head(3) %}
+  <li>
+    <a href="{{post.url}}">{{ post.data.title }}</a>
+  </li>
+  {% endfor %}
+</ol>
 
 I like giving back to community by being a mentor of [Django Girls](https://djangogirls.org/) or
 [Geek Girls Carrots](https://gocarrots.org/). I like to organize events - I’m co-organizer of
