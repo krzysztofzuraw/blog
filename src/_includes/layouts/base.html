@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }} | {{ metadata.author.name }}</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ 'https://www.monolisa.dev/api/fonts/all' | url }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}" />
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}" />
+    <link
+      rel="alternate"
+      href="{{ metadata.feed.path | url }}"
+      type="application/atom+xml"
+      title="{{ metadata.title }}"
+    />
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | url }}" />
     <link rel="sitemap" type="application/xml" href="{{ metadata.sitemap.path | url }}" />
 
@@ -23,7 +26,20 @@
     <meta name="format-detection" content="telephone=no" />
   </head>
 
-  <body class="antialiased px-4 py-10 max-w-3xl mx-auto sm:px-6 sm:py-12 lg:max-w-4xl lg:py-16 lg:px-8 xl:max-w-6xl lg:text-xl h-screen">
+  <body
+    class="
+      antialiased
+      px-4
+      py-10
+      max-w-3xl
+      mx-auto
+      sm:px-6 sm:py-12
+      lg:max-w-4xl lg:py-16 lg:px-8
+      xl:max-w-6xl
+      lg:text-xl
+      h-screen
+    "
+  >
     <header class="flex justify-end mb-6">
       <ul class="flex gap-4">
         {% for entry in collections.all | eleventyNavigation("Header") %}
@@ -51,7 +67,9 @@
       </ul>
       <p>
         © 2016-{% currentYear %}
-        <a href="mailto:{{ metadata.author.email }}" rel="me" class="hover:underline">{{ metadata.author.name }}</a>
+        <a href="mailto:{{ metadata.author.email }}" rel="me" class="hover:underline"
+          >{{ metadata.author.name }}</a
+        >
       </p>
     </footer>
   </body>
