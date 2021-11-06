@@ -17,6 +17,11 @@ Welcome to my personal page. A few words about me:
 - learning about CSS & design
 - brewing speciality coffee using Chemex
 
+I like giving back to community by being a mentor of [Django Girls](https://djangogirls.org/) or
+[Geek Girls Carrots](https://gocarrots.org/). I like to organize events - I’m co-organizer of
+[Wrocław TypeScript meetup](https://www.meetup.com/pl-PL/WrocTypeScript/) and
+[Django Girls Wrocław](https://djangogirls.org/wroclaw/). If you need help with preparing tech event do not hesitate to contact me.
+
 ## Latest 3 blog posts
 
 <ol>
@@ -26,9 +31,3 @@ Welcome to my personal page. A few words about me:
   </li>
   {% endfor %}
 </ol>
-
-I like giving back to community by being a mentor of [Django Girls](https://djangogirls.org/) or
-[Geek Girls Carrots](https://gocarrots.org/). I like to organize events - I’m co-organizer of
-[Wrocław TypeScript meetup](https://www.meetup.com/pl-PL/WrocTypeScript/) and
-[Django Girls Wrocław](https://djangogirls.org/wroclaw/). If you need help with preparing tech
-event do not hesitate to contact me.
