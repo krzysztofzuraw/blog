@@ -38,6 +38,8 @@
       xl:max-w-6xl
       lg:text-xl
       h-screen
+      bg-gray-100
+      text-gray-900
     "
   >
     <header class="flex justify-end mb-6">
@@ -50,7 +52,7 @@
       </ul>
     </header>
     <main>{% block content %} {% endblock %}</main>
-    <footer class="flex flex-col items-center gap-4 mt-6">
+    <footer class="flex flex-col items-center gap-4 mt-6 border-t p-2">
       <ul class="flex gap-4">
         {% for entry in collections.all | eleventyNavigation("Footer") %}
         <li>

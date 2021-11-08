@@ -3,7 +3,15 @@ module.exports = {
   purge: ['./src/**/*.{html,njk}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      typography: theme => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.gray.900'),
+          },
+        },
+      }),
+    },
   },
   variants: {
     extend: {},

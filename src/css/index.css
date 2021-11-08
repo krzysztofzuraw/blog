@@ -9,3 +9,10 @@ main > h1 {
 time {
   @apply font-mono;
 }
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-sans;
+}
