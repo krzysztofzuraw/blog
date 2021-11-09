@@ -31,17 +31,27 @@ module.exports = config => {
     return DateTime.fromJSDate(date).toFormat('yyyy');
   });
 
-  config.addFilter("head", (array, n) => {
-    if(!Array.isArray(array) || array.length === 0) {
+  config.addFilter('head', (array, n) => {
+    if (!Array.isArray(array) || array.length === 0) {
       return [];
     }
-    if( n < 0 ) {
+    if (n < 0) {
       return array.slice(n);
     }
 
     return array.slice(0, n);
   });
 
+  config.addFilter('getLanguage', lang => {
+    switch (lang) {
+      case 'en':
+        return 'English';
+      case 'pl':
+        return 'Polish';
+      default:
+        return 'English';
+    }
+  });
 
   config.addShortcode('currentYear', () => {
     return DateTime.now().toLocaleString({ year: 'numeric' });
