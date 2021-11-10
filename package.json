@@ -15,7 +15,8 @@
     "prereinstall": "npm run clean:dist",
     "reinstall": "rimraf node_modules/*",
     "postreinstall": "npm install",
-    "img:convert": "npx @squoosh/cli --webp '{quality: 75}'"
+    "img:convert": "npx @squoosh/cli --webp '{quality: 75}'",
+    "blogroll:generate": "node scripts/gen-blogroll.js"
   },
   "keywords": [
     "blog",
@@ -26,14 +27,15 @@
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "0.12.1",
+    "@11ty/eleventy-cache-assets": "2.3.0",
     "@11ty/eleventy-navigation": "0.3.2",
     "@11ty/eleventy-plugin-rss": "1.1.2",
+    "@tailwindcss/typography": "0.4.1",
+    "dotenv": "10.0.0",
     "image-size": "1.0.0",
     "luxon": "2.0.2",
+    "node-opml-parser": "1.0.0",
     "rimraf": "3.0.2",
-    "tailwindcss": "2.2.19",
-    "@tailwindcss/typography": "0.4.1",
-    "@11ty/eleventy-cache-assets": "2.3.0",
-    "dotenv": "10.0.0"
+    "tailwindcss": "2.2.19"
   }
 }
