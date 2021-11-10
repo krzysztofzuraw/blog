@@ -32,9 +32,7 @@
     "luxon": "2.0.2",
     "rimraf": "3.0.2",
     "tailwindcss": "2.2.19",
-    "@tailwindcss/typography": "0.4.1"
-  },
-  "dependencies": {
+    "@tailwindcss/typography": "0.4.1",
     "@11ty/eleventy-cache-assets": "2.3.0",
     "dotenv": "10.0.0"
   }
