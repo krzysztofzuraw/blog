@@ -13,7 +13,7 @@ parseOpml(opmlFile, (err, items) => {
   const data = items.map(item => ({ title: item.title, url: item.url }));
 
   fs.writeFileSync(
-    path.resolve(process.cwd(), 'src', '_data', 'blogroll.json'),
+    path.resolve(process.cwd(), 'src', '_data', 'feedroll.json'),
     JSON.stringify(data)
   );
   console.log('Completed 🎉');

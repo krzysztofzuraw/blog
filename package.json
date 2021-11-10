@@ -16,7 +16,7 @@
     "reinstall": "rimraf node_modules/*",
     "postreinstall": "npm install",
     "img:convert": "./scripts/convert-img.sh",
-    "blogroll:generate": "node scripts/gen-blogroll.js"
+    "feedroll:generate": "node scripts/gen-feedroll.js"
   },
   "keywords": [
     "blog",

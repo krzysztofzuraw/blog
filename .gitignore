@@ -4,3 +4,4 @@ dist
 .env
 .netlify
 Feeds.opml
+.vscode/spellright.dict
