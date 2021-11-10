@@ -4,6 +4,8 @@ const pluginRss = require('@11ty/eleventy-plugin-rss');
 const sizeOf = require('image-size');
 const path = require('path');
 
+require('dotenv').config();
+
 module.exports = config => {
   config.addPassthroughCopy('src/img');
   config.addPassthroughCopy({ 'src/passthrough': '/' });
