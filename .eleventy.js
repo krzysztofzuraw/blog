@@ -1,6 +1,7 @@
-const { DateTime } = require('luxon');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const { DateTime } = require('luxon');
 const sizeOf = require('image-size');
 const path = require('path');
 
@@ -8,10 +9,12 @@ require('dotenv').config();
 
 module.exports = config => {
   config.addPassthroughCopy('src/img');
+  config.addPassthroughCopy('src/css');
   config.addPassthroughCopy({ 'src/passthrough': '/' });
 
   config.addPlugin(eleventyNavigationPlugin);
   config.addPlugin(pluginRss);
+  config.addPlugin(syntaxHighlight);
 
   config.addFilter('humanizeDate', date =>
     DateTime.fromJSDate(date).toLocaleString({
@@ -21,17 +24,9 @@ module.exports = config => {
     })
   );
 
-  config.addFilter('formatDate', date =>
-    DateTime.fromJSDate(date).toLocaleString({
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-    })
-  );
+  config.addFilter('formatDate', date => DateTime.fromJSDate(date).toFormat('yyyy-MM-dd'));
 
-  config.addFilter('getYear', date => {
-    return DateTime.fromJSDate(date).toFormat('yyyy');
-  });
+  config.addFilter('getYear', date => DateTime.fromJSDate(date).toFormat('yyyy'));
 
   config.addFilter('head', (array, n) => {
     if (!Array.isArray(array) || array.length === 0) {
@@ -55,9 +50,14 @@ module.exports = config => {
     }
   });
 
-  config.addShortcode('currentYear', () => {
-    return DateTime.now().toLocaleString({ year: 'numeric' });
-  });
+  config.addShortcode('currentYear', () => DateTime.now().toLocaleString({ year: 'numeric' }));
+  config.addShortcode('humanizeDate', text =>
+    DateTime.fromISO(text).toLocaleString({
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
+  );
 
   config.addShortcode('img', (imgPath, alt, figcaption) => {
     const dimensions = sizeOf(path.resolve(process.cwd(), 'src', 'img', `${imgPath}.webp`));
