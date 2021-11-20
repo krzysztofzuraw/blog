@@ -249,3 +249,13 @@ article {
   display: grid;
   gap: 0.5rem;
 }
+
+.bookmark-excerpt {
+  margin: 0;
+  font-family: var(--font-serif);
+}
+
+.bookmark-tags {
+  margin: 0;
+  font-family: var(--font-mono);
+}
