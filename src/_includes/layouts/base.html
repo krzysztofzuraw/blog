@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/css/prism-theme.css' | url }}" />
+
     <link
       rel="alternate"
       href="{{ metadata.feed.path | url }}"
@@ -26,52 +28,35 @@
     <meta name="format-detection" content="telephone=no" />
   </head>
 
-  <body
-    class="
-      antialiased
-      px-4
-      py-10
-      max-w-3xl
-      mx-auto
-      sm:px-6 sm:py-12
-      lg:max-w-4xl lg:py-16 lg:px-8
-      xl:max-w-6xl
-      lg:text-xl
-      h-screen
-      bg-gray-100
-      text-gray-900
-    "
-  >
-    <header class="flex justify-end mb-6">
-      <ul class="flex gap-4">
+  <body>
+    <header class="box">
+      <ul>
         {% for entry in collections.all | eleventyNavigation("Header") %}
         <li>
-          <a href="{{ entry.url | url }}" class="hover:underline">{{entry.title }}</a>
+          <a href="{{ entry.url | url }}">{{entry.title }}</a>
         </li>
         {% endfor %}
       </ul>
     </header>
     <main>{% block content %} {% endblock %}</main>
-    <footer class="flex flex-col items-center gap-4 mt-6 border-t p-2">
-      <ul class="flex gap-4">
+    <footer class="box">
+      <ul>
         {% for entry in collections.all | eleventyNavigation("Footer") %}
         <li>
-          <a href="{{ entry.url | url }}" class="hover:underline">{{entry.title }}</a>
+          <a href="{{ entry.url | url }}">{{entry.title }}</a>
         </li>
         {% endfor %}
       </ul>
-      <ul class="flex gap-4">
+      <ul>
         {% for entry in metadata.social %}
         <li>
-          <a href="{{ entry.url | url }}" rel="me" class="hover:underline">{{ entry.title }}</a>
+          <a href="{{ entry.url | url }}" rel="me">{{ entry.title }}</a>
         </li>
         {% endfor %}
       </ul>
       <p>
         © 2016-{% currentYear %}
-        <a href="mailto:{{ metadata.author.email }}" rel="me" class="hover:underline"
-          >{{ metadata.author.name }}</a
-        >
+        <a href="mailto:{{ metadata.author.email }}" rel="me">{{ metadata.author.name }}</a>
       </p>
     </footer>
   </body>
