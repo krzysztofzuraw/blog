@@ -8,7 +8,7 @@ pre[class*='language-'] {
   color: white;
   background: none;
   font-family: var(--font-mono);
-  font-size: 1em;
+  /* font-size: 1em; */
   text-align: left;
   text-shadow: 0 -0.1em 0.2em black;
   white-space: pre;
@@ -35,7 +35,6 @@ pre[class*='language-'],
 /* Code blocks */
 pre[class*='language-'] {
   border-radius: 0.5em;
-  border: 0.3em solid hsl(0, 0%, 33%); /* #282A2B */
   box-shadow: 1px 1px 0.5em black inset;
   margin: 0.5em 0;
   overflow: auto;

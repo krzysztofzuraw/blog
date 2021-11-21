@@ -25,6 +25,7 @@ html {
   scroll-behavior: smooth;
   font-size: 100%;
   font-family: var(--font-sans-serif);
+  scrollbar-color: var(--text-color) var(--bg-color);
 }
 
 body {
@@ -73,6 +74,17 @@ footer ul {
   justify-content: center;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-color);
+  /* border-radius: 5px; */
+}
+
 a:not([class]) {
   color: currentColor;
 }
@@ -87,8 +99,8 @@ a:not([class]) {
 }
 
 ::selection {
-  color: #fff;
-  background: rgba(0, 0, 0, 0.99);
+  color: var(--bg-color, #fff);
+  background: var(--text-color, rgba(0, 0, 0, 0.99));
 }
 
 img,
@@ -150,6 +162,10 @@ h3 {
 p,
 li {
   max-width: 65ch;
+}
+
+pre {
+  max-width: 100ch;
 }
 
 article {
@@ -220,7 +236,8 @@ article {
   p,
   li,
   th,
-  td {
+  td,
+  pre {
     font-size: var(--size-500);
   }
 

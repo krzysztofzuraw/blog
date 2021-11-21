@@ -9,5 +9,4 @@ year: 2019
 isbn: 9788366278394
 ---
 
-Nice reportage about nowadays Greece. Author is mixing his personal Greece experience with what
-people say about modern Greece. It is also story about Polish & Greek relationship.
+Nice reportage about nowadays Greece. Author is mixing his personal Greece experience with what people say about modern Greece. It is also story about Polish & Greek relationship.
