@@ -4,7 +4,7 @@ title: Books
 eleventyNavigation:
   key: Books
   parent: Footer
-  order: 5
+  order: 6
 ---
 
 # Books index

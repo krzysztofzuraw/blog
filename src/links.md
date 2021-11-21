@@ -4,7 +4,7 @@ title: Links
 eleventyNavigation:
   key: Links
   parent: Footer
-  order: 4
+  order: 5
 ---
 
 # Links
