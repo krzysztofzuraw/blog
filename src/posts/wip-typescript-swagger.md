@@ -12,10 +12,15 @@ Then we moved into direction of using TypeScript interfaces or types - still wri
 
 Then I found one Syntax.fm episode where I heard about [swagger-typescript-api](https://github.com/acacode/swagger-typescript-api). This handy library takes `swager.json` schema and generates TypeScript types out of them. It is packed with a few amazing additions like prettier support or generating axios client.
 
-How we are using it?
-* Commit or not commit types
-* Generate client for axios or do not
+The first thing you need to answer is if you want to commit your types or not into repository. We decided by going with commiting approach - generated file will be included in diffs for PRs. This approach is much easier to get started than not commiting and in the future we can always change it. Not commiting means that we have to generate types every time CI is running types check.
 
+The second thing is: do we want to generate `axios` client or not? We decided to generate it. We then change existing axios client setup with new generated client. Cons? We found out that is it hard to keep axios, swagger-typescript-api in sync so the types do not break. As of time of this writing we had to pin axios to `0.21.4` to avoid such break.
+
+## What works fine
+
+## What do not works fine
+
+---
 ```js
 const { generateApi } = require('swagger-typescript-api');
 const path = require('path');
@@ -23,7 +28,7 @@ const path = require('path');
 generateApi({
   name: 'api.ts',
   output: path.resolve(process.cwd(), 'src', 'commons'),
-  url: 'https://api-development.ingrid.com/v1/moirai/_/swagger.json',
+  url: 'https://api/_/swagger.json',
   httpClientType: 'axios',
   generateUnionEnums: true,
   prettier: {
@@ -37,12 +42,10 @@ generateApi({
   },
 });
 ```
-
----
-* npx swagger generator
-* node script
-* proto in the future
-* one source of truth
-* what works fine
-* what do not works fine
-* axios client
+* [x] npx swagger generator
+* [ ] node script
+* [ ] proto in the future
+* [ ] one source of truth
+* [ ] what works fine
+* [ ] what do not works fine
+* [x] axios client
