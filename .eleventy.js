@@ -24,7 +24,9 @@ module.exports = config => {
     })
   );
 
-  config.addFilter('formatDate', date => DateTime.fromJSDate(date).toFormat('yyyy-MM-dd'));
+  config.addFilter('formatDate', date =>
+    DateTime.fromJSDate(date).toLocaleString({ year: 'numeric', month: '2-digit', day: '2-digit' })
+  );
 
   config.addFilter('getYear', date => DateTime.fromJSDate(date).toFormat('yyyy'));
 
