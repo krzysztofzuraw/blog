@@ -1,0 +1,98 @@
+[
+  {
+    "title": "Data Jar",
+    "url": "https://datajar.app/",
+    "description": "This allows very interesting things on ios & mac",
+    "tags": [
+      "ios",
+      "mac",
+      "automation"
+    ],
+    "date": "2021-12-12"
+  },
+  {
+    "title": "Remix - Build Better Websites",
+    "url": "https://remix.run/",
+    "description": "To check",
+    "tags": [
+      "typescript",
+      "framework"
+    ],
+    "date": "2021-12-11"
+  },
+  {
+    "title": "Turborepo",
+    "url": "https://turborepo.org/",
+    "description": "To check",
+    "tags": [
+      "javascript",
+      "typescript"
+    ],
+    "date": "2021-12-11"
+  },
+  {
+    "title": "http://ishadeed.com/article/defensive-css/",
+    "url": "http://ishadeed.com/article/defensive-css/",
+    "description": "To use in next project",
+    "tags": [
+      "css"
+    ],
+    "date": "2021-12-11"
+  },
+  {
+    "title": " Butterick’s Practical Typography",
+    "url": "https://practicaltypography.com/",
+    "description": "Not yet readed but seems like usefull to learn typography",
+    "tags": [
+      "typography"
+    ],
+    "date": "2021-12-11"
+  },
+  {
+    "title": "AeroPress Recipes - over 110 recipes - AeroPrecipe",
+    "url": "https://aeroprecipe.com/",
+    "description": "How to make Areopress - with recipe from James Hoffman.",
+    "tags": [
+      "coffee"
+    ],
+    "date": "2021-12-11"
+  },
+  {
+    "title": "Relearn CSS layout: Every Layout",
+    "url": "https://every-layout.dev/",
+    "description": "This website teach me so much of CSS that I’m forever gratefull for it.",
+    "tags": [
+      "css"
+    ],
+    "date": "2021-12-11"
+  },
+  {
+    "title": "Few - Essentials curated.",
+    "url": "https://fewcurated.com/",
+    "description": "If I ever need something",
+    "tags": [
+      "money",
+      "shopping"
+    ],
+    "date": "2021-12-11"
+  },
+  {
+    "title": "Nikolas Type",
+    "url": "https://www.nikolastype.com/",
+    "description": "Cool font",
+    "tags": [
+      "typography"
+    ],
+    "date": "2021-12-11"
+  },
+  {
+    "title": "Web Browser Engineering",
+    "url": "https://browser.engineering/",
+    "description": "How the heck browsers work?",
+    "tags": [
+      "web",
+      "browsers"
+    ],
+    "date": "2021-12-11"
+  }
+]

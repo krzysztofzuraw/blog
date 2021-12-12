@@ -5,8 +5,6 @@ const { DateTime } = require('luxon');
 const sizeOf = require('image-size');
 const path = require('path');
 
-require('dotenv').config();
-
 module.exports = config => {
   config.addPassthroughCopy('src/img');
   config.addPassthroughCopy('src/css');
@@ -26,6 +24,10 @@ module.exports = config => {
 
   config.addFilter('formatDate', date =>
     DateTime.fromJSDate(date).toLocaleString({ year: 'numeric', month: '2-digit', day: '2-digit' })
+  );
+
+  config.addFilter('formatDateText', text =>
+    DateTime.fromISO(text).toLocaleString({ year: 'numeric', month: '2-digit', day: '2-digit' })
   );
 
   config.addFilter('getYear', date => DateTime.fromJSDate(date).toFormat('yyyy'));

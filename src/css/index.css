@@ -285,12 +285,16 @@ article {
   gap: 0.5rem;
 }
 
-.bookmark-excerpt {
+.link-header {
+  margin: 0;
+}
+
+.link-excerpt {
   margin: 0;
   font-family: var(--font-serif);
 }
 
-.bookmark-tags {
+.link-tags {
   margin: 0;
   font-family: var(--font-mono);
 }
