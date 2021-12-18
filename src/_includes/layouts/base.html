@@ -40,6 +40,7 @@
       xl:max-w-6xl
       lg:text-xl
       h-screen
+      dark:bg-gray-900 dark:text-white
     "
   >
     <header class="flex justify-end mb-6">
@@ -52,22 +53,22 @@
       </ul>
     </header>
     <main>{% block content %} {% endblock %}</main>
-    <footer class="flex flex-col items-center gap-4 mt-6 border-t p-2">
-      <ul class="flex gap-4 flex-wrap">
+    <footer class="grid place-items-center gap-6 mt-6 border-t p-2 md:grid-cols-3">
+      <ul class="grid gap-2">
         {% for entry in collections.all | eleventyNavigation("Footer") %}
         <li>
           <a href="{{ entry.url | url }}">{{entry.title }}</a>
         </li>
         {% endfor %}
       </ul>
-      <ul class="flex gap-4">
+      <ul class="grid gap-2 self-start">
         {% for entry in metadata.social %}
         <li>
           <a href="{{ entry.url | url }}" rel="me">{{ entry.title }}</a>
         </li>
         {% endfor %}
       </ul>
-      <p>
+      <p class="self-start">
         © 2016-{% currentYear %}
         <a href="mailto:{{ metadata.author.email }}" rel="me">{{ metadata.author.name }}</a>
       </p>

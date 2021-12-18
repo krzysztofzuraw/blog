@@ -17,7 +17,6 @@
     "reinstall": "rimraf node_modules/*",
     "postreinstall": "npm install",
     "img:convert": "./scripts/convert-img.sh",
-    "links:generate": "node scripts/generate-links.js",
     "feedroll:generate": "node scripts/generate-feedroll.js"
   },
   "keywords": [
