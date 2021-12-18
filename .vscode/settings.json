@@ -11,5 +11,9 @@
   },
   "markdown.styles": ["https://krzysztofzuraw.com/css/index.css"],
   "spellright.language": ["en", "pl"],
-  "spellright.documentTypes": ["markdown", "latex", "plaintext"]
+  "spellright.documentTypes": ["markdown", "latex", "plaintext"],
+  "css.validate": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  }
 }

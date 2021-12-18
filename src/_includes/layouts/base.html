@@ -28,9 +28,23 @@
     <meta name="format-detection" content="telephone=no" />
   </head>
 
-  <body>
-    <header class="box">
-      <ul>
+  <body
+    class="
+      antialiased
+      px-4
+      py-10
+      max-w-3xl
+      mx-auto
+      sm:px-6 sm:py-12
+      lg:max-w-4xl lg:py-16 lg:px-8
+      xl:max-w-6xl
+      lg:text-xl
+      h-screen
+      dark:bg-gray-900 dark:text-white
+    "
+  >
+    <header class="flex justify-end mb-6">
+      <ul class="flex gap-4">
         {% for entry in collections.all | eleventyNavigation("Header") %}
         <li>
           <a href="{{ entry.url | url }}">{{entry.title }}</a>
@@ -39,22 +53,22 @@
       </ul>
     </header>
     <main>{% block content %} {% endblock %}</main>
-    <footer class="box">
-      <ul>
+    <footer class="grid place-items-center gap-6 mt-6 border-t p-2 md:grid-cols-3">
+      <ul class="grid gap-2">
         {% for entry in collections.all | eleventyNavigation("Footer") %}
         <li>
           <a href="{{ entry.url | url }}">{{entry.title }}</a>
         </li>
         {% endfor %}
       </ul>
-      <ul>
+      <ul class="grid gap-2 self-start">
         {% for entry in metadata.social %}
         <li>
           <a href="{{ entry.url | url }}" rel="me">{{ entry.title }}</a>
         </li>
         {% endfor %}
       </ul>
-      <p>
+      <p class="self-start">
         © 2016-{% currentYear %}
         <a href="mailto:{{ metadata.author.email }}" rel="me">{{ metadata.author.name }}</a>
       </p>
