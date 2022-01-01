@@ -18,7 +18,7 @@ Run development server:
 npm start
 ```
 
-Convert images (in example png)
+Convert images
 
 ```shell
 npm run img:convert -- src/img/*.png -d src/img
