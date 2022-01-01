@@ -17,4 +17,4 @@ Going back to what my now:
 - Trying splitted ergonomic keyboard & trackball
 - Preparing for sheltie puppy
 
-Last updated on <time date="2021-04-15">{% humanizeDate "2021-04-15" %}</time>
+Last updated on <time date="2021-04-15" class="not-touch">{% humanizeDate "2021-04-15" %}</time>

@@ -2,8 +2,11 @@
   "emmet.includeLanguages": {
     "nunjucks": "html"
   },
-  "css.validate": false,
-  "editor.quickSuggestions": {
-    "strings": true
-  }
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100,
+    "editor.lineNumbers": "off",
+    "editor.quickSuggestions": true,
+    "editor.wordBasedSuggestions": false
+  },
 }

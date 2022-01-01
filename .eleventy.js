@@ -5,11 +5,11 @@ const { DateTime } = require('luxon');
 const sizeOf = require('image-size');
 const path = require('path');
 
-require('dotenv').config();
 
 module.exports = config => {
   config.addPassthroughCopy('src/img');
   config.addPassthroughCopy({ 'src/passthrough': '/' });
+  config.addPassthroughCopy('src/css');
 
   config.addPlugin(eleventyNavigationPlugin);
   config.addPlugin(pluginRss);

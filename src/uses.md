@@ -50,4 +50,4 @@ Make sure to check out [uses.tech](https://uses.tech/) for a list of everyone’
 - StopTheMaddness
 - Zoom
 
-Last updated on <time datetime="2021-12-26">{% humanizeDate "2021-12-26" %}</time>
+Last updated on <time datetime="2021-12-26" class="not-touch">{% humanizeDate "2021-12-26" %}</time>
