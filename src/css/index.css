@@ -12,10 +12,18 @@
   --font-mono: ui-monospace, 'SF Mono', 'Menlo', 'Consolas', 'Ubuntu Mono', monospace;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #333;
+    --text-color: #fafafa;
+  }
+}
+
 html {
   font-size: 100%;
   font-family: var(--font-sans-serif);
   scrollbar-color: var(--text-color) var(--bg-color);
+  color-scheme: light dark;
 }
 
 body {
