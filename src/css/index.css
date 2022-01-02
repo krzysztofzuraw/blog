@@ -7,7 +7,7 @@
   --size-800: 3.15rem;
   --size-900: 4.2rem;
   --bg-color: #fafafa;
-  --text-color: #555;
+  --text-color: #333;
   --font-sans-serif: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: ui-monospace, 'SF Mono', 'Menlo', 'Consolas', 'Ubuntu Mono', monospace;
 }
