@@ -4,7 +4,7 @@ date: Last Modified
 permalink: 'blog/2021/typescript-types-swagger/index.html'
 ---
 
-All our frontend codebase is using TypeScript which is all great but we always struggled with one aspect of writing types - **typing backend responses and requests**. 
+All our frontend codebase is using TypeScript which is all great but we always struggled with one aspect of writing types - **typing backend responses and requests**.
 
 At the begining we were using JavaScript classes with DTO approach. It turns out that it requires a lot of typing to get even basic request/response typed.
 
@@ -40,21 +40,19 @@ generateApi({
 });
 ```
 
-
 ## What works fine
 
-* One source of truth - swagger JSON schema
-* Strictly typed API out of the box on frontend
+- One source of truth - swagger JSON schema
+- Strictly typed API out of the box on frontend
 
 ## What do not works fine
-* Communication - this is typical one. When there is a bug - which person should be reponsible for updating a types in proto and swagger? This is something we still figuring out
-* 
----
 
-* [x] npx swagger generator
-* [x] node script
-* [ ] proto in the future
-* [ ] one source of truth
-* [ ] what works fine
-* [ ] what do not works fine
-* [x] axios client
+- Communication - this is typical one. When there is a bug - which person should be reponsible for updating a types in proto and swagger? This is something we still figuring out
+
+## What else you can use
+
+- Generating types from protobuff
+
+## Summary
+
+It the future
