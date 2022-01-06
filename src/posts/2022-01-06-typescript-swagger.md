@@ -16,7 +16,7 @@ The first thing you need to answer is if you want to commit your types or not in
 
 The second thing is: do we want to generate `axios` client or not? We decided to generate it. We then change existing axios client setup with new generated client. Cons? We found out that is it hard to keep axios, swagger-typescript-api in sync so the types do not break. As of time of this writing we had to pin axios to `0.21.4` to avoid such break.
 
-Code for generating type can be found below:
+Code for generating types can be found below:
 
 ```js
 const { generateApi } = require('swagger-typescript-api');
@@ -50,4 +50,4 @@ What can be improved?
 - Communication - this is typical one. When there is a bug - which person should be responsible for updating a types in proto and swagger? This is something we still figuring out
 
 What else you can use?
-- Generating types from protobuff
+- Generating types from [protobuff](https://developers.google.com/protocol-buffers/)
