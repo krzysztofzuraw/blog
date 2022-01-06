@@ -9,4 +9,8 @@
     "editor.quickSuggestions": true,
     "editor.wordBasedSuggestions": false
   },
+  "css.validate": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  }
 }
