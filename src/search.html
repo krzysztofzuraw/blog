@@ -1,0 +1,24 @@
+---
+layout: layouts/page.html
+title: Search
+eleventyNavigation:
+  key: Search
+  parent: Footer
+  order: 7
+---
+
+<h1>Search</h1>
+
+<div id="search"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
+<script type="text/javascript">
+  algoliasearchNetlify({
+    appId: 'DBL70W1NXR',
+    apiKey: '21094a63b68222d6207c1d85b72e5499',
+    siteId: '76679400-2108-484e-b2a4-dccd71984e48',
+    branch: 'main',
+    selector: 'div#search',
+  });
+</script>

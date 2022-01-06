@@ -1,7 +1,11 @@
 module.exports = {
   content: ['./src/**/*.{html,js,md,xml}'],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateRows: {
+        layout: 'auto 1fr auto',
+      },
+    },
   },
   plugins: [require('@tailwindcss/typography')],
 };
