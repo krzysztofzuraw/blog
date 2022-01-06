@@ -12,5 +12,12 @@
   "css.validate": false,
   "editor.quickSuggestions": {
     "strings": true
-  }
+  },
+  "cSpell.words": [
+    "osascript",
+    "Raycast",
+    "Krzysztof",
+    "Żuraw"
+  ],
+  "cSpell.language": "en"
 }
