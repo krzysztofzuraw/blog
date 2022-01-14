@@ -9,17 +9,20 @@
     "editor.quickSuggestions": true,
     "editor.wordBasedSuggestions": false
   },
-  "css.validate": false,
   "editor.quickSuggestions": {
     "strings": true
   },
   "cSpell.words": [
-    "osascript",
-    "Raycast",
+    "eleventy",
     "Krzysztof",
-    "Żuraw",
+    "luxon",
+    "noopener",
+    "osascript",
     "Parens",
-    "proto"
+    "Piccalili",
+    "proto",
+    "Raycast",
+    "Żuraw"
   ],
   "cSpell.language": "en"
 }

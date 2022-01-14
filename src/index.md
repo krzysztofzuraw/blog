@@ -1,5 +1,5 @@
 ---
-layout: layouts/article.html
+layout: layouts/page.html
 title: Home
 eleventyNavigation:
   key: Home
@@ -9,13 +9,15 @@ eleventyNavigation:
 
 # Hi, I'm Krzysztof Żuraw 👋🏻
 
+<article>
+
 Welcome to my personal page. A few words about me:
 
 - self taught frontend developer with 5+ years of experience
 - specialize in building React & TypeScript websites/web-apps
 - leading one of the dev teams at Ingrid
 - learning about CSS & design
-- brewing speciality coffee using Chemex
+- brewing specialty coffee using Chemex
 
 I like giving back to community by being a mentor of [Django Girls](https://djangogirls.org/) or
 [Geek Girls Carrots](https://gocarrots.org/). I like to organize events - I’m co-organizer of
@@ -31,3 +33,5 @@ I like giving back to community by being a mentor of [Django Girls](https://djan
   </li>
   {% endfor %}
 </ol>
+
+</article>
