@@ -9,6 +9,7 @@ eleventyNavigation:
 ---
 
 ## Hardware
+
 - Macbook Pro 2019
 - Iphone 11
 - Apple Watch series 4
@@ -19,6 +20,7 @@ eleventyNavigation:
 - ZSA Moonlander Mark I
 
 ## Coffee gear
+
 - Baratza Encode Grinder
 - Brewista Goose Kettle
 - Chemex
@@ -27,9 +29,10 @@ eleventyNavigation:
 - Clever Dripper
 
 ## Software
+
 - Safari for private and Brave for work with DuckDuck Go
 - Apple Reminders/Calendar
-- VSCode with Menlo font and GitHub theme
+- VSCode with SF Mono font and GitHub theme
 - Raycast
 - Spotify
 - Choosy

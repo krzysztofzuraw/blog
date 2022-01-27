@@ -4,7 +4,7 @@
   },
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 100,
+    "editor.wordWrapColumn": 80,
     "editor.lineNumbers": "off",
     "editor.quickSuggestions": true,
     "editor.wordBasedSuggestions": false
@@ -12,6 +12,7 @@
   "editor.quickSuggestions": {
     "strings": true
   },
+  "css.validate": false,
   "cSpell.words": [
     "eleventy",
     "Krzysztof",
@@ -23,7 +24,9 @@
     "proto",
     "Raycast",
     "Squoosh",
+    "tailwindcss",
     "Żuraw"
   ],
-  "cSpell.language": "en"
+  "cSpell.language": "en,pl",
+  "cSpell.allowCompoundWords": true
 }

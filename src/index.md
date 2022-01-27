@@ -9,7 +9,7 @@ eleventyNavigation:
 
 # Hi, I'm Krzysztof Żuraw 👋🏻
 
-<article>
+<article class="prose lg:prose-xl dark:prose-invert">
 
 Welcome to my personal page. A few words about me:
 
@@ -23,15 +23,5 @@ I like giving back to community by being a mentor of [Django Girls](https://djan
 [Geek Girls Carrots](https://gocarrots.org/). I like to organize events - I’m co-organizer of
 [Wrocław TypeScript meetup](https://www.meetup.com/pl-PL/WrocTypeScript/) and
 [Django Girls Wrocław](https://djangogirls.org/wroclaw/). If you need help with preparing tech event do not hesitate to contact me.
-
-## Latest 3 blog posts
-
-<ol>
-  {% for post in collections.posts | reverse | head(3) %}
-  <li>
-    <a href="{{post.url}}">{{ post.data.title }}</a>
-  </li>
-  {% endfor %}
-</ol>
 
 </article>

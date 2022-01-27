@@ -8,8 +8,8 @@ eleventyNavigation:
   order: 4
 ---
 
-
 - Stack behind this page: [Eleventy, a simpler static site generator.](https://www.11ty.dev/)
-- Look & feel in the most part taken from [Piccalili tutorial](https://piccalil.li/tutorial/improve-the-readability-of-the-content-on-your-website)
-- Fonts: Georgia with System UI and Monospaced UI
+- Look & feel in the most part thanks to [@tailwindcss/typography
+  ](https://tailwindcss.com/docs/typography-plugin)
+- Fonts: System stack
 - Tools: see [uses](/uses)
