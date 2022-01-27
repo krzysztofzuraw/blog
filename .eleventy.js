@@ -1,71 +1,70 @@
-const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
-const pluginRss = require('@11ty/eleventy-plugin-rss');
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const { DateTime } = require('luxon');
-const sizeOf = require('image-size');
-const path = require('path');
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+const { DateTime } = require("luxon");
+const sizeOf = require("image-size");
+const path = require("path");
 
-
-module.exports = config => {
-  config.addPassthroughCopy('src/img');
-  config.addPassthroughCopy({ 'src/passthrough': '/' });
-  config.addPassthroughCopy('src/css');
+module.exports = (config) => {
+  config.addPassthroughCopy("src/img");
+  config.addPassthroughCopy({ "src/passthrough": "/" });
 
   config.addPlugin(eleventyNavigationPlugin);
   config.addPlugin(pluginRss);
-  config.addPlugin(syntaxHighlight);
 
-  config.addFilter('humanizeDate', date =>
+  config.addFilter("humanizeDate", (date) =>
     DateTime.fromJSDate(date).toLocaleString({
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     })
   );
 
-  config.addFilter('formatDate', date =>
-    DateTime.fromJSDate(date).toLocaleString({ year: 'numeric', month: '2-digit', day: '2-digit' })
+  config.addFilter("formatDate", (date) =>
+    DateTime.fromJSDate(date).toLocaleString({
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    })
   );
 
-  config.addFilter('formatDateText', text =>
-    DateTime.fromISO(text).toLocaleString({ year: 'numeric', month: '2-digit', day: '2-digit' })
-  );
-
-  config.addFilter('getYear', date => DateTime.fromJSDate(date).toFormat('yyyy'));
-
-  config.addFilter('head', (array, n) => {
-    if (!Array.isArray(array) || array.length === 0) {
-      return [];
-    }
-    if (n < 0) {
-      return array.slice(n);
-    }
-
-    return array.slice(0, n);
-  });
-
-  config.addFilter('getLanguage', lang => {
-    switch (lang) {
-      case 'en':
-        return 'English';
-      case 'pl':
-        return 'Polish';
-      default:
-        return 'English';
-    }
-  });
-
-  config.addShortcode('currentYear', () => DateTime.now().toLocaleString({ year: 'numeric' }));
-  config.addShortcode('humanizeDate', text =>
+  config.addFilter("formatDateText", (text) =>
     DateTime.fromISO(text).toLocaleString({
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
     })
   );
 
-  config.addShortcode('img', (imgPath, alt, figcaption) => {
-    const dimensions = sizeOf(path.resolve(process.cwd(), 'src', 'img', `${imgPath}.webp`));
+  config.addFilter("getYear", (date) =>
+    DateTime.fromJSDate(date).toFormat("yyyy")
+  );
+
+  config.addFilter("getLanguage", (lang) => {
+    switch (lang) {
+      case "en":
+        return "English";
+      case "pl":
+        return "Polish";
+      default:
+        return "English";
+    }
+  });
+
+  config.addShortcode("currentYear", () =>
+    DateTime.now().toLocaleString({ year: "numeric" })
+  );
+  config.addShortcode("humanizeDate", (text) =>
+    DateTime.fromISO(text).toLocaleString({
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  );
+
+  config.addShortcode("img", (imgPath, alt, figcaption) => {
+    const dimensions = sizeOf(
+      path.resolve(process.cwd(), "src", "img", `${imgPath}.webp`)
+    );
 
     return /*html*/ `<figure>
        <a href="/img/${imgPath}.webp" target="_blank" rel="noopener">
@@ -76,13 +75,13 @@ module.exports = config => {
   });
 
   return {
-    templateFormats: ['md', 'njk', 'html'],
-    htmlTemplateEngine: 'njk',
-    markdownTemplateEngine: 'njk',
-    dataTemplateEngine: 'njk',
+    templateFormats: ["md", "njk", "html"],
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
+    dataTemplateEngine: "njk",
     dir: {
-      input: 'src',
-      output: 'dist',
+      input: "src",
+      output: "dist",
     },
   };
 };
