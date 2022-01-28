@@ -3,8 +3,8 @@ layout: layouts/page.html
 title: Books
 eleventyNavigation:
   key: Books
-  parent: Footer
-  order: 6
+  parent: Header
+  order: 4
 ---
 
 # Books index

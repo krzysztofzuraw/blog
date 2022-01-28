@@ -1,7 +1,6 @@
 ---
-title: Font smoothing after Big Sur
+title: How to enable font smoothing after Big Sur
 date: 2022-01-01
-permalink: 'blog/2022/font-smoothing/index.html'
 ---
 
 1. Disable font smoothing (default value is 2) in terminal
