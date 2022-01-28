@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %} {% block content %}
 
-<article class="prose lg:prose-xl dark:prose-invert">
+<article>
   <h1 lang="{{ lang }}">{{ title }}</h1>
   <time datetime="{{ date | formatDate }}">{{ date | humanizeDate }}</time>
   <p>Rating: {{ rating}}/10</p>

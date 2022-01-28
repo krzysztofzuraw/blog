@@ -1,5 +1,6 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { DateTime } = require("luxon");
 const sizeOf = require("image-size");
 const path = require("path");
@@ -7,9 +8,11 @@ const path = require("path");
 module.exports = (config) => {
   config.addPassthroughCopy("src/img");
   config.addPassthroughCopy({ "src/passthrough": "/" });
+  config.addPassthroughCopy("src/css");
 
   config.addPlugin(eleventyNavigationPlugin);
   config.addPlugin(pluginRss);
+  config.addPlugin(syntaxHighlight);
 
   config.addFilter("humanizeDate", (date) =>
     DateTime.fromJSDate(date).toLocaleString({
@@ -35,9 +38,7 @@ module.exports = (config) => {
     })
   );
 
-  config.addFilter("getYear", (date) =>
-    DateTime.fromJSDate(date).toFormat("yyyy")
-  );
+  config.addFilter("getYear", (date) => DateTime.fromJSDate(date).toFormat("yyyy"));
 
   config.addFilter("getLanguage", (lang) => {
     switch (lang) {
@@ -50,9 +51,7 @@ module.exports = (config) => {
     }
   });
 
-  config.addShortcode("currentYear", () =>
-    DateTime.now().toLocaleString({ year: "numeric" })
-  );
+  config.addShortcode("currentYear", () => DateTime.now().toLocaleString({ year: "numeric" }));
   config.addShortcode("humanizeDate", (text) =>
     DateTime.fromISO(text).toLocaleString({
       year: "numeric",
@@ -62,9 +61,7 @@ module.exports = (config) => {
   );
 
   config.addShortcode("img", (imgPath, alt, figcaption) => {
-    const dimensions = sizeOf(
-      path.resolve(process.cwd(), "src", "img", `${imgPath}.webp`)
-    );
+    const dimensions = sizeOf(path.resolve(process.cwd(), "src", "img", `${imgPath}.webp`));
 
     return /*html*/ `<figure>
        <a href="/img/${imgPath}.webp" target="_blank" rel="noopener">
