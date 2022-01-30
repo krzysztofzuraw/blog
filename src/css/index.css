@@ -5,8 +5,8 @@
 }
 
 :root {
-  --font-display: ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: ui-monospace, "SF Mono", monospace;
+  --font-display: Charter, sans-serif;
+  --font-mono: JetBrains Mono, monospace;
   --bg-color: #fafafa;
   --text-color: #333;
 }
@@ -33,8 +33,9 @@ html {
 
 body {
   min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
   background-color: var(--bg-color);
   color: var(--text-color);
   display: grid;
@@ -101,13 +102,21 @@ footer ul {
   justify-content: center;
 }
 
+a {
+  text-decoration: none;
+}
+
 a:not([class]) {
   color: currentColor;
 }
 
+article a {
+  text-decoration: underline;
+}
+
 :focus {
-  outline: 2px dashed;
-  outline-offset: 0.25rem;
+  outline: 1px dashed;
+  outline-offset: 0.05rem;
 }
 
 ::selection {
@@ -132,7 +141,7 @@ kbd,
 samp,
 pre {
   font-family: var(--font-mono);
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 time {
