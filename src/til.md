@@ -9,9 +9,9 @@ eleventyNavigation:
 
 # Today I learned index
 
-<ol class="stack list">
+<ol class="flex gap-4 flex-col">
 {% for entry in collections.tils | reverse %}
-  <li>
+  <li class="flex flex-col">
     <a href="{{entry.url}}">{{ entry.data.title }}</a>
     <time dateTime="{{entry.date | formatDate }}">{{ entry.date | formatDate }}</time>
   </li>
