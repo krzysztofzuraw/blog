@@ -2,6 +2,9 @@
   "emmet.includeLanguages": {
     "nunjucks": "html"
   },
+  "files.associations": {
+    "*.njk": "html"
+  },
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 100,
@@ -22,7 +25,6 @@
     "osascript",
     "Parens",
     "Piccalili",
-    "płaskoziemcy",
     "proto",
     "Raycast",
     "Squoosh",

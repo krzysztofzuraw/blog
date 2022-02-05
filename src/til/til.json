@@ -1,5 +1,0 @@
-{
-  "tags": ["tils", "rss"],
-  "layout": "layouts/post.html",
-  "permalink": "/til/{{ date | getYear }}/{{ title | slug }}/index.html"
-}
