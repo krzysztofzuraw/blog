@@ -34,11 +34,10 @@ eleventyNavigation:
 - Apple Reminders/Calendar
 - VSCode with SF Mono font and GitHub theme
 - Raycast
-- Spotify
+- Apple Music
 - Choosy
 - NewsNetWire for RSS
 - Strechly
 - StopTheMaddness
-- Zoom
 
 Make sure to check out [uses.tech](https://uses.tech/) for a list of everyone’s `/uses` pages!

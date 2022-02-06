@@ -1,15 +1,190 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-display: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  --bg-color: #fafafa;
+  --text-color: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #333;
+    --text-color: #fafafa;
+  }
+}
+
+html {
+  font-size: 100%;
+  font-family: var(--font-display);
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 45em) {
+  html {
+    font-size: 125%;
+  }
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: grid;
+  row-gap: 1rem;
+  grid-template-columns: 1fr min(90vw, 100%) 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+img,
+picture,
+video {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+header,
+main,
+footer {
+  grid-column: 2;
+}
+
+header ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+footer {
+  border-top: 2px dashed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 a {
-  @apply hover:underline;
+  text-decoration: none;
+}
+
+a:not([class]) {
+  color: currentColor;
+}
+
+article a {
+  text-decoration: underline;
+}
+
+:focus {
+  outline: 1px dashed;
+  outline-offset: 0.05rem;
+}
+
+::selection {
+  color: var(--bg-color);
+  background: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+p,
+li {
+  max-width: 65ch;
+}
+
+pre {
+  max-width: 100ch;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
 }
 
 time {
-  @apply opacity-50;
+  opacity: 0.5;
 }
 
-main > h1 {
-  @apply mb-8 text-4xl font-extrabold lg:text-5xl;
+figcaption,
+blockquote {
+  font-style: italic;
+}
+
+/* Utils */
+.box {
+  padding: var(--padding, 1.5rem);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stack > * + * {
+  margin-top: var(--space, 1.5rem);
+}
+
+/* custom */
+.list {
+  list-style: none;
+  --space: 2.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.list > li {
+  display: grid;
+  gap: 0.5rem;
 }
