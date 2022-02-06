@@ -118,7 +118,7 @@ article a {
 }
 
 :focus {
-  outline: 1px dashed;
+  outline: 2px dashed;
   outline-offset: 0.05rem;
 }
 
@@ -154,6 +154,20 @@ time {
 figcaption,
 blockquote {
   font-style: italic;
+}
+
+form {
+  display: grid;
+  place-items: start;
+  gap: 1rem;
+}
+
+label {
+  display: grid;
+}
+
+input {
+  padding: 0.5rem;
 }
 
 /* Utils */

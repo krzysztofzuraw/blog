@@ -1,8 +1,7 @@
 {
   "title": "Krzysztof Żuraw blog",
   "author": {
-    "name": "Krzysztof Żuraw",
-    "email": "blog@kzuraw.com"
+    "name": "Krzysztof Żuraw"
   },
   "description": "TypeScript, React & all things frontend.",
   "keywords": "TypeScript, React, HTML, CSS, blog",

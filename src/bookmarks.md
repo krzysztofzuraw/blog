@@ -4,7 +4,7 @@ title: Bookmarks
 eleventyNavigation:
   key: Bookmarks
   parent: Footer
-  order: 7
+  order: 5
 ---
 
 # Bookmarks index

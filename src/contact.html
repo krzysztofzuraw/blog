@@ -1,0 +1,17 @@
+---
+layout: layouts/page.html
+title: Contact
+eleventyNavigation:
+  key: Contact
+  parent: Footer
+  order: 6
+---
+
+<h1>Contact</h1>
+
+<form name="contact" method="POST" data-netlify="true">
+  <label>Name: <input type="text" name="name" /></label>
+  <label>Email: <input type="email" name="email" /></label>
+  <label>Message: <textarea name="message" cols="30" rows="5"></textarea></label>
+  <input type="submit" />
+</form>

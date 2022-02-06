@@ -65,10 +65,7 @@
         </li>
         {% endfor %}
       </ul>
-      <p>
-        © 2016-{% currentYear %}
-        <a href="mailto:{{ metadata.author.email }}" rel="me">{{ metadata.author.name }}</a>
-      </p>
+      <p>© 2016-{% currentYear %} {{ metadata.author.name }}</p>
     </footer>
   </body>
 </html>
