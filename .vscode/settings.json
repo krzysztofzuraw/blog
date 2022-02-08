@@ -15,22 +15,5 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "css.validate": false,
-  "cSpell.words": [
-    "eleventy",
-    "keyof",
-    "Krzysztof",
-    "luxon",
-    "noopener",
-    "osascript",
-    "Parens",
-    "Piccalili",
-    "proto",
-    "Raycast",
-    "Squoosh",
-    "tailwindcss",
-    "Żuraw"
-  ],
-  "cSpell.language": "en,pl",
-  "cSpell.allowCompoundWords": true
+  "css.validate": false
 }

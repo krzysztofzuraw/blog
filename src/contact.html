@@ -9,9 +9,27 @@ eleventyNavigation:
 
 <h1>Contact</h1>
 
-<form name="contact" method="POST" data-netlify="true">
-  <label>Name: <input type="text" name="name" /></label>
-  <label>Email: <input type="email" name="email" /></label>
-  <label>Message: <textarea name="message" cols="30" rows="5"></textarea></label>
-  <input type="submit" />
+<form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  class="grid grid-cols-1 place-items-start gap-6"
+>
+  <label class="block"
+    ><span>Name</span><input type="text" name="name" class="mt-1 block w-full dark:text-gray-900"
+  /></label>
+  <label class="block"
+    ><span>Email</span
+    ><input type="email" name="email" class="mt-1 block w-full dark:text-gray-900"
+  /></label>
+  <label class="block">
+    <span>Message</span>
+    <textarea
+      name="message"
+      cols="30"
+      rows="5"
+      class="mt-1 block w-full dark:text-gray-900"
+    ></textarea>
+  </label>
+  <input type="submit" class="cursor-pointer border border-gray-900 p-2 dark:border-white" />
 </form>

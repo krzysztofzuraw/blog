@@ -9,9 +9,9 @@ eleventyNavigation:
 
 # Books index
 
-<ol class="stack list">
+<ol class="flex gap-4 flex-col">
 {% for book in collections.books | reverse %}
-  <li>
+  <li class="flex flex-col">
     <a href="{{book.url}}">{{ book.data.title }}</a>
     <time dateTime="{{book.date | formatDate }}">{{ book.date | formatDate }}</time>
   </li>

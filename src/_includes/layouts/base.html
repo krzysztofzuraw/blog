@@ -3,10 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="{{ page.url }}" />
+
     <title>{{ title }} | {{ metadata.author.name }}</title>
 
+    <meta name="generator" content="eleventy" />
+    <meta name="google" content="nositelinkssearchbox" />
+    <meta name="google" content="notranslate" />
+
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}" />
-    <link rel="stylesheet" href="{{ '/css/prism-theme.css' | url }}" />
 
     <link
       rel="alternate"
@@ -39,9 +44,11 @@
     <meta name="format-detection" content="telephone=no" />
   </head>
 
-  <body>
-    <header>
-      <ul>
+  <body
+    class="mx-auto grid h-screen max-w-3xl grid-rows-layout px-4 py-10 antialiased dark:bg-gray-900 dark:text-white sm:px-6 sm:py-12 lg:max-w-4xl lg:py-16 lg:px-8 lg:text-xl xl:max-w-6xl"
+  >
+    <header class="mb-6 flex justify-end">
+      <ul class="flex gap-4">
         {% for entry in collections.all | eleventyNavigation("Header") %}
         <li>
           <a href="{{ entry.url | url }}">{{entry.title }}</a>
@@ -50,15 +57,15 @@
       </ul>
     </header>
     <main>{% block content %} {% endblock %}</main>
-    <footer class="box">
-      <ul>
+    <footer class="mt-6 grid place-items-center gap-6 border-t p-2">
+      <ul class="flex flex-wrap gap-4">
         {% for entry in collections.all | eleventyNavigation("Footer") %}
         <li>
           <a href="{{ entry.url | url }}">{{entry.title }}</a>
         </li>
         {% endfor %}
       </ul>
-      <ul>
+      <ul class="flex flex-wrap gap-4">
         {% for entry in metadata.social %}
         <li>
           <a href="{{ entry.url | url }}" rel="me">{{ entry.title }}</a>
