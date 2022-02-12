@@ -4,13 +4,11 @@
   "description": "Krzysztof Żuraw site",
   "main": "n/a",
   "scripts": {
-    "start:eleventy": "eleventy --serve",
-    "start:tailwind": "tailwindcss --input ./src/css/index.css --output ./dist/css/index.css --watch",
-    "dev": "run-p start:*",
+    "start": "eleventy --serve",
+    "dev": "npm run start",
     "prebuild": "npm run clean:dist",
     "build:eleventy": "eleventy",
-    "build:tailwind": "NODE_ENV=production tailwindcss  --input ./src/css/index.css --output ./dist/css/index.css --minify",
-    "build": "run-s build:*",
+    "build": "eleventy",
     "debug": "DEBUG=* eleventy",
     "clean:dist": "rimraf dist/*",
     "prereinstall": "npm run clean:dist",
@@ -28,16 +26,13 @@
     "@11ty/eleventy": "1.0.0",
     "@11ty/eleventy-navigation": "0.3.2",
     "@11ty/eleventy-plugin-rss": "1.1.2",
-    "@tailwindcss/forms": "0.4.0",
-    "@tailwindcss/typography": "0.5.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "4.0.0",
     "image-size": "1.0.1",
     "lint-staged": "12.3.2",
     "luxon": "2.3.0",
     "npm-run-all": "4.1.5",
     "prettier": "2.5.1",
-    "prettier-plugin-tailwindcss": "0.1.6",
-    "rimraf": "3.0.2",
-    "tailwindcss": "3.0.19"
+    "rimraf": "3.0.2"
   },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write"

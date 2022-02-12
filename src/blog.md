@@ -9,9 +9,9 @@ eleventyNavigation:
 
 # Blog index
 
-<ol class="flex gap-4 flex-col">
+<ol class="stack list">
 {% for post in collections.posts | reverse %}
-  <li class="flex flex-col">
+  <li>
     <a href="{{post.url}}">{{ post.data.title }}</a>
     <time dateTime="{{post.date | formatDate }}">{{ post.date | formatDate }}</time>
   </li>

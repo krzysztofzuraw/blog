@@ -9,7 +9,7 @@ eleventyNavigation:
 
 # Bookmarks index
 
-<ul class="list-disc px-8">
+<ul>
 {% for entry in bookmarks.links %}
   <li>
     <a href="{{entry.url}}">{{ entry.title }}</a>
