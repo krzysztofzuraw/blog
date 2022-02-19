@@ -9,7 +9,7 @@ eleventyNavigation:
 
 # Hi, I'm Krzysztof Żuraw 👋🏻
 
-<article>
+<article class="prose dark:prose-invert lg:prose-xl">
 
 Welcome to my personal page. A few words about me:
 
