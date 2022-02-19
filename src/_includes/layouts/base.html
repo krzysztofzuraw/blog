@@ -48,7 +48,8 @@
   <body
     class="mx-auto grid h-screen max-w-3xl grid-rows-layout px-4 py-10 antialiased dark:bg-gray-900 dark:text-white sm:px-6 sm:py-12 lg:max-w-4xl lg:py-16 lg:px-8 lg:text-xl xl:max-w-6xl"
   >
-    <header class="mb-6 flex justify-end">
+    <header class="mb-6 flex justify-between">
+      <a href="/" class="text-3xl font-bold lg:text-4xl">Krzysztof Żuraw</a>
       <ul class="flex gap-4">
         {% for entry in collections.all | eleventyNavigation("Header") %}
         <li>
@@ -58,14 +59,8 @@
       </ul>
     </header>
     <main>{% block content %} {% endblock %}</main>
-    <footer class="mt-6 grid place-items-center gap-6 border-t p-2">
-      <ul class="flex flex-wrap gap-4">
-        {% for entry in collections.all | eleventyNavigation("Footer") %}
-        <li>
-          <a href="{{ entry.url | url }}">{{entry.title }}</a>
-        </li>
-        {% endfor %}
-      </ul>
+    <footer class="mt-6 flex gap-6 border-t p-2">
+      <p>© 2016-{% currentYear %} <a href="/contact">{{ metadata.author.name }}</a></p>
       <ul class="flex flex-wrap gap-4">
         {% for entry in metadata.social %}
         <li>
@@ -73,7 +68,6 @@
         </li>
         {% endfor %}
       </ul>
-      <p>© 2016-{% currentYear %} {{ metadata.author.name }}</p>
     </footer>
   </body>
 </html>

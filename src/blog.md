@@ -1,19 +1,19 @@
 ---
 layout: layouts/page.html
-title: Blog posts
+title: Blog archive
 eleventyNavigation:
-  key: Blog
+  key: Archive
   parent: Header
   order: 2
 ---
 
-# Blog index
+# Blog archive
 
 <ol class="flex gap-4 flex-col">
 {% for post in collections.posts | reverse %}
-  <li class="flex flex-col">
+  <li class="flex flex-col md:justify-between md:flex-wrap md:flex-row">
     <a href="{{post.url}}">{{ post.data.title }}</a>
-    <time dateTime="{{post.date | formatDate }}">{{ post.date | formatDate }}</time>
+    <time dateTime="{{post.date | formatDate }}" >{{ post.date | formatDate }}</time>
   </li>
 {% endfor %}
 </ol>

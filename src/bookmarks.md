@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 5
 ---
 
-# Bookmarks index
+# Bookmarks
 
 <ul class="list-disc px-8">
 {% for entry in bookmarks.links %}
