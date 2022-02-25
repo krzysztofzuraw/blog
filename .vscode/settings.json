@@ -16,5 +16,13 @@
     "strings": true
   },
   "css.validate": false,
-  "cSpell.words": ["eleventy", "Krzysztof", "krzysztofzuraw", "Żuraw"]
+  "cSpell.words": [
+    "eleventy",
+    "Krzysztof",
+    "krzysztofzuraw",
+    "luxon",
+    "noopener",
+    "nositelinkssearchbox",
+    "Żuraw"
+  ]
 }

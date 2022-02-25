@@ -4,8 +4,8 @@ title: What I'm using
 date: 2022-01-14
 eleventyNavigation:
   key: Uses
-  parent: Footer
-  order: 1
+  parent: Header
+  order: 4
 ---
 
 ## Hardware

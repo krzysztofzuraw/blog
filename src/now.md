@@ -4,8 +4,8 @@ title: What I'm doing now
 date: 2022-01-14
 eleventyNavigation:
   key: Now
-  parent: Footer
-  order: 2
+  parent: Header
+  order: 3
 ---
 
 - Resting and embracing slow life
