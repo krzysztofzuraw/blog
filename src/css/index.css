@@ -79,7 +79,7 @@ footer {
 }
 
 header {
-  display: grid;
+  display: flex;
   gap: 1rem;
 }
 
@@ -209,9 +209,4 @@ textarea {
   --space: 2.5rem;
   padding: 0;
   margin: 0;
-}
-
-.list > li {
-  display: grid;
-  gap: 0.5rem;
 }

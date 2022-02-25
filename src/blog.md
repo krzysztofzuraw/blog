@@ -1,19 +1,20 @@
 ---
 layout: layouts/page.html
-title: Posts
+title: Blog
 eleventyNavigation:
-  key: Posts
+  key: Blog
   parent: Header
   order: 1
 ---
 
-# Posts
+# Blog
 
 <ol class="stack list">
 {% for post in collections.posts | reverse %}
   <li>
-    <a href="{{post.url}}">{{ post.data.title }}</a>
-    <time dateTime="{{post.date | formatDate }}" >{{ post.date | formatDate }}</time>
+    <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+    <p>{{ post.data.description }}</p>
+    <time dateTime="{{ post.date | formatDate }}" >{{ post.date | formatDate }}</time>
   </li>
 {% endfor %}
 </ol>
