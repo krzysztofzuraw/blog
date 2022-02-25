@@ -2,8 +2,8 @@
 permalink: "{{ metadata.feed.path }}"
 eleventyNavigation:
   key: RSS
-  parent: Footer
-  order: 3
+  parent: Header
+  order: 2
 ---
 
 <?xml version="1.0" encoding="utf-8"?>
@@ -20,6 +20,7 @@ eleventyNavigation:
     <email>{{ metadata.author.email }}</email>
   </author>
   {%- for post in collections.posts | reverse %} {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url)
+
 
   }}{% endset %}
   <entry>

@@ -1,19 +1,20 @@
 ---
 layout: layouts/page.html
-title: Blog archive
+title: Blog
 eleventyNavigation:
-  key: Archive
+  key: Blog
   parent: Header
-  order: 2
+  order: 1
 ---
 
-# Blog archive
+# Blog
 
-<ol class="flex gap-4 flex-col">
+<ol class="stack list">
 {% for post in collections.posts | reverse %}
-  <li class="flex flex-col md:justify-between md:flex-wrap md:flex-row">
-    <a href="{{post.url}}">{{ post.data.title }}</a>
-    <time dateTime="{{post.date | formatDate }}" >{{ post.date | formatDate }}</time>
+  <li>
+    <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+    <p>{{ post.data.description }}</p>
+    <time dateTime="{{ post.date | formatDate }}" >{{ post.date | formatDate }}</time>
   </li>
 {% endfor %}
 </ol>

@@ -45,12 +45,12 @@
     <meta name="format-detection" content="telephone=no" />
   </head>
 
-  <body
-    class="mx-auto grid h-screen max-w-3xl grid-rows-layout px-4 py-10 antialiased dark:bg-gray-900 dark:text-white sm:px-6 sm:py-12 lg:max-w-4xl lg:py-16 lg:px-8 lg:text-xl xl:max-w-6xl"
-  >
-    <header class="mb-6 flex justify-between">
-      <a href="/" class="text-3xl font-bold lg:text-4xl">Krzysztof Żuraw</a>
-      <ul class="flex gap-4">
+  <body>
+    <header>
+      <em>
+        <a href="/">Krzysztof Zuraw</a>
+      </em>
+      <ul>
         {% for entry in collections.all | eleventyNavigation("Header") %}
         <li>
           <a href="{{ entry.url | url }}">{{entry.title }}</a>
@@ -59,9 +59,9 @@
       </ul>
     </header>
     <main>{% block content %} {% endblock %}</main>
-    <footer class="mt-6 flex gap-6 border-t p-2">
+    <footer class="box">
       <p>© 2016-{% currentYear %} <a href="/contact">{{ metadata.author.name }}</a></p>
-      <ul class="flex flex-wrap gap-4">
+      <ul>
         {% for entry in metadata.social %}
         <li>
           <a href="{{ entry.url | url }}" rel="me">{{ entry.title }}</a>
