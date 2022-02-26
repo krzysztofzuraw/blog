@@ -9,6 +9,12 @@ eleventyNavigation:
 
 # Blog
 
+<form method="get" action="https://duckduckgo.com/" id="search">
+  <label>Search: <input type="serach" name="q" /></label>
+  <input type="hidden" name="sites" value="krzysztofzuraw.com" />
+  <input type="submit" />
+</form>
+
 <ol class="stack list">
 {% for post in collections.posts | reverse %}
   <li>

@@ -181,6 +181,7 @@ label {
 input,
 textarea {
   padding: 0.5rem;
+  border: 1px solid;
 }
 
 /* Utils */
@@ -209,4 +210,20 @@ textarea {
   --space: 2.5rem;
   padding: 0;
   margin: 0;
+}
+
+#search {
+  grid-template-columns: 1fr auto;
+  place-items: normal;
+}
+
+#search input[type="submit"] {
+  place-self: end;
+}
+
+input[type="submit"] {
+  padding: 0.5rem;
+  border: 1px solid;
+  background-color: var(--bg-color);
+  cursor: pointer;
 }
