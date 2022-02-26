@@ -1,7 +1,7 @@
 ---
 title: Implementing stripe card for fun & profit
 date: 2019-12-30
-permalink: '/blog/2019/implementing-stripe-card/index.html'
+permalink: "/blog/2019/implementing-stripe-card/index.html"
 ---
 
 Today I want to write about a little side project that I did recently: what I learned from it, what went good and what went bad. Let's go 🎉.
@@ -60,14 +60,3 @@ I this blog post I decided to implement a card found on [stripe](https://stripe.
 - `letter-spacing` in header
 - dynamically changing SVG color
 - using `a` tag as a card container
-
-Below you can find embedded code pen & graphical difference between card.
-
-<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="css,result" data-user="krzysztofzuraw" data-slug-hash="OJPLRbp" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Stripe card">
-  <span>See the Pen <a href="https://codepen.io/krzysztofzuraw/pen/OJPLRbp">
-  Stripe card</a> by Krzysztof Żuraw (<a href="https://codepen.io/krzysztofzuraw">@krzysztofzuraw</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-<iframe frameborder="0" class="juxtapose" width="100%" height="398.43567753001713" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=3c0c9d94-2b23-11ea-b9b8-0edaf8f81e27"></iframe>

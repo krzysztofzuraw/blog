@@ -33,7 +33,7 @@ python-deb-pkg (0.1.0-1) UNRELEASED; urgency=low
 
 * python-deb-pkg: Initial debian packaging
 
--- Krzysztof Zuraw <krzysztof.zuraw@gmail.com>  Sat, 3 Jun 2017 12:34:56 +0000
+-- Krzysztof Zuraw Sat, 3 Jun 2017 12:34:56 +0000
 ```
 
 `compat`:
@@ -55,7 +55,7 @@ python-deb-pkg (0.1.0-1) UNRELEASED; urgency=low
 Source: python-deb-pkg
 Section: contrib/python
 Priority: extra
-Maintainer: Krzysztof Żuraw <krzysztof.zuraw@gmail.com>
+Maintainer: Krzysztof Żuraw
 Build-Depends: debhelper (>= 9), python3.5, python3-setuptools, dh-virtualenv (>> 0.6)
 Standards-Version: 3.9.5
 
@@ -69,7 +69,7 @@ Description: python-deb-pkg service
 `copyright`:
 
 ```text
-Copyright (c) 2017+, Krzysztof Żuraw <krzysztof.zuraw@gmail.com>
+Copyright (c) 2017+, Krzysztof Żuraw
 
 MIT Licensed.
 
@@ -112,7 +112,7 @@ How to use all these files combined? I use docker for that! I have
 
 ```dockerfile
 FROM ubuntu:16.04
-MAINTAINER Krzysztof Zuraw <krzysztof.zuraw@gmail.com>
+MAINTAINER Krzysztof Zuraw
 
 
 RUN apt-get update && apt-get install --yes \
