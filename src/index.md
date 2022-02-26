@@ -7,6 +7,8 @@ eleventyNavigation:
 
 <article>
 
+# Hi, I'm Krzysztof Żuraw
+
 Welcome to my blog. A few words about me:
 
 - self taught frontend developer with 5+ years of experience
