@@ -12,10 +12,7 @@
     "editor.quickSuggestions": true,
     "editor.wordBasedSuggestions": false
   },
-  "editor.quickSuggestions": {
-    "strings": true
-  },
-  "css.validate": false,
+  "cSpell.language": "en,pl",
   "cSpell.words": [
     "eleventy",
     "Krzysztof",
