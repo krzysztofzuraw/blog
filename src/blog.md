@@ -20,7 +20,7 @@ eleventyNavigation:
   <li>
     <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
     <p>{{ post.data.description }}</p>
-    <time dateTime="{{ post.date | formatDate }}" >{{ post.date | formatDate }}</time>
+    <time dateTime="{{ post.date | toISO }}" >{{ post.date | formatDate }}</time>
   </li>
 {% endfor %}
 </ol>

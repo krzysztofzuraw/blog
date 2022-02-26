@@ -30,13 +30,7 @@ module.exports = (config) => {
     })
   );
 
-  config.addFilter("formatDateText", (text) =>
-    DateTime.fromISO(text).toLocaleString({
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-    })
-  );
+  config.addFilter("toISO", (date) => DateTime.fromJSDate(date).toISO());
 
   config.addFilter("getYear", (date) => DateTime.fromJSDate(date).toFormat("yyyy"));
 
