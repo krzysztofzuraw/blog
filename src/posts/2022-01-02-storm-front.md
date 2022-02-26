@@ -1,6 +1,6 @@
 ---
 title: "Book review: Storm Front (The Dresden Files, Book 1) by Jim Butcher"
-date: 2022-01-02
+date: 2022-01-02T13:00
 permalink: "/blog/2021/book-storm-front/index.html"
 ---
 

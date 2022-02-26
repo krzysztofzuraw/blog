@@ -1,7 +1,7 @@
 ---
 title: Raycast script - copy foremost Safari window as markdown link
-date: 2022-01-02
-permalink: 'blog/2022/raycast-copy-foremost-safari-window/index.html'
+date: 2022-01-02T12:00
+permalink: "blog/2022/raycast-copy-foremost-safari-window/index.html"
 ---
 
 I wanted a solution to get foremost Safari window copied as markdown link. At first I tried to use build in shortcuts - without luck. I could get URL but getting name was not possible (if there is please write to me about it). Then I looked on the internet find [URL Linker for Safari on the App Store](https://apps.apple.com/th/app/markdown-linker-for-safari/id1289119450?mt=12). It works fine - if you are willing to use mouse. At least I remember that you can use [Raycast](https://www.raycast.com/) script commands in applescript to accomplish such task. You can find code below:

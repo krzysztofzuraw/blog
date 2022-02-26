@@ -1,6 +1,6 @@
 ---
 title: "Book review: Egipt - Haram Halal by Piotr Ibrahim Kalwas"
-date: 2022-02-05
+date: 2022-02-06T12:00
 permalink: "/blog/2021/book-egipt-haram-halal/index.html"
 ---
 

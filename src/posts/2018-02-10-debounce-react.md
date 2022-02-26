@@ -88,11 +88,6 @@ function SearchResult(props) {
 
 it is still only representing html.
 
-I have my components working so let's type something into a search input:
-
-<iframe src="https://player.vimeo.com/video/255154770" width="640" height="836" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/255154770">Form without debouncing</a> from <a href="https://vimeo.com/user12996532">Noaal</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-
 **Whoa! What is happening here?**
 
 `onChange` event handler fired up every time I typed something into an

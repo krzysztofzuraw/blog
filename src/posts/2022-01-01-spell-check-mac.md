@@ -1,6 +1,6 @@
 ---
 title: How to enable spell check on mac
-date: 2022-01-01
+date: 2022-01-01T14:00
 permalink: "/blog/2021/spell-check/index.html"
 ---
 

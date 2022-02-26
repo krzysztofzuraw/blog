@@ -1,6 +1,6 @@
 ---
 title: "Book review: I cóż, że o Szwecji by Natalia Kołaczek"
-date: 2022-01-01
+date: 2022-01-01T13:00
 permalink: "/blog/2021/i-coz/index.html"
 ---
 

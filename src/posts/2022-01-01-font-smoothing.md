@@ -1,6 +1,6 @@
 ---
 title: How to enable font smoothing after Big Sur
-date: 2022-01-01
+date: 2022-01-01T12:00
 permalink: "/blog/2021/font-smoothing/index.html"
 ---
 
