@@ -8,9 +8,9 @@ I recently discovered joy of reading psychical paper magazines. What I really li
 I need to concentrate on reading and there is no other notification or urge to skip reading.
 I like that it bores me and forces me to make a break.
 
-I'm reading currently two (both in polish): Pismo & Przekroj.
+I'm reading currently two (both in polish): Pismo and Przekrój.
 
-{% img "2021-06-08-magazines", "Pismo & Przekroj magazines", "Pismo & Przekroj magazines" %}
+{% img "2021-06-08-magazines", "Pismo and Przekrój magazines", "Pismo and Przekrój magazines" %}
 
 ## Pismo
 
@@ -18,7 +18,7 @@ It is a monthly magazine about different topics from: situation in Poland, what 
 Big Tech or how is India going. I like fact that it has no ads and articles are diving deep into topics.
 There is poetry as well + comics and photo stories.
 
-## Przekroj
+## Przekrój
 
 It is quarterly magazine that was created right after 2 WW and it was considered the gate to Western
 world. Nowadays it has either articles made especially for magazine or translated from other magazines.
