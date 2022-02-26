@@ -58,7 +58,7 @@ can capture a regex group by putting `()` around expression and use it inside re
 Super helpful!
 
 ```text
-// find & replace example with regex capture group
+// find and replace example with regex capture group
 slug: '(.\*)' // find
 permalink: '$1/index.html' // replace by
 ```
