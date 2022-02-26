@@ -132,7 +132,7 @@ is done with `p` tag in example above.
 You can check all of those examples in more complicated scenarios below in code-sandbox:
 
 <iframe
-     src="https://codesandbox.io/embed/css-in-js-patterns-zz7ns?fontsize=14&hidenavigation=1&theme=dark"
+     src="https://codesandbox.io/embed/css-in-js-patterns-zz7ns"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="css in js patterns"
      allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
