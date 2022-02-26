@@ -1,7 +1,8 @@
 {
   "title": "Krzysztof Żuraw blog",
   "author": {
-    "name": "Krzysztof Żuraw"
+    "name": "Krzysztof Żuraw",
+    "email": "use-contact-form-on-blog@kzuraw.com"
   },
   "description": "TypeScript, React & all things frontend.",
   "keywords": "TypeScript, React, HTML, CSS, blog",
@@ -10,7 +11,7 @@
   "feed": {
     "subtitle": "TypeScript, React & all things frontend.",
     "path": "/feed.xml",
-    "id": "https://krzysztofzuraw.com"
+    "id": "https://krzysztofzuraw.com/"
   },
   "sitemap": {
     "path": "/sitemap.xml"
