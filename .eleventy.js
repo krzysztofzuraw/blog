@@ -11,13 +11,17 @@ module.exports = (config) => {
   config.addPlugin(eleventyNavigationPlugin);
   config.addPlugin(pluginRss);
 
-  config.addFilter("humanizeDate", (date) =>
-    DateTime.fromJSDate(date).toLocaleString({
+  config.addFilter("humanizeDate", (date) => {
+    console.log({ date });
+    return DateTime.fromJSDate(date).toLocaleString({
       year: "numeric",
       month: "long",
       day: "numeric",
-    })
-  );
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
+  });
 
   config.addFilter("formatDate", (date) =>
     DateTime.fromJSDate(date).toLocaleString({

@@ -2,7 +2,7 @@
 
 <article class="prose dark:prose-invert lg:prose-xl">
   <h1 lang="{{ lang }}">{{ title }}</h1>
-  <time datetime="{{ date | formatDate }}">{{ date | humanizeDate }}</time>
+  <time datetime="{{ date | toISO }}">{{ date | humanizeDate }}</time>
   <p>Rating: {{ rating}}/10</p>
 
   {{ content | safe }}
@@ -10,6 +10,7 @@
   <h2>Details</h2>
   <ul>
     <li lang="{{ lang }}">{{ title }} - {{ author }}</li>
+    <li>Translator: {{ translator }}</li>
     <li>Language: {{ lang | getLanguage }}</li>
     <li>ISBN: {{ isbn }}</li>
     <li lang="{{ lang }}">Publisher: {{ publisher }}</li>
