@@ -10,10 +10,10 @@ eleventyNavigation:
 # Books
 
 <ol class="flex gap-4 flex-col">
-{% for post in collections.books | reverse %}
+{% for book in collections.books | reverse %}
   <li class="flex flex-col md:justify-between md:flex-wrap md:flex-row">
-    <a href="{{post.url}}">{{ post.data.title }}</a>
-    <time dateTime="{{post.date | formatDate }}" >{{ post.date | formatDate }}</time>
+    <a href="{{book.url}}">{{ book.data.title }}</a>
+    <time dateTime="{{book.date | formatDate }}" >{{ book.date | formatDate }}</time>
   </li>
 {% endfor %}
 </ol>

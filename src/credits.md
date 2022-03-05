@@ -11,5 +11,5 @@ eleventyNavigation:
 - Stack behind this page: [Eleventy, a simpler static site generator.](https://www.11ty.dev/)
 - Look & feel in the most part thanks to [@tailwindcss/typography
   ](https://tailwindcss.com/docs/typography-plugin)
-- Fonts: System stack
+- Fonts: Charter and system stack for headings
 - Tools: see [uses](/uses)
