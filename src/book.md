@@ -1,16 +1,16 @@
 ---
 layout: layouts/page.html
-title: Blog
+title: Books
 eleventyNavigation:
-  key: Blog
-  parent: Header
-  order: 2
+  key: Books
+  parent: Footer
+  order: 4
 ---
 
-# Blog
+# Books
 
 <ol class="flex gap-4 flex-col">
-{% for post in collections.posts | reverse %}
+{% for post in collections.books | reverse %}
   <li class="flex flex-col md:justify-between md:flex-wrap md:flex-row">
     <a href="{{post.url}}">{{ post.data.title }}</a>
     <time dateTime="{{post.date | formatDate }}" >{{ post.date | formatDate }}</time>

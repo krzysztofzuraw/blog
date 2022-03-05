@@ -1,1 +1,2 @@
-*.xml.njk
+sitemap.xml.njk
+feed.njk

@@ -51,12 +51,11 @@
     <meta name="format-detection" content="telephone=no" />
   </head>
 
-  <body>
-    <header>
-      <em>
-        <a href="/">Krzysztof Zuraw</a>
-      </em>
-      <ul>
+  <body
+    class="mx-auto grid h-screen max-w-3xl grid-rows-layout px-4 py-10 font-serif antialiased dark:bg-gray-900 dark:text-white sm:px-6 sm:py-12 lg:max-w-4xl lg:py-16 lg:px-8 lg:text-xl xl:max-w-6xl"
+  >
+    <header class="mb-6 flex justify-end">
+      <ul class="flex gap-4">
         {% for entry in collections.all | eleventyNavigation("Header") %}
         <li>
           <a href="{{ entry.url | url }}">{{entry.title }}</a>
@@ -65,15 +64,22 @@
       </ul>
     </header>
     <main>{% block content %} {% endblock %}</main>
-    <footer class="box">
-      <p>© 2016-{% currentYear %} <a href="/contact">{{ metadata.author.name }}</a></p>
-      <ul>
+    <footer class="mt-6 grid gap-6 border-t p-2">
+      <ul class="flex flex-wrap gap-4">
+        {% for entry in collections.all | eleventyNavigation("Footer") %}
+        <li>
+          <a href="{{ entry.url | url }}">{{entry.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      <ul class="flex flex-wrap gap-4">
         {% for entry in metadata.social %}
         <li>
           <a href="{{ entry.url | url }}" rel="me">{{ entry.title }}</a>
         </li>
         {% endfor %}
       </ul>
+      <p>© 2016-{% currentYear %} {{ metadata.author.name }}</p>
     </footer>
   </body>
 </html>

@@ -5,21 +5,8 @@
   "files.associations": {
     "*.njk": "html"
   },
-  "[markdown]": {
-    "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 100,
-    "editor.lineNumbers": "off",
-    "editor.quickSuggestions": true,
-    "editor.wordBasedSuggestions": false
+  "editor.quickSuggestions": {
+    "strings": true
   },
-  "cSpell.language": "en,pl",
-  "cSpell.words": [
-    "eleventy",
-    "Krzysztof",
-    "krzysztofzuraw",
-    "luxon",
-    "noopener",
-    "nositelinkssearchbox",
-    "Żuraw"
-  ]
+  "css.validate": false
 }

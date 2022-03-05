@@ -3,9 +3,11 @@ layout: layouts/page.html
 title: Home
 eleventyNavigation:
   key: Home
+  parent: Header
+  order: 1
 ---
 
-<article>
+<article class="prose dark:prose-invert lg:prose-xl">
 
 # Hi, I'm Krzysztof Żuraw
 
