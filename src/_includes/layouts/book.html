@@ -10,7 +10,9 @@
   <h2>Details</h2>
   <ul>
     <li lang="{{ lang }}">{{ title }} - {{ author }}</li>
+    {% if translator %}
     <li>Translator: {{ translator }}</li>
+    {% endif %}
     <li>Language: {{ lang | getLanguage }}</li>
     <li>ISBN: {{ isbn }}</li>
     <li lang="{{ lang }}">Publisher: {{ publisher }}</li>

@@ -3,5 +3,3 @@ dist
 .cache
 .env
 .netlify
-Feeds.opml
-store.json
