@@ -1,6 +1,7 @@
 ---
 title: Enable spell check on mac
 date: 2022-01-01T08:00:34Z
+permalink: "/blog/2021/spell-check/index.html"
 ---
 
 If you happen to install Grammarly Desktop and spell checking is not working - use this command in terminal:

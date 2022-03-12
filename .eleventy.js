@@ -4,8 +4,6 @@ const { DateTime } = require("luxon");
 const sizeOf = require("image-size");
 const path = require("path");
 
-require("dotenv").config();
-
 module.exports = (config) => {
   config.addPassthroughCopy("src/img");
   config.addPassthroughCopy({ "src/passthrough": "/" });
