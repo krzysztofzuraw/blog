@@ -1,7 +1,6 @@
 ---
-title: How to enable font smoothing after Big Sur
-date: 2022-01-01T12:00
-permalink: "/blog/2021/font-smoothing/index.html"
+title: Font smoothing after Big Sur
+date: 2022-01-01T08:00:34Z
 ---
 
 1. Disable font smoothing (default value is 2) in terminal
@@ -10,7 +9,7 @@ permalink: "/blog/2021/font-smoothing/index.html"
 defaults -currentHost write -g AppleFontSmoothing -int 0
 ```
 
-2. (Optionaly) Edit VS Code settings and add
+2. (Optionally) Edit VS Code settings and add
 
 ```json
 "workbench.fontAliasing": "antialiased"

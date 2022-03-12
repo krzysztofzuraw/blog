@@ -8,5 +8,13 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "css.validate": false
+  "css.validate": false,
+  "cSpell.words": ["Wrocław"],
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100,
+    "editor.lineNumbers": "off",
+    "editor.quickSuggestions": true,
+    "editor.wordBasedSuggestions": false
+  }
 }
