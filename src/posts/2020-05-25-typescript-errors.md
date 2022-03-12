@@ -1,7 +1,7 @@
 ---
 title: How to read TypeScript errors and not get mad?
 date: 2020-05-25
-permalink: '/blog/2020/how-to-read-typescript-errors/index.html'
+permalink: "/blog/2020/how-to-read-typescript-errors/index.html"
 ---
 
 If you are working with TypeScript I bet you come across such compilation errors:

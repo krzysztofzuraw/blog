@@ -1,7 +1,7 @@
 ---
 title: New version of writer mode
 date: 2021-06-05
-permalink: '/blog/2021/writer-mode-new-version/index.html'
+permalink: "/blog/2021/writer-mode-new-version/index.html"
 ---
 
 I recently updated my VS Code extension [writer-mode](https://marketplace.visualstudio.com/items?itemName=noaal.writer-mode#:~:text=Distraction%20free%20plain%20text%20editing,p%20and%20Writer%20mode%3A%20Deactivate%20) to version 0.3.0. Before I start with what was changed - quick into what is writer mode? It is Visual Studio Code extension that allows you to temporary override editor settings and execute commands on activation & deactivation of extension. I use it for transforming VS Code into writing tool.

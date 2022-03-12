@@ -1,7 +1,7 @@
 ---
 title: How to dispatch multiple actions based on api call in redux-observable
 date: 2018-05-11
-permalink: '/blog/2018/dispatch-actions-on-api/index.html'
+permalink: "/blog/2018/dispatch-actions-on-api/index.html"
 ---
 
 ### Problem

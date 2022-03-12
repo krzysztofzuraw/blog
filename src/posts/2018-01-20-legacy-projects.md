@@ -1,7 +1,7 @@
 ---
 title: Legacy projects
 date: 2018-01-20
-permalink: '/blog/2018/legacy-projects/index.html'
+permalink: "/blog/2018/legacy-projects/index.html"
 ---
 
 **Hi! This blog post is mainly for me to remind myself that I can sometimes work with legacy

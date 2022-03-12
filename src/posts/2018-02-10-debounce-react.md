@@ -28,9 +28,9 @@ class App extends Component {
   };
   render() {
     return (
-      <div className="flex flex-col items-center min-h-screen w-full bg-teal-lighter bg-repeat">
-        <div className="container md:max-w-sm md:mx-auto">
-          <h1 className="block w-full text-center text-grey-darkest mb-6">Debounce in React</h1>
+      <div className="bg-teal-lighter flex min-h-screen w-full flex-col items-center bg-repeat">
+        <div className="container md:mx-auto md:max-w-sm">
+          <h1 className="text-grey-darkest mb-6 block w-full text-center">Debounce in React</h1>
           <SearchInput handleChange={this.handleChange} />
         </div>
         {this.state.typedWords.map((word, key) => (
@@ -50,9 +50,9 @@ class SearchInput extends Component {
     const { handleChange } = this.props;
     return (
       <form className="mb-4" onChange={handleChange}>
-        <div className="flex flex-col mb-4 md:w-full">
+        <div className="mb-4 flex flex-col md:w-full">
           <label
-            className="mb-2 uppercase font-bold text-lg text-grey-darkest"
+            className="text-grey-darkest mb-2 text-lg font-bold uppercase"
             htmlFor="search-input"
           >
             Search input:
@@ -79,7 +79,7 @@ You may notice another component - `SearchResult` which looks like this:
 function SearchResult(props) {
   const { text } = props;
   return (
-    <div className="container md:max-w-sm md:mx-auto">
+    <div className="container md:mx-auto md:max-w-sm">
       <span>{text}</span>
     </div>
   );

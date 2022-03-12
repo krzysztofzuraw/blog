@@ -1,7 +1,7 @@
 ---
 title: TypeScript function overloads
 date: 2019-05-27
-permalink: '/blog/2019/typescript-function-overloads/index.html'
+permalink: "/blog/2019/typescript-function-overloads/index.html"
 ---
 
 **NOTE: This is cross-post from** [my newsletter](https://krzysztofzuraw.com/newsletter). **I publish each email after it’s sent.** [Subscribe](https://buttondown.email/krzysztof_zuraw) **to get more content like this earlier right in your inbox! 📧.**
@@ -23,8 +23,8 @@ interface Data {
 }
 
 const data: Data = {
-  postalCodes: ['123', '422'],
-  country: 'PL',
+  postalCodes: ["123", "422"],
+  country: "PL",
 };
 ```
 
@@ -33,11 +33,11 @@ This is a bit contrived example but it illustrates the point. I have an object `
 Below I have `getDataByKey` which is a helper to get either `postalCodes` or `country`.
 
 ```ts
-function getDataByKey(data: Data, key: 'postalCodes' | 'country') {
+function getDataByKey(data: Data, key: "postalCodes" | "country") {
   return data[key];
 }
 
-const postalCodesRetrieved: string[] = getDataByKey(data, 'postalCodes');
+const postalCodesRetrieved: string[] = getDataByKey(data, "postalCodes");
 ```
 
 Everything looks nice so far but at the last line I want my `postalCodesRetrieved` to be array of string. Yet compiler will return and error:
@@ -47,16 +47,16 @@ Type 'string | string[]' is not assignable to type 'string[]'.
   Type 'string' is not assignable to type 'string[]'.
 ```
 
-You can find a playground with this problem under this [link](http://bit.ly/functionProblem 'Playground').
+You can find a playground with this problem under this [link](http://bit.ly/functionProblem "Playground").
 
 ## Why & How
 
 How to fix it? You can use function overloading:
 
 ```ts
-function getDataByKey(data: Data, key: 'postalCodes'): string[];
-function getDataByKey(data: Data, key: 'country'): string;
-function getDataByKey(data: Data, key: 'postalCodes' | 'country') {
+function getDataByKey(data: Data, key: "postalCodes"): string[];
+function getDataByKey(data: Data, key: "country"): string;
+function getDataByKey(data: Data, key: "postalCodes" | "country") {
   return data[key];
 }
 ```
@@ -64,30 +64,30 @@ function getDataByKey(data: Data, key: 'postalCodes' | 'country') {
 I write two overloads for `getDataByKey`: one is taking `country` as a `key` and returns `string`. Another one takes `postalCodes` and returns `string[]`. Thanks to that I can use `getDataByKey` with both keys:
 
 ```ts
-const postalCodesRetrieved: string[] = getDataByKey(data, 'postalCodes');
-const countryCodesRetrieved: string = getDataByKey(data, 'country');
+const postalCodesRetrieved: string[] = getDataByKey(data, "postalCodes");
+const countryCodesRetrieved: string = getDataByKey(data, "country");
 ```
 
 You can even see that this function is overloaded by hovering:
 
 {% img "2019-05-27-hover", "Overloaded function on hover", "Overloaded function on hover" %}
 
-[Link](http://bit.ly/functionOverload 'TypeScript playground') to TypeScript playground with code from above.
+[Link](http://bit.ly/functionOverload "TypeScript playground") to TypeScript playground with code from above.
 
 ### Function overloads in an arrow function
 
 ```ts
 interface GetData {
-  (data: Data, key: 'postalCodes'): string[];
-  (data: Data, key: 'country'): string;
+  (data: Data, key: "postalCodes"): string[];
+  (data: Data, key: "country"): string;
 }
 
 const getData: GetData = (data, key) => {
   return data[key];
 };
 
-const postalCodesRetrieved: string[] = getData(data, 'postalCodes');
-const counryRetrieved: string = getData(data, 'country');
+const postalCodesRetrieved: string[] = getData(data, "postalCodes");
+const counryRetrieved: string = getData(data, "country");
 ```
 
 This is working by `GetData` interface where overload is happening. Thanks to that I don’t need to type `data` & `key` arguments anymore. [Playground link](http://bit.ly/arrowOverload)
@@ -96,17 +96,17 @@ This is working by `GetData` interface where overload is happening. Thanks to th
 
 ```ts
 class DataGetter {
-  getData(data: Data, key: 'country'): string;
-  getData(data: Data, key: 'postalCodes'): string[];
-  getData(data: Data, key: 'postalCodes' | 'country') {
+  getData(data: Data, key: "country"): string;
+  getData(data: Data, key: "postalCodes"): string[];
+  getData(data: Data, key: "postalCodes" | "country") {
     return data[key];
   }
 }
 
 const dataGetter = new DataGetter();
 
-const postalCodesRetrieved: string[] = dataGetter.getData(data, 'postalCodes');
-const counryRetrieved: string = dataGetter.getData(data, 'country');
+const postalCodesRetrieved: string[] = dataGetter.getData(data, "postalCodes");
+const counryRetrieved: string = dataGetter.getData(data, "country");
 ```
 
 It looks almost the same as for normal function but here `getData` method is overloaded. [Playground link](http://bit.ly/methodOverload)

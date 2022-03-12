@@ -1,8 +1,9 @@
 ---
 title: On setting up Next.js with Docker on Google Cloud
 date: 2021-10-27
-permalink: '/blog/2021/nextjs-docker-gcloud/index.html'
+permalink: "/blog/2021/nextjs-docker-gcloud/index.html"
 ---
+
 One might wonder why would anyone consider Google Cloud as a hosting provider if there's [Vercel](https://vercel.com/)?
 
 You personally, or your organization most likely already has an infrastructure that's
@@ -76,26 +77,26 @@ For the first one we are using following `cloudbuild.pr.yaml`:
 ```yaml
 steps:
   - id: install
-    name: 'node:14-alpine'
+    name: "node:14-alpine"
     entrypoint: npm
-    args: ['ci']
+    args: ["ci"]
   - id: tsc
-    name: 'node:14-alpine'
+    name: "node:14-alpine"
     entrypoint: npm
-    args: ['run', 'tsc']
-    waitFor: ['install']
+    args: ["run", "tsc"]
+    waitFor: ["install"]
   - id: lint
-    name: 'node:14-alpine'
+    name: "node:14-alpine"
     entrypoint: npm
-    args: ['run', 'lint']
-    waitFor: ['install']
+    args: ["run", "lint"]
+    waitFor: ["install"]
   - id: test
-    name: 'node:14-alpine'
+    name: "node:14-alpine"
     entrypoint: npm
-    args: ['test']
-    waitFor: ['install']
+    args: ["test"]
+    waitFor: ["install"]
 options:
-  machineType: 'E2_HIGHCPU_8'
+  machineType: "E2_HIGHCPU_8"
 ```
 
 We are using alpine version of node to match used in `Dockerfile` above.
@@ -105,36 +106,44 @@ For the second one we are using `cloudbuild.deploy.yaml`:
 ```yaml
 steps:
   - id: build
-    name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '--tag', 'eu.gcr.io/application:$COMMIT_SHA', '--tag', 'eu.gcr.io/application:latest', '.']
-    env:
-      - 'NEXT_PUBLIC_KEY=SOME_KEY'
-  - id: push
-    waitFor: ['build']
-    name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'eu.gcr.io/application:$COMMIT_SHA']
-  - id: push-latest
-    waitFor: ['build']
-    name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'eu.gcr.io/application:latest']
-  - id: deploy
-    waitFor: ['push']
-    name: 'gcr.io/cloud-builders/gcloud'
+    name: "gcr.io/cloud-builders/docker"
     args:
-      - 'run'
-      - 'deploy'
-      - 'application'
-      - '--image'
-      - 'eu.gcr.io/application:$COMMIT_SHA'
-      - '--region'
-      - 'europe-west1'
-      - '--platform'
-      - 'managed'
-      - '--allow-unauthenticated'
+      [
+        "build",
+        "--tag",
+        "eu.gcr.io/application:$COMMIT_SHA",
+        "--tag",
+        "eu.gcr.io/application:latest",
+        ".",
+      ]
+    env:
+      - "NEXT_PUBLIC_KEY=SOME_KEY"
+  - id: push
+    waitFor: ["build"]
+    name: "gcr.io/cloud-builders/docker"
+    args: ["push", "eu.gcr.io/application:$COMMIT_SHA"]
+  - id: push-latest
+    waitFor: ["build"]
+    name: "gcr.io/cloud-builders/docker"
+    args: ["push", "eu.gcr.io/application:latest"]
+  - id: deploy
+    waitFor: ["push"]
+    name: "gcr.io/cloud-builders/gcloud"
+    args:
+      - "run"
+      - "deploy"
+      - "application"
+      - "--image"
+      - "eu.gcr.io/application:$COMMIT_SHA"
+      - "--region"
+      - "europe-west1"
+      - "--platform"
+      - "managed"
+      - "--allow-unauthenticated"
 images:
-  - 'eu.gcr.io/application:$COMMIT_SHA'
+  - "eu.gcr.io/application:$COMMIT_SHA"
 options:
-  machineType: 'E2_HIGHCPU_8'
+  machineType: "E2_HIGHCPU_8"
 ```
 
 Steps are as follows:

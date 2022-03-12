@@ -1,14 +1,14 @@
 ---
 title: How to split antd theme into smaller components
 date: 2020-10-14
-permalink: '/blog/2020/split-antd/index.html'
+permalink: "/blog/2020/split-antd/index.html"
 ---
 
 Recently I stumbled upon an interesting problem at work. I was using [ant-design](https://ant.design/)
 and I wanted to customize default theme variables. To do that I've created a `theme.less`:
 
 ```less
-@import '~antd/dist/antd.less';
+@import "~antd/dist/antd.less";
 
 @primary-color: #003dff;
 @dark-color: #38b6ab;
@@ -44,20 +44,20 @@ module.exports = {
         test: /\.less$/,
         use: [
           {
-            loader: 'style-loader',
+            loader: "style-loader",
           },
           {
-            loader: 'css-loader',
+            loader: "css-loader",
           },
           {
-            loader: 'less-loader',
+            loader: "less-loader",
             options: {
               lessOptions: {
                 modifyVars: {
                   // override antd default styles
-                  'primary-color': '#003dff',
-                  'dark-color': '#38b6ab',
-                  'font-family': 'Inter',
+                  "primary-color": "#003dff",
+                  "dark-color": "#38b6ab",
+                  "font-family": "Inter",
                 },
                 javascriptEnabled: true,
               },

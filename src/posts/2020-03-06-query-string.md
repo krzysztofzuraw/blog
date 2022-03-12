@@ -1,16 +1,16 @@
 ---
 title: Query string library have stringifyUrl
 date: 2020-03-06
-permalink: '/blog/2020/stringify-url/index.html'
+permalink: "/blog/2020/stringify-url/index.html"
 ---
 
 I've been using [query-string](https://github.com/sindresorhus/query-string) library to create my
 query string for a long time. Normally I've used it as follows:
 
 ```js
-import * as qs from 'query-string';
+import * as qs from "query-string";
 
-const API_URL = '/users?' + qs.stringfy({ user: '1' });
+const API_URL = "/users?" + qs.stringfy({ user: "1" });
 // API_URL will be /users?user=1
 ```
 
@@ -20,11 +20,11 @@ yet I've some feeling that it can be done better. Today when I was integrating `
 a new project I found out about new function: `stringifyUrl`. Let's see it in action:
 
 ```js
-import * as qs from 'query-string';
+import * as qs from "query-string";
 
 const API_URL = qs.stringifyUrl(
   {
-    url: '/users',
+    url: "/users",
     query: {
       user: 1,
     },

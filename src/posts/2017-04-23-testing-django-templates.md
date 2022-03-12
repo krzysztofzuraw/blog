@@ -1,7 +1,7 @@
 ---
 title: Testing django template tags
 date: 2017-04-23
-permalink: '/blog/2017/how-to-test-django-template-tags/index.html'
+permalink: "/blog/2017/how-to-test-django-template-tags/index.html"
 ---
 
 **In this blog post I will give you simple example how to test your
@@ -29,7 +29,6 @@ This `make_header` tag will take the title from context and pass it
 template tag. Right after that `example.html` will be rendered.
 
 If you want to test if this template tag works you can use this:
-
 
 {% raw %}
 

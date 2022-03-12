@@ -1,7 +1,7 @@
 ---
 title: Stack & Column in CSS-in-JS
 date: 2020-11-06
-permalink: '/blog/2020/stack-column-css-in-js/index.html'
+permalink: "/blog/2020/stack-column-css-in-js/index.html"
 ---
 
 Today I want to write more about new emotion components that we try at [Ingrid](https://www.ingrid.com/). Those components help us with spacing.
@@ -41,17 +41,17 @@ Below you can find an example implementation of `Columns` & `Stack` components i
 {% raw %}
 
 ```tsx
-import * as React from 'react';
+import * as React from "react";
 
 type Props = {
-  space: 'string'; // it can be typeof keyof Theme['spacing']
+  space: "string"; // it can be typeof keyof Theme['spacing']
 };
 
 export const Stack: React.FunctionComponent<Props> = ({ children, space }) => {
   return (
     <div
       css={{
-        '> * + *': {
+        "> * + *": {
           marginTop: space,
         },
       }}
@@ -61,24 +61,25 @@ export const Stack: React.FunctionComponent<Props> = ({ children, space }) => {
   );
 };
 ```
+
 {% endraw %}
 
 {% raw %}
 
 ```tsx
-import * as React from 'react';
+import * as React from "react";
 
 type Props = {
-  space: 'string'; // it can be typeof keyof Theme['spacing']
+  space: "string"; // it can be typeof keyof Theme['spacing']
 };
 
 export const Columns: React.FunctionComponent<Props> = ({ children, space }) => {
   return (
     <div
       css={{
-        display: 'flex',
-        alignItems: 'center',
-        '> * + *': {
+        display: "flex",
+        alignItems: "center",
+        "> * + *": {
           marginLeft: space,
         },
       }}

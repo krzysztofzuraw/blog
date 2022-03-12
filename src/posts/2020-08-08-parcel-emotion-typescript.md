@@ -1,7 +1,7 @@
 ---
 title: How to setup emotion css prop to work with Parcel & TypeScript
 date: 2020-08-08
-permalink: '/blog/2020/emotion-css-prop-parcel-typescript/index.html'
+permalink: "/blog/2020/emotion-css-prop-parcel-typescript/index.html"
 ---
 
 In this blog post I will look into how to setup [Emotion](https://emotion.sh/docs/introduction) `css prop`

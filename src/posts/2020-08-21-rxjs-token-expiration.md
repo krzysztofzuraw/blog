@@ -1,7 +1,7 @@
 ---
 title: RxJS and auth token expiration timers
 date: 2020-08-21
-permalink: '/blog/2020/rxjs-auth-expiration-timers/index.html'
+permalink: "/blog/2020/rxjs-auth-expiration-timers/index.html"
 ---
 
 Recently in my work, I stumbled upon an interesting problem to solve. I needed to inform users that they have
@@ -30,7 +30,7 @@ I have used [jwt-decode](https://www.npmjs.com/package/jwt-decode) to decode a t
 time. If you are using TypeScript you need to type what is inside the token:
 
 ```tsx
-import jwtDecode from 'jwt-decode';
+import jwtDecode from "jwt-decode";
 
 const decodedToken = jwtDecode(authToken);
 ```
@@ -40,7 +40,7 @@ Firstly, I converted `exp` which is a UNIX timestamp to date and then
 [sub](https://date-fns.org/v2.15.0/docs/sub) function help me to get date 10 minutes before `expirationDate`.
 
 ```tsx
-import { fromUnixTime, sub } from 'date-fns';
+import { fromUnixTime, sub } from "date-fns";
 
 const expirationDate = fromUnixTime(decodedToken.exp);
 const firstNotificationDate = sub(expirationDate, { minutes: 10 });
@@ -53,9 +53,9 @@ Now it is time to set up two [redux-observable](https://redux-observable.js.org/
 The first epic has one job: to dispatch notification action 10 minutes before `expirationDate`.
 
 ```tsx
-import { isActionOf } from 'typesafe-actions';
-import { filter, delay, mergeMap, takeUntil } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { isActionOf } from "typesafe-actions";
+import { filter, delay, mergeMap, takeUntil } from "rxjs/operators";
+import { of } from "rxjs";
 
 const setLogoutNotificationEpic = (action$, state$) =>
   action$.pipe(

@@ -1,7 +1,7 @@
 ---
 title: How to use Deno in Raycast scripts commands
 date: 2021-10-03
-permalink: '/blog/2021/raycast-deno/index.html'
+permalink: "/blog/2021/raycast-deno/index.html"
 ---
 
 You can create [Raycast](https://www.raycast.com) script commands using [Deno](https://deno.land).
@@ -30,5 +30,5 @@ To use Deno you need your command file with `ts` or `js` ending and following co
 
 const [example] = Deno.args;
 
-console.log('Hello from Deno script 👋 with arg:', example);
+console.log("Hello from Deno script 👋 with arg:", example);
 ```

@@ -1,7 +1,7 @@
 ---
 title: Tooling overload in JS
 date: 2020-11-26
-permalink: '/blog/2020/tooling-overload-js/index.html'
+permalink: "/blog/2020/tooling-overload-js/index.html"
 ---
 
 Before I start let me clarify what I mean by tooling in the context of programming language: all ecosystem of tools/libraries/frameworks that are needed to use with a given programming language.

@@ -1,7 +1,7 @@
 ---
 title: Formik - useFormikContext and useField hooks
 date: 2020-04-22
-permalink: '/blog/2020/formik-new-hooks/index.html'
+permalink: "/blog/2020/formik-new-hooks/index.html"
 ---
 
 As I'm using [Formik](https://jaredpalmer.com/formik/) to build forms inside React applications below
@@ -14,8 +14,8 @@ Let's say that you have a form build using formik:
 {% raw %}
 
 ```tsx
-import React, { FunctionComponent } from 'react';
-import { Formik, FieldProps, Field } from 'formik';
+import React, { FunctionComponent } from "react";
+import { Formik, FieldProps, Field } from "formik";
 
 type FormValues = {
   name: string;
@@ -25,7 +25,7 @@ type FormValues = {
 const UserForm: React.FunctionComponent = () => {
   return (
     <Formik<FormValues>
-      initalValues={{ name: '', email: '' }}
+      initalValues={{ name: "", email: "" }}
       onSubmit={(values) => sendDataToAPI(values)}
     >
       {(props) => (
@@ -42,7 +42,7 @@ const UserForm: React.FunctionComponent = () => {
   );
 };
 
-const CustomInput: React.FunctionComponent<JSX.IntrinsicElements['input']> = ({ ...props }) => (
+const CustomInput: React.FunctionComponent<JSX.IntrinsicElements["input"]> = ({ ...props }) => (
   <input {...props} />
 );
 ```
@@ -55,7 +55,7 @@ I want to start with [useField](https://jaredpalmer.com/formik/docs/api/useField
 first create a [Field](https://jaredpalmer.com/formik/docs/api/field) component and then pass `children` render prop:
 
 ```tsx
-import { FieldProps, Field } from 'formik';
+import { FieldProps, Field } from "formik";
 
 <Field name="name">{({ field }: FieldProps<FormValues>) => <CustomInput {...field} />}</Field>;
 ```
@@ -64,8 +64,8 @@ In 2.0.0 version maintainers introduced a new hook `useField`. It can be use to 
 underneath is `CustomInput`:
 
 ```tsx
-import React, { FunctionComponent } from 'react';
-import { useField } from 'formik';
+import React, { FunctionComponent } from "react";
+import { useField } from "formik";
 
 const FormikCustomInput: React.FunctionComponent<{ name: string }> = ({ name }) => {
   const [field] = useField(name);

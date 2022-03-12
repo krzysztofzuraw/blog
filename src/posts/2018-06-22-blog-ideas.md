@@ -1,7 +1,7 @@
 ---
 title: How to find blog ideas
 date: 2018-06-22
-permalink: '/blog/2018/how-to-find-blog-ideas/index.html'
+permalink: "/blog/2018/how-to-find-blog-ideas/index.html"
 ---
 
 Recently I was a little bit stuck. I did not have any idea about next blog post. I started researching why it happened and it turned out that I wasn’t considering a couple of ideas that may help me with finding blog ideas.

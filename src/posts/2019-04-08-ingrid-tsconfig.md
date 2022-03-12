@@ -1,7 +1,7 @@
 ---
 title: Open sourcing tsconfig
 date: 2019-04-08
-permalink: '/blog/2019/opensourcing-tsconfig/index.html'
+permalink: "/blog/2019/opensourcing-tsconfig/index.html"
 ---
 
 ## Hi again 🖖

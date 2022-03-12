@@ -1,7 +1,7 @@
 ---
 title: Testing React form components
 date: 2017-06-11
-permalink: '/blog/2017/testing-react-form-components/index.html'
+permalink: "/blog/2017/testing-react-form-components/index.html"
 ---
 
 **In this blog post, I will present quick code snippets on how to test
@@ -86,7 +86,7 @@ node environment so I need a way to create React components - for that I
 used `enzyme`. It can be done this way:
 
 ```jsx
-import { mount } from 'enzyme';
+import { mount } from "enzyme";
 const addPodcastMock = jest.fn();
 const component = mount(<SearchPodcastForm addPodcast={addPodcastMock} />);
 ```
@@ -95,7 +95,7 @@ Why `mount`? To submit a form I need first to mount my component. As it
 is mounted I can submit it via:
 
 ```jsx
-component.find('form').simulate('submit', { preventDefault: jest.fn() });
+component.find("form").simulate("submit", { preventDefault: jest.fn() });
 ```
 
 The code above should be self-explanatory but interesting is that I
@@ -106,17 +106,17 @@ This works fine but next line in `searchForPodcast` require that
 `this.refs` will be present so I had to set them up in a test:
 
 ```jsx
-component.find('input').node.value = 'This American Life';
+component.find("input").node.value = "This American Life";
 ```
 
 The last thing to mock within this method is a call to external service.
 How to do that? By using `sinon`:
 
 ```jsx
-import sinon from 'sinon';
+import sinon from "sinon";
 
-const resolved = new Promise((r) => r({ data: Array.from([{ 0: { description: 'desc' } }]) }));
-sinon.stub(axios, 'get').returns(resolved);
+const resolved = new Promise((r) => r({ data: Array.from([{ 0: { description: "desc" } }]) }));
+sinon.stub(axios, "get").returns(resolved);
 ```
 
 Everything works fine until I try to check if my `addPodcastMock` from
@@ -124,7 +124,7 @@ mounting snippet has been called. I add these lines:
 
 ```jsx
 expect(addPodcastMock.mock.calls.length).toBe(1);
-expect(addPodcastMock.mock.calls[0]).toEqual([{ 0: { description: 'desc' } }]);
+expect(addPodcastMock.mock.calls[0]).toEqual([{ 0: { description: "desc" } }]);
 ```
 
 And I got a failure. I try to debug it a little bit more and what I
@@ -134,10 +134,10 @@ mocking before all tests:
 
 ```jsx
 beforeAll(() => {
-  const resolved = new Promise((r) => r({ data: Array.from([{ 0: { description: 'desc' } }]) }));
-  sinon.stub(axios, 'get').returns(resolved);
-  component.find('input').node.value = 'This American Life';
-  component.find('form').simulate('submit', { preventDefault: jest.fn() });
+  const resolved = new Promise((r) => r({ data: Array.from([{ 0: { description: "desc" } }]) }));
+  sinon.stub(axios, "get").returns(resolved);
+  component.find("input").node.value = "This American Life";
+  component.find("form").simulate("submit", { preventDefault: jest.fn() });
 });
 ```
 
@@ -148,9 +148,9 @@ Going back to tests I wrote this small test by using `test` word, you
 can use `describe` as an indication of large test suite too:
 
 ```jsx
-test('submitting form calls addPodcast', () => {
+test("submitting form calls addPodcast", () => {
   expect(addPodcastMock.mock.calls.length).toBe(1);
-  expect(addPodcastMock.mock.calls[0]).toEqual([{ 0: { description: 'desc' } }]);
+  expect(addPodcastMock.mock.calls[0]).toEqual([{ 0: { description: "desc" } }]);
 });
 ```
 
@@ -158,15 +158,15 @@ The last test I got (right now) is for my `addPodcast` method inside
 `App` component:
 
 ```jsx
-import React from 'react';
-import { mount } from 'enzyme';
+import React from "react";
+import { mount } from "enzyme";
 
-import App from '../components/App';
+import App from "../components/App";
 
-test('calling addPodcast should change the state', () => {
+test("calling addPodcast should change the state", () => {
   const component = mount(<App />);
-  component.instance().addPodcast({ 0: { description: 'desc' } });
-  expect(Object.keys(component.state('podcasts')).length).toBe(1);
+  component.instance().addPodcast({ 0: { description: "desc" } });
+  expect(Object.keys(component.state("podcasts")).length).toBe(1);
 });
 ```
 

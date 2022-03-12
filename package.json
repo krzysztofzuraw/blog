@@ -2,6 +2,12 @@
   "name": "krzysztofzuraw.com",
   "version": "4.0.0",
   "description": "Krzysztof Żuraw site",
+  "keywords": [
+    "blog",
+    "11ty"
+  ],
+  "license": "MIT",
+  "author": "Krzysztof Żuraw <services@kzuraw.com> (https://krzysztofzuraw.com/)",
   "main": "n/a",
   "scripts": {
     "start:eleventy": "eleventy --serve",
@@ -17,12 +23,12 @@
     "postreinstall": "npm install",
     "img:convert": "./scripts/convert-img.sh"
   },
-  "keywords": [
-    "blog",
-    "11ty"
-  ],
-  "author": "Krzysztof Żuraw <services@kzuraw.com> (https://krzysztofzuraw.com/)",
-  "license": "MIT",
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write"
+  },
+  "prettier": {
+    "printWidth": 100
+  },
   "devDependencies": {
     "@11ty/eleventy": "1.0.0",
     "@11ty/eleventy-cache-assets": "2.3.0",
@@ -36,14 +42,9 @@
     "luxon": "2.3.1",
     "npm-run-all": "4.1.5",
     "prettier": "2.5.1",
+    "prettier-plugin-packagejson": "2.2.16",
     "prettier-plugin-tailwindcss": "0.1.8",
     "rimraf": "3.0.2",
     "tailwindcss": "3.0.23"
-  },
-  "lint-staged": {
-    "*": "prettier --ignore-unknown --write"
-  },
-  "prettier": {
-    "printWidth": 100
   }
 }

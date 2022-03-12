@@ -1,7 +1,7 @@
 ---
 title: Ramda clamp
 date: 2020-06-04
-permalink: '/blog/2020/ramda-clamp/index.html'
+permalink: "/blog/2020/ramda-clamp/index.html"
 ---
 
 Today I learned that [Ramda](https://ramdajs.com/) has a `clamp` function.
@@ -10,7 +10,7 @@ What is [clamp](https://ramdajs.com/docs/#clamp)? It allows you to set value bet
 Example:
 
 ```ts
-import { clamp } from 'ramda';
+import { clamp } from "ramda";
 
 setCoordinates(clamp(-90, 90, event.target.value));
 ```

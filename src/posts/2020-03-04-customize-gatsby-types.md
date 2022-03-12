@@ -1,7 +1,7 @@
 ---
 title: Customizing Gatsby Graphql schema
 date: 2020-03-04
-permalink: '/blog/2020/customizing-gatsby-graphql-schema/index.html'
+permalink: "/blog/2020/customizing-gatsby-graphql-schema/index.html"
 ---
 
 Recently I was doing redesign of my blog. As you may know, I used
@@ -40,11 +40,11 @@ I tried to generate TypeScript types for this structure using [GraphQL Code Gene
 
 ```ts
 export type SiteSiteMetadata = {
-  __typename?: 'SiteSiteMetadata';
-  siteName?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  siteUrl?: Maybe<Scalars['String']>;
+  __typename?: "SiteSiteMetadata";
+  siteName?: Maybe<Scalars["String"]>;
+  author?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+  siteUrl?: Maybe<Scalars["String"]>;
   social?: Maybe<SiteSiteMetadataSocial>;
 };
 ```
@@ -101,11 +101,11 @@ Thanks to that it generated types look like follows:
 
 ```ts
 export type SiteSiteMetadata = {
-  __typename?: 'SiteSiteMetadata';
-  siteName: Scalars['String'];
-  author: Scalars['String'];
-  description: Scalars['String'];
-  siteUrl: Scalars['String'];
+  __typename?: "SiteSiteMetadata";
+  siteName: Scalars["String"];
+  author: Scalars["String"];
+  description: Scalars["String"];
+  siteUrl: Scalars["String"];
   social: SiteSiteMetadataSocial;
 };
 ```

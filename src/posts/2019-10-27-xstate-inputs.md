@@ -1,7 +1,7 @@
 ---
 title: Using Xstate with inputs in React
 date: 2019-10-27
-permalink: '/blog/2019/xstate-inputs-react/index.html'
+permalink: "/blog/2019/xstate-inputs-react/index.html"
 ---
 
 In this blog post, I want to present how you can use [XState](https://xstate.js.org/) to make
@@ -53,10 +53,10 @@ machine.
 I will do it with input states:
 
 ```tsx
-import { Machine } from 'xstate';
+import { Machine } from "xstate";
 
 const inputMachine = Machine({
-  initial: 'enabled',
+  initial: "enabled",
   states: {
     enabled: {},
     hover: {},
@@ -68,25 +68,25 @@ const inputMachine = Machine({
 Let's add possible transitions between states:
 
 ```tsx
-import { Machine } from 'xstate';
+import { Machine } from "xstate";
 
 const inputMachine = Machine({
-  initial: 'enabled',
+  initial: "enabled",
   states: {
     enabled: {
       on: {
-        ENTER: 'hover',
+        ENTER: "hover",
       },
     },
     hover: {
       on: {
-        ENTER: 'focused',
-        EXIT: 'enabled',
+        ENTER: "focused",
+        EXIT: "enabled",
       },
     },
     focused: {
       on: {
-        EXIT: 'enabled',
+        EXIT: "enabled",
       },
     },
   },
@@ -120,37 +120,37 @@ I could add logic behind calculating the border to `render` of my component but 
 it inside the state machine. For that I need [context](https://xstate.js.org/docs/guides/context.html#initial-context):
 
 ```tsx
-import { Machine, assign } from 'xstate';
+import { Machine, assign } from "xstate";
 
 const inputMachine = Machine({
-  initial: 'enabled',
+  initial: "enabled",
   context: {
-    border: '1px solid #e6e6e6',
+    border: "1px solid #e6e6e6",
   },
   states: {
     enabled: {
       on: {
         ENTER: {
-          target: 'hover',
+          target: "hover",
           actions: assign({
-            border: () => '1px solid #cccccc',
+            border: () => "1px solid #cccccc",
           }),
         },
       },
-      entry: assign({ border: () => '1px solid #e6e6e6' }),
+      entry: assign({ border: () => "1px solid #e6e6e6" }),
     },
     hover: {
       on: {
         ENTER: {
-          target: 'focused',
-          actions: assign({ border: () => '3px solid #56dcd1' }),
+          target: "focused",
+          actions: assign({ border: () => "3px solid #56dcd1" }),
         },
-        EXIT: 'enabled',
+        EXIT: "enabled",
       },
     },
     focused: {
       on: {
-        EXIT: 'enabled',
+        EXIT: "enabled",
       },
     },
   },
@@ -177,20 +177,20 @@ I decided that it will be different state machine:
 
 ```tsx
 const labelMachine = Machine({
-  initial: 'blank',
+  initial: "blank",
   context: {
     opacity: 0,
   },
   states: {
     blank: {
       on: {
-        ENTER: { target: 'value', actions: assign({ opacity: () => 1 }) },
+        ENTER: { target: "value", actions: assign({ opacity: () => 1 }) },
       },
       entry: assign({ opacity: () => 0 }),
     },
     value: {
       on: {
-        EXIT: 'blank',
+        EXIT: "blank",
       },
     },
   },

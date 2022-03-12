@@ -55,7 +55,7 @@ That is why I have to include global styles via `@apply`:
 
 ```css
 h2 {
-  @apply text-xl font-medium mt-6 mb-2;
+  @apply mt-6 mb-2 text-xl font-medium;
 }
 
 a {

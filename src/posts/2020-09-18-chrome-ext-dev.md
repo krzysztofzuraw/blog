@@ -1,7 +1,7 @@
 ---
 title: Setting up webpack for chrome extension development
 date: 2020-09-18
-permalink: '/blog/2020/setting-up-chrome-extension-dev/index.html'
+permalink: "/blog/2020/setting-up-chrome-extension-dev/index.html"
 ---
 
 Today I learned how to setup [webpack](https://webpack.js.org/) for chrome extension development.
@@ -18,32 +18,32 @@ nested ternary operators as you don’t want to spend 3 days setting up everythi
 Create `webpack.common.js`. Here you gonna put common settings that will be used by both development & production config:
 
 ```js
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: { popup: './src/popup/index.tsx', background: './src/background/index.ts' },
+  entry: { popup: "./src/popup/index.tsx", background: "./src/background/index.ts" },
   module: {
-    rules: [{ test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/ }], // do not forget to change/install your own TS loader
+    rules: [{ test: /\.tsx?$/, use: "ts-loader", exclude: /node_modules/ }], // do not forget to change/install your own TS loader
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: [".tsx", ".ts", ".js"],
   },
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
-    new HtmlWebpackPlugin({ template: 'src/popup/index.html' }),
+    new HtmlWebpackPlugin({ template: "src/popup/index.html" }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: './src/manifest.json' },
-        { from: './src/icons/icon16.png' },
-        { from: './src/icons/icon48.png' },
-        { from: './src/icons/icon128.png' },
+        { from: "./src/manifest.json" },
+        { from: "./src/icons/icon16.png" },
+        { from: "./src/icons/icon48.png" },
+        { from: "./src/icons/icon128.png" },
       ],
     }),
   ],
-  output: { filename: '[name].js', path: path.resolve(__dirname, 'dist') }, // chrome will look for files under dist/* folder
+  output: { filename: "[name].js", path: path.resolve(__dirname, "dist") }, // chrome will look for files under dist/* folder
 };
 ```
 
@@ -52,23 +52,23 @@ Config above have 2 entry points - because I am using both popup and background 
 Webpack's development config is a merge between `common` & `dev` configs:
 
 ```js
-const { merge } = require('webpack-merge');
-const common = require('./webpack.common.js');
+const { merge } = require("webpack-merge");
+const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
-  mode: 'development',
-  devtool: 'inline-source-map',
+  mode: "development",
+  devtool: "inline-source-map",
 });
 ```
 
 Prod configuration is following the same pattern:
 
 ```js
-const { merge } = require('webpack-merge');
-const common = require('./webpack.common.js');
+const { merge } = require("webpack-merge");
+const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
-  mode: 'production',
+  mode: "production",
 });
 ```
 

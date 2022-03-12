@@ -1,7 +1,7 @@
 ---
 title: Testing gatsby blog with cypress.io
 date: 2020-03-07
-permalink: '/blog/2020/testing-gatsby-with-cypress/index.html'
+permalink: "/blog/2020/testing-gatsby-with-cypress/index.html"
 ---
 
 In this blog post, I will write about configuring [Cypress.io](https://www.cypress.io/) to work
@@ -47,9 +47,9 @@ For now, I recommend keeping `cypress/integration/main.spec.ts/js`.
 Inside this file you can start writing your first test:
 
 ```ts
-it('should render the home page', () => {
-  cy.visit('/');
-  cy.contains('YOUR PAGE CONTENT'); // change it to your content
+it("should render the home page", () => {
+  cy.visit("/");
+  cy.contains("YOUR PAGE CONTENT"); // change it to your content
 });
 ```
 
@@ -106,7 +106,7 @@ cypress-run:
     - uses: cypress-io/github-action@v1
       with:
         start: npm run dev
-        wait-on: 'http://localhost:8000'
+        wait-on: "http://localhost:8000"
         browser: chrome
         headless: true
 ```

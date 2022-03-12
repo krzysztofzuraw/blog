@@ -1,7 +1,7 @@
 ---
 title: TIL - Chrome has emulate focused page
 date: 2020-12-11
-permalink: '/blog/2020/chrome-emulate-focused-page/index.html'
+permalink: "/blog/2020/chrome-emulate-focused-page/index.html"
 ---
 
 Today I learned that chrome has `Emulate Focused Page` settings.

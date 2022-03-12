@@ -1,7 +1,7 @@
 ---
 title: Yup validation - one field required but not both at the same time
 date: 2020-03-05
-permalink: '/blog/2020/yup-validation-two-fields/index.html'
+permalink: "/blog/2020/yup-validation-two-fields/index.html"
 ---
 
 Recently I was working with [yup](https://github.com/jquense/yup) for form validation and

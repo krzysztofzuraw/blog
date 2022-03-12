@@ -1,7 +1,7 @@
 ---
-title: Storm Front (The Dresden Files, Book 1) 
+title: Storm Front (The Dresden Files, Book 1)
 date: 2022-01-02
-author: Jim Butcher 
+author: Jim Butcher
 rating: 5
 lang: en
 publisher: Roc

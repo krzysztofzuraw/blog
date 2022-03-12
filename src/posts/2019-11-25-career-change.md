@@ -1,7 +1,7 @@
 ---
 title: Career change - developer + designer
 date: 2019-11-25
-permalink: '/blog/2019/career-change/index.html'
+permalink: "/blog/2019/career-change/index.html"
 ---
 
 In this blog post, I will write a little bit more about my career plans. It won't be a tutorial or technical blog post per se.

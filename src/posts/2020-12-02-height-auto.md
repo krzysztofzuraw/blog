@@ -1,7 +1,7 @@
 ---
 title: TIL - how height:auto works
 date: 2020-12-02
-permalink: '/blog/2020/height-auto/index.html'
+permalink: "/blog/2020/height-auto/index.html"
 ---
 
 Today I learned a bit more on how `height:auto` works. Let's say you have a box that has

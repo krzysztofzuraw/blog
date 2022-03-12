@@ -1,7 +1,7 @@
 ---
 title: Cron under MacOS
 date: 2020-07-22
-permalink: '/blog/2020/cron-macos/index.html'
+permalink: "/blog/2020/cron-macos/index.html"
 ---
 
 I'm using plain text to store my information. This plain text is inside a git repo. To back it up I
