@@ -4,7 +4,7 @@ date: 2022-01-01
 author: Natalia Kołaczek
 rating: 6
 lang: pl
-publisher: Wydawnictwo Poznanskie
+publisher: Wydawnictwo Poznańskie
 year: 2017
 isbn: 9788379766208
 ---
