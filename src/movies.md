@@ -1,20 +1,18 @@
 ---
 layout: layouts/page.html
-title: Articles
+title: Movies
 eleventyNavigation:
-  key: Articles
+  key: Movies
   parent: Footer
-  order: 6
+  order: 7
 ---
 
-# Articles
-
-Below you articles that I starred in [Feedbin](https://feedbin.com).
+# Movies
 
 <ul class="flex gap-4 flex-col list-disc mt-6">
-{% for entry in articles %}
+{% for entry in movies %}
   <li class="flex flex-col md:justify-between md:flex-wrap md:flex-row">
-    <a href="{{entry.url}}">{{ entry.title }}</a>
+    <p>{{ entry.title }} - {{ entry.rating }}/10 ({% rateToWords entry.rating %})</p>
     <time dateTime="{{entry.date | formatISO }}" >{{ entry.date | formatISO }}</time>
   </li>
 {% endfor %}

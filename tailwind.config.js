@@ -8,6 +8,9 @@ module.exports = {
       gridTemplateRows: {
         layout: "auto 1fr auto",
       },
+      gridTemplateColumns: {
+        bookmarks: "1fr auto",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],

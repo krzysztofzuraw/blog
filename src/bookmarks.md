@@ -9,10 +9,11 @@ eleventyNavigation:
 
 # Bookmarks
 
-<ul class="flex gap-4 flex-col list-disc px-6">
+<ul class="flex gap-4 flex-col list-disc">
 {% for entry in bookmarks %}
-  <li>
-    <h2 class="underline font-bold"><a href="{{entry.url}}">{{ entry.title }}</a></h2>
+  <li class="grid md:grid-cols-bookmarks md:gap-x-1">
+    <a href="{{entry.url}}" class="font-bold">{{ entry.title }}</a>
+    <time dateTime="{{entry.date | formatISO }}" >{{ entry.date | formatISO }}</time>
     <p>{{ entry.description }}</p>
   </li>
 {% endfor %}

@@ -6,5 +6,5 @@ const feedUrl = "https://feedbin.com/starred/ace3e0610c22e8951a8c60652af5a9fd.xm
 
 module.exports = async function () {
   const data = await parser.parseURL(feedUrl);
-  return data.items.map((item) => ({ title: item.title, url: item.url }));
+  return data.items.map((item) => ({ title: item.title, url: item.url, date: item.isoDate }));
 };

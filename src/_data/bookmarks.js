@@ -19,6 +19,7 @@ module.exports = async function () {
       title: item.title,
       url: item.link,
       description: item.excerpt,
+      date: item.created,
     }));
   } catch (err) {
     console.error(err);
