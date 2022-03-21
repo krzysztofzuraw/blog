@@ -4,8 +4,6 @@ const { DateTime } = require("luxon");
 const sizeOf = require("image-size");
 const path = require("path");
 
-require("dotenv").config();
-
 module.exports = (config) => {
   config.addPassthroughCopy("src/img");
   config.addPassthroughCopy({ "src/passthrough": "/" });
@@ -34,31 +32,11 @@ module.exports = (config) => {
     })
   );
 
-  config.addFilter("formatISO", (dateString) =>
-    DateTime.fromISO(dateString).toLocaleString({
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      timeZone: "Europe/Warsaw",
-    })
-  );
-
   config.addFilter("toISO", (date) => DateTime.fromJSDate(date, { zone: "Europe/Warsaw" }).toISO());
 
   config.addFilter("getYear", (date) =>
     DateTime.fromJSDate(date, { zone: "Europe/Warsaw" }).toFormat("yyyy")
   );
-
-  config.addFilter("getLanguage", (lang) => {
-    switch (lang) {
-      case "en":
-        return "English";
-      case "pl":
-        return "Polish";
-      default:
-        return "English";
-    }
-  });
 
   config.addShortcode("currentYear", () => DateTime.now().toLocaleString({ year: "numeric" }));
 
@@ -71,31 +49,6 @@ module.exports = (config) => {
       </a>
       <figcaption>${figcaption}</figcaption>
     </figure>`;
-  });
-
-  config.addShortcode("rateToWords", (rate) => {
-    switch (rate) {
-      case 1:
-        return "misunderstanding";
-      case 2:
-        return "very bad";
-      case 3:
-        return "bad";
-      case 4:
-        return "okeish";
-      case 5:
-        return "average";
-      case 6:
-        return "not bad";
-      case 7:
-        return "good";
-      case 8:
-        return "very good";
-      case 9:
-        return "sensational";
-      case 10:
-        return "masterpiece";
-    }
   });
 
   return {
