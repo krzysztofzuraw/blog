@@ -4,7 +4,8 @@
   "description": "Krzysztof Żuraw site",
   "keywords": [
     "blog",
-    "11ty"
+    "11ty",
+    "tailwindcss"
   ],
   "license": "MIT",
   "author": "Krzysztof Żuraw (https://krzysztofzuraw.com/)",
@@ -31,10 +32,12 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "1.0.0",
+    "@11ty/eleventy-cache-assets": "2.3.0",
     "@11ty/eleventy-navigation": "0.3.2",
     "@11ty/eleventy-plugin-rss": "1.1.2",
     "@tailwindcss/forms": "0.5.0",
     "@tailwindcss/typography": "0.5.2",
+    "dotenv": "16.0.0",
     "image-size": "1.0.1",
     "lint-staged": "12.3.4",
     "luxon": "2.3.1",
@@ -43,6 +46,7 @@
     "prettier-plugin-packagejson": "2.2.16",
     "prettier-plugin-tailwindcss": "0.1.8",
     "rimraf": "3.0.2",
+    "rss-parser": "3.12.0",
     "tailwindcss": "3.0.23"
   }
 }
