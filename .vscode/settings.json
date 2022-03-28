@@ -9,5 +9,12 @@
     "strings": true
   },
   "css.validate": false,
-  "cSpell.words": ["eleventy"]
+  "cSpell.customDictionaries": {
+    "blog-words": {
+      "name": "blog-words",
+      "path": "${workspaceRoot}/.vscode/dict.txt",
+      "description": "Words used in this blog",
+      "addWords": true
+    }
+  }
 }
