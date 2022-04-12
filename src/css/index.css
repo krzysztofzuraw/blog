@@ -26,3 +26,11 @@ h6 {
 article {
   @apply font-serif;
 }
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-display: optional;
+  font-weight: 400 700 800;
+  src: url(/fonts/source-sans-pro.woff2) format("woff2");
+}

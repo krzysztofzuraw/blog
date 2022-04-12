@@ -6,6 +6,7 @@ const path = require("path");
 
 module.exports = (config) => {
   config.addPassthroughCopy("src/img");
+  config.addPassthroughCopy("src/fonts");
   config.addPassthroughCopy({ "src/passthrough": "/" });
 
   config.addPlugin(eleventyNavigationPlugin);
