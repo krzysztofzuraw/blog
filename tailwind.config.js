@@ -3,7 +3,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        sans: ["Source Sans Pro", "sans-serif"],
         serif: ["Charter", "Georgia", "serif"],
+        mono: ["MonoLisa", "monospace"],
       },
       gridTemplateRows: {
         layout: "auto 1fr auto",

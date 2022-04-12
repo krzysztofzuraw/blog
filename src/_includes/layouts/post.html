@@ -1,8 +1,16 @@
-{% extends "layouts/base.html" %} {% block content %}
+{% extends "layouts/base.html" %} 
 
-<article class="prose dark:prose-invert lg:prose-xl">
+{% block content %}
+
+<article class="prose mb-20 prose-headings:!mb-5 dark:prose-invert lg:prose-xl">
+  {% if title %}
   <h1>{{ title }}</h1>
+  {% endif %}
+  
+  {% if date %}
   <time datetime="{{ date | toISO }}">{{ date | humanizeDate }}</time>
+  {% endif %} 
+  
   {{ content | safe }}
 </article>
 

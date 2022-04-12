@@ -7,7 +7,7 @@ a {
 }
 
 time {
-  @apply opacity-50;
+  @apply font-sans;
 }
 
 main > h1 {
@@ -21,4 +21,8 @@ h4,
 h5,
 h6 {
   @apply font-sans;
+}
+
+article {
+  @apply font-serif;
 }

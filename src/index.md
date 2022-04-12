@@ -1,13 +1,6 @@
 ---
-layout: layouts/page.html
-title: Home
-eleventyNavigation:
-  key: Home
-  parent: Header
-  order: 1
+layout: layouts/post.html
 ---
-
-<article class="prose dark:prose-invert lg:prose-xl">
 
 # Hi, I'm Krzysztof Żuraw
 
@@ -24,10 +17,8 @@ I like giving back to community by being a mentor of [Django Girls](https://djan
 [Wrocław TypeScript meetup](https://www.meetup.com/pl-PL/WrocTypeScript/) and
 [Django Girls Wrocław](https://djangogirls.org/wroclaw/). If you need help with preparing tech event do not hesitate to contact me.
 
-Top 3 posts:
+## Top 3 posts
 
 - [On setting up Next.js with Docker on Google Cloud](/blog/2021/nextjs-docker-gcloud/)
 - [On reading paper magazines](/blog/2021/paper-magazines/)
 - [How to read TypeScript errors and not get mad?](/blog/2020/how-to-read-typescript-errors/)
-
-</article>
