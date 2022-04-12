@@ -5,7 +5,7 @@ module.exports = {
       fontFamily: {
         sans: ["Source Sans Pro", "sans-serif"],
         serif: ["Charter", "Georgia", "serif"],
-        mono: ["MonoLisa", "monospace"],
+        mono: ["ml", "monospace"],
       },
       gridTemplateRows: {
         layout: "auto 1fr auto",

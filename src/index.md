@@ -2,7 +2,7 @@
 layout: layouts/post.html
 ---
 
-# Hi, I'm Krzysztof Żuraw
+# Hi, I’m Krzysztof Żuraw
 
 Welcome to my blog. A few words about me:
 
