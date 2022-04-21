@@ -4,8 +4,7 @@
   "description": "Krzysztof Żuraw site",
   "keywords": [
     "blog",
-    "11ty",
-    "tailwindcss"
+    "11ty"
   ],
   "license": "MIT",
   "author": "Krzysztof Żuraw (https://krzysztofzuraw.com/)",
