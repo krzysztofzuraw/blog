@@ -3,14 +3,16 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const { DateTime } = require("luxon");
 const sizeOf = require("image-size");
 const path = require("path");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = (config) => {
   config.addPassthroughCopy("src/img");
-  config.addPassthroughCopy("src/fonts");
   config.addPassthroughCopy({ "src/passthrough": "/" });
+  config.addPassthroughCopy("src/css");
 
   config.addPlugin(eleventyNavigationPlugin);
   config.addPlugin(pluginRss);
+  config.addPlugin(syntaxHighlight);
 
   config.addFilter("humanizeDate", (date) => {
     return DateTime.fromJSDate(date).toLocaleString({
@@ -37,7 +39,7 @@ module.exports = (config) => {
   config.addShortcode("img", (imgPath, alt, figcaption) => {
     const dimensions = sizeOf(path.resolve(process.cwd(), "src", "img", `${imgPath}.webp`));
 
-    return /*html*/ `<figure>
+    return `<figure>
        <a href="/img/${imgPath}.webp" target="_blank" rel="noopener">
         <img src="/img/${imgPath}.webp" loading="lazy" alt="${alt}" height="${dimensions.height}" width="${dimensions.width}">
       </a>

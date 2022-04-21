@@ -1,5 +1,9 @@
 ---
 layout: layouts/post.html
+eleventyNavigation:
+  key: Home
+  parent: Header
+  order: 1
 ---
 
 # Hi, I’m Krzysztof Żuraw

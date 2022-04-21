@@ -15,17 +15,9 @@
     <meta name="google" content="nositelinkssearchbox" />
     <meta name="google" content="notranslate" />
 
-    <link
-      rel="preload"
-      href="{{ '/fonts/source-sans-pro.woff2' | url }}"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-
-    <link rel="stylesheet" href="https://www.monolisa.dev/api/fonts/all" />
-
+    <link rel="stylesheet" href="{{ '/css/reset.css' | url }}" />
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/css/prism-theme.css' | url }}" />
 
     <link
       rel="alternate"
@@ -64,12 +56,9 @@
     <meta name="format-detection" content="telephone=no" />
   </head>
 
-  <body
-    class="mx-auto h-screen max-w-3xl px-4 py-10 antialiased dark:bg-gray-900 dark:text-white sm:px-6 sm:py-12 md:grid md:grid-rows-layout lg:max-w-4xl lg:py-16 lg:px-8 lg:text-xl xl:max-w-6xl"
-  >
-    <header class="mb-6 flex justify-between gap-4">
-      {% include "partials/logo.html" %}
-      <ul class="flex gap-4 self-end">
+  <body>
+    <header>
+      <ul>
         {% for entry in collections.all | eleventyNavigation("Header") %}
         <li>
           <a href="{{ entry.url | url }}">{{entry.title }}</a>
@@ -78,13 +67,8 @@
       </ul>
     </header>
     <main>{% block content %} {% endblock %}</main>
-    <footer class="mt-10 grid gap-6 border-t py-2">
-      <ul class="flex flex-wrap gap-4">
-        {% for entry in collections.all | eleventyNavigation("Footer") %}
-        <li><a href="{{ entry.url | url }}">{{entry.title }}</a></li>
-        {% endfor %}
-      </ul>
-      <ul class="flex flex-wrap gap-4">
+    <footer class="box">
+      <ul>
         {% for entry in metadata.social %}
         <li>
           <a href="{{ entry.url | url }}" rel="me">{{ entry.title }}</a>

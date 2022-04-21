@@ -5,9 +5,20 @@
   "files.associations": {
     "*.njk": "html"
   },
-  "editor.quickSuggestions": {
-    "strings": true
-  },
-  "css.validate": false,
-  "cSpell.words": ["eleventy", "krzysztofzuraw", "Shortcode"]
+  "cSpell.words": [
+    "eleventy",
+    "krzysztofzuraw",
+    "luxon",
+    "postreinstall",
+    "prebuild",
+    "prereinstall",
+    "Shortcode"
+  ],
+  "[markdown]": {
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 100,
+    "editor.lineNumbers": "off",
+    "editor.quickSuggestions": true,
+    "editor.wordBasedSuggestions": false
+  }
 }
