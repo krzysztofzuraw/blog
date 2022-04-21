@@ -1,6 +1,6 @@
 ---
 title: Raycast script - copy foremost Safari window as markdown link
-date: 2022-01-02T12:00
+date: 2022-01-02T08:00:34Z
 permalink: "blog/2022/raycast-copy-foremost-safari-window/index.html"
 ---
 
