@@ -12,7 +12,13 @@
     "postreinstall",
     "prebuild",
     "prereinstall",
-    "Shortcode"
+    "Shortcode",
+    "cloudbuild",
+    "gcloud",
+    "PNPM",
+    "Turborepo",
+    "Vercel",
+    "Vite"
   ],
   "[markdown]": {
     "editor.wordWrap": "bounded",
