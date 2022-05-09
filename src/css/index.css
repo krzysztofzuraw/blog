@@ -68,7 +68,6 @@ footer ul {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
-  /* justify-content: center; */
 }
 
 form {
@@ -237,6 +236,7 @@ pre {
   li,
   th,
   td,
+  time,
   pre {
     font-size: var(--size-500);
   }
