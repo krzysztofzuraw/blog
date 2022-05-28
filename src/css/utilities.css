@@ -1,0 +1,45 @@
+@layer utilities {
+  .flow > * + * {
+    margin-top: var(--flow-space, 1em);
+  }
+
+  .stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .stack > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .stack > * + * {
+    margin-top: var(--space, 1.5rem);
+  }
+
+  .box {
+    padding: var(--padding, 1.5rem);
+  }
+
+  .post {
+    --flow-space: var(--size-700);
+  }
+
+  .post time {
+    --flow-space: var(--size-400);
+  }
+
+  .post :is(h2, h3) {
+    --flow-space: var(--size-900);
+  }
+
+  .post :is(h2, h3) + * {
+    --flow-space: var(--size-400);
+  }
+
+  .post figure,
+  .post figure + * {
+    --flow-space: var(--size-900);
+  }
+}
