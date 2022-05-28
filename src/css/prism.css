@@ -7,6 +7,10 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 */
 
 @layer prism {
+  pre {
+    border: 1px solid;
+  }
+
   code[class*="language-"],
   pre[class*="language-"] {
     direction: ltr;
