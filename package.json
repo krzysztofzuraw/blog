@@ -35,7 +35,7 @@
     "dotenv": "16.0.1",
     "image-size": "1.0.1",
     "lint-staged": "12.4.1",
-    "luxon": "2.3.2",
+    "luxon": "2.4.0",
     "prettier": "2.6.2",
     "prettier-plugin-packagejson": "2.2.17",
     "rimraf": "3.0.2"
