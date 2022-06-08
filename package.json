@@ -13,6 +13,7 @@
     "start:eleventy": "eleventy --serve",
     "start:tailwind": "tailwindcss --input ./src/css/index.css --output ./dist/css/index.css --watch",
     "dev": "run-p start:*",
+    "build": "run-p build:*",
     "build:eleventy": "eleventy",
     "build:tailwind": "NODE_ENV=production tailwindcss  --input ./src/css/index.css --output ./dist/css/index.css --minify",
     "clean:dist": "rimraf dist/*",
