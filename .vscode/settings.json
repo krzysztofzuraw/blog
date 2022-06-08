@@ -3,19 +3,24 @@
     "nunjucks": "html"
   },
   "files.associations": {
-    "*.njk": "html"
+    "*.njk": "html",
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
   },
   "cSpell.words": [
+    "cloudbuild",
     "eleventy",
+    "gcloud",
     "krzysztofzuraw",
     "luxon",
+    "PNPM",
     "postreinstall",
     "prebuild",
     "prereinstall",
     "Shortcode",
-    "cloudbuild",
-    "gcloud",
-    "PNPM",
+    "tailwindcss",
     "Turborepo",
     "Vercel",
     "Vite"

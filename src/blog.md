@@ -1,13 +1,13 @@
 ---
 layout: layouts/page.html
-title: Blog
+title: Archive
 eleventyNavigation:
-  key: Blog
+  key: Archive
   parent: Header
   order: 2
 ---
 
-# Blog
+# Blog archive
 
 <ol class="stack list">
 {% for post in collections.posts | reverse %}
