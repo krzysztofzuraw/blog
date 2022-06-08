@@ -6,10 +6,6 @@ a {
   @apply hover:underline;
 }
 
-time {
-  @apply opacity-50;
-}
-
 main > h1 {
   @apply mb-8 text-4xl font-extrabold lg:text-5xl;
 }
