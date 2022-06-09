@@ -6,16 +6,17 @@
     "*.njk": "html"
   },
   "cSpell.words": [
+    "cloudbuild",
     "eleventy",
+    "endfor",
+    "gcloud",
     "krzysztofzuraw",
     "luxon",
+    "PNPM",
     "postreinstall",
     "prebuild",
     "prereinstall",
     "Shortcode",
-    "cloudbuild",
-    "gcloud",
-    "PNPM",
     "Turborepo",
     "Vercel",
     "Vite"
@@ -26,5 +27,6 @@
     "editor.lineNumbers": "off",
     "editor.quickSuggestions": true,
     "editor.wordBasedSuggestions": false
-  }
+  },
+  "css.validate": false
 }

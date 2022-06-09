@@ -42,9 +42,12 @@
   }
 
   header,
-  main,
-  footer {
+  main {
     grid-column: 2;
+  }
+
+  header {
+    display: flex;
   }
 
   header ul {
@@ -53,37 +56,6 @@
     display: flex;
     justify-content: flex-end;
     gap: 2rem;
-  }
-
-  footer {
-    border-top: 2px solid;
-    display: grid;
-    --padding: 1.5rem 0;
-    gap: 0.5rem;
-  }
-
-  footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-
-  form {
-    display: grid;
-    place-items: start;
-    gap: 1rem;
-  }
-
-  label {
-    display: grid;
-  }
-
-  input,
-  textarea {
-    padding: 0.5rem;
   }
 
   ::-webkit-scrollbar {
@@ -187,6 +159,7 @@
     }
 
     p,
+    strong,
     li,
     th,
     td,
