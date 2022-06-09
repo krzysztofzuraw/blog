@@ -1,6 +1,7 @@
 ---
 layout: layouts/post.html
 title: About
+date: 2022-01-14
 eleventyNavigation:
   key: About
   parent: Header
@@ -25,6 +26,23 @@ I like giving back to community by being a mentor of [Django Girls](https://djan
 {% for entry in metadata.social %}
 - [{{ entry.title }}]({{ entry.url }})
 {% endfor %}
+
+## What I'm doing now
+
+- Resting and embracing slow life
+- Taking care of shetland sheepdog
+- Leading one of the teams at [Ingrid](https://ingrid.com)
+
+## What I'm using
+
+- Safari for private and Brave for work with DuckDuck Go
+- Apple Reminders/Calendar
+- VSCode with SF Mono font and GitHub theme
+- Raycast
+- Apple Music
+- NewsNetWire for RSS
+- Tadam
+- StopTheMaddness
 
 ### Colophon
 
