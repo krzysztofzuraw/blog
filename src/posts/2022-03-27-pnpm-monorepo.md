@@ -14,7 +14,7 @@ It turns out we do not need turborepo at all (we do not use Vercel for hosting o
 
 While playing with turborepo examples I found out two things: npm sucks when it comes to monorepo (turborepo example with npm doesn't work at all) and pnpm seems to work fine with that case.
 
-I decided to go with pnpm as a package manager for monorepo. Another thing we found out is that you can’t have proposed monorepo structure `packages` and `libs` folders as we are using [vanilla-extract](https://vanilla-extract.style/). Why is that? Vanilla extract plugin for Vite did not support using `css.ts` components from packages that are not in the root of the repo. Apparently maintainers fixed issue in https://github.com/seek-oss/vanilla-extract/issues/559.
+I decided to go with pnpm as a package manager for monorepo. Another thing we found out is that you can’t have proposed monorepo structure `packages` and `libs` folders as we are using [vanilla-extract](https://vanilla-extract.style/). Why is that? Vanilla extract plugin for Vite did not support using `css.ts` components from packages that are not in the root of the repo. Apparently maintainers fixed [issue](https://github.com/seek-oss/vanilla-extract/issues/559).
 
 We went with having folders with applications and folders with shared code in root of monorepo named: `widget`, `page` and `i18n` or `ui`. Everything works fine with pnpm to the time we wanted to deploy our monorepo to Google Cloud infrastructure. Our deployment path looks as follows:
 

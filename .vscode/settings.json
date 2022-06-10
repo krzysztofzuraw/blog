@@ -12,6 +12,7 @@
     "gcloud",
     "krzysztofzuraw",
     "luxon",
+    "mkdir",
     "PNPM",
     "postreinstall",
     "prebuild",
@@ -25,7 +26,11 @@
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100,
     "editor.lineNumbers": "off",
-    "editor.quickSuggestions": true,
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    },
     "editor.wordBasedSuggestions": false
   },
   "css.validate": false
