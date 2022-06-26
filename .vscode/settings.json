@@ -3,7 +3,8 @@
     "nunjucks": "html"
   },
   "files.associations": {
-    "*.njk": "html"
+    "*.njk": "html",
+    "*.css": "tailwindcss"
   },
   "cSpell.words": [
     "cloudbuild",
@@ -13,11 +14,14 @@
     "krzysztofzuraw",
     "luxon",
     "mkdir",
+    "monospace",
+    "packagejson",
     "PNPM",
     "postreinstall",
     "prebuild",
     "prereinstall",
     "Shortcode",
+    "tailwindcss",
     "Turborepo",
     "Vercel",
     "Vite"

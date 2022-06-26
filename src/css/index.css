@@ -1,7 +1,21 @@
-@layer reset, base, prism, utilities, components;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import url("reset.css") layer(reset);
-@import url("base.css") layer(base);
-@import url("prism.css") layer(prism);
-@import url("utilities.css") layer(utilities);
-@import url("components.css") layer(components);
+a {
+  @apply hover:underline;
+}
+
+main > h1 {
+  @apply mb-8 text-4xl font-extrabold lg:text-5xl;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+time {
+  @apply font-sans;
+}
