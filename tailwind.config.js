@@ -1,10 +1,16 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: ["./src/**/*.{html,js,md,xml}"],
   theme: {
-    fontFamily: {
-      serif: ["Charter", "Georgia", "serif"],
-      mono: ["monospace"],
+    extend: {
+      fontFamily: {
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        serif: ["Charter", ...defaultTheme.fontFamily.serif],
+        mono: ["MonoLisa", ...defaultTheme.fontFamily.mono],
+      },
     },
     gridTemplateRows: {
       layout: "auto 1fr auto",
