@@ -22,7 +22,8 @@
     "img:convert": "./scripts/convert-img.sh",
     "prereinstall": "npm run clean:dist",
     "reinstall": "rimraf node_modules/*",
-    "postreinstall": "npm install"
+    "postreinstall": "npm install",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write",
@@ -39,6 +40,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "4.0.0",
     "@tailwindcss/typography": "0.5.2",
     "dotenv": "16.0.1",
+    "husky": "8.0.1",
     "image-size": "1.0.1",
     "lint-staged": "13.0.1",
     "luxon": "2.4.0",
