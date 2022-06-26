@@ -25,7 +25,8 @@
     "postreinstall": "npm install"
   },
   "lint-staged": {
-    "*": "prettier --ignore-unknown --write"
+    "*": "prettier --ignore-unknown --write",
+    "*.md": "vale"
   },
   "prettier": {
     "printWidth": 100
