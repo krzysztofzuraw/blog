@@ -11,23 +11,18 @@
   "main": "n/a",
   "scripts": {
     "prebuild": "npm run clean:dist",
-    "build": "run-s build:*",
-    "build:eleventy": "eleventy",
-    "build:tailwind": "NODE_ENV=production tailwindcss  --input ./src/css/index.css --output ./dist/css/index.css --minify",
+    "build": "eleventy",
     "clean:dist": "rimraf dist/*",
     "debug": "DEBUG=* eleventy",
-    "dev": "run-p start:*",
-    "start:eleventy": "eleventy --serve",
-    "start:tailwind": "tailwindcss --input ./src/css/index.css --output ./dist/css/index.css --watch",
+    "dev": "eleventy --serve",
     "img:convert": "./scripts/convert-img.sh",
+    "prepare": "husky install",
     "prereinstall": "npm run clean:dist",
     "reinstall": "rimraf node_modules/*",
-    "postreinstall": "npm install",
-    "prepare": "husky install"
+    "postreinstall": "npm install"
   },
   "lint-staged": {
-    "*": "prettier --ignore-unknown --write",
-    "*.md": "vale"
+    "*": "prettier --ignore-unknown --write"
   },
   "prettier": {
     "printWidth": 100
@@ -37,17 +32,13 @@
     "@11ty/eleventy-cache-assets": "2.3.0",
     "@11ty/eleventy-navigation": "0.3.3",
     "@11ty/eleventy-plugin-rss": "1.1.2",
-    "@tailwindcss/typography": "0.5.2",
-    "dotenv": "16.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "4.0.0",
     "husky": "8.0.1",
     "image-size": "1.0.1",
     "lint-staged": "13.0.1",
     "luxon": "2.4.0",
-    "npm-run-all": "4.1.5",
     "prettier": "2.6.2",
     "prettier-plugin-packagejson": "2.2.18",
-    "prettier-plugin-tailwindcss": "0.1.11",
-    "rimraf": "3.0.2",
-    "tailwindcss": "3.1.3"
+    "rimraf": "3.0.2"
   }
 }

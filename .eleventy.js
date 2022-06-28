@@ -3,13 +3,16 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const { DateTime } = require("luxon");
 const sizeOf = require("image-size");
 const path = require("path");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = (config) => {
   config.addPassthroughCopy("src/img");
   config.addPassthroughCopy({ "src/passthrough": "/" });
+  config.addPassthroughCopy("src/css");
 
   config.addPlugin(eleventyNavigationPlugin);
   config.addPlugin(pluginRss);
+  config.addPlugin(syntaxHighlight);
 
   config.addFilter("humanizeDate", (date) => {
     return DateTime.fromJSDate(date).toLocaleString({
@@ -27,23 +30,8 @@ module.exports = (config) => {
 
   config.addFilter("toISO", (date) => DateTime.fromJSDate(date, { zone: "Europe/Warsaw" }).toISO());
 
-  config.addFilter("getLanguage", (lang) => {
-    switch (lang) {
-      case "en":
-        return "English";
-      case "pl":
-        return "Polish";
-      default:
-        return "English";
-    }
-  });
-
   config.addFilter("getYear", (date) =>
     DateTime.fromJSDate(date, { zone: "Europe/Warsaw" }).toFormat("yyyy")
-  );
-
-  config.addFilter("formatISO", (dateString) =>
-    DateTime.fromISO(dateString).toFormat("yyyy-MM-dd")
   );
 
   config.addShortcode("currentYear", () => DateTime.now().toLocaleString({ year: "numeric" }));
@@ -57,31 +45,6 @@ module.exports = (config) => {
       </a>
       <figcaption>${figcaption}</figcaption>
     </figure>`;
-  });
-
-  config.addShortcode("rateToWords", (rate) => {
-    switch (rate) {
-      case 1:
-        return "misunderstanding";
-      case 2:
-        return "very bad";
-      case 3:
-        return "bad";
-      case 4:
-        return "ok";
-      case 5:
-        return "average";
-      case 6:
-        return "not bad";
-      case 7:
-        return "good";
-      case 8:
-        return "very good";
-      case 9:
-        return "sensational";
-      case 10:
-        return "masterpiece";
-    }
   });
 
   return {

@@ -1,0 +1,13 @@
+@layer components {
+  .list {
+    --space: 2.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .list > li {
+    display: grid;
+    gap: 0.5rem;
+  }
+}
