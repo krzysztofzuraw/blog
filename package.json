@@ -31,7 +31,7 @@
     "@11ty/eleventy": "1.0.1",
     "@11ty/eleventy-cache-assets": "2.3.0",
     "@11ty/eleventy-navigation": "0.3.3",
-    "@11ty/eleventy-plugin-rss": "1.1.2",
+    "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.1.0",
     "husky": "8.0.1",
     "image-size": "1.0.1",
