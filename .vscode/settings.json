@@ -6,26 +6,6 @@
     "*.njk": "html",
     "*.css": "tailwindcss"
   },
-  "cSpell.words": [
-    "cloudbuild",
-    "eleventy",
-    "endfor",
-    "gcloud",
-    "krzysztofzuraw",
-    "luxon",
-    "mkdir",
-    "monospace",
-    "packagejson",
-    "PNPM",
-    "postreinstall",
-    "prebuild",
-    "prereinstall",
-    "Shortcode",
-    "tailwindcss",
-    "Turborepo",
-    "Vercel",
-    "Vite"
-  ],
   "[markdown]": {
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100,
