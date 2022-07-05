@@ -1,16 +1,13 @@
 @layer components {
   .list {
-    --space: 2.5rem;
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
   .list > li {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr min-content;
     gap: 0.5rem;
   }
 }

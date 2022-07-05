@@ -50,6 +50,7 @@
   header {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
   }
 
   header ul {
@@ -89,6 +90,11 @@
   input,
   textarea {
     padding: 0.5rem;
+  }
+
+  time {
+    white-space: pre;
+    font-variant-numeric: tabular-nums;
   }
 
   ::-webkit-scrollbar {

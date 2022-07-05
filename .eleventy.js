@@ -47,6 +47,10 @@ module.exports = (config) => {
     </figure>`;
   });
 
+  config.addLayoutAlias("base", "layouts/base.html");
+  config.addLayoutAlias("page", "layouts/page.html");
+  config.addLayoutAlias("post", "layouts/post.html");
+
   return {
     templateFormats: ["md", "njk", "html"],
     htmlTemplateEngine: "njk",

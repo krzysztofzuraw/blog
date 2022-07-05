@@ -1,8 +1,6 @@
 ---
-layout: layouts/page.html
+layout: page
 ---
-
-# Blog index
 
 <ol class="stack list">
 {% for post in collections.posts | reverse %}

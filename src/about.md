@@ -1,12 +1,12 @@
 ---
-layout: layouts/post.html
+layout: post
 eleventyNavigation:
   key: About
   parent: Header
   order: 1
 ---
 
-# About me
+# About
 
 Welcome to my blog. A few words about me:
 

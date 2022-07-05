@@ -56,7 +56,7 @@
 
   <body>
     <header>
-      <strong>{{ metadata.title }}</strong>
+      <strong><a href="/">{{ metadata.title }}</a></strong>
       <ul>
         {% for entry in collections.all | eleventyNavigation("Header") %}
         <li>
