@@ -47,6 +47,11 @@
     grid-column: 2;
   }
 
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
   header ul {
     list-style: none;
     margin: 0;
@@ -168,8 +173,7 @@
     max-width: 25ch;
   }
 
-  p,
-  li {
+  p {
     max-width: 65ch;
   }
 
@@ -187,6 +191,7 @@
     }
 
     p,
+    strong,
     li,
     th,
     td,

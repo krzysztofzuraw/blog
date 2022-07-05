@@ -56,6 +56,7 @@
 
   <body>
     <header>
+      <strong>{{ metadata.title }}</strong>
       <ul>
         {% for entry in collections.all | eleventyNavigation("Header") %}
         <li>
@@ -66,19 +67,7 @@
     </header>
     <main>{% block content %} {% endblock %}</main>
     <footer class="box">
-      <ul>
-        {% for entry in collections.all | eleventyNavigation("Footer") %}
-        <li><a href="{{ entry.url | url }}">{{entry.title }}</a></li>
-        {% endfor %}
-      </ul>
-      <ul>
-        {% for entry in metadata.social %}
-        <li>
-          <a href="{{ entry.url | url }}" rel="me">{{ entry.title }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-      <p>© 2016-{% currentYear %}{{ metadata.author.name }}</p>
+      <p>© 2016-{% currentYear %} {{ metadata.author.name }}</p>
     </footer>
   </body>
 </html>
