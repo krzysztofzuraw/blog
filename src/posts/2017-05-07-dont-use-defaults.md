@@ -1,5 +1,5 @@
 ---
-title: Don't use defaults
+title: Dont use defaults
 date: 2017-05-07
 ---
 
