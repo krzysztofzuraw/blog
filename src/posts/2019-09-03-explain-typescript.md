@@ -1,7 +1,6 @@
 ---
 title: Explain TypeScript to me
 date: 2019-09-03
-permalink: "/blog/2019/explain-typescript/index.html"
 ---
 
 Hello 👋🏻

@@ -1,7 +1,6 @@
 ---
 title: Distractions tips & tricks
 date: 2021-01-21
-permalink: "/blog/2021/distractions-tips-tricks/index.html"
 ---
 
 In this blog post I want to write more about different techniques I tried to lower my distractions both in work and in personal environment.

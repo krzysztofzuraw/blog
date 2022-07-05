@@ -1,7 +1,6 @@
 ---
 title: Don't use defaults
 date: 2017-05-07
-permalink: "/blog/2017/dont-use-defaults/index.html"
 ---
 
 **Recently I bought simple LTE router. While reading through manual I

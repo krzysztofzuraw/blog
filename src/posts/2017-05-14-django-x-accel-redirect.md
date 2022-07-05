@@ -1,7 +1,6 @@
 ---
 title: Django and nginx file proxy
 date: 2017-05-14
-permalink: "/blog/2017/django-nginx-file-proxy/index.html"
 ---
 
 **In this blog post series, I will show you how to use Nginx for hiding

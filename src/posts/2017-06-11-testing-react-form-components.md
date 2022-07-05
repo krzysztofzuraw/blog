@@ -1,7 +1,6 @@
 ---
 title: Testing React form components
 date: 2017-06-11
-permalink: "/blog/2017/testing-react-form-components/index.html"
 ---
 
 **In this blog post, I will present quick code snippets on how to test

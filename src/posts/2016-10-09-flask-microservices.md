@@ -1,7 +1,6 @@
 ---
 title: Microservices in Flask
 date: 2016-10-09
-permalink: "/blog/2016/microservices-in-flask/index.html"
 ---
 
 **I recently gave a talk about microservices in Flask on**

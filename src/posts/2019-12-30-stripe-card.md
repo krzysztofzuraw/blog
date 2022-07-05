@@ -1,7 +1,6 @@
 ---
 title: Implementing stripe card for fun & profit
 date: 2019-12-30
-permalink: "/blog/2019/implementing-stripe-card/index.html"
 ---
 
 Today I want to write about a little side project that I did recently: what I learned from it, what went good and what went bad. Let's go 🎉.

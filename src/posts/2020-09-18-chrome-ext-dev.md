@@ -1,7 +1,6 @@
 ---
 title: Setting up webpack for chrome extension development
 date: 2020-09-18
-permalink: "/blog/2020/setting-up-chrome-extension-dev/index.html"
 ---
 
 Today I learned how to setup [webpack](https://webpack.js.org/) for chrome extension development.

@@ -1,7 +1,6 @@
 ---
 title: Setting up Relay Modern on frontend
 date: 2017-11-25
-permalink: "/blog/2017/setting-up-relay-modern-on-fe/index.html"
 ---
 
 **Hello, for such long break I'm back to the Django, React & Relay tutorial! Today I will show you

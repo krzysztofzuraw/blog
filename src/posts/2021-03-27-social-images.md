@@ -1,7 +1,6 @@
 ---
 title: On generating social images for this blog
 date: 2021-03-27
-permalink: "/blog/2021/social-images/index.html"
 ---
 
 I recently decided to generate social images for my blog. You know those images that are being displayed by facebook or twitter when you share link on those platforms:

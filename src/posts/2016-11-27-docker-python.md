@@ -1,7 +1,6 @@
 ---
 title: Docker.py- python API for Docker
 date: 2016-11-27
-permalink: "/blog/2016/docker-py/index.html"
 ---
 
 **Once upon a time I and my friend decided to write an application that

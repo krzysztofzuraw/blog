@@ -1,7 +1,6 @@
 ---
 title: Chaining promises in JavaScript
 date: 2017-05-28
-permalink: "/blog/2017/chaining-promises-in-javascript/index.html"
 ---
 
 **In this blog post, I will present to you how you can chain promises

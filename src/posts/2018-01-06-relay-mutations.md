@@ -1,7 +1,6 @@
 ---
 title: Mutations in Relay Modern
 date: 2018-01-06
-permalink: "/blog/2018/mutations-in-relay-modern/index.html"
 ---
 
 **In this series, I covered various topics starting from setting up Django and ending in Relay queries.

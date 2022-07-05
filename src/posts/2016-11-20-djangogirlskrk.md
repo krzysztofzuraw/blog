@@ -1,7 +1,6 @@
 ---
 title: Django Girls- Kraków #3
 date: 2016-11-20
-permalink: "/blog/2016/django-girls-krakow-3/index.html"
 ---
 
 **As I said many times on this blog I really like teaching others so I

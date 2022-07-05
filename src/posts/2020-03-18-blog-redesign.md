@@ -1,7 +1,6 @@
 ---
 title: What I learned from redesigning my blog
 date: 2020-03-18
-permalink: "/blog/2020/blog-redesign/index.html"
 ---
 
 When I type `blog redesign` into Google I've got a lot of links why redesigning your blog can be a

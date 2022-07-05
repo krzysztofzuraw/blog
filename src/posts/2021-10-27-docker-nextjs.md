@@ -1,7 +1,6 @@
 ---
 title: On setting up Next.js with Docker on Google Cloud
 date: 2021-10-27
-permalink: "/blog/2021/nextjs-docker-gcloud/index.html"
 ---
 
 One might wonder why would anyone consider Google Cloud as a hosting provider if there's [Vercel](https://vercel.com/)?

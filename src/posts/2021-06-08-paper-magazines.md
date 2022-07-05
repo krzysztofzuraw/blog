@@ -1,7 +1,6 @@
 ---
 title: On reading paper magazines
 date: 2021-06-19
-permalink: "/blog/2021/paper-magazines/index.html"
 ---
 
 I recently discovered joy of reading psychical paper magazines. What I really like is the fact that

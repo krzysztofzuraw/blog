@@ -1,7 +1,6 @@
 ---
 title: Dependency injection in  redux-observable
 date: 2018-06-15
-permalink: "/blog/2018/dependency-injection-redux-observable/index.html"
 ---
 
 Imagine that you have following situation: your calls to external api are using helper modules where all request logic lies. For instance, you have

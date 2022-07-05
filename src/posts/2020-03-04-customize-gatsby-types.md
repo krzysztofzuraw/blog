@@ -1,7 +1,6 @@
 ---
 title: Customizing Gatsby Graphql schema
 date: 2020-03-04
-permalink: "/blog/2020/customizing-gatsby-graphql-schema/index.html"
 ---
 
 Recently I was doing redesign of my blog. As you may know, I used

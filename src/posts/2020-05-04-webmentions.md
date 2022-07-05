@@ -1,7 +1,6 @@
 ---
 title: What I learned by adding webmentions to my blog
 date: 2020-05-04
-permalink: "/blog/2020/webmentions-on-blog/index.html"
 ---
 
 I've recently added [webmentions](https://indieweb.org/Webmention) to my blog.

@@ -1,7 +1,6 @@
 ---
 title: Amazon Glacier + Arq backup
 date: 2021-08-14
-permalink: "/blog/2021/amazon-backup/index.html"
 ---
 
 When it comes to the backup I was using mac [Time Machine](https://support.apple.com/en-us/HT201250) - it worked fine as a hard drive backup. Problem with that was using only one place to store my data.

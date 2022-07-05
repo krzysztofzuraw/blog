@@ -1,7 +1,6 @@
 ---
 title: Intl Collator in JavaScript
 date: 2020-10-21
-permalink: "/blog/2020/js-intl-collator/index.html"
 ---
 
 Recently I needed to sort an array of objects from A to Z. Usually for such task I'm using the

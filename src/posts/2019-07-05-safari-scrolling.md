@@ -1,7 +1,6 @@
 ---
 title: Safari scrolling error
 date: 2019-07-05
-permalink: "/blog/2019/safari-scrolling-error/index.html"
 ---
 
 If you are developing applications for modern web you ultimately run into problems between different

@@ -1,7 +1,6 @@
 ---
 title: Photo Grid Codepen challenge
 date: 2020-01-26
-permalink: "/blog/2020/photo-grid-codepen/index.html"
 ---
 
 Recently I’ve got an email with invitation for weekly codepen [challenge](https://codepen.io/challenges/2020/january/3). This time I’ve decided to give it a try as it seems like nice thing to try my CSS skills.

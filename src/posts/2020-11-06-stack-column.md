@@ -1,7 +1,6 @@
 ---
 title: Stack & Column in CSS-in-JS
 date: 2020-11-06
-permalink: "/blog/2020/stack-column-css-in-js/index.html"
 ---
 
 Today I want to write more about new emotion components that we try at [Ingrid](https://www.ingrid.com/). Those components help us with spacing.

@@ -1,7 +1,6 @@
 ---
 title: Transcoding with AWS
 date: 2016-12-04
-permalink: "/blog/2016/transcoding-aws-part-one"
 ---
 
 **Nowadays moving everything to the cloud becomes more and more popular.

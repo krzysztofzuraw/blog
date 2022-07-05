@@ -1,7 +1,6 @@
 ---
 title: Using Xstate with inputs in React
 date: 2019-10-27
-permalink: "/blog/2019/xstate-inputs-react/index.html"
 ---
 
 In this blog post, I want to present how you can use [XState](https://xstate.js.org/) to make

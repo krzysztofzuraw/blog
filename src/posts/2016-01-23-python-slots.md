@@ -1,7 +1,6 @@
 ---
 title: Python __slots__
 date: 2016-01-23
-permalink: "blog/2016/python-slots/index.html"
 ---
 
 **Hello everyone in new layout of blog. Today I will write more about

@@ -1,7 +1,6 @@
 ---
 title: Solutions reviews
 date: 2017-07-23
-permalink: "/blog/2017/solutions-reviews/index.html"
 ---
 
 **What are solutions reviews? Why may you need one? Read this blog post

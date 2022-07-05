@@ -1,7 +1,6 @@
 ---
 title: Fragments and queries in Relay Modern
 date: 2017-12-09
-permalink: "/blog/2017/fragments-queries-in-relay-modern/index.html"
 ---
 
 **Today I want to cover two points: how to use fragments in relay modern and one of the ways of handling

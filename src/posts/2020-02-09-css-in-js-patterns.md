@@ -1,7 +1,6 @@
 ---
 title: CSS in JS patterns
 date: 2020-02-09
-permalink: "/blog/2020/css-in-js-patterns/index.html"
 ---
 
 I have read a lot of articles about CSS in JS. Yet majority of them are some introductory articles

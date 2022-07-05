@@ -1,7 +1,6 @@
 ---
 title: I build a thing - writer mode for VSCode
 date: 2019-04-01
-permalink: "/blog/2019/writer-mode-vscode/index.html"
 ---
 
 ## Why

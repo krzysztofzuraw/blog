@@ -1,7 +1,6 @@
 ---
 title: PNPM and monorepo fun
 date: 2022-06-09T13:09:55Z
-permalink: "blog/2022/pnpm-monorepo/index.html"
 ---
 
 I read recently about [monorepo being big thing in 2022](https://dev.to/swyx/why-turborepo-will-be-the-first-big-trend-of-2022-4gfj). I took mental note about [Turborepo](https://turborepo.org/) and move on. After a month it turns out that we can have case for monorepo in [Ingrid](https://www.ingrid.com/).

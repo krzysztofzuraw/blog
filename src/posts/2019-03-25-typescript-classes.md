@@ -1,7 +1,6 @@
 ---
 title: TypeScript classes, interfaces and all between
 date: 2019-03-25
-permalink: "/blog/2019/typescript-classes-interfaces/index.html"
 ---
 
 ## Hello 👋

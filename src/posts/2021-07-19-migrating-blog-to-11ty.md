@@ -1,7 +1,6 @@
 ---
 title: Migrating blog to Eleventy
 date: 2021-07-19
-permalink: "/blog/2021/migrating-blog-to-11ty/index.html"
 ---
 
 I recently migrated my blog to [Eleventy](https://www.11ty.dev/). My previous engine for generating static site was

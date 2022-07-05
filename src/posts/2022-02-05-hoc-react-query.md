@@ -1,7 +1,6 @@
 ---
 title: HOC for React Query
 date: 2022-02-05
-permalink: "/blog/2021/hoc-react-query/index.html"
 ---
 
 It turns out that [React Query](https://react-query.tanstack.com/) by default uses hooks approach. If you need to access some part of library inside your class components you can use [Render Props](https://stackoverflow.com/questions/65609409/how-can-i-use-react-query-in-a-react-class-component)

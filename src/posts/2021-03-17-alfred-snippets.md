@@ -1,7 +1,6 @@
 ---
 title: Alfred Snippet workflow
 date: 2021-03-17
-permalink: "/blog/2021/alfred-snippet-workflow/index.html"
 ---
 
 I recently decided to remove a few no so frequently used applications. One of them was [Typinator](https://www.ergonis.com/products/typinator/).

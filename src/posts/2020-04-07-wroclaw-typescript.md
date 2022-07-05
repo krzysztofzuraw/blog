@@ -1,7 +1,6 @@
 ---
 title: Wrocław TypeScript meetup online
 date: 2020-04-07
-permalink: "/blog/2020/wroclaw-typescript-online/index.html"
 ---
 
 In this blog post, I want to write about the last [Wroclaw TypeScript](https://www.meetup.com/pl-PL/WrocTypeScript/) meetup & encourage to take part

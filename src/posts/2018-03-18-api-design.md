@@ -1,7 +1,6 @@
 ---
 title: How design of your API can affect others
 date: 2018-03-18
-permalink: "/blog/2018/design-your-api/index.html"
 ---
 
 **Recently I was working with a library called [redux-observable](https://redux-observable.js.org/).

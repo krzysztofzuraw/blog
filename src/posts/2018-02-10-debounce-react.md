@@ -1,7 +1,6 @@
 ---
 title: Debouncing forms in React with Redux
 date: 2018-02-10
-permalink: "/blog/2018/debouncing-forms-in-react/index.html"
 ---
 
 ## Basic react form

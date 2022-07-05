@@ -1,7 +1,6 @@
 ---
 title: Python Belgrade
 date: 2018-01-28
-permalink: "/blog/2018/python-belgrade/index.html"
 ---
 
 **In this blog post, I want to write about my experience with taking at Python Belgrade.**

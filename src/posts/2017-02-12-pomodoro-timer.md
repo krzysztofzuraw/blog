@@ -1,7 +1,6 @@
 ---
 title: Pomodoro timer
 date: 2017-02-12
-permalink: "/blog/2017/pomodoro-timer/index.html"
 ---
 
 ## What pomodoro-timer project will be about

@@ -1,7 +1,6 @@
 ---
 title: How to split antd theme into smaller components
 date: 2020-10-14
-permalink: "/blog/2020/split-antd/index.html"
 ---
 
 Recently I stumbled upon an interesting problem at work. I was using [ant-design](https://ant.design/)

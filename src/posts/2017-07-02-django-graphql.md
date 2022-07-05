@@ -1,7 +1,6 @@
 ---
 title: Django, GraphQL & React
 date: 2017-07-02
-permalink: "/blog/2017/django-graphql-react/index.html"
 ---
 
 **Hello! Welcome back after a little break - I recently started working

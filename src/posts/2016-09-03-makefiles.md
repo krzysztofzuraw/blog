@@ -1,7 +1,6 @@
 ---
 title: Makefiles in python projects
 date: 2016-09-03
-permalink: "/blog/2016/makefiles-in-python-projects/index.html"
 ---
 
 **When I join my current company I saw in their git repos strange file.

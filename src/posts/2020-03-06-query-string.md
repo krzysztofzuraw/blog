@@ -1,7 +1,6 @@
 ---
 title: Query string library have stringifyUrl
 date: 2020-03-06
-permalink: "/blog/2020/stringify-url/index.html"
 ---
 
 I've been using [query-string](https://github.com/sindresorhus/query-string) library to create my

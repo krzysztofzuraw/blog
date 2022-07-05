@@ -1,7 +1,6 @@
 ---
 title: Design by contract in python
 date: 2016-07-16
-permalink: "/blog/2016/design-by-contract-in-python/index.html"
 ---
 
 **What exactly is design by contract? What is good and what is bad in

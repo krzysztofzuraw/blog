@@ -1,7 +1,6 @@
 ---
 title: Generating TypeScript types from Swagger schema
 date: 2022-01-06
-permalink: "blog/2022/typescript-types-swagger/index.html"
 ---
 
 All our frontend codebase is using TypeScript which is all great but we always struggled with one aspect of writing types - **typing backend responses and requests**.

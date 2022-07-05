@@ -1,7 +1,6 @@
 ---
 title: Ports and Adapters in python
 date: 2016-05-22
-permalink: "/blog/2016/ports-and-adapters-in-python/index.html"
 ---
 
 Let me explain a little bit what exactly ports and adapters design

@@ -1,7 +1,6 @@
 ---
 title: switchMap in redux-observable
 date: 2018-06-02
-permalink: "/blog/2018/switchmap-redux-observable/index.html"
 ---
 
 ## Introduction

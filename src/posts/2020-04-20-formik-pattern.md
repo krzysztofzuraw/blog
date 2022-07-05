@@ -1,7 +1,6 @@
 ---
 title: Formik - useFormikContext and useField hooks
 date: 2020-04-22
-permalink: "/blog/2020/formik-new-hooks/index.html"
 ---
 
 As I'm using [Formik](https://jaredpalmer.com/formik/) to build forms inside React applications below

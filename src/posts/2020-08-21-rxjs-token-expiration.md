@@ -1,7 +1,6 @@
 ---
 title: RxJS and auth token expiration timers
 date: 2020-08-21
-permalink: "/blog/2020/rxjs-auth-expiration-timers/index.html"
 ---
 
 Recently in my work, I stumbled upon an interesting problem to solve. I needed to inform users that they have

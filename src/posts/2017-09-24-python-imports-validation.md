@@ -1,7 +1,6 @@
 ---
 title: Python imports validation
 date: 2017-09-24
-permalink: "/blog/2017/python-imports-validation/index.html"
 ---
 
 **Recently a colleague from work presented to me a nice pattern. I

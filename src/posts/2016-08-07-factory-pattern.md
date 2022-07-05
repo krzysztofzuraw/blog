@@ -1,7 +1,6 @@
 ---
 title: Factory pattern in python
 date: 2016-08-07
-permalink: "/blog/2016/factory-pattern-python/index.html"
 ---
 
 What is factory pattern all about? It introduces abstraction. In other

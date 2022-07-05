@@ -1,7 +1,6 @@
 ---
 title: GeoDjango and Leaflet.js
 date: 2016-01-01
-permalink: "/blog/2016/geodjango-leaflet/index.html"
 ---
 
 **Today is the day, when I will start my blog. I would like to publish

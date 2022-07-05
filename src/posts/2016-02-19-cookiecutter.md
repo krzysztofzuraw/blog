@@ -1,7 +1,6 @@
 ---
 title: Django cookiecutter
 date: 2016-02-19
-permalink: "/blog/2016/django-cookiecutter/index.html"
 ---
 
 **Have you ever wanted to automate all these boring things that you have

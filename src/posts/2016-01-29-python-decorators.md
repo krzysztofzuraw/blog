@@ -1,7 +1,6 @@
 ---
 title: Python class @decorators
 date: 2016-01-29
-permalink: "/blog/2016/python-class-decorators/index.html"
 ---
 
 **Today post will be about syntactic sugar of python

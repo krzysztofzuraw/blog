@@ -1,7 +1,6 @@
 ---
 title: Setting up simple React & TypeScript project
 date: 2019-03-11
-permalink: "/blog/2019/react-typescript-playground/index.html"
 ---
 
 ## Hello 👋🏻

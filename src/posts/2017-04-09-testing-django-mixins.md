@@ -1,7 +1,6 @@
 ---
 title: Testing django mixins
 date: 2017-04-09
-permalink: "/blog/2017/how-to-test-django-mixins/index.html"
 ---
 
 **You may read all these books and tutorials that tell you - test your

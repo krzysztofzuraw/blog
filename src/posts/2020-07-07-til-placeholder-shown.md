@@ -1,7 +1,6 @@
 ---
 title: Placeholder shown CSS selector
 date: 2020-07-07
-permalink: "/blog/2020/placeholder-shown/index.html"
 ---
 
 Today I learned about `:placeholder-shown` selector in CSS.

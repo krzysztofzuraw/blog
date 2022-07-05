@@ -1,7 +1,6 @@
 ---
 title: TypeScript function overloads
 date: 2019-05-27
-permalink: "/blog/2019/typescript-function-overloads/index.html"
 ---
 
 **NOTE: This is cross-post from** [my newsletter](https://krzysztofzuraw.com/newsletter). **I publish each email after it’s sent.** [Subscribe](https://buttondown.email/krzysztof_zuraw) **to get more content like this earlier right in your inbox! 📧.**

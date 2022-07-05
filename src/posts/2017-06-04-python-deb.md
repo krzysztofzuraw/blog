@@ -1,7 +1,6 @@
 ---
 title: Building python packages for debian
 date: 2017-06-04
-permalink: "/blog/2017/building-python-packages-for-debian/index.html"
 ---
 
 **There are many ways how to build & distribute python packages: pypi,

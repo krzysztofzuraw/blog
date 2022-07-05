@@ -1,7 +1,6 @@
 ---
 title: How to update progress of long request with redux-observable
 date: 2018-05-19
-permalink: "/blog/2018/update-progress-rxjs/index.html"
 ---
 
 ### Problem

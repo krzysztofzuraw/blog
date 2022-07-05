@@ -1,7 +1,6 @@
 ---
 title: Archives from memory- libarchive
 date: 2016-09-25
-permalink: "/blog/2016/archives-from-memory/index.html"
 ---
 
 **This blog post is about python wrapper around libarchive and how to

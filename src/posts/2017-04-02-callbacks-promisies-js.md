@@ -1,7 +1,6 @@
 ---
 title: Callbacks & promises in JS for newbies
 date: 2017-04-02
-permalink: "/blog/2017/callbacks-promises-in-js-for-newbies/index.html"
 ---
 
 **You are a newbie in JavaScript? You want to know a little bit more

@@ -1,7 +1,6 @@
 ---
 title: Mocks and monkeypatching in python
 date: 2016-04-24
-permalink: "/blog/2016/mocks-monkeypatching-in-python/index.html"
 ---
 
 **Hello, in today's post I will look onto essential part of testing-

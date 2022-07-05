@@ -1,7 +1,6 @@
 ---
 title: How to use Deno in Raycast scripts commands
 date: 2021-10-03
-permalink: "/blog/2021/raycast-deno/index.html"
 ---
 
 You can create [Raycast](https://www.raycast.com) script commands using [Deno](https://deno.land).

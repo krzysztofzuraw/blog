@@ -1,7 +1,6 @@
 ---
 title: My first interviews for software developer
 date: 2019-06-03
-permalink: "/blog/2019/software-developer-interviews/index.html"
 ---
 
 **Hello** 👋🏻

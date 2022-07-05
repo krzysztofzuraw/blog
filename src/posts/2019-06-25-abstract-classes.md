@@ -1,7 +1,6 @@
 ---
 title: TypeScript abstract classes
 date: 2019-06-25
-permalink: "/blog/2019/typescript-abstract-classes/index.html"
 ---
 
 Hello,

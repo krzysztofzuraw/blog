@@ -1,7 +1,6 @@
 ---
 title: Lessons learned from being a mentor
 date: 2017-07-15
-permalink: "/blog/2017/lessons-learned-from-being-a-mentor/index.html"
 ---
 
 **Last week I was a mentor in two day Python workshop. The main goal of

@@ -1,7 +1,6 @@
 ---
 title: Testing django template tags
 date: 2017-04-23
-permalink: "/blog/2017/how-to-test-django-template-tags/index.html"
 ---
 
 **In this blog post I will give you simple example how to test your

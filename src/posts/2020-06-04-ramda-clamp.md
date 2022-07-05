@@ -1,7 +1,6 @@
 ---
 title: Ramda clamp
 date: 2020-06-04
-permalink: "/blog/2020/ramda-clamp/index.html"
 ---
 
 Today I learned that [Ramda](https://ramdajs.com/) has a `clamp` function.

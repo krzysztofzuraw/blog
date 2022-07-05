@@ -1,7 +1,6 @@
 ---
 title: Testing gatsby blog with cypress.io
 date: 2020-03-07
-permalink: "/blog/2020/testing-gatsby-with-cypress/index.html"
 ---
 
 In this blog post, I will write about configuring [Cypress.io](https://www.cypress.io/) to work
