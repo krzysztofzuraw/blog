@@ -1,7 +1,7 @@
 {
   "name": "krzysztofzuraw.com",
   "version": "4.0.0",
-  "description": "Krzysztof Żuraw site",
+  "description": "Krzysztof Żuraw blog",
   "keywords": [
     "blog",
     "11ty"
@@ -10,35 +10,20 @@
   "author": "Krzysztof Żuraw (https://krzysztofzuraw.com/)",
   "main": "n/a",
   "scripts": {
-    "prebuild": "npm run clean:dist",
     "build": "eleventy",
-    "clean:dist": "rimraf dist/*",
     "debug": "DEBUG=* eleventy",
-    "dev": "eleventy --serve",
-    "img:convert": "./scripts/convert-img.sh",
-    "prepare": "husky install",
-    "prereinstall": "npm run clean:dist",
-    "reinstall": "rimraf node_modules/*",
-    "postreinstall": "npm install"
-  },
-  "lint-staged": {
-    "*": "prettier --ignore-unknown --write"
+    "dev": "eleventy --serve"
   },
   "prettier": {
     "printWidth": 100
   },
   "devDependencies": {
     "@11ty/eleventy": "1.0.1",
-    "@11ty/eleventy-cache-assets": "2.3.0",
     "@11ty/eleventy-navigation": "0.3.3",
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.1.0",
-    "husky": "8.0.1",
     "image-size": "1.0.1",
-    "lint-staged": "13.0.3",
     "luxon": "2.4.0",
-    "prettier": "2.7.1",
-    "prettier-plugin-packagejson": "2.2.18",
-    "rimraf": "3.0.2"
+    "prettier": "2.7.1"
   }
 }

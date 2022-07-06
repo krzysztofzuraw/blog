@@ -1,18 +1,9 @@
-{% extends "layouts/base.html" %} 
-
-{% block content %}
+---
+layout: base
+---
 
 <article class="post">
-
-  {% if title %}
   <h1>{{ title }}</h1>
-  {% endif %}
-  
-  {% if date %}
   <time datetime="{{ date | toISO }}">{{ date | humanizeDate }}</time>
-  {% endif %} 
-  
   {{ content | safe }}
 </article>
-
-{% endblock %}

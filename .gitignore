@@ -1,6 +1,4 @@
 node_modules
 dist
-.cache
 .env
 .netlify
-styles

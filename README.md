@@ -18,12 +18,6 @@ Run development server:
 npm start
 ```
 
-Convert images
-
-```shell
-npm run img:convert -- src/img/*.png -d src/img
-```
-
 Run production build:
 
 ```shell

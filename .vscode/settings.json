@@ -3,8 +3,7 @@
     "nunjucks": "html"
   },
   "files.associations": {
-    "*.njk": "html",
-    "*.css": "tailwindcss"
+    "*.njk": "html"
   },
   "[markdown]": {
     "editor.wordWrap": "bounded",
