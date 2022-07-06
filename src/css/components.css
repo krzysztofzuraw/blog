@@ -10,4 +10,9 @@
     grid-template-columns: 1fr min-content;
     gap: 0.5rem;
   }
+
+  .header-item-active {
+    font-weight: 700;
+    text-decoration: underline;
+  }
 }

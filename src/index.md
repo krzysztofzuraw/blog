@@ -1,5 +1,10 @@
 ---
 layout: page
+title: Writing
+eleventyNavigation:
+  key: Writing
+  parent: Header
+  order: 1
 ---
 
 <ol class="stack list">
