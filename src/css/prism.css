@@ -45,27 +45,18 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
   .token.comment,
   .token.prolog,
   .token.doctype,
-  .token.cdata {
-    color: #b6ad9a;
-  }
-
+  .token.cdata,
   .token.punctuation {
-    color: #b6ad9a;
+    color: var(--code-token-comment);
   }
 
   .token.namespace {
     opacity: 0.7;
   }
 
-  .token.tag,
-  .token.operator,
-  .token.number {
-    color: #728fcb;
-  }
-
   .token.property,
   .token.function {
-    color: #b29762;
+    color: var(--code-token-function);
   }
 
   .token.tag-id,
@@ -81,6 +72,9 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 
   code.language-css,
   code.language-scss,
+  .token.tag,
+  .token.operator,
+  .token.number,
   .token.boolean,
   .token.string,
   .token.entity,
@@ -96,7 +90,7 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
   .token.statement,
   .token.regex,
   .token.atrule {
-    color: #728fcb;
+    color: var(--code-token-entity);
   }
 
   .token.placeholder,

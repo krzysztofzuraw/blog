@@ -14,12 +14,18 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-serif: Charter, Georgia, serif;
     --font-mono: ui-monospace, "SF Mono", "Menlo", "Consolas", "Ubuntu Mono", monospace;
+    --code-token-comment: #6b655a;
+    --code-token-function: #756341;
+    --code-token-entity: #728fcb;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
       --bg-color: #333;
       --text-color: #fafafa;
+      --code-token-comment: #d7d2ca;
+      --code-token-function: #dbd7ce;
+      --code-token-entity: #dde6f9;
     }
   }
 
