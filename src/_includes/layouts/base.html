@@ -25,6 +25,12 @@
       type="application/atom+xml"
       title="{{ metadata.feeds.writing.title }}"
     />
+    <link
+      rel="alternate"
+      href="{{ metadata.feeds.reading.path | url }}"
+      type="application/atom+xml"
+      title="{{ metadata.feeds.reading.title }}"
+    />
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | url }}" />
     <link rel="sitemap" type="application/xml" href="{{ metadata.sitemap.path | url }}" />
