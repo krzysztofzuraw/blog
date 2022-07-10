@@ -8,7 +8,7 @@ eleventyNavigation:
 ---
 
 <ol class="stack list">
-{% for post in collections.posts | reverse %}
+{% for post in collections.writing | reverse %}
   <li>
     <a href="{{ post.url}}">{{ post.data.title }}</a>
     <time dateTime="{{ post.date | toISO }}" >{{ post.date | formatDate }}</time>
