@@ -1,15 +1,10 @@
 ---
-permalink: "{{ metadata.feed.path }}"
-eleventyNavigation:
-  key: RSS
-  parent: Header
-  order: 3
+permalink: "{{ metadata.feeds.all.path }}"
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ metadata.title }}</title>
-  <subtitle>{{ metadata.feed.subtitle }}</subtitle>
-  {% set absoluteUrl %}{{ metadata.feed.path | url | absoluteUrl(metadata.url) }}{% endset %}
+  <title>{{ metadata.feeds.all.title }}</title>
+  {% set absoluteUrl %}{{ metadata.feeds.all.path | url | absoluteUrl(metadata.url) }}{% endset %}
   <link href="{{ absoluteUrl }}" rel="self" />
   <link href="{{ metadata.url }}" />
   <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>

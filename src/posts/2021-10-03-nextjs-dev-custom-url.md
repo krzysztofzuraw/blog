@@ -1,6 +1,6 @@
 ---
 title: How to open custom URL with Next.js dev command
-date: 2021-10-03T12:00
+date: 2021-10-03T12:00:45Z
 ---
 
 If you need to open custom url while running `next.js dev` you can use
