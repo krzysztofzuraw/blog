@@ -1,5 +1,5 @@
 ---
-title: Islands Architecture
+title: "Article - Islands Architecture"
 date: 2022-07-10T18:27:13Z
 ---
 
