@@ -23,7 +23,7 @@ We went with having folders with applications and folders with shared code in ro
 1. build widget in Google Cloud Build
 1. upload builded assets to our cdn
 
-In order to even start deployment pipeline we needed `pnpm` to works in Google Cloud Build. Unfortunately you can create your own docker image that can be used in cloud build steps. We did exactly that.
+In order to even start deployment pipeline we needed `pnpm` to works in Google Cloud Build. Fortunately you can create your own docker image that can be used in cloud build steps. We did exactly that.
 
 ```dockerfile
 FROM node:14

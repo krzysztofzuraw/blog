@@ -1,5 +1,3 @@
-@layer reset, base, prism, utilities, components;
-
 @import url("reset.css") layer(reset);
 @import url("base.css") layer(base);
 @import url("prism.css") layer(prism);
