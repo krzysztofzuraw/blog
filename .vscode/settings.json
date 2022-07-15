@@ -16,5 +16,6 @@
     },
     "editor.wordBasedSuggestions": false
   },
-  "css.validate": false
+  "css.validate": false,
+  "cSpell.words": ["Codepen", "krzysztofzuraw"]
 }
