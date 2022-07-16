@@ -14,6 +14,7 @@ date: 2022-07-15
 - Bose Q35 II
 - Logitech MX Vertical
 - ZSA Moonlander Mark I
+- Time Timer
 
 ## Coffee gear
 
@@ -24,14 +25,12 @@ date: 2022-07-15
 
 ## Software
 
-- Safari for private and Chrome for work
-- Apple Reminders/Calendar
+- Safari for private and Chrome for work with [DuckDuckGo](https://duckduckgo.com)
+- Apple Reminders/Calendar/Music/Podcasts
 - [Visual Studio Code](https://code.visualstudio.com) with [SF Mono](https://developer.apple.com/fonts/) font and [GitHub theme](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)
 - [Raycast](https://www.raycast.com)
-- [Spotify](https://open.spotify.com/user/1o56pmi988wjoy1htl1qtlpwz?si=cca8a6e9768f45e3)
 - [Choosy](https://www.choosyosx.com)
 - [NetNewsWire](https://netnewswire.com)
-- [Stretchly](https://hovancik.net/stretchly/)
 - [StopTheMadness](https://underpassapp.com/StopTheMadness/)
 - [1blocker](https://1blocker.com)
 - [Bartender](https://www.macbartender.com)
