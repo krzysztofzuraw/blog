@@ -9,5 +9,8 @@ eleventyNavigation:
 
 Links to RSS feeds:
 
-- [All]({{ metadata.feeds.all.path }})
-- [Writing]({{ metadata.feeds.writing.path }})
+{% for feed, feedData in metadata.feeds %}
+
+- [{{ feedData.title | replace('| Krzysztof Żuraw', '') }}]({{ feedData.path | url}})
+
+{% endfor %}

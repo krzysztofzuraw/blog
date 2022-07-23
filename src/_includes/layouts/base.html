@@ -13,18 +13,14 @@
 
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}" />
 
+    {% for feed, feedData in metadata.feeds %}
     <link
       rel="alternate"
-      href="{{ metadata.feeds.all.path | url }}"
+      href="{{ feedData.path | url }}"
       type="application/atom+xml"
-      title="{{ metadata.feeds.all.title }}"
+      title="{{ feedData.title }}"
     />
-    <link
-      rel="alternate"
-      href="{{ metadata.feeds.writing.path | url }}"
-      type="application/atom+xml"
-      title="{{ metadata.feeds.writing.title }}"
-    />
+    {% endfor %}
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | url }}" />
     <link rel="sitemap" type="application/xml" href="{{ metadata.sitemap.path | url }}" />
@@ -57,10 +53,12 @@
     <meta name="format-detection" content="telephone=no" />
   </head>
 
-  <body>
-    <header>
+  <body
+    class="mx-auto h-screen max-w-3xl gap-y-16 px-4 py-10 antialiased dark:bg-gray-900 dark:text-white sm:px-6 sm:py-12 md:grid md:grid-rows-layout lg:max-w-4xl lg:py-16 lg:px-8 lg:text-xl xl:max-w-6xl"
+  >
+    <header class="mb-6 flex items-center justify-between gap-4">
       <strong><a href="/">{{ metadata.title }}</a></strong>
-      <ul>
+      <ul class="flex gap-4 self-end">
         {% for entry in collections.all | eleventyNavigation("Header") %}
         <li class="{% if entry.url == page.url %} header-item-active {% endif %}">
           <a href="{{ entry.url | url }}">{{ entry.title }}</a>
@@ -69,7 +67,7 @@
       </ul>
     </header>
     <main>{{ content | safe }}</main>
-    <footer class="box">
+    <footer class="border-t-2 border-t-black py-6">
       <p>© 2016-{% currentYear %} {{ metadata.author.name }}</p>
     </footer>
   </body>

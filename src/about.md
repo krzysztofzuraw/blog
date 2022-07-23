@@ -22,13 +22,16 @@ I like giving back to community by being a mentor of [Django Girls](https://djan
 
 ## Additional links
 
-- [What I'm doing now](/now)
-- [What I'm using](/uses)
+{% for entry in collections.all | eleventyNavigation("Additional") %}
+
+- [{{ entry.title }}]({{ entry.url | url}})
+
+{% endfor %}
 
 ## Social media
 
 {% for data in metadata.social %}
 
-- [{{ data.title }}]({{ data.url }})
+- [{{ data.title }}]({{ data.url | url }})
 
 {% endfor %}

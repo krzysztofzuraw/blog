@@ -3,16 +3,13 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const { DateTime } = require("luxon");
 const sizeOf = require("image-size");
 const path = require("path");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = (config) => {
   config.addPassthroughCopy("src/img");
   config.addPassthroughCopy({ "src/passthrough": "/" });
-  config.addPassthroughCopy("src/css");
 
   config.addPlugin(eleventyNavigationPlugin);
   config.addPlugin(pluginRss);
-  config.addPlugin(syntaxHighlight);
 
   config.addFilter("humanizeDate", (date) => {
     return DateTime.fromJSDate(date).toLocaleString({
