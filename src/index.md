@@ -9,7 +9,7 @@ eleventyNavigation:
 
 <ol class="flex gap-4 flex-col">
 {% for post in collections.writing | reverse %}
-  <li class="grid gap-1 grid-cols-list">
+  <li class="flex justify-between gap-1">
     <a href="{{ post.url}}">{{ post.data.title }}</a>
     <time dateTime="{{ post.date | toISO }}" class="whitespace-pre tabular-nums">{{ post.date | formatDate }}</time>
   </li>

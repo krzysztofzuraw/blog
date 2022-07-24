@@ -5,17 +5,3 @@
 a {
   @apply hover:underline;
 }
-
-main > h1 {
-  @apply mb-8 text-4xl font-extrabold lg:text-5xl;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-time {
-  @apply font-sans;
-}
