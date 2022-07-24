@@ -19,7 +19,3 @@ h6,
 time {
   @apply font-sans;
 }
-
-.header-item-active {
-  @apply font-bold underline;
-}

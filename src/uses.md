@@ -29,14 +29,11 @@ eleventyNavigation:
 ## Software
 
 - Chrome
-- Things
-- Apple Calendar/Mail/Music
-- Castro
-- iAWriter
-- Reeder
-- Soulver
+- Apple Reminders/Calendar/Mail/Music
+- Spotify
 - CleanShotX
-- [Visual Studio Code](https://code.visualstudio.com) with MonoLisa font and [GitHub theme](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)
+- Stretchly
+- [Visual Studio Code](https://code.visualstudio.com) with SF font and [GitHub theme](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)
 - [Raycast](https://www.raycast.com)
 - [Bartender](https://www.macbartender.com)
 - [DevUtils](https://devutils.com)
