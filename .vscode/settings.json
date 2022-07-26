@@ -9,5 +9,5 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "cSpell.words": ["tailwindcss"]
+  "cSpell.words": ["packagejson", "Shortcode", "tailwindcss"]
 }
