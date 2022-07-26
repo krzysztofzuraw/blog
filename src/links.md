@@ -4,7 +4,7 @@ title: Links
 eleventyNavigation:
   key: Links
   parent: Header
-  order: 2
+  order: 3
 ---
 
 <ol class="flex gap-4 flex-col">

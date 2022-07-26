@@ -4,7 +4,7 @@ title: About
 eleventyNavigation:
   key: About
   parent: Header
-  order: 3
+  order: 4
 ---
 
 Welcome to my blog. A few words about me:
