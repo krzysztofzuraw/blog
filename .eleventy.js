@@ -27,6 +27,10 @@ module.exports = (config) => {
 
   config.addFilter("toISO", (date) => DateTime.fromJSDate(date, { zone: "Europe/Warsaw" }).toISO());
 
+  config.addFilter("formatISO", (dateString) =>
+    DateTime.fromISO(dateString).toFormat("yyyy-MM-dd")
+  );
+
   config.addFilter("getYear", (date) =>
     DateTime.fromJSDate(date, { zone: "Europe/Warsaw" }).toFormat("yyyy")
   );
