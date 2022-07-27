@@ -7,11 +7,13 @@ eleventyNavigation:
   order: 3
 ---
 
-<ol class="flex gap-4 flex-col">
+# Links
+
+<ol class="stack list">
 {% for link in links | reverse %}
-  <li class="flex justify-between gap-1">
+  <li>
     <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title }}</a>
-    <time dateTime="{{ link.date | formatISO }}" class="whitespace-pre tabular-nums">{{ link.date | formatISO }}</time>
+    <time dateTime="{{ link.date | formatISO }}">{{ link.date | formatISO }}</time>
   </li>
 {% endfor %}
 </ol>

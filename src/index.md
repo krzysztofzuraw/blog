@@ -7,11 +7,13 @@ eleventyNavigation:
   order: 1
 ---
 
-<ol class="flex gap-4 flex-col">
+# Writing
+
+<ol class="stack list">
 {% for post in collections.writing | reverse %}
-  <li class="flex justify-between gap-1">
+  <li>
     <a href="{{ post.url}}">{{ post.data.title }}</a>
-    <time dateTime="{{ post.date | toISO }}" class="whitespace-pre tabular-nums">{{ post.date | formatDate }}</time>
+    <time dateTime="{{ post.date | toISO }}">{{ post.date | formatDate }}</time>
   </li>
 {% endfor %}
 </ol>

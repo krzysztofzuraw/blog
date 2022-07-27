@@ -3,11 +3,7 @@
     "nunjucks": "html"
   },
   "files.associations": {
-    "*.njk": "html",
-    "*.css": "tailwindcss"
+    "*.njk": "html"
   },
-  "editor.quickSuggestions": {
-    "strings": true
-  },
-  "cSpell.words": ["endfor", "endset", "noopener", "packagejson", "Shortcode", "tailwindcss"]
+  "css.validate": false
 }

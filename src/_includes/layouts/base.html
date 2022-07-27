@@ -55,22 +55,19 @@
     {% include "partials/analytics.html" %}
   </head>
 
-  <body
-    class="mx-auto min-h-screen max-w-3xl gap-y-16 px-4 py-10 antialiased dark:bg-gray-900 dark:text-white sm:px-6 sm:py-12 lg:max-w-4xl lg:py-16 lg:px-8 lg:text-xl xl:max-w-6xl"
-  >
-    <header class="flex items-center justify-between gap-4">
+  <body>
+    <header>
       <strong><a href="/">{{ metadata.title }}</a></strong>
-      <ul class="flex gap-4 self-end">
+      <ul>
         {% for entry in collections.all | eleventyNavigation("Header") %}
-        <!-- prettier-ignore -->
-        <li class="{% if entry.url == page.url %} font-bold underline {% endif %}">
+        <li class="{% if entry.url == page.url %} header-item-active {% endif %}">
           <a href="{{ entry.url | url }}">{{ entry.title }}</a>
         </li>
         {% endfor %}
       </ul>
     </header>
-    <main class="py-8 md:py-16">{{ content | safe }}</main>
-    <footer class="border-t-2 border-t-black py-6">
+    <main>{{ content | safe }}</main>
+    <footer class="box">
       <p>© 2016-{% currentYear %} {{ metadata.author.name }}</p>
     </footer>
   </body>
