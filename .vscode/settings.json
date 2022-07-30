@@ -6,7 +6,7 @@
     "*.njk": "html"
   },
   "css.validate": false,
-  "cSpell.words": ["shortcode", "shortcodes"],
+  "cSpell.words": ["endset", "shortcode", "shortcodes"],
   "[markdown]": {
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100
