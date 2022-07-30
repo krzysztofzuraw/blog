@@ -1,8 +1,8 @@
 const { DateTime } = require("luxon");
 
 module.exports = {
-  humanizeDate: (date) => {
-    return DateTime.fromJSDate(date).toLocaleString({
+  humanizeDate: (date) =>
+    DateTime.fromJSDate(date).toLocaleString({
       year: "numeric",
       month: "long",
       day: "numeric",
@@ -10,20 +10,16 @@ module.exports = {
       minute: "2-digit",
       hour12: false,
       timeZone: "Europe/Warsaw",
-    });
-  },
-  getLanguage: (lang) => {
-    switch (lang) {
-      case "en":
-        return "English";
-      case "pl":
-        return "Polish";
-      default:
-        return "English";
-    }
-  },
-  formatDate: (date) => DateTime.fromJSDate(date).toFormat("yyyy-MM-dd"),
+    }),
+  getLanguage: (lang) => (lang === "pl" ? "Polish" : "English"),
+  formatDate: (date) =>
+    DateTime.fromJSDate(date).toLocaleString({
+      locale: "pl-PL",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      timeZone: "Europe/Warsaw",
+    }),
   toISO: (date) => DateTime.fromJSDate(date, { zone: "Europe/Warsaw" }).toISO(),
-  formatISO: (dateString) => DateTime.fromISO(dateString).toFormat("yyyy-MM-dd"),
   getYear: (date) => DateTime.fromJSDate(date, { zone: "Europe/Warsaw" }).toFormat("yyyy"),
 };

@@ -10,10 +10,10 @@ eleventyNavigation:
 # Links
 
 <ol class="stack list">
-{% for link in links | reverse %}
+{% for link in collections.links | reverse %}
   <li>
-    <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title }}</a>
-    <time dateTime="{{ link.date | formatISO }}">{{ link.date | formatISO }}</time>
+    <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.data.title }}</a>
+    <time dateTime="{{ link.date | toISO }}">{{ link.date | formatDate }}</time>
   </li>
 {% endfor %}
 </ol>
