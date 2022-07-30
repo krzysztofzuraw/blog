@@ -1,0 +1,29 @@
+---
+title: Migrating Next.js plugins from next-compose-plugins
+date: 2022-07-30T15:25:03Z
+---
+
+I recently updated Next.js to version 12.2.3 and I found out that [next-compose-plugins](https://github.com/cyrilwanner/next-compose-plugins) do not work anymore. After peek at GitHub [issue](https://github.com/hashicorp/next-mdx-enhanced/issues/18#issuecomment-859167393) and I was able to copy and paste working solution:
+
+```js
+/**
+ * @type {import('next').NextConfig}
+ */
+module.exports = () => {
+  const plugins = [withTM, withVanillaExtract, withSentryConfig];
+  return plugins.reduce((acc, next) => next(acc), {
+    i18n: {
+      locales: ["en-US", "nl-BE", "pl-PL"],
+      defaultLocale: "en-US",
+    },
+  });
+};
+```
+
+It worked fine but I wanted to pass argument to `withSentryConfig` - i turns out that I need to pass it as another argument to `next` function in reduce:
+
+```js
+return plugins.reduce((acc, next) => next(acc, {silent: true }, {
+  // the rest of next.js config
+});
+```

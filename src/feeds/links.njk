@@ -15,7 +15,7 @@ permalink: "{{ metadata.feeds.links.path }}"
   </author>
   {%- for post in collections.links | reverse %} {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url)}}{% endset %}
   <entry>
-    <title>{{ post.data.title }}</title>
+    <title>Link: {{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}" />
     <updated>{{ post.date | rssDate }}</updated>
     <id>{{ absolutePostUrl }}</id>
