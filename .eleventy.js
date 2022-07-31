@@ -4,6 +4,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const filters = require("./utils/filters.js");
 const shortcodes = require("./utils/shortcodes.js");
+const aliases = require("./utils/aliases.js");
 
 module.exports = (config) => {
   config.addPassthroughCopy("src/img");
@@ -22,10 +23,9 @@ module.exports = (config) => {
     config.addShortcode(name, shortcodes[name]);
   });
 
-  config.addLayoutAlias("base", "layouts/base.html");
-  config.addLayoutAlias("page", "layouts/page.html");
-  config.addLayoutAlias("post", "layouts/post.html");
-  config.addLayoutAlias("book", "layouts/book.html");
+  Object.keys(aliases).forEach((name) => {
+    config.addLayoutAlias(name, aliases[name]);
+  });
 
   return {
     templateFormats: ["md", "njk", "html"],
