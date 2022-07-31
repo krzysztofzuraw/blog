@@ -57,6 +57,7 @@ header {
   justify-content: space-between;
   align-items: baseline;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
 header ul {
