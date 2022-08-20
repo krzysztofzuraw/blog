@@ -4,6 +4,6 @@ layout: base
 
 <article class="post">
   <h1>{{ title }}</h1>
-  <time datetime="{{ date | toISO }}">{{ date | humanizeDate }}</time>
+  {% if date %}<time datetime="{{ date | toISO }}">{{ date | humanizeDate }}</time>{% endif %}
   {{ content | safe }}
 </article>

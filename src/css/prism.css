@@ -10,6 +10,11 @@ pre {
   border: 1px solid;
 }
 
+code:not([class*="language-"]) {
+  padding: 0.2rem;
+  background-color: var(--code-background);
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
   direction: ltr;
