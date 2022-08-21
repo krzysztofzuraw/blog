@@ -19,16 +19,6 @@
       "title": "Writing | Krzysztof Żuraw",
       "path": "/feeds/writing.xml",
       "id": "https://krzysztofzuraw.com/writing"
-    },
-    "links": {
-      "title": "Links | Krzysztof Żuraw",
-      "path": "/feeds/links.xml",
-      "id": "https://krzysztofzuraw.com/links"
-    },
-    "reading": {
-      "title": "Reading | Krzysztof Żuraw",
-      "path": "/feeds/reading.xml",
-      "id": "https://krzysztofzuraw.com/reading"
     }
   },
   "sitemap": {

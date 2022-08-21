@@ -67,8 +67,13 @@
       </ul>
     </header>
     <main class="py-8 md:py-16">{{ content | safe }}</main>
-    <footer class="border-t-2 border-t-black py-6">
+    <footer class="flex flex-wrap justify-between border-t-2 border-t-black py-6">
       <p>© 2016-{% currentYear %} {{ metadata.author.name }}</p>
+      <ul class="flex gap-4">
+        {% for data in metadata.social %}
+        <li><a href="{{ data.url | url }}">{{ data.title }}</a></li>
+        {% endfor %}
+      </ul>
     </footer>
   </body>
 </html>
