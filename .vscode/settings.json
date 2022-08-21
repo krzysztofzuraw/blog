@@ -3,12 +3,14 @@
     "nunjucks": "html"
   },
   "files.associations": {
-    "*.njk": "html"
+    "*.njk": "html",
+    "*.css": "tailwindcss"
   },
-  "css.validate": false,
-  "cSpell.words": ["endset", "REUTS", "shortcode", "shortcodes"],
   "[markdown]": {
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100
+  },
+  "editor.quickSuggestions": {
+    "strings": true
   }
 }

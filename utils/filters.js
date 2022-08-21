@@ -11,15 +11,7 @@ module.exports = {
       hour12: false,
       timeZone: "Europe/Warsaw",
     }),
-  getLanguage: (lang) => (lang === "pl" ? "Polish" : "English"),
-  formatDate: (date) =>
-    DateTime.fromJSDate(date).toLocaleString({
-      locale: "pl-PL",
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      timeZone: "Europe/Warsaw",
-    }),
+  formatDate: (date) => DateTime.fromJSDate(date).toFormat("yyyy-LL-dd"),
   toISO: (date) => DateTime.fromJSDate(date, { zone: "Europe/Warsaw" }).toISO(),
   getYear: (date) => DateTime.fromJSDate(date, { zone: "Europe/Warsaw" }).toFormat("yyyy"),
 };
