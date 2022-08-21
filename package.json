@@ -10,9 +10,13 @@
   "author": "Krzysztof Żuraw (https://krzysztofzuraw.com/)",
   "main": "n/a",
   "scripts": {
-    "build": "eleventy",
+    "build": "run-s build:*",
+    "build:eleventy": "eleventy",
+    "build:tailwind": "NODE_ENV=production tailwindcss  --input ./src/css/index.css --output ./dist/css/index.css --minify",
     "debug": "DEBUG=* eleventy",
-    "dev": "eleventy --serve"
+    "dev": "run-p dev:*",
+    "dev:eleventy": "eleventy --serve",
+    "dev:tailwind": "tailwindcss --input ./src/css/index.css --output ./dist/css/index.css --watch"
   },
   "prettier": {
     "printWidth": 100
@@ -21,10 +25,13 @@
     "@11ty/eleventy": "1.0.1",
     "@11ty/eleventy-navigation": "0.3.3",
     "@11ty/eleventy-plugin-rss": "1.2.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "4.1.0",
+    "@tailwindcss/typography": "0.5.4",
     "image-size": "1.0.2",
     "luxon": "3.0.1",
+    "npm-run-all": "4.1.5",
     "prettier": "2.7.1",
-    "prettier-plugin-packagejson": "2.2.18"
+    "prettier-plugin-packagejson": "2.2.18",
+    "prettier-plugin-tailwindcss": "0.1.13",
+    "tailwindcss": "3.1.8"
   }
 }
