@@ -8,11 +8,11 @@
   --size-900: 4.2rem;
   --bg-color: #fafafa;
   --text-color: #333;
-  --font-sans-serif: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
-  --font-serif: Charter, Georgia, serif;
-  --font-mono: monospace;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
   --code-token-comment: #6b655a;
   --code-token-function: #756341;
   --code-token-entity: #728fcb;
@@ -32,7 +32,7 @@
 
 html {
   font-size: 100%;
-  font-family: var(--font-sans-serif);
+  font-family: var(--font-sans);
   scrollbar-color: var(--text-color) var(--bg-color);
   color-scheme: light dark;
 }
@@ -136,10 +136,6 @@ a:not([class]) {
   background: var(--text-color, rgba(0, 0, 0, 0.99));
 }
 
-article {
-  font-family: var(--font-serif);
-}
-
 article a {
   text-decoration: underline;
 }
@@ -148,7 +144,6 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-sans-serif);
   line-height: 1.3;
 }
 
