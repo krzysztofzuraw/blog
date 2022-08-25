@@ -15,11 +15,17 @@ npm run install
 Run development server:
 
 ```shell
-npm start
+npm run dev
 ```
 
 Run production build:
 
 ```shell
 npm run build
+```
+
+Run cleanup (remove `dist` and `.cache` folders):
+
+```shell
+npm run clean
 ```
