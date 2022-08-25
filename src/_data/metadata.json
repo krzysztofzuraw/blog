@@ -15,20 +15,10 @@
       "path": "/feeds/all.xml",
       "id": "https://krzysztofzuraw.com/"
     },
-    "writing": {
-      "title": "Writing | Krzysztof Żuraw",
-      "path": "/feeds/writing.xml",
-      "id": "https://krzysztofzuraw.com/writing"
-    },
-    "links": {
-      "title": "Links | Krzysztof Żuraw",
-      "path": "/feeds/links.xml",
-      "id": "https://krzysztofzuraw.com/links"
-    },
-    "reading": {
-      "title": "Reading | Krzysztof Żuraw",
-      "path": "/feeds/reading.xml",
-      "id": "https://krzysztofzuraw.com/reading"
+    "starred": {
+      "title": "Starred articles | Krzysztof Żuraw",
+      "path": "https://feedbin.com/starred/97b1c82a106767ca5f271cfe50986280.xml",
+      "id": "https://feedbin.com/"
     }
   },
   "sitemap": {
