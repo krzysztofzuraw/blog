@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="{{ page.url }}" />
 
+    {% if title %}
     <title>{{ title }} | {{ metadata.title }}</title>
+    {% else %}
+    <title>{{ metadata.title }}</title>
+    {% endif %}
 
     <meta name="generator" content="{{ eleventy.generator }}" />
 
@@ -35,7 +39,7 @@
     <meta property="og:description" content="{{ metadata.description }}" />
     <meta
       property="og:image"
-      content="{{ '/img/og-image.jpg' | url | absoluteUrl(metadata.url) }}"
+      content="{{ '/images/og-image.jpg' | url | absoluteUrl(metadata.url) }}"
     />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -45,7 +49,7 @@
     <meta name="twitter:description" content="{{ metadata.description }}" />
     <meta
       name="twitter:image"
-      content="{{ 'img/og-image.jpg' | url | absoluteUrl(metadata.url) }}"
+      content="{{ 'images/og-image.jpg' | url | absoluteUrl(metadata.url) }}"
     />
 
     <meta name="format-detection" content="telephone=no" />

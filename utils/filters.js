@@ -14,4 +14,5 @@ module.exports = {
   formatDate: (date) => DateTime.fromJSDate(date).toFormat("yyyy-LL-dd"),
   toISO: (date) => DateTime.fromJSDate(date, { zone: "Europe/Warsaw" }).toISO(),
   getYear: (date) => DateTime.fromJSDate(date, { zone: "Europe/Warsaw" }).toFormat("yyyy"),
+  head: (array) => array.slice(0, 3),
 };

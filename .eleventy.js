@@ -6,7 +6,7 @@ const shortcodes = require("./utils/shortcodes.js");
 const aliases = require("./utils/aliases.js");
 
 module.exports = (config) => {
-  config.addPassthroughCopy("src/img");
+  config.addPassthroughCopy("src/images");
   config.addPassthroughCopy({ "src/passthrough": "/" });
 
   config.addPlugin(eleventyNavigationPlugin);
