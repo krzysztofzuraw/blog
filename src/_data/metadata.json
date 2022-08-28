@@ -24,6 +24,11 @@
   "sitemap": {
     "path": "/sitemap.xml"
   },
+  "preloads": [
+    "/fonts/Inter.woff2",
+    "/fonts/JetBrainsMono-Regular.woff2",
+    "/fonts/JetBrainsMono-SemiBold.woff2"
+  ],
   "social": [
     {
       "url": "https://github.com/krzysztofzuraw",

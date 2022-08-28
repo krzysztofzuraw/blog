@@ -22,6 +22,8 @@
       type="application/atom+xml"
       title="{{ feedData.title }}"
     />
+    {% endfor %} {% for path in metadata.preloads %}
+    <link rel="preload" href="{{ path }}" as="font" type="font/woff2" crossorigin />
     {% endfor %}
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | url }}" />

@@ -4,13 +4,15 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const filters = require("./utils/filters.js");
 const shortcodes = require("./utils/shortcodes.js");
 const aliases = require("./utils/aliases.js");
+const copies = require("./utils/copies.js");
 
 module.exports = (config) => {
-  config.addPassthroughCopy("src/images");
-  config.addPassthroughCopy({ "src/passthrough": "/" });
-
   config.addPlugin(eleventyNavigationPlugin);
   config.addPlugin(pluginRss);
+
+  copies.forEach((copy) => {
+    config.addPassthroughCopy(copy);
+  });
 
   Object.keys(filters).forEach((name) => {
     config.addFilter(name, filters[name]);
