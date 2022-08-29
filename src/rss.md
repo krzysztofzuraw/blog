@@ -4,7 +4,7 @@ title: RSS
 eleventyNavigation:
   key: RSS
   parent: Header
-  order: 4
+  order: 5
 ---
 
 Links to RSS feeds:
