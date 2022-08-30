@@ -9,14 +9,11 @@ layout: post
   <li><a href="https://www.meetup.com/WrocTypeScript/">Wroclaw TypeScript</a> co-organizer</li>
   <li>Specialty Coffee nerd</li>
 </ul>
-<p>
-  <a href="/about">More on About page</a>
-</p>
 
 <div class="flex flex-wrap justify-between">
   <div>
     <h2>Top writing</h2>
-    <ol>
+    <ol class="stack">
       <li><a href="/writing/2016/django-cookiecutter/">Django cookiecutter</a></li>
       <li>
         <a href="/writing/2022/migrating-next-js-plugins-from-next-compose-plugins/"
@@ -31,14 +28,10 @@ layout: post
 
   <div>
     <h2>Latest writing</h2>
-    <ol>
+    <ol class="stack">
       {% for item in collections.writing | reverse | head %}
       <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
       {% endfor %}
     </ol>
   </div>
 </div>
-
-<p>
-  <a href="/writing">More on Writing page</a>
-</p>
