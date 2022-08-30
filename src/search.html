@@ -1,0 +1,17 @@
+---
+layout: post
+title: Search
+eleventyNavigation:
+  key: Search
+  parent: Header
+  order: 5
+---
+
+<p>Search this site using DuckDuckGo site search</p>
+
+<form action="https://duckduckgo.com/" method="post" target="_blank" class="inline-form" novalidate>
+  <label for="q">Your query</label>
+  <input type="search" name="q" placeholder="TypeScript" />
+  <input type="hidden" name="sites" value="krzysztofzuraw.com" />
+  <button type="submit" value="Search">Search</button>
+</form>

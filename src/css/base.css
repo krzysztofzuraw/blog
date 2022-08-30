@@ -207,6 +207,7 @@ iframe {
   }
 
   p,
+  label,
   strong,
   li,
   th,
@@ -228,4 +229,12 @@ iframe {
   .post time {
     font-size: var(--size-600);
   }
+}
+
+form {
+  display: grid;
+}
+
+input {
+  width: 100%;
 }
