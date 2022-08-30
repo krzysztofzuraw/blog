@@ -2,7 +2,7 @@
 layout: base
 ---
 
-<article class="prose dark:prose-invert lg:prose-xl">
+<article class="post">
   <h1 lang="{{ lang }}">{{ title }}</h1>
   <time datetime="{{ date | toISO }}">{{ date | humanizeDate }}</time>
   <p>Rating: {{ rating }}/10 ({% rateToWords rating %})</p>

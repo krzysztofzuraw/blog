@@ -10,7 +10,5 @@
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100
   },
-  "editor.quickSuggestions": {
-    "strings": true
-  }
+  "css.validate": false
 }

@@ -1,16 +1,20 @@
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+const navigation = require("@11ty/eleventy-navigation");
+const rss = require("@11ty/eleventy-plugin-rss");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const filters = require("./utils/filters.js");
 const shortcodes = require("./utils/shortcodes.js");
 const aliases = require("./utils/aliases.js");
+const mappings = require("./utils/mappings");
 
 module.exports = (config) => {
-  config.addPassthroughCopy("src/images");
-  config.addPassthroughCopy({ "src/passthrough": "/" });
+  config.addPlugin(navigation);
+  config.addPlugin(rss);
+  config.addPlugin(syntaxHighlight);
 
-  config.addPlugin(eleventyNavigationPlugin);
-  config.addPlugin(pluginRss);
+  mappings.map((path) => {
+    config.addPassthroughCopy(path);
+  });
 
   Object.keys(filters).forEach((name) => {
     config.addFilter(name, filters[name]);

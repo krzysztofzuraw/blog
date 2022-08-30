@@ -1,24 +1,19 @@
 {
   "name": "krzysztofzuraw.com",
   "version": "4.0.0",
-  "description": "Krzysztof Żuraw blog",
+  "description": "Krzysztof Żuraw site",
   "keywords": [
     "blog",
-    "11ty",
-    "tailwindcss"
+    "11ty"
   ],
   "license": "MIT",
   "author": "Krzysztof Żuraw (https://krzysztofzuraw.com/)",
   "main": "n/a",
   "scripts": {
-    "build": "run-s build:*",
-    "build:eleventy": "eleventy",
-    "build:tailwind": "NODE_ENV=production tailwindcss  --input ./src/css/index.css --output ./dist/css/index.css --minify",
+    "build": "eleventy",
+    "clean": "rimraf dist .cache",
     "debug": "DEBUG=* eleventy",
-    "dev": "run-p dev:*",
-    "dev:eleventy": "eleventy --serve",
-    "dev:tailwind": "tailwindcss --input ./src/css/index.css --output ./dist/css/index.css --watch",
-    "clean": "rimraf dist .cache"
+    "dev": "eleventy --serve"
   },
   "prettier": {
     "printWidth": 100
@@ -27,14 +22,12 @@
     "@11ty/eleventy": "1.0.1",
     "@11ty/eleventy-navigation": "0.3.3",
     "@11ty/eleventy-plugin-rss": "1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "4.1.0",
     "@tailwindcss/typography": "0.5.4",
     "image-size": "1.0.2",
     "luxon": "3.0.1",
-    "npm-run-all": "4.1.5",
     "prettier": "2.7.1",
     "prettier-plugin-packagejson": "2.2.18",
-    "prettier-plugin-tailwindcss": "0.1.13",
-    "rimraf": "3.0.2",
-    "tailwindcss": "3.1.8"
+    "rimraf": "3.0.2"
   }
 }
