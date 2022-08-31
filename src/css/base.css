@@ -11,7 +11,9 @@
   --font-sans-serif: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: monospace;
+  --font-serif: "Charter", "Georgia", "sans-serif";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
   --code-token-comment: #6b655a;
   --code-token-function: #756341;
   --code-token-entity: #728fcb;
@@ -195,6 +197,10 @@ p {
 pre,
 iframe {
   max-width: 100ch;
+}
+
+article {
+  font-family: var(--font-serif);
 }
 
 @media (min-width: 45em) {
