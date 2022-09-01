@@ -23,7 +23,7 @@
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.1.0",
     "image-size": "1.0.2",
-    "luxon": "3.0.1",
+    "luxon": "3.0.3",
     "prettier": "2.7.1",
     "prettier-plugin-packagejson": "2.2.18"
   }
