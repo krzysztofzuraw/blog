@@ -102,11 +102,6 @@ label {
   display: grid;
 }
 
-input,
-textarea {
-  padding: 0.5rem;
-}
-
 time {
   white-space: pre;
   font-variant-numeric: tabular-nums;
@@ -243,4 +238,12 @@ form {
 
 input {
   width: 100%;
+  border: 1px solid;
+  padding: 0.5rem;
+}
+
+button {
+  border: 1px solid;
+  background-color: var(--code-background);
+  cursor: pointer;
 }
