@@ -1,13 +1,16 @@
 ---
 layout: page
+title: Blog
+eleventyNavigation:
+  key: Blog
+  parent: Header
+  order: 1
 ---
 
-<h1>{{ title }}</h1>
-
-{% set collection = collections[ collection ] %}
+# Blog
 
 <ol class="stack list">
-  {% for item in collection | reverse %}
+  {% for item in collections.blog | reverse %}
   <li>
     <a href="{{ item.url}}">{{ item.data.title }}</a>
     <time datetime="{{ item.date | toISO }}">{{ item.date | formatDate }}</time>

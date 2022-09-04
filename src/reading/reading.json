@@ -1,5 +1,0 @@
-{
-  "tags": ["reading", "rss"],
-  "layout": "book",
-  "permalink": "/reading/{{ date | getYear }}/{{ title | slugify }}/index.html"
-}
