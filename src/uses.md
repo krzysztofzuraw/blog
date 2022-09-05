@@ -1,11 +1,10 @@
 ---
 layout: post
 title: Uses
-date: 2022-07-23
 eleventyNavigation:
-  key: Uses
-  parent: Header
-  order: 4
+  key: What I'm using
+  parent: Additional
+  order: 2
 ---
 
 ## Hardware

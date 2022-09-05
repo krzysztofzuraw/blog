@@ -3,9 +3,9 @@ layout: post
 title: Now
 date: 2022-01-14
 eleventyNavigation:
-  key: Now
-  parent: Header
-  order: 3
+  key: What I'm doing now
+  parent: Additional
+  order: 1
 ---
 
 - Resting and embracing slow life

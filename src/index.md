@@ -1,10 +1,6 @@
 ---
 layout: page
 title: Blog
-eleventyNavigation:
-  key: Blog
-  parent: Header
-  order: 1
 ---
 
 # Blog

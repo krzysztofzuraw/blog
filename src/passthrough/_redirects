@@ -1,11 +1,1 @@
-/feed.xml                                                   /feeds/all.xml
-/blog/2016/django-cookiecutter.html                         /writing/2016/django-cookiecutter/
-/blog/2016/makefiles-in-python-projects.html                /writing/2016/makefiles-in-python-projects
-/blog/2017/moving-to-relay-in-django-backend.html           /writing/2017/moving-to-relay-in-django-backend/
-/blog/2020/yup-validation-two-fields.html                   /writing/2020/yup-validation-one-field-required-but-not-both-at-the-same-time/
-/blog/2017/gunicorn-lru-cache-pitfall.html                  /writing/2017/gunicorn-and-lru-cache-pitfall/
-/blog/2016/django-cookiecutter.html                         /writing/2016/django-cookiecutter/
-/blog/2016/two-forms-one-view-django.html                   /writing/2016/two-forms-one-view-in-django/
-/2022/migrating-next-js-plugins-from-next-compose-plugins/  /writing/2022/migrating-next-js-plugins-from-next-compose-plugins/
-/2020/setting-up-webpack-for-chrome-extension-development/  /writing/2020/setting-up-webpack-for-chrome-extension-development/
-/2016/geodjango-and-leaflet-js/                             /writing/2016/geodjango-and-leaflet-js/
+/feeds/all.xml /feed.xml
