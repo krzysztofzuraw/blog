@@ -7,8 +7,4 @@ assignees: ''
 
 ---
 
----
-title:
----
-
 <!-- Content-->
