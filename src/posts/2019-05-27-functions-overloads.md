@@ -69,7 +69,7 @@ const countryCodesRetrieved: string = getDataByKey(data, "country");
 
 You can even see that this function is overloaded by hovering:
 
-{% img "2019-05-27-hover", "Overloaded function on hover", "Overloaded function on hover" %}
+{% img "2019-05-27-hover", "Overloaded function on hover" %}
 
 [Link](http://bit.ly/functionOverload "TypeScript playground") to TypeScript playground with code from above.
 

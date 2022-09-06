@@ -87,7 +87,7 @@ shapefiles. You can do it in tool like
 
 In QGIS this shapefile presents as follows:
 
-{% omg "2016-01-01-qgis-woj-shp.jpg", "Shapefiles in QGIS" %}
+{% img "2016-01-01-qgis-woj-shp", "Shapefiles in QGIS" %}
 
 Using ogrinfo:
 
@@ -347,7 +347,7 @@ load.run()
 When you run ./manage.py runserver and go to the admin site you can see
 that geometric field is displayed in form of a map:
 
-{% omg "2016-01-01-dolnoslaskie.jpg", "Dolnoslaskie Voivodeship" %}
+{% img "2016-01-01-dolnoslaskie", "Dolnoslaskie Voivodeship" %}
 
 To make our map more robust let's add additional data (points). There
 are 16 points in capitals of polish voivodeships in CSV file.
@@ -459,7 +459,7 @@ urlpatterns = [
 
 As you can see GeoDjango displays data from database in GeoJSON:
 
-{% omg "2016-01-01-geojson.jpg", "GeoJSON from GeoDjango" %}
+{% img "2016-01-01-geojson", "GeoJSON from GeoDjango" %}
 
 It's nice but end user need to see results on the map not in JSON format
 so I use [Leaflet.js](http://leafletjs.com/).
@@ -523,7 +523,7 @@ After this add new `index.html` under
 And going to the web page with running GeoDjango application you can see
 map:
 
-{% omg "2016-01-01-leaflet.jpg", "Basic Leaflet.js map" %}
+{% img "2016-01-01-leaflet", "Basic Leaflet.js map" %}
 
 Thanks to `django-leaflet` you can control behavior of all maps. Let add
 the following content to end of settings.py:

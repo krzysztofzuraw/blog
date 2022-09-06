@@ -8,7 +8,7 @@ date: 2018-02-10
 Before we jump into debouncing and what it means I want to present you a simple react form. It looks
 like this:
 
-{% img "2018-02-10-form", "Form", "Form" %}
+{% img "2018-02-10-form", "Form" %}
 
 I made this using awesome [Tailwind CSS](https://tailwindcss.com/). The code for this form sits mainly
 in two components - `App.js`:

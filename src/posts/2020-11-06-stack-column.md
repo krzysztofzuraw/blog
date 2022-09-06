@@ -9,7 +9,7 @@ Today I want to write more about new emotion components that we try at [Ingrid](
 
 I want to implement this footer:
 
-{% img "2020-11-06-example-layout", "Footer to implement", "Footer to implement" %}
+{% img "2020-11-06-example-layout", "Footer to implement" %}
 
 It has a logo, text in two rows and horizontal space between them. It sounds not bad.
 I added a logo, then left margin and in the end two rows of text. Or I can use css grid to have the same effect.

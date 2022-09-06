@@ -13,7 +13,7 @@ Today I going to describe my new side project - [ExplainTypeScript](https://expl
 `type` or `interface`, how to use `generics` or what the heck are those `conditional types`. To help them a little
 bit I've created [ExplainTypeScript.com](https://explaintypescript.com/).
 
-{% img "2019-09-03-main", "Main webpage", "Main webpage" %}
+{% img "2019-09-03-main", "Main webpage" %}
 
 Idea behind this website is simple - you want some terminology from TypeScript explained (like previously mentioned `type`) so
 you search through entries to get concise information about the subject.
@@ -21,7 +21,7 @@ You can also find some links to more detailed explanation.
 
 I like to think about ExplainTypeScript as a glossary of terms like [dictionary.com](https://www.dictionary.com/).
 
-{% img "2019-09-03-dictionary", "Dictionary", "Dictionary" %}
+{% img "2019-09-03-dictionary", "Dictionary" %}
 
 ## Contributions are welcome!
 
@@ -33,7 +33,7 @@ add, fix or suggest an entry [here](https://github.com/krzysztofzuraw/explain-ty
 
 ## Plans for the future
 
-{% img "2019-09-03-backlog", "Backlog", "Backlog" %}
+{% img "2019-09-03-backlog", "Backlog" %}
 
 As you see, the backlog is full of terms that will be added - what is a plan for the upcoming months. I will add
 search abilities when the glossary grows in size. If there is anything you want to add - please do it via

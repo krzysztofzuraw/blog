@@ -38,14 +38,14 @@ needs to verify visibility of other nodes in DOM tree thus this operation is exp
 
 You can turn on `paint flashing` in safari here:
 
-{% img "2019-07-05-repaint", "Repaints in safari", "Repaints in safari" %}
+{% img "2019-07-05-repaint", "Repaints in safari" %}
 
 What we found was that user can't scroll but repaints were occurring.
 
 This gives us idea to look into how we block background of modal from scrolling in safari.
 If you don't know having modal in safari will cause background to scroll like here:
 
-{% img "2019-07-05-body", "Safari scroll", "Safari scroll" %}
+{% img "2019-07-05-body", "Safari scroll" %}
 
 ## Summary & TL;DR
 

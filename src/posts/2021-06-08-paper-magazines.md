@@ -9,7 +9,7 @@ I like that it bores me and forces me to make a break.
 
 I'm reading currently two (both in polish): Pismo and Przekrój.
 
-{% omg "2021-06-08-magazines.jpg", "Pismo and Przekrój magazines" %}
+{% img "2021-06-08-magazines", "Pismo and Przekrój magazines" %}
 
 ## Pismo
 

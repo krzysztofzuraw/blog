@@ -1,1 +1,1 @@
-module.exports = ["src/images", { "src/public": "/" }, "src/css"];
+module.exports = [{ "src/public": "/" }, "src/css"];

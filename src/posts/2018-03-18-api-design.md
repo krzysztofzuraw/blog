@@ -6,7 +6,7 @@ date: 2018-03-18
 **Recently I was working with a library called [redux-observable](https://redux-observable.js.org/).
 After using it to write my new epic I opened my devtools to see following warning:**
 
-{% img "2018-03-18-error", "Error", "Error" %}
+{% img "2018-03-18-error", "Error" %}
 
 I started researching what is happening here and I found this [changelog](https://github.com/redux-observable/redux-observable/blob/master/CHANGELOG.md#features-1). One fragment
 took my attention:

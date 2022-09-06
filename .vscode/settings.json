@@ -9,5 +9,6 @@
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100
   },
-  "css.validate": false
+  "css.validate": false,
+  "cSpell.words": ["luxon", "Shortcode", "shortcodes", "syntaxhighlight"]
 }

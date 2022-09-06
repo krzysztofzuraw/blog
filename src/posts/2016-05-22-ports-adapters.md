@@ -30,7 +30,7 @@ to write integration tests.
 
 Such design pattern is also called hexagonal architecture.
 
-{% omg "2016-05-22-reddit-hexagonal.jpg", "Hexagonal architecture" %}
+{% img "2016-05-22-reddit-hexagonal", "Hexagonal architecture" %}
 
 As you can see in above picture all connections to external APIs are
 made using ExternalAPIPort so this class in python knows only about the
@@ -123,17 +123,17 @@ What is happening here? Start from `init` (line 6) which takes
 `reddit_client_id` and `reddit_client_secret` arguments. There are
 created by going to apps tab under preferences:
 
-{% omg "2016-05-22-reddit-apps.jpg", "Reddit apps" %}
+{% img "2016-05-22-reddit-apps", "Reddit apps" %}
 
 After that click on create new application on the end of the page and
 you will see something like this:
 
-{% omg "2016-05-22-reddit-app-creation.jpg", "Reddit application creation" %}
+{% img "2016-05-22-reddit-app-creation", "Reddit application creation" %}
 
 By clicking `create app` you will see that `reddit_client_secret` is
 `secret` and `reddit_client_id` is string under `personal use script`.
 
-{% omg "2016-05-22-reddit-secrets.jpg", "Reddit application secrets" %}
+{% img "2016-05-22-reddit-secrets", "Reddit application secrets" %}
 
 After initialization, there is method called `authorize` (line 16) which
 takes care of proper authorization via [Oauth2](http://oauth.net/2/).

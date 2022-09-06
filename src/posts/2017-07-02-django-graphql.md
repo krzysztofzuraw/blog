@@ -19,7 +19,7 @@ consume GraphQL response using Relay.
 
 For better understanding I created this diagram:
 
-{% img "2017-07-02-flow", "Application flow", "Application flow" %}
+{% img "2017-07-02-flow", "Application flow" %}
 
 As you can see light blue color represents frontend part of a whole
 application. Yellow is GraphQL layer - I like to think about it in terms

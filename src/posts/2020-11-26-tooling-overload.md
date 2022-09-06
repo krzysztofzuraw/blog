@@ -7,7 +7,7 @@ Before I start let me clarify what I mean by tooling in the context of programmi
 
 When I’m thinking about tooling and how cumbersome it can be the first thing that comes to my mind is JavaScript. You probably heard of the black hole of node modules or [days since the last JavaScript framework website](https://dayssincelastjavascriptframework.com/). It means that either ecosystem is a black mess with a huge dependency list and new dependencies come every day.
 
-{% img "2020-11-26-node-weight", "Node modules in the heaviest", "Node modules in the heaviest" %}
+{% img "2020-11-26-node-weight", "Node modules in the heaviest" %}
 
 ## Why is that?
 
