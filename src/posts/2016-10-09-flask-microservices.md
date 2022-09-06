@@ -44,7 +44,7 @@ architectural point of view I have a big monolithic application and
 small microservices that are around this big thing, like in this
 picture:
 
-{% img "2016-10-09-planets", "Microservices in my project", "Microservices in my project" %}
+{% omg "2016-10-09-planets.jpg", "Microservices in my project" %}
 
 # Flask microservices
 

@@ -32,7 +32,7 @@ specific account using
 [IAM](http://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html).
 While creating a user I want to give him access to AWS S3:
 
-{% img "2016-12-04-aws-1", "Policy for IAM user", "Policy for IAM user" %}
+{% omg "2016-12-04-aws-1.jpg", "Policy for IAM user" %}
 
 and after I download its credentials I can create S3 container - I have
 chosen Ireland because with Frankfurt I have a problem with uploading
@@ -42,7 +42,7 @@ More information about that can be found
 [here](http://docs.aws.amazon.com/AmazonS3/latest/dev/intro-managing-access-s3-resources.html).
 Adding policy is quite simple from S3 management view:
 
-{% img "2016-12-04-aws-2", "Policy for S3 bucket", "Policy for S3 bucket" %}
+{% omg "2016-12-04-aws-2.jpg", "Policy for S3 bucket" %}
 
 This policy looks like this:
 
@@ -146,12 +146,12 @@ class StaticStorage(S3BotoStorage):
 To upload my static files I run `python manage.py collectstatic`.
 After a while I can see that my files are in a bucket:
 
-{% img "2016-12-04-aws-3", "Static files inside S3", "Static files inside S3" %}
+{% omg "2016-12-04-aws-3.jpg", "Static files inside S3" %}
 
 Right now when I run my server I can see the location of my static
 files:
 
-{% img "2016-12-04-aws-4", "Static files loaded from S3", "Static files loaded from S3" %}
+{% omg "2016-12-04-aws-4.jpg", "Static files loaded from S3" %}
 
 As static files are working it's high time to use AWS for media files.
 Right now it's simple - in settings I add:
@@ -172,7 +172,7 @@ class MediaStorage(S3BotoStorage):
 Now when I upload my mp3 file it's sent directly to S3 bucket under
 media location:
 
-{% img "2016-12-04-aws-5", "Media files in S3", "Media files in S3" %}
+{% omg "2016-12-04-aws-5.jpg", "Media files in S3" %}
 
 **As I have static and media files integrated with AWS now it's time to
 transcode them. In this post, I will write a short example of how to
@@ -187,13 +187,13 @@ transcoder should work. You can create a different pipeline for long
 content and different for short one. In my application I created the
 following pipeline:
 
-{% img "2016-12-11-pipeline", "Pipeline configuration", "Pipeline configuration" %}
+{% omg "2016-12-11-pipeline.jpg", "Pipeline configuration" %}
 
 As I have my pipeline configured next step is to create jobs. Jobs are
 tasks for a transcoder that say which file I want to transcode, to what
 format or codec I want to do this:
 
-{% img "2016-12-11-job", "Job details", "Job details" %}
+{% omg "2016-12-11-job.jpg", "Job details" %}
 
 PresetID is user created or already existing configuration that defines
 the format of transcoder output: is it mp4 or maybe flac? What
@@ -344,7 +344,7 @@ predefined functions a.k.a blueprints. As a base, I used one called:
 `s3-get-object-python`. As you chosen your function now it's time to add
 trigger so the function can run.
 
-{% img "2016-12-18-lambda-config", "AWS Lambda configuration", "AWS Lambda configuration" %}
+{% omg "2016-12-18-lambda-config.jpg", "AWS Lambda configuration" %}
 
 And AWS Lambda function is created! But by default, it only gets content
 type of the object that is put in the S3 bucket. If I want to start to
@@ -461,7 +461,7 @@ function will run against this test event:
 Right now clicking test you can know if your function is behaving
 correctly:
 
-{% img "2016-12-18-result", "AWS Lambda test function result", "AWS Lambda test function result" %}
+{% omg "2016-12-18-result.jpg", "AWS Lambda test function result" %}
 
 That's all! Your function is working and creating transcode jobs. This
 is another way of accomplishing the same result -transcoding the files
@@ -476,13 +476,13 @@ transcode job.**
 
 After logging to AWS console and selecting SNS I have to create a topic:
 
-{% img "2017-01-15-topic", "SNS topic", "SNS topic" %}
+{% omg "2017-01-15-topic.jpg", "SNS topic" %}
 
 Topic is endpoint for other application in AWS to send their
 notifications. For my case I have to change it in AWS Transcoder
 pipeline settings:
 
-{% img "2017-01-15-config", "Transcoder SNS subscription", "Transcoder SNS subscription" %}
+{% omg "2017-01-15-config.jpg", "Transcoder SNS subscription" %}
 
 Last thing I have to do was to create subscription for topic created
 above. They are a lot of types of subscription that you can find in SNS
@@ -584,7 +584,7 @@ http://fba8f218.ngrok.io/.
 
 With this url I go to AWS SNS subscription tab and add new subscription:
 
-{% img "2017-01-15-subscription", "Creating a SNS subscription", "Creating a SNS subscription" %}
+{% omg "2017-01-15-subscription.jpg", "Creating a SNS subscription" %}
 
 After setting this up you will receive SNS message with link that you
 need to paste in browser to confirm subscription.
@@ -689,7 +689,7 @@ And adding a message as django template tag:
 
 Which renders as follows:
 
-{% img "2017-01-22-message", "Transcode complete message", "Transcode complete message" %}
+{% omg "2017-01-22-message.jpg", "Transcode complete message" %}
 
 In the previous screenshot, there is an X that dismiss the message and
 make it read. To communicate with the backend I wrote quick jQuery
