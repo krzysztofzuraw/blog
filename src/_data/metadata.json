@@ -1,16 +1,16 @@
 {
   "language": "en",
-  "title": "Krzysztof Żuraw",
+  "title": "Krzysztof Żuraw blog",
   "author": {
     "name": "Krzysztof Żuraw",
     "email": "use-contact-social-media@kzuraw.com"
   },
-  "description": "TypeScript, React & all things frontend",
+  "description": "Blog about TypeScript, React & all things frontend",
   "keywords": "TypeScript, React, HTML, CSS, blog",
   "url": "https://krzysztofzuraw.com",
   "domain": "krzysztofzuraw.com",
   "feed": {
-    "title": "RSS | Krzysztof Żuraw",
+    "title": "RSS | Krzysztof Żuraw blog",
     "path": "/feed.xml",
     "id": "https://krzysztofzuraw.com"
   },

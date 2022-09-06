@@ -11,13 +11,13 @@ eleventyNavigation:
   {% set absoluteUrl %}{{ metadata.feed.path | url | absoluteUrl(metadata.url) }}{% endset %}
   <link href="{{ absoluteUrl }}" rel="self" />
   <link href="{{ metadata.url }}" />
-  <updated>{{ collections.blog | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ metadata.feed.id }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
-  {%- for post in collections.blog | reverse %} {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url)}}{% endset %}
+  {% for post in collections.posts | reverse %} {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url)}}{% endset %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}" />
@@ -25,5 +25,5 @@ eleventyNavigation:
     <id>{{ absolutePostUrl }}</id>
     <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
   </entry>
-  {%- endfor %}
+  {% endfor %}
 </feed>
