@@ -38,7 +38,7 @@ If you then run `npm run cypress:open` and wait a little bit when cypress is ver
 (if you are on OSX) after a while, you should see a cypress dashboard with a welcoming message.
 You can close it.
 
-{% img "2020-03-07-dashboard", "Dashboard", "Dashboard with e2e test" %}
+{% img "2020-03-07-dashboard", "Dashboard with e2e test" %}
 
 When you look into your files you may see that there is a new folder called `cypress` created. This
 is the place where you gonna store your e2e tests.
@@ -72,7 +72,7 @@ development server is on, switch to the other terminal tab and execute `npm run 
 Your tests should start - if they fail you can see screenshots & videos inside: `cypress/videos`
 and `cypress/screenshots`. I recommend adding those paths to gitignore.
 
-{% img "2020-03-07-output", "Output", "Headless e2e test run output" %}
+{% img "2020-03-07-output", "Headless e2e test run output" %}
 
 You may spot `test:e2e:ci` inside `package.json` scripts. It is used to run cypres on my PRs using
 github actions:

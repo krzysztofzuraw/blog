@@ -1,17 +1,29 @@
 const { DateTime } = require("luxon");
-const sizeOf = require("image-size");
 const path = require("path");
+const Image = require("@11ty/eleventy-img");
 
 module.exports = {
-  currentYear: () => DateTime.now().toLocaleString({ year: "numeric" }),
-  img: (imgPath, alt, figcaption) => {
-    const dimensions = sizeOf(path.resolve(process.cwd(), "src", "images", `${imgPath}.webp`));
+  default: {
+    currentYear: () => DateTime.now().toLocaleString({ year: "numeric" }),
+  },
+  async: {
+    img: async (filename, alt) => {
+      const src = path.resolve(process.cwd(), "src", "img", `${filename}.jpg`);
 
-    return `<figure>
-       <a href="/images/${imgPath}.webp" target="_blank" rel="noopener">
-        <img src="/images/${imgPath}.webp" loading="lazy" alt="${alt}" height="${dimensions.height}" width="${dimensions.width}">
-      </a>
-      <figcaption>${figcaption}</figcaption>
-    </figure>`;
+      const metadata = await Image(src, {
+        widths: [300, 600, 1200, null],
+        formats: ["avif", "webp", null],
+        outputDir: "dist/img",
+      });
+
+      const imageAttributes = {
+        alt,
+        sizes: "100vw",
+        loading: "lazy",
+        decoding: "async",
+      };
+
+      return Image.generateHTML(metadata, imageAttributes);
+    },
   },
 };

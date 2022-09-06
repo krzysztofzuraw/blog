@@ -1,0 +1,7 @@
+{
+  "Insert image": {
+    "prefix": "img",
+    "body": ["{% img \"./src/${1:source}\", \"${2:alt}\" %} ${0}"],
+    "description": "Insert image"
+  }
+}

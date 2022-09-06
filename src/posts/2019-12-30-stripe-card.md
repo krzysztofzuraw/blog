@@ -9,7 +9,7 @@ Most of the time I see some advice on how to be better on writing CSS and be bet
 
 I did exactly this. I took a small card and try as I can best to implement it without looking at source code. Then I went back to see differences and similarities.
 
-{% img "2019-12-30-third", "Stripe", "Stripe" %}
+{% img "2019-12-30-third", "Stripe" %}
 
 Part of stripe website I decided to implement by myself.
 
@@ -19,7 +19,7 @@ Part of stripe website I decided to implement by myself.
 
 I've started with card implementation card - it is `div` that has `border-radius` and `box-shadow`. I used `flexbox` to position elements inside it. This second property was really hard for me to implement as I normally always copy shadow values either from designs or from source code. As you can see it below:
 
-{% img "2019-12-30-first", "My card", "My card" %}
+{% img "2019-12-30-first", "My card" %}
 
 It stills create an effect that the card is elevated a little bit than the background.
 
@@ -27,7 +27,7 @@ It stills create an effect that the card is elevated a little bit than the backg
 
 The first thing that I've noticed was that they used `a` tag as a card instead of `div`. A clever trick that automatically allows a user to be redirected into another page without having `onClick` handlers as in case of my implementation. Interesting is also `box-shadow` property - instead of one value they used 3 slightly different to create an effect of shadows from 3 different sides:
 
-{% img "2019-12-30-second", "Box shadow", "Box shadow" %}
+{% img "2019-12-30-second", "Box shadow" %}
 
 ## Header & Paragraph
 
@@ -45,7 +45,7 @@ They added a little bit of spacing by using the`letter-spacing` property. You ca
 
 Here things start to be a little bit tricky as I do not want to create YouTube logo (To be honest I don't have yet skills to do so). So I've added a SVG circle and I fill it with color. On hover, I've changed it to be darker but my implementation has one weak point - changing of color occurs only when a user hovers over circle directly.
 
-{% img "2019-12-30-animation", "Animation", "Animation" %}
+{% img "2019-12-30-animation", "Animation" %}
 
 ### Stripe
 

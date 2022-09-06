@@ -84,11 +84,11 @@ Lastly I have two commands for webpack
 
 Below you have diagram presenting how `npm start` is working under the hood
 
-{% img "2020-09-18-webpack-watch", "How npm start in working under the hood", "How npm start in working under the hood" %}
+{% img "2020-09-18-webpack-watch", "How npm start in working under the hood" %}
 
 All you need to do after running `npm start` is to tell chrome that there is unpacked extension in the `dist/*` folder. To do that you need to go to `chrome://extensions/` and select options which are visible in the picture below (numbers indicate ordered selection of buttons/switches):
 
-{% img "2020-09-18-load-ext", "Load unpacked extension configuration", "Load unpacked extension configuration" %}
+{% img "2020-09-18-load-ext", "Load unpacked extension configuration" %}
 
 ## Summary
 

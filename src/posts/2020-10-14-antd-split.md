@@ -17,7 +17,7 @@ and I wanted to customize default theme variables. To do that I've created a `th
 Everything was fine until I looked into [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer)
 I saw that `theme.less` was taking a huge portion of the overall bundle size:
 
-{% img "2020-10-14-bundle-analysis", "Bundle analysis", "Bundle analysis" %}
+{% img "2020-10-14-bundle-analysis", "Bundle analysis" %}
 
 ## What is the problem here?
 

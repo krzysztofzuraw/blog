@@ -5,7 +5,7 @@ date: 2020-05-25
 
 If you are working with TypeScript I bet you come across such compilation errors:
 
-{% img "2020-05-25-error", "RxJS error", "RxJS error" %}
+{% img "2020-05-25-error", "RxJS error" %}
 
 Sometimes TypeScript has a lot to say when it is throwing an error so community even made some [stickers](https://github.com/orta/typescript-stickers):
 

@@ -17,7 +17,7 @@ Also, Geddski [blog post](https://gedd.ski/post/state-machines-in-react/) is a g
 Imagine that you work on new inputs for the company website. Designers handle you an instruction how the
 input should look like:
 
-{% img "2019-10-27-design", "Design", "Design" %}
+{% img "2019-10-27-design", "Design" %}
 
 In the picture above there are possible states of that input.
 
@@ -37,7 +37,7 @@ ability to prevent impossible states from happening?
 Let me introduce you to [Xstate](https://xstate.js.org/). As you may notice we are going to use
 statecharts to represent input logic. Let's draw one:
 
-{% img "2019-10-27-statecharts", "Statecharts", "Statechars" %}
+{% img "2019-10-27-statecharts", "Statechars" %}
 
 We gonna have two parallel state machines:
 
@@ -105,7 +105,7 @@ to be consistent because you are going to use them later.
 Xstate comes with [visualizer](https://xstate.js.org/viz) so you can generate state machine diagram
 by yourself:
 
-{% img "2019-10-27-basic", "Diagram", "Diagram" %}
+{% img "2019-10-27-basic", "Diagram" %}
 
 You can also use this [link](https://xstate.js.org/viz/?gist=008d1fa65626a14e0fae318f3dc5fc9a).
 
@@ -165,7 +165,7 @@ For example: on transitioning from `enabled` to `hover` I [assign](https://xstat
 
 This is how it looks like in [visualizer](https://xstate.js.org/viz/?gist=dec8d4bef401557829457f44ffb929b3):
 
-{% img "2019-10-27-assign-machine", "Assign machine", "Assign machine" %}
+{% img "2019-10-27-assign-machine", "Assign machine" %}
 
 ### Label state machine
 
@@ -199,7 +199,7 @@ const labelMachine = Machine({
 The logic here is the same as in the previous example but I have changed `opacity`
 on state transitions. [Diagram](https://xstate.js.org/viz/?gist=e689e1c045769d47137a8338639e715a) also looks the same:
 
-{% img "2019-10-27-label-machine", "Label machine", "Label machine" %}
+{% img "2019-10-27-label-machine", "Label machine" %}
 
 #### Xstate + React
 

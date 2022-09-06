@@ -20,8 +20,12 @@ module.exports = (config) => {
     config.addFilter(name, filters[name]);
   });
 
-  Object.keys(shortcodes).forEach((name) => {
-    config.addShortcode(name, shortcodes[name]);
+  Object.keys(shortcodes.default).forEach((name) => {
+    config.addShortcode(name, shortcodes.default[name]);
+  });
+
+  Object.keys(shortcodes.async).forEach((name) => {
+    config.addNunjucksAsyncShortcode(name, shortcodes.async[name]);
   });
 
   Object.keys(aliases).forEach((name) => {

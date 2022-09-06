@@ -12,7 +12,7 @@ user focus input.
 
 You can see screenshot below:
 
-{% img "2020-12-11-til", "til", "Focused page" %}
+{% img "2020-12-11-til", "Focused page" %}
 
 You can find this setting under `Rendering/Emulate Focused Page` inside chrome devtools.
 `Rendering` tab can be accessed by `CMD+SHIFT+P` and typing `Rendering`.

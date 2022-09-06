@@ -7,7 +7,7 @@ Recently in my work, I stumbled upon an interesting problem to solve. I needed t
 a valid token only for the next 10 minutes and after that 10 minutes logout them.
 You can see the user flow with more details on the illustration below.
 
-{% img "2020-08-21-token-flow", "Expiration token flow", "Expiration token flow" %}
+{% img "2020-08-21-token-flow", "Expiration token flow" %}
 
 For this use case, I decided to use a [redux-observable](https://redux-observable.js.org/) - in this blog
 post, I will write how I did it. I assume that you are familiar with the [RxJS](https://rxjs-dev.firebaseapp.com/).

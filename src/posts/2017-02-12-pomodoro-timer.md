@@ -132,7 +132,7 @@ element in its available space. `.control_buttons` are evenly spaced on
 the webpage with space between them by `space-around`. After loading a
 page it looks like this:
 
-{% img "2017-02-17-layout", "Basic layout", "Basic layout" %}
+{% img "2017-02-17-layout", "Basic layout" %}
 
 I am aware that this look needs a bit of work though. As I have my
 styles ready I add this HTML to the body:
@@ -348,7 +348,7 @@ user clicks notification it will switch him/ her to pomodoro timer tab.
 
 This is how my notification looks like:
 
-{% img "2017-02-26-notification", "Notification", "Notification" %}
+{% img "2017-02-26-notification", "Notification" %}
 
 ## Breaks for pomodoro timer
 
@@ -463,7 +463,7 @@ I also reload page without cache by `window.location.reload(true)`.
 
 Entries look as follows:
 
-{% img "2017-03-05-storage", "Storage", "Storage" %}
+{% img "2017-03-05-storage", "Storage" %}
 
 ## How to check how good your pomodoro was?
 
@@ -555,7 +555,7 @@ I apply some styling to buttons and questions too:
 
 Thanks to that my modal looks like this:
 
-{% img "2017-03-12-modal", "Modal for pomodoro timer", "Modal for pomodoro timer" %}
+{% img "2017-03-12-modal", "Modal for pomodoro timer" %}
 
 As I have my CSS & HTML done right now it's time to write some code in
 javascript.

@@ -5,11 +5,11 @@ date: 2021-03-27
 
 I recently decided to generate social images for my blog. You know those images that are being displayed by facebook or twitter when you share link on those platforms:
 
-{% img "2021-03-27-example", "Social card example", "Social card example" %}
+{% img "2021-03-27-example", "Social card example" %}
 
 I want to get started and create something in finished time so I prepared a minimalistic version of banner using [figma social branding template](https://www.figma.com/community/file/820337605519256142):
 
-{% img "2021-03-27-social-card", "My social card example", "My social card example" %}
+{% img "2021-03-27-social-card", "My social card example" %}
 
 When I had my design in place I started searching for solutions on how to generate social images. What I wanted is:
 

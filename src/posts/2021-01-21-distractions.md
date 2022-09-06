@@ -9,18 +9,18 @@ In this blog post I want to write more about different techniques I tried to low
 
 Thanks to reading about [Tools for keeping focused](https://www.benkuhn.net/focustools) blog post I’ve discovered that [uBlock Origin](https://github.com/gorhill/uBlock) blocks ads and elements on the page! You can see below how does facebook navbar looks like without uBlock:
 
-{% img "2021-01-21-without-ublock", "Facebook navbar without uBlock", "Facebook navbar without uBlock" %}
+{% img "2021-01-21-without-ublock", "Facebook navbar without uBlock" %}
 
 and with:
 
-{% img "2021-01-21-with-ublock", "Facebook navbar with uBlock", "Facebook navbar with uBlock" %}
+{% img "2021-01-21-with-ublock", "Facebook navbar with uBlock" %}
 
 How to use uBlock to block elements on the page?
 
 1. Click uBlock extension
 2. Click eyedropper (if it is not visible try to click `^ More` button ) and select which part of website you want to block
 
-{% img "2021-01-21-ublock-dropdown", "uBlock eyedropper location in dropdown", "uBlock eyedropper location in dropdown" %}
+{% img "2021-01-21-ublock-dropdown", "uBlock eyedropper location in dropdown" %}
 
 You can try to block news feeds using uBlock but for that specific use case I recommend [News Feed Eradicator](http://west.io/news-feed-eradicator). What is awesome about this extension is a fact it works on with many social media sites (facebook, twitter, hacker news & reddit). Another neat thing is ability to tell news feed eradicator that you want your feed back for next 10 minutes. After that time feed is blocked again. No more mindless scrolling!
 
@@ -38,7 +38,7 @@ To overcome instant need of checking slack - I turned off notifications. On mac 
 
 Recently I started moving my phone & tablet into other room while working. I changed settings that all important notifications are delivered quietly.
 
-{% img "2021-01-21-deliver-quietly", "Delivery Quietly settings in iPhone", "Delivery Quietly settings in iPhone" %}
+{% img "2021-01-21-deliver-quietly", "Delivery Quietly settings in iPhone" %}
 
 I feel less tempted to check them while they are in other room. If I need I can still dictate my todos or check weather from apple watch. I put both devices into focus mode by using following iOS shortcuts: [focus start](https://kzuraw.dev/focus-start) & [focus end](https://kzuraw.dev/focus-end).
 
