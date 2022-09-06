@@ -43,7 +43,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   display: grid;
-  row-gap: clamp(1rem, 4rem);
+  row-gap: clamp(1rem, 1vw, 4rem);
   grid-template-columns: 1fr min(90vw, 100%) 1fr;
   grid-template-rows: auto 1fr auto;
   padding: var(--size-400);

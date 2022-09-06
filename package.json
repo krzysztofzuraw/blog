@@ -1,7 +1,7 @@
 {
-  "name": "krzysztofzuraw.com",
+  "name": "blog",
   "version": "4.0.0",
-  "description": "Krzysztof Żuraw site",
+  "description": "Krzysztof Żuraw blog",
   "keywords": [
     "blog",
     "11ty"
