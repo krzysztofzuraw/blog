@@ -17,6 +17,7 @@
   --code-token-function: #756341;
   --code-token-entity: #728fcb;
   --code-background: #efefef;
+  --code-token-selector: #2d2006;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,6 +28,7 @@
     --code-token-function: #dbd7ce;
     --code-token-entity: #dde6f9;
     --code-background: #eeeeee36;
+    --code-token-selector: #dcd8d0;
   }
 }
 
