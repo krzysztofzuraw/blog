@@ -66,7 +66,7 @@ pre[class*="language-"] {
 .token.tag-id,
 .token.selector,
 .token.atrule-id {
-  color: #2d2006;
+  color: var(--code-token-selector);
 }
 
 code.language-javascript,
