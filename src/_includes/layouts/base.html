@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="{{ page.url }}" />
 
+    {% if title %}
     <title>{{ title }} | {{ metadata.title }}</title>
+    {% else %}
+    <title>{{ metadata.title }}</title>
+    {% endif %}
 
     <meta name="generator" content="{{ eleventy.generator }}" />
 
@@ -51,7 +55,7 @@
 
   <body>
     <header>
-      <strong><a href="/">{{ metadata.title }}</a></strong>
+      <strong>{{ metadata.title }}</strong>
       <ul>
         {% for entry in collections.all | eleventyNavigation("Header") %}
         <li class="{% if entry.url == page.url %} header-item-active {% endif %}">

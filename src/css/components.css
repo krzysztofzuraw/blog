@@ -6,8 +6,13 @@
 
 .list > li {
   display: grid;
-  grid-template-columns: 1fr min-content;
   gap: 0.5rem;
+}
+
+@media (min-width: 45em) {
+  .list > li {
+    grid-template-columns: 1fr min-content;
+  }
 }
 
 .header-item-active {

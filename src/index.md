@@ -1,9 +1,12 @@
 ---
 layout: page
-title: Blog
+eleventyNavigation:
+  key: Home
+  parent: Header
+  order: 1
 ---
 
-# Blog
+# Posts
 
 <ol class="stack list">
   {% for item in collections.blog | reverse %}
