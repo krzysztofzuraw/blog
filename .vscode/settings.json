@@ -16,6 +16,7 @@
     "luxon",
     "Shortcode",
     "shortcodes",
+    "SUPABASE",
     "syntaxhighlight"
   ]
 }
