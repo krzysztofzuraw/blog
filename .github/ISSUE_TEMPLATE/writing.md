@@ -1,7 +1,7 @@
 ---
 name: Writing
 about: Add new writing idea
-title: "[WRITING]"
+title: ""
 labels: writing
 assignees: ''
 
