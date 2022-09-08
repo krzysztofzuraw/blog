@@ -10,5 +10,12 @@
     "editor.wordWrapColumn": 100
   },
   "css.validate": false,
-  "cSpell.words": ["luxon", "Shortcode", "shortcodes", "syntaxhighlight"]
+  "cSpell.words": [
+    "endfor",
+    "krzysztofzuraw",
+    "luxon",
+    "Shortcode",
+    "shortcodes",
+    "syntaxhighlight"
+  ]
 }

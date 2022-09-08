@@ -12,7 +12,9 @@
   "scripts": {
     "build": "eleventy",
     "debug": "DEBUG=* eleventy",
-    "dev": "eleventy --serve"
+    "dev": "eleventy --serve",
+    "new:writing": "./scripts/writing.sh",
+    "new:reading": "./scripts/reading.sh"
   },
   "prettier": {
     "printWidth": 100

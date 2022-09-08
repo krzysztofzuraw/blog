@@ -23,3 +23,10 @@ Run production build:
 ```shell
 npm run build
 ```
+
+Generate empty placeholders for reading/writing entries
+
+```shell
+npm run new:reading
+npm run new:writing
+```
