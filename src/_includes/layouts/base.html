@@ -5,22 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="{{ page.url }}" />
 
-    {% if title %}
     <title>{{ title }} | {{ metadata.title }}</title>
-    {% else %}
-    <title>{{ metadata.title }}</title>
-    {% endif %}
 
     <meta name="generator" content="{{ eleventy.generator }}" />
 
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}" />
 
+    {% for feed, data in metadata.feeds %}
     <link
       rel="alternate"
-      href="{{ metadata.feed.path | url }}"
+      href="{{ data.path | url }}"
       type="application/atom+xml"
-      title="{{ metadata.feed.title }}"
+      title="{{ data.title }}"
     />
+    {% endfor %}
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | url }}" />
     <link rel="sitemap" type="application/xml" href="{{ metadata.sitemap.path | url }}" />

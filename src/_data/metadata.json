@@ -14,6 +14,18 @@
     "path": "/feed.xml",
     "id": "https://krzysztofzuraw.com"
   },
+  "feeds": {
+    "rss": {
+      "title": "RSS | Krzysztof Żuraw blog",
+      "path": "/feed.xml",
+      "id": "https://krzysztofzuraw.com"
+    },
+    "starred": {
+      "title": "Starred articles | Krzysztof Żuraw blog",
+      "path": "https://feedbin.com/starred/97b1c82a106767ca5f271cfe50986280.xml",
+      "id": "https://feedbin.com"
+    }
+  },
   "sitemap": {
     "path": "/sitemap.xml"
   },
