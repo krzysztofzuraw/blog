@@ -1,7 +1,7 @@
 ---
 name: Reading
 about: Add new reading idea
-title: "[READING]"
+title: ""
 labels: reading
 assignees: ''
 
