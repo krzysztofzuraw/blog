@@ -1,15 +1,15 @@
 ---
 layout: page
 eleventyNavigation:
-  key: Home
+  key: Writing
   parent: Header
   order: 1
 ---
 
-# Posts
+# Writing
 
 <ol class="stack list">
-  {% for post in collections.posts | reverse %}
+  {% for post in collections.writing | reverse %}
   <li>
     <a href="{{ post.url}}">{{ post.data.title }}</a>
     <time datetime="{{ post.date | toISO }}">{{ post.date | formatDate }}</time>
