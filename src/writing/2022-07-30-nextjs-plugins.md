@@ -23,7 +23,21 @@ module.exports = () => {
 It worked fine but I wanted to pass argument to `withSentryConfig` - i turns out that I need to pass it as another argument to `next` function in reduce:
 
 ```js
-return plugins.reduce((acc, next) => next(acc, {silent: true }, {
-  // the rest of next.js config
-});
+return plugins.reduce(
+  (acc, next) => {
+    if (next.name === "withSentryConfig") {
+      return next(acc, { silent: true });
+    }
+
+    return next(acc);
+  },
+  {
+    // the rest of next.js config
+  }
+);
 ```
+
+## Changelog
+
+1. Update the last snippet after feedback from [Miguel Leite
+   ](https://dev.to/miguelacleite/comment/21g7l)
