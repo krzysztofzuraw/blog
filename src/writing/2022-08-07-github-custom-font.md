@@ -15,6 +15,7 @@ code,
 .blob-code,
 .blob-code-marker,
 .input-monospace,
+.blob-code-inner,
 .markdown-body code {
   font-family: MonoLisa;
 }
