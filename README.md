@@ -24,9 +24,8 @@ Run production build:
 npm run build
 ```
 
-Generate empty placeholders for reading/writing entries
+Generate empty placeholders for post entry
 
 ```shell
-npm run new:reading
-npm run new:writing
+npm run new:post
 ```

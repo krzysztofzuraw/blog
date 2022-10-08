@@ -13,7 +13,6 @@
     "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
-  --font-serif: "Charter", "Georgia", serif;
   --code-token-comment: #6b655a;
   --code-token-function: #756341;
   --code-token-entity: #728fcb;
@@ -97,6 +96,10 @@ footer ul {
 time {
   white-space: pre;
   font-variant-numeric: tabular-nums;
+}
+
+code {
+  font-family: var(--font-mono);
 }
 
 ::-webkit-scrollbar {
@@ -184,10 +187,6 @@ p {
 pre,
 iframe {
   max-width: 100ch;
-}
-
-article {
-  font-family: var(--font-serif);
 }
 
 @media (min-width: 45em) {
