@@ -7,15 +7,13 @@ eleventyNavigation:
   order: 1
 ---
 
-<h1>Home</h1>
-
-{% set collection = collections.posts %}
+# Home
 
 <ol class="stack list">
-  {% for item in collection | reverse %}
+  {% for post in collections.posts | reverse %}
   <li>
-    <a href="{{ item.url}}">{{ item.data.title }}</a>
-    <time datetime="{{ item.date | toISO }}">{{ item.date | formatDate }}</time>
+    <a href="{{ post.url}}">{{ post.data.title }}</a>
+    <time datetime="{{ post.date | toISO }}">{{ post.date | formatDate }}</time>
   </li>
   {% endfor %}
 </ol>

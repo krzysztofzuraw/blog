@@ -9,14 +9,5 @@
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100
   },
-  "css.validate": false,
-  "cSpell.words": [
-    "endfor",
-    "krzysztofzuraw",
-    "luxon",
-    "Shortcode",
-    "shortcodes",
-    "SUPABASE",
-    "syntaxhighlight"
-  ]
+  "css.validate": false
 }
