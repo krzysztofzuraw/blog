@@ -2,4 +2,3 @@
 @import url("base.css") layer(base);
 @import url("prism.css") layer(prism);
 @import url("utilities.css") layer(utilities);
-@import url("components.css") layer(components);

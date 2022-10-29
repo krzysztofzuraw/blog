@@ -46,16 +46,16 @@
   </head>
 
   <body>
-    <header>
+    <nav>
       <strong>{{ metadata.title }}</strong>
       <ul>
         {% for entry in collections.all | eleventyNavigation("Header") %}
-        <li class="{% if entry.url == page.url %} header-item-active {% endif %}">
+        <li {% if entry.url == page.url %} aria-current="page" {% endif %}>
           <a href="{{ entry.url | url }}">{{ entry.title }}</a>
         </li>
         {% endfor %}
       </ul>
-    </header>
+    </nav>
     <main>{{ content | safe }}</main>
     <footer class="box">
       <p>© 2016-{% currentYear %} {{ metadata.author.name }}</p>

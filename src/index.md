@@ -9,7 +9,7 @@ eleventyNavigation:
 
 # Home
 
-<ol class="stack list">
+<ol class="stack" role="list">
   {% for post in collections.posts | reverse %}
   <li>
     <a href="{{ post.url}}">{{ post.data.title }}</a>
