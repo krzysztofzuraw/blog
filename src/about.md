@@ -3,7 +3,7 @@ layout: post
 title: About
 eleventyNavigation:
   key: About
-  parent: Header
+  parent: Nav
   order: 3
 ---
 

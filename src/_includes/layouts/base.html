@@ -49,7 +49,7 @@
     <nav>
       <strong>{{ metadata.title }}</strong>
       <ul>
-        {% for entry in collections.all | eleventyNavigation("Header") %}
+        {% for entry in collections.all | eleventyNavigation("Nav") %}
         <li {% if entry.url == page.url %} aria-current="page" {% endif %}>
           <a href="{{ entry.url | url }}">{{ entry.title }}</a>
         </li>
