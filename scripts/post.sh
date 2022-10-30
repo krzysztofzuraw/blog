@@ -4,8 +4,8 @@ echo "---
 spell-checker: disable
 title: WIP
 date: $(date -u +%Y-%m-%dT%H:%M:%SZ)
----" > src/writing/$(date +%F)-wip.md
+---" > src/posts/$(date +%F)-wip.md
 
-code src/writing/$(date +%F)-wip.md
+code src/posts/$(date +%F)-wip.md
 
-echo 'Writing entry created'
+echo 'Blog entry created 🎉'
