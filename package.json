@@ -26,7 +26,6 @@
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.1.0",
     "luxon": "3.1.0",
-    "netlify-plugin-cache": "1.0.3",
     "prettier": "2.7.1"
   }
 }
