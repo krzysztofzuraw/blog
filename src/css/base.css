@@ -11,7 +11,6 @@
   --font-sans-serif: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
-  --font-serif: Charter, Georgia, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
   --code-token-comment: #6b655a;
@@ -129,10 +128,6 @@ a:not([class]) {
 ::selection {
   color: var(--bg-color, #fff);
   background: var(--text-color, rgba(0, 0, 0, 0.99));
-}
-
-article {
-  font-family: var(--font-serif);
 }
 
 article a {
