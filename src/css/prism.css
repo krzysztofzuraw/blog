@@ -71,7 +71,7 @@ pre[class*="language-"] {
 
 code.language-javascript,
 .token.attr-name {
-  color: #896724;
+  color: hsla(40, 58%, 34%, 100%);
 }
 
 code.language-css,
@@ -99,7 +99,7 @@ code.language-scss,
 
 .token.placeholder,
 .token.variable {
-  color: #93abdc;
+  color: hsla(220, 51%, 72%, 100%);
 }
 
 .token.deleted {
@@ -107,7 +107,7 @@ code.language-scss,
 }
 
 .token.inserted {
-  border-bottom: 1px dotted #2d2006;
+  border-bottom: 1px dotted hsla(40, 76%, 10%, 100%);
   text-decoration: none;
 }
 
@@ -121,7 +121,7 @@ code.language-scss,
 }
 
 .token.important {
-  color: #896724;
+  color: hsla(40, 58%, 34%, 100%);
 }
 
 .token.entity {

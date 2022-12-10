@@ -6,29 +6,29 @@
   --size-700: 2.36rem;
   --size-800: 3.15rem;
   --size-900: 4.2rem;
-  --bg-color: #fafafa;
-  --text-color: #333;
+  --bg-color: hsla(0, 0%, 98%, 100%);
+  --text-color: hsla(0, 0%, 20%, 100%);
   --font-sans-serif: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
-  --code-token-comment: #6b655a;
-  --code-token-function: #756341;
-  --code-token-entity: #728fcb;
-  --code-background: #efefef;
-  --code-token-selector: #2d2006;
+  --code-token-comment: hsla(39, 9%, 39%, 100%);
+  --code-token-function: hsla(39, 29%, 36%, 100%);
+  --code-token-entity: hsla(220, 46%, 62%, 100%);
+  --code-background: hsla(0, 0%, 94%, 100%);
+  --code-token-selector: hsla(40, 76%, 10%, 100%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #333;
-    --text-color: #fafafa;
-    --code-token-comment: #d7d2ca;
-    --code-token-function: #dbd7ce;
-    --code-token-entity: #dde6f9;
-    --code-background: #eeeeee36;
-    --code-token-selector: #dcd8d0;
+    --bg-color: hsla(0, 0%, 20%, 100%);
+    --text-color: hsla(0, 0%, 98%, 100%);
+    --code-token-comment: hsla(37, 14%, 82%, 100%);
+    --code-token-function: hsla(42, 15%, 83%, 100%);
+    --code-token-entity: hsla(221, 70%, 92%, 100%);
+    --code-background: hsla(360, 100%, 97%, 21%);
+    --code-token-selector: hsla(40, 15%, 84%, 100%);
   }
 }
 
@@ -126,8 +126,8 @@ a:not([class]) {
 }
 
 ::selection {
-  color: var(--bg-color, #fff);
-  background: var(--text-color, rgba(0, 0, 0, 0.99));
+  color: var(--bg-color, hsla(0, 0%, 100%, 100%));
+  background: var(--text-color, hsla(0, 0%, 0%, 99%));
 }
 
 article a {
