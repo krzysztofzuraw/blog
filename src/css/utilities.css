@@ -10,9 +10,9 @@
 }
 
 .stack > * + * {
-  margin-top: var(--space, 1.5rem);
+  margin-top: var(--space, var(--space-m));
 }
 
 .box {
-  padding: var(--padding, 1.5rem);
+  padding: var(--padding, var(--space-m));
 }
