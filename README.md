@@ -9,24 +9,24 @@ This repository contains code & blog post for my [blog](https://krzysztofzuraw.c
 Install dependencies:
 
 ```shell
-npm run install
+pnpm install
 ```
 
 Run development server:
 
 ```shell
-npm run dev
+pnpm dev
 ```
 
 Run production build:
 
 ```shell
-npm run build
+pnpm build
 ```
 
 Generate empty placeholders for reading/writing entries
 
 ```shell
-npm run new:reading
-npm run new:writing
+pnpm new:reading
+pnpm new:writing
 ```
