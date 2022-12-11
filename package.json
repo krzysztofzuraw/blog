@@ -14,10 +14,14 @@
     "debug": "DEBUG=* eleventy",
     "dev": "eleventy --serve",
     "new:writing": "./scripts/writing.sh",
-    "new:reading": "./scripts/reading.sh"
+    "new:reading": "./scripts/reading.sh",
+    "prepare": "husky install"
   },
   "prettier": {
     "printWidth": 100
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write"
   },
   "devDependencies": {
     "@11ty/eleventy": "1.0.2",
@@ -26,6 +30,8 @@
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.2.0",
     "luxon": "3.1.1",
-    "prettier": "2.8.0"
+    "prettier": "2.8.0",
+    "husky": "^8.0.0",
+    "lint-staged": "13.1.0"
   }
 }

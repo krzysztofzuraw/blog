@@ -6,6 +6,12 @@ module.exports = {
   default: {
     currentYear: () => DateTime.now().toLocaleString({ year: "numeric" }),
   },
+  paired: {
+    getOGImage: (title) => {
+      const params = new URLSearchParams({ title });
+      return `https://blog-og-image-three.vercel.app/api/og?${params.toString()}`;
+    },
+  },
   async: {
     img: async (filename, alt) => {
       const src = path.resolve(process.cwd(), "src", "img", `${filename}.jpg`);

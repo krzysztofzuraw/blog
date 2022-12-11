@@ -28,6 +28,10 @@ module.exports = (config) => {
     config.addNunjucksAsyncShortcode(name, shortcodes.async[name]);
   });
 
+  Object.keys(shortcodes.paired).forEach((name) => {
+    config.addPairedShortcode(name, shortcodes.paired[name]);
+  });
+
   Object.keys(aliases).forEach((name) => {
     config.addLayoutAlias(name, aliases[name]);
   });
