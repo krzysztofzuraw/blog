@@ -5,7 +5,7 @@ date: 2022-12-11T16:09:52Z
 
 I [recently](https://github.com/saleor/saleor-dashboard/pull/2516) needed to execute a shell script when Docker is starting. Why? I wanted dynamically take environment variables from the `.env` file and convert them to JSON objects in `index.html`.
 
-It turns out that docker has a special folder called `/docker-entrypoint.d/`. It will take every shell script left there and execute it while running the container. Perfect for my case. What I learned as well (from [Francisco Marques](https://github.com/tofran)) is that there is a two-digit convention for naming Linux scripts. Why? It allows docker to execute them one by one in sorted order. In my case I wanted the shell script to run after internal docker scripts has already finished running so I put a `50` number at the beginning of the script name.
+It turns out that NGINX docker image has a special folder called `/docker-entrypoint.d/`. It will take every shell script left there and execute it while running the container. Perfect for my case. What I learned as well (from [Francisco Marques](https://github.com/tofran)) is that there is a two-digit convention for naming Linux scripts. Why? It allows docker to execute them one by one in sorted order. In my case I wanted the shell script to run after internal docker scripts has already finished running so I put a `50` number at the beginning of the script name.
 
 ## Summary
 
