@@ -16,3 +16,7 @@
 .box {
   padding: var(--padding, var(--space-m));
 }
+
+.hidden {
+  display: none;
+}
