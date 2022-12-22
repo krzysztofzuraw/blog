@@ -50,7 +50,7 @@
 
   <body>
     <nav>
-      <strong><a href="/">{{ metadata.title }}</a></strong>
+      {% include 'partials/logo.svg' %}
       <ul>
         {% for entry in collections.all | eleventyNavigation("Nav") %}
         <li {% if entry.url == page.url %} aria-current="page" {% endif %}>

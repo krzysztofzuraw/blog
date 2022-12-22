@@ -13,8 +13,7 @@
     "build": "eleventy",
     "debug": "DEBUG=* eleventy",
     "dev": "eleventy --serve",
-    "new:writing": "./scripts/writing.sh",
-    "new:reading": "./scripts/reading.sh",
+    "new:post": "./scripts/post.sh",
     "prepare": "husky install"
   },
   "prettier": {
@@ -31,7 +30,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "4.2.0",
     "luxon": "3.1.1",
     "prettier": "2.8.0",
-    "husky": "^8.0.0",
+    "husky": "8.0.0",
     "lint-staged": "13.1.0"
   }
 }
