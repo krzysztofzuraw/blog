@@ -24,8 +24,9 @@ Run production build:
 pnpm build
 ```
 
-Generate empty placeholder for blog post entry
+Generate empty placeholder for `writing/reading` post entry
 
 ```shell
-pnpm new:post
+pnpm new:writing
+pnpm new:reading
 ```

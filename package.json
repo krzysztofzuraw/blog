@@ -13,7 +13,8 @@
     "build": "eleventy",
     "debug": "DEBUG=* eleventy",
     "dev": "eleventy --serve",
-    "new:post": "./scripts/post.sh",
+    "new:writing": "./scripts/writing.sh",
+    "new:reading": "./scripts/reading.sh",
     "prepare": "husky install"
   },
   "prettier": {

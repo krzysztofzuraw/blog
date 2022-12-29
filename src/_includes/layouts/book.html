@@ -1,0 +1,22 @@
+---
+layout: base
+---
+
+<article>
+  <h1 lang="{{ lang }}">{{ title }}</h1>
+  <time datetime="{{ date | toISO }}">{{ date | humanizeDate }}</time>
+  <p>Rating: {{ rating }}/10</p>
+
+  {{ content | safe }}
+
+  <h2>Details</h2>
+  <ul>
+    <li lang="{{ lang }}">{{ title }} - {{ author }}</li>
+    {% if translator %}
+    <li>Translator: {{ translator }}</li>
+    {% endif %}
+    <li>Language: {{ lang | getLanguage }}</li>
+    <li lang="{{ lang }}">Publisher: {{ publisher }}</li>
+    <li>Published: {{ year }}</li>
+  </ul>
+</article>
