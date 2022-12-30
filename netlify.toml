@@ -17,4 +17,8 @@
 
 [[redirects]]
  from = "/feeds/all.xml"
- to = "/feed.xml"
+ to = "/feeds/writing.xml"
+
+[[redirects]]
+ from = "/feed.xml"
+ to = "/feeds/writing.xml"

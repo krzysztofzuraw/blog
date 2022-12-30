@@ -9,15 +9,15 @@
   "keywords": "TypeScript, React, HTML, CSS, blog",
   "url": "https://krzysztofzuraw.com",
   "domain": "krzysztofzuraw.com",
-  "feed": {
-    "title": "RSS | Krzysztof Żuraw blog",
-    "path": "/feed.xml",
-    "id": "https://krzysztofzuraw.com"
-  },
   "feeds": {
-    "rss": {
-      "title": "RSS | Krzysztof Żuraw blog",
-      "path": "/feed.xml",
+    "writing": {
+      "title": "Writing | Krzysztof Żuraw blog",
+      "path": "/feeds/writing.xml",
+      "id": "https://krzysztofzuraw.com"
+    },
+    "reading": {
+      "title": "Reading | Krzysztof Żuraw blog",
+      "path": "/feeds/reading.xml",
       "id": "https://krzysztofzuraw.com"
     },
     "starred": {
