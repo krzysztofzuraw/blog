@@ -30,7 +30,7 @@
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.2.0",
     "luxon": "3.1.1",
-    "prettier": "2.8.0",
+    "prettier": "2.8.1",
     "husky": "8.0.0",
     "lint-staged": "13.1.0"
   }
