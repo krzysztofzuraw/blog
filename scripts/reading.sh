@@ -8,6 +8,7 @@ translator:
 lang:
 publisher:
 year:
+rating:
 date: $(date -u +%Y-%m-%dT%H:%M:%SZ)
 ---" > src/reading/$(date +%F)-wip.md
 
