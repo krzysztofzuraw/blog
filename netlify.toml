@@ -22,3 +22,7 @@
 [[redirects]]
  from = "/feed.xml"
  to = "/feeds/writing.xml"
+
+[[redirects]]
+ from = "/uses"
+ to = "/2023/what-tools-and-apps-i-m-using-2022-edition"
