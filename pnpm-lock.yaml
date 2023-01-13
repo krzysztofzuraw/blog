@@ -8,7 +8,7 @@ specifiers:
   '@11ty/eleventy-plugin-syntaxhighlight': 4.2.0
   husky: 8.0.3
   lint-staged: 13.1.0
-  luxon: 3.1.1
+  luxon: 3.2.1
   prettier: 2.8.2
 
 devDependencies:
@@ -19,7 +19,7 @@ devDependencies:
   '@11ty/eleventy-plugin-syntaxhighlight': 4.2.0
   husky: 8.0.3
   lint-staged: 13.1.0
-  luxon: 3.1.1
+  luxon: 3.2.1
   prettier: 2.8.2
 
 packages:
@@ -1715,8 +1715,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /luxon/3.1.1:
-    resolution: {integrity: sha512-Ah6DloGmvseB/pX1cAmjbFvyU/pKuwQMQqz7d0yvuDlVYLTs2WeDHQMpC8tGjm1da+BriHROW/OEIT/KfYg6xw==}
+  /luxon/3.2.1:
+    resolution: {integrity: sha512-QrwPArQCNLAKGO/C+ZIilgIuDnEnKx5QYODdDtbFaxzsbZcc/a7WFq7MhsVYgRlwawLtvOUESTlfJ+hc/USqPg==}
     engines: {node: '>=12'}
     dev: true
 
