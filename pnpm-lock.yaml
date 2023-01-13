@@ -9,8 +9,8 @@ specifiers:
   husky: 8.0.3
   is-ci: 3.0.1
   lint-staged: 13.1.0
-  luxon: 3.1.1
-  prettier: 2.8.0
+  luxon: 3.2.1
+  prettier: 2.8.2
 
 devDependencies:
   "@11ty/eleventy": 1.0.2
@@ -21,8 +21,8 @@ devDependencies:
   husky: 8.0.3
   is-ci: 3.0.1
   lint-staged: 13.1.0
-  luxon: 3.1.1
-  prettier: 2.8.0
+  luxon: 3.2.1
+  prettier: 2.8.2
 
 packages:
   /@11ty/dependency-tree/2.0.1:
@@ -2469,10 +2469,10 @@ packages:
     engines: { node: ">=12" }
     dev: true
 
-  /luxon/3.1.1:
+  /luxon/3.2.1:
     resolution:
       {
-        integrity: sha512-Ah6DloGmvseB/pX1cAmjbFvyU/pKuwQMQqz7d0yvuDlVYLTs2WeDHQMpC8tGjm1da+BriHROW/OEIT/KfYg6xw==,
+        integrity: sha512-QrwPArQCNLAKGO/C+ZIilgIuDnEnKx5QYODdDtbFaxzsbZcc/a7WFq7MhsVYgRlwawLtvOUESTlfJ+hc/USqPg==,
       }
     engines: { node: ">=12" }
     dev: true
@@ -3065,10 +3065,10 @@ packages:
       tunnel-agent: 0.6.0
     dev: true
 
-  /prettier/2.8.0:
+  /prettier/2.8.2:
     resolution:
       {
-        integrity: sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA==,
+        integrity: sha512-BtRV9BcncDyI2tsuS19zzhzoxD8Dh8LiCx7j7tHzrkz8GFXAexeWFdi22mjE1d16dftH2qNaytVxqiRTGlMfpw==,
       }
     engines: { node: ">=10.13.0" }
     hasBin: true
