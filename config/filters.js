@@ -14,5 +14,6 @@ module.exports = {
   getLanguage: (lang) => (lang === "pl" ? "Polish" : "English"),
   formatDate: (date) => DateTime.fromJSDate(date).toFormat("yyyy-LL-dd"),
   toISO: (date) => DateTime.fromJSDate(date, { zone: "Europe/Warsaw" }).toISO(),
-  getYear: (date) => DateTime.fromJSDate(date, { zone: "Europe/Warsaw" }).toFormat("yyyy"),
+  getYear: (date) =>
+    DateTime.fromJSDate(date, { zone: "Europe/Warsaw" }).toFormat("yyyy"),
 };

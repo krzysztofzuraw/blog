@@ -2,10 +2,10 @@ const navigation = require("@11ty/eleventy-navigation");
 const rss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
-const filters = require("./utils/filters.js");
-const shortcodes = require("./utils/shortcodes.js");
-const aliases = require("./utils/aliases.js");
-const mappings = require("./utils/mappings");
+const filters = require("./config/filters.js");
+const shortcodes = require("./config/shortcodes.js");
+const aliases = require("./config/aliases.js");
+const mappings = require("./config/mappings");
 
 module.exports = (config) => {
   config.addPlugin(navigation);
