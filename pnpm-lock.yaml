@@ -9,7 +9,7 @@ specifiers:
   husky: 8.0.3
   lint-staged: 13.1.0
   luxon: 3.1.1
-  prettier: 2.8.0
+  prettier: 2.8.2
 
 devDependencies:
   '@11ty/eleventy': 1.0.2
@@ -20,7 +20,7 @@ devDependencies:
   husky: 8.0.3
   lint-staged: 13.1.0
   luxon: 3.1.1
-  prettier: 2.8.0
+  prettier: 2.8.2
 
 packages:
 
@@ -2119,8 +2119,8 @@ packages:
       tunnel-agent: 0.6.0
     dev: true
 
-  /prettier/2.8.0:
-    resolution: {integrity: sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA==}
+  /prettier/2.8.2:
+    resolution: {integrity: sha512-BtRV9BcncDyI2tsuS19zzhzoxD8Dh8LiCx7j7tHzrkz8GFXAexeWFdi22mjE1d16dftH2qNaytVxqiRTGlMfpw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
