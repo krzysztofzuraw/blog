@@ -9,8 +9,12 @@ layout: page
 <ol class="stack" role="list">
   {% for item in collection | reverse %}
   <li>
-    <a href="{{ item.url}}">{{ item.data.title }}</a>
-    <time datetime="{{ item.date | toISO }}">{{ item.date | formatDate }}</time>
+    <a href="{{ item.url}}">
+      <span>{{ item.data.title }}</span>
+      <time datetime="{{ item.date | toISO }}"
+        >{{ item.date | formatDate }}</time
+      >
+    </a>
   </li>
   {% endfor %}
 </ol>

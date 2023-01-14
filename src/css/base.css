@@ -1,10 +1,10 @@
 :root {
-  --font-sans-serif: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans-serif: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: Charter, Gerogia, serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 
   --bg-color: hsla(0, 0%, 98%, 100%);
   --text-color: hsla(0, 0%, 20%, 100%);
@@ -193,6 +193,10 @@ article:has(li) {
   max-width: 65ch;
 }
 
+li {
+  margin-top: var(--space-xs);
+}
+
 pre,
 iframe {
   max-width: 100ch;
@@ -203,13 +207,7 @@ li[aria-current="page"] {
 }
 
 ul[role="list"],
-ol[role="list"] {
-  padding: 0;
-  margin: 0;
-}
-
-ul[role="list"],
-ol[role="list"] > li {
+ol[role="list"] a {
   display: flex;
   justify-content: space-between;
   gap: 0.5rem;

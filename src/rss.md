@@ -11,6 +11,6 @@ eleventyNavigation:
 
 {% for feed, data in metadata.feeds %}
 
-- [{{ data.title | replace("| Krzysztof Żuraw blog", "") }}]({{ data.path | url }})
+- [{{ data.title | replace("| Krzysztof Żuraw", "") }}]({{ data.path | url }})
 
 {% endfor %}
