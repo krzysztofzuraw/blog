@@ -13,12 +13,12 @@
     "writing": {
       "title": "Writing | Krzysztof Żuraw",
       "path": "/feeds/writing.xml",
-      "id": "https://krzysztofzuraw.com"
+      "id": "https://krzysztofzuraw.com/writing"
     },
     "reading": {
       "title": "Reading | Krzysztof Żuraw",
       "path": "/feeds/reading.xml",
-      "id": "https://krzysztofzuraw.com"
+      "id": "https://krzysztofzuraw.com/reading"
     },
     "starred": {
       "title": "Starred articles | Krzysztof Żuraw",
