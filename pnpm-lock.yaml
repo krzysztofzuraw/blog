@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@11ty/eleventy': 1.0.2
-  '@11ty/eleventy-img': 2.0.1
+  '@11ty/eleventy-img': 3.0.0
   '@11ty/eleventy-navigation': 0.3.5
   '@11ty/eleventy-plugin-rss': 1.2.0
   '@11ty/eleventy-plugin-syntaxhighlight': 4.2.0
@@ -14,7 +14,7 @@ specifiers:
 
 devDependencies:
   '@11ty/eleventy': 1.0.2
-  '@11ty/eleventy-img': 2.0.1
+  '@11ty/eleventy-img': 3.0.0
   '@11ty/eleventy-navigation': 0.3.5
   '@11ty/eleventy-plugin-rss': 1.2.0
   '@11ty/eleventy-plugin-syntaxhighlight': 4.2.0
@@ -43,14 +43,16 @@ packages:
       - supports-color
     dev: true
 
-  /@11ty/eleventy-img/2.0.1:
-    resolution: {integrity: sha512-l30E+TszoovF/NK0WRc1oQoI42VxmYyM3O9cPiS20alSBHucX92RFdwl9HMDyRoh1g+App3+PomFIa5FKkb1Dw==}
+  /@11ty/eleventy-img/3.0.0:
+    resolution: {integrity: sha512-qMotOn0ywxwuRd2zF2gNfJSwVQNbSBdzVQ2N1UPQeiXNZrxPGIitfraSf/OfWJbgGI9Cje12AtXdzr3Qc6wctw==}
+    engines: {node: '>=14.15.0'}
     dependencies:
       '@11ty/eleventy-fetch': 3.0.0
       debug: 4.3.4
+      entities: 4.4.0
       image-size: 1.0.2
       p-queue: 6.6.2
-      sharp: 0.30.7
+      sharp: 0.31.3
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -2520,9 +2522,9 @@ packages:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
     dev: true
 
-  /sharp/0.30.7:
-    resolution: {integrity: sha512-G+MY2YW33jgflKPTXXptVO28HvNOo9G3j0MybYAHeEmby+QuD2U98dT6ueht9cv/XDqZspSpIhoSW+BAKJ7Hig==}
-    engines: {node: '>=12.13.0'}
+  /sharp/0.31.3:
+    resolution: {integrity: sha512-XcR4+FCLBFKw1bdB+GEhnUNXNXvnt0tDo4WsBsraKymuo/IAuPuCBVAL2wIkUw2r/dwFW5Q5+g66Kwl2dgDFVg==}
+    engines: {node: '>=14.15.0'}
     requiresBuild: true
     dependencies:
       color: 4.2.3
