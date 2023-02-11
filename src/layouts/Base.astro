@@ -1,0 +1,23 @@
+---
+import Footer from "~components/Footer.astro";
+import Header from "~components/Header.astro";
+import Meta from "~components/Meta.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <slot name="meta">
+      <Meta />
+    </slot>
+  </head>
+  <body
+    class="mx-auto flex min-h-screen max-w-3xl flex-col gap-y-16 px-4 py-10 antialiased dark:bg-gray-900 dark:text-white sm:px-6 sm:py-12 lg:max-w-4xl lg:py-16 lg:px-8 lg:text-xl xl:max-w-6xl"
+  >
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

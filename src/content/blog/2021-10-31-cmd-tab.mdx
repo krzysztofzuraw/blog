@@ -1,0 +1,14 @@
+---
+title: How to enable cmd+tab switcher on all monitors
+pubDate: 2021-10-31
+slug: 2021/how-to-enable-cmd+tab-switcher-on-all-monitors
+---
+
+I recently started using 2 monitors on my Mac. Everything works fine except one tiny detail - cmd + tab switching between applications. I know that I can specify on which monitor should application switcher appear by showing dock on this monitor. Problem is that is no possible to do if I have monitor to the right and dock to the right as well. Instead I found solution to show application switcher on both monitors from [superuser.com](https://superuser.com/questions/670252/cmdtab-app-switcher-is-on-the-wrong-monitor):
+
+```shell
+defaults write com.apple.Dock appswitcher-all-displays -bool true
+killall Dock
+```
+
+You may need to restart your computer.

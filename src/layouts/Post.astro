@@ -1,0 +1,29 @@
+---
+import type { MDXLayoutProps } from "astro";
+import { format, parseISO } from "date-fns";
+
+import Meta from "~components/Meta.astro";
+import { SITE_TITLE } from "~utils/consts";
+import BaseLayout from "./Base.astro";
+
+type Props = MDXLayoutProps<{
+  title: string;
+  pubDate: string;
+}>;
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout>
+  <Meta title={`${frontmatter.title} | ${SITE_TITLE}`} slot="meta" />
+  <article class="prose mx-auto dark:prose-invert lg:prose-xl">
+    <h1>{frontmatter.title}</h1>
+    <p class="text-gray-600 dark:dark:text-gray-300">
+      Last updated:
+      <time datetime={frontmatter.pubDate}
+        >{format(parseISO(frontmatter.pubDate), "dd MMMM yyyy")}</time
+      >
+    </p>
+    <slot />
+  </article>
+</BaseLayout>

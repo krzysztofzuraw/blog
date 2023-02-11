@@ -1,0 +1,11 @@
+[build]
+  publish = "dist"
+  command = "pnpm run build"
+
+[[redirects]]
+ from = "/feeds/all.xml"
+ to = "/rss.xml"
+
+[[redirects]]
+ from = "/feed.xml"
+ to = "/rss.xml"

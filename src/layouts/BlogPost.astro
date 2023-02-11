@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { format } from "date-fns";
+
+import Meta from "~components/Meta.astro";
+import { SITE_TITLE } from "~utils/consts";
+
+import BaseLayout from "./Base.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, pubDate } = Astro.props;
+---
+
+<BaseLayout>
+  <Meta title={`${title} | ${SITE_TITLE}`} slot="meta" />
+  <article class="prose mx-auto dark:prose-invert lg:prose-xl">
+    <h1>{title}</h1>
+    <time
+      datetime={pubDate.toISOString()}
+      class="text-gray-600 dark:text-gray-300"
+      >{format(pubDate, "dd MMMM	yyyy")}</time
+    >
+    <slot />
+  </article>
+</BaseLayout>

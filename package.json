@@ -1,0 +1,40 @@
+{
+  "name": "@krzysztofzuraw/blog",
+  "version": "5.0.0",
+  "type": "module",
+  "author": "Krzysztof Żuraw (https://krzysztofzuraw.com/)",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "astro": "astro",
+    "build": "astro build",
+    "check-types": "astro check",
+    "dev": "astro dev",
+    "new:post": "./scripts/post.sh",
+    "preview": "astro preview",
+    "start": "astro dev"
+  },
+  "dependencies": {
+    "@astrojs/image": "^0.13.0",
+    "@astrojs/mdx": "^0.15.1",
+    "@astrojs/rss": "^2.1.0",
+    "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/tailwind": "^3.0.0",
+    "@tailwindcss/typography": "^0.5.9",
+    "astro": "^2.0.0",
+    "astro-robots-txt": "^0.3.11",
+    "date-fns": "^2.29.3",
+    "lodash-es": "^4.17.21",
+    "rollup": "^3.13.0",
+    "sharp": "^0.31.3",
+    "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.191",
+    "@types/lodash-es": "^4.17.6",
+    "prettier": "^2.8.3",
+    "prettier-plugin-astro": "^0.8.0",
+    "prettier-plugin-pkg": "^0.17.1",
+    "prettier-plugin-tailwindcss": "^0.2.2"
+  }
+}

@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import { format } from "date-fns";
+import { chain } from "lodash-es";
+
+import Meta from "~components/Meta.astro";
+import { SITE_TITLE } from "~utils/consts";
+
+import BaseLayout from "~layouts/Base.astro";
+
+const postsByYear = chain(await getCollection("blog"))
+  .sortBy((post) => -post.data.pubDate)
+  .groupBy((post) => post.data.pubDate.getFullYear())
+  .toPairs()
+  .sortBy(([year]) => -year)
+  .value();
+---
+
+<BaseLayout>
+  <Meta title={`Blog | ${SITE_TITLE}`} slot="meta" slot="meta" />
+  <article>
+    <h1 class="mb-4 text-5xl font-extrabold">Blog posts</h1>
+    <ul>
+      {
+        postsByYear.map(([year, posts]) => (
+          <li class="divide-y divide-gray-200 py-8">
+            <h2 class="pb-2 text-3xl font-bold">{year}</h2>
+            <ul class="grid gap-4">
+              {posts.map((post) => (
+                <li class="mt-2 flex flex-col justify-between md:flex-row">
+                  <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+                  <time
+                    datetime={post.data.pubDate.toISOString()}
+                    class="tabular-nums text-gray-600 dark:text-gray-300"
+                  >
+                    {format(post.data.pubDate, "MM-dd")}
+                  </time>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+</BaseLayout>
