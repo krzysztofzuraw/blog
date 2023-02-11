@@ -23,8 +23,8 @@ const latestsPosts = chain(await getCollection("blog"))
       <Picture
         src="/avatar.jpg"
         alt="Krzysztof Żuraw"
-        widths={[128, 256]}
-        sizes="(max-width: 128px) 100vw, 256px"
+        widths={[128, 256, 512]}
+        sizes="(min-width: 20em) 256px, 100vw"
         class="rounded-full"
         aspectRatio="1:1"
         background="#333"
