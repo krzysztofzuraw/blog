@@ -24,9 +24,12 @@ Run production build:
 pnpm build
 ```
 
-Generate empty placeholder for `writing/reading` post entry
+Generate empty placeholder for blog post
 
 ```shell
-pnpm new:writing
-pnpm new:reading
+pnpm new:post
 ```
+
+## Credit
+
+This blog is generated using [Astro Build](https://astro.build/).

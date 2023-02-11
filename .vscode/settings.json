@@ -1,13 +1,15 @@
 {
-  "emmet.includeLanguages": {
-    "nunjucks": "html"
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "files.associations": {
-    "*.njk": "html"
+    "*.css": "tailwindcss"
   },
-  "[markdown]": {
-    "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 100
+  "editor.quickSuggestions": {
+    "strings": true
   },
-  "css.validate": false
+  "tailwindCSS.includeLanguages": {
+    "astro": "html"
+  }
 }

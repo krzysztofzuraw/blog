@@ -1,32 +1,11 @@
 [build]
-  publish = "dist/"
+  publish = "dist"
   command = "pnpm run build"
-
-[build.processing]
-  skip_processing = false
-[build.processing.css]
-  bundle = true
-  minify = true
-[build.processing.js]
-  bundle = true
-  minify = true
-[build.processing.html]
-  pretty_urls = true
-[build.processing.images]
-  compress = true
 
 [[redirects]]
  from = "/feeds/all.xml"
- to = "/feeds/writing.xml"
+ to = "/rss.xml"
 
 [[redirects]]
  from = "/feed.xml"
- to = "/feeds/writing.xml"
-
-[[redirects]]
- from = "/uses"
- to = "/2023/what-tools-and-apps-i-m-using-2022-edition"
-
-[[redirects]]
- from = "/now"
- to = "/2023/january-2023-update"
+ to = "/rss.xml"

@@ -1,0 +1,394 @@
+---
+title: JSON Web Tokens in django application
+pubDate: 2016-10-02
+slug: 2016/json-web-tokens-in-django-application
+---
+
+**Recently I attended a workshop about web security. During these hours
+I learnt quite a lot but one thing got my attention- JWT.**
+
+## What is JWT?
+
+JWT aka JSON Web Tokens is a method of authentication. What it does: You
+as a user first send a request to the server saying: I want to login!
+And server gives you in response a long sequence of characters. As you
+get this sequence you can use it as a way to tell the server that you
+are the person you really are.
+
+In a more technical sense: you send a request which logs you to service
+for example headers with login and password. In response, you got
+encrypted token. Then you want to get some info about another resource
+on the server that requires authentication. So to your request you
+add one more header with previously received token and that's
+all! You are authenticated.
+
+JSON Web Token looks like this:
+
+```
+HEADER.PAYLOAD.SIGNATURE
+```
+
+The header is a JSON that consists of a type of token (JWT) and which
+hash algorithm will be used (HMAC SHA256 or RSA). HMAC stands for
+keyed-Hash Message Authentication Code. Message Authentication Code
+(MAC) is used to confirm that message comes from the good sender and its
+integrity has not been changed. Keyed-Hash stands for hashing MAC in
+combination with a secret key.
+
+The payload contains the claims. Claim store information user wants to
+transmit and server can use to properly handle authentication. There are
+a lot of registered claims but we will use only:
+
+- "exp" (Expiration Time) Claim
+- "nbf" (Not Before Time) Claim
+- "iss" (Issuer) Claim
+- "aud" (Audience) Claim
+- "iat" (Issued At) Claim
+
+Payload will look like this:
+
+```json
+{
+  "exp": "1234567890",
+  "name": "Krzysztof Zuraw"
+}
+```
+
+Last part is a signature. It is the sum of all previously
+mentioned parts encoded in base64 + secret.
+
+## How can you use JWT and why?
+
+When you get your response back from a server with JSON Web Token you
+can use it in header like this:
+
+```shell
+Authorization: Bearer <JWT token>
+```
+
+In comparison with another method of authentication: SAML, JWT is more
+compact. JSON format is widely used in programming word so there is no
+problem with parsers for that format.
+
+## Overview of application
+
+The main goal of this application is to create tasks. Each task has a
+title - string with a maximum length of 100 characters. Task also has a
+person to which it is bound (many to one relation - ForeginKey). The
+last thing that task have is date and time which given task is due to.
+The user can easily modify each of tasks so GET, POST, PUT and DELETE
+methods are supported.
+
+As we know how the application is designed let's jump into the code.
+
+## Application code
+
+First, there is a need to create model for Task:
+
+```python
+from django.db import models
+from django.contrib.auth.models import User
+
+
+class Task(models.Model):
+    title = models.CharField(max_length=100)
+    person = models.ForeignKey(User)
+    due_to = models.DateTimeField()
+
+    def __str__(self):
+        return 'Task with title: {}'.format(self.title)
+```
+
+The arguments of `Task` correspond to what was written in the overview.
+
+As we have models ready now it's time to create serializers so data from
+database can be converted to stream of bytes:
+
+```python
+from rest_framework import serializers
+from .models import Task
+from django.contrib.auth.models import User
+
+
+class TaskSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Task
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+```
+
+As you can see in `TaskSerializer` I used `HyperlinkedModelSerializer`
+as a type of serializer that I want to use - thanks to that response
+from my application will have hyperlinks to resources instead of
+primary keys that are used in `UserSerializer`. In this serializer, I
+use django `User` as a source of data. I have to do this because `Task`
+model has a reference to `User` and without serialization of the second
+one I cannot serialize the task.
+
+Right now I have my models and serializers ready so it's time to create
+some views and urls. For a typical usage of views, DRF gives you generic
+viewsets like
+[ModelViewSet](http://www.django-rest-framework.org/api-guide/viewsets/#modelviewset).
+ViewSet is a combination of the logic for a set of related views in a
+single class. How do views look like?
+
+```python
+from rest_framework import viewsets
+from .models import Task
+from .serializers import TaskSerializer, UserSerializer
+from django.contrib.auth.models import User
+
+
+class TaskViewSet(viewsets.ModelViewSet):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+```
+
+I created 2 viewsets. The only thing that I need to provide is queryset
+and `serializer_class` arguments so viewsets know which data they needed
+to take and which serializer use. Right now there is only one thing
+missing - urls:
+
+```python
+from django.conf.urls import url, include
+from django.contrib import admin
+from tasks import views
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+router.register(r'tasks', views.TaskViewSet)
+router.register(r'users', views.UserViewSet)
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^', include(router.urls)),
+]
+```
+
+Here I set up `DefaultRouter` and hook `TaskViewSet` and `UserViewSet`
+to it. Router is a way of building common routes for a resource. To get
+all tasks - I go to `/tasks` uri. To retrieve first task I type
+`tasks/1`. I can write this in urlpatterns but the router is doing the
+same for me automatically.
+
+Right now I can try my application:
+
+```shell
+$ http GET 127.0.0.1:9000
+HTTP/1.0 200 OK
+Allow: GET, HEAD, OPTIONS
+Content-Type: application/json
+pubDate: Sun, 23 Oct 2016 08:36:23 GMT
+Server: WSGIServer/0.2 CPython/3.5.1
+Vary: Accept, Cookie
+X-Frame-Options: SAMEORIGIN
+
+{
+    "tasks": "http://127.0.0.1:9000/tasks/",
+    "users": "http://127.0.0.1:9000/users/"
+}
+
+
+$ http GET 127.0.0.1:9000/tasks/
+HTTP/1.0 200 OK
+Allow: GET, POST, HEAD, OPTIONS
+Content-Type: application/json
+pubDate: Sun, 23 Oct 2016 08:45:50 GMT
+Server: WSGIServer/0.2 CPython/3.5.1
+Vary: Accept, Cookie
+X-Frame-Options: SAMEORIGIN
+
+[
+    {
+        "due_to": "2016-10-18T19:12:01Z",
+        "person": "http://127.0.0.1:9000/users/1/",
+        "title": "First one",
+        "url": "http://127.0.0.1:9000/tasks/1/"
+    },
+    {
+        "due_to": "2016-10-18T19:12:10Z",
+        "person": "http://127.0.0.1:9000/users/1/",
+        "title": "Second one",
+        "url": "http://127.0.0.1:9000/tasks/2/"
+    }
+]
+```
+
+## JWT in Django Rest Framework
+
+There are few packages on
+[pypi](https://pypi.python.org/pypi?%3Aaction=search&term=JWT&submit=search)
+that provide JWT support but as I am already using DRF I choose package
+called [REST framework JWT
+Auth](https://github.com/GetBlimp/django-rest-framework-jwt). It's
+simple package and does it's job well so I can recommend it to everyone.
+But you have to make sure that your application is behind SSL/TLS as JWT
+tokens generated are not signed. But enough writing- let's jump into the
+code.
+
+## Implementing JWT in DRF application
+
+First I added small change to my `Task` model definition in models.py:
+
+```python
+class Task(models.Model):
+    # rest of model
+    person = models.ForeignKey('auth.User', related_name='tasks')
+    # rest of model
+```
+
+It is the same model definition but written using string. The code in
+Django responsible for model lookup based on the string can be seen
+[here](https://docs.djangoproject.com/en/1.9/_modules/django/apps/config/#AppConfig.get_model).
+
+Then I added an additional field to `UserSerializer`- thanks to that
+when getting info about the user I also get info about which tasks this
+user has. It can be accomplished by:
+
+```python
+class UserSerializer(serializers.ModelSerializer):
+    tasks = serializers.PrimaryKeyRelatedField(
+        many=True, queryset=Task.objects.all()
+    )
+
+    # rest of the code
+```
+
+As I got my models and serializers ready I need views:
+
+```python
+from rest_framework import permissions
+
+
+class TaskViewSet(viewsets.ModelViewSet):
+    # rest of the code
+
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    # rest of the code
+
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+```
+
+I added `permission_classes` to tell DRF that these views are read only
+when the user is not authenticated. If I send a token ( or authenticate
+in another way) I am able to modify data kept under this view. To
+authenticate I needed a new endpoint so there's a small change to
+urls.py:
+
+```python
+from rest_framework_jwt.views import obtain_jwt_token
+
+urlpatterns = [
+    # rest of the code
+    url(r'^api-auth/', obtain_jwt_token),
+]
+```
+
+Right now the user firsts need to authenticate using this endpoint. In
+return, endpoint gives back a token. Last thing to let this work is to
+tell Django Rest Framework that I want to use JWT as a basic type of
+authentication in settings.py:
+
+```python
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    )
+}
+```
+
+And that's it! JWT should be working:
+
+```shell
+$ http GET 127.0.0.1:9000/tasks/
+HTTP/1.0 200 OK
+Allow: GET, POST, HEAD, OPTIONS
+Content-Type: application/json
+pubDate: Sat, 29 Oct 2016 13:10:52 GMT
+Server: WSGIServer/0.2 CPython/3.5.1
+Vary: Accept
+X-Frame-Options: SAMEORIGIN
+
+[
+  {
+      "due_to": "2016-10-18T19:12:01Z",
+      "person": "admin",
+      "title": "First one",
+  },
+  {
+      "due_to": "2016-10-18T19:12:10Z",
+      "person": "admin",
+      "title": "Second one",
+  }
+]
+
+$ cat create_task.json
+{
+  "due_to": "2016-10-18T19:12:01Z",
+  "person": 1,
+  "title": "Next one",
+}
+
+$ http POST 127.0.0.1:9000/tasks/ < create_task.json
+HTTP/1.0 401 Unauthorized
+Allow: GET, POST, HEAD, OPTIONS
+Content-Type: application/json
+pubDate: Sun, 30 Oct 2016 08:38:41 GMT
+Server: WSGIServer/0.2 CPython/3.5.1
+Vary: Accept
+WWW-Authenticate: JWT realm="api"
+X-Frame-Options: SAMEORIGIN
+
+{
+    "detail": "Authentication credentials were not provided."
+}
+```
+
+To send POST you need:
+
+```shell
+$ http POST 127.0.0.1:9000/api-auth/ username=admin password=admin
+HTTP/1.0 200 OK
+Allow: POST, OPTIONS
+Content-Type: application/json
+pubDate: Sun, 30 Oct 2016 08:41:26 GMT
+Server: WSGIServer/0.2 CPython/3.5.1
+Vary: Accept
+X-Frame-Options: SAMEORIGIN
+
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0Nzc4MTc4NTMsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidXNlcl9pZCI6MX0.xWlhwgzzVjDwgTPp48AgAYDJnraGThlkGmBnJbKnA74"
+}
+
+
+$ http POST 127.0.0.1:9000/tasks/ < create_task.json 'Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0Nzc4MTc4NTMsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwidXNlcl9pZCI6MX0.xWlhwgzzVjDwgTPp48AgAYDJnraGThlkGmBnJbKnA74'
+HTTP/1.0 201 Created
+Allow: GET, POST, HEAD, OPTIONS
+Content-Type: application/json
+pubDate: Sun, 30 Oct 2016 08:53:30 GMT
+Server: WSGIServer/0.2 CPython/3.5.1
+Vary: Accept
+X-Frame-Options: SAMEORIGIN
+
+{
+    "due_to": "2016-10-18T19:12:01Z",
+    "id": 5,
+    "person": 1,
+    "title": "Next one"
+}
+```
+
+That's all for today! Feel free to comment and check repo for this blog
+post under this
+[link](https://github.com/krzysztofzuraw/personal-blog-projects/tree/master/blog_jwt).

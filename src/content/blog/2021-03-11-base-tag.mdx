@@ -1,0 +1,54 @@
+---
+title: HTML has a base tag
+pubDate: 2021-03-11
+slug: 2021/html-has-a-base-tag
+---
+
+Today I learned about `<base />` tag. It is really useful in a situation where you need to tell
+the browser what is the base for relative links. Why you need that?
+Imagine that you have a script that is located on CDN: `https://cdn/application/index.html` and from
+inside index.html you have a JS tag that points to `index.js`.
+
+If you want implicitly tell browser to look for `index.js` inside `application/*` folder not `https://cdn`
+you can drop [base](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base) tag:
+
+```html
+<base ref="https://cdn/application/" />
+```
+
+It is telling the browser to base all relative links on `https://cdn/application/`.
+Notice trailing slash at the end - this is important to `base` to work.
+
+You have base tag ready - now it is time to add `script` tag:
+
+```html
+<script src="app.js" />
+```
+
+Notice that it don’t have `./` or `/` at the beginning `src` parameter - it is relative link.
+
+Now the browser will resolve `app.js` to `https://cdn/application/app.js`. You can read more on MDN
+[base](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base) documentation page.
+
+If you need to set it up using [html-webpack](https://webpack.js.org/plugins/html-webpack-plugin/) plugin:
+
+1. add `base` param to html-webpack options:
+
+```js
+{
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: paths.indexHTML, // path to your index.html if you are using it
+      base: `https://cdn/application/`,
+    }),
+  ];
+}
+```
+
+2. make sure that you don't have `publicPath` set in the webpack config.
+3. It is causing the output to be `/app.js` (or whatever you set your public path) instead of having `app.js`
+
+## Summary
+
+In this post, I wrote about [base](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base)
+an HTML tag that can be used to hint browser what is the base URL for relative links inside a document.

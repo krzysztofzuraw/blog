@@ -1,0 +1,31 @@
+---
+title: Run script on files changes using nodemon
+pubDate: 2022-06-10T09:30:55Z
+slug: 2022/run-script-on-files-changes-using-nodemon
+---
+
+I recently was setting up workflow for developing email templates and I need a way to copy files from `src` directory into `dist` build folder. It turns out that you can use for this [nodemon](https://nodemon.io/). Script below is using [glob](https://www.npmjs.com/package/glob) library to watch for all `.txt` files under source directory and copy them from to build output directory. In addition to that it flattens the path - so if file is under `src/plaintext/plaintext.txt` the path in output will be `dist/plaintext.txt`.
+
+```js
+import { copyFileSync, existsSync, mkdirSync } from "fs";
+import glob from "glob";
+import { basename, join } from "path";
+
+const directory = "dist";
+
+if (!existsSync(directory)) {
+  mkdirSync(directory);
+}
+
+glob("src/**/*.txt", (err, files) => {
+  if (err) {
+    console.error("Error", err);
+  }
+
+  files.forEach((file) => {
+    copyFileSync(file, join(directory, basename(file)));
+  });
+});
+```
+
+How to run this script? I' using `nodemon copy-plaintext.mjs --ext txt --watch src` command in my `package.json`. It looks for all files with `txt` extension under `src` folder - if they change I'm running `copy-plaintext.mjs`.

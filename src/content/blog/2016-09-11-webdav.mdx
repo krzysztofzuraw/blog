@@ -1,0 +1,285 @@
+---
+title: Python & WebDAV
+pubDate: 2016-09-11
+slug: 2016/python-and-webdav
+---
+
+**I must confess I was ignorant. Recently I saw an application done by
+my colleague at work and it was using python WebDAV client. I was
+intrigued because for me WebDAV was connected with calendars (CalDAV)
+and contacts (CardDAV). And there I have WebDAV which is filesystem.**
+
+**I decided to write this blog post about it for better understanding
+what it is. This is the first part of blog series about this extension
+to HTTP.**
+
+## What is WebDAV and what is it useful for?
+
+From [wikipedia](https://en.wikipedia.org/wiki/WebDAV):
+
+> Web Distributed Authoring and Versioning (WebDAV) is an extension of
+> the Hypertext Transfer Protocol (HTTP) that allows clients to perform
+> remote Web content authoring operations. (...)
+>
+> The WebDAV protocol provides a framework for users to create, change
+> and move documents on a server, typically a web server or web share.
+
+In other words users that work with the server that implements WebDAV
+can share, move and edit files through a web server. There is also a way
+to lock file or get a specific revision of it. WebDAV is supported by
+many client applications like Windows Explorer or Nautilus. It is
+similar to another protocol- FTP. FTP is faster, but it doesn't run on
+top of HTTP. WebDAV also support SSL and authentication.
+
+CardDAV and CalDAV are extensions to WebDAV that enable client/server
+address book and to accessing the calendar on the remote server.
+
+## Setting up your own WebDAV server
+
+I will set up basic WebDAV server using
+[owncloud](https://owncloud.com/). Owncloud is a self-hosted solution
+for the cloud. In addition to this owncloud provides WebDAV server that
+I will use in the next blog post.
+
+On owncloud download
+[page](https://owncloud.org/install/#instructions-server), there is a
+lot of options to choose from but I choose appliances tab with OVA (open
+virtual application)
+[image](http://download.owncloud.org/community/production/vm/Ubuntu_14.04-owncloud-9.1.0-1.1-201609011525.ova.zip)
+for [VirtualBox](https://www.virtualbox.org/). Installation is really
+simple - follow this
+[manual](https://doc.owncloud.org/server/8.0/admin_manual/installation/appliance_installation.html).
+
+After a while, you will have working owncloud served from VirtualBox.
+Now it's time to play with WebDAV server. To check if this is working I
+will use CURL:
+
+```shell
+$ curl --user user:password 'http://localhost:8888/owncloud/remote.php/webdav/'
+This is the WebDAV interface. It can only be accessed by WebDAV clients such as the ownCloud desktop sync client.⏎
+```
+
+To get properties about root folder:
+
+```xml
+$ curl --user user:password --include --request PROPFIND --header "Depth: 1" 'http://localhost:8888/owncloud/remote.php/webdav'
+<?xml version="1.0"?>
+<d:multistatus xmlns:d="DAV:" xmlns:s="http://sabredav.org/ns" xmlns:oc="http://owncloud.org/ns">
+ <d:response>
+  <d:href>/owncloud/remote.php/webdav/</d:href>
+  <d:propstat>
+   <d:prop>
+    <d:getlastmodified>Thu, 08 Sep 2016 04:22:23 GMT</d:getlastmodified>
+    <d:resourcetype>
+     <d:collection/>
+    </d:resourcetype>
+    <d:quota-used-bytes>4756701</d:quota-used-bytes>
+    <d:quota-available-bytes>-3</d:quota-available-bytes>
+    <d:getetag>&quot;57d0e77f723e4&quot;</d:getetag>
+   </d:prop>
+   <d:status>HTTP/1.1 200 OK</d:status>
+  </d:propstat>
+ </d:response>
+ <d:response>
+  <d:href>/owncloud/remote.php/webdav/Documents/</d:href>
+  <d:propstat>
+   <d:prop>
+    <d:getlastmodified>Thu, 08 Sep 2016 04:22:23 GMT</d:getlastmodified>
+    <d:resourcetype>
+     <d:collection/>
+    </d:resourcetype>
+    <d:quota-used-bytes>36227</d:quota-used-bytes>
+    <d:quota-available-bytes>-3</d:quota-available-bytes>
+    <d:getetag>&quot;57d0e77f4b534&quot;</d:getetag>
+   </d:prop>
+   <d:status>HTTP/1.1 200 OK</d:status>
+  </d:propstat>
+ </d:response>
+ <d:response>
+  <d:href>/owncloud/remote.php/webdav/Photos/</d:href>
+  <d:propstat>
+   <d:prop>
+    <d:getlastmodified>Thu, 08 Sep 2016 04:22:23 GMT</d:getlastmodified>
+    <d:resourcetype>
+     <d:collection/>
+    </d:resourcetype>
+    <d:quota-used-bytes>678556</d:quota-used-bytes>
+    <d:quota-available-bytes>-3</d:quota-available-bytes>
+    <d:getetag>&quot;57d0e77f69116&quot;</d:getetag>
+   </d:prop>
+   <d:status>HTTP/1.1 200 OK</d:status>
+  </d:propstat>
+ </d:response>
+ <d:response>
+  <d:href>/owncloud/remote.php/webdav/ownCloud%20Manual.pdf</d:href>
+  <d:propstat>
+   <d:prop>
+    <d:getlastmodified>Thu, 08 Sep 2016 04:22:23 GMT</d:getlastmodified>
+    <d:getcontentlength>4041918</d:getcontentlength>
+    <d:resourcetype/>
+    <d:getetag>&quot;1951114eecb977f35fb154c06dcfc4e0&quot;</d:getetag>
+    <d:getcontenttype>application/pdf</d:getcontenttype>
+   </d:prop>
+   <d:status>HTTP/1.1 200 OK</d:status>
+  </d:propstat>
+ </d:response>
+</d:multistatus>
+```
+
+## Python WebDAV client - easywebdav
+
+I was searching for good python library to work with WebDAV for a long
+time. I finally found it-
+[easywebdav](https://github.com/amnong/easywebdav). It works nicely but
+the problem is that doesn't have support for python 3. Let's jump
+quickly to my simple project for cli tool- webdav editor.
+
+## WebDAV editor
+
+I decided to create cli tool to work with WebDAV server- webdav editor.
+Right now it supports only basic commands like login, listing the
+content of directories, uploading and downloading files.
+
+I started from creating file `webdav_utility.py`:
+
+```python
+from urlparse import urlparse
+import easywebdav
+
+
+class Client(object):
+
+    def login(self, *args):
+        argparse_namespace = args[0]
+        url_components = urlparse(argparse_namespace.server)
+        host, port = url_components.netloc.split(':')
+        webdav_client = easywebdav.connect(
+            host=host,
+            port=port,
+            path=url_components.path,
+            username=argparse_namespace.user,
+            password=argparse_namespace.password
+        )
+        pickle.dump(webdav_client, open('webdav_login', 'wb'))
+
+    def list_content(self, *args):
+        argparse_namespace = args[0]
+        print [i.name for i in webdav_client.ls(argparse_namespace.path)]
+
+    def upload_file(self, *args):
+        argparse_namespace = args[0]
+        webdav_client.upload(
+            argparse_namespace.from_path, argparse_namespace.to_path
+        )
+
+    def download_file(self, *args):
+        argparse_namespace = args[0]
+        webdav_client.download(
+            argparse_namespace.from_path, argparse_namespace.to_path
+        )
+```
+
+In class `Client`, I write simple functions that are wrappers around
+`easywebdav` API. In `login` I parse provided URL in form like
+localhost:8888/owncloud/remote.php/webdav to get `host`, `port` and
+`path` for `easywebdav.connect` to establish a proper connection.
+
+Another method that is worth mentioning is `list_content` where I
+retrieve names of files under a directory on WebDAV server. In every
+method I provide `*args` argument and `argparse_namespace` which leads
+to another component of application- module `cli.py`:
+
+```python
+import argparse
+
+from webdav_utility import Client
+
+client = Client()
+
+parser = argparse.ArgumentParser(description='Simple command line utility for WebDAV')
+subparsers = parser.add_subparsers(help='Commands')
+
+login_parser = subparsers.add_parser('login', help='Authenticate with WebDAV')
+login_parser.add_argument('-s', '--server', required=True)
+login_parser.add_argument('-u', '--user', required=True)
+login_parser.add_argument('-p', '--password', required=True)
+login_parser.set_defaults(func=client.login)
+
+ls_parser = subparsers.add_parser('ls', help='List content of directory under WebDAV')
+ls_parser.add_argument('-p', '--path', required=True)
+ls_parser.set_defaults(func=client.list_content)
+
+upload_parser = subparsers.add_parser('upload', help='Upload files to WebDAV')
+upload_parser.add_argument('-f', '--from', metavar='PATH')
+upload_parser.add_argument('-t', '--to', metavar='PATH')
+upload_parser.set_defaults(func=client.upload_file)
+
+download_parser = subparsers.add_parser('download', help='Download files from WebDAV')
+download_parser.add_argument('-f', '--from', metavar='PATH')
+download_parser.add_argument('-t', '--to', metavar='PATH')
+download_parser.set_defaults(func=client.download_file)
+
+if __name__ == '__main__':
+    args = parser.parse_args()
+    args.func(args)
+```
+
+There I use
+[argparse](https://docs.python.org/2.7/library/argparse.html). I create
+the main parser with four additionals subparsers for `login`, `ls`,
+`upload` and `download`. Thanks to that I have different namespace for
+every one of previously mentioned subparsers.
+
+Problem is that this solution is not generic enough because after
+running my command with `login` parameter I can get:
+`Namespace(server='localhost:8888', user='admin', password='admin')` and
+running the same command but with `ls` I will receive:
+`Namespace(path='path_to_file')`. To handle that I used `set_defaults`
+for every subparser. I tell argparse to invoke function specified by
+`func` keyword (which is different for every command). Thanks to that I
+only need to call this code once:
+
+```python
+if __name__ == '__main__':
+    args = parser.parse_args()
+    args.func(args)
+```
+
+That's the reason I introduce `argparse_namespaces` in `Client`.
+
+OK, tool right now works nicely, but there is no place to store
+information if I am logged or not. So calling
+`python cli.py login -s localhost -u admin -p admin` works but
+`python cli.py ls -p /` not. To overcome that I came up with an idea to
+pickle `webdav_client` like this:
+
+```python
+class Client(object):
+
+  def login(self, *args):
+    # login user etc
+    pickle.dump(webdav_client, open('webdav_login', 'wb'))
+
+  def list_content(self, *args):
+    webdav_client = pickle.load(open('webdav_login', 'rb'))
+    # rest of the code
+```
+
+Then I can easily run:
+
+```shell
+$ python cli.py login --server example.org/owncloud/remote.php/webdav --user admin --password admin
+$ python cli.py ls --path '/'
+['/owncloud/remote.php/webdav/', '/owncloud/remote.php/webdav/Documents/', '/owncloud/remote.php/webdav/Photos/', '/owncloud/remote.php/webdav/ownCloud%20Manual.pdf']
+```
+
+## Conclusion
+
+In this series, I setup an owncloud server and write simple tool to
+show capabilities of WebDAV. I believe that some work, especially for
+webdav editor cli can still be done: the better way to handle user auth
+than pickle, separate `Client` class from argparse dependencies. If you
+have additional comments or thoughts please write a comment! Thank you
+for reading.
+
+Special thanks to Kasia for being editor for this post. Thank you.

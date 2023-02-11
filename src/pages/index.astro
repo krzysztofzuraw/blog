@@ -1,0 +1,63 @@
+---
+import { Image } from "@astrojs/image/components";
+import { getCollection } from "astro:content";
+import { chain } from "lodash-es";
+
+import BaseLayout from "~layouts/Base.astro";
+
+const latestsPosts = chain(await getCollection("blog"))
+  .sortBy((post) => post.data.pubDate.valueOf())
+  .reverse()
+  .slice(0, 3)
+  .value();
+---
+
+<BaseLayout>
+  <article class="prose mx-auto dark:prose-invert lg:prose-xl">
+    <h1>
+      Hi, I'm Krzysztof Żuraw <span
+        class="inline-block origin-wave animate-wave">👋🏻</span
+      >
+    </h1>
+    <section class="flex flex-col items-center gap-4 md:flex-row">
+      <Image
+        src="/avatar.jpg"
+        alt="Krzysztof Żuraw"
+        width={128}
+        height={128}
+        format="avif"
+        class="rounded-full"
+        aspectRatio="16:9"
+        format="avif"
+      />
+      <div>
+        <p>Welcome to my blog. A few words about me:</p>
+        <ul>
+          <li>self taught frontend developer with 5+ years of experience</li>
+          <li>specialize in building React & TypeScript websites/web-apps</li>
+          <li>working at Saleor as Senior Frontend Developer</li>
+          <li>learning about CSS & design</li>
+          <li>brewing specialty coffee using V60</li>
+        </ul>
+      </div>
+    </section>
+    <p>
+      I like giving back to community by being a mentor of Django Girls or Geek
+      Girls Carrots. I like to organize events - I’m co-organizer of Wrocław
+      TypeScript meetup and Django Girls Wrocław. If you need help with
+      preparing tech event do not hesitate to contact me.
+    </p>
+    <section>
+      <h2>Latest posts</h2>
+      <ul class="list-decimal">
+        {
+          latestsPosts.map((post) => (
+            <li>
+              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </article>
+</BaseLayout>
