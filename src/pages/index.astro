@@ -1,5 +1,5 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Image } from "@astrojs/image/components";
 import { getCollection } from "astro:content";
 import { chain } from "lodash-es";
 
@@ -20,14 +20,13 @@ const latestsPosts = chain(await getCollection("blog"))
       >
     </h1>
     <section class="flex flex-col items-center gap-4 md:flex-row">
-      <Picture
+      <Image
         src="/avatar.jpg"
         alt="Krzysztof Żuraw"
-        widths={[128, 256, 512]}
-        sizes="(min-width: 20em) 256px, 100vw"
+        width={128}
+        height={128}
         class="rounded-full"
-        aspectRatio="1:1"
-        background="#333"
+        format="avif"
       />
       <div>
         <p>Welcome to my blog. A few words about me:</p>
