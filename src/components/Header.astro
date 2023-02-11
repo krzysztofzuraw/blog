@@ -5,7 +5,7 @@ import HeaderLink from "./HeaderLink.astro";
 <header
   class="flex items-center justify-between gap-4 border-b border-gray-300 pb-8"
 >
-  <HeaderLink href="/">
+  <HeaderLink href="/" aria-label="Home page">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="50"
@@ -25,7 +25,7 @@ import HeaderLink from "./HeaderLink.astro";
     <HeaderLink href="/blog">Blog</HeaderLink>
     <HeaderLink href="/uses">Uses</HeaderLink>
     <HeaderLink href="/now">Now</HeaderLink>
-    <HeaderLink href="/rss.xml">
+    <HeaderLink href="/rss.xml" aria-label="RSS">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
