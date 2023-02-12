@@ -11,5 +11,13 @@
   },
   "tailwindCSS.includeLanguages": {
     "astro": "html"
+  },
+  "[markdown]": {
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 100
+  },
+  "[mdx]": {
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 100
   }
 }

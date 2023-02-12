@@ -8,9 +8,10 @@
   "scripts": {
     "astro": "astro",
     "build": "astro build",
-    "check-types": "astro check",
     "dev": "astro dev",
+    "lint": "astro check",
     "new:post": "./scripts/post.sh",
+    "prepare": "is-ci || husky install",
     "preview": "astro preview",
     "start": "astro dev"
   },
@@ -32,6 +33,9 @@
   "devDependencies": {
     "@types/lodash": "^4.14.191",
     "@types/lodash-es": "^4.17.6",
+    "husky": "^8.0.3",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^13.1.1",
     "prettier": "^2.8.3",
     "prettier-plugin-astro": "^0.8.0",
     "prettier-plugin-pkg": "^0.17.1",
