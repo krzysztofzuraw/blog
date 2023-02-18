@@ -16,9 +16,8 @@ export async function get(context) {
     site: context.site,
     stylesheet: "/rss/styles.xsl",
     items: latestsPosts.map((post) => ({
-      title: post.data.title,
-      pubDate: post.data.pubDate,
       link: `/blog/${post.slug}/`,
+      ...post.data,
     })),
   });
 }

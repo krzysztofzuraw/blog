@@ -9,11 +9,15 @@ import BaseLayout from "./Base.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, pubDate } = Astro.props;
+const { title, description, pubDate } = Astro.props;
 ---
 
 <BaseLayout>
-  <Meta title={`${title} | ${SITE_TITLE}`} slot="meta" />
+  <Meta
+    title={`${title} | ${SITE_TITLE}`}
+    description={description}
+    slot="meta"
+  />
   <article class="prose mx-auto dark:prose-invert lg:prose-xl">
     <h1>{title}</h1>
     <time
