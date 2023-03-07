@@ -16,7 +16,7 @@
     "start": "astro dev"
   },
   "dependencies": {
-    "@astrojs/image": "^0.15.0",
+    "@astrojs/image": "^0.16.0",
     "@astrojs/mdx": "^0.17.0",
     "@astrojs/rss": "^2.1.0",
     "@astrojs/sitemap": "^1.0.0",
