@@ -21,11 +21,11 @@ specifiers:
   prettier-plugin-pkg: ^0.17.1
   prettier-plugin-tailwindcss: ^0.2.2
   rollup: ^3.13.0
-  sharp: ^0.31.3
+  sharp: ^0.32.0
   tailwindcss: ^3.0.24
 
 dependencies:
-  '@astrojs/image': 0.16.0_astro@2.0.2+sharp@0.31.3
+  '@astrojs/image': 0.16.0_astro@2.0.2+sharp@0.32.0
   '@astrojs/mdx': 0.17.0_astro@2.0.2+rollup@3.13.0
   '@astrojs/rss': 2.1.0
   '@astrojs/sitemap': 1.0.0
@@ -36,7 +36,7 @@ dependencies:
   date-fns: 2.29.3
   lodash-es: 4.17.21
   rollup: 3.13.0
-  sharp: 0.31.3
+  sharp: 0.32.0
   tailwindcss: 3.2.4
 
 devDependencies:
@@ -71,7 +71,7 @@ packages:
   /@astrojs/compiler/1.0.1:
     resolution: {integrity: sha512-77aacobLKcL98NmhK3OBS5EHIrX9gs1ckB/vGSIdkVZuB7u51V4jh05I6W0tSvG7/86tALv6QtHTRZ8rLhFTbQ==}
 
-  /@astrojs/image/0.16.0_astro@2.0.2+sharp@0.31.3:
+  /@astrojs/image/0.16.0_astro@2.0.2+sharp@0.32.0:
     resolution: {integrity: sha512-9nZSA6/3ucdj5/M774CX0qtPtNZVGJeH6uTL4/4rYJgOZTFfr5CEGNmY9MIyayIYvatvG3VXyRGInLKEo4bXsg==}
     peerDependencies:
       astro: ^2.1.0
@@ -87,7 +87,7 @@ packages:
       kleur: 4.1.5
       magic-string: 0.27.0
       mime: 3.0.0
-      sharp: 0.31.3
+      sharp: 0.32.0
     dev: false
 
   /@astrojs/language-server/0.28.3:
@@ -3157,8 +3157,8 @@ packages:
       semver: 7.3.8
     dev: false
 
-  /node-addon-api/5.1.0:
-    resolution: {integrity: sha512-eh0GgfEkpnoWDq+VY8OyvYhFEzBk6jIYbRKdIlyTiAXIVJ8PyBaKb0rp7oDtoddbdoHWhq8wwr+XZ81F1rpNdA==}
+  /node-addon-api/6.0.0:
+    resolution: {integrity: sha512-GyHvgPvUXBvAkXa0YvYnhilSB1A+FRYMpIVggKzPZqdaZfevZOuzfWzyvgzOwRLHBeo/MMswmJFsrNF4Nw1pmA==}
     dev: false
 
   /node-releases/2.0.8:
@@ -3864,14 +3864,14 @@ packages:
     resolution: {integrity: sha512-rb+9B5YBIEzYcD6x2VKidaa+cqYBJQKnU4oe4E3ANwRRN56yk/ua1YCJT1n21NTS8w6CcOclAKNP3PhdCXKYtQ==}
     dev: false
 
-  /sharp/0.31.3:
-    resolution: {integrity: sha512-XcR4+FCLBFKw1bdB+GEhnUNXNXvnt0tDo4WsBsraKymuo/IAuPuCBVAL2wIkUw2r/dwFW5Q5+g66Kwl2dgDFVg==}
+  /sharp/0.32.0:
+    resolution: {integrity: sha512-yLAypVcqj1toSAqRSwbs86nEzfyZVDYqjuUX8grhFpeij0DDNagKJXELS/auegDBRDg1XBtELdOGfo2X1cCpeA==}
     engines: {node: '>=14.15.0'}
     requiresBuild: true
     dependencies:
       color: 4.2.3
       detect-libc: 2.0.1
-      node-addon-api: 5.1.0
+      node-addon-api: 6.0.0
       prebuild-install: 7.1.1
       semver: 7.3.8
       simple-get: 4.0.1
