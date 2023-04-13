@@ -5,6 +5,10 @@
   "author": "Krzysztof Żuraw (https://krzysztofzuraw.com/)",
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
   "scripts": {
     "astro": "astro",
     "build": "astro build",
