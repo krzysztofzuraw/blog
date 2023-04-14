@@ -1,0 +1,21 @@
+name: Dispatch workflow
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  dispatch-update-readme-workflow:
+    name: Run update readme workflow
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.PAT_TOKEN }}
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: 'krzysztofzuraw',
+              repo: 'krzysztofzuraw',
+              workflow_id: 'fetch-recent-blog-posts',
+              ref: 'main'
+            })
