@@ -20,13 +20,13 @@
     "start": "astro dev"
   },
   "dependencies": {
-    "@astrojs/image": "^0.16.4",
+    "@astrojs/image": "^0.16.6",
     "@astrojs/mdx": "^0.19.0",
     "@astrojs/rss": "^2.3.2",
-    "@astrojs/sitemap": "^1.2.1",
+    "@astrojs/sitemap": "^1.2.2",
     "@astrojs/tailwind": "^3.1.1",
     "@tailwindcss/typography": "^0.5.9",
-    "astro": "^2.1.9",
+    "astro": "^2.3.0",
     "astro-robots-txt": "^0.4.1",
     "date-fns": "^2.29.3",
     "lodash-es": "^4.17.21",
@@ -39,10 +39,10 @@
     "@types/lodash-es": "^4.17.7",
     "husky": "^8.0.3",
     "is-ci": "^3.0.1",
-    "lint-staged": "^13.2.0",
+    "lint-staged": "^13.2.1",
     "prettier": "^2.8.7",
     "prettier-plugin-astro": "^0.8.0",
     "prettier-plugin-pkg": "^0.17.1",
-    "prettier-plugin-tailwindcss": "^0.2.6"
+    "prettier-plugin-tailwindcss": "^0.2.7"
   }
 }
