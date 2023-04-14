@@ -16,6 +16,6 @@ jobs:
             await github.rest.actions.createWorkflowDispatch({
               owner: 'krzysztofzuraw',
               repo: 'krzysztofzuraw',
-              workflow_id: 'fetch-recent-blog-posts',
+              workflow_id: '4792828',
               ref: 'main'
             })
