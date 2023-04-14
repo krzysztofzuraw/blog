@@ -1,15 +1,10 @@
 import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
-import { chain } from "lodash-es";
 
 import { SITE_DESCRIPTION, SITE_TITLE } from "~utils/consts";
+import { getLatestsPosts } from "~utils/helpers";
 
 export async function get(context) {
-  const latestsPosts = chain(await getCollection("blog"))
-    .sortBy((post) => post.data.pubDate.valueOf())
-    .reverse()
-    .slice(0, 3)
-    .value();
+  const latestsPosts = await getLatestsPosts();
   return rss({
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
