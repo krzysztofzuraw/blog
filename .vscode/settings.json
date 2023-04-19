@@ -20,5 +20,6 @@
   "[mdx]": {
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100
-  }
+  },
+  "grammarly.files.include": ["**/README.md", "**/*.mdx"]
 }
