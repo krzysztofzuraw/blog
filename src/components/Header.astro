@@ -1,11 +1,11 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
+import Link from "./Link.astro";
 ---
 
 <header
   class="flex items-center justify-between gap-4 border-b border-gray-300 pb-8"
 >
-  <HeaderLink href="/" aria-label="Home page">
+  <Link href="/" aria-label="Home page">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="50"
@@ -19,26 +19,10 @@ import HeaderLink from "./HeaderLink.astro";
         d="M338.79 92.285h22.422v22.422H338.79zM383.63 92.285h22.422v22.422H383.63zM293.95 92.285h22.422v22.422H293.95z"
       ></path></svg
     >
-  </HeaderLink>
+  </Link>
 
   <nav class="flex flex-wrap gap-3 font-medium">
-    <HeaderLink href="/blog">Blog</HeaderLink>
-    <HeaderLink href="/uses">Uses</HeaderLink>
-    <HeaderLink href="/rss.xml" aria-label="RSS">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="feather feather-rss"
-        ><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"
-        ></path><circle cx="5" cy="19" r="1"></circle></svg
-      >
-    </HeaderLink>
+    <Link href="/blog">Blog</Link>
+    <Link href="/uses">Uses</Link>
   </nav>
 </header>
