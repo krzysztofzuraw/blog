@@ -6,7 +6,7 @@ dependencies:
     version: 0.16.8(astro@2.4.5)(sharp@0.32.1)
   '@astrojs/mdx':
     specifier: 0.19.1
-    version: 0.19.1(astro@2.4.5)(rollup@3.21.7)
+    version: 0.19.1(astro@2.4.5)(rollup@3.21.8)
   '@astrojs/rss':
     specifier: 2.4.1
     version: 2.4.1
@@ -32,8 +32,8 @@ dependencies:
     specifier: 4.17.21
     version: 4.17.21
   rollup:
-    specifier: 3.21.7
-    version: 3.21.7
+    specifier: 3.21.8
+    version: 3.21.8
   sharp:
     specifier: 0.32.1
     version: 0.32.1
@@ -153,14 +153,14 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/mdx@0.19.1(astro@2.4.5)(rollup@3.21.7):
+  /@astrojs/mdx@0.19.1(astro@2.4.5)(rollup@3.21.8):
     resolution: {integrity: sha512-9GNNZbGT+lGvbRkQK/NaEJcnjj1T94/ne0KwPjJgNCBQrJuskX5IW1hKiE5bRSOFvkAOrBGneYKg0GXYArBOQQ==}
     engines: {node: '>=16.12.0'}
     dependencies:
       '@astrojs/markdown-remark': 2.2.0(astro@2.4.5)
       '@astrojs/prism': 2.1.1
       '@mdx-js/mdx': 2.3.0
-      '@mdx-js/rollup': 2.3.0(rollup@3.21.7)
+      '@mdx-js/rollup': 2.3.0(rollup@3.21.8)
       acorn: 8.8.2
       es-module-lexer: 1.2.1
       estree-util-visit: 1.2.1
@@ -757,14 +757,14 @@ packages:
       - supports-color
     dev: false
 
-  /@mdx-js/rollup@2.3.0(rollup@3.21.7):
+  /@mdx-js/rollup@2.3.0(rollup@3.21.8):
     resolution: {integrity: sha512-wLvRfJS/M4UmdqTd+WoaySEE7q4BIejYf1xAHXYvtT1du/1Tl/z2450Gg2+Hu7fh05KwRRiehiTP9Yc/Dtn0fA==}
     peerDependencies:
       rollup: '>=2'
     dependencies:
       '@mdx-js/mdx': 2.3.0
-      '@rollup/pluginutils': 5.0.2(rollup@3.21.7)
-      rollup: 3.21.7
+      '@rollup/pluginutils': 5.0.2(rollup@3.21.8)
+      rollup: 3.21.8
       source-map: 0.7.4
       vfile: 5.3.6
     transitivePeerDependencies:
@@ -810,7 +810,7 @@ packages:
       escalade: 3.1.1
     dev: false
 
-  /@rollup/pluginutils@5.0.2(rollup@3.21.7):
+  /@rollup/pluginutils@5.0.2(rollup@3.21.8):
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -822,7 +822,7 @@ packages:
       '@types/estree': 1.0.0
       estree-walker: 2.0.2
       picomatch: 2.3.1
-      rollup: 3.21.7
+      rollup: 3.21.8
     dev: false
 
   /@tailwindcss/typography@0.5.9(tailwindcss@3.3.2):
@@ -3645,8 +3645,8 @@ packages:
     resolution: {integrity: sha512-V2hovdzFbOi77/WajaSMXk2OLm+xNIeQdMMuB7icj7bk6zi2F8GGAxigcnDFpJHbNyNcgyJDiP+8nOrY5cZGrA==}
     dev: true
 
-  /rollup@3.21.7:
-    resolution: {integrity: sha512-KXPaEuR8FfUoK2uHwNjxTmJ18ApyvD6zJpYv9FOJSqLStmt6xOY84l1IjK2dSolQmoXknrhEFRaPRgOPdqCT5w==}
+  /rollup@3.21.8:
+    resolution: {integrity: sha512-SSFV2T2fWtQ/vvBip85u2Nr0GNKireabH9d7nXswBg+XSH+jbVDSYptRAEbCEsquhs503rpPA9POYAp0/Jhasw==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -4280,7 +4280,7 @@ packages:
     dependencies:
       esbuild: 0.17.14
       postcss: 8.4.23
-      rollup: 3.21.7
+      rollup: 3.21.8
     optionalDependencies:
       fsevents: 2.3.2
     dev: false
