@@ -16,9 +16,7 @@ const { frontmatter } = Astro.props;
 
 <BaseLayout>
   <Meta title={`${frontmatter.title} | ${SITE_TITLE}`} slot="meta" />
-  <article
-    class="prose mx-auto font-serif dark:prose-invert lg:prose-xl prose-headings:font-sans"
-  >
+  <article class="prose mx-auto dark:prose-invert lg:prose-xl">
     <h1>{frontmatter.title}</h1>
     <p class="text-gray-600 dark:dark:text-gray-300">
       Last updated:
