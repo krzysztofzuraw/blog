@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@astrojs/image':
-    specifier: 0.16.8
-    version: 0.16.8(astro@2.5.0)(sharp@0.32.1)
+    specifier: 0.16.9
+    version: 0.16.9(astro@2.5.0)(sharp@0.32.1)
   '@astrojs/mdx':
     specifier: 0.19.1
     version: 0.19.1(astro@2.5.0)(rollup@3.22.0)
@@ -92,10 +92,10 @@ packages:
   /@astrojs/compiler@1.4.1:
     resolution: {integrity: sha512-aXAxapNWZwGN41P+Am/ma/2kAzKOhMNaY6YuvLkUHFv+UZkmDHD6F0fE1sQA2Up0bLjgPQa1VQzoAaii5tZWaA==}
 
-  /@astrojs/image@0.16.8(astro@2.5.0)(sharp@0.32.1):
-    resolution: {integrity: sha512-ka18Y8HXllitE4TN66tmxqc1j+pgfqfq5i/D3I0QmmH2hFd7olFNVDrd15S4ZM1U5jxZORUv+PuJU0g8dZEjqQ==}
+  /@astrojs/image@0.16.9(astro@2.5.0)(sharp@0.32.1):
+    resolution: {integrity: sha512-8RfGGd1MAIQ6xCHgmu+xXBKWE14gvWYcIv61PxWlToEBgMUbmFdN5ICBQ1bea24rx6o5WvsvRjfOnkjPpf2eew==}
     peerDependencies:
-      astro: ^2.4.5
+      astro: ^2.5.0
       sharp: '>=0.31.0'
     peerDependenciesMeta:
       sharp:
