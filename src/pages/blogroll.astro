@@ -1,0 +1,21 @@
+---
+import BaseLayout from "~layouts/Base.astro";
+
+import blogroll from "~content/_blogroll.json";
+---
+
+<BaseLayout>
+  <article class="prose mx-auto dark:prose-invert lg:prose-xl">
+    <h1>Blogroll</h1>
+    <p>Here are some blogs I like to read.</p>
+    <ul>
+      {
+        blogroll.map((entry) => (
+          <li>
+            <a href={entry.url}>{entry.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+</BaseLayout>

@@ -22,5 +22,9 @@
     "editor.wordWrapColumn": 100
   },
   "grammarly.files.include": ["**/README.md", "**/*.mdx"],
-  "cSpell.diagnosticLevel": "Information"
+  "cSpell.diagnosticLevel": "Information",
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": false
+  }
 }

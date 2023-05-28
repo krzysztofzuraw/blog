@@ -1,0 +1,91 @@
+[
+  {
+    "title": "Daring Fireball",
+    "url": "http://daringfireball.net/"
+  },
+  {
+    "title": "Stratechery",
+    "url": "https://stratechery.com"
+  },
+  {
+    "title": "Marco Arment",
+    "url": "https://marco.org/"
+  },
+  {
+    "title": "Addy Osmani",
+    "url": "https://addyosmani.com"
+  },
+  {
+    "title": "Paweł Grzybek",
+    "url": "https://pawelgrzybek.com"
+  },
+  {
+    "title": "Ahmad Shadeed",
+    "url": "http://ishadeed.com/"
+  },
+  {
+    "title": "Dave Rupert",
+    "url": "https://daverupert.com"
+  },
+  {
+    "title": "Martin Fowler",
+    "url": "https://martinfowler.com"
+  },
+  {
+    "title": "Matthias Ott",
+    "url": "http://matthiasott.com"
+  },
+
+  {
+    "title": "Stefan Judis",
+    "url": "https://www.stefanjudis.com/"
+  },
+  {
+    "title": "Jim Nielsen",
+    "url": "https://blog.jim-nielsen.com"
+  },
+  {
+    "title": "web.dev",
+    "url": "https://web.dev"
+  },
+  {
+    "title": "Tania Rascia",
+    "url": "https://www.taniarascia.com"
+  },
+  {
+    "title": "Chris Coyier",
+    "url": "https://chriscoyier.net/"
+  },
+  {
+    "title": "Josh Comeau",
+    "url": "https://www.joshwcomeau.com/"
+  },
+  {
+    "title": "Industrial Empathy",
+    "url": "https://www.industrialempathy.com"
+  },
+  {
+    "title": "Andy Bell",
+    "url": "https://andy-bell.co.uk"
+  },
+  {
+    "title": "Bryce Wray",
+    "url": "https://www.brycewray.com"
+  },
+  {
+    "title": "Sara Soueidan",
+    "url": "https://www.sarasoueidan.com"
+  },
+  {
+    "title": "Una Kravets",
+    "url": "https://una.im"
+  },
+  {
+    "title": "Wes Bos",
+    "url": "https://wesbos.com"
+  },
+  {
+    "title": "Dan Abramov",
+    "url": "https://overreacted.io"
+  }
+]
