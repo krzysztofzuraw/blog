@@ -2,7 +2,7 @@
 import { Image } from "@astrojs/image/components";
 
 import BaseLayout from "~layouts/Base.astro";
-import { getLatestsPosts } from "~utils/helpers";
+import { getLatestsPosts } from "~utils/getLatestsPosts";
 
 const latestsPosts = await getLatestsPosts();
 ---

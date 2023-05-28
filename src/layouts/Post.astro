@@ -3,7 +3,7 @@ import type { MDXLayoutProps } from "astro";
 import { format, parseISO } from "date-fns";
 
 import Meta from "~components/Meta.astro";
-import { SITE_TITLE } from "~utils/consts";
+import metadata from "~data/metadata.json";
 import BaseLayout from "./Base.astro";
 
 type Props = MDXLayoutProps<{
@@ -15,7 +15,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout>
-  <Meta title={`${frontmatter.title} | ${SITE_TITLE}`} slot="meta" />
+  <Meta title={`${frontmatter.title} | ${metadata.title}`} slot="meta" />
   <article
     class="prose mx-auto font-serif dark:prose-invert lg:prose-xl prose-headings:font-sans"
   >

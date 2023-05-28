@@ -1,6 +1,7 @@
 import type { APIRoute } from "astro";
-import { SITE_URL } from "~utils/consts";
-import { getLatestsPosts } from "~utils/helpers";
+
+import metadata from "~data/metadata.json";
+import { getLatestsPosts } from "~utils/getLatestsPosts";
 
 export const get: APIRoute = async () => {
   const latestsPosts = await getLatestsPosts();
@@ -9,7 +10,7 @@ export const get: APIRoute = async () => {
     body: JSON.stringify(
       latestsPosts.map((post) => ({
         title: post.data.title,
-        url: `${SITE_URL}/blog/${post.slug}/`,
+        url: `${metadata.url}/blog/${post.slug}/`,
       }))
     ),
   };

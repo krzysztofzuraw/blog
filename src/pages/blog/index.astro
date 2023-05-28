@@ -4,7 +4,7 @@ import { format } from "date-fns";
 import { chain } from "lodash-es";
 
 import Meta from "~components/Meta.astro";
-import { SITE_TITLE } from "~utils/consts";
+import metadata from "~data/metadata.json";
 
 import BaseLayout from "~layouts/Base.astro";
 
@@ -17,7 +17,7 @@ const postsByYear = chain(await getCollection("blog"))
 ---
 
 <BaseLayout>
-  <Meta title={`Blog | ${SITE_TITLE}`} slot="meta" slot="meta" />
+  <Meta title={`Blog | ${metadata.title}`} slot="meta" slot="meta" />
   <article>
     <h1 class="mb-4 text-5xl font-extrabold">Blog posts</h1>
     <ul>
