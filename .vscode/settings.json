@@ -4,7 +4,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "files.associations": {
-    "*.css": "tailwindcss"
+    "*.css": "tailwindcss",
+    "*.mdx": "markdown"
   },
   "editor.quickSuggestions": {
     "strings": true
@@ -12,6 +13,15 @@
   "tailwindCSS.includeLanguages": {
     "astro": "html"
   },
+  "[markdown]": {
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 100
+  },
+  "[mdx]": {
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 100
+  },
   "grammarly.files.include": ["**/README.md", "**/*.mdx"],
+  "grammarly.files.exclude": ["**/*-wip.mdx"],
   "cSpell.diagnosticLevel": "Information"
 }

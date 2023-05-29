@@ -1,18 +1,19 @@
 import rss from "@astrojs/rss";
+import type { APIRoute } from "astro";
 
-import metadata from "~data/metadata.json";
+import { blogDescription, blogTitle } from "~data/metadata";
 import { getLatestsPosts } from "~utils/getLatestsPosts";
 
-export async function get(context) {
+export const get: APIRoute = async ({ site }) => {
   const latestsPosts = await getLatestsPosts();
   return rss({
-    title: metadata.title,
-    description: metadata.description,
-    site: context.site,
+    title: blogTitle,
+    description: blogDescription,
+    site: site?.toString() ?? "",
     stylesheet: "/rss/styles.xsl",
     items: latestsPosts.map((post) => ({
       link: `/blog/${post.slug}/`,
       ...post.data,
     })),
   });
-}
+};

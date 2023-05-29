@@ -3,7 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import { format } from "date-fns";
 
 import Meta from "~components/Meta.astro";
-import metadata from "~data/metadata.json";
+import { blogTitle } from "~data/metadata";
 
 import BaseLayout from "./Base.astro";
 
@@ -14,7 +14,7 @@ const { title, description, pubDate } = Astro.props;
 
 <BaseLayout>
   <Meta
-    title={`${title} | ${metadata.title}`}
+    title={`${title} | ${blogTitle}`}
     description={description}
     slot="meta"
   />

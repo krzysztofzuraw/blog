@@ -1,15 +1,14 @@
 ---
-import metadata from "~data/metadata.json";
+import { blogDescription, blogTitle } from "~data/metadata";
 
 export type Props = {
-  title?: string;
-  description?: string;
+  title?: string | undefined;
+  description?: string | undefined;
 };
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title = metadata.title, description = metadata.description } =
-  Astro.props;
+const { title = blogTitle, description = blogDescription } = Astro.props;
 
 const ogImageUrl = `https://blog-og-image-three.vercel.app/api/og?${new URLSearchParams(
   { title: title.replace(" | Krzysztof Żuraw", ""), description }
@@ -51,7 +50,14 @@ const ogImageUrl = `https://blog-og-image-three.vercel.app/api/og?${new URLSearc
   rel="alternate"
   href="/rss.xml"
   type="application/atom+xml"
-  title=`${metadata.title}: Blog posts`
+  title=`${blogTitle}: Blog posts`
+/>
+
+<link
+  rel="alternate"
+  href="https://feedbin.com/starred/a4b028eb46d45bee79d2d211b9bb3ecf.xml"
+  type="application/atom+xml"
+  title=`${blogTitle}: Starred articles`
 />
 
 <!-- Other -->
