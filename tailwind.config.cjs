@@ -9,9 +9,6 @@ module.exports = {
       transformOrigin: {
         wave: "70% 70%",
       },
-      fontFamily: {
-        serif: ["Charter", "Georgia", "serif"],
-      },
       keyframes: {
         wave: {
           "0%": { transform: "rotate(0deg)" },
