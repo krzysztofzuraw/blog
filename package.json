@@ -40,7 +40,7 @@
     "is-ci": "3.0.1",
     "lint-staged": "13.2.2",
     "prettier": "2.8.8",
-    "prettier-plugin-astro": "0.9.1",
+    "prettier-plugin-astro": "0.10.0",
     "prettier-plugin-pkg": "0.17.1",
     "prettier-plugin-tailwindcss": "0.3.0"
   }
