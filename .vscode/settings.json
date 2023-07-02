@@ -26,5 +26,11 @@
   "cSpell.diagnosticLevel": "Information",
   "markdown.copyFiles.destination": {
     "/src/content/blog/**/*": "/src/assets/${fileName}"
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
   }
 }
