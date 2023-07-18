@@ -5,7 +5,7 @@
   "author": "Krzysztof Żuraw (https://krzysztofzuraw.com/)",
   "license": "MIT",
   "private": true,
-  "packageManager": "pnpm@8.6.8",
+  "packageManager": "pnpm@8.6.9",
   "engines": {
     "node": ">=18",
     "pnpm": ">=7"
