@@ -129,7 +129,7 @@ api and div so google maps know where should they be rendered:
 <script
   async
   defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRv_y2yX-QyB7LcQDZKPYaItS8p3AYEQg&callback=initMap"
+  src="https://maps.googleapis.com/maps/api/js?key=KEY&callback=initMap"
 ></script>
 ```
 
@@ -155,7 +155,7 @@ function initMap() {
     event.preventDefault();
     questionForm.classList.add("is-hidden");
     const mainPointCoords = geocodeAddress(
-      searchForm.querySelector("[name=place]").value
+      searchForm.querySelector("[name=place]").value,
     );
     const map = new google.maps.Map(mapElem, {
       zoom: 4,
