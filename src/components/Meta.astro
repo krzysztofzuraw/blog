@@ -10,9 +10,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title = blogTitle, description = blogDescription } = Astro.props;
 
-const ogImageUrl = `https://blog-og-image-three.vercel.app/api/og?${new URLSearchParams(
-  { title: title.replace(" | Krzysztof Żuraw", ""), description },
-).toString()}`;
+const searchParams = new URLSearchParams({
+  title: title.replace(" | Krzysztof Żuraw", ""),
+  description,
+});
+
+const ogImageUrl = `https://blog-og-image-three.vercel.app/api/og?${searchParams.toString()}`;
 ---
 
 <!-- Global Metadata -->
@@ -51,12 +54,6 @@ const ogImageUrl = `https://blog-og-image-three.vercel.app/api/og?${new URLSearc
   href="/rss.xml"
   type="application/atom+xml"
   title=`${blogTitle}: Blog posts`
-/>
-<link
-  rel="alternate"
-  href="https://feedbin.com/starred/456b97949b372f81443efb0dfa6d2d32.xml"
-  type="application/json"
-  title=`${blogTitle}: Starred articles`
 />
 
 <!-- Other -->
