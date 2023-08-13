@@ -21,8 +21,6 @@
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100
   },
-  "grammarly.files.include": ["**/README.md", "**/*.mdx"],
-  "grammarly.files.exclude": ["**/*-wip.mdx"],
   "cSpell.diagnosticLevel": "Information",
   "markdown.copyFiles.destination": {
     "/src/content/blog/**/*": "/src/assets/${fileName}"
