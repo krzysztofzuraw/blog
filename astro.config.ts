@@ -14,6 +14,21 @@ export default defineConfig({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
     tailwind(),
-    robotsTxt(),
+    robotsTxt({
+      policy: [
+        {
+          userAgent: "GPTBot",
+          disallow: "/",
+        },
+        {
+          userAgent: "ChatGPT-User",
+          disallow: "/",
+        },
+        {
+          userAgent: "*",
+          allow: "/",
+        },
+      ],
+    }),
   ],
 });
