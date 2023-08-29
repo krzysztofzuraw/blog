@@ -31,7 +31,7 @@
     "markdown": false,
     "scminput": false
   },
-  "deno.enablePaths": ["./netlify/edge-functions"],
+  "deno.enablePaths": ["./netlify/functions"],
   "deno.lint": true,
   "deno.unstable": true
 }
