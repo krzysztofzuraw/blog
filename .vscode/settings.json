@@ -30,5 +30,8 @@
     "plaintext": false,
     "markdown": false,
     "scminput": false
-  }
+  },
+  "deno.enablePaths": ["./netlify/edge-functions"],
+  "deno.lint": true,
+  "deno.unstable": true
 }

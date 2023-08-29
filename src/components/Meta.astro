@@ -12,10 +12,9 @@ const { title = blogTitle, description = blogDescription } = Astro.props;
 
 const searchParams = new URLSearchParams({
   title: title.replace(" | Krzysztof Żuraw", ""),
-  description,
 });
 
-const ogImageUrl = `https://blog-og-image-three.vercel.app/api/og?${searchParams.toString()}`;
+const ogImageUrl = `${Astro.site}og-image?${searchParams.toString()}`;
 ---
 
 <!-- Global Metadata -->

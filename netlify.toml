@@ -9,3 +9,7 @@
 [[redirects]]
  from = "/feed.xml"
  to = "/rss.xml"
+
+[[edge_functions]]
+  function = "og"
+  path = "/og-image"
