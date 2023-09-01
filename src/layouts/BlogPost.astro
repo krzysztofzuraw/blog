@@ -15,8 +15,6 @@ const { title, description, pubDate } = Astro.props;
 <BaseLayout>
   <Meta
     title={`${title} | ${blogTitle}`}
-    ogTitle={title}
-    pubDate={pubDate}
     description={description}
     slot="meta"
   />
