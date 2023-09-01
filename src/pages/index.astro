@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 import BaseLayout from "~layouts/Base.astro";
 import { getLatestsPosts } from "~utils/getLatestsPosts";
@@ -15,14 +15,7 @@ const latestsPosts = await getLatestsPosts();
       >
     </h1>
     <section class="flex flex-col items-center gap-4 md:flex-row">
-      <Image
-        src="/avatar.jpg"
-        alt="Krzysztof Żuraw"
-        width={800}
-        height={800}
-        format="avif"
-        class="w-[128px] rounded-full"
-      />
+      <Image src="/avatar.jpg" alt="Krzysztof Żuraw" width={200} height={200} />
       <div>
         <p>Welcome to my blog. Here's a brief introduction about me:</p>
         <ul>

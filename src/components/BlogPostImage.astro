@@ -1,12 +1,12 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 const { src, alt, ...attrs } = Astro.props;
 ---
 
-<Picture
+<Image
   src={import(`../assets/${src}.jpg`)}
-  widths={[400, 800, 1500]}
+  width={800}
   sizes="(max-width: 767px) 100vw, 736px"
   alt={alt}
   {...attrs}

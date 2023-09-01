@@ -23,13 +23,13 @@
     "start": "astro dev"
   },
   "dependencies": {
-    "@astrojs/image": "0.18.0",
-    "@astrojs/mdx": "0.19.7",
+    "@astrojs/mdx": "1.0.0",
+    "@astrojs/react": "3.0.0",
     "@astrojs/rss": "3.0.0",
     "@astrojs/sitemap": "3.0.0",
     "@astrojs/tailwind": "5.0.0",
     "@tailwindcss/typography": "0.5.9",
-    "astro": "2.10.15",
+    "astro": "3.0.5",
     "astro-robots-txt": "0.5.0",
     "date-fns": "2.30.0",
     "lodash-es": "4.17.21",
@@ -38,6 +38,7 @@
     "tailwindcss": "3.3.3"
   },
   "devDependencies": {
+    "@astrojs/check": "0.2.0",
     "@types/lodash": "4.14.197",
     "@types/lodash-es": "4.17.9",
     "husky": "8.0.3",
@@ -47,6 +48,7 @@
     "prettier": "3.0.3",
     "prettier-plugin-astro": "0.12.0",
     "prettier-plugin-pkg": "0.18.0",
-    "prettier-plugin-tailwindcss": "0.5.4"
+    "prettier-plugin-tailwindcss": "0.5.4",
+    "typescript": "5.2.2"
   }
 }

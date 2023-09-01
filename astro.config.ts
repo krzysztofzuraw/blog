@@ -1,4 +1,3 @@
-import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
@@ -10,9 +9,6 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap(),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
     tailwind(),
     robotsTxt({
       policy: [
