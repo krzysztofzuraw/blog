@@ -3,10 +3,9 @@ import { getCollection } from "astro:content";
 import { format } from "date-fns";
 import { chain } from "lodash-es";
 
-import Meta from "~components/Meta.astro";
-import { blogTitle } from "~data/metadata";
-
-import BaseLayout from "~layouts/Base.astro";
+import Meta from "@/components/Meta.astro";
+import { blogTitle } from "@/data/metadata";
+import BaseLayout from "@/layouts/Base.astro";
 
 const postsByYear = chain(await getCollection("blog"))
   .sortBy((post) => -post.data.pubDate)

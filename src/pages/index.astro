@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
 
-import BaseLayout from "~layouts/Base.astro";
-import { getLatestsPosts } from "~utils/getLatestsPosts";
+import BaseLayout from "@/layouts/Base.astro";
+import { getLatestsPosts } from "@/utils/getLatestsPosts";
 
 const latestsPosts = await getLatestsPosts();
 ---

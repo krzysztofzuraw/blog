@@ -1,7 +1,7 @@
 import type { APIRoute } from "astro";
 
-import { blogUrl } from "~data/metadata";
-import { getLatestsPosts } from "~utils/getLatestsPosts";
+import { blogUrl } from "@/data/metadata";
+import { getLatestsPosts } from "@/utils/getLatestsPosts";
 
 export const GET: APIRoute = async () => {
   const latestsPosts = await getLatestsPosts();

@@ -587,10 +587,7 @@ http://fba8f218.ngrok.io/.
 
 With this url I go to AWS SNS subscription tab and add new subscription:
 
-<BlogPostImage
-  src="2017-01-15-subscription"
-  alt="Creating a SNS subscription"
-/>
+![Creating a SNS subscription](../../assets/2017-01-15-subscription.jpg)
 
 After setting this up you will receive SNS message with link that you
 need to paste in browser to confirm subscription.

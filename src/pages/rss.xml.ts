@@ -3,8 +3,8 @@ import type { APIRoute } from "astro";
 import MarkdownIt from "markdown-it";
 import sanitizeHtml from "sanitize-html";
 
-import { blogDescription, blogTitle } from "~data/metadata";
-import { getLatestsPosts } from "~utils/getLatestsPosts";
+import { blogDescription, blogTitle } from "@/data/metadata";
+import { getLatestsPosts } from "@/utils/getLatestsPosts";
 
 const parser = new MarkdownIt();
 

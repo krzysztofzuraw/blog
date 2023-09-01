@@ -131,18 +131,12 @@ created by going to apps tab under preferences:
 After that click on create new application on the end of the page and
 you will see something like this:
 
-<BlogPostImage
-  src="2016-05-22-reddit-app-creation"
-  alt="Reddit application creation"
-/>
+![Reddit application creation](../../assets/2016-05-22-reddit-app-creation.jpg)
 
 By clicking `create app` you will see that `reddit_client_secret` is
 `secret` and `reddit_client_id` is string under `personal use script`.
 
-<BlogPostImage
-  src="2016-05-22-reddit-secrets"
-  alt="Reddit application secrets"
-/>
+![Reddit application secrets](../../assets/2016-05-22-reddit-secrets.jpg)
 
 After initialization, there is method called `authorize` (line 16) which
 takes care of proper authorization via [Oauth2](http://oauth.net/2/).
