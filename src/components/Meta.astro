@@ -24,8 +24,8 @@ const searchParams = new URLSearchParams({
 });
 
 const ogImageUrl = ogTitle
-  ? `/api/og-image?${searchParams.toString()}`
-  : "/og-main.jpg";
+  ? `${Astro.site}api/og-image?${searchParams.toString()}`
+  : `${Astro.site}og-main.jpg`;
 ---
 
 <!-- Global Metadata -->
