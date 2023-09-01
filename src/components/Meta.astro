@@ -1,20 +1,31 @@
 ---
 import { blogDescription, blogTitle } from "@/data/metadata";
+import { format } from "date-fns";
 
 export type Props = {
   title?: string | undefined;
   description?: string | undefined;
+  ogTitle?: string | undefined;
+  pubDate?: Date | undefined;
 };
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title = blogTitle, description = blogDescription } = Astro.props;
+const {
+  title = blogTitle,
+  description = blogDescription,
+  ogTitle = "",
+  pubDate = 0,
+} = Astro.props;
 
 const searchParams = new URLSearchParams({
-  title: title.replace(" | Krzysztof Żuraw", ""),
+  title: ogTitle,
+  date: format(pubDate, "yyyy-MM-dd"),
 });
 
-const ogImageUrl = `${Astro.site}og-image?${searchParams.toString()}`;
+const ogImageUrl = ogTitle
+  ? `/api/og-image?${searchParams.toString()}`
+  : "/og-main.jpg";
 ---
 
 <!-- Global Metadata -->
