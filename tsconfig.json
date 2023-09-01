@@ -10,7 +10,8 @@
       "~public/*": ["public/*"],
       "~content/*": ["src/content/*"],
       "~utils/*": ["src/utils/*"],
-      "~data/*": ["src/data/*"]
+      "~data/*": ["src/data/*"],
+      "@/*": ["src/*"]
     }
   }
 }
