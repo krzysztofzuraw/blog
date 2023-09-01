@@ -1,8 +1,8 @@
 {
   "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
-    "skipLibCheck": true,
     "baseUrl": ".",
+    "jsx": "preserve",
     "paths": {
       "@/*": ["src/*"]
     }
