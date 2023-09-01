@@ -19,14 +19,7 @@ export default async function handler(req) {
     const html = {
       type: "div",
       props: {
-        style: {
-          display: "flex",
-          backgroundColor: "white",
-          color: "black",
-          height: "100%",
-          width: "100%",
-          padding: "16px",
-        },
+        tw: "flex bg-white text-black h-full w-full p-16",
         children: [
           {
             type: "div",
