@@ -1,12 +1,12 @@
 ---
-import type { MDXLayoutProps } from "astro";
+import type { MarkdownLayoutProps } from "astro";
 import { format, parseISO } from "date-fns";
 
 import Meta from "~components/Meta.astro";
 import { blogTitle } from "~data/metadata";
 import BaseLayout from "./Base.astro";
 
-type Props = MDXLayoutProps<{
+type Props = MarkdownLayoutProps<{
   title: string;
   pubDate: string;
 }>;

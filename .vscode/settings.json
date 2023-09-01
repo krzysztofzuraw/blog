@@ -4,8 +4,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "files.associations": {
-    "*.css": "tailwindcss",
-    "*.mdx": "markdown"
+    "*.css": "tailwindcss"
   },
   "editor.quickSuggestions": {
     "strings": true
@@ -17,10 +16,7 @@
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100
   },
-  "[mdx]": {
-    "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 100
-  },
+
   "cSpell.diagnosticLevel": "Information",
   "markdown.copyFiles.destination": {
     "/src/content/blog/**/*": "/src/assets/${fileName}"
