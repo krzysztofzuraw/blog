@@ -1,5 +1,4 @@
-const blogTitle = "Krzysztof Żuraw";
-const blogDescription = "Blog about TypeScript, React and all things frontend";
-const blogUrl = "https://krzysztofzuraw.com";
-
-export { blogDescription, blogTitle, blogUrl };
+export const blogTitle = "Krzysztof Żuraw";
+export const blogDescription =
+  "Blog about TypeScript, React and all things frontend";
+export const blogUrl = "https://krzysztofzuraw.com";

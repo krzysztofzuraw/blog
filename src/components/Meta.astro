@@ -9,6 +9,8 @@ export type Props = {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title = blogTitle, description = blogDescription } = Astro.props;
+
+const ogImage = `${Astro.site}og-main.jpg`;
 ---
 
 <!-- Global Metadata -->
@@ -31,7 +33,7 @@ const { title = blogTitle, description = blogDescription } = Astro.props;
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={`${Astro.site}og-main.jpg`} />
+<meta property="og:image" content={ogImage} />
 
 <!-- Twitter -->
 <meta name="twitter:dnt" content="on" />
@@ -39,7 +41,7 @@ const { title = blogTitle, description = blogDescription } = Astro.props;
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={`${Astro.site}og-main.jpg`} />
+<meta property="twitter:image" content={ogImage} />
 
 <!-- RSS -->
 <link
