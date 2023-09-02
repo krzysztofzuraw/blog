@@ -9,3 +9,15 @@
 [[redirects]]
  from = "/feed.xml"
  to = "/rss.xml"
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+  [plugins.inputs.thresholds]
+    performance = 0.9
+
+  [[plugins.inputs.audits]]
+    path = '/blog/'
+
+  [[plugins.inputs.audits]]
+    path = '/blog/2021/on-reading-paper-magazines/'

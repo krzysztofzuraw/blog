@@ -11,16 +11,16 @@ export default defineConfig({
     robotsTxt({
       policy: [
         {
+          userAgent: "*",
+          allow: "/",
+        },
+        {
           userAgent: "GPTBot",
           disallow: "/",
         },
         {
           userAgent: "ChatGPT-User",
           disallow: "/",
-        },
-        {
-          userAgent: "*",
-          allow: "/",
         },
       ],
     }),
