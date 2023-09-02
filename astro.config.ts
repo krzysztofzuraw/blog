@@ -5,24 +5,5 @@ import { defineConfig } from "astro/config";
 
 export default defineConfig({
   site: "https://krzysztofzuraw.com",
-  integrations: [
-    sitemap(),
-    tailwind(),
-    robotsTxt({
-      policy: [
-        {
-          userAgent: "*",
-          allow: "/",
-        },
-        {
-          userAgent: "GPTBot",
-          disallow: "/",
-        },
-        {
-          userAgent: "ChatGPT-User",
-          disallow: "/",
-        },
-      ],
-    }),
-  ],
+  integrations: [sitemap(), tailwind(), robotsTxt()],
 });

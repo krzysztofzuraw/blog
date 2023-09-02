@@ -44,7 +44,7 @@ const { title = blogTitle, description = blogDescription } = Astro.props;
 <!-- RSS -->
 <link
   rel="alternate"
-  href="/rss.xml"
+  href={`${Astro.site}rss.xml`}
   type="application/atom+xml"
   title=`${blogTitle}: Blog posts`
 />
