@@ -16,7 +16,6 @@
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100
   },
-
   "cSpell.diagnosticLevel": "Information",
   "markdown.copyFiles.destination": {
     "/src/content/blog/**/*": "/src/assets/${fileName}"
@@ -26,8 +25,5 @@
     "plaintext": false,
     "markdown": false,
     "scminput": false
-  },
-  "deno.enablePaths": ["./netlify/functions"],
-  "deno.lint": true,
-  "deno.unstable": true
+  }
 }
