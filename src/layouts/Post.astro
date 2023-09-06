@@ -3,7 +3,7 @@ import type { MarkdownLayoutProps } from "astro";
 import { format, parseISO } from "date-fns";
 
 import Meta from "@/components/Meta.astro";
-import { blogTitle } from "@/data/metadata";
+import { TITLE } from "@/data/metadata";
 import BaseLayout from "./Base.astro";
 
 type Props = MarkdownLayoutProps<{
@@ -15,7 +15,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout>
-  <Meta title={`${frontmatter.title} | ${blogTitle}`} slot="meta" />
+  <Meta title={`${frontmatter.title} | ${TITLE}`} slot="meta" />
   <article class="prose mx-auto dark:prose-invert lg:prose-xl">
     <h1>{frontmatter.title}</h1>
     <p class="text-gray-600 dark:dark:text-gray-300">

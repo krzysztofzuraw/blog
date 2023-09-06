@@ -1,5 +1,5 @@
 ---
-import { blogDescription, blogTitle } from "@/data/metadata";
+import { DESCRIPTION, TITLE } from "@/data/metadata";
 
 export type Props = {
   title?: string | undefined;
@@ -8,7 +8,7 @@ export type Props = {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title = blogTitle, description = blogDescription } = Astro.props;
+const { title = TITLE, description = DESCRIPTION } = Astro.props;
 
 const ogImage = `${Astro.site}og-main.jpg`;
 ---
@@ -48,7 +48,7 @@ const ogImage = `${Astro.site}og-main.jpg`;
   rel="alternate"
   href={`${Astro.site}rss.xml`}
   type="application/atom+xml"
-  title=`${blogTitle}: Blog posts`
+  title=`${TITLE}: Blog posts`
 />
 
 <!-- Other -->
