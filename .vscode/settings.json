@@ -1,29 +1,30 @@
 {
-  "prettier.documentSelectors": ["**/*.astro"],
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "files.associations": {
-    "*.css": "tailwindcss"
-  },
-  "editor.quickSuggestions": {
-    "strings": true
-  },
-  "tailwindCSS.includeLanguages": {
-    "astro": "html"
   },
   "[markdown]": {
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100
   },
   "cSpell.diagnosticLevel": "Information",
-  "markdown.copyFiles.destination": {
-    "/src/content/blog/**/*": "/src/assets/${fileName}"
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
   },
   "github.copilot.enable": {
     "*": true,
-    "plaintext": false,
     "markdown": false,
+    "plaintext": false,
     "scminput": false
+  },
+  "json.sortOnSave.enable": true,
+  "markdown.copyFiles.destination": {
+    "/src/content/blog/**/*": "/src/assets/${fileName}"
+  },
+  "prettier.documentSelectors": ["**/*.astro"],
+  "tailwindCSS.includeLanguages": {
+    "astro": "html"
   }
 }
