@@ -39,7 +39,7 @@
   "devDependencies": {
     "@astrojs/check": "0.2.0",
     "@netlify/plugin-lighthouse": "5.0.0",
-    "@types/lodash": "4.14.197",
+    "@types/lodash": "4.14.198",
     "@types/lodash-es": "4.17.9",
     "@types/markdown-it": "13.0.1",
     "@types/sanitize-html": "2.9.0",
