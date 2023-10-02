@@ -42,7 +42,7 @@
     "@types/lodash": "4.14.199",
     "@types/lodash-es": "4.17.9",
     "@types/markdown-it": "13.0.2",
-    "@types/sanitize-html": "2.9.0",
+    "@types/sanitize-html": "2.9.1",
     "husky": "8.0.3",
     "is-ci": "3.0.1",
     "lint-staged": "14.0.1",
