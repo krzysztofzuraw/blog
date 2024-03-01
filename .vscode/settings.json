@@ -19,7 +19,6 @@
     "plaintext": false,
     "scminput": false
   },
-  "json.sortOnSave.enable": true,
   "markdown.copyFiles.destination": {
     "/src/content/blog/**/*": "/src/assets/${fileName}"
   },
