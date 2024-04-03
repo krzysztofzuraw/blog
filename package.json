@@ -37,9 +37,9 @@
     "tailwindcss": "3.4.3"
   },
   "devDependencies": {
-    "@astrojs/check": "0.5.6",
+    "@astrojs/check": "0.5.10",
     "@netlify/plugin-lighthouse": "6.0.0",
-    "@types/lodash": "4.14.202",
+    "@types/lodash": "4.17.0",
     "@types/lodash-es": "4.17.12",
     "@types/markdown-it": "13.0.7",
     "@types/sanitize-html": "2.11.0",
@@ -48,7 +48,7 @@
     "prettier": "3.2.5",
     "prettier-plugin-astro": "0.13.0",
     "prettier-plugin-pkg": "0.18.1",
-    "prettier-plugin-tailwindcss": "0.5.11",
-    "typescript": "5.3.3"
+    "prettier-plugin-tailwindcss": "0.5.13",
+    "typescript": "5.4.3"
   }
 }
