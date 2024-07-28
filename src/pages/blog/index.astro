@@ -8,8 +8,8 @@ import { TITLE } from "@/data/metadata";
 import BaseLayout from "@/layouts/Base.astro";
 
 const postsByYear = chain(await getCollection("blog"))
-  .sortBy((post) => -post.data.pubDate)
-  .groupBy((post) => post.data.pubDate.getFullYear())
+  .sortBy((post) => -post.data.pubDate!)
+  .groupBy((post) => post.data.pubDate?.getFullYear())
   .toPairs()
   .sortBy(([year]) => -year)
   .value();
@@ -28,12 +28,14 @@ const postsByYear = chain(await getCollection("blog"))
               {posts.map((post) => (
                 <li class="mt-2 flex flex-col justify-between md:flex-row">
                   <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-                  <time
-                    datetime={post.data.pubDate.toISOString()}
-                    class="tabular-nums text-gray-600 dark:text-gray-300"
-                  >
-                    {format(post.data.pubDate, "MM-dd")}
-                  </time>
+                  {post.data.pubDate && (
+                    <time
+                      datetime={post.data.pubDate.toISOString()}
+                      class="tabular-nums text-gray-600 dark:text-gray-300"
+                    >
+                      {format(post.data.pubDate, "MM-dd")}
+                    </time>
+                  )}
                 </li>
               ))}
             </ul>
