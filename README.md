@@ -31,7 +31,7 @@ pnpm build
 Generate an empty placeholder for the blog post
 
 ```shell
-pnpm new:post
+pnpm post:new
 ```
 
 ## Credit

@@ -8,7 +8,7 @@ const latestsPosts = await getLatestsPosts();
 ---
 
 <BaseLayout>
-  <article class="prose mx-auto dark:prose-invert lg:prose-xl">
+  <article class="prose mx-auto lg:prose-xl dark:prose-invert">
     <h1>
       Hi, I'm Krzysztof Żuraw <span
         class="inline-block origin-wave animate-wave">👋🏻</span
@@ -21,6 +21,7 @@ const latestsPosts = await getLatestsPosts();
         width={460}
         height={460}
         class="w-[128px] rounded-full"
+        loading="eager"
       />
       <div>
         <p>Welcome to my blog. Here's a brief introduction about me:</p>
