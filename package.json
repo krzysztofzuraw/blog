@@ -12,8 +12,9 @@
   },
   "scripts": {
     "astro": "astro",
-    "build": "astro build",
+    "build": "pnpm lint && astro build",
     "dev": "astro dev",
+    "format:all": "prettier . --write",
     "lint": "astro check",
     "post:new": "./scripts/post.sh",
     "prepare": "husky",
@@ -48,7 +49,7 @@
     "prettier": "3.3.3",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-pkg": "0.18.1",
-    "prettier-plugin-tailwindcss": "0.6.5",
+    "prettier-plugin-tailwindcss": "0.6.1",
     "typescript": "5.5.4"
   }
 }
