@@ -4,7 +4,9 @@
   },
   "[markdown]": {
     "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 100
+    "editor.wordWrapColumn": 100,
+    "editor.fontSize": 14,
+    "editor.lineHeight": 0
   },
   "cSpell.diagnosticLevel": "Information",
   "editor.quickSuggestions": {
