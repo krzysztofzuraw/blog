@@ -1,7 +1,6 @@
 #!/usr/bin/env bash	
 
 echo "---	
-spell-checker: disable	
 title: WIP	
 description:	
 pubDate: $(date -u +%Y-%m-%dT%H:%M:%SZ)	
