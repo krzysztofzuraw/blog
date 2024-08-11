@@ -6,8 +6,17 @@
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100,
     "editor.fontSize": 14,
-    "editor.lineHeight": 0
+    "editor.lineHeight": 0,
+    "editor.guides.indentation": false,
+    "editor.guides.highlightActiveIndentation": false,
+    "editor.renderLineHighlight": "none",
+    "editor.matchBrackets": "near",
+    "editor.scrollbar.verticalScrollbarSize": 0
   },
+  "breadcrumbs.filePath": "off",
+  "breadcrumbs.enabled": false,
+  "workbench.statusBar.visible": false,
+  "workbench.layoutControl.enabled": false,
   "cSpell.diagnosticLevel": "Information",
   "editor.quickSuggestions": {
     "strings": true
