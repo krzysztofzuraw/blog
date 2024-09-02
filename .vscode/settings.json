@@ -3,16 +3,15 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
-    "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 100,
     "editor.fontSize": 14,
-    "editor.guides.indentation": false,
     "editor.guides.highlightActiveIndentation": false,
-    "editor.renderLineHighlight": "none",
+    "editor.guides.indentation": false,
     "editor.matchBrackets": "near",
-    "editor.scrollbar.verticalScrollbarSize": 0
+    "editor.renderLineHighlight": "none",
+    "editor.scrollbar.verticalScrollbarSize": 0,
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 100
   },
-  "breadcrumbs.enabled": false,
   "cSpell.diagnosticLevel": "Information",
   "editor.quickSuggestions": {
     "strings": true
