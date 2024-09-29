@@ -2,30 +2,8 @@
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[markdown]": {
-    "editor.guides.highlightActiveIndentation": false,
-    "editor.guides.indentation": false,
-    "editor.matchBrackets": "near",
-    "editor.renderLineHighlight": "none",
-    "editor.scrollbar.verticalScrollbarSize": 0,
-    "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 100,
-    "editor.lineNumbers": "off",
-    "editor.fontSize": 14
-  },
-  "breadcrumbs.enabled": false,
-  "cSpell.diagnosticLevel": "Information",
-  "editor.quickSuggestions": {
-    "strings": true
-  },
   "files.associations": {
     "*.css": "tailwindcss"
-  },
-  "github.copilot.enable": {
-    "*": true,
-    "markdown": false,
-    "plaintext": false,
-    "scminput": false
   },
   "markdown.copyFiles.destination": {
     "/src/content/blog/**/*": "/src/assets/${fileName}"
