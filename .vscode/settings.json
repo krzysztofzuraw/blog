@@ -2,8 +2,23 @@
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[markdown]": {
+    "editor.lineNumbers": "off",
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 100
+  },
+  "cSpell.diagnosticLevel": "Information",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
   "files.associations": {
     "*.css": "tailwindcss"
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": false,
+    "plaintext": false,
+    "scminput": false
   },
   "markdown.copyFiles.destination": {
     "/src/content/blog/**/*": "/src/assets/${fileName}"
