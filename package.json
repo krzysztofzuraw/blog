@@ -22,20 +22,20 @@
     "start": "astro dev"
   },
   "dependencies": {
-    "@astrojs/react": "3.6.2",
-    "@astrojs/rss": "4.0.7",
-    "@astrojs/sitemap": "3.1.6",
-    "@astrojs/tailwind": "5.1.1",
+    "@astrojs/react": "4.1.2",
+    "@astrojs/rss": "4.0.10",
+    "@astrojs/sitemap": "3.2.1",
+    "@astrojs/tailwind": "5.1.4",
     "@tailwindcss/typography": "0.5.15",
-    "astro": "4.15.9",
+    "astro": "5.1.1",
     "astro-robots-txt": "1.0.0",
     "date-fns": "4.1.0",
     "lodash-es": "4.17.21",
     "markdown-it": "14.1.0",
-    "rollup": "4.22.5",
-    "sanitize-html": "2.13.0",
+    "rollup": "4.29.1",
+    "sanitize-html": "2.14.0",
     "sharp": "0.33.5",
-    "tailwindcss": "3.4.13"
+    "tailwindcss": "3.4.17"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.3",
